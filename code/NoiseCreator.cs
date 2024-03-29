@@ -35,8 +35,8 @@ public sealed class NoiseCreator : Component
 	{
 		for (int x = 0; x < mapWidth; x++)
 		{
-			float sampleX = x / scale;
-			float sampleY = y / scale;
+			float sampleX = x * scale;
+			float sampleY = y * scale;
 
 			float perlinValue = Noise.Perlin(sampleX, sampleY);
 			Luminance[x, y] = perlinValue;
@@ -82,9 +82,9 @@ public sealed class NoiseCreator : Component
 {
     Mesh mesh = new Mesh();
     VertexBuffer vertexBuffer = new VertexBuffer();
-    for (int y = 0; y < mapHeight; y++)
+    for (int y = 0; y < mapHeight - 1; y++)
     {
-        for (int x = 0; x < mapWidth; x++)
+        for (int x = 0; x < mapWidth - 1; x++)
         {
             // Get the luminance values for the four corners of the quad
             float lum1 = Luminance[x, y];
@@ -93,10 +93,10 @@ public sealed class NoiseCreator : Component
             float lum4 = Luminance[x + 1, y + 1];
 
             // Create the four vertices of the quad
-Vertex v1 = new Vertex(new Vector3(x * 50, y * 50, lum1 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v2 = new Vertex(new Vector3((x + 1) * 50, y * 50, lum2 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v3 = new Vertex(new Vector3(x * 50, (y + 1) * 50, lum3 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v4 = new Vertex(new Vector3((x + 1) * 50, (y + 1) * 50, lum4 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v1 = new Vertex(new Vector3(x * 100, y * 100, lum1 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v2 = new Vertex(new Vector3((x + 1) * 100, y * 100, lum2 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v3 = new Vertex(new Vector3(x * 100, (y + 1) * 100, lum3 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v4 = new Vertex(new Vector3((x + 1) * 100, (y + 1) * 100, lum4 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
 
 // Add two triangles to form the quad
 vertexBuffer.AddTriangle(v1, v2, v3);

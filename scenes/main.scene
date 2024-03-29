@@ -57,8 +57,8 @@
         {
           "__type": "NoiseCreator",
           "__guid": "50609ec5-4cd3-4cc4-a5c9-bec48ba8ba3d",
-          "mapHeight": 5,
-          "mapWidth": 5,
+          "mapHeight": 32,
+          "mapWidth": 32,
           "material": "materials/grass/floor_grass_a.vmat",
           "modelRenderer": {
             "_type": "component",
@@ -66,7 +66,7 @@
             "go": "4f54c1f1-b5c8-4984-8e52-05bcfc8c1839",
             "component_type": "ModelRenderer"
           },
-          "noiseScale": 1,
+          "noiseScale": 5,
           "spriteRenderer": {
             "_type": "component",
             "component_id": "f1a1e5f7-7eb9-41d5-b828-cc3c9b1834d5",
@@ -159,7 +159,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-28T20:51:59.8377647-04:00",
+  "LastSaved": "2024-03-28T21:05:54.5415204-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
