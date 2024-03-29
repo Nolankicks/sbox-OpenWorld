@@ -15,9 +15,16 @@ public sealed class NoiseCreator : Component
 	[Property] public float noiseScale { get; set; }
 	protected override void OnStart()
 	{
-			CreateNoiseTexture();
-			spriteRenderer.Texture = texture;
-			CreateMesh(new Vector3(0 , 0, 0));
+			for (int y = 0; y < 10; y++)
+			{
+				for (int x = 0; x < 10; x++)
+				{
+				CreateNoiseTexture();
+				spriteRenderer.Texture = texture;
+				CreateMesh(new Vector3(x * 3000, y * 3000, 0));
+				}
+			}
+
 	}
 	protected override void OnUpdate()
 	{
