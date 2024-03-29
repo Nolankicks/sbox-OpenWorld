@@ -57,6 +57,8 @@
         {
           "__type": "NoiseCreator",
           "__guid": "50609ec5-4cd3-4cc4-a5c9-bec48ba8ba3d",
+          "mapHeight": 5,
+          "mapWidth": 5,
           "material": "materials/grass/floor_grass_a.vmat",
           "modelRenderer": {
             "_type": "component",
@@ -64,6 +66,7 @@
             "go": "4f54c1f1-b5c8-4984-8e52-05bcfc8c1839",
             "component_type": "ModelRenderer"
           },
+          "noiseScale": 1,
           "spriteRenderer": {
             "_type": "component",
             "component_id": "f1a1e5f7-7eb9-41d5-b828-cc3c9b1834d5",
@@ -110,6 +113,27 @@
           "Tint": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "a317c9af-74d3-4445-a1fd-d993a7330945",
+      "Name": "Envmap Probe",
+      "Position": "-613.8211,-317.3138,311.2469",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "EnvmapProbe",
+          "__guid": "51999936-cb2f-4364-85e0-0980eeb360b4",
+          "Bounds": {
+            "Mins": "-100000,-100000,-100000",
+            "Maxs": "100000,100000,100000"
+          },
+          "Feathering": 0.02,
+          "Projection": "Box",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "TintColor": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -135,7 +159,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-28T20:14:03.1436798-04:00",
+  "LastSaved": "2024-03-28T20:51:59.8377647-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

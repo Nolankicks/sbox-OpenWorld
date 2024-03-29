@@ -10,48 +10,49 @@ public sealed class NoiseCreator : Component
 	[Property] public Model model { get; set; }
 	[Property] public ModelRenderer modelRenderer { get; set; }
 	[Property] public Material material { get; set; }
+	[Property] public int mapHeight { get; set; }
+	[Property] public int mapWidth { get; set; }
+	[Property] public float noiseScale { get; set; }
 	protected override void OnStart()
-{
-    for (int y = 0; y < 10; y++)
-    {
-        for (int x = 0; x < 10; x++)
-        {
-			CreateNoiseTexture(x, y);
-            CreateMesh(new Vector3(x * 1600, y * 1600, 0));
-        }
-    }
-}
-
-	public float[,] CreateNoise(int chunkX, int chunkY, int size = 32, int res = 1)
-{
-    int pixelsize = size * res;
-    Luminance = new float[pixelsize, pixelsize];
-
-    Random random = new Random();
-
-    float offsetX = chunkX * size * 10;
-    float offsetY = chunkY * size * 10;
-
-    for (int y = 0; y < pixelsize; y++)
-    {
-        for (int x = 0; x < pixelsize; x++)
-        {
-            float px = x * 10 + offsetX;
-            float py = y * 10 + offsetY;
-            float noise = Noise.Perlin(px, py);
-            Luminance[x, y] = noise;
-        }
-    }
-    return Luminance;
-}
-
-	public Texture noiseTexture(float[,] noiseValue)
 	{
+			CreateNoiseTexture();
+			spriteRenderer.Texture = texture;
+			CreateMesh(new Vector3(0 , 0, 0));
+	}
+	protected override void OnUpdate()
+	{
+		CreateNoiseTexture();
+		spriteRenderer.Texture = texture;
+	}
+	public float[,] CreateNoise(int mapWidth, int mapHeight, float scale)
+{	
+	Luminance = new float[mapWidth, mapHeight];
+	if (scale <= 0)
+	{
+		scale = 0.0001f;
+	}
+    for (int y = 0; y < mapHeight; y++)
+	{
+		for (int x = 0; x < mapWidth; x++)
+		{
+			float sampleX = x / scale;
+			float sampleY = y / scale;
+
+			float perlinValue = Noise.Perlin(sampleX, sampleY);
+			Luminance[x, y] = perlinValue;
+		}
+	}
+	return Luminance;
+}
+
+	public Texture noiseTexture(float[,] noiseValue, int width, int height)
+	{
+
 		List<Byte> bytes = new List<Byte>();
 
-		for (int y = 0; y < 32; y++)
+		for (int y = 0; y < width; y++)
 		{
-			for (int x = 0; x < 32; x++)
+			for (int x = 0; x < height; x++)
 			{
   				float lum = noiseValue[x, y] * 255f;
                 lum = lum.CeilToInt().Clamp(0, 255);
@@ -64,23 +65,26 @@ public sealed class NoiseCreator : Component
 			}
 		}
 
-		var texture = Texture.Create(32, 32).WithFormat(ImageFormat.RGBA8888).WithData(bytes.ToArray()).Finish();
+		var texture = Texture.Create(height, width).WithFormat(ImageFormat.RGBA8888).WithData(bytes.ToArray()).Finish();
 
 		return texture;
 	}
-	public void CreateNoiseTexture(int x, int y)
-	{
-		var noise = CreateNoise( x, y);
-		texture = noiseTexture(noise);
+	public void CreateNoiseTexture()
+	{	
+		int octavas = 4;
+		float persistence = 0.5f;
+		float lacunarity = 2;
+		var noise = CreateNoise(mapWidth, mapHeight, noiseScale);
+		texture = noiseTexture(noise, mapWidth, mapHeight);
 	}
 
 	public void CreateMesh(Vector3 pos)
 {
     Mesh mesh = new Mesh();
     VertexBuffer vertexBuffer = new VertexBuffer();
-    for (int y = 0; y < 31; y++)
+    for (int y = 0; y < mapHeight; y++)
     {
-        for (int x = 0; x < 31; x++)
+        for (int x = 0; x < mapWidth; x++)
         {
             // Get the luminance values for the four corners of the quad
             float lum1 = Luminance[x, y];
