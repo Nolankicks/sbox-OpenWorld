@@ -57,7 +57,7 @@
         {
           "__type": "NoiseCreator",
           "__guid": "50609ec5-4cd3-4cc4-a5c9-bec48ba8ba3d",
-          "material": "materials/dev/reflectivity_30.vmat",
+          "material": "materials/grass/floor_grass_a.vmat",
           "modelRenderer": {
             "_type": "component",
             "component_id": "b6fc7a3e-02f9-4c28-9e81-11a67db8d754",
@@ -135,8 +135,10 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-28T19:00:13.0848104-04:00",
+  "LastSaved": "2024-03-28T20:14:03.1436798-04:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "facepunch.floor_grass_a"
+  ]
 }

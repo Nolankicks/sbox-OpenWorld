@@ -11,22 +11,26 @@ public sealed class NoiseCreator : Component
 	[Property] public ModelRenderer modelRenderer { get; set; }
 	[Property] public Material material { get; set; }
 	protected override void OnStart()
-	{
-	
-			CreateNoiseTexture();
-			spriteRenderer.Texture = texture;
-			CreateMesh(new Vector3(0 * 1600 , 0 * 1600, 0));
-	}
+{
+    for (int y = 0; y < 10; y++)
+    {
+        for (int x = 0; x < 10; x++)
+        {
+			CreateNoiseTexture(x, y);
+            CreateMesh(new Vector3(x * 1600, y * 1600, 0));
+        }
+    }
+}
 
-	public float[,] CreateNoise(int size = 32, int res = 1)
+	public float[,] CreateNoise(int chunkX, int chunkY, int size = 32, int res = 1)
 {
     int pixelsize = size * res;
     Luminance = new float[pixelsize, pixelsize];
 
     Random random = new Random();
 
-    float offsetX = (float)random.NextDouble() * 10000;
-    float offsetY = (float)random.NextDouble() * 10000;
+    float offsetX = chunkX * size * 10;
+    float offsetY = chunkY * size * 10;
 
     for (int y = 0; y < pixelsize; y++)
     {
@@ -64,9 +68,9 @@ public sealed class NoiseCreator : Component
 
 		return texture;
 	}
-	public void CreateNoiseTexture()
+	public void CreateNoiseTexture(int x, int y)
 	{
-		var noise = CreateNoise();
+		var noise = CreateNoise( x, y);
 		texture = noiseTexture(noise);
 	}
 
@@ -85,10 +89,10 @@ public sealed class NoiseCreator : Component
             float lum4 = Luminance[x + 1, y + 1];
 
             // Create the four vertices of the quad
-Vertex v1 = new Vertex(new Vector3(x * 50, y * 50, lum1 * 100), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v2 = new Vertex(new Vector3((x + 1) * 50, y * 50, lum2 * 100), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v3 = new Vertex(new Vector3(x * 50, (y + 1) * 50, lum3 * 100), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v4 = new Vertex(new Vector3((x + 1) * 50, (y + 1) * 50, lum4 * 100), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v1 = new Vertex(new Vector3(x * 50, y * 50, lum1 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v2 = new Vertex(new Vector3((x + 1) * 50, y * 50, lum2 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v3 = new Vertex(new Vector3(x * 50, (y + 1) * 50, lum3 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+Vertex v4 = new Vertex(new Vector3((x + 1) * 50, (y + 1) * 50, lum4 * 300), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
 
 // Add two triangles to form the quad
 vertexBuffer.AddTriangle(v1, v2, v3);
