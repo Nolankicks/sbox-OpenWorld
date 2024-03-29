@@ -14,42 +14,70 @@ public sealed class NoiseCreator : Component
 	[Property] public int mapWidth { get; set; }
 	[Property] public float noiseScale { get; set; }
 	protected override void OnStart()
-	{
-			for (int y = 0; y < 10; y++)
-			{
-				for (int x = 0; x < 10; x++)
-				{
-				CreateNoiseTexture();
-				spriteRenderer.Texture = texture;
-				CreateMesh(new Vector3(x * 3000, y * 3000, 0));
-				}
-			}
+{
+    // Generate a larger noise map
+    var noise = CreateNoise(mapWidth * 10, mapHeight * 10, noiseScale);
 
-	}
+    for (int y = 0; y < 10; y++)
+    {
+        for (int x = 0; x < 10; x++)
+        {
+            // Extract a chunk from the noise map
+            float[,] chunkNoise = new float[mapWidth, mapHeight];
+            for (int i = 0; i < mapWidth; i++)
+            {
+                for (int j = 0; j < mapHeight; j++)
+                {
+                    chunkNoise[i, j] = noise[x * mapWidth + i, y * mapHeight + j];
+                }
+            }
+
+            // Create a chunk at the correct position
+            Vector3 chunkPosition = new Vector3(x * mapWidth, y * mapHeight, 0);
+            CreateChunk(chunkPosition, chunkNoise);
+        }
+    }
+}
+
+public void CreateChunk(Vector3 pos, float[,] noiseValues)
+{
+    // Create a texture and mesh for the chunk
+    texture = noiseTexture(noiseValues, mapWidth, mapHeight);
+    spriteRenderer.Texture = texture;
+    Luminance = noiseValues;
+    string chunkName = "Chunk" + pos.x + pos.y;
+    CreateMesh(pos, material, chunkName);
+}
 	protected override void OnUpdate()
 	{
 		CreateNoiseTexture();
 		spriteRenderer.Texture = texture;
 	}
 	public float[,] CreateNoise(int mapWidth, int mapHeight, float scale)
-{	
-	Luminance = new float[mapWidth, mapHeight];
-	if (scale <= 0)
-	{
-		scale = 0.0001f;
-	}
-    for (int y = 0; y < mapHeight; y++)
-	{
-		for (int x = 0; x < mapWidth; x++)
-		{
-			float sampleX = x * scale;
-			float sampleY = y * scale;
+{
+    Luminance = new float[mapWidth, mapHeight];
+    if (scale <= 0)
+    {
+        scale = 0.0001f;
+    }
+  for (int y = 0; y < mapHeight; y++)
+{
+    for (int x = 0; x < mapWidth; x++)
+    {
+        float sampleX = x / scale;
+        float sampleY = y / scale;
 
-			float perlinValue = Noise.Perlin(sampleX, sampleY);
-			Luminance[x, y] = perlinValue;
-		}
-	}
-	return Luminance;
+        float perlinValue = Noise.Perlin(sampleX, sampleY) * 2 - 1; // Adjust range to [-1, 1]
+        Luminance[x, y] = perlinValue;
+
+        // If this is not the first row or first column, adjust the noise value to be the average of this cell and the adjacent cells
+        if (x > 0 && y > 0)
+        {
+            Luminance[x, y] = (Luminance[x, y] + Luminance[x - 1, y] + Luminance[x, y - 1] + Luminance[x - 1, y - 1]) / 4;
+        }
+    }
+}
+    return Luminance;
 }
 
 	public Texture noiseTexture(float[,] noiseValue, int width, int height)
@@ -85,7 +113,7 @@ public sealed class NoiseCreator : Component
 		texture = noiseTexture(noise, mapWidth, mapHeight);
 	}
 
-	public void CreateMesh(Vector3 pos)
+	public void CreateMesh(Vector3 pos, Material chunkMaterial, string name)
 {
     Mesh mesh = new Mesh();
     VertexBuffer vertexBuffer = new VertexBuffer();
@@ -94,33 +122,33 @@ public sealed class NoiseCreator : Component
         for (int x = 0; x < mapWidth - 1; x++)
         {
             // Get the luminance values for the four corners of the quad
-            float lum1 = Luminance[x, y];
-            float lum2 = Luminance[x + 1, y];
-            float lum3 = Luminance[x, y + 1];
-            float lum4 = Luminance[x + 1, y + 1];
+			float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
+            float lum2 = MathF.Round(Luminance[x + 1, y] * 50, 2);
+            float lum3 = MathF.Round(Luminance[x, y + 1] * 50, 2);
+            float lum4 = MathF.Round(Luminance[x + 1, y + 1] * 50, 2);
 
             // Create the four vertices of the quad
-Vertex v1 = new Vertex(new Vector3(x * 100, y * 100, lum1 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v2 = new Vertex(new Vector3((x + 1) * 100, y * 100, lum2 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v3 = new Vertex(new Vector3(x * 100, (y + 1) * 100, lum3 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-Vertex v4 = new Vertex(new Vector3((x + 1) * 100, (y + 1) * 100, lum4 * 1000), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v1 = new Vertex(new Vector3(x, y, lum1), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v2 = new Vertex(new Vector3(x + 1, y, lum2), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v3 = new Vertex(new Vector3(x, y + 1, lum3), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v4 = new Vertex(new Vector3(x + 1, y + 1, lum4), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
 
-// Add two triangles to form the quad
-vertexBuffer.AddTriangle(v1, v2, v3);
-vertexBuffer.AddTriangle(v2, v4, v3);
+            // Add two triangles to form the quad
+            vertexBuffer.AddTriangle(v1, v2, v3);
+            vertexBuffer.AddTriangle(v2, v4, v3);
         }
     }
 
-
-		mesh.CreateBuffers(vertexBuffer);
-		mesh.Material = material;
-		ModelBuilder builder = new ModelBuilder();
-		builder.AddMesh(mesh);
-		model = builder.Create();
-		var newGameObject = new GameObject();
-		newGameObject.Components.Create<ModelRenderer>();
-		var modelRenderer = newGameObject.Components.Get<ModelRenderer>();
-		modelRenderer.Model = model;
-		newGameObject.Transform.Position = pos;
-	}
+    mesh.CreateBuffers(vertexBuffer);
+    mesh.Material = chunkMaterial;
+    ModelBuilder builder = new ModelBuilder();
+    builder.AddMesh(mesh);
+    model = builder.Create();
+    var newGameObject = new GameObject();
+    newGameObject.Components.Create<ModelRenderer>();
+    var modelRenderer = newGameObject.Components.Get<ModelRenderer>();
+    modelRenderer.Model = model;
+    newGameObject.Name = name;
+    newGameObject.Transform.Position = pos;
+}
 }
