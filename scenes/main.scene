@@ -60,12 +60,6 @@
           "mapHeight": 32,
           "mapWidth": 32,
           "material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
-          "modelRenderer": {
-            "_type": "component",
-            "component_id": "b6fc7a3e-02f9-4c28-9e81-11a67db8d754",
-            "go": "4f54c1f1-b5c8-4984-8e52-05bcfc8c1839",
-            "component_type": "ModelRenderer"
-          },
           "noiseScale": 3,
           "spriteRenderer": {
             "_type": "component",
@@ -144,7 +138,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-29T20:30:47.6937496-04:00",
+  "LastSaved": "2024-03-29T21:33:27.8717564-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

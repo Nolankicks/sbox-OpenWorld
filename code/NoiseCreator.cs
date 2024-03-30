@@ -17,8 +17,8 @@ public sealed class NoiseCreator : Component
 	protected override void OnAwake()
 {
     // Define the size of the grid
-    int gridSizeX = 5;
-    int gridSizeY = 5;
+    int gridSizeX = 25;
+    int gridSizeY = 25;
 
     // Define the size of each chunk
     int chunkSizeX = mapWidth;
@@ -113,26 +113,26 @@ public void CreateChunk(Vector3 pos, float[,] noiseValues)
     Mesh mesh = new Mesh();
     VertexBuffer vertexBuffer = new VertexBuffer();
     for (int y = 0; y < mapHeight; y++)
-{
-    for (int x = 0; x < mapWidth; x++)
     {
-        // Get the luminance values for the four corners of the quad
-float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
-float lum2 = x < mapWidth - 1 ? MathF.Round(Luminance[x + 1, y] * 50, 2) : lum1;
-float lum3 = y < mapHeight - 1 ? MathF.Round(Luminance[x, y + 1] * 50, 2) : lum1;
-float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? MathF.Round(Luminance[x + 1, y + 1] * 50, 2) : (x < mapWidth - 1 ? lum2 : lum3);
+        for (int x = 0; x < mapWidth; x++)
+        {
+            // Get the luminance values for the four corners of the quad
+            float lum1 = Luminance[x, y] * 50;
+            float lum2 = x < mapWidth - 1 ? Luminance[x + 1, y] * 50 : lum1;
+            float lum3 = y < mapHeight - 1 ? Luminance[x, y + 1] * 50 : lum1;
+            float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? Luminance[x + 1, y + 1] * 50 : (x < mapWidth - 1 ? lum2 : lum3);
 
-        // Create the four vertices of the quad
-        Vertex v1 = new Vertex(new Vector3(x, y, lum1), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-        Vertex v2 = new Vertex(new Vector3(x + 1, y, lum2), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-        Vertex v3 = new Vertex(new Vector3(x, y + 1, lum3), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-        Vertex v4 = new Vertex(new Vector3(x + 1, y + 1, lum4), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            // Create the four vertices of the quad
+            Vertex v1 = new Vertex(RoundVector3(new Vector3(x, y, lum1)), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v2 = new Vertex(RoundVector3(new Vector3(x + 1, y, lum2)), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v3 = new Vertex(RoundVector3(new Vector3(x, y + 1, lum3)), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+            Vertex v4 = new Vertex(RoundVector3(new Vector3(x + 1, y + 1, lum4)), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
 
-        // Add two triangles to form the quad
-        vertexBuffer.AddTriangle(v1, v2, v3);
-        vertexBuffer.AddTriangle(v2, v4, v3);
+            // Add two triangles to form the quad
+            vertexBuffer.AddTriangle(v1, v2, v3);
+            vertexBuffer.AddTriangle(v2, v4, v3);
+        }
     }
-}
 
     mesh.CreateBuffers(vertexBuffer);
     mesh.Material = chunkMaterial;
@@ -145,5 +145,9 @@ float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? MathF.Round(Luminance[x + 1
     modelRenderer.Model = model;
     newGameObject.Name = name;
     newGameObject.Transform.Position = pos;
+}
+private Vector3 RoundVector3(Vector3 vector)
+{
+    return new Vector3(MathF.Round(vector.x, 4), MathF.Round(vector.y, 4), MathF.Round(vector.z, 4));
 }
 }
