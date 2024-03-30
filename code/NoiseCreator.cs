@@ -24,27 +24,17 @@ public sealed class NoiseCreator : Component
     int chunkSizeX = mapWidth;
     int chunkSizeY = mapHeight;
 
-    // Generate a larger noise map
-    var noise = CreateNoise(gridSizeX * chunkSizeX, gridSizeY * chunkSizeY, noiseScale);
-
     // Create a grid of chunks
     for (int y = 0; y < gridSizeY; y++)
     {
         for (int x = 0; x < gridSizeX; x++)
         {
-            // Extract the noise values for this chunk
-            float[,] chunkNoise = new float[chunkSizeX, chunkSizeY];
-            for (int cy = 0; cy < chunkSizeY; cy++)
-            {
-                for (int cx = 0; cx < chunkSizeX; cx++)
-                {
-                    chunkNoise[cx, cy] = noise[x * chunkSizeX + cx, y * chunkSizeY + cy];
-                }
-            }
+            // Generate the noise map for this chunk
+            var noise = CreateNoise(chunkSizeX, chunkSizeY, noiseScale, x * chunkSizeX, y * chunkSizeY);
 
             // Create the chunk
             Vector3 chunkPos = new Vector3(x * chunkSizeX, y * chunkSizeY, 0);
-            CreateChunk(chunkPos, chunkNoise);
+            CreateChunk(chunkPos, noise);
         }
     }
 }
@@ -63,31 +53,24 @@ public void CreateChunk(Vector3 pos, float[,] noiseValues)
 		CreateNoiseTexture();
 		spriteRenderer.Texture = texture;
 	}
-	public float[,] CreateNoise(int mapWidth, int mapHeight, float scale)
+	public float[,] CreateNoise(int width, int height, float scale, int offsetX, int offsetY)
 {
-    Luminance = new float[mapWidth, mapHeight];
-    if (scale <= 0)
-    {
-        scale = 0.0001f;
-    }
-  for (int y = 0; y < mapHeight; y++)
-{
-    for (int x = 0; x < mapWidth; x++)
-    {
-        float sampleX = x / scale;
-        float sampleY = y / scale;
+    float[,] noiseMap = new float[width, height];
 
-        float perlinValue = Noise.Perlin(sampleX, sampleY) * 2 - 1; // Adjust range to [-1, 1]
-        Luminance[x, y] = perlinValue;
-
-        // If this is not the first row or first column, adjust the noise value to be the average of this cell and the adjacent cells
-        if (x > 0 && y > 0)
+    for (int y = 0; y < height; y++)
+    {
+        for (int x = 0; x < width; x++)
         {
-            Luminance[x, y] = (Luminance[x, y] + Luminance[x - 1, y] + Luminance[x, y - 1] + Luminance[x - 1, y - 1]) / 4;
+            float sampleX = (x + offsetX) / scale;
+            float sampleY = (y + offsetY) / scale;
+
+            float noise = Noise.Perlin(sampleX, sampleY);
+
+            noiseMap[x, y] = noise;
         }
     }
-}
-    return Luminance;
+
+    return noiseMap; // return noiseMap instead of Luminance
 }
 
 	public Texture noiseTexture(float[,] noiseValue, int width, int height)
@@ -115,13 +98,15 @@ public void CreateChunk(Vector3 pos, float[,] noiseValues)
 		return texture;
 	}
 	public void CreateNoiseTexture()
-	{	
-		int octavas = 4;
-		float persistence = 0.5f;
-		float lacunarity = 2;
-		var noise = CreateNoise(mapWidth, mapHeight, noiseScale);
-		texture = noiseTexture(noise, mapWidth, mapHeight);
-	}
+{   
+    int octavas = 4;
+    float persistence = 0.5f;
+    float lacunarity = 2;
+    int offsetX = 0; // Define the offsetX
+    int offsetY = 0; // Define the offsetY
+    var noise = CreateNoise(mapWidth, mapHeight, noiseScale, offsetX, offsetY); // Use the offsets
+    texture = noiseTexture(noise, mapWidth, mapHeight);
+}
 
 	public void CreateMesh(Vector3 pos, Material chunkMaterial, string name)
 {
@@ -132,10 +117,10 @@ public void CreateChunk(Vector3 pos, float[,] noiseValues)
     for (int x = 0; x < mapWidth; x++)
     {
         // Get the luminance values for the four corners of the quad
-        float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
-        float lum2 = x < mapWidth - 1 ? MathF.Round(Luminance[x + 1, y] * 50, 2) : lum1;
-        float lum3 = y < mapHeight - 1 ? MathF.Round(Luminance[x, y + 1] * 50, 2) : lum1;
-        float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? MathF.Round(Luminance[x + 1, y + 1] * 50, 2) : lum1;
+float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
+float lum2 = x < mapWidth - 1 ? MathF.Round(Luminance[x + 1, y] * 50, 2) : lum1;
+float lum3 = y < mapHeight - 1 ? MathF.Round(Luminance[x, y + 1] * 50, 2) : lum1;
+float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? MathF.Round(Luminance[x + 1, y + 1] * 50, 2) : (x < mapWidth - 1 ? lum2 : lum3);
 
         // Create the four vertices of the quad
         Vertex v1 = new Vertex(new Vector3(x, y, lum1), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
