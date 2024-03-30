@@ -100,21 +100,6 @@
       ]
     },
     {
-      "__guid": "4f54c1f1-b5c8-4984-8e52-05bcfc8c1839",
-      "Name": "Model",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ModelRenderer",
-          "__guid": "b6fc7a3e-02f9-4c28-9e81-11a67db8d754",
-          "BodyGroups": 18446744073709551615,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "a317c9af-74d3-4445-a1fd-d993a7330945",
       "Name": "Envmap Probe",
       "Position": "-613.8211,-317.3138,311.2469",
@@ -159,7 +144,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-29T16:15:50.0250655-04:00",
+  "LastSaved": "2024-03-29T20:30:47.6937496-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

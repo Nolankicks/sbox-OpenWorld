@@ -13,28 +13,38 @@ public sealed class NoiseCreator : Component
 	[Property] public int mapHeight { get; set; }
 	[Property] public int mapWidth { get; set; }
 	[Property] public float noiseScale { get; set; }
-	protected override void OnStart()
+	public Vector3[] vertices;
+	protected override void OnAwake()
 {
-    // Generate a larger noise map
-    var noise = CreateNoise(mapWidth * 10, mapHeight * 10, noiseScale);
+    // Define the size of the grid
+    int gridSizeX = 5;
+    int gridSizeY = 5;
 
-    for (int y = 0; y < 10; y++)
+    // Define the size of each chunk
+    int chunkSizeX = mapWidth;
+    int chunkSizeY = mapHeight;
+
+    // Generate a larger noise map
+    var noise = CreateNoise(gridSizeX * chunkSizeX, gridSizeY * chunkSizeY, noiseScale);
+
+    // Create a grid of chunks
+    for (int y = 0; y < gridSizeY; y++)
     {
-        for (int x = 0; x < 10; x++)
+        for (int x = 0; x < gridSizeX; x++)
         {
-            // Extract a chunk from the noise map
-            float[,] chunkNoise = new float[mapWidth, mapHeight];
-            for (int i = 0; i < mapWidth; i++)
+            // Extract the noise values for this chunk
+            float[,] chunkNoise = new float[chunkSizeX, chunkSizeY];
+            for (int cy = 0; cy < chunkSizeY; cy++)
             {
-                for (int j = 0; j < mapHeight; j++)
+                for (int cx = 0; cx < chunkSizeX; cx++)
                 {
-                    chunkNoise[i, j] = noise[x * mapWidth + i, y * mapHeight + j];
+                    chunkNoise[cx, cy] = noise[x * chunkSizeX + cx, y * chunkSizeY + cy];
                 }
             }
 
-            // Create a chunk at the correct position
-            Vector3 chunkPosition = new Vector3(x * mapWidth, y * mapHeight, 0);
-            CreateChunk(chunkPosition, chunkNoise);
+            // Create the chunk
+            Vector3 chunkPos = new Vector3(x * chunkSizeX, y * chunkSizeY, 0);
+            CreateChunk(chunkPos, chunkNoise);
         }
     }
 }
@@ -117,27 +127,27 @@ public void CreateChunk(Vector3 pos, float[,] noiseValues)
 {
     Mesh mesh = new Mesh();
     VertexBuffer vertexBuffer = new VertexBuffer();
-    for (int y = 0; y < mapHeight - 1; y++)
+    for (int y = 0; y < mapHeight; y++)
+{
+    for (int x = 0; x < mapWidth; x++)
     {
-        for (int x = 0; x < mapWidth - 1; x++)
-        {
-            // Get the luminance values for the four corners of the quad
-			float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
-            float lum2 = MathF.Round(Luminance[x + 1, y] * 50, 2);
-            float lum3 = MathF.Round(Luminance[x, y + 1] * 50, 2);
-            float lum4 = MathF.Round(Luminance[x + 1, y + 1] * 50, 2);
+        // Get the luminance values for the four corners of the quad
+        float lum1 = MathF.Round(Luminance[x, y] * 50, 2);
+        float lum2 = x < mapWidth - 1 ? MathF.Round(Luminance[x + 1, y] * 50, 2) : lum1;
+        float lum3 = y < mapHeight - 1 ? MathF.Round(Luminance[x, y + 1] * 50, 2) : lum1;
+        float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? MathF.Round(Luminance[x + 1, y + 1] * 50, 2) : lum1;
 
-            // Create the four vertices of the quad
-            Vertex v1 = new Vertex(new Vector3(x, y, lum1), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-            Vertex v2 = new Vertex(new Vector3(x + 1, y, lum2), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-            Vertex v3 = new Vertex(new Vector3(x, y + 1, lum3), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
-            Vertex v4 = new Vertex(new Vector3(x + 1, y + 1, lum4), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+        // Create the four vertices of the quad
+        Vertex v1 = new Vertex(new Vector3(x, y, lum1), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+        Vertex v2 = new Vertex(new Vector3(x + 1, y, lum2), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+        Vertex v3 = new Vertex(new Vector3(x, y + 1, lum3), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
+        Vertex v4 = new Vertex(new Vector3(x + 1, y + 1, lum4), new Vector4(1, 1, 1, 1), new Vector3(0, 0, 1), new Vector4(1, 0, 0, 0));
 
-            // Add two triangles to form the quad
-            vertexBuffer.AddTriangle(v1, v2, v3);
-            vertexBuffer.AddTriangle(v2, v4, v3);
-        }
+        // Add two triangles to form the quad
+        vertexBuffer.AddTriangle(v1, v2, v3);
+        vertexBuffer.AddTriangle(v2, v4, v3);
     }
+}
 
     mesh.CreateBuffers(vertexBuffer);
     mesh.Material = chunkMaterial;
