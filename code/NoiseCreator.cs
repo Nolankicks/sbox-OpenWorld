@@ -55,11 +55,11 @@ public sealed class NoiseCreator : Component
 	}
 	public float[,] CreateNoise( int width, int height, float scale, int offsetX, int offsetY )
 	{
-		float[,] noiseMap = new float[width, height];
+		float[,] noiseMap = new float[width + 1, height + 1];
 
-		for ( int y = 0; y < height; y++ )
+		for ( int y = 0; y < height + 1; y++ )
 		{
-			for ( int x = 0; x < width; x++ )
+			for ( int x = 0; x < width + 1; x++ )
 			{
 				float sampleX = (x + offsetX) / scale;
 				float sampleY = (y + offsetY) / scale;
@@ -118,9 +118,9 @@ public sealed class NoiseCreator : Component
 			{
 				// Get the luminance values for the four corners of the quad
 				float lum1 = Luminance[x, y] * 100;
-				float lum2 = x < mapWidth - 1 ? Luminance[x + 1, y] * 100 : lum1;
-				float lum3 = y < mapHeight - 1 ? Luminance[x, y + 1] * 100 : lum1;
-				float lum4 = x < mapWidth - 1 && y < mapHeight - 1 ? Luminance[x + 1, y + 1] * 100 : (x < mapWidth - 1 ? lum2 : lum3);
+				float lum2 = Luminance[x + 1, y] * 100;
+				float lum3 = Luminance[x, y + 1] * 100;
+				float lum4 = Luminance[x + 1, y + 1] * 100;
 
 				// Create the four vertices of the quad
 				Vertex v1 = new Vertex( RoundVector3( new Vector3( x, y, lum1 ) ), new Vector4( 1, 1, 1, 1 ), new Vector3( 0, 0, 1 ), new Vector4( 1, 0, 0, 0 ) );
