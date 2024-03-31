@@ -8,16 +8,14 @@ using Sandbox.Utility;
 public sealed class NoiseCreator : Component
 {
 	public float[,] Luminance { get; private set; }
-	[Property] public Texture texture { get; private set; }
-	[Property] public SpriteRenderer spriteRenderer { get; set; }
 	[Property] public Model model { get; set; }
 	[Property] public GameObject player { get; set; }
-	[Property] public ModelRenderer modelRenderer { get; set; }
 	[Property] public Model Rock { get; set; }
 	[Property] public Material material { get; set; }
 	[Property] public int mapHeight { get; set; }
 	[Property] public int mapWidth { get; set; }
 	[Property] public float noiseScale { get; set; }
+	[Property] public GameObject chunksHolder { get; set; }
 	protected override void OnAwake()
 	{
 		  int gridSizeX = 100;
@@ -39,7 +37,7 @@ for ( int y = 0; y < gridSizeY; y++ )
 		Vector3 chunkPos = new Vector3( x * chunkSizeX, y * chunkSizeY, 0 );
 		string chunkName = "Chunk" + chunkPos.x + chunkPos.y;
 		//var texture = noiseTexture(noise, mapWidth, mapHeight);
-		chunkDataList.Add(new ChunkData { Position = chunkPos, NoiseValues = noise, Texture = texture, Material = material, Name = chunkName, rockCount = 1, rockLocations = new List<Vector3>() });
+		chunkDataList.Add(new ChunkData { Position = chunkPos, NoiseValues = noise, Material = material, Name = chunkName, rockCount = 1, rockLocations = new List<Vector3>() });
 	}
 }
 	}
@@ -169,6 +167,7 @@ for ( int y = 0; y < gridSizeY; y++ )
 		mesh.Material = chunkMaterial;
 		ModelBuilder builder = new ModelBuilder();
 		builder.AddMesh(mesh);
+		builder.AddCollisionBox(mapWidth, mapHeight);
 		model = builder.Create();
 		//Create the GameObject
 		var newGameObject = new GameObject();
@@ -176,11 +175,13 @@ for ( int y = 0; y < gridSizeY; y++ )
 		var chunk = newGameObject.Components.Create<Chunk>();
 		chunk.player = player;
 		var modelCollider = newGameObject.Components.Create<ModelCollider>();
-		modelCollider.Model = model;
+		modelCollider.Model = model; 
 		chunk.modelRenderer = modelRenderer;
 		modelRenderer.Model = model;
 		newGameObject.Name = name;
 		newGameObject.Transform.Position = pos;
+		newGameObject.Parent = chunksHolder;
+		var hitBox = newGameObject.Components.Create<BoxCollider>();
 	}
 	private Vector3 RoundVector3( Vector3 vector )
 	{

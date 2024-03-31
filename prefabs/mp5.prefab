@@ -1,0 +1,28 @@
+{
+  "RootObject": {
+    "__guid": "d3878eb4-836f-4348-a9d9-ec1e4cff7f32",
+    "Name": "mp5",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Weapon",
+        "__guid": "2538c296-e8ed-4849-929d-89a5936bda14"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "01846d6f-b8b6-4260-863f-8521f0e505ff",
+        "Name": "GameObject",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

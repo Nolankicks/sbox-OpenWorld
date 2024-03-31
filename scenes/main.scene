@@ -57,6 +57,10 @@
         {
           "__type": "NoiseCreator",
           "__guid": "50609ec5-4cd3-4cc4-a5c9-bec48ba8ba3d",
+          "chunksHolder": {
+            "_type": "gameobject",
+            "go": "645fb6b2-91ca-4e4b-a01f-733b89e56994"
+          },
           "mapHeight": 32,
           "mapWidth": 32,
           "material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
@@ -65,13 +69,7 @@
             "_type": "gameobject",
             "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4"
           },
-          "Rock": "models/props/rock_scatter/rock_scatter_03.vmdl",
-          "spriteRenderer": {
-            "_type": "component",
-            "component_id": "f1a1e5f7-7eb9-41d5-b828-cc3c9b1834d5",
-            "go": "b45fd5e1-a588-4fb0-96b5-a32b79fe1c53",
-            "component_type": "SpriteRenderer"
-          }
+          "Rock": "models/props/rock_scatter/rock_scatter_03.vmdl"
         }
       ]
     },
@@ -157,6 +155,15 @@
           "IsFirstPerson": false,
           "RunSpeed": 300,
           "WalkSpeed": 200
+        },
+        {
+          "__type": "Inventory",
+          "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
+          "Gun": {
+            "_type": "gameobject",
+            "prefab": "prefabs/mp5.prefab"
+          },
+          "Items": []
         }
       ],
       "Children": [
@@ -189,6 +196,13 @@
                 "go": "699a701c-8449-4947-a151-8f93a40161df",
                 "component_type": "SkinnedModelRenderer"
               }
+            },
+            {
+              "__type": "ModelCollider",
+              "__guid": "956586c9-5210-4dab-89fa-6a0d5c4c67d0",
+              "IsTrigger": false,
+              "Model": "models/citizen/citizen.vmdl",
+              "Static": false
             }
           ],
           "Children": [
@@ -293,6 +307,44 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "f16f9d56-803e-4ae5-ab71-c23bb526fb26",
+      "Name": "ItemTrigger",
+      "Position": "75.87814,-128,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ItemTrigger",
+          "__guid": "0d9aee44-e3d7-45de-98b1-4d962bc58a7c",
+          "gameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/mp5.prefab"
+          }
+        },
+        {
+          "__type": "ModelRenderer",
+          "__guid": "2e6e3ddc-256c-4981-9ce2-2d6614a62c4d",
+          "BodyGroups": 18446744073709551615,
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "BoxCollider",
+          "__guid": "2ba6e5a5-bbef-45d8-bd19-dca080432e63",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,50,50",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "645fb6b2-91ca-4e4b-a01f-733b89e56994",
+      "Name": "Chunks Holder",
+      "Enabled": true,
+      "NetworkMode": 2
     }
   ],
   "SceneProperties": {
@@ -318,7 +370,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-31T11:41:27.0830775-04:00",
+  "LastSaved": "2024-03-31T17:35:24.1204189-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

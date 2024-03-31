@@ -71,10 +71,10 @@ public sealed class PlayerController : Component
 			return;
 		}
 		WishVelocity = Input.AnalogMove;
-		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * 0.5f * Time.Delta;
+		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
 		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
 		{
-			CharacterController.Punch(Vector3.Up * 200);
+			CharacterController.Punch(Vector3.Up * 300);
 			AnimationHelper.TriggerJump();
 			timeSinceJump = 0;
 		}
@@ -186,7 +186,7 @@ public sealed class PlayerController : Component
 		AnimationHelper.WithWishVelocity( WishVelocity );
 		AnimationHelper.WithVelocity( CharacterController.Velocity );
 		AnimationHelper.IsGrounded = CharacterController.IsOnGround;
-		AnimationHelper.DuckLevel = IsProxy ? 1.0f : 0.0f;
+		AnimationHelper.DuckLevel = IsCrouching ? 1.0f : 0.0f;
 
 		AnimationHelper.MoveStyle = wv < 160f ? CitizenAnimationHelper.MoveStyles.Walk : CitizenAnimationHelper.MoveStyles.Run;
 
