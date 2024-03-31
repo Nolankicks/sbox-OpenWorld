@@ -65,6 +65,7 @@
             "_type": "gameobject",
             "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4"
           },
+          "Rock": "models/props/rock_scatter/rock_scatter_03.vmdl",
           "spriteRenderer": {
             "_type": "component",
             "component_id": "f1a1e5f7-7eb9-41d5-b828-cc3c9b1834d5",
@@ -122,7 +123,50 @@
       "__guid": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
       "Name": "Player",
       "Enabled": true,
-      "NetworkMode": 2
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "43e0cbec-3953-44ae-bb00-3a68423434b4",
+          "BodyGroups": 0,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ModelCollider",
+          "__guid": "c3a334ac-a1b6-4ecf-b071-f080567c8804",
+          "IsTrigger": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "Static": false
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "d96d87ea-2f98-4862-8da5-d79f7e1e2410",
+          "Name": "SpaceSuit",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "62e054c9-5d69-4ea5-b3a7-f8b07e56fe92",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "43e0cbec-3953-44ae-bb00-3a68423434b4",
+                "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/full_outfit/space_suit_outfit/models/space_suit_outfit.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -148,10 +192,11 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-30T22:19:13.813374-04:00",
+  "LastSaved": "2024-03-30T22:55:52.4137898-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
-    "facepunch.floor_grass_dirt_weed_blend_a"
+    "facepunch.floor_grass_dirt_weed_blend_a",
+    "facepunch.rock_scatter_03"
   ]
 }

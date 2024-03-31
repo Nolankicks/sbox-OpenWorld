@@ -1,4 +1,7 @@
 using System;
+using System.Numerics;
+using System.Runtime.Intrinsics;
+using System.Security.Cryptography.X509Certificates;
 using Sandbox;
 using Sandbox.Utility;
 
@@ -10,35 +13,35 @@ public sealed class NoiseCreator : Component
 	[Property] public Model model { get; set; }
 	[Property] public GameObject player { get; set; }
 	[Property] public ModelRenderer modelRenderer { get; set; }
+	[Property] public Model Rock { get; set; }
 	[Property] public Material material { get; set; }
 	[Property] public int mapHeight { get; set; }
 	[Property] public int mapWidth { get; set; }
 	[Property] public float noiseScale { get; set; }
-	public Vector3[] vertices;
 	protected override void OnAwake()
 	{
-		  int gridSizeX = 500;
-   		 int gridSizeY = 500;
+		  int gridSizeX = 100;
+   		 int gridSizeY = 100;
 
     // Define the size of each chunk
    		 int chunkSizeX = mapWidth;
     	int chunkSizeY = mapHeight;
 
     // Create a grid of chunks
-    for ( int y = 0; y < gridSizeY; y++ )
-    {
-        for ( int x = 0; x < gridSizeX; x++ )
-        {
-            // Generate the noise map for this chunk
-            var noise = CreateNoise( chunkSizeX, chunkSizeY, noiseScale, x * chunkSizeX, y * chunkSizeY );
+for ( int y = 0; y < gridSizeY; y++ )
+{
+	for ( int x = 0; x < gridSizeX; x++ )
+	{
+		// Generate the noise map for this chunk
+		var noise = CreateNoise( chunkSizeX, chunkSizeY, noiseScale, x * chunkSizeX, y * chunkSizeY );
 
-            // Create the chunk data and add it to the list
-            Vector3 chunkPos = new Vector3( x * chunkSizeX, y * chunkSizeY, 0 );
-            string chunkName = "Chunk" + chunkPos.x + chunkPos.y;
-            var texture = noiseTexture(noise, mapWidth, mapHeight);
-            chunkDataList.Add(new ChunkData { Position = chunkPos, NoiseValues = noise, Texture = texture, Material = material, Name = chunkName });
-        }
-    }
+		// Create the chunk data and add it to the list
+		Vector3 chunkPos = new Vector3( x * chunkSizeX, y * chunkSizeY, 0 );
+		string chunkName = "Chunk" + chunkPos.x + chunkPos.y;
+		//var texture = noiseTexture(noise, mapWidth, mapHeight);
+		chunkDataList.Add(new ChunkData { Position = chunkPos, NoiseValues = noise, Texture = texture, Material = material, Name = chunkName, rockCount = 1, rockLocations = new List<Vector3>() });
+	}
+}
 	}
 	public class ChunkData
 {
@@ -47,28 +50,31 @@ public sealed class NoiseCreator : Component
     public Texture Texture { get; set; }
     public Material Material { get; set; }
     public string Name { get; set; }
+	public List<Vector3> rockLocations = new List<Vector3>();
+	public int rockCount;
 }
 	private List<ChunkData> chunkDataList = new List<ChunkData>();
 	
-	public void CreateChunk(Vector3 pos, float[,] noiseValues, Texture texture, Material chunkMaterial, string name)
+	public void CreateChunk(Vector3 pos, float[,] noiseValues, Material chunkMaterial, List<Vector3> vector3s, string name)
 {
     // Create a texture and mesh for the chunk
-    spriteRenderer.Texture = texture;
     Luminance = noiseValues;
-    CreateMesh(pos, chunkMaterial, name);
+    CreateMesh(pos, chunkMaterial, vector3s, name);
 }
 	protected override void OnUpdate()
-{
-    for (int i = chunkDataList.Count - 1; i >= 0; i--)
-    {
-        var chunkData = chunkDataList[i];
-        if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 500)
-        {
-            CreateChunk(chunkData.Position, chunkData.NoiseValues, chunkData.Texture, chunkData.Material, chunkData.Name);
-            chunkDataList.RemoveAt(i);
-        }
-    }
-}
+	{
+		List<Vector3> rockLocations = new List<Vector3>(); // Declare rockLocations variable
+		rockLocations.Add(new Vector3(10, 10, 10)); // Add a rock location
+		for (int i = chunkDataList.Count - 1; i >= 0; i--)
+		{
+			var chunkData = chunkDataList[i];
+			if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 500)
+			{
+				CreateChunk(chunkData.Position, chunkData.NoiseValues, chunkData.Material, rockLocations, chunkData.Name);
+				chunkDataList.RemoveAt(i);
+			}
+		}
+	}
 	public float[,] CreateNoise( int width, int height, float scale, int offsetX, int offsetY )
 	{
 		float[,] noiseMap = new float[width + 1, height + 1];
@@ -121,10 +127,10 @@ public sealed class NoiseCreator : Component
 		int offsetX = 0; // Define the offsetX
 		int offsetY = 0; // Define the offsetY
 		var noise = CreateNoise( mapWidth, mapHeight, noiseScale, offsetX, offsetY ); // Use the offsets
-		texture = noiseTexture( noise, mapWidth, mapHeight );
+		//texture = noiseTexture( noise, mapWidth, mapHeight );
 	}
 
-	public void CreateMesh( Vector3 pos, Material chunkMaterial, string name )
+	public void CreateMesh( Vector3 pos, Material chunkMaterial, List<Vector3> rockLocations, string name )
 	{
 		Mesh mesh = new Mesh();
 		VertexBuffer vertexBuffer = new VertexBuffer();
@@ -149,17 +155,28 @@ public sealed class NoiseCreator : Component
 				vertexBuffer.AddTriangle( v2, v4, v3 );
 			}
 		}
-
+		//make a buffer
 		mesh.CreateBuffers( vertexBuffer );
+		//Create the rocks
+		/*foreach ( var rockLocation in rockLocations )
+		{
+			var rock = new GameObject();
+			var rockModelRender = rock.Components.Create<ModelRenderer>();
+			rockModelRender.Model = Rock;
+			rock.Transform.Position = rockLocation;
+		}*/
+		//Create the model
 		mesh.Material = chunkMaterial;
 		ModelBuilder builder = new ModelBuilder();
-		builder.AddMesh( mesh );
+		builder.AddMesh(mesh);
 		model = builder.Create();
+		//Create the GameObject
 		var newGameObject = new GameObject();
-		newGameObject.Components.Create<ModelRenderer>();
+		var modelRenderer = newGameObject.Components.Create<ModelRenderer>();
 		var chunk = newGameObject.Components.Create<Chunk>();
 		chunk.player = player;
-		var modelRenderer = newGameObject.Components.Get<ModelRenderer>();
+		var modelCollider = newGameObject.Components.Create<ModelCollider>();
+		modelCollider.Model = model;
 		chunk.modelRenderer = modelRenderer;
 		modelRenderer.Model = model;
 		newGameObject.Name = name;
