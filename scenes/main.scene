@@ -61,6 +61,10 @@
           "mapWidth": 32,
           "material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
           "noiseScale": 3,
+          "player": {
+            "_type": "gameobject",
+            "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4"
+          },
           "spriteRenderer": {
             "_type": "component",
             "component_id": "f1a1e5f7-7eb9-41d5-b828-cc3c9b1834d5",
@@ -113,6 +117,12 @@
           "TintColor": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
+      "Name": "Player",
+      "Enabled": true,
+      "NetworkMode": 2
     }
   ],
   "SceneProperties": {
@@ -138,7 +148,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-29T21:33:27.8717564-04:00",
+  "LastSaved": "2024-03-30T22:19:13.813374-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

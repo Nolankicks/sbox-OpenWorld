@@ -8,6 +8,7 @@ public sealed class NoiseCreator : Component
 	[Property] public Texture texture { get; private set; }
 	[Property] public SpriteRenderer spriteRenderer { get; set; }
 	[Property] public Model model { get; set; }
+	[Property] public GameObject player { get; set; }
 	[Property] public ModelRenderer modelRenderer { get; set; }
 	[Property] public Material material { get; set; }
 	[Property] public int mapHeight { get; set; }
@@ -16,43 +17,58 @@ public sealed class NoiseCreator : Component
 	public Vector3[] vertices;
 	protected override void OnAwake()
 	{
-		// Define the size of the grid
-		int gridSizeX = 25;
-		int gridSizeY = 25;
+		  int gridSizeX = 500;
+   		 int gridSizeY = 500;
 
-		// Define the size of each chunk
-		int chunkSizeX = mapWidth;
-		int chunkSizeY = mapHeight;
+    // Define the size of each chunk
+   		 int chunkSizeX = mapWidth;
+    	int chunkSizeY = mapHeight;
 
-		// Create a grid of chunks
-		for ( int y = 0; y < gridSizeY; y++ )
-		{
-			for ( int x = 0; x < gridSizeX; x++ )
-			{
-				// Generate the noise map for this chunk
-				var noise = CreateNoise( chunkSizeX, chunkSizeY, noiseScale, x * chunkSizeX, y * chunkSizeY );
+    // Create a grid of chunks
+    for ( int y = 0; y < gridSizeY; y++ )
+    {
+        for ( int x = 0; x < gridSizeX; x++ )
+        {
+            // Generate the noise map for this chunk
+            var noise = CreateNoise( chunkSizeX, chunkSizeY, noiseScale, x * chunkSizeX, y * chunkSizeY );
 
-				// Create the chunk
-				Vector3 chunkPos = new Vector3( x * chunkSizeX, y * chunkSizeY, 0 );
-				CreateChunk( chunkPos, noise );
-			}
-		}
+            // Create the chunk data and add it to the list
+            Vector3 chunkPos = new Vector3( x * chunkSizeX, y * chunkSizeY, 0 );
+            string chunkName = "Chunk" + chunkPos.x + chunkPos.y;
+            var texture = noiseTexture(noise, mapWidth, mapHeight);
+            chunkDataList.Add(new ChunkData { Position = chunkPos, NoiseValues = noise, Texture = texture, Material = material, Name = chunkName });
+        }
+    }
 	}
-
-	public void CreateChunk( Vector3 pos, float[,] noiseValues )
-	{
-		// Create a texture and mesh for the chunk
-		texture = noiseTexture( noiseValues, mapWidth, mapHeight );
-		spriteRenderer.Texture = texture;
-		Luminance = noiseValues;
-		string chunkName = "Chunk" + pos.x + pos.y;
-		CreateMesh( pos, material, chunkName );
-	}
+	public class ChunkData
+{
+    public Vector3 Position { get; set; }
+    public float[,] NoiseValues { get; set; }
+    public Texture Texture { get; set; }
+    public Material Material { get; set; }
+    public string Name { get; set; }
+}
+	private List<ChunkData> chunkDataList = new List<ChunkData>();
+	
+	public void CreateChunk(Vector3 pos, float[,] noiseValues, Texture texture, Material chunkMaterial, string name)
+{
+    // Create a texture and mesh for the chunk
+    spriteRenderer.Texture = texture;
+    Luminance = noiseValues;
+    CreateMesh(pos, chunkMaterial, name);
+}
 	protected override void OnUpdate()
-	{
-		CreateNoiseTexture();
-		spriteRenderer.Texture = texture;
-	}
+{
+    for (int i = chunkDataList.Count - 1; i >= 0; i--)
+    {
+        var chunkData = chunkDataList[i];
+        if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 500)
+        {
+            CreateChunk(chunkData.Position, chunkData.NoiseValues, chunkData.Texture, chunkData.Material, chunkData.Name);
+            chunkDataList.RemoveAt(i);
+        }
+    }
+}
 	public float[,] CreateNoise( int width, int height, float scale, int offsetX, int offsetY )
 	{
 		float[,] noiseMap = new float[width + 1, height + 1];
@@ -141,7 +157,10 @@ public sealed class NoiseCreator : Component
 		model = builder.Create();
 		var newGameObject = new GameObject();
 		newGameObject.Components.Create<ModelRenderer>();
+		var chunk = newGameObject.Components.Create<Chunk>();
+		chunk.player = player;
 		var modelRenderer = newGameObject.Components.Get<ModelRenderer>();
+		chunk.modelRenderer = modelRenderer;
 		modelRenderer.Model = model;
 		newGameObject.Name = name;
 		newGameObject.Transform.Position = pos;
