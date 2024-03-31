@@ -143,8 +143,8 @@
           "__guid": "9305808d-636d-4da3-a48d-897d6c5de40a",
           "AnimationHelper": {
             "_type": "component",
-            "component_id": "63687bca-1134-4d2b-8d1e-21037338b4d9",
-            "go": "a6c3d686-9431-4721-af94-9044753a6707",
+            "component_id": "56a752b4-46a1-42ac-82ad-88f441fb85fa",
+            "go": "699a701c-8449-4947-a151-8f93a40161df",
             "component_type": "CitizenAnimationHelper"
           },
           "CharacterController": {
@@ -263,7 +263,7 @@
               "materials/dev/reflectivity_30.vmat"
             ]
           },
-          "Static": false
+          "Static": true
         }
       ]
     }
@@ -291,7 +291,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-31T11:11:10.9533428-04:00",
+  "LastSaved": "2024-03-31T11:12:14.2544347-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

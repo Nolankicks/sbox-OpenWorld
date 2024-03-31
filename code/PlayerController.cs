@@ -9,6 +9,7 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property] public bool IsFirstPerson { get; set; }
 	public bool IsCrouching { get; set; }
 	[Sync] Angles eyeAngles { get; set; }
 	private void MouseInput()
@@ -26,9 +27,9 @@ public sealed class PlayerController : Component
 			MouseInput();
 			Movement();
 			Crouch();
-			CamPos();
 			UpdateAnimation();
-			UpdateBodyShit();
+			//UpdateBodyShit();
+			Transform.Rotation = new Angles(0 , eyeAngles.yaw, 0);
 		}
 	}
 	float MoveSpeed
@@ -49,10 +50,8 @@ public sealed class PlayerController : Component
 			}
 		}
 	}
-	float Friction
+	float Friction()
 	{
-		get
-		{
 			if (CharacterController.IsOnGround)
 			{
 				return 6.0f;
@@ -61,21 +60,22 @@ public sealed class PlayerController : Component
 			{
 				return 0.2f;
 			}
-		}
 	}
 	RealTimeSince timeSinceJump = 0;
 	RealTimeSince timeSinceGround = 0;
 	void Movement()
 	{
-		if (CharacterController is null)
+		var cc = CharacterController;
+		if (cc is null)
 		{
 			return;
 		}
 		WishVelocity = Input.AnalogMove;
-		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * 0.5f;
-		if (Input.Down("jump"))
+		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * 0.5f * Time.Delta;
+		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
 		{
 			CharacterController.Punch(Vector3.Up * 200);
+			AnimationHelper.TriggerJump();
 			timeSinceJump = 0;
 		}
 
@@ -85,33 +85,33 @@ public sealed class PlayerController : Component
 		WishVelocity = WishVelocity.WithZ(0);
 		WishVelocity.ClampLength(1);
 		WishVelocity *= MoveSpeed;
-		if (!CharacterController.IsOnGround)
+		if (!cc.IsOnGround)
 		{
 			WishVelocity.ClampLength(50);
 		}
 	}
-	CharacterController.ApplyFriction(Friction);
+	cc.ApplyFriction(Friction());
 
-	if (CharacterController.IsOnGround)
+	if (cc.IsOnGround)
 	{
 		CharacterController.Accelerate(WishVelocity);
-		CharacterController.Velocity = CharacterController.Velocity.WithZ( 0 );
+		cc.Velocity = CharacterController.Velocity.WithZ( 0 );
 	}
 	else
 	{
-		CharacterController.Velocity += halfGrav;
-		CharacterController.Accelerate(WishVelocity);
+		cc.Velocity += halfGrav;
+		cc.Accelerate(WishVelocity);
 	}
 	CharacterController.Move();
-	if (!CharacterController.IsOnGround)
+	if (!cc.IsOnGround)
 	{
-		CharacterController.Velocity += halfGrav;
+		cc.Velocity += halfGrav;
 	}
 	else
 	{
-		CharacterController.Velocity = CharacterController.Velocity.WithZ(0);
+		cc.Velocity = cc.Velocity.WithZ(0);
 	}
-	if (!CharacterController.IsOnGround)
+	if (!cc.IsOnGround)
 	{
 		timeSinceGround = 0;
 	}
@@ -129,12 +129,30 @@ public sealed class PlayerController : Component
 	{
 		var camera = Scene.GetAllComponents<CameraComponent>().Where(x => x.IsMainCamera).FirstOrDefault();
 		if (camera is null) return;
-
+		if (IsFirstPerson)
+		{
 		var targetPosEyePos = IsCrouching ? 32 : 64;
 		var targetPos = Transform.Position + new Vector3(0, 0, targetPosEyePos);
 		camera.Transform.Position = targetPos;
 		camera.Transform.Rotation = eyeAngles;
-
+		}
+		else
+		{
+			  var lookDir = eyeAngles.ToRotation();
+		//Set the camera rotation
+        camera.Transform.Rotation = lookDir;
+		var center = Transform.Position + Vector3.Up * 64;
+		//Trace to see if the camera is inside a wall
+		var tr = Scene.Trace.Ray(center, center - (eyeAngles.Forward * 300)).WithoutTags("player", "barrier").Run();
+		if (tr.Hit)
+		{
+			camera.Transform.Position = tr.EndPosition + tr.Normal * 2 + Vector3.Up * 10;
+		}
+		else
+		{
+			camera.Transform.Position = center - (eyeAngles.Forward * 300) + Vector3.Up * 10;
+		}
+		}		
 	}
 	void Crouch()
 	{
@@ -150,6 +168,15 @@ public sealed class PlayerController : Component
 			IsCrouching = true;
 		}
 	}
+	protected override void OnPreRender()
+	{
+		UpdateBodyShit();
+
+		if ( IsProxy )
+			return;
+
+		CamPos();
+	}
 	private void UpdateAnimation()
 	{
 		if ( AnimationHelper is null ) return;
@@ -159,7 +186,7 @@ public sealed class PlayerController : Component
 		AnimationHelper.WithWishVelocity( WishVelocity );
 		AnimationHelper.WithVelocity( CharacterController.Velocity );
 		AnimationHelper.IsGrounded = CharacterController.IsOnGround;
-		AnimationHelper.DuckLevel = IsCrouching ? 1.0f : 0.0f;
+		AnimationHelper.DuckLevel = IsProxy ? 1.0f : 0.0f;
 
 		AnimationHelper.MoveStyle = wv < 160f ? CitizenAnimationHelper.MoveStyles.Walk : CitizenAnimationHelper.MoveStyles.Run;
 
@@ -169,13 +196,22 @@ public sealed class PlayerController : Component
 	public void UpdateBodyShit()
 	{
 		var target = AnimationHelper.Target;
-		if (IsProxy)
+		var cloths = target.Components.GetAll<ModelRenderer>(FindMode.InChildren);
+		if (IsProxy || !IsFirstPerson)
 		{
 			target.RenderType = ModelRenderer.ShadowRenderType.On;
+			foreach (var cloth in cloths)
+			{
+				cloth.RenderType = ModelRenderer.ShadowRenderType.On;
+			}
 		}
 		else
 		{
 			target.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+			foreach (var cloth in cloths)
+			{
+				cloth.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
+			}
 		}
 	}
 
