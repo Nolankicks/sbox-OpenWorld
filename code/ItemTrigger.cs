@@ -9,10 +9,9 @@ public sealed class ItemTrigger : Component, Component.ITriggerListener
 	}
 	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 	{
-		other.GameObject.Components.TryGet<Inventory>(out var inventory);
-		if (inventory != null)
+		other.GameObject.Parent.Components.TryGet<Inventory>(out var inventory);
+		if (inventory is not null)
 		{
-			Log.Info("Item picked up");
 			inventory.RemoveItem(inventory.Items[0]);
 		}
 	}

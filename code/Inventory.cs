@@ -11,13 +11,14 @@ public sealed class Inventory : Component
 
 	public void AddItem(GameObject item)
 	{
-		Items.Add(item);
 		var itemClone = item.Clone();
+		Items.Add(itemClone);
 		itemClone.Parent = GameObject;
 	}
 
 	public void RemoveItem(GameObject item)
 	{
+		if (item is null) return;
 		item.Destroy();
 		Items.Remove(item);
 	}
