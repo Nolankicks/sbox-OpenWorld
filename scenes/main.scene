@@ -122,49 +122,148 @@
     {
       "__guid": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
       "Name": "Player",
+      "Position": "0,0,64",
+      "Tags": "player",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "SkinnedModelRenderer",
-          "__guid": "43e0cbec-3953-44ae-bb00-3a68423434b4",
-          "BodyGroups": 0,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__type": "CharacterController",
+          "__guid": "ea93ca2f-fe8b-4040-a757-0071d84e7eaa",
+          "Acceleration": 10,
+          "Bounciness": 0.3,
+          "GroundAngle": 45,
+          "Height": 64,
+          "IgnoreLayers": "player",
+          "Radius": 16,
+          "StepHeight": 18
         },
         {
-          "__type": "ModelCollider",
-          "__guid": "c3a334ac-a1b6-4ecf-b071-f080567c8804",
-          "IsTrigger": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "Static": false
+          "__type": "PlayerController",
+          "__guid": "9305808d-636d-4da3-a48d-897d6c5de40a",
+          "AnimationHelper": {
+            "_type": "component",
+            "component_id": "63687bca-1134-4d2b-8d1e-21037338b4d9",
+            "go": "a6c3d686-9431-4721-af94-9044753a6707",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "CharacterController": {
+            "_type": "component",
+            "component_id": "ea93ca2f-fe8b-4040-a757-0071d84e7eaa",
+            "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
+            "component_type": "CharacterController"
+          },
+          "CrouchSpeed": 50,
+          "RunSpeed": 200,
+          "WalkSpeed": 100
         }
       ],
       "Children": [
         {
-          "__guid": "d96d87ea-2f98-4862-8da5-d79f7e1e2410",
-          "Name": "SpaceSuit",
+          "__guid": "699a701c-8449-4947-a151-8f93a40161df",
+          "Name": "body",
+          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
             {
               "__type": "SkinnedModelRenderer",
-              "__guid": "62e054c9-5d69-4ea5-b3a7-f8b07e56fe92",
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": {
-                "_type": "component",
-                "component_id": "43e0cbec-3953-44ae-bb00-3a68423434b4",
-                "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
-                "component_type": "SkinnedModelRenderer"
-              },
+              "__guid": "8a2bbfdf-cbd8-45f7-8446-cbd0d0920e8a",
+              "BodyGroups": 341,
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/full_outfit/space_suit_outfit/models/space_suit_outfit.vmdl",
+              "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "__guid": "56a752b4-46a1-42ac-82ad-88f441fb85fa",
+              "BodyWeight": 1,
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": false,
+              "Target": {
+                "_type": "component",
+                "component_id": "8a2bbfdf-cbd8-45f7-8446-cbd0d0920e8a",
+                "go": "699a701c-8449-4947-a151-8f93a40161df",
+                "component_type": "SkinnedModelRenderer"
+              }
             }
           ]
+        }
+      ]
+    },
+    {
+      "__guid": "15b32aac-afb3-409d-9954-561710896081",
+      "Name": "Box",
+      "Position": "16,16,-32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MeshComponent",
+          "__guid": "0ba982fe-5de1-4a38-aea0-39e8d71b37d8",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk3QCQ7CMBBD0bAUylp2uP9J8ZMmUkb6ysTjOGnn1tov7MI9rMI3TOEZDuEdLqHXunzTcEZta7YJr\u002BqVbJq5bP1YfI\u002BayzpWtr036OnnIetTPf0a9uXzVj19Ht50K11vVfy\u002BSx59KT/6nWanuqtrVno/x\u002B8/KXfKMaPx/wEMd\u002BZ5ZAEAAA==",
+            "TextureOrigin": "16,16,15.99998",
+            "Positions": [
+              "-112,-176,16",
+              "112,-176,16",
+              "112,176,16",
+              "-112,176,16",
+              "-112,176,-16",
+              "112,176,-16",
+              "112,-176,-16",
+              "-112,-176,-16"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "Static": false
         }
       ]
     }
@@ -192,7 +291,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-30T22:55:52.4137898-04:00",
+  "LastSaved": "2024-03-31T11:11:10.9533428-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
