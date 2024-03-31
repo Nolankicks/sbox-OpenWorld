@@ -16,7 +16,7 @@ public sealed class PlayerController : Component
 	{
 		var e = eyeAngles;
 		e += Input.AnalogLook;
-		e.pitch = e.pitch.Clamp( -90, 90 );
+		e.pitch = e.pitch.Clamp( -85, 90 );
 		e.roll = 0.0f;
 		eyeAngles = e;
 	}

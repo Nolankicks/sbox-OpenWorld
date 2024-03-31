@@ -154,8 +154,9 @@
             "component_type": "CharacterController"
           },
           "CrouchSpeed": 50,
-          "RunSpeed": 200,
-          "WalkSpeed": 100
+          "IsFirstPerson": false,
+          "RunSpeed": 300,
+          "WalkSpeed": 200
         }
       ],
       "Children": [
@@ -169,7 +170,7 @@
             {
               "__type": "SkinnedModelRenderer",
               "__guid": "8a2bbfdf-cbd8-45f7-8446-cbd0d0920e8a",
-              "BodyGroups": 341,
+              "BodyGroups": 0,
               "CreateBoneObjects": false,
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
@@ -188,6 +189,32 @@
                 "go": "699a701c-8449-4947-a151-8f93a40161df",
                 "component_type": "SkinnedModelRenderer"
               }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "c69f32d5-e583-488e-ac18-249a9c175c4a",
+              "Name": "SpaceSuit",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "__guid": "e3ad6e5c-2d2e-4dff-9231-238fb888356c",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "8a2bbfdf-cbd8-45f7-8446-cbd0d0920e8a",
+                    "go": "699a701c-8449-4947-a151-8f93a40161df",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/full_outfit/space_suit_outfit/models/space_suit_outfit.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
             }
           ]
         }
@@ -291,7 +318,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-03-31T11:12:14.2544347-04:00",
+  "LastSaved": "2024-03-31T11:41:27.0830775-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
