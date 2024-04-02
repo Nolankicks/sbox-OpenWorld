@@ -12,7 +12,7 @@
         "Damage": 0,
         "FireRate": 0,
         "HoldType": "Rifle",
-        "MaxAmmo": 0,
+        "MaxAmmo": 120,
         "testObject": {
           "_type": "gameobject",
           "prefab": "prefabs/cube.prefab"
