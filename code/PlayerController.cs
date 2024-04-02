@@ -12,7 +12,7 @@ public sealed class PlayerController : Component
 	[Property] public GameObject Hold { get; set; }
 	[Property] public bool IsFirstPerson { get; set; }
 	public bool IsCrouching { get; set; }
-	[Sync] Angles eyeAngles { get; set; }
+	[Sync] public Angles eyeAngles { get; set; }
 	private void MouseInput()
 	{
 		var e = eyeAngles;
@@ -30,7 +30,7 @@ public sealed class PlayerController : Component
 			Crouch();
 			UpdateAnimation();
 			//UpdateBodyShit();
-			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 15);
+			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
 	}
 	float MoveSpeed

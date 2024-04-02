@@ -6,7 +6,7 @@ public sealed class Weapon : Component
 	[Property] public int Damage { get; set; }
 	[Property] public int Ammo { get; set; }
 	[Property] public int MaxAmmo { get; set; }
-	[Property] public float FireRate { get; set; }
+	[Property, Range(0.1f, 1)] public float FireRate { get; set; }
 	[Property] public GameObject testObject { get; set; }
 	public PlayerController PlayerController { get; set; }
 	[Property] public GameObject ViewModelCamera { get; set; }
@@ -15,9 +15,12 @@ public sealed class Weapon : Component
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public float ReloadTime { get; set; }
 	public GameObject WorldModelInstance { get; set; }
+	[Property] public GameObject Decal { get; set; }
 	int ShotsFired = 0;
 	public TimeSince TimeSinceReload { get; set; }
 	public TimeSince TimeSinceFire { get; set; }
+	[Property] public SoundEvent FireSound { get; set; }
+	[Property] public GameObject MuzzleFlash { get; set; }
 	protected override void OnStart()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
@@ -29,17 +32,18 @@ public sealed class Weapon : Component
 			modelRenderer.Model = WorldModel;
 			WorldModelInstance = worldModel;
 			worldModel.Parent = PlayerController.Hold;
+			worldModel.Transform.LocalPosition = new(4.653f, 0.688f, -4.365f);
 		}
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 	}
 	protected override void OnUpdate()
 	{
-		if (Input.Down("attack1") && TimeSinceReload >= ReloadTime && TimeSinceFire >= FireRate && Ammo > 0)
+		if (Input.Down("attack1") && TimeSinceReload > 2.5f)
 		{
 			Fire();
 		}
-
+			
 		if (Input.Pressed("reload"))
 		{
 			Reload();
@@ -49,6 +53,24 @@ public sealed class Weapon : Component
 		if (PlayerController.IsFirstPerson)
 		{
 			ViewModelCamera.Enabled = true;
+			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+			if (PlayerController.CharacterController.IsOnGround)
+			{
+				ViewModelGun.Set("b_grounded", true);
+			}
+			else
+			{
+				ViewModelGun.Set("b_grounded", false);
+			}
+			if (Input.Pressed("jump"))
+			{
+				ViewModelGun.Set("b_jump", true);
+			}
+			else
+			{
+				ViewModelGun.Set("b_jump", false);
+			}
+			ViewModelGun.Set("b_twohanded", true);
 		}
 		else
 		{
@@ -69,7 +91,7 @@ public sealed class Weapon : Component
 
 	void Fire()
 	{
-		if (Ammo > 0)
+		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
 			Ammo--;
 			ShotsFired++;
@@ -77,18 +99,25 @@ public sealed class Weapon : Component
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 			if (tr.Hit)
 			{
-				testObject.Clone(tr.HitPosition);	
-		}	
+				Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
+			}	
+		
+			TimeSinceFire = 0;
 			PlayerController.AnimationHelper.Target.Set("b_attack", true);
 			if (PlayerController.IsFirstPerson)
 			{
 				ViewModelGun.Set("b_attack", true);
 			}
+			Sound.Play(FireSound, tr.StartPosition);
+			var muzzle = ViewModelGun.GetAttachment("muzzle");
+			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
+			MuzzleFlashInstance.Tags.Add("viewmodel");
 		}	
 }
 void Reload()
 	{
 			var ammoAfterReload = MaxAmmo -= ShotsFired;
+			TimeSinceReload = 0;
 			if (ammoAfterReload >= 0)
 			{
 				Ammo = 30;

@@ -1,0 +1,92 @@
+{
+  "RootObject": {
+    "__guid": "d6604283-a76f-4e70-99c2-c4cd8dc961e8",
+    "Name": "muzzleflash",
+    "Tags": "particles",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "LegacyParticleSystem",
+        "__guid": "a9d96603-b4ae-4f62-968d-542096483f74",
+        "ControlPoints": [
+          {
+            "GameObjectValue": {
+              "_type": "gameobject",
+              "go": "d6604283-a76f-4e70-99c2-c4cd8dc961e8"
+            }
+          }
+        ],
+        "Looped": false,
+        "OnComponentStart": {
+          "__version": 5,
+          "__guid": "f3933ae3-8328-4232-be4d-2b4179fb9cb1",
+          "UserData": {
+            "Title": "On Component Start",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "272,64"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_isStatic": false,
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "544,144"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 5,
+              "DstId": 1,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 2,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "Particles": "particles/pistol_muzzleflash.vpcf",
+        "PlaybackSpeed": 1
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
