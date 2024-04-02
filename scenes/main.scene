@@ -18,7 +18,7 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "",
+          "RenderExcludeTags": "weapon",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
@@ -112,7 +112,7 @@
             "_type": "gameobject",
             "go": "2239ce39-0c21-4fa8-9192-ac128166963e"
           },
-          "IsFirstPerson": false,
+          "IsFirstPerson": true,
           "RunSpeed": 300,
           "WalkSpeed": 200
         },
@@ -1190,7 +1190,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-01T20:59:29.3330293-04:00",
+  "LastSaved": "2024-04-02T14:21:16.9156038-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

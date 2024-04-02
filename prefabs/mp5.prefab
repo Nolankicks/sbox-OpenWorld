@@ -1,27 +1,118 @@
 {
   "RootObject": {
-    "__guid": "6f6a0eec-33a2-4a94-ba1c-f45b847c6f12",
+    "__guid": "a340fa38-ec99-4b81-b5d8-12d50a1d4421",
     "Name": "mp5",
+    "Tags": "weapon",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "bf640347-7f1e-4c28-b988-ec79fb5ecb18",
+        "__guid": "0b34a585-c223-4c11-babc-ba7a75190092",
         "Ammo": 30,
         "Damage": 0,
         "FireRate": 0,
         "HoldType": "Rifle",
         "MaxAmmo": 120,
+        "ReloadTime": 1,
         "testObject": {
           "_type": "gameobject",
           "prefab": "prefabs/cube.prefab"
         },
-        "ViewModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "091a82ad-443c-4d6d-90af-23b948cf8639"
+        },
+        "ViewModelGun": {
+          "_type": "component",
+          "component_id": "152b870a-3069-4cc3-a806-31bf11a9c87b",
+          "go": "dc8c179e-0073-47ac-be0d-02cdce5595fc",
+          "component_type": "SkinnedModelRenderer"
+        },
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       }
     ],
-    "Children": []
+    "Children": [
+      {
+        "__guid": "091a82ad-443c-4d6d-90af-23b948cf8639",
+        "Name": "ViewModelCamera",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__guid": "19665692-2b37-4fa0-9fa3-b4998b98a0a1",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 60,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 10
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "bb561a2a-a696-491c-ad95-278aaba046fe",
+            "Name": "ViewModel",
+            "Position": "7.8,-2.5,-0.5",
+            "Tags": "viewmodel",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Children": [
+              {
+                "__guid": "040baf73-334c-4d7d-87cf-d5b0d41f1c58",
+                "Name": "arms",
+                "Position": "0,0,0",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "Components": [
+                  {
+                    "__type": "SkinnedModelRenderer",
+                    "__guid": "95f6b388-dfc8-47d8-8814-38defd41074a",
+                    "BodyGroups": 21,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "152b870a-3069-4cc3-a806-31bf11a9c87b",
+                      "go": "dc8c179e-0073-47ac-be0d-02cdce5595fc",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateBoneObjects": false,
+                    "Model": "models/first_person/first_person_arms.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "dc8c179e-0073-47ac-be0d-02cdce5595fc",
+                "Name": "gun",
+                "Position": "0,0,0",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "Components": [
+                  {
+                    "__type": "SkinnedModelRenderer",
+                    "__guid": "152b870a-3069-4cc3-a806-31bf11a9c87b",
+                    "BodyGroups": 11,
+                    "CreateBoneObjects": false,
+                    "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
