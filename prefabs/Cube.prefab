@@ -1,0 +1,25 @@
+{
+  "RootObject": {
+    "__guid": "50825a5e-3430-4049-b3b4-de11b7a94114",
+    "Name": "Cube",
+    "Position": "-193.2489,-256.7564,92.97947",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "ModelRenderer",
+        "__guid": "02c261a1-4f00-497b-8bb6-882f9ea74564",
+        "BodyGroups": 18446744073709551615,
+        "Model": "models/dev/box.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

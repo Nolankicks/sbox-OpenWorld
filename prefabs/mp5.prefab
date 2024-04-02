@@ -1,28 +1,35 @@
 {
   "RootObject": {
-    "__guid": "d3878eb4-836f-4348-a9d9-ec1e4cff7f32",
+    "__guid": "6f6a0eec-33a2-4a94-ba1c-f45b847c6f12",
     "Name": "mp5",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "2538c296-e8ed-4849-929d-89a5936bda14"
+        "__guid": "bf640347-7f1e-4c28-b988-ec79fb5ecb18",
+        "Ammo": 30,
+        "Damage": 0,
+        "FireRate": 0,
+        "HoldType": "Rifle",
+        "MaxAmmo": 0,
+        "testObject": {
+          "_type": "gameobject",
+          "prefab": "prefabs/cube.prefab"
+        },
+        "ViewModel": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+        "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       }
     ],
-    "Children": [
-      {
-        "__guid": "01846d6f-b8b6-4260-863f-8521f0e505ff",
-        "Name": "GameObject",
-        "Enabled": true,
-        "NetworkMode": 2
-      }
-    ]
+    "Children": []
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "facepunch.v_mp5",
+    "facepunch.w_mp5"
+  ]
 }

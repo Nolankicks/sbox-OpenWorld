@@ -10,7 +10,7 @@ public sealed class Chunk : Component
 	}
 	protected override void OnUpdate()
 	{
-		if (Vector3.DistanceBetween(player.Transform.Position, Transform.Position) > 1000)
+		if (Vector3.DistanceBetween(player.Transform.Position, Transform.Position) > 1500)
 	{
 			modelRenderer.Enabled = false;
 	}

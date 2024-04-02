@@ -18,8 +18,8 @@ public sealed class NoiseCreator : Component
 	[Property] public GameObject chunksHolder { get; set; }
 	protected override void OnAwake()
 	{
-		  int gridSizeX = 100;
-   		 int gridSizeY = 100;
+		  int gridSizeX = 150;
+   		 int gridSizeY = 150;
 
     // Define the size of each chunk
    		 int chunkSizeX = mapWidth;
@@ -66,7 +66,7 @@ for ( int y = 0; y < gridSizeY; y++ )
 		for (int i = chunkDataList.Count - 1; i >= 0; i--)
 		{
 			var chunkData = chunkDataList[i];
-			if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 500)
+			if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 1000)
 			{
 				CreateChunk(chunkData.Position, chunkData.NoiseValues, chunkData.Material, rockLocations, chunkData.Name);
 				chunkDataList.RemoveAt(i);

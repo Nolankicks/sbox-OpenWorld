@@ -9,6 +9,7 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property] public GameObject Hold { get; set; }
 	[Property] public bool IsFirstPerson { get; set; }
 	public bool IsCrouching { get; set; }
 	[Sync] Angles eyeAngles { get; set; }
@@ -29,7 +30,7 @@ public sealed class PlayerController : Component
 			Crouch();
 			UpdateAnimation();
 			//UpdateBodyShit();
-			Transform.Rotation = new Angles(0 , eyeAngles.yaw, 0);
+			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 15);
 		}
 	}
 	float MoveSpeed
@@ -94,7 +95,7 @@ public sealed class PlayerController : Component
 
 	if (cc.IsOnGround)
 	{
-		CharacterController.Accelerate(WishVelocity);
+		cc.Accelerate(WishVelocity);
 		cc.Velocity = CharacterController.Velocity.WithZ( 0 );
 	}
 	else
