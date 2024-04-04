@@ -51,7 +51,6 @@
       "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
-      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
@@ -119,11 +118,13 @@
         {
           "__type": "Inventory",
           "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
+          "Items": [],
           "Gun": {
             "_type": "gameobject",
             "prefab": "prefabs/mp5.prefab"
           },
-          "Items": []
+          "ItemTextures": [],
+          "TestTexture": "textures/player_spritesheet_1.vtex"
         }
       ],
       "Children": [
@@ -1039,7 +1040,7 @@
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACk3QCQ7CMBBD0bAUylp2uP9J8ZMmUkb6ysTjOGnn1tov7MI9rMI3TOEZDuEdLqHXunzTcEZta7YJr\u002BqVbJq5bP1YfI\u002BayzpWtr036OnnIetTPf0a9uXzVj19Ht50K11vVfy\u002BSx59KT/6nWanuqtrVno/x\u002B8/KXfKMaPx/wEMd\u002BZ5ZAEAAA==",
+            "Topology": "H4sIAAAAAAAACn2S607CQBBGW6mtgEriBfEueOEmKii\u002B/5vpd5LTxB\u002BGTU46OzP7zex0B0VRfIfD8JM1zrcKJ2EbuuE8rMJ9WIbH8BzW4T18eva/VSZWh0nYC51wpt2EJ33UvNihQxytXtg3/1S7tP9araE2/mPrHIQ37dJ9pd5qR130\u002Bs6C/OpPzTZWO6exMfwd71gZox7ryj15L9qsG3tB60GbdWeNxrljs0ZqUmOjTu2\u002BdL90j/9azcae6A/7Vk3gn6NJbzNnynn\u002BOzb\u002BRTgy71Ub/6U1gTdBPjnEqUNt3gu94J8ba98X/4laU8\u002BS/2Vf\u002BD/MYc/bwyZn4H3w8w7buZDPHdGnN2bK/OiZ/tBG5xd3TKJJAAMAAA==",
             "TextureOrigin": "16,16,15.99998",
             "Positions": [
               "-399.9999,-367.9999,16",
@@ -1049,7 +1050,14 @@
               "-400,272,-16",
               "112.0001,272,-16",
               "112.0001,-368,-16",
-              "-399.9999,-367.9999,-16"
+              "-399.9999,-367.9999,-16",
+              "-399.9999,-367.9999,16",
+              "112.0001,-368,16",
+              "112.0001,272,16",
+              "-400,272,16",
+              "-399.9999,-367.9999,-16",
+              "112.0001,-368,-16",
+              "-400,272,-16"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -1057,7 +1065,13 @@
               "0,-1,0",
               "0,1,0",
               "-1,0,0",
-              "1,0,0"
+              "1,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureVAxis": [
               "0,-1,0",
@@ -1065,9 +1079,21 @@
               "0,0,-1",
               "0,0,-1",
               "0,0,-1",
-              "0,0,-1"
+              "0,0,-1",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
@@ -1081,6 +1107,12 @@
               0,
               0,
               0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
               0
             ],
             "MaterialIndex": [
@@ -1089,10 +1121,20 @@
               0,
               0,
               0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
               0
             ],
             "Materials": [
-              "materials/dev/reflectivity_30.vmat"
+              "materials/dev/reflectivity_30.vmat",
+              "materials/tools/toolsblockbullets.vmat",
+              "models/weapons/materials/762_bullet_spent.vmat",
+              "materials/dev/reflectivity_30_vr.vmat",
+              "materials/dev/reflectivity_30_2sided.vmat"
             ]
           },
           "Static": true
@@ -1166,6 +1208,26 @@
       "Enabled": true,
       "NetworkMode": 2,
       "__Prefab": "prefabs/decal.prefab"
+    },
+    {
+      "__guid": "560a358b-8166-4a3f-914c-00f2d5b62f29",
+      "Name": "Screen",
+      "Position": "-85.58495,49.80608,99.89261",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ScreenPanel",
+          "__guid": "61cd9352-2289-4e0a-ab8b-c5fb97257833",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Hud",
+          "__guid": "11e7d669-91e0-4567-ba73-de78023b7127"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1191,11 +1253,13 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-02T19:33:38.9668978-04:00",
+  "LastSaved": "2024-04-03T21:55:11.7777357-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.floor_grass_dirt_weed_blend_a",
-    "facepunch.rock_scatter_03"
+    "facepunch.rock_scatter_03",
+    "krotter.bullet_casing_762_ptfx",
+    "nolankicks.idel-terry"
   ]
 }

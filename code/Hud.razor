@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="invholder">
+		@for (int i = 0; i < Inventory.Slots; i++)
+		{
+			<div class="slot @(Inventory.ActiveSlot == i ? "active" : "")">
+				@if (Inventory.ItemTextures[i] != null)
+				{
+					<img src="@Inventory.ItemTextures[i].ResourcePath" />
+				}
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+
+	public Inventory Inventory { get; set; }
+
+	protected override void OnStart()
+	{
+		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

@@ -21,6 +21,8 @@ public sealed class Weapon : Component
 	public TimeSince TimeSinceFire { get; set; }
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
+	[Property] public Texture ItemTexture { get; set; }
+	[Property] public bool IsAiming { get; set; }
 	protected override void OnStart()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
@@ -43,11 +45,18 @@ public sealed class Weapon : Component
 		{
 			Fire();
 		}
-			
-		if (Input.Pressed("reload"))
+		if (Input.Down("attack2"))
 		{
-			Reload();
+			IsAiming = true;
 		}
+		else
+		{
+			IsAiming = false;
+		}
+		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
+		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
+
+		Reload();
 		Log.Info(Ammo);
 		UpdateWorldModelShadowType();
 		if (PlayerController.IsFirstPerson)
@@ -114,23 +123,15 @@ public sealed class Weapon : Component
 			MuzzleFlashInstance.Tags.Add("viewmodel");
 		}	
 }
-void Reload()
+	void Reload()
 	{
-			var ammoAfterReload = MaxAmmo -= ShotsFired;
-			TimeSinceReload = 0;
-			if (ammoAfterReload >= 0)
+		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
 			{
+				Ammo = MaxAmmo -= ShotsFired;
 				Ammo = 30;
-			}
-			else
-			{
-				Ammo = MaxAmmo;
-			}
-			ShotsFired = 0;
-			PlayerController.AnimationHelper.Target.Set("b_reload", true);
-			if (PlayerController.IsFirstPerson)
-			{
 				ViewModelGun.Set("b_reload", true);
+				ShotsFired = 0;
+				TimeSinceReload = 0;
 			}
 	}
 }
