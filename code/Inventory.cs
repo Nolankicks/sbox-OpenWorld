@@ -4,7 +4,8 @@ using System;
 public sealed class Inventory : Component
 {
 	[Property] public List<GameObject> Items;
-	[Property] public List<Texture> ItemTextures { get; set; } = new List<Texture>(9);
+	[Property] public List<Texture> ItemTextures;
+	[Property] public List<GameObject> StartingItems { get; set; } = new();
 	[Property] public GameObject Gun { get; set; }
 	public PlayerController PlayerController { get; set; }
 	[Property] public Texture TestTexture { get; set; }
@@ -14,8 +15,13 @@ public sealed class Inventory : Component
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		Items = new List<GameObject>(new GameObject[9]);
+		ItemTextures = new List<Texture>(new Texture[9]);
 		Log.Info(Items.Count);
-		AddItem(Gun, Items.FindIndex(x => x is null));
+		foreach (var item in StartingItems)
+		{
+			AddItem(item, Items.FindIndex(x => x is null));
+		}
+		
 	}
 
 	public void AddItem(GameObject item, int Slot)
@@ -54,7 +60,11 @@ public sealed class Inventory : Component
 	{
 		if (item is not null)
 		{
-			item.Components.TryGet<Weapon>(out var weaponIcon);
+			item.Components.TryGet<IconComponent>(out var icon);
+			if (icon is not null)
+			{
+				ItemTextures[Items.FindIndex(x => x == item)] = icon.Icon;
+			}
 		}
 	}
 	if (Items[ActiveSlot] is null) return;

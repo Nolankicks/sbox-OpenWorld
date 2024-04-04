@@ -7,7 +7,7 @@
 		@for (int i = 0; i < Inventory.Slots; i++)
 		{
 			<div class="slot @(Inventory.ActiveSlot == i ? "active" : "")">
-				@if (Inventory.ItemTextures[i] != null)
+				@if (Inventory.ItemTextures[i] is not null)
 				{
 					<img src="@Inventory.ItemTextures[i].ResourcePath" />
 				}

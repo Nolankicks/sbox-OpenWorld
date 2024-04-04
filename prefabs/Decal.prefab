@@ -1,20 +1,20 @@
 {
   "RootObject": {
-    "__guid": "14e48bb8-8438-4427-8b52-9c51ec926d8a",
+    "__guid": "2776607a-7ef4-4439-9903-685e45a01f62",
     "Name": "decal",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "DecalRenderer",
-        "__guid": "2e714999-adb8-463f-a38e-1384112fe6f1",
+        "__guid": "ac7bca48-ee4d-4c72-b4bf-14fcd18bcaef",
         "CutoffAngle": 60,
         "CutoffAngleSoftness": 5,
         "Material": "materials/decals/bullethole.vmat",
         "Mod2XBlending": false,
         "OnComponentStart": {
           "__version": 5,
-          "__guid": "e13109a8-8d15-4c02-a52d-eb7022f3fee9",
+          "__guid": "a9ffe2d6-e593-4bf0-86c6-07b78a24e82a",
           "UserData": {
             "Title": "On Component Start",
             "ReferencedComponentTypes": []
@@ -71,7 +71,7 @@
             }
           ]
         },
-        "Size": "10,10,10",
+        "Size": "5,5,5",
         "TintColor": "1,1,1,1",
         "TriPlanar": false
       }

@@ -15,18 +15,20 @@ public sealed class Weapon : Component
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public float ReloadTime { get; set; }
 	public GameObject WorldModelInstance { get; set; }
+	[Property] public float Spread { get; set; } = 0.03f;
 	[Property] public GameObject Decal { get; set; }
 	int ShotsFired = 0;
 	public TimeSince TimeSinceReload { get; set; }
 	public TimeSince TimeSinceFire { get; set; }
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
-	[Property] public Texture ItemTexture { get; set; }
 	[Property] public bool IsAiming { get; set; }
+	public int StartingAmmo { get; set; }
 	protected override void OnStart()
 	{
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		if (IsProxy) return;
+		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		StartingAmmo = Ammo;
 		if (!PlayerController.IsFirstPerson)
 		{
 			var worldModel = new GameObject();
@@ -41,6 +43,7 @@ public sealed class Weapon : Component
 	}
 	protected override void OnUpdate()
 	{
+		if (IsProxy) return;
 		if (Input.Down("attack1") && TimeSinceReload > 2.5f)
 		{
 			Fire();
@@ -53,6 +56,7 @@ public sealed class Weapon : Component
 		{
 			IsAiming = false;
 		}
+
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
 		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
 
@@ -63,14 +67,14 @@ public sealed class Weapon : Component
 		{
 			ViewModelCamera.Enabled = true;
 			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
-			if (PlayerController.CharacterController.IsOnGround)
-			{
-				ViewModelGun.Set("b_grounded", true);
-			}
-			else
-			{
-				ViewModelGun.Set("b_grounded", false);
-			}
+		if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
+		{
+			ViewModelGun.Set("b_grounded", false);
+		}
+		else
+		{
+			ViewModelGun.Set("b_grounded", true);
+		}
 			if (Input.Pressed("jump"))
 			{
 				ViewModelGun.Set("b_jump", true);
@@ -105,10 +109,22 @@ public sealed class Weapon : Component
 			Ammo--;
 			ShotsFired++;
 			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+			ray.Forward += Vector3.Random * Spread;
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 			if (tr.Hit)
 			{
 				Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
+				if ( tr.Body is not null )
+		{
+			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
+		}
+		var damage = new DamageInfo(Damage, GameObject, GameObject, tr.Hitbox);
+		damage.Position = tr.HitPosition;
+		damage.Shape = tr.Shape;
+		foreach (var damageAble in tr.GameObject.Components.GetAll<IDamageable>())
+		{
+			damageAble.OnDamage(damage);
+		}
 			}	
 		
 			TimeSinceFire = 0;
@@ -125,13 +141,13 @@ public sealed class Weapon : Component
 }
 	void Reload()
 	{
-		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
-			{
+		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
+		{
 				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = 30;
+				Ammo = StartingAmmo;
 				ViewModelGun.Set("b_reload", true);
 				ShotsFired = 0;
 				TimeSinceReload = 0;
-			}
+		}
 	}
 }

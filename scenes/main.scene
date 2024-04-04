@@ -18,7 +18,7 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "weapon",
+          "RenderExcludeTags": "viewmodel",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
@@ -51,6 +51,7 @@
       "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
+      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
@@ -121,9 +122,22 @@
           "Items": [],
           "Gun": {
             "_type": "gameobject",
-            "prefab": "prefabs/mp5.prefab"
+            "prefab": "prefabs/weapon_smg.prefab"
           },
-          "ItemTextures": [],
+          "StartingItems": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapon_smg.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapon_shotgun.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapon_pistol.prefab"
+            }
+          ],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         }
       ],
@@ -1023,6 +1037,24 @@
               ]
             }
           ]
+        },
+        {
+          "__guid": "6aba7fcc-2a7c-4e66-8aa5-dd4922b68b66",
+          "Name": "Collider",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "CapsuleCollider",
+              "__guid": "ce3115e8-5211-4351-b632-787230bcd698",
+              "End": "0,0,50.05103",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Start": "0,0,20.11714",
+              "Static": false
+            }
+          ]
         }
       ]
     },
@@ -1142,38 +1174,6 @@
       ]
     },
     {
-      "__guid": "f16f9d56-803e-4ae5-ab71-c23bb526fb26",
-      "Name": "ItemTrigger",
-      "Position": "75.87814,-128,0",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ItemTrigger",
-          "__guid": "0d9aee44-e3d7-45de-98b1-4d962bc58a7c",
-          "gameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/mp5.prefab"
-          }
-        },
-        {
-          "__type": "ModelRenderer",
-          "__guid": "2e6e3ddc-256c-4981-9ce2-2d6614a62c4d",
-          "BodyGroups": 18446744073709551615,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "BoxCollider",
-          "__guid": "2ba6e5a5-bbef-45d8-bd19-dca080432e63",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "645fb6b2-91ca-4e4b-a01f-733b89e56994",
       "Name": "Chunks Holder",
       "Enabled": true,
@@ -1213,6 +1213,7 @@
       "__guid": "560a358b-8166-4a3f-914c-00f2d5b62f29",
       "Name": "Screen",
       "Position": "-85.58495,49.80608,99.89261",
+      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
@@ -1253,7 +1254,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-03T21:55:11.7777357-04:00",
+  "LastSaved": "2024-04-04T19:12:52.1668063-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

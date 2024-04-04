@@ -1,0 +1,144 @@
+{
+  "RootObject": {
+    "__guid": "8bdb45ba-ba5f-479a-a016-f68ba005b69d",
+    "Name": "weapon_pistol",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Weapon",
+        "__guid": "75cdbd3c-6c4f-40ae-98a5-7b31e2aa8e63",
+        "Ammo": 12,
+        "Damage": 30,
+        "Decal": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal.prefab"
+        },
+        "FireRate": 1,
+        "FireSound": "sounds/shootsound.sound",
+        "HoldType": "Pistol",
+        "IsAiming": false,
+        "MaxAmmo": 120,
+        "MuzzleFlash": {
+          "_type": "gameobject",
+          "prefab": "prefabs/muzzleflash.prefab"
+        },
+        "ReloadTime": 0,
+        "Spread": 0.03,
+        "testObject": {
+          "_type": "gameobject",
+          "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f"
+        },
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "9aac5bc5-47f4-48c8-91fc-f59f907c18c0"
+        },
+        "ViewModelGun": {
+          "_type": "component",
+          "component_id": "87140628-f948-4110-bf81-2ef095733c42",
+          "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "b78a571b-ed0e-4a8e-a0a9-d237e795ac23",
+        "Icon": "particles/explosion/explosion001.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9aac5bc5-47f4-48c8-91fc-f59f907c18c0",
+        "Name": "ViewModelCamera",
+        "Position": "28.272,0,0.098",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "CameraComponent",
+            "__guid": "9b2358e2-fa9f-4d37-a62c-dd6a244ef776",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 90,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 2,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "1389b212-e2c8-4e5b-9f9f-f9cbf0d98757",
+            "Name": "ViewModel",
+            "Position": "0,0,0",
+            "Tags": "viewmodel",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Children": [
+              {
+                "__guid": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+                "Name": "gun",
+                "Position": "0,0,0",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "Components": [
+                  {
+                    "__type": "SkinnedModelRenderer",
+                    "__guid": "87140628-f948-4110-bf81-2ef095733c42",
+                    "BodyGroups": 17733,
+                    "CreateBoneObjects": false,
+                    "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "ac0913f0-dabc-40b4-b93b-c0fd1c917e4e",
+                "Name": "arms",
+                "Position": "0,0,0",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "Components": [
+                  {
+                    "__type": "SkinnedModelRenderer",
+                    "__guid": "6a34fa87-f53e-4f05-a5d8-6b9ad947a9b7",
+                    "BodyGroups": 21,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "87140628-f948-4110-bf81-2ef095733c42",
+                      "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateBoneObjects": false,
+                    "Model": "models/first_person/first_person_arms.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.explosion001",
+    "facepunch.v_usp",
+    "facepunch.w_usp",
+    "nolankicks.2d_game_test"
+  ]
+}
