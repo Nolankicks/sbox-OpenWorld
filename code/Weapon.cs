@@ -18,8 +18,8 @@ public sealed class Weapon : Component
 	[Property] public float Spread { get; set; } = 0.03f;
 	[Property] public GameObject Decal { get; set; }
 	int ShotsFired = 0;
-	public TimeSince TimeSinceReload { get; set; }
-	public TimeSince TimeSinceFire { get; set; }
+	private TimeSince TimeSinceReload = 0;
+	private TimeSince TimeSinceFire = 0;
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
 	[Property] public bool IsAiming { get; set; }
@@ -38,8 +38,13 @@ public sealed class Weapon : Component
 			worldModel.Parent = PlayerController.Hold;
 			worldModel.Transform.LocalPosition = new(4.653f, 0.688f, -4.365f);
 		}
+		else
+		{
+			ViewModelGun.Set("b_deploy", true);
+		}
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
+		Log.Info("Weapon started");
 	}
 	protected override void OnUpdate()
 	{
@@ -60,34 +65,48 @@ public sealed class Weapon : Component
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
 		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
 
-		Reload();
+		
 		Log.Info(Ammo);
 		UpdateWorldModelShadowType();
 		if (PlayerController.IsFirstPerson)
 		{
-			ViewModelCamera.Enabled = true;
-			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
-		if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
-		{
-			ViewModelGun.Set("b_grounded", false);
-		}
-		else
-		{
-			ViewModelGun.Set("b_grounded", true);
-		}
-			if (Input.Pressed("jump"))
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
 			{
-				ViewModelGun.Set("b_jump", true);
+				
+				Ammo = MaxAmmo -= ShotsFired;
+				Ammo = StartingAmmo;
+				ViewModelGun.Set("b_reload", true);
+				ShotsFired = 0;
+				TimeSinceReload = 0;
 			}
 			else
 			{
-				ViewModelGun.Set("b_jump", false);
+				ViewModelGun.Set("b_reload", false);
 			}
-			ViewModelGun.Set("b_twohanded", true);
+			if (Input.Pressed("jump") && !IsProxy)
+			{
+				ViewModelGun.Set("b_jump", true);
+			}
+			if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
+			{
+				ViewModelGun.Set("b_grounded", false);
+			}
+			else
+			{
+				ViewModelGun.Set("b_grounded", true);
+			}
+			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
 		}
 		else
 		{
 			ViewModelCamera.Enabled = false;
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
+		{
+				Ammo = MaxAmmo -= ShotsFired;
+				Ammo = StartingAmmo;
+				ShotsFired = 0;
+				TimeSinceReload = 0;
+		}
 		}
 	}
 
@@ -141,13 +160,6 @@ public sealed class Weapon : Component
 }
 	void Reload()
 	{
-		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
-		{
-				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = StartingAmmo;
-				ViewModelGun.Set("b_reload", true);
-				ShotsFired = 0;
-				TimeSinceReload = 0;
-		}
+
 	}
 }

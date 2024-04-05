@@ -120,6 +120,7 @@
           "__type": "Inventory",
           "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
           "Items": [],
+          "ItemTextures": [],
           "Gun": {
             "_type": "gameobject",
             "prefab": "prefabs/weapon_smg.prefab"
@@ -1254,7 +1255,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-04T19:12:52.1668063-04:00",
+  "LastSaved": "2024-04-04T20:37:36.307032-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

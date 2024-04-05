@@ -21,7 +21,6 @@ public sealed class Inventory : Component
 		{
 			AddItem(item, Items.FindIndex(x => x is null));
 		}
-		
 	}
 
 	public void AddItem(GameObject item, int Slot)
@@ -30,6 +29,11 @@ public sealed class Inventory : Component
 		var itemClone = item.Clone();
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;
+		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
+	}
+	public void AddTexture(Texture texture, int Slot)
+	{
+		ItemTextures[Slot] = texture;
 	}
 	public void RemoveItem(GameObject item)
 	{

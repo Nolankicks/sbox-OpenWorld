@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "8bdb45ba-ba5f-479a-a016-f68ba005b69d",
+    "__guid": "2aebdd3b-0100-45ec-b75f-575d72286bbc",
     "Name": "weapon_pistol",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "75cdbd3c-6c4f-40ae-98a5-7b31e2aa8e63",
+        "__guid": "ca27d22b-a450-4d1f-bd06-4804a4db1412",
         "Ammo": 12,
         "Damage": 30,
         "Decal": {
@@ -27,29 +27,29 @@
         "Spread": 0.03,
         "testObject": {
           "_type": "gameobject",
-          "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f"
+          "go": "cd73c936-9d88-4339-ad66-7bab5e59183c"
         },
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "9aac5bc5-47f4-48c8-91fc-f59f907c18c0"
+          "go": "da188b34-5b41-43bb-877a-97bf69c514ee"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "87140628-f948-4110-bf81-2ef095733c42",
-          "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+          "component_id": "353b9414-5fea-4014-9334-71bbf28b5692",
+          "go": "cd73c936-9d88-4339-ad66-7bab5e59183c",
           "component_type": "SkinnedModelRenderer"
         },
         "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "b78a571b-ed0e-4a8e-a0a9-d237e795ac23",
-        "Icon": "particles/explosion/explosion001.vtex"
+        "__guid": "34535bb4-29da-4b2e-8a38-6ce29b48ca7e",
+        "Icon": "assets/usp.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "9aac5bc5-47f4-48c8-91fc-f59f907c18c0",
+        "__guid": "da188b34-5b41-43bb-877a-97bf69c514ee",
         "Name": "ViewModelCamera",
         "Position": "28.272,0,0.098",
         "Enabled": true,
@@ -57,7 +57,7 @@
         "Components": [
           {
             "__type": "CameraComponent",
-            "__guid": "9b2358e2-fa9f-4d37-a62c-dd6a244ef776",
+            "__guid": "e96264a2-a5c8-4ce8-844d-c156ba544c10",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -75,7 +75,7 @@
         ],
         "Children": [
           {
-            "__guid": "1389b212-e2c8-4e5b-9f9f-f9cbf0d98757",
+            "__guid": "bfa12eef-0837-4273-a06f-1821ab6dbc84",
             "Name": "ViewModel",
             "Position": "0,0,0",
             "Tags": "viewmodel",
@@ -83,7 +83,7 @@
             "NetworkMode": 2,
             "Children": [
               {
-                "__guid": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+                "__guid": "cd73c936-9d88-4339-ad66-7bab5e59183c",
                 "Name": "gun",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -91,8 +91,8 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "87140628-f948-4110-bf81-2ef095733c42",
-                    "BodyGroups": 17733,
+                    "__guid": "353b9414-5fea-4014-9334-71bbf28b5692",
+                    "BodyGroups": 18757,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
                     "RenderType": "On",
@@ -101,7 +101,7 @@
                 ]
               },
               {
-                "__guid": "ac0913f0-dabc-40b4-b93b-c0fd1c917e4e",
+                "__guid": "0c73d38b-cf6f-408e-8673-efc2f1a39e70",
                 "Name": "arms",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -109,12 +109,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "6a34fa87-f53e-4f05-a5d8-6b9ad947a9b7",
+                    "__guid": "3a44822c-932f-4ffe-9611-ee6259ff32c1",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "87140628-f948-4110-bf81-2ef095733c42",
-                      "go": "a72b8947-279e-4e48-a5ae-a84d0b025d8f",
+                      "component_id": "353b9414-5fea-4014-9334-71bbf28b5692",
+                      "go": "cd73c936-9d88-4339-ad66-7bab5e59183c",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -136,7 +136,6 @@
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
-    "facepunch.explosion001",
     "facepunch.v_usp",
     "facepunch.w_usp",
     "nolankicks.2d_game_test"

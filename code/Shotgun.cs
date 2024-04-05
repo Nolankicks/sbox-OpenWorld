@@ -18,6 +18,7 @@ public sealed class Shotgun : Component
 	[Property] public SoundEvent FireSound { get; set; }
 	public int StartingAmmo { get; set; }
 	public int ShotsFired = 0;
+	[Property] public bool IsAiming { get; set; }
 	protected override void OnStart()
 	{
 		if (IsProxy) return;
@@ -27,27 +28,10 @@ public sealed class Shotgun : Component
 		if (PlayerController.IsFirstPerson)
 		{
 			ViewModelCamera.Enabled = true;
-			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
-		if (Input.Pressed("jump"))
-		{
-				ViewModelGun.Set("b_jump", true);
-		}
-		else
-		{
-			ViewModelGun.Set("b_jump", false);
-		}
-		ViewModelGun.Set("b_twohanded", true);
-		if (Input.Pressed("jump"))
-		{
-			ViewModelGun.Set("b_jump", true);
-		}
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
+	
+		
 		}
 	}
-
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
@@ -61,7 +45,42 @@ public sealed class Shotgun : Component
 			Sound.Play(FireSound, Transform.Position + Vector3.Up * 64);
 			TimeSinceFire = 0;
 		}
+		if (Input.Down("attack2"))
+		{
+			IsAiming = true;
+		}
+		else
+		{
+			IsAiming = false;
+		}
+
 		Reload();
+		if (PlayerController.IsFirstPerson)
+		{
+			ViewModelCamera.Enabled = true;
+			//ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+		if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
+		{
+			ViewModelGun.Set("b_grounded", false);
+		}
+		else
+		{
+			ViewModelGun.Set("b_grounded", true);
+		}
+			if (Input.Pressed("jump"))
+			{
+				ViewModelGun.Set("b_jump", true);
+			}
+			else
+			{
+				ViewModelGun.Set("b_jump", false);
+			}
+			ViewModelGun.Set("b_twohanded", true);
+		}
+		else
+		{
+			ViewModelCamera.Enabled = false;
+		}
 	}
 
 	void Shoot()
