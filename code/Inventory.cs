@@ -13,18 +13,17 @@ public sealed class Inventory : Component
 	public int Slots => 9;
 	protected override void OnStart()
 	{
+		if (IsProxy) return;
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		Items = new List<GameObject>(new GameObject[9]);
 		ItemTextures = new List<Texture>(new Texture[9]);
 		Log.Info(Items.Count);
-		foreach (var item in StartingItems)
-		{
-			AddItem(item, Items.FindIndex(x => x is null));
-		}
+		AddItem(Gun, 0);
 	}
 
 	public void AddItem(GameObject item, int Slot)
 	{
+		if (IsProxy) return;
 		if (item is null) return;
 		var itemClone = item.Clone();
 		Items[Slot] = itemClone;
@@ -33,10 +32,12 @@ public sealed class Inventory : Component
 	}
 	public void AddTexture(Texture texture, int Slot)
 	{
+		if (IsProxy) return;
 		ItemTextures[Slot] = texture;
 	}
 	public void RemoveItem(GameObject item)
 	{
+		if (IsProxy) return;
 		if (item is null) return;
 		var index = Items.FindIndex(x => x == item);
 		Items[index] = null;
@@ -45,20 +46,8 @@ public sealed class Inventory : Component
 
 	protected override void OnUpdate()
 {
-    for (int i = 0; i < Items.Count; i++)
-    {
-		if (Items[i] is not null)
-		{
-		if (i == ActiveSlot)
-        {
-            Items[i].Enabled = true;
-        }
-        else
-        {
-            Items[i].Enabled = false;
-        }
-		}
-    }
+	if (IsProxy) return;
+	ChangeItems();
 	ChangeSlots();
 	foreach (var item in Items)
 	{
@@ -73,17 +62,10 @@ public sealed class Inventory : Component
 	}
 	if (Items[ActiveSlot] is null) return;
 	Items[ActiveSlot].Components.TryGet<Weapon>(out var weapon);
-	if (weapon is not null)
-    {
-        PlayerController.AnimationHelper.HoldType = weapon.HoldType;
-    }
-	else
-	{
-		PlayerController.AnimationHelper.HoldType = CitizenAnimationHelper.HoldTypes.None;
-	}
 }
 	void ChangeSlots()
 	{
+		if (IsProxy) return;
 		if (Input.Pressed("Slot1"))
 		{
 			ActiveSlot = 0;
@@ -129,5 +111,22 @@ public sealed class Inventory : Component
         ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Slots;
         if (ActiveSlot < 0) ActiveSlot += Slots;
     }
+	}
+	void ChangeItems()
+	{
+		if (IsProxy) return;
+	foreach (GameObject weapon in Items)
+		{
+			if (weapon is not null && weapon == Items[ActiveSlot] && !IsProxy)
+			{
+				weapon.Enabled = true;
+				Network.Refresh();
+			}
+			if (weapon is not null && weapon != Items[ActiveSlot] && !IsProxy)
+			{
+				weapon.Enabled = false;
+				Network.Refresh();
+			}
+		}
 	}
 }

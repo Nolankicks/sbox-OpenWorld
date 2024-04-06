@@ -10,9 +10,15 @@ public sealed class PlayerController : Component
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public GameObject Hold { get; set; }
-	[Property] public bool IsFirstPerson { get; set; }
-	public bool IsCrouching { get; set; }
+	[Sync] public bool IsFirstPerson { get; set; } = true;
+	[Sync] public bool IsCrouching { get; set; }
 	[Sync] public Angles eyeAngles { get; set; }
+	public Inventory Inventory;
+
+	protected override void OnStart()
+	{
+		
+	}
 	private void MouseInput()
 	{
 		var e = eyeAngles;
@@ -23,12 +29,12 @@ public sealed class PlayerController : Component
 	}
 	protected override void OnUpdate()
 	{
+		UpdateAnimation();
 		if (!IsProxy)
 		{
 			MouseInput();
 			Movement();
 			Crouch();
-			UpdateAnimation();
 			//UpdateBodyShit();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}

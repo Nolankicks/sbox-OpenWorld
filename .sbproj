@@ -1,7 +1,7 @@
 {
   "Title": "Open World Game",
   "Type": "game",
-  "Org": "local",
+  "Org": "nolankicks",
   "Ident": "open_world_game",
   "Tags": null,
   "Schema": 1,
@@ -10,9 +10,7 @@
   "Resources": null,
   "HasCode": true,
   "CodePath": "/code/",
-  "PackageReferences": [
-    "facepunch.libsdf"
-  ],
+  "PackageReferences": [],
   "EditorReferences": null,
   "Metadata": {
     "MaxPlayers": 64,

@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "2aebdd3b-0100-45ec-b75f-575d72286bbc",
+    "__guid": "ed008820-db72-4bc6-9330-e49aeb500c28",
     "Name": "weapon_pistol",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "ca27d22b-a450-4d1f-bd06-4804a4db1412",
+        "__guid": "1c0a4a44-168e-41fe-bbd2-cdd4fa074882",
         "Ammo": 12,
         "Damage": 30,
         "Decal": {
@@ -17,7 +17,6 @@
         "FireRate": 1,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Pistol",
-        "IsAiming": false,
         "MaxAmmo": 120,
         "MuzzleFlash": {
           "_type": "gameobject",
@@ -27,44 +26,44 @@
         "Spread": 0.03,
         "testObject": {
           "_type": "gameobject",
-          "go": "cd73c936-9d88-4339-ad66-7bab5e59183c"
+          "go": "37cb0069-44ef-4941-904c-b71c89eadf61"
         },
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "da188b34-5b41-43bb-877a-97bf69c514ee"
+          "go": "81540f04-f548-4a3b-a2ed-063c3da33e7f"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "353b9414-5fea-4014-9334-71bbf28b5692",
-          "go": "cd73c936-9d88-4339-ad66-7bab5e59183c",
+          "component_id": "42b3f707-8760-4922-81ef-47de2a8837d2",
+          "go": "37cb0069-44ef-4941-904c-b71c89eadf61",
           "component_type": "SkinnedModelRenderer"
         },
         "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "34535bb4-29da-4b2e-8a38-6ce29b48ca7e",
+        "__guid": "811cb372-3314-49c0-907f-893d0aaa717a",
         "Icon": "assets/usp.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "da188b34-5b41-43bb-877a-97bf69c514ee",
+        "__guid": "81540f04-f548-4a3b-a2ed-063c3da33e7f",
         "Name": "ViewModelCamera",
         "Position": "28.272,0,0.098",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "Components": [
           {
             "__type": "CameraComponent",
-            "__guid": "e96264a2-a5c8-4ce8-844d-c156ba544c10",
+            "__guid": "2ba15bff-3c57-4a76-980f-a5e83b7e683d",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
             "IsMainCamera": false,
             "Orthographic": false,
             "OrthographicHeight": 1204,
-            "Priority": 2,
+            "Priority": 1,
             "RenderExcludeTags": "",
             "RenderTags": "viewmodel,light",
             "TargetEye": "None",
@@ -75,23 +74,23 @@
         ],
         "Children": [
           {
-            "__guid": "bfa12eef-0837-4273-a06f-1821ab6dbc84",
+            "__guid": "bdf9a74d-6ea9-4d8e-8483-3e36dbf55845",
             "Name": "ViewModel",
             "Position": "0,0,0",
             "Tags": "viewmodel",
             "Enabled": true,
-            "NetworkMode": 2,
+            "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "cd73c936-9d88-4339-ad66-7bab5e59183c",
+                "__guid": "37cb0069-44ef-4941-904c-b71c89eadf61",
                 "Name": "gun",
                 "Position": "0,0,0",
                 "Enabled": true,
-                "NetworkMode": 2,
+                "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "353b9414-5fea-4014-9334-71bbf28b5692",
+                    "__guid": "42b3f707-8760-4922-81ef-47de2a8837d2",
                     "BodyGroups": 18757,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
@@ -101,20 +100,20 @@
                 ]
               },
               {
-                "__guid": "0c73d38b-cf6f-408e-8673-efc2f1a39e70",
+                "__guid": "23e181ae-2000-4cc9-adbc-e88482a86ea4",
                 "Name": "arms",
                 "Position": "0,0,0",
                 "Enabled": true,
-                "NetworkMode": 2,
+                "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "3a44822c-932f-4ffe-9611-ee6259ff32c1",
+                    "__guid": "30a09eb5-cfd7-4a95-989c-fe09c4730cfe",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "353b9414-5fea-4014-9334-71bbf28b5692",
-                      "go": "cd73c936-9d88-4339-ad66-7bab5e59183c",
+                      "component_id": "42b3f707-8760-4922-81ef-47de2a8837d2",
+                      "go": "37cb0069-44ef-4941-904c-b71c89eadf61",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,

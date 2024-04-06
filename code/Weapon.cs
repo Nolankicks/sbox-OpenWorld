@@ -22,7 +22,7 @@ public sealed class Weapon : Component
 	private TimeSince TimeSinceFire = 0;
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
-	[Property] public bool IsAiming { get; set; }
+	[Sync] public bool IsAiming { get; set; }
 	public int StartingAmmo { get; set; }
 	protected override void OnStart()
 	{
@@ -48,8 +48,8 @@ public sealed class Weapon : Component
 	}
 	protected override void OnUpdate()
 	{
-		if (IsProxy) return;
-		if (Input.Down("attack1") && TimeSinceReload > 2.5f)
+		if ( IsProxy ) return;
+		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
 			Fire();
 		}
@@ -96,6 +96,7 @@ public sealed class Weapon : Component
 				ViewModelGun.Set("b_grounded", true);
 			}
 			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+			ViewModelCamera.Enabled = IsProxy ? false : true;
 		}
 		else
 		{
@@ -120,7 +121,11 @@ public sealed class Weapon : Component
 		modelRenderer.RenderType = ShadowType;
 		}
 	}
-
+	[Broadcast]
+	void GameObjectDestroy(GameObject obj)
+	{
+		obj.Destroy();
+	}
 	void Fire()
 	{
 		if (Ammo > 0 && TimeSinceFire > FireRate)
@@ -132,6 +137,11 @@ public sealed class Weapon : Component
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 			if (tr.Hit)
 			{
+				tr.GameObject.Components.TryGet<Dummy>( out var dummy);
+				if (dummy is not null)
+				{
+					dummy.Hurt(100);
+				}
 				Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
 				if ( tr.Body is not null )
 		{

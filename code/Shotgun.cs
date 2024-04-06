@@ -18,7 +18,7 @@ public sealed class Shotgun : Component
 	[Property] public SoundEvent FireSound { get; set; }
 	public int StartingAmmo { get; set; }
 	public int ShotsFired = 0;
-	[Property] public bool IsAiming { get; set; }
+	[Sync] public bool IsAiming { get; set; }
 	protected override void OnStart()
 	{
 		if (IsProxy) return;
