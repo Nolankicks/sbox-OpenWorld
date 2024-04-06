@@ -18,6 +18,8 @@ code/Editor/Properties/*
 code/Editor/*.sln
 code/Editor/.vs/*
 code/Editor/.vscode/*
+maps/
+materials/
 
 # Auto-generated asset related files
 *.generated.*

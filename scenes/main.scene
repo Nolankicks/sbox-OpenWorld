@@ -1057,157 +1057,10 @@
       ]
     },
     {
-      "__guid": "15b32aac-afb3-409d-9954-561710896081",
-      "Name": "Box",
-      "Position": "16,16,-32",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "MeshComponent",
-          "__guid": "0ba982fe-5de1-4a38-aea0-39e8d71b37d8",
-          "Collision": "Mesh",
-          "Color": "1,1,1,1",
-          "IsTrigger": false,
-          "Mesh": {
-            "Topology": "H4sIAAAAAAAACn2S607CQBBGW6mtgEriBfEueOEmKii\u002B/5vpd5LTxB\u002BGTU46OzP7zex0B0VRfIfD8JM1zrcKJ2EbuuE8rMJ9WIbH8BzW4T18eva/VSZWh0nYC51wpt2EJ33UvNihQxytXtg3/1S7tP9araE2/mPrHIQ37dJ9pd5qR130\u002Bs6C/OpPzTZWO6exMfwd71gZox7ryj15L9qsG3tB60GbdWeNxrljs0ZqUmOjTu2\u002BdL90j/9azcae6A/7Vk3gn6NJbzNnynn\u002BOzb\u002BRTgy71Ub/6U1gTdBPjnEqUNt3gu94J8ba98X/4laU8\u002BS/2Vf\u002BD/MYc/bwyZn4H3w8w7buZDPHdGnN2bK/OiZ/tBG5xd3TKJJAAMAAA==",
-            "TextureOrigin": "16,16,15.99998",
-            "Positions": [
-              "-399.9999,-367.9999,16",
-              "112.0001,-368,16",
-              "112.0001,272,16",
-              "-400,272,16",
-              "-400,272,-16",
-              "112.0001,272,-16",
-              "112.0001,-368,-16",
-              "-399.9999,-367.9999,-16",
-              "-399.9999,-367.9999,16",
-              "112.0001,-368,16",
-              "112.0001,272,16",
-              "-400,272,16",
-              "-399.9999,-367.9999,-16",
-              "112.0001,-368,-16",
-              "-400,272,-16"
-            ],
-            "TextureUAxis": [
-              "1,0,0",
-              "1,0,0",
-              "0,-1,0",
-              "0,1,0",
-              "-1,0,0",
-              "1,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0"
-            ],
-            "TextureVAxis": [
-              "0,-1,0",
-              "0,-1,0",
-              "0,0,-1",
-              "0,0,-1",
-              "0,0,-1",
-              "0,0,-1",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0",
-              "0,0,0"
-            ],
-            "TextureScale": [
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25"
-            ],
-            "TextureAngle": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "MaterialIndex": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "Materials": [
-              "materials/dev/reflectivity_30.vmat",
-              "materials/tools/toolsblockbullets.vmat",
-              "models/weapons/materials/762_bullet_spent.vmat",
-              "materials/dev/reflectivity_30_vr.vmat",
-              "materials/dev/reflectivity_30_2sided.vmat",
-              "7ne_blackrook_paintings.vmat",
-              "7nb_nightborn_bookstack01.vmat",
-              "8hu_kultiras_bottlemap01b.vmat",
-              "materials/trims/plastic_trim_a.vmat"
-            ]
-          },
-          "Static": true
-        }
-      ]
-    },
-    {
       "__guid": "645fb6b2-91ca-4e4b-a01f-733b89e56994",
       "Name": "Chunks Holder",
       "Enabled": true,
       "NetworkMode": 2
-    },
-    {
-      "__guid": "5428dc8c-27ec-4cdd-a7a6-71bd283f3f88",
-      "Name": "Cubemap",
-      "Position": "74.85152,-164.2485,64.71517",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "EnvmapProbe",
-          "__guid": "ab93fb4a-8df0-4c4a-ba72-1a571fc168ed",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "Bounds": {
-            "Mins": "10000,10000,10000",
-            "Maxs": "10000,10000,10000"
-          },
-          "DelayBetweenUpdates": 0.1,
-          "Feathering": 0.02,
-          "FrameInterval": 5,
-          "MaxDistance": 512,
-          "Projection": "Sphere",
-          "RenderDynamically": true,
-          "TintColor": "1,1,1,1",
-          "UpdateStrategy": "EveryFrame",
-          "ZFar": 4096,
-          "ZNear": 16
-        }
-      ]
     },
     {
       "__guid": "9d80653f-b00d-41ea-8ef5-7c75552fe984",
@@ -1240,23 +1093,6 @@
       ]
     },
     {
-      "__guid": "441732be-bab1-44e2-9300-6a6ab5c01b70",
-      "Name": "foldabletable_a",
-      "Position": "-256,-130.529,-15.99999",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Prop",
-          "__guid": "6feaf2fd-cf96-4815-a7fc-2082c934b537",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "models/props/foldabletable/foldabletable_a.vmdl"
-        }
-      ]
-    },
-    {
       "__guid": "2e5d2a50-d1cd-403a-96cc-1f3cfddaa30e",
       "Name": "Network",
       "Position": "-192,0,64",
@@ -1276,35 +1112,195 @@
       ]
     },
     {
-      "__guid": "0a0aae3b-25ee-49e7-a75f-31a9bc962cd4",
-      "Name": "citizen",
-      "Position": "-24.11729,0,-15.96469",
-      "Rotation": "0,0,1,-0.00000004371139",
-      "Tags": "tester",
+      "__guid": "a9b92732-80af-4c46-99d8-9e6496d49906",
+      "Name": "map",
+      "Position": "-290.672,-3.60135,70.39961",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "MapInstance",
+          "__guid": "ad84589d-0c69-4f74-a324-0d9b5a353de0",
+          "MapName": "maps/testmap.vmap",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
+      "Name": "Dummy",
+      "Position": "416,109.6402,64",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Tags": "dummy",
       "Enabled": true,
       "NetworkMode": 1,
       "Components": [
         {
+          "__type": "Dummy",
+          "__guid": "93fbf857-8321-430a-a272-997101db775a"
+        },
+        {
+          "__type": "CapsuleCollider",
+          "__guid": "fc985c84-10a4-47cd-9f55-a4d40120b438",
+          "End": "0,0,53.2438",
+          "IsTrigger": false,
+          "Radius": 25,
+          "Start": "0,0,15.10903",
+          "Static": false
+        },
+        {
           "__type": "SkinnedModelRenderer",
-          "__guid": "cc7c02d5-f43c-4833-869a-a5a0dee7e5c0",
-          "BodyGroups": 341,
+          "__guid": "ffcfed54-ecd1-49d1-8209-8815a409f53f",
+          "BodyGroups": 0,
           "CreateBoneObjects": false,
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "da04f736-948b-4e25-93f8-4db9b228321b",
+          "Name": "Cloths",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "fcacecb8-3cce-441c-a41c-13df1ca0615f",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ffcfed54-ecd1-49d1-8209-8815a409f53f",
+                "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "fa369af4-7c77-4077-95a6-4f92f6d63734",
+      "Name": "Dummy (1)",
+      "Position": "415.9999,-32.0002,64",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "Dummy",
+          "__guid": "5427a687-b503-427e-9371-c01b2d1ee90c"
         },
         {
           "__type": "CapsuleCollider",
-          "__guid": "c85dace4-26bf-40f4-8cfc-721118e288ec",
-          "End": "0,0,70.49992",
+          "__guid": "1829a8d7-0551-4a9c-b433-c040fb948152",
+          "End": "0,0,53.2438",
           "IsTrigger": false,
           "Radius": 25,
-          "Start": "0,0,0",
+          "Start": "0,0,15.10903",
           "Static": false
         },
         {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "c2055c27-38f3-492a-9d02-632ab6b6b26b",
+          "BodyGroups": 0,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "0b510055-4841-4b34-b6fb-f33496e841f4",
+          "Name": "Cloths",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "f1094bac-8ab2-4ac4-963a-1c4ae52128e9",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "c2055c27-38f3-492a-9d02-632ab6b6b26b",
+                "go": "fa369af4-7c77-4077-95a6-4f92f6d63734",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "556453e1-f11a-4d35-aa88-d2f8fb7e4b74",
+      "Name": "Dummy (2)",
+      "Position": "416,223.9998,64",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "Components": [
+        {
           "__type": "Dummy",
-          "__guid": "968629bf-f79b-4c0f-945b-884c8d46653f"
+          "__guid": "36873d9a-ae54-4202-8d2e-f54ef9309613"
+        },
+        {
+          "__type": "CapsuleCollider",
+          "__guid": "19cc1bd3-c482-4d3d-b1ef-7f220ddfacd5",
+          "End": "0,0,53.2438",
+          "IsTrigger": false,
+          "Radius": 25,
+          "Start": "0,0,15.10903",
+          "Static": false
+        },
+        {
+          "__type": "SkinnedModelRenderer",
+          "__guid": "9829da0a-d70f-4bbb-be46-11df409f55c9",
+          "BodyGroups": 0,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "08c7c6c7-86f3-4030-85dc-c0d2dfb1467d",
+          "Name": "Cloths",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "SkinnedModelRenderer",
+              "__guid": "fedf2e81-d650-415a-870e-cec5c3a71981",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "9829da0a-d70f-4bbb-be46-11df409f55c9",
+                "go": "556453e1-f11a-4d35-aa88-d2f8fb7e4b74",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
         }
       ]
     }
@@ -1332,16 +1328,12 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-05T20:10:04.3059313-04:00",
+  "LastSaved": "2024-04-06T13:18:05.7280438-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.floor_grass_dirt_weed_blend_a",
     "facepunch.rock_scatter_03",
-    "fpopium.foldabletable_a",
-    "fpopium.plastic_trim_a",
-    "krotter.bullet_casing_762_ptfx",
-    "nolankicks.idel-terry",
-    "orus.8hu_kultiras_smallhouse_2"
+    "nolankicks.idel-terry"
   ]
 }

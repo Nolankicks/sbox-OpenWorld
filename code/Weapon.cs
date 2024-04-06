@@ -1,3 +1,4 @@
+using System;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -14,6 +15,7 @@ public sealed class Weapon : Component
 	[Property] public Model WorldModel { get; set; }
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public float ReloadTime { get; set; }
+	[Property] public float Recoil { get; set; }
 	public GameObject WorldModelInstance { get; set; }
 	[Property] public float Spread { get; set; } = 0.03f;
 	[Property] public GameObject Decal { get; set; }
@@ -126,10 +128,15 @@ public sealed class Weapon : Component
 	{
 		obj.Destroy();
 	}
+	public float GetRandomFloat()
+	{
+		return Random.Shared.Float(-1, 1);
+	}
 	void Fire()
 	{
 		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
+			PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
 			Ammo--;
 			ShotsFired++;
 			var ray = Scene.Camera.ScreenNormalToRay(0.5f);

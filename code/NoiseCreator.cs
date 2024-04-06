@@ -9,7 +9,7 @@ public sealed class NoiseCreator : Component
 {
 	public float[,] Luminance { get; private set; }
 	[Property] public Model model { get; set; }
-	[Property] public GameObject player { get; set; }
+	[Property] public PlayerController player { get; set; }
 	[Property] public Model Rock { get; set; }
 	[Property] public Material material { get; set; }
 	[Property] public int mapHeight { get; set; }
@@ -41,6 +41,10 @@ for ( int y = 0; y < gridSizeY; y++ )
 	}
 }
 	}
+	protected override void OnStart()
+	{
+		player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+	}
 	public class ChunkData
 {
     public Vector3 Position { get; set; }
@@ -66,7 +70,7 @@ for ( int y = 0; y < gridSizeY; y++ )
 		for (int i = chunkDataList.Count - 1; i >= 0; i--)
 		{
 			var chunkData = chunkDataList[i];
-			if (Vector3.DistanceBetween(player.Transform.Position, chunkData.Position) < 1000)
+			if (Vector3.DistanceBetween(player.GameObject.Transform.Position, chunkData.Position) < 1000)
 			{
 				CreateChunk(chunkData.Position, chunkData.NoiseValues, chunkData.Material, rockLocations, chunkData.Name);
 				chunkDataList.RemoveAt(i);
@@ -173,7 +177,7 @@ for ( int y = 0; y < gridSizeY; y++ )
 		var newGameObject = new GameObject();
 		var modelRenderer = newGameObject.Components.Create<ModelRenderer>();
 		var chunk = newGameObject.Components.Create<Chunk>();
-		chunk.player = player;
+		chunk.player = player.GameObject;
 		var modelCollider = newGameObject.Components.Create<ModelCollider>();
 		modelCollider.Model = model; 
 		chunk.modelRenderer = modelRenderer;
