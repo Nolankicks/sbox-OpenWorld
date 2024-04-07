@@ -168,7 +168,7 @@ public sealed class Inventory : Component
 				item.Arms.Network.TakeOwnership();
 				item.ViewModelHolder.Network.TakeOwnership();
 				item.GameObject.Transform.Rotation = Rotation.Identity;
-				//Refesh this bitch, could do nothing idk
+				//Idk if I need to refresh this shit but I will anyway 🤓☝️
 				Network.Refresh();
 				var slot = Items.FindIndex(x => x is null);
 				AddItem(item.GameObject, slot, false);
@@ -203,6 +203,7 @@ public sealed class Inventory : Component
 		weapon.ViewModelHolder.Network.TakeOwnership();
 		weapon.GameObject.Parent = null;
 		weapon.IsWeapon = false;
+		//Idk if I need to refresh this shit but I will anyway 🤓☝️
 		Network.Refresh();
 		weapon.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
 		RemoveItem(item, false);
