@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "f2d7d94d-1510-4d10-9fe9-723bea29d062",
+    "__guid": "16a23515-6c58-4904-bce8-c29d6f774221",
     "Name": "weapon_smg",
     "Tags": "weapon",
     "Enabled": true,
@@ -8,17 +8,30 @@
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "ee3620ca-0e25-4b9d-87b4-e7786a5619b8",
+        "__guid": "e32d31f8-d4a5-4fac-8f9e-d6a141749b5f",
         "Ammo": 30,
+        "Arms": {
+          "_type": "gameobject",
+          "go": "d47c514b-2f6d-47b7-bc30-47618d973a3d"
+        },
         "Damage": 30,
         "Decal": {
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
         "Description": "A swift SMG",
+        "DroppedItem": {
+          "_type": "gameobject",
+          "go": "bff2660b-91fa-4193-9cb6-6ac193bed2c8"
+        },
         "FireRate": 0.1,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Rifle",
+        "IsWeapon": false,
+        "ItemPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/items/item_smg.prefab"
+        },
         "MaxAmmo": 120,
         "MuzzleFlash": {
           "_type": "gameobject",
@@ -38,25 +51,29 @@
         },
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "033f8a08-26b7-4b5d-9612-846ad530b004"
+          "go": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "9b9d5795-2055-4bba-b889-7c92b922ed29",
-          "go": "e87ff11a-3202-4c60-b555-9cb457dd0d00",
+          "component_id": "15f0d20e-3138-4e03-84b7-fdbe50991515",
+          "go": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
           "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e"
         },
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "0a18f323-dfee-4443-a761-cd3290d49d3a",
+        "__guid": "764ff820-0b81-4db0-93a3-5f6ade4a4378",
         "Icon": "assets/mp5.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "033f8a08-26b7-4b5d-9612-846ad530b004",
+        "__guid": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a",
         "Name": "ViewModelCamera",
         "Position": "28.272,0,0.098",
         "Enabled": true,
@@ -64,7 +81,7 @@
         "Components": [
           {
             "__type": "CameraComponent",
-            "__guid": "155d577b-3012-4ae4-8a96-72af84e88bc6",
+            "__guid": "7f7d347d-62ee-4ca0-913b-7aa38e556502",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -82,7 +99,7 @@
         ],
         "Children": [
           {
-            "__guid": "edec34e2-ce61-4ab1-85d6-359ce36c846e",
+            "__guid": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e",
             "Name": "ViewModel",
             "Position": "0,0,0",
             "Tags": "viewmodel",
@@ -90,7 +107,7 @@
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "a4c28f88-1d10-475e-8543-171696d49b71",
+                "__guid": "d47c514b-2f6d-47b7-bc30-47618d973a3d",
                 "Name": "arms",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -98,12 +115,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "50de308b-1725-41f3-b1b8-b13fb5e551fa",
+                    "__guid": "e2d69b40-f9bc-4a45-b5e0-336f8682e186",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "9b9d5795-2055-4bba-b889-7c92b922ed29",
-                      "go": "e87ff11a-3202-4c60-b555-9cb457dd0d00",
+                      "component_id": "15f0d20e-3138-4e03-84b7-fdbe50991515",
+                      "go": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -114,7 +131,7 @@
                 ]
               },
               {
-                "__guid": "e87ff11a-3202-4c60-b555-9cb457dd0d00",
+                "__guid": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
                 "Name": "gun",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -122,7 +139,7 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "9b9d5795-2055-4bba-b889-7c92b922ed29",
+                    "__guid": "15f0d20e-3138-4e03-84b7-fdbe50991515",
                     "BodyGroups": 27,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -132,6 +149,43 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "__guid": "bff2660b-91fa-4193-9cb6-6ac193bed2c8",
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "e4528ec5-b4da-4396-b5c7-6e9a0a81331b",
+            "BodyGroups": 3,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Rigidbody",
+            "__guid": "2f3782fe-e04e-4380-91c3-403f4c9cd3dc",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "BoxCollider",
+            "__guid": "7daf455f-0a5c-442d-a4a8-96c3a2cfeafe",
+            "Center": "0,0,5.499997",
+            "IsTrigger": false,
+            "Scale": "24.20012,3.800029,10.99995",
+            "Static": false
           }
         ]
       }

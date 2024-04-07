@@ -1,9 +1,64 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "__guid": "30df202b-32e0-4a1e-975a-6e380e40a44b",
+    "Name": "item_pistol",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Item",
+        "__guid": "bcc95165-1153-4793-8fb8-7906d1e82bc1",
+        "Description": "A pistol",
+        "Icon": "assets/usp.vtex",
+        "itemToSpawn": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/weapon_pistol.prefab"
+        },
+        "Name": "USP"
+      },
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "53578628-cdb9-41d2-9d5c-b8bea62f12ef",
+        "BodyGroups": 10565,
+        "CreateBoneObjects": false,
+        "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "c06070c6-2e5f-428f-bea8-d77d27f8575a",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "HullCollider",
+        "__guid": "d63832fe-5240-4756-b6bf-7177ee283470",
+        "BoxSize": "15.90003,2.400008,6.300061",
+        "Center": "3,0,3.299999",
+        "Height": 50,
+        "IsTrigger": false,
+        "Radius": 25,
+        "Radius2": 0,
+        "Slices": 16,
+        "Static": false,
+        "Type": "Box"
+      }
+    ],
+    "Children": []
+  },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "facepunch.w_usp"
+  ]
 }

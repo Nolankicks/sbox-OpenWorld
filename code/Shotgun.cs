@@ -8,6 +8,7 @@ public sealed class Shotgun : Component
 	public PlayerController PlayerController { get; set; }
 	[Property] public GameObject ViewModelCamera { get; set; }
 	[Property] public Model WorldModel { get; set; }
+	[Property] public GameObject ItemPrefab { get; set; }
 	[Property] public GameObject Decal { get; set; }
 	[Property] public int Damage { get; set; }
 	[Property] public int Ammo { get; set; }
@@ -21,6 +22,7 @@ public sealed class Shotgun : Component
 	[Sync] public bool IsAiming { get; set; }
 	protected override void OnStart()
 	{
+		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		if (IsProxy) return;
 		StartingAmmo = Ammo;
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);

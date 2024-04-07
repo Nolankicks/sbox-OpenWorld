@@ -1,13 +1,13 @@
 {
   "RootObject": {
-    "__guid": "ef2112ab-0339-481d-aa73-9dceb28eeb48",
+    "__guid": "161fca01-20cc-4b36-abd3-f15e556b1baf",
     "Name": "item_smg",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
         "__type": "Item",
-        "__guid": "fabda946-11cd-4016-9c50-d955f4da327e",
+        "__guid": "8f0b228e-e396-474e-a2c3-fb5d83439169",
         "Description": "A cool smg",
         "Icon": "assets/mp5.vtex",
         "itemToSpawn": {
@@ -18,7 +18,7 @@
       },
       {
         "__type": "SkinnedModelRenderer",
-        "__guid": "77e38f53-0a15-4245-a7d8-4fd11383e1e7",
+        "__guid": "e8ba030b-0daf-4a05-b58d-30cf5f93820b",
         "BodyGroups": 3,
         "CreateBoneObjects": false,
         "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
@@ -27,7 +27,7 @@
       },
       {
         "__type": "Rigidbody",
-        "__guid": "20c78de1-1736-4a59-966c-6433cd0ea71f",
+        "__guid": "69e33a2c-d47c-4eba-8e69-41c566fb933b",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,
@@ -39,8 +39,8 @@
       },
       {
         "__type": "HullCollider",
-        "__guid": "efcd8e34-ef41-400e-ab44-cf6372c6a8d0",
-        "BoxSize": "25,6.099998,11.00009",
+        "__guid": "539b1d13-b9e5-40aa-b262-826f58563b20",
+        "BoxSize": "25,2.500001,11.00009",
         "Center": "1.9,0,5.099998",
         "Height": 50,
         "IsTrigger": false,

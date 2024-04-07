@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "45cab2b0-86b7-4d81-a521-96ff272053f6",
+    "__guid": "962b7640-d0d3-467a-a7e4-1cecfba6a584",
     "Name": "bloodparticle",
     "Tags": "particles",
     "Enabled": true,
@@ -8,147 +8,11 @@
     "Components": [
       {
         "__type": "LegacyParticleSystem",
-        "__guid": "4f41a8f3-f61e-438f-a6cc-082d404610cb",
+        "__guid": "ab37bcac-67ed-4ec0-ae3b-ee569f3061e3",
         "ControlPoints": [],
         "Looped": false,
-        "OnComponentStart": {
-          "__version": 5,
-          "__guid": "f62e1589-dab6-4c8e-bd8d-fa8994619b98",
-          "UserData": {
-            "Title": "On Component Start",
-            "ReferencedComponentTypes": [
-              "Sandbox.Game/Sandbox.LegacyParticleSystem"
-            ]
-          },
-          "Variables": [],
-          "Nodes": [
-            {
-              "Id": 0,
-              "Type": "input",
-              "UserData": {
-                "Position": "960,-256"
-              }
-            },
-            {
-              "Id": 10,
-              "Type": "resource.ref",
-              "Properties": {
-                "T": "Sandbox.Engine/Sandbox.ParticleSystem",
-                "value": "particles/impact.flesh.bloodpuff.vpcf"
-              },
-              "UserData": {
-                "Position": "768,464"
-              }
-            },
-            {
-              "Id": 12,
-              "Type": "resource.ref",
-              "Properties": {
-                "T": "Sandbox.Engine/Sandbox.ParticleSystem",
-                "value": "particles/impact.flesh.bloodpuff-big.vpcf"
-              },
-              "UserData": {
-                "Position": "624,304"
-              }
-            },
-            {
-              "Id": 43,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Game/Sandbox.LegacyParticleSystem"
-              },
-              "UserData": {
-                "Position": "1344,-240"
-              }
-            },
-            {
-              "Id": 44,
-              "Type": "property.set",
-              "Properties": {
-                "_name": "Particles",
-                "_type": "Sandbox.Game/Sandbox.LegacyParticleSystem"
-              },
-              "UserData": {
-                "Position": "1776,-96"
-              }
-            },
-            {
-              "Id": 47,
-              "Type": "list.new",
-              "Properties": {
-                "T": "Sandbox.Game/Sandbox.LegacyParticleSystem"
-              },
-              "UserData": {
-                "Position": "688,176"
-              }
-            },
-            {
-              "Id": 48,
-              "Type": "list.set",
-              "UserData": {
-                "Position": "1504,112"
-              }
-            }
-          ],
-          "Links": [
-            {
-              "SrcId": 0,
-              "SrcName": "_target",
-              "DstId": 43,
-              "DstName": "_this"
-            },
-            {
-              "SrcId": 43,
-              "SrcName": "_result",
-              "DstId": 44,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 48,
-              "SrcName": "_signal",
-              "DstId": 44,
-              "DstName": "_value"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "_signal",
-              "DstId": 48,
-              "DstName": "_signal"
-            },
-            {
-              "Value": 0,
-              "DstId": 48,
-              "DstName": "index"
-            },
-            {
-              "SrcId": 47,
-              "SrcName": "_result",
-              "DstId": 48,
-              "DstName": "list"
-            },
-            {
-              "SrcId": 12,
-              "SrcName": "_result",
-              "DstId": 48,
-              "DstName": "value"
-            }
-          ]
-        },
+        "Particles": "particles/impact.flesh.bloodpuff.vpcf",
         "PlaybackSpeed": 1
-      },
-      {
-        "__type": "RandomParticle",
-        "__guid": "ef4975ac-6040-4d3d-81f2-dfac96a2675a",
-        "legacyParticleSystem": {
-          "_type": "component",
-          "component_id": "4f41a8f3-f61e-438f-a6cc-082d404610cb",
-          "go": "45cab2b0-86b7-4d81-a521-96ff272053f6",
-          "component_type": "LegacyParticleSystem"
-        },
-        "particleSystems": [
-          "particles/impact.flesh.bloodpuff.vpcf",
-          "particles/impact.flesh.bloodpuff-big.vpcf"
-        ]
       }
     ],
     "Children": []

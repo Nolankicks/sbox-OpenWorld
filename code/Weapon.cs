@@ -1,6 +1,7 @@
 using System;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.UI;
 
 public sealed class Weapon : Component
 {
@@ -10,8 +11,11 @@ public sealed class Weapon : Component
 	[Property, Range(0.1f, 1)] public float FireRate { get; set; }
 	[Property] public GameObject testObject { get; set; }
 	public PlayerController PlayerController { get; set; }
-	[Property] public GameObject ViewModelCamera { get; set; }
-	[Property] public SkinnedModelRenderer ViewModelGun { get; set; }
+	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
+	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
+	[Property, Category("GameObjects")] public GameObject DroppedItem { get; set; }
+	[Property, Category("GameObjects")] public GameObject Arms { get; set; }
+	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property] public float ReloadTime { get; set; }
@@ -19,21 +23,32 @@ public sealed class Weapon : Component
 	public GameObject WorldModelInstance { get; set; }
 	[Property] public float Spread { get; set; } = 0.03f;
 	[Property] public GameObject Decal { get; set; }
+	[Property] public GameObject ItemPrefab { get; set; }
 	[Property] public string Name { get; set; }
 	[Property, TextArea] public string Description { get; set; }
 	int ShotsFired = 0;
 	private TimeSince TimeSinceReload = 0;
-	private TimeSince TimeSinceFire = 0;
+	private TimeSince TimeSinceFire;
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
+	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property] public GameObject Particle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
 	public int StartingAmmo { get; set; }
 	protected override void OnStart()
 	{
+		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		Arms.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		if (IsWeapon)
+		{
 		if (IsProxy) return;
+		DroppedItem.Enabled = false;
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		StartingAmmo = Ammo;
+		TimeSinceFire = FireRate;
 		if (!PlayerController.IsFirstPerson)
 		{
 			var worldModel = new GameObject();
@@ -50,10 +65,23 @@ public sealed class Weapon : Component
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 		Log.Info("Weapon started");
+		}
+		else
+		{
+			ViewModelCamera.Enabled = false;
+			ViewModelGun.GameObject.Enabled = false;
+			DroppedItem.Enabled = true;
+		}
 	}
 	protected override void OnUpdate()
 	{
+		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		if (IsWeapon)
+		{
+		DroppedItem.Enabled = false;
+		ViewModelGun.GameObject.Enabled = true;
 		if ( IsProxy ) return;
+		
 		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
 			Fire();
@@ -113,6 +141,13 @@ public sealed class Weapon : Component
 				ShotsFired = 0;
 				TimeSinceReload = 0;
 		}
+		}
+		}
+		else
+		{
+			ViewModelCamera.Enabled = false;
+			ViewModelGun.GameObject.Enabled = false;
+			DroppedItem.Enabled = true;
 		}
 	}
 

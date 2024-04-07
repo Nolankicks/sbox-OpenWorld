@@ -1,9 +1,64 @@
 {
-  "RootObject": null,
+  "RootObject": {
+    "__guid": "af481c47-e2bc-43ca-8588-15dc00605efa",
+    "Name": "item_shotgun",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Item",
+        "__guid": "72c0ec6a-d1e7-4d4d-8bd0-0059709b37a6",
+        "Description": "A shotgun",
+        "Icon": "assets/shotgun.vtex",
+        "itemToSpawn": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/weapon_shotgun.prefab"
+        },
+        "Name": "Shotgun"
+      },
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "f6af1087-af66-4b6a-b968-4a0d31171e11",
+        "BodyGroups": 7,
+        "CreateBoneObjects": false,
+        "Model": "models/weapons/sbox_shotgun_spaghellim4/w_spaghellim4.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "b6bb0e2a-141a-477e-805e-a069cf6c82e9",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "HullCollider",
+        "__guid": "14a338b9-46bf-4e57-b00b-53b68d767ed0",
+        "BoxSize": "44.60007,3.50003,9.499955",
+        "Center": "0,0,4.099998",
+        "Height": 50,
+        "IsTrigger": false,
+        "Radius": 25,
+        "Radius2": 0,
+        "Slices": 16,
+        "Static": false,
+        "Type": "Box"
+      }
+    ],
+    "Children": []
+  },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "facepunch.w_spaghellim4"
+  ]
 }

@@ -1,23 +1,36 @@
 {
   "RootObject": {
-    "__guid": "ed008820-db72-4bc6-9330-e49aeb500c28",
+    "__guid": "998373ff-405c-47b9-a93e-e7fbc4ef3e88",
     "Name": "weapon_pistol",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "1c0a4a44-168e-41fe-bbd2-cdd4fa074882",
+        "__guid": "3f505553-1eed-4781-a97a-1c73a53ef610",
         "Ammo": 12,
+        "Arms": {
+          "_type": "gameobject",
+          "go": "25b97f30-4838-40df-82d9-d28585a7d114"
+        },
         "Damage": 30,
         "Decal": {
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
         "Description": "A powerful pistol",
+        "DroppedItem": {
+          "_type": "gameobject",
+          "go": "159c5798-2c33-4292-bba7-95faa4e02bc8"
+        },
         "FireRate": 1,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Pistol",
+        "IsWeapon": false,
+        "ItemPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/items/item_pistol.prefab"
+        },
         "MaxAmmo": 120,
         "MuzzleFlash": {
           "_type": "gameobject",
@@ -33,29 +46,33 @@
         "Spread": 0.03,
         "testObject": {
           "_type": "gameobject",
-          "go": "37cb0069-44ef-4941-904c-b71c89eadf61"
+          "go": "5cd753f8-8f04-42b7-9fff-d7303ed1b0ca"
         },
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "81540f04-f548-4a3b-a2ed-063c3da33e7f"
+          "go": "56ff7ea9-e694-4992-a7bf-2782c5e0cf6e"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "42b3f707-8760-4922-81ef-47de2a8837d2",
-          "go": "37cb0069-44ef-4941-904c-b71c89eadf61",
+          "component_id": "5869c58b-90a1-42a0-bdf0-f9af3ead0e2f",
+          "go": "5cd753f8-8f04-42b7-9fff-d7303ed1b0ca",
           "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "c5aaee1a-66c4-4d42-8915-20de04994d13"
         },
         "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "811cb372-3314-49c0-907f-893d0aaa717a",
+        "__guid": "a3711dd4-7234-4325-b4b9-712dd483e345",
         "Icon": "assets/usp.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "81540f04-f548-4a3b-a2ed-063c3da33e7f",
+        "__guid": "56ff7ea9-e694-4992-a7bf-2782c5e0cf6e",
         "Name": "ViewModelCamera",
         "Position": "28.272,0,0.098",
         "Enabled": true,
@@ -63,7 +80,7 @@
         "Components": [
           {
             "__type": "CameraComponent",
-            "__guid": "2ba15bff-3c57-4a76-980f-a5e83b7e683d",
+            "__guid": "9d83e2c2-45d7-4a1e-9701-1df3af34e5ce",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -81,7 +98,7 @@
         ],
         "Children": [
           {
-            "__guid": "bdf9a74d-6ea9-4d8e-8483-3e36dbf55845",
+            "__guid": "c5aaee1a-66c4-4d42-8915-20de04994d13",
             "Name": "ViewModel",
             "Position": "0,0,0",
             "Tags": "viewmodel",
@@ -89,7 +106,7 @@
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "37cb0069-44ef-4941-904c-b71c89eadf61",
+                "__guid": "5cd753f8-8f04-42b7-9fff-d7303ed1b0ca",
                 "Name": "gun",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -97,7 +114,7 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "42b3f707-8760-4922-81ef-47de2a8837d2",
+                    "__guid": "5869c58b-90a1-42a0-bdf0-f9af3ead0e2f",
                     "BodyGroups": 18757,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
@@ -107,7 +124,7 @@
                 ]
               },
               {
-                "__guid": "23e181ae-2000-4cc9-adbc-e88482a86ea4",
+                "__guid": "25b97f30-4838-40df-82d9-d28585a7d114",
                 "Name": "arms",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -115,12 +132,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "30a09eb5-cfd7-4a95-989c-fe09c4730cfe",
+                    "__guid": "be81cbeb-7580-416e-aed7-764b2b96b58a",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "42b3f707-8760-4922-81ef-47de2a8837d2",
-                      "go": "37cb0069-44ef-4941-904c-b71c89eadf61",
+                      "component_id": "5869c58b-90a1-42a0-bdf0-f9af3ead0e2f",
+                      "go": "5cd753f8-8f04-42b7-9fff-d7303ed1b0ca",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -131,6 +148,43 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "__guid": "159c5798-2c33-4292-bba7-95faa4e02bc8",
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "fb3fd6ac-50fa-42b5-833f-25bf694e87fe",
+            "BodyGroups": 10565,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Rigidbody",
+            "__guid": "e71c4c0e-7260-4e94-a642-e1d209cff91f",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "BoxCollider",
+            "__guid": "188a1f64-8874-4a0b-804f-8a2c8bbf9b9f",
+            "Center": "3.599999,0,2.6",
+            "IsTrigger": false,
+            "Scale": "15.39998,1.800034,7.10002",
+            "Static": false
           }
         ]
       }

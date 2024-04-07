@@ -6,7 +6,7 @@
 	@if (ShowUi)
 	{
 		<div class="interactioncard">
-			<img class="icon" texture=@Item.Icon.ResourcePath>
+			<img class="icon" texture=@Icon.Icon.ResourcePath>
 			<div class="name">@Item.Name</div>
 			<div class="description">@Item.Description</div>
 		</div>
@@ -15,7 +15,8 @@
 
 @code
 {
-	public Item Item { get; set; }
+	public Weapon Item { get; set; }
+	public IconComponent Icon { get; set; }
 	public bool ShowUi { get; set; } = false;
 	public override void Tick()
 	{
@@ -23,7 +24,7 @@
 		if (Item is not null)
 		{
 		ShowUi = true;
-		var pos = Scene.Camera.PointToScreenPixels( Item.Transform.Position );
+		var pos = Scene.Camera.PointToScreenPixels( Item.DroppedItem.Transform.Position );
 		pos *= ScaleFromScreen;
 		Style.Position = PositionMode.Absolute;
 		Style.Left = Length.Pixels( pos.x );
@@ -43,14 +44,25 @@
     var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
     if (tr.Hit)
     {
-        tr.GameObject.Components.TryGet<Item>(out var item);
-        if (item is not null)
+        tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
+		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
+        if (item is not null && icon is not null)
         {
             Item = item;
+			Icon = icon;
         }
+		else if (item is not null)
+		{
+			Log.Info("Item is not null but icon is null");
+		}
+		else if (icon is not null)
+		{
+			Log.Info("Icon is not null but item is null");
+		}
         else
         {
             Item = null;
+			Icon = null;
         }
     }
     else
