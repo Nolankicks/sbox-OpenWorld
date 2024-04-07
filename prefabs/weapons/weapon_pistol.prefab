@@ -23,7 +23,7 @@
           "_type": "gameobject",
           "go": "159c5798-2c33-4292-bba7-95faa4e02bc8"
         },
-        "FireRate": 1,
+        "FireRate": 0.6,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Pistol",
         "IsWeapon": false,

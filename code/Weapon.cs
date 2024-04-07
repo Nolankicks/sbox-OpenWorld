@@ -107,7 +107,7 @@ public sealed class Weapon : Component
 			{
 				
 				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = StartingAmmo;
+				Ammo = 30;
 				ViewModelGun.Set("b_reload", true);
 				ShotsFired = 0;
 				TimeSinceReload = 0;
@@ -134,13 +134,6 @@ public sealed class Weapon : Component
 		else
 		{
 			ViewModelCamera.Enabled = false;
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && MaxAmmo >= ShotsFired && !IsProxy)
-		{
-				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = StartingAmmo;
-				ShotsFired = 0;
-				TimeSinceReload = 0;
-		}
 		}
 		}
 		else
