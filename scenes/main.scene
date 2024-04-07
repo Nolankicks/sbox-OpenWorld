@@ -1156,7 +1156,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -1215,7 +1215,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -1274,7 +1274,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
+              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -1338,7 +1338,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-06T22:09:52.6962586-04:00",
+  "LastSaved": "2024-04-06T22:41:28.224627-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
