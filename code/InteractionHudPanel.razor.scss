@@ -1,0 +1,53 @@
+InteractionHudPanel
+{
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	.interactioncard
+	{
+		position: absolute;
+		width: 400px;
+		height: 200px;
+		background-color: gray;
+		align-items: center;
+		justify-content: center;
+		border-radius: 20px;
+		animation: popin 0.1s;
+		.icon
+		{
+			width: 128px;
+			height: 128px;
+			border-radius: 16px;
+			position: absolute;
+			top: 12px;
+			left: 12px;
+		}
+		.description
+		{
+			position: absolute;
+			bottom: 12px;
+			left: 12px;
+			text-align: center;
+		}
+		.name
+		{
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			font-size: 64px;
+			
+		}
+	}
+}
+@keyframes popin
+{
+	0%
+	{
+		transform: scale(0.5);
+	}
+	100%
+	{
+		transform: scale(1);
+	}
+}

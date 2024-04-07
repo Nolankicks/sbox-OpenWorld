@@ -19,11 +19,14 @@ public sealed class Weapon : Component
 	public GameObject WorldModelInstance { get; set; }
 	[Property] public float Spread { get; set; } = 0.03f;
 	[Property] public GameObject Decal { get; set; }
+	[Property] public string Name { get; set; }
+	[Property, TextArea] public string Description { get; set; }
 	int ShotsFired = 0;
 	private TimeSince TimeSinceReload = 0;
 	private TimeSince TimeSinceFire = 0;
 	[Property] public SoundEvent FireSound { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
+	[Property] public GameObject Particle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
 	public int StartingAmmo { get; set; }
 	protected override void OnStart()
@@ -147,7 +150,8 @@ public sealed class Weapon : Component
 				tr.GameObject.Components.TryGet<Dummy>( out var dummy);
 				if (dummy is not null)
 				{
-					dummy.Hurt(100);
+					dummy.Hurt(Damage);
+					Particle.Clone(tr.HitPosition, rotation: Rotation.LookAt(-tr.Normal));
 				}
 				Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
 				if ( tr.Body is not null )

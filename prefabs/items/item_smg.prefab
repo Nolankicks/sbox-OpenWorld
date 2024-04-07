@@ -1,0 +1,64 @@
+{
+  "RootObject": {
+    "__guid": "ef2112ab-0339-481d-aa73-9dceb28eeb48",
+    "Name": "item_smg",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Item",
+        "__guid": "fabda946-11cd-4016-9c50-d955f4da327e",
+        "Description": "A cool smg",
+        "Icon": "assets/mp5.vtex",
+        "itemToSpawn": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/weapon_smg.prefab"
+        },
+        "Name": "MP5"
+      },
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "77e38f53-0a15-4245-a7d8-4fd11383e1e7",
+        "BodyGroups": 3,
+        "CreateBoneObjects": false,
+        "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Rigidbody",
+        "__guid": "20c78de1-1736-4a59-966c-6433cd0ea71f",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "HullCollider",
+        "__guid": "efcd8e34-ef41-400e-ab44-cf6372c6a8d0",
+        "BoxSize": "25,6.099998,11.00009",
+        "Center": "1.9,0,5.099998",
+        "Height": 50,
+        "IsTrigger": false,
+        "Radius": 25,
+        "Radius2": 0,
+        "Slices": 16,
+        "Static": false,
+        "Type": "Box"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.w_mp5"
+  ]
+}

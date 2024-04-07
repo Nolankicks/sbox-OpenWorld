@@ -11,7 +11,7 @@ public sealed class Dummy : Component
 	}
 	protected override void OnUpdate()
 	{
-		SphereTrace();
+		//SphereTrace();
 	}
 
 	void SphereTrace()

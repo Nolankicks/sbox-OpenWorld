@@ -14,14 +14,21 @@
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
+        "Description": "A powerful pistol",
         "FireRate": 1,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Pistol",
         "MaxAmmo": 120,
         "MuzzleFlash": {
           "_type": "gameobject",
-          "prefab": "prefabs/muzzleflash.prefab"
+          "prefab": "prefabs/weapons/muzzleflash.prefab"
         },
+        "Name": "USP",
+        "Particle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "Recoil": 0,
         "ReloadTime": 0,
         "Spread": 0.03,
         "testObject": {

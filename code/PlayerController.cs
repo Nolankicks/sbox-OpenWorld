@@ -13,6 +13,7 @@ public sealed class PlayerController : Component
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
 	[Sync] public Angles eyeAngles { get; set; }
+	public Item CurrentItem;
 	public Inventory Inventory;
 
 	protected override void OnStart()

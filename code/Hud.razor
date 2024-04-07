@@ -1,6 +1,6 @@
 @using Sandbox;
 @using Sandbox.UI;
-@inherits PanelComponent
+@inherits PanelComponent;
 
 <root>
 	<div class="invholder">
@@ -14,16 +14,17 @@
 			</div>
 		}
 	</div>
+	<InteractionHudPanel></InteractionHudPanel>
 </root>
-
 @code
 {
 
 	public Inventory Inventory { get; set; }
-
+	public PlayerController Player;
 	protected override void OnStart()
 	{
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	/// <summary>

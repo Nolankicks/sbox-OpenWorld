@@ -1,0 +1,61 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@attribute [StyleSheet]
+<root>
+	@if (ShowUi)
+	{
+		<div class="interactioncard">
+			<img class="icon" texture=@Item.Icon.ResourcePath>
+			<div class="name">@Item.Name</div>
+			<div class="description">@Item.Description</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	public Item Item { get; set; }
+	public bool ShowUi { get; set; } = false;
+	public override void Tick()
+	{
+		GetItem();
+		if (Item is not null)
+		{
+		ShowUi = true;
+		var pos = Scene.Camera.PointToScreenPixels( Item.Transform.Position );
+		pos *= ScaleFromScreen;
+		Style.Position = PositionMode.Absolute;
+		Style.Left = Length.Pixels( pos.x );
+        Style.Top = Length.Pixels( pos.y );
+		StateHasChanged();
+		}
+		else
+		{
+			ShowUi = false;
+			StateHasChanged();
+		}
+		
+	}
+	public void GetItem()
+{
+    var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+    var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
+    if (tr.Hit)
+    {
+        tr.GameObject.Components.TryGet<Item>(out var item);
+        if (item is not null)
+        {
+            Item = item;
+        }
+        else
+        {
+            Item = null;
+        }
+    }
+    else
+    {
+        Item = null;
+    }
+}
+}
