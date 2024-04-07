@@ -9,6 +9,7 @@
 			<img class="icon" texture=@Icon.Icon.ResourcePath>
 			<div class="name">@Item.Name</div>
 			<div class="description">@Item.Description</div>
+			<img class="glyph" src=@Interact.ResourcePath>
 		</div>
 	}
 </root>
@@ -18,6 +19,7 @@
 	public Weapon Item { get; set; }
 	public IconComponent Icon { get; set; }
 	public bool ShowUi { get; set; } = false;
+	public Texture Interact = Input.GetGlyph("use", InputGlyphSize.Small, false);
 	public override void Tick()
 	{
 		GetItem();
