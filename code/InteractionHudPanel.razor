@@ -5,6 +5,8 @@
 <root>
 	@if (ShowUi)
 	{
+	@if (Item is not null && Icon is not null)
+	{
 		<div class="interactioncard">
 			<img class="icon" texture=@Icon.Icon.ResourcePath>
 			<div class="name">@Item.Name</div>
@@ -12,11 +14,22 @@
 			<img class="glyph" src=@Interact.ResourcePath>
 		</div>
 	}
+	else if (Shotgun is not null && Icon is not null)
+	{
+		<div class="interactioncard">
+			<img class="icon" texture=@Icon.Icon.ResourcePath>
+			<div class="name">@Shotgun.Name</div>
+			<div class="description">@Shotgun.Description</div>
+			<img class="glyph" src=@Interact.ResourcePath>
+		</div>
+	}
+	}
 </root>
 
 @code
 {
 	public Weapon Item { get; set; }
+	public Shotgun Shotgun { get; set; }
 	public IconComponent Icon { get; set; }
 	public bool ShowUi { get; set; } = false;
 	public Texture Interact = Input.GetGlyph("use", InputGlyphSize.Small, false);
@@ -33,8 +46,20 @@
         Style.Top = Length.Pixels( pos.y );
 		StateHasChanged();
 		}
+		else if (Shotgun is not null)
+		{
+			ShowUi = true;
+			var pos = Scene.Camera.PointToScreenPixels( Shotgun.pickUpObject.Transform.Position );
+			pos *= ScaleFromScreen;
+			Style.Position = PositionMode.Absolute;
+			Style.Left = Length.Pixels( pos.x );
+			Style.Top = Length.Pixels( pos.y );
+			StateHasChanged();
+		}
 		else
 		{
+			Item = null;
+			Shotgun = null;
 			ShowUi = false;
 			StateHasChanged();
 		}
@@ -48,11 +73,17 @@
     {
         tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
 		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
+		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun);
         if (item is not null && icon is not null)
         {
             Item = item;
 			Icon = icon;
         }
+		else if (shotgun is not null && icon is not null)
+		{
+			Shotgun = shotgun;
+			Icon = icon;
+		}
 		else if (item is not null)
 		{
 			Log.Info("Item is not null but icon is null");

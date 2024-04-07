@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Citizen;
 
@@ -13,6 +14,8 @@ public sealed class PlayerController : Component
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
 	[Sync] public Angles eyeAngles { get; set; }
+	[Sync] public bool IsGrabbing { get; set; } = false;
+	[Property] public Interactor Interactor { get; set; }
 	public Item CurrentItem;
 	public Inventory Inventory;
 

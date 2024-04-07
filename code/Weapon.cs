@@ -61,6 +61,7 @@ public sealed class Weapon : Component
 		else
 		{
 			ViewModelGun.Set("b_deploy", true);
+			ViewModelGun.Set("b_twohanded", true);
 		}
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
@@ -165,6 +166,7 @@ public sealed class Weapon : Component
 	}
 	void Fire()
 	{
+		if (PlayerController.IsGrabbing) return;
 		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
 			PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
@@ -175,7 +177,7 @@ public sealed class Weapon : Component
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 			if (tr.Hit)
 			{
-				tr.GameObject.Components.TryGet<Dummy>( out var dummy);
+				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage);

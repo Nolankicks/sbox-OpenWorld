@@ -27,6 +27,11 @@
 		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 	}
 
+	protected override void OnUpdate()
+	{
+
+	}
+
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>

@@ -2,40 +2,41 @@ using Sandbox;
 
 public sealed class Interactor : Component
 {
-	public WorldPanel Panel { get; set; }
+	PhysicsBody grabbedBody;
+	Transform grabbedOffset;
+	public bool IsGrabbing => grabbedBody is not null;
+	public PlayerController PlayerController;
+
+	protected override void OnStart()
+	{
+		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+	}
 	protected override void OnUpdate()
 	{
-		Trace();
-		if (Panel is not null)
+		PlayerController.IsGrabbing = IsGrabbing;
+		Log.Info(IsGrabbing);
+		Transform aimTransform = Scene.Camera.Transform.World;
+		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
+		if (Input.Pressed("flashlight"))
 		{
-			if (Panel.Components.Get<InteractionHudPanel>() is not null) return;
-			//var hudPanel = Panel.Components.Create<InteractionHudPanel>();
+			if (tr.Hit && tr.Body is not null && tr.GameObject.Components.Get<Weapon>() is null || tr.GameObject.Components.Get<Shotgun>() is null)
+			{
+				grabbedBody = tr.Body;
+				grabbedOffset = aimTransform.ToLocal( tr.Body.Transform );
+			}
+		}
+		if (grabbedBody is null) return;
+		if (Input.Down("flashlight") && grabbedBody is not null)
+		{
+				var targetTx = aimTransform.ToWorld( grabbedOffset );
+				grabbedBody.SmoothMove( targetTx, Time.Delta * 50, Time.Delta );
+				return;
+		}
+		else
+		{
+			grabbedBody = null;
 		}
 	}
 
-	void Trace()
-	{
-		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
-		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
-		{
-			if (tr.Hit)
-			{
-				if (Panel is not null) return;
-				tr.GameObject.Components.TryGet<Item>(out var item);
-				var newGO = new GameObject();
-				var panel = newGO.Components.Create<WorldPanel>();
-				panel.LookAtCamera = true;
-				panel.Transform.Position = tr.EndPosition + tr.Normal * 2;
-				Panel = panel;
-			}
-			else
-			{
-				if (Panel is not null)
-				{
-					Panel.GameObject.Destroy();
-					Panel = null;
-				}
-			}
-		}
-	}
 }

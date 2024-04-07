@@ -1,18 +1,18 @@
 {
   "RootObject": {
-    "__guid": "56659c22-6906-4b9c-ad98-fa1288f9fea7",
+    "__guid": "1452e70d-b260-4190-aac3-22f4066c50fe",
     "Name": "weapon_shotgun",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Shotgun",
-        "__guid": "f9dedd9b-d849-47a0-afc0-9ff80179b164",
+        "__guid": "731afc76-aee3-40b4-b0a6-dea0c74f13ca",
         "Ammo": 12,
         "arms": {
           "_type": "component",
-          "component_id": "cb2300b8-a7cd-4909-ba11-9da376c021f9",
-          "go": "40acc2bb-6c47-4f66-a3cd-fdb867c8253e",
+          "component_id": "aebb9905-f26c-4e04-81d7-55decdb33bc4",
+          "go": "bfb947c8-21a5-402b-b58b-118ab7ff70a0",
           "component_type": "SkinnedModelRenderer"
         },
         "Damage": 30,
@@ -20,34 +20,45 @@
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
+        "Description": "A shotgun",
         "FireRate": 1.5,
         "FireSound": "sounds/shootsound.sound",
+        "IsWeapon": false,
         "ItemPrefab": {
           "_type": "gameobject",
           "prefab": "prefabs/items/item_shotgun.prefab"
         },
         "MaxAmmo": 60,
+        "Name": "Shotgun",
+        "pickUpObject": {
+          "_type": "gameobject",
+          "go": "35ea0039-bad9-4480-98d9-1a4694d00bed"
+        },
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "4fe37c4a-3723-488c-aff7-811352f34621"
+          "go": "562c51ce-1a30-4f1f-9b08-af4560c7a7c1"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "5f9f37e3-1967-4ad7-a5a7-9ef67d1067e7",
-          "go": "e32cc1ec-c0d1-4910-be02-01bf978cbe43",
+          "component_id": "24667be0-3a6d-40ef-a954-763e9f89fafa",
+          "go": "55f96f61-4a9a-459d-9b7e-6966f478dba5",
           "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "956f51a3-eee7-4426-8745-0fb3fd7674e6"
         },
         "WorldModel": "models/weapons/sbox_shotgun_spaghellim4/w_spaghellim4.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "d27c9e1b-5284-4b4e-b556-1d227b419751",
+        "__guid": "94bc9f2f-67a9-40ec-8963-a517e3708cea",
         "Icon": "assets/shotgun.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "4fe37c4a-3723-488c-aff7-811352f34621",
+        "__guid": "562c51ce-1a30-4f1f-9b08-af4560c7a7c1",
         "Name": "ViewModelCamera",
         "Position": "28.272,0,0.098",
         "Tags": "viewmodel",
@@ -56,7 +67,7 @@
         "Components": [
           {
             "__type": "CameraComponent",
-            "__guid": "170b7167-53a3-41d5-b339-a540398c500b",
+            "__guid": "68ea5bdb-bbeb-43b0-a24f-9870d86a5c1a",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 60,
@@ -74,14 +85,14 @@
         ],
         "Children": [
           {
-            "__guid": "5a7118a6-7e4f-41cf-9898-70b7c53eb60a",
+            "__guid": "956f51a3-eee7-4426-8745-0fb3fd7674e6",
             "Name": "ViewModel",
             "Position": "0,0,0",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "e32cc1ec-c0d1-4910-be02-01bf978cbe43",
+                "__guid": "55f96f61-4a9a-459d-9b7e-6966f478dba5",
                 "Name": "gun",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -89,7 +100,7 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "5f9f37e3-1967-4ad7-a5a7-9ef67d1067e7",
+                    "__guid": "24667be0-3a6d-40ef-a954-763e9f89fafa",
                     "BodyGroups": 7,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
@@ -99,7 +110,7 @@
                 ]
               },
               {
-                "__guid": "40acc2bb-6c47-4f66-a3cd-fdb867c8253e",
+                "__guid": "bfb947c8-21a5-402b-b58b-118ab7ff70a0",
                 "Name": "arms",
                 "Position": "0,0,0",
                 "Enabled": true,
@@ -107,12 +118,12 @@
                 "Components": [
                   {
                     "__type": "SkinnedModelRenderer",
-                    "__guid": "cb2300b8-a7cd-4909-ba11-9da376c021f9",
+                    "__guid": "aebb9905-f26c-4e04-81d7-55decdb33bc4",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "5f9f37e3-1967-4ad7-a5a7-9ef67d1067e7",
-                      "go": "e32cc1ec-c0d1-4910-be02-01bf978cbe43",
+                      "component_id": "24667be0-3a6d-40ef-a954-763e9f89fafa",
+                      "go": "55f96f61-4a9a-459d-9b7e-6966f478dba5",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -123,6 +134,43 @@
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "__guid": "35ea0039-bad9-4480-98d9-1a4694d00bed",
+        "Name": "PickUpObject",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "BoxCollider",
+            "__guid": "3a7a34cd-6ef2-4285-b7c6-cdbf575de736",
+            "Center": "0,0,4.399999",
+            "IsTrigger": false,
+            "Scale": "46.60007,3.89999,7.500059",
+            "Static": false
+          },
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "9723ddd5-9590-4332-b228-1dbb33c2fe15",
+            "BodyGroups": 7,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_shotgun_spaghellim4/w_spaghellim4.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Rigidbody",
+            "__guid": "f72bb654-6f5e-4a09-8698-23fa0951ae42",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
           }
         ]
       }

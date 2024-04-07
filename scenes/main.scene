@@ -132,6 +132,10 @@
           "ItemTextures": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
+        },
+        {
+          "__type": "Interactor",
+          "__guid": "b2541b69-9e89-43dc-8ebf-98875561685e"
         }
       ],
       "Children": [
@@ -1032,7 +1036,7 @@
           ]
         },
         {
-          "__guid": "6aba7fcc-2a7c-4e66-8aa5-dd4922b68b66",
+          "__guid": "1e61c327-f437-4ad9-a758-7c8af89bb6d5",
           "Name": "Collider",
           "Position": "0,0,0",
           "Enabled": true,
@@ -1040,11 +1044,11 @@
           "Components": [
             {
               "__type": "CapsuleCollider",
-              "__guid": "ce3115e8-5211-4351-b632-787230bcd698",
-              "End": "0,0,50.05103",
+              "__guid": "fe058911-dfcb-490d-b844-a46dabce2c56",
+              "End": "0,0,50.80354",
               "IsTrigger": false,
               "Radius": 25,
-              "Start": "0,0,20.11714",
+              "Start": "0,0,0",
               "Static": false
             }
           ]
@@ -1116,169 +1120,130 @@
       "Components": [
         {
           "__type": "Dummy",
-          "__guid": "93fbf857-8321-430a-a272-997101db775a"
+          "__guid": "93fbf857-8321-430a-a272-997101db775a",
+          "animationHelper": {
+            "_type": "component",
+            "component_id": "cdd7db9b-a30c-40e9-8874-4863c5acda62",
+            "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "GibModel": "models/citizen_gibs/citizen_gib.vmdl",
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "d58ade49-1d8f-4877-ba4d-927225572f35",
+            "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
+            "component_type": "NavMeshAgent"
+          },
+          "players": []
         },
         {
-          "__type": "CapsuleCollider",
-          "__guid": "fc985c84-10a4-47cd-9f55-a4d40120b438",
-          "End": "0,0,53.2438",
-          "IsTrigger": false,
-          "Radius": 25,
-          "Start": "0,0,15.10903",
+          "__type": "BoxCollider",
+          "__guid": "398e571b-e7bc-44ea-ab28-47b50ef8b335",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "438.7999,503.6998,304.2",
           "Static": false
         },
         {
-          "__type": "SkinnedModelRenderer",
-          "__guid": "ffcfed54-ecd1-49d1-8209-8815a409f53f",
-          "BodyGroups": 0,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__type": "NavMeshAgent",
+          "__guid": "d58ade49-1d8f-4877-ba4d-927225572f35",
+          "Acceleration": 50,
+          "Height": 64,
+          "MaxSpeed": 120,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true,
+          "UpdateRotation": false
         }
       ],
       "Children": [
         {
-          "__guid": "da04f736-948b-4e25-93f8-4db9b228321b",
-          "Name": "Cloths",
+          "__guid": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
+          "Name": "body",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
+          "NetworkMode": 1,
           "Components": [
             {
               "__type": "SkinnedModelRenderer",
-              "__guid": "fcacecb8-3cce-441c-a41c-13df1ca0615f",
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": {
-                "_type": "component",
-                "component_id": "ffcfed54-ecd1-49d1-8209-8815a409f53f",
-                "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
-                "component_type": "SkinnedModelRenderer"
-              },
+              "__guid": "83b02159-cdb0-4189-ad08-3a88454728de",
+              "BodyGroups": 0,
               "CreateBoneObjects": false,
-              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+              "MaterialGroup": "default",
+              "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "CitizenAnimationHelper",
+              "__guid": "cdd7db9b-a30c-40e9-8874-4863c5acda62",
+              "BodyWeight": 1,
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "38a5cb77-4087-46d4-b1ac-9dfafaae3132"
+              },
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": true,
+              "Target": {
+                "_type": "component",
+                "component_id": "83b02159-cdb0-4189-ad08-3a88454728de",
+                "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "da04f736-948b-4e25-93f8-4db9b228321b",
+              "Name": "Cloths",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 1,
+              "Components": [
+                {
+                  "__type": "SkinnedModelRenderer",
+                  "__guid": "fcacecb8-3cce-441c-a41c-13df1ca0615f",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "83b02159-cdb0-4189-ad08-3a88454728de",
+                    "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "fa369af4-7c77-4077-95a6-4f92f6d63734",
-      "Name": "Dummy (1)",
-      "Position": "160,-128,64",
-      "Rotation": "0,0,1,0.0000001947072",
-      "Tags": "dummy",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "Components": [
-        {
-          "__type": "Dummy",
-          "__guid": "5427a687-b503-427e-9371-c01b2d1ee90c"
         },
         {
-          "__type": "CapsuleCollider",
-          "__guid": "1829a8d7-0551-4a9c-b433-c040fb948152",
-          "End": "0,0,53.2438",
-          "IsTrigger": false,
-          "Radius": 25,
-          "Start": "0,0,15.10903",
-          "Static": false
-        },
-        {
-          "__type": "SkinnedModelRenderer",
-          "__guid": "c2055c27-38f3-492a-9d02-632ab6b6b26b",
-          "BodyGroups": 0,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "0b510055-4841-4b34-b6fb-f33496e841f4",
-          "Name": "Cloths",
+          "__guid": "813c2081-52ef-4980-883e-f8ada8178193",
+          "Name": "Collider",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 2,
+          "NetworkMode": 1,
           "Components": [
             {
-              "__type": "SkinnedModelRenderer",
-              "__guid": "f1094bac-8ab2-4ac4-963a-1c4ae52128e9",
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": {
-                "_type": "component",
-                "component_id": "c2055c27-38f3-492a-9d02-632ab6b6b26b",
-                "go": "fa369af4-7c77-4077-95a6-4f92f6d63734",
-                "component_type": "SkinnedModelRenderer"
-              },
-              "CreateBoneObjects": false,
-              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "__type": "CapsuleCollider",
+              "__guid": "c8362694-e90d-41fa-90b7-9ce20ee1bca2",
+              "End": "0,0,54.37019",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Start": "0,0,0",
+              "Static": false
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "556453e1-f11a-4d35-aa88-d2f8fb7e4b74",
-      "Name": "Dummy (2)",
-      "Position": "160,127.9998,64",
-      "Rotation": "0,0,1,0.0000001947072",
-      "Tags": "dummy",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "Components": [
-        {
-          "__type": "Dummy",
-          "__guid": "36873d9a-ae54-4202-8d2e-f54ef9309613"
         },
         {
-          "__type": "CapsuleCollider",
-          "__guid": "19cc1bd3-c482-4d3d-b1ef-7f220ddfacd5",
-          "End": "0,0,53.2438",
-          "IsTrigger": false,
-          "Radius": 25,
-          "Start": "0,0,15.10903",
-          "Static": false
-        },
-        {
-          "__type": "SkinnedModelRenderer",
-          "__guid": "9829da0a-d70f-4bbb-be46-11df409f55c9",
-          "BodyGroups": 0,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "08c7c6c7-86f3-4030-85dc-c0d2dfb1467d",
-          "Name": "Cloths",
-          "Position": "0,0,0",
+          "__guid": "38a5cb77-4087-46d4-b1ac-9dfafaae3132",
+          "Name": "eyes",
+          "Position": "0,0,64",
           "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "SkinnedModelRenderer",
-              "__guid": "fedf2e81-d650-415a-870e-cec5c3a71981",
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": {
-                "_type": "component",
-                "component_id": "9829da0a-d70f-4bbb-be46-11df409f55c9",
-                "go": "556453e1-f11a-4d35-aa88-d2f8fb7e4b74",
-                "component_type": "SkinnedModelRenderer"
-              },
-              "CreateBoneObjects": false,
-              "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            }
-          ]
+          "NetworkMode": 1
         }
       ]
     },
@@ -1313,6 +1278,14 @@
           "__guid": "6c65f11b-b958-48ae-8999-56b3ad05659b"
         }
       ]
+    },
+    {
+      "__guid": "1452e70d-b260-4190-aac3-22f4066c50fe",
+      "Name": "weapon_shotgun",
+      "Position": "-112,-144,92.01791",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/weapons/weapon_shotgun.prefab"
     }
   ],
   "SceneProperties": {
@@ -1324,7 +1297,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -1338,7 +1311,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-06T22:41:28.224627-04:00",
+  "LastSaved": "2024-04-07T17:27:16.0743246-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

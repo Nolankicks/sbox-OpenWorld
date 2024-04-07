@@ -3,16 +3,16 @@ using Sandbox.UI;
 
 public sealed class Shotgun : Component
 {
-	[Property] public SkinnedModelRenderer ViewModelGun { get; set; }
-	[Property] public SkinnedModelRenderer arms { get; set; }
 	public PlayerController PlayerController { get; set; }
-	[Property] public GameObject ViewModelCamera { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public GameObject ItemPrefab { get; set; }
 	[Property] public GameObject Decal { get; set; }
 	[Property] public int Damage { get; set; }
 	[Property] public int Ammo { get; set; }
 	[Property] public int MaxAmmo { get; set; }
+	[Property] public string Name { get; set; }
+	[Property, TextArea] public string Description { get; set; }
+	public Interactor Interactor { get; set; }
 	public TimeSince TimeSinceFire;
 	public TimeSince timeSinceReload = 1.5f;
 	[Property] public float FireRate { get; set; } = 0.5f;
@@ -20,14 +20,25 @@ public sealed class Shotgun : Component
 	public int StartingAmmo { get; set; }
 	public int ShotsFired = 0;
 	[Sync] public bool IsAiming { get; set; }
+	[Property, Sync] public bool IsWeapon { get; set; }
+	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
+	[Property, Category("GameObjects")] public SkinnedModelRenderer arms { get; set; }
+	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
+	[Property, Category("GameObjects")] public GameObject pickUpObject { get; set; }
+	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
 	protected override void OnStart()
 	{
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		arms.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		if (IsProxy) return;
 		StartingAmmo = Ammo;
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		Interactor = Scene.GetAllComponents<Interactor>().FirstOrDefault( x => !x.IsProxy);
 		TimeSinceFire = FireRate;
-		if (PlayerController.IsFirstPerson)
+		if (PlayerController.IsFirstPerson && !IsWeapon)
 		{
 			ViewModelCamera.Enabled = true;
 	
@@ -37,7 +48,10 @@ public sealed class Shotgun : Component
 	protected override void OnUpdate()
 	{
 		if (IsProxy) return;
-		if (Input.Pressed("attack1") && TimeSinceFire > FireRate)
+		if (IsWeapon)
+		{
+			pickUpObject.Enabled = false;
+			if (Input.Pressed("attack1") && TimeSinceFire > FireRate)
 		{
 			for (int i = 0; i < 4; i++)
 			{
@@ -83,11 +97,17 @@ public sealed class Shotgun : Component
 		{
 			ViewModelCamera.Enabled = false;
 		}
+		}
+		else
+		{
+			ViewModelCamera.Enabled = false;
+						pickUpObject.Enabled = true;
+		}
 	}
 
 	void Shoot()
 	{
-		if (IsProxy) return;
+		if (PlayerController.IsGrabbing) return;
 		if (Ammo > 0)
 		{
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
@@ -97,6 +117,11 @@ public sealed class Shotgun : Component
 		if (tr.Hit)
 		{
 			Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
+			tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy );
+			if (dummy is not null)
+			{
+				dummy.Hurt(Damage);
+			}
 		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );

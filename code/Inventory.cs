@@ -158,6 +158,7 @@ public sealed class Inventory : Component
 		{
 			tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
 			tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
+			tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun);
 			if (item is not null && icon is not null)
 			{
 				//Add Ownership, yay
@@ -177,6 +178,25 @@ public sealed class Inventory : Component
 				item.IsWeapon = true;
 				item.GameObject.Transform.Position = Transform.Position;
 			}
+			else if (shotgun is not null && icon is not null)
+			{
+				//Add Ownership, yay
+				shotgun.GameObject.Network.TakeOwnership();
+				shotgun.GameObject.Network.TakeOwnership();
+				shotgun.ViewModelCamera.Network.TakeOwnership();
+				shotgun.ViewModelGun.GameObject.Network.TakeOwnership();
+				shotgun.arms.GameObject.Network.TakeOwnership();
+				shotgun.ViewModelHolder.Network.TakeOwnership();
+				shotgun.GameObject.Transform.Rotation = Rotation.Identity;
+				Network.Refresh();
+				var slot = Items.FindIndex(x => x is null);
+				AddItem(shotgun.GameObject, slot, false);
+				AddTexture(icon.Icon, slot);
+				shotgun.GameObject.Parent = GameObject;
+				shotgun.IsWeapon = true;
+				shotgun.GameObject.Transform.Position = Transform.Position;
+			}
+
 		}
 	}
 
@@ -195,12 +215,12 @@ public sealed class Inventory : Component
 		{
 		RemoveItem(item, false);
 		//God I hate this, i'm too dumb for the foreach shit
-		weapon.GameObject.Network.TakeOwnership();
-		weapon.GameObject.Network.TakeOwnership();
-		weapon.ViewModelCamera.Network.TakeOwnership();
-		weapon.ViewModelGun.GameObject.Network.TakeOwnership();
-		weapon.Arms.Network.TakeOwnership();
-		weapon.ViewModelHolder.Network.TakeOwnership();
+		weapon.GameObject.Network.DropOwnership();
+		weapon.GameObject.Network.DropOwnership();
+		weapon.ViewModelCamera.Network.DropOwnership();
+		weapon.ViewModelGun.GameObject.Network.DropOwnership();
+		weapon.Arms.Network.DropOwnership();
+		weapon.ViewModelHolder.Network.DropOwnership();
 		weapon.GameObject.Parent = null;
 		weapon.IsWeapon = false;
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
@@ -210,8 +230,17 @@ public sealed class Inventory : Component
 		}
 		else if (shotgun is not null && icon is not null)
 		{
-		var itemClone = shotgun.ItemPrefab.Clone(tr.EndPosition);
-		var rb = itemClone.Components.Get<Rigidbody>();
+		shotgun.GameObject.Network.DropOwnership();
+		shotgun.GameObject.Network.DropOwnership();
+		shotgun.ViewModelCamera.Network.DropOwnership();
+		shotgun.ViewModelGun.GameObject.Network.DropOwnership();
+		shotgun.arms.GameObject.Network.DropOwnership();
+		shotgun.ViewModelHolder.Network.DropOwnership();
+		shotgun.GameObject.Parent = null;
+		shotgun.IsWeapon = false;
+		//Idk if I need to refresh this shit but I will anyway 🤓☝️
+		Network.Refresh();
+		shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
 		RemoveItem(item, false);
 		}
 		else
