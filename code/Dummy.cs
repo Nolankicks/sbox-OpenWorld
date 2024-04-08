@@ -9,6 +9,8 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public List<GameObject> players { get; set; } = new();
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public Model GibModel { get; set; }
+	[Property] public bool SpawnGibs { get; set; }
+	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
 	public PlayerController player;
 	protected override void OnStart()
 	{
@@ -74,12 +76,21 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	public void Kill()
 	{
 		GameObject.Destroy();
+		if (SpawnGibs)
+		{
 		var gibGameObject = new GameObject();
 		var prop = gibGameObject.Components.Create<Prop>().Model = GibModel;
-		var clone = gibGameObject.Clone(GameObject.Transform.Position, GameObject.Transform.Rotation);
+		var clone = gibGameObject.Clone(GameObject.Transform.World);
 		var cloneGib = clone.Components.Get<Prop>();
+		clone.NetworkSpawn(null);
 		cloneGib.CreateGibs();
 		clone.Destroy();
+		}
+		else
+		{
+			var ragdoll = Ragdoll.Clone(GameObject.Transform.World);
+			ragdoll.NetworkSpawn(null);
+		}
 	}
 
 }

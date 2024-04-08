@@ -1134,7 +1134,12 @@
             "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
             "component_type": "NavMeshAgent"
           },
-          "players": []
+          "players": [],
+          "Ragdoll": {
+            "_type": "gameobject",
+            "prefab": "prefabs/dummy_ragdoll.prefab"
+          },
+          "SpawnGibs": false
         },
         {
           "__type": "BoxCollider",
@@ -2235,7 +2240,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-07T19:57:00.8563899-04:00",
+  "LastSaved": "2024-04-07T20:07:08.956095-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

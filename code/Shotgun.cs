@@ -99,7 +99,6 @@ public sealed class Shotgun : Component
 			{
 				ViewModelGun.Set("b_grounded", true);
 			}
-			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
 			ViewModelCamera.Enabled = IsProxy ? false : true;
 		}
 		else
@@ -126,7 +125,8 @@ public sealed class Shotgun : Component
 		ViewModelGun.Set("b_attack", true);
 		if (tr.Hit)
 		{
-			Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
+			var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
+			decal.SetParent(tr.GameObject);
 			tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy );
 			if (dummy is not null)
 			{

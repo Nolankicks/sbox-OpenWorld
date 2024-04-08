@@ -1,0 +1,63 @@
+{
+  "RootObject": {
+    "__guid": "4e95ee83-08dd-420a-84dd-c36c5f3447f9",
+    "Name": "dummy_ragdoll",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "SkinnedModelRenderer",
+        "__guid": "94b39f37-f02c-4727-93cd-6308d7b07561",
+        "BodyGroups": 0,
+        "CreateBoneObjects": false,
+        "Model": "models/citizen/citizen.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "ModelPhysics",
+        "__guid": "1b375d6a-0a0d-4aed-af91-c5edb966fa58",
+        "Locking": {},
+        "Model": "models/citizen/citizen.vmdl",
+        "Renderer": {
+          "_type": "component",
+          "component_id": "94b39f37-f02c-4727-93cd-6308d7b07561",
+          "go": "4e95ee83-08dd-420a-84dd-c36c5f3447f9",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "RigidbodyFlags": 0
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "e0062b8e-f365-4b66-b1c7-4e5bd44eca73",
+        "Name": "zombie",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "SkinnedModelRenderer",
+            "__guid": "f8cf5e69-2172-41a2-a4d7-04a7153bcb25",
+            "BodyGroups": 18446744073709551615,
+            "BoneMergeTarget": {
+              "_type": "component",
+              "component_id": "94b39f37-f02c-4727-93cd-6308d7b07561",
+              "go": "4e95ee83-08dd-420a-84dd-c36c5f3447f9",
+              "component_type": "SkinnedModelRenderer"
+            },
+            "CreateBoneObjects": false,
+            "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

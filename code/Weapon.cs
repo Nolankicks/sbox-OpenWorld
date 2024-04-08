@@ -181,9 +181,10 @@ public sealed class Weapon : Component
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage);
-					Particle.Clone(tr.HitPosition, rotation: Rotation.LookAt(-tr.Normal));
+					Particle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 				}
-				Decal.Clone(tr.HitPosition + tr.Normal, Rotation.LookAt(-tr.Normal));
+				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
+				decal.SetParent( tr.GameObject );
 				if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
