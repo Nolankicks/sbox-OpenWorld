@@ -75,7 +75,6 @@
       {
         "__guid": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a",
         "Name": "ViewModelCamera",
-        "Position": "28.272,0,0.098",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
@@ -101,7 +100,6 @@
           {
             "__guid": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e",
             "Name": "ViewModel",
-            "Position": "0,0,0",
             "Tags": "viewmodel",
             "Enabled": true,
             "NetworkMode": 1,
@@ -109,7 +107,6 @@
               {
                 "__guid": "d47c514b-2f6d-47b7-bc30-47618d973a3d",
                 "Name": "arms",
-                "Position": "0,0,0",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
@@ -133,7 +130,6 @@
               {
                 "__guid": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
                 "Name": "gun",
-                "Position": "0,0,0",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [

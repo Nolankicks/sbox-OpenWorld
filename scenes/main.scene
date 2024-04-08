@@ -11,7 +11,7 @@
         {
           "__type": "MapInstance",
           "__guid": "af514805-3954-4c9e-9326-63482682467a",
-          "MapName": "maps/testmap.vamp",
+          "MapName": "maps/testmap.vmap",
           "UseMapFromLaunch": false
         }
       ],
@@ -1286,6 +1286,930 @@
       "Enabled": true,
       "NetworkMode": 1,
       "__Prefab": "prefabs/weapons/weapon_shotgun.prefab"
+    },
+    {
+      "__guid": "d983fe7c-090b-4a08-bd09-81143cb75aab",
+      "Name": "Props",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "f4615dba-ee4a-4675-be6d-bc6f7a8637ae",
+          "Name": "oilbody",
+          "Position": "-440.3065,-284.9509,64.00047",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "c4528f54-045d-499f-8f4d-16edb4c20c24",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/oilbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "63c1f222-1016-4455-aa6f-91c4bdbd02ef",
+          "Name": "paintbody",
+          "Position": "-444.8943,-286.796,64.00007",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "ebeb026f-b8d1-4f1d-933e-7edd34265253",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/paintbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "2ac0e552-d047-43e7-9807-b4d4664caa08",
+          "Name": "packing_tape",
+          "Position": "-433.2578,-290.2499,65.42507",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "d9cab37c-d7c2-4348-a309-600508c4fe0f",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packing_tape/packing_tape.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "dc789c0a-3309-4327-8753-d399da403acc",
+          "Name": "can_square (1)",
+          "Position": "-441.3729,-289.5927,64.00007",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "7aca4bdc-eb12-431e-bc06-ab4a632d0e28",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_square.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "873fd317-8d16-4ef8-baf7-07079eb2ae17",
+          "Name": "can_square",
+          "Position": "-438.0103,-295.731,64.00007",
+          "Rotation": "0,0,-0.5,0.8660254",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "47b5cd6e-8363-4baa-80df-77aa3235eda7",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_square.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "c602cd1b-42bc-420f-a21f-40be8dc3884f",
+          "Name": "fire_extinguisher",
+          "Position": "-458.5099,-334.0395,65.26522",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "0fdf9595-0a77-449b-8c4e-f96173e357fe",
+              "BodyGroups": 18446744073709551615,
+              "Health": 20,
+              "IsStatic": false,
+              "Model": "models/sbox_props/fire_extinguisher/fire_extinguisher.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "b561fe7e-8109-4cdf-96b6-4d9f2b5dea5a",
+          "Name": "saw_blade_a",
+          "Position": "-461.6075,-285.2464,64.00007",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "37a14d0e-ca37-43a0-bc90-40a557e4d9e5",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/sbox_props/saw_blade/saw_blade_a.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "be4b550c-c95c-4f0b-869d-bfefb96aadeb",
+          "Name": "can_standard (1)",
+          "Position": "-449.296,-285.969,64.00249",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "a9311c4d-5b84-40d4-9615-f682a7a81199",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_standard.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "9f68d06e-8f67-4799-bc8e-82f378d0b723",
+          "Name": "can_standard",
+          "Position": "-451.284,-291.0293,64.00248",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "a0b57ba7-243b-4459-aa6c-8a23648d60eb",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_standard.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "78041a35-c4b9-435a-88d6-035553a8d0d8",
+          "Name": "can_long (2)",
+          "Position": "-445.8554,-290.5923,64.00248",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "dc06f5aa-716d-463d-bb37-92644b8e0d25",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_long.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "f3459937-ed35-4927-b346-7066ae09fb44",
+          "Name": "can_long (1)",
+          "Position": "-447.7056,-294.5257,64.00249",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "3f841300-aed1-4aaf-b42d-069d4bbc6413",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_long.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "6bcad1e7-97f4-4cdd-919b-5e4397ebca25",
+          "Name": "can_long",
+          "Position": "-442.8752,-295.078,64.00248",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "ace186b4-0655-4bda-8f67-c70b8a7b2875",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_long.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "9c4c35ae-b8ec-464a-bdc0-41a044e984ac",
+          "Name": "beer_cask",
+          "Position": "-399.0031,-367.9748,64.00008",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "cdccdc5c-933d-4006-a841-95fb51bee9fa",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/beer_keg/beer_cask.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "8d0a1953-d017-4f82-a8b5-932476e92589",
+          "Name": "cardboard_box_open",
+          "Position": "-454.9769,-310.358,64.11864",
+          "Rotation": "0,0,-0.1305262,0.9914449",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "4b7dbefa-3dc4-4b0b-82fd-7f0f3b6b26cd",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/sbox_props/cardboard_box/cardboard_box_open.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "833e5549-dd85-42dc-a84d-793cc3eb8bcb",
+          "Name": "paintbody",
+          "Position": "-449.0753,-332.1051,64.00007",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "f59cc44a-5dff-4781-a165-9b90ae541af7",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/paintbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "79491608-d3d3-40d9-a84a-62262760b421",
+          "Name": "watermelon",
+          "Position": "-443.9113,-345.8011,70.74684",
+          "Rotation": "0,-0.7071067,0,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "46612f5f-9bf4-444b-aa24-ba0faac65eed",
+              "BodyGroups": 18446744073709551615,
+              "Health": 2,
+              "IsStatic": false,
+              "Model": "models/sbox_props/watermelon/watermelon.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "dcaa17d0-6091-4903-9358-dd7f5c54bed2",
+          "Name": "can_small",
+          "Position": "-439.1853,-338.4055,64.00008",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "9131c9f4-ad0f-48f5-ba35-fc081bbbe4cd",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/packaged_food/can_small.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "36118ab6-0201-4bbf-b31e-3a5d499a548a",
+          "Name": "electrical_tape_plastic",
+          "Position": "-431.3857,-328.2677,66.71007",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "91e2a54d-d633-4766-b55f-f47becf536c2",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/electrical_tape/electrical_tape_plastic.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "c8b79071-f322-4acd-b33c-23c0497f26fb",
+          "Name": "wet_floor_sign",
+          "Position": "-445.8723,-360.4136,64.0264",
+          "Rotation": "0.09229594,0.09229596,0.7010573,0.7010574",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "3fa6b622-7c43-438e-ac11-c800b61ecfe9",
+              "BodyGroups": 18446744073709551615,
+              "Health": 20,
+              "IsStatic": false,
+              "Model": "models/props/wet_floor_sign/wet_floor_sign.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "09133e06-813a-4a1b-abdc-27f34283d90c",
+          "Name": "big_button",
+          "Position": "-437.5072,-326.9455,64.00217",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "74a8a12d-f8e4-4abb-9e9d-0fb1110da24a",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/big_button/big_button.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "5ff98e20-48f6-4973-a9ff-a48241121175",
+          "Name": "bugbody (3)",
+          "Position": "-437.1909,-333.1458,64.00011",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "097dcdcf-1d9d-4744-a556-08e1cb956e26",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/bugbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "ceae52f4-6c6b-44f9-800b-19b70155778a",
+          "Name": "bugbody (2)",
+          "Position": "-433.4585,-332.369,64.00011",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "30175c52-9393-43a8-bd48-2d69562229f6",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/bugbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "999d234d-ee29-440b-9b3f-8ebdc85a491d",
+          "Name": "bugbody (1)",
+          "Position": "-435.2303,-336.3288,64.0001",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "6f4469e2-4771-4750-bd8f-2645d51b5012",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/bugbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "956f8b95-faf6-4c33-be7b-02b2c3349fde",
+          "Name": "bugbody",
+          "Position": "-431.0569,-335.1279,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "29377485-e5f8-4d71-8b13-dd9afab49cff",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/spraycans/bugbody.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "2b42a6c1-0cd1-4727-ac61-5afa6926da4d",
+          "Name": "bottle (1)",
+          "Position": "-394.3016,-351.418,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "b87c2211-101d-4799-9117-672697a9d8cf",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/bottle.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "5739d7ea-71ea-400b-b6ef-b01769999228",
+          "Name": "bottle",
+          "Position": "-390.158,-331.1365,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "a93d21eb-e11a-4dcd-9073-4be03a396fb3",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/bottle.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "7f75a4dd-aaac-4055-8fda-3e870b197ebe",
+          "Name": "can (2)",
+          "Position": "-397.2337,-320.3086,64.00002",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "2df44684-d781-4cf4-9ce9-6629c2f3aaaa",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "a1625f39-29f7-443a-a89b-a90769a853bd",
+          "Name": "can (1)",
+          "Position": "-393.1212,-345.1835,64.00004",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "79233e2d-de85-4a71-81f5-e5e95d1aa9b5",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "74ec4cb7-0d2e-4ada-bac8-0d7c278bd4c4",
+          "Name": "can",
+          "Position": "-398.3114,-325.7757,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "fd21122c-a281-4b03-99f6-f3a606f5ded0",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "56dde24d-77b3-46c7-a21b-a251fc2aa8c9",
+          "Name": "whiskey (2)",
+          "Position": "-402.4914,-336.6313,64.00005",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "30f6e136-1603-409a-bb18-3d2dd5c8dd09",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/whiskey.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "d55db845-97e6-4f35-8efa-4a9edbe85a83",
+          "Name": "whiskey (1)",
+          "Position": "-395.0246,-339.0727,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "15ebeb3a-afe2-4e0d-8c90-4034ecf3dd4c",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/whiskey.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "f589d21f-5c62-4cff-91a2-93449a8661e9",
+          "Name": "whiskey",
+          "Position": "-397.954,-343.3105,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "5b879ea0-be77-4de9-94fe-8415ae337d69",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/whiskey.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "e1740b0a-cf5b-4adf-8745-3bb24cda2743",
+          "Name": "vodka (2)",
+          "Position": "-404.5663,-331.3121,64.00002",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "f03adf23-4250-4049-a7c7-4568b43c7cff",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/vodka.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "034da298-97d4-4688-bd3e-3e5deb8fe2c1",
+          "Name": "vodka (1)",
+          "Position": "-408.9049,-336.0557,64.00002",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "2b644e62-b43e-4bc0-a597-e218411ee484",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/vodka.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "f1dd9642-25df-468b-bb90-1600810fa54c",
+          "Name": "vodka",
+          "Position": "-397.3159,-331.4089,64.00008",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "98d54954-31cd-4df7-b0ec-2d424def74ea",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/trash/vodka.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "005742c6-2a97-4e3d-b481-f5797315c049",
+          "Name": "tv",
+          "Position": "-416.8435,-324.4693,64.01877",
+          "Rotation": "0,0,0.5,0.8660254",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "2b18c30e-b3be-490c-a234-2934f513bfaa",
+              "BodyGroups": 18446744073709551615,
+              "Health": 20,
+              "IsStatic": false,
+              "MaterialGroup": "wood_tv",
+              "Model": "models/sbox_props/tv/tv.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "2c9af1df-6883-4cb1-af75-ae8fd08a9433",
+          "Name": "wetfloor_sign",
+          "Position": "-376.7996,-359.515,64.01579",
+          "Rotation": "0,0,0.5,0.8660254",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "3c6388d2-6603-4eaa-a4dd-3e4088edaf6f",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/wetfloor_sign.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "a2418044-3c4a-4da3-9d5b-5aea7501c8c9",
+          "Name": "cola_can",
+          "Position": "-401.268,-352.1749,64.03435",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "a1447361-0510-41cf-9925-01dd1479faaa",
+              "BodyGroups": 18446744073709551615,
+              "Health": 10,
+              "IsStatic": false,
+              "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "8e516a95-c783-4c97-8ef7-23f7dfad635b",
+          "Name": "cola_can",
+          "Position": "-404.8336,-350.4067,64.03435",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "36290eac-402a-4229-894b-ad744c6cc213",
+              "BodyGroups": 18446744073709551615,
+              "Health": 10,
+              "IsStatic": false,
+              "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "0fef0f19-d5e9-4320-a0da-2948c8f7f146",
+          "Name": "cola_can",
+          "Position": "-404.5886,-354.4214,64.03435",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "28b327f6-ee9f-4c1c-8b14-ba21f35b927d",
+              "BodyGroups": 18446744073709551615,
+              "Health": 10,
+              "IsStatic": false,
+              "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "aab6c870-bec8-4d7a-a794-af359bf5dbd6",
+          "Name": "beer_keg_a2",
+          "Position": "-368.9111,-392.7642,64.00008",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "b85ca57d-aadc-41a6-a138-36e83ef5ea8c",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/beer_keg/beer_keg_a2.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "09b280fe-797b-4589-94eb-1ad172c97dfc",
+          "Name": "beer_bottle",
+          "Position": "-396.1844,-388.3361,96.2514",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "8605dad3-b567-4986-975a-5dd4f69747d1",
+              "BodyGroups": 18446744073709551615,
+              "Health": 1,
+              "IsStatic": false,
+              "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "0a79c86d-6460-47c2-8759-dce9b1bd2539",
+          "Name": "plastic_crate_02",
+          "Position": "-392.4868,-386.8159,95.96921",
+          "Rotation": "0,0,-0.1305262,0.9914449",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "15d7fef0-633f-492e-8a77-49d0db324814",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/plastic_crate/plastic_crate_02.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "a38a0aa8-7b38-41ff-8624-9f37218c9ed2",
+          "Name": "wooden_crate",
+          "Position": "-423.2294,-369.5375,95.96921",
+          "Rotation": "0,0,-0.258819,0.9659258",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "35940d04-1b3a-4a6d-a22b-6ea0bb99beb8",
+              "BodyGroups": 18446744073709551615,
+              "Health": 50,
+              "IsStatic": false,
+              "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "1ab537ed-0570-43b7-986c-9354c88b81a5",
+          "Name": "wooden_crate",
+          "Position": "-425.693,-393.1107,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "03b45ea6-0261-49da-894e-d1aa43128a3d",
+              "BodyGroups": 18446744073709551615,
+              "Health": 50,
+              "IsStatic": false,
+              "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "2c40cfce-2d42-4187-b227-03158bac7b79",
+          "Name": "wooden_crate",
+          "Position": "-423.8365,-359.0062,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "61fc8678-8e67-4b74-84f8-162c834dcaf1",
+              "BodyGroups": 18446744073709551615,
+              "Health": 50,
+              "IsStatic": false,
+              "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "934e649a-04fa-4cfa-87d0-07af1aad250a",
+          "Name": "wooden_crate",
+          "Position": "-391.849,-391.8736,64.00006",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "e89bf7da-c030-440a-aa71-13f7b76e2129",
+              "BodyGroups": 18446744073709551615,
+              "Health": 50,
+              "IsStatic": false,
+              "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "3ded8590-ad93-4d99-bf5c-134afb3bc1d0",
+          "Name": "brick_single_04",
+          "Position": "-427.9828,-297.557,64.0127",
+          "Rotation": "0,0,0.3826834,0.9238796",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "b2e23c68-3105-477b-9697-c50dd0c7ecb6",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/brick_single/brick_single_04.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "67326ccf-24ea-4c0f-a5f4-84ea7e38d228",
+          "Name": "brick_single_04 (1)",
+          "Position": "-430.0892,-307.4466,64.0127",
+          "Rotation": "0,0,0.258819,0.965926",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "8fadb7fc-0284-45aa-95ce-d44ff97e4b44",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/props/brick_single/brick_single_04.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "3d7da0bc-e748-45f3-b1d3-91ede53b47e6",
+          "Name": "cube_tv_breakable",
+          "Position": "-463.35,-388.8502,64.32695",
+          "Rotation": "0,0,0.8660255,0.5000001",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "d6749bb0-f7b4-4fc6-9cd5-0a46b34fb1b3",
+              "BodyGroups": 18446744073709551615,
+              "Health": 50,
+              "IsStatic": false,
+              "Model": "models/cube_tv/cube_tv_breakable/cube_tv_breakable.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "d26eddcd-16ee-4abc-b09a-ee4bd5c0a146",
+          "Name": "nes",
+          "Position": "-365.8546,-378.5532,64.02096",
+          "Rotation": "0,0,-0.3826834,0.9238796",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "06b0dd34-6841-4a9b-a454-83ed5605e9f3",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "nes/nes.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "cde77750-2ec8-415a-ac04-d5ea1b452adf",
+          "Name": "duckhunt",
+          "Position": "-360.7999,-397.497,74.74923",
+          "Rotation": "0,-0.1305262,0,0.9914449",
+          "Scale": "0.25,0.25,0.25",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "6ea1023f-e76a-4d72-9952-3216a63ea3bf",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/duckhunt.vmdl"
+            }
+          ]
+        },
+        {
+          "__guid": "3b85e2f6-3677-4431-983c-8d03afca712d",
+          "Name": "duck_decoration",
+          "Position": "-155.9266,-385.0571,64.01676",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Prop",
+              "__guid": "460132f1-1d0c-45b6-b215-439e6871cc44",
+              "BodyGroups": 18446744073709551615,
+              "Health": 0,
+              "IsStatic": false,
+              "Model": "models/duck_decoration/duck_decoration.vmdl"
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1311,12 +2235,44 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-07T17:27:16.0743246-04:00",
+  "LastSaved": "2024-04-07T19:57:00.8563899-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "duccsoft.duck_decoration",
+    "facepunch.beer_bottle",
+    "facepunch.beer_cask",
+    "facepunch.beer_keg_a2",
+    "facepunch.big_button",
+    "facepunch.brick_single_04",
+    "facepunch.bugspray",
+    "facepunch.can_long",
+    "facepunch.can_small",
+    "facepunch.can_square",
+    "facepunch.can_standard",
+    "facepunch.card_box_open",
+    "facepunch.electrical_tape_plastic",
+    "facepunch.fireextinguisher",
     "facepunch.floor_grass_dirt_weed_blend_a",
+    "facepunch.oilcanbody",
+    "facepunch.packing_tape",
+    "facepunch.paintspraycan",
+    "facepunch.plastic_crate_02",
     "facepunch.rock_scatter_03",
-    "nolankicks.idel-terry"
+    "facepunch.saw_blade_a",
+    "facepunch.soda_can",
+    "facepunch.tv",
+    "facepunch.watermelon",
+    "facepunch.wet_floor_sign",
+    "facepunch.wooden_crate",
+    "fpopium.bottle",
+    "fpopium.can",
+    "fpopium.vodka",
+    "fpopium.whiskey",
+    "lwrs.aperturetvpro",
+    "nolankicks.duckhunt",
+    "nolankicks.idel-terry",
+    "randkassets.wetfloor_sign",
+    "smlp.nes"
   ]
 }

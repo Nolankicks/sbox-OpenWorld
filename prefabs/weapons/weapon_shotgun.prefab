@@ -60,7 +60,6 @@
       {
         "__guid": "562c51ce-1a30-4f1f-9b08-af4560c7a7c1",
         "Name": "ViewModelCamera",
-        "Position": "28.272,0,0.098",
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 1,
@@ -70,7 +69,7 @@
             "__guid": "68ea5bdb-bbeb-43b0-a24f-9870d86a5c1a",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
-            "FieldOfView": 60,
+            "FieldOfView": 90,
             "IsMainCamera": false,
             "Orthographic": false,
             "OrthographicHeight": 1204,
@@ -87,14 +86,12 @@
           {
             "__guid": "956f51a3-eee7-4426-8745-0fb3fd7674e6",
             "Name": "ViewModel",
-            "Position": "0,0,0",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [
               {
                 "__guid": "55f96f61-4a9a-459d-9b7e-6966f478dba5",
                 "Name": "gun",
-                "Position": "0,0,0",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
@@ -112,7 +109,6 @@
               {
                 "__guid": "bfb947c8-21a5-402b-b58b-118ab7ff70a0",
                 "Name": "arms",
-                "Position": "0,0,0",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [

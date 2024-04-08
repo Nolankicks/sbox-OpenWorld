@@ -33,10 +33,10 @@ public sealed class Shotgun : Component
 		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		if (IsProxy) return;
-		StartingAmmo = Ammo;
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		Interactor = Scene.GetAllComponents<Interactor>().FirstOrDefault( x => !x.IsProxy);
+		if (IsProxy) return;
+		StartingAmmo = Ammo;
 		TimeSinceFire = FireRate;
 		if (PlayerController.IsFirstPerson && !IsWeapon)
 		{
@@ -45,21 +45,18 @@ public sealed class Shotgun : Component
 		
 		}
 	}
-	protected override void OnUpdate()
+		protected override void OnUpdate()
 	{
-		if (IsProxy) return;
+		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		if (IsWeapon)
 		{
-			pickUpObject.Enabled = false;
-			if (Input.Pressed("attack1") && TimeSinceFire > FireRate)
+		pickUpObject.Enabled = false;
+		ViewModelGun.GameObject.Enabled = true;
+		if ( IsProxy ) return;
+		
+		if (Input.Down("attack1") && timeSinceReload > 2.5)
 		{
-			for (int i = 0; i < 4; i++)
-			{
-				Shoot();
-				ShotsFired++;
-			}
-			Sound.Play(FireSound, Transform.Position + Vector3.Up * 64);
-			TimeSinceFire = 0;
+			Shoot();
 		}
 		if (Input.Down("attack2"))
 		{
@@ -70,28 +67,40 @@ public sealed class Shotgun : Component
 			IsAiming = false;
 		}
 
-		Reload();
+		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
+		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
+
+		
+		Log.Info(Ammo);
 		if (PlayerController.IsFirstPerson)
 		{
-			ViewModelCamera.Enabled = true;
-			//ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
-		if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
-		{
-			ViewModelGun.Set("b_grounded", false);
-		}
-		else
-		{
-			ViewModelGun.Set("b_grounded", true);
-		}
-			if (Input.Pressed("jump"))
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
 			{
-				ViewModelGun.Set("b_jump", true);
+				
+				Ammo = MaxAmmo -= ShotsFired;
+				Ammo = 30;
+				ViewModelGun.Set("b_reload", true);
+				ShotsFired = 0;
+				timeSinceReload = 0;
 			}
 			else
 			{
-				ViewModelGun.Set("b_jump", false);
+				ViewModelGun.Set("b_reload", false);
 			}
-			ViewModelGun.Set("b_twohanded", true);
+			if (Input.Pressed("jump") && !IsProxy)
+			{
+				ViewModelGun.Set("b_jump", true);
+			}
+			if (!PlayerController.CharacterController.IsOnGround && !IsProxy)
+			{
+				ViewModelGun.Set("b_grounded", false);
+			}
+			else
+			{
+				ViewModelGun.Set("b_grounded", true);
+			}
+			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+			ViewModelCamera.Enabled = IsProxy ? false : true;
 		}
 		else
 		{
@@ -101,7 +110,8 @@ public sealed class Shotgun : Component
 		else
 		{
 			ViewModelCamera.Enabled = false;
-						pickUpObject.Enabled = true;
+			ViewModelGun.GameObject.Enabled = false;
+			pickUpObject.Enabled = true;
 		}
 	}
 

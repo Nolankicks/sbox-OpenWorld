@@ -14,7 +14,6 @@ public sealed class Interactor : Component
 	protected override void OnUpdate()
 	{
 		PlayerController.IsGrabbing = IsGrabbing;
-		Log.Info(IsGrabbing);
 		Transform aimTransform = Scene.Camera.Transform.World;
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();

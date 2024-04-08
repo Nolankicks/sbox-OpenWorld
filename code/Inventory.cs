@@ -14,9 +14,9 @@ public sealed class Inventory : Component
 	protected override void OnStart()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-		if (IsProxy) return;
 		Items = new List<GameObject>(new GameObject[9]);
 		ItemTextures = new List<Texture>(new Texture[9]);
+		if (IsProxy) return;
 		Log.Info(Items.Count);
 		AddItem(Gun, 0);
 	}
@@ -213,35 +213,38 @@ public sealed class Inventory : Component
 		item.Components.TryGet<IconComponent>(out var icon);
 		if (weapon is not null && icon is not null)
 		{
-		RemoveItem(item, false);
 		//God I hate this, i'm too dumb for the foreach shit
+		weapon.GameObject.Parent = null;
+		weapon.IsWeapon = false;
+		weapon.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
+		RemoveItem(item, false);
 		weapon.GameObject.Network.DropOwnership();
 		weapon.GameObject.Network.DropOwnership();
 		weapon.ViewModelCamera.Network.DropOwnership();
 		weapon.ViewModelGun.GameObject.Network.DropOwnership();
 		weapon.Arms.Network.DropOwnership();
 		weapon.ViewModelHolder.Network.DropOwnership();
-		weapon.GameObject.Parent = null;
-		weapon.IsWeapon = false;
+
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
 		Network.Refresh();
-		weapon.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
+
 		}
 		else if (shotgun is not null && icon is not null)
 		{
+		shotgun.GameObject.Parent = null;
+		shotgun.IsWeapon = false;
+		shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
+		RemoveItem(item, false);
 		shotgun.GameObject.Network.DropOwnership();
 		shotgun.GameObject.Network.DropOwnership();
 		shotgun.ViewModelCamera.Network.DropOwnership();
 		shotgun.ViewModelGun.GameObject.Network.DropOwnership();
 		shotgun.arms.GameObject.Network.DropOwnership();
 		shotgun.ViewModelHolder.Network.DropOwnership();
-		shotgun.GameObject.Parent = null;
-		shotgun.IsWeapon = false;
+	
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
 		Network.Refresh();
-		shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
+		
 		}
 		else
 		{
