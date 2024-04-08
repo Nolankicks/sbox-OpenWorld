@@ -33,7 +33,7 @@
         "__guid": "e0062b8e-f365-4b66-b1c7-4e5bd44eca73",
         "Name": "zombie",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "Components": [
           {
             "__type": "SkinnedModelRenderer",

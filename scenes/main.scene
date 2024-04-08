@@ -168,13 +168,6 @@
                 "go": "699a701c-8449-4947-a151-8f93a40161df",
                 "component_type": "SkinnedModelRenderer"
               }
-            },
-            {
-              "__type": "ModelCollider",
-              "__guid": "956586c9-5210-4dab-89fa-6a0d5c4c67d0",
-              "IsTrigger": false,
-              "Model": "models/citizen/citizen.vmdl",
-              "Static": false
             }
           ],
           "Children": [
@@ -1139,7 +1132,7 @@
             "_type": "gameobject",
             "prefab": "prefabs/dummy_ragdoll.prefab"
           },
-          "SpawnGibs": false
+          "SpawnGibs": true
         },
         {
           "__type": "BoxCollider",
@@ -2240,7 +2233,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-07T20:07:08.956095-04:00",
+  "LastSaved": "2024-04-08T11:32:29.6641809-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

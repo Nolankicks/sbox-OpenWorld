@@ -4,6 +4,7 @@ public sealed class Interactor : Component
 {
 	PhysicsBody grabbedBody;
 	Transform grabbedOffset;
+	GameObject PhysicsGameObject;
 	public bool IsGrabbing => grabbedBody is not null;
 	public PlayerController PlayerController;
 
@@ -23,18 +24,26 @@ public sealed class Interactor : Component
 			{
 				grabbedBody = tr.Body;
 				grabbedOffset = aimTransform.ToLocal( tr.Body.Transform );
+				PhysicsGameObject = tr.GameObject;
+				PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+				PhysicsGameObject.Network.TakeOwnership();
 			}
 		}
 		if (grabbedBody is null) return;
 		if (Input.Down("flashlight") && grabbedBody is not null)
 		{
+			if (grabbedBody is null) return;
 				var targetTx = aimTransform.ToWorld( grabbedOffset );
 				grabbedBody.SmoothMove( targetTx, Time.Delta * 50, Time.Delta );
+				PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+				PhysicsGameObject.Network.TakeOwnership();
 				return;
 		}
 		else
 		{
+			PhysicsGameObject.Network.DropOwnership();
 			grabbedBody = null;
+			PhysicsGameObject = null;
 		}
 	}
 
