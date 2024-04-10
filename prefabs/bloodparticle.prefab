@@ -1,16 +1,75 @@
 {
   "RootObject": {
-    "__guid": "962b7640-d0d3-467a-a7e4-1cecfba6a584",
+    "__guid": "d3afbfc6-b410-4e91-9985-0edad2bdeb6c",
     "Name": "bloodparticle",
     "Tags": "particles",
     "Enabled": true,
     "NetworkMode": 2,
     "Components": [
       {
-        "__type": "LegacyParticleSystem",
-        "__guid": "ab37bcac-67ed-4ec0-ae3b-ee569f3061e3",
+        "__type": "Sandbox.LegacyParticleSystem",
+        "__guid": "3937a529-9c25-4b7a-a972-9636f28113de",
         "ControlPoints": [],
         "Looped": false,
+        "OnComponentStart": {
+          "__version": 5,
+          "__guid": "a25ecc48-ab13-450f-bff5-85637893c53f",
+          "UserData": {
+            "Title": "On Component Start",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "304,96"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_name": "Destroy",
+                "_isStatic": false,
+                "_type": "Sandbox.Game/Sandbox.GameObject"
+              },
+              "UserData": {
+                "Position": "576,192"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 5,
+              "DstId": 1,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 2,
+              "DstName": "_target"
+            }
+          ]
+        },
         "Particles": "particles/impact.flesh.bloodpuff.vpcf",
         "PlaybackSpeed": 1
       }

@@ -1,6 +1,7 @@
 using Sandbox;
 using Sandbox.Citizen;
 using System;
+using YourNamespace;
 public sealed class Inventory : Component
 {
 	[Property] public List<GameObject> Items;
@@ -24,6 +25,7 @@ public sealed class Inventory : Component
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{
 		if (IsProxy) return;
+		if (Items.Count <= Slot) return;
 		if (Spawn)
 		{
 		if (item is null) return;
@@ -75,6 +77,7 @@ public sealed class Inventory : Component
 	ChangeSlots();
 	Pickup();
 	Drop();
+	Trace();
 	foreach (var item in Items)
 	{
 		if (item is not null)
@@ -169,14 +172,14 @@ public sealed class Inventory : Component
 				item.Arms.Network.TakeOwnership();
 				item.ViewModelHolder.Network.TakeOwnership();
 				item.GameObject.Transform.Rotation = Rotation.Identity;
-				//Idk if I need to refresh this shit but I will anyway 🤓☝️
-				Network.Refresh();
 				var slot = Items.FindIndex(x => x is null);
 				AddItem(item.GameObject, slot, false);
 				AddTexture(icon.Icon, slot);
 				item.GameObject.Parent = GameObject;
 				item.IsWeapon = true;
 				item.GameObject.Transform.Position = Transform.Position;
+				//Idk if I need to refresh this shit but I will anyway 🤓☝️
+				Network.Refresh();
 			}
 			else if (shotgun is not null && icon is not null)
 			{
@@ -195,6 +198,8 @@ public sealed class Inventory : Component
 				shotgun.GameObject.Parent = GameObject;
 				shotgun.IsWeapon = true;
 				shotgun.GameObject.Transform.Position = Transform.Position;
+				//Idk if I need to refresh this shit but I will anyway 🤓☝️
+				Network.Refresh();
 			}
 
 		}
@@ -251,5 +256,25 @@ public sealed class Inventory : Component
 			Log.Error("Item is not a weapon");
 		}
 	}
+	}
+	void PopupUi(PopupUi popupUi, Inputs inputAction)
+	{
+		if (popupUi is null) return;
+		if (Input.Pressed(InputHandler.GetInputString(inputAction)))
+		{
+			popupUi.PickUpAction?.Invoke();
+		}
+	}
+
+	void Trace()
+	{
+		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
+		if (!tr.Hit) return;
+		tr.GameObject.Components.TryGet<PopupUi>(out var popup);
+		if (popup is not null)
+		{
+			PopupUi(popup, popup.selectedInput);
+		}
 	}
 }

@@ -54,7 +54,7 @@ public sealed class Shotgun : Component
 		ViewModelGun.GameObject.Enabled = true;
 		if ( IsProxy ) return;
 		
-		if (Input.Down("attack1") && timeSinceReload > 2.5)
+		if (Input.Pressed("attack1") && timeSinceReload > 2.5)
 		{
 			Shoot();
 		}

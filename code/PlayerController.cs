@@ -16,6 +16,9 @@ public sealed class PlayerController : Component
 	[Sync] public Angles eyeAngles { get; set; }
 	[Sync] public bool IsGrabbing { get; set; } = false;
 	[Property] public Interactor Interactor { get; set; }
+	[Sync] public float Health { get; set; } = 100;
+	
+
 	public Item CurrentItem;
 	public Inventory Inventory;
 
@@ -226,4 +229,29 @@ public sealed class PlayerController : Component
 		}
 	}
 
+	[Broadcast]
+	public void TakeDamage(float damage)
+	{
+		if (IsProxy) return;
+		Health -= damage;
+	}
+
+	[Broadcast]
+	public void Heal(float amount)
+	{
+		if (IsProxy) return;
+		Health += amount;
+	}
+
+	[ActionGraphNode("Take Damage Node"), Pure]
+	public void TakeDamageNode(float damage)
+	{
+		TakeDamage(damage);
+	}
+
+	[ActionGraphNode("Heal Node"), Pure]
+	public void HealNode(float amount)
+	{
+		Heal(amount);
+	}
 }

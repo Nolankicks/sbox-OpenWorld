@@ -49,4 +49,17 @@ Hud
 		align-items: center;
 		justify-content: center;
 	}
+
+	.health
+	{
+		position: absolute;
+		font-family: poppins;
+		font-size: 32px;
+		width: 200px;
+		height: 200px;
+		align-items: center;
+		justify-content: center;
+		right: 12px;
+		bottom: 12px;
+	}
 }

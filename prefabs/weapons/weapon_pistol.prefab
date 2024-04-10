@@ -78,7 +78,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "CameraComponent",
+            "__type": "Sandbox.CameraComponent",
             "__guid": "9d83e2c2-45d7-4a1e-9701-1df3af34e5ce",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
@@ -110,7 +110,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "5869c58b-90a1-42a0-bdf0-f9af3ead0e2f",
                     "BodyGroups": 18757,
                     "CreateBoneObjects": false,
@@ -127,7 +127,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "be81cbeb-7580-416e-aed7-764b2b96b58a",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
@@ -154,7 +154,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
+            "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "fb3fd6ac-50fa-42b5-833f-25bf694e87fe",
             "BodyGroups": 10565,
             "CreateBoneObjects": false,
@@ -163,7 +163,7 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "Rigidbody",
+            "__type": "Sandbox.Rigidbody",
             "__guid": "e71c4c0e-7260-4e94-a642-e1d209cff91f",
             "AngularDamping": 0,
             "Gravity": true,
@@ -175,7 +175,7 @@
             "StartAsleep": false
           },
           {
-            "__type": "BoxCollider",
+            "__type": "Sandbox.BoxCollider",
             "__guid": "188a1f64-8874-4a0b-804f-8a2c8bbf9b9f",
             "Center": "3.599999,0,2.6",
             "IsTrigger": false,

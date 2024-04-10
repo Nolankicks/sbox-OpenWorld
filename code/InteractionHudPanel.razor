@@ -23,6 +23,18 @@
 			<img class="glyph" src=@Interact.ResourcePath>
 		</div>
 	}
+	else if (PopupUi is not null)
+	{
+		<div class="interactioncard">
+			<div class="name">@PopupUi.Name</div>
+			<div style="font-size: 24pxs" class="description">@PopupUi.Description</div>
+			<img class="glyph" src=@PopupUi.Glyph.ResourcePath>
+			@if (PopupUi.Icon is not null)
+			{
+				<img class="icon" texture=@PopupUi.Icon.ResourcePath>
+			}
+		</div>
+	}
 	}
 </root>
 
@@ -32,6 +44,7 @@
 	public Shotgun Shotgun { get; set; }
 	public IconComponent Icon { get; set; }
 	public bool ShowUi { get; set; } = false;
+	public PopupUi PopupUi { get; set; }
 	public Texture Interact = Input.GetGlyph("use", InputGlyphSize.Small, false);
 	public override void Tick()
 	{
@@ -56,10 +69,22 @@
 			Style.Top = Length.Pixels( pos.y );
 			StateHasChanged();
 		}
+		else if (PopupUi is not null)
+		{
+			ShowUi = true;
+			var pos = Scene.Camera.PointToScreenPixels( PopupUi.GameObject.Transform.Position );
+			pos *= ScaleFromScreen;
+			Style.Position = PositionMode.Absolute;
+			Style.Left = Length.Pixels( pos.x );
+			Style.Top = Length.Pixels( pos.y );
+			StateHasChanged();
+		}
 		else
 		{
 			Item = null;
 			Shotgun = null;
+			Icon = null;
+			PopupUi = null;
 			ShowUi = false;
 			StateHasChanged();
 		}
@@ -74,6 +99,7 @@
         tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
 		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
 		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun);
+		tr.GameObject.Components.TryGet<PopupUi>(out var popupUi);
         if (item is not null && icon is not null)
         {
             Item = item;
@@ -83,6 +109,10 @@
 		{
 			Shotgun = shotgun;
 			Icon = icon;
+		}
+		else if (popupUi is not null)
+		{
+			PopupUi = popupUi;
 		}
 		else if (item is not null)
 		{
@@ -96,6 +126,7 @@
         {
             Item = null;
 			Icon = null;
+			PopupUi = null;
         }
     }
     else

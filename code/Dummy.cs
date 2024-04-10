@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.VR;
 
 public sealed class Dummy : Component, Component.ITriggerListener
 {
@@ -8,7 +9,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public NavMeshAgent navMeshAgent { get; set; }
 	[Property] public List<GameObject> players { get; set; } = new();
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
-	[Property] public Model GibModel { get; set; }
+	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
 	public PlayerController player;
@@ -21,7 +22,6 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		if (IsProxy) return;
 		MoveToPlayer();
 		UpdateAnimations();
-		Log.Info(players.Count);
 	}
 	void MoveToPlayer()
 	{
@@ -37,7 +37,6 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		animationHelper.Target.Transform.Rotation = Rotation.Slerp(animationHelper.Target.Transform.Rotation, targetRot, Time.Delta * 10f);
 		navMeshAgent.MoveTo(player.Transform.Position);
 		animationHelper.LookAt = player;
-		animationHelper.AimAngle = player.Transform.Rotation;
 		}
 	}
 	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
@@ -75,21 +74,19 @@ public sealed class Dummy : Component, Component.ITriggerListener
 
 	public void Kill()
 	{
-		GameObject.Destroy();
 		if (SpawnGibs)
 		{
-		var gibGameObject = new GameObject();
-		var prop = gibGameObject.Components.Create<Prop>().Model = GibModel;
-		var clone = gibGameObject.Clone(GameObject.Transform.World);
-		var cloneGib = clone.Components.Get<Prop>();
-		clone.NetworkSpawn(null);
-		cloneGib.CreateGibs();
-		clone.Destroy();
+			var clone = GibGameObject.Clone(GameObject.Transform.World);
+			var prop = clone.Components.Get<Prop>();
+			prop.CreateGibs();
+			clone.Destroy();
+			GameObject.Destroy();
 		}
 		else
 		{
 			var ragdoll = Ragdoll.Clone(GameObject.Transform.World);
 			ragdoll.NetworkSpawn(null);
+			GameObject.Destroy();
 		}
 	}
 
