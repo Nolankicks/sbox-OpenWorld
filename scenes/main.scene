@@ -1163,7 +1163,7 @@
           "Name": "body",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 1,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Sandbox.SkinnedModelRenderer",
@@ -1200,7 +1200,7 @@
               "Name": "Cloths",
               "Position": "0,0,0",
               "Enabled": true,
-              "NetworkMode": 1,
+              "NetworkMode": 2,
               "Components": [
                 {
                   "__type": "Sandbox.SkinnedModelRenderer",
@@ -1226,7 +1226,7 @@
           "Name": "Collider",
           "Position": "0,0,0",
           "Enabled": true,
-          "NetworkMode": 1,
+          "NetworkMode": 2,
           "Components": [
             {
               "__type": "Sandbox.CapsuleCollider",
@@ -1244,7 +1244,7 @@
           "Name": "eyes",
           "Position": "0,0,64",
           "Enabled": true,
-          "NetworkMode": 1
+          "NetworkMode": 2
         }
       ]
     },
@@ -2165,7 +2165,7 @@
               "Icon": "textures/player_spritesheet_1.vtex",
               "Name": "Hello",
               "PickUpAction": {
-                "__version": 5,
+                "__version": 6,
                 "__guid": "03fd1564-7f41-4b9c-850f-0614c3684d43",
                 "UserData": {
                   "Title": "Pick Up Action",
@@ -2256,7 +2256,7 @@
                   },
                   {
                     "Id": 32,
-                    "Type": "property.get",
+                    "Type": "property",
                     "Properties": {
                       "_type": "package.nolankicks.open_world_game/PopupUi",
                       "_name": "Inventory"
@@ -2409,191 +2409,155 @@
       ]
     },
     {
-      "__guid": "cc66e4b7-688b-445a-942e-33411a96c316",
-      "Name": "untitled_69",
-      "Position": "-336,-400,64.07214",
-      "Rotation": "0,0,0.3826834,0.9238796",
+      "__guid": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+      "Name": "citizen",
+      "Position": "-324.0799,-340.368,64.03539",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "83117471-e6a8-4013-8355-8f3881ddd197",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "model/7/untitled_69.vmdl"
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+          "BodyGroups": 65,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "__type": "PopupUi",
-          "__guid": "041b69bf-01b0-4761-97b9-6db14448195a",
-          "Description": "We like fortnite",
-          "Icon": "materials/editor/ai_goal_standoff_tga_19c4cf2c.generated.vtex",
-          "Name": "Medkit",
-          "PickUpAction": {
-            "__version": 5,
-            "__guid": "afae12ec-16ae-4bb6-a99f-43d30fc16d52",
-            "UserData": {
-              "Title": "Pick Up Action",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.open_world_game/PopupUi"
-              ]
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "package.nolankicks.open_world_game/PopupUi"
-                },
-                "UserData": {
-                  "Position": "-80,192"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "package.nolankicks.open_world_game/PopupUi",
-                  "_name": "playerController"
-                },
-                "UserData": {
-                  "Position": "176,144"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.nolankicks.open_world_game/PlayerController",
-                  "_isStatic": false,
-                  "_name": "Heal"
-                },
-                "UserData": {
-                  "Position": "512,80"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "sound.playat",
-                "UserData": {
-                  "Position": "912,192"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "400,384"
-                }
-              },
-              {
-                "Id": 7,
-                "Type": "property.get",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
-                },
-                "UserData": {
-                  "Position": "624,336"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "call",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false,
-                  "_name": "Destroy"
-                },
-                "UserData": {
-                  "Position": "1168,240"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_this"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "Value": 25,
-                "DstId": 3,
-                "DstName": "amount"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_signal",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 7,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "position"
-              },
-              {
-                "Value": "sounds/kenney/ui/ui.favourite.sound",
-                "DstId": 4,
-                "DstName": "soundEvent"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 5,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 7,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_signal",
-                "DstId": 8,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 8,
-                "DstName": "_target"
-              }
-            ]
+          "__type": "Sandbox.ModelPhysics",
+          "__guid": "ca881197-bb9a-47f3-952a-560740980238",
+          "Locking": {},
+          "Model": "models/citizen/citizen.vmdl",
+          "Renderer": {
+            "_type": "component",
+            "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+            "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+            "component_type": "SkinnedModelRenderer"
           },
-          "selectedInput": "E"
+          "RigidbodyFlags": 0
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "8d449b99-3fc1-4b46-8ba4-461cf46fd431",
+          "Name": "hair",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "1d5394e0-8a71-4ae7-a8b1-227e436f7b58",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/hair_longcurly/models/hair_longcurly_brown.vmdl",
+              "RenderType": "On",
+              "Tint": "0.14419,0.09843,0.0845,1"
+            }
+          ]
+        },
+        {
+          "__guid": "09b37055-410a-4757-8dfd-ee390062e819",
+          "Name": "pants",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "d17fb879-9866-4075-b832-2f21671e640a",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/trousers/cargopants/models/binman_trousers.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "25f5285a-34b3-486f-b5b6-f500a0a30df0",
+          "Name": "beard",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "facb8098-4b4c-428c-a345-594e387a345e",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/mutton_chops/models/mutton_chops.vmdl",
+              "RenderType": "On",
+              "Tint": "0.14118,0.09804,0.08235,1"
+            }
+          ]
+        },
+        {
+          "__guid": "ff31dd11-9282-429c-bcdc-f10c7f500eb3",
+          "Name": "shirt",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "f1ebaeda-c463-42bb-bac8-b73ee52f45c5",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/shirt/polo_shirt/models/binman_shirt.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "f477dc98-6998-4a26-9589-28bd0f2902e9",
+          "Name": "shoes",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "151c3c4c-3625-4f55-8e3c-b91418e3caec",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/shoes/crocs_and_socks/models/clogs_and_socks.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
         }
       ]
     }
@@ -2621,7 +2585,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-09T21:15:02.5862748-04:00",
+  "LastSaved": "2024-04-10T11:57:38.2905924-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -2658,7 +2622,6 @@
     "nolankicks.duckhunt",
     "nolankicks.idel-terry",
     "randkassets.wetfloor_sign",
-    "smlp.nes",
-    "tesssssssssst.untitled_1481871521"
+    "smlp.nes"
   ]
 }

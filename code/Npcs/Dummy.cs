@@ -19,9 +19,13 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	}
 	protected override void OnUpdate()
 	{
-		if (IsProxy) return;
-		MoveToPlayer();
+		Log.Info(navMeshAgent.WishVelocity);
+		Log.Info(navMeshAgent.Velocity);
 		UpdateAnimations();
+		if (!IsProxy)
+		{
+			MoveToPlayer();
+		}
 	}
 	void MoveToPlayer()
 	{
@@ -78,8 +82,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		{
 			var clone = GibGameObject.Clone(GameObject.Transform.World);
 			var prop = clone.Components.Get<Prop>();
-			prop.CreateGibs();
-			clone.Destroy();
+			prop.Kill();
 			GameObject.Destroy();
 		}
 		else
