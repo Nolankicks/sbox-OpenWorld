@@ -2187,9 +2187,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_name": "AddItem",
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "1104,-336"
@@ -2239,27 +2239,20 @@
                     "Id": 12,
                     "Type": "call",
                     "Properties": {
+                      "_name": "Kill",
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false,
-                      "_name": "Kill"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "1616,-80"
                     }
                   },
                   {
-                    "Id": 30,
-                    "Type": "log.warning",
-                    "UserData": {
-                      "Position": "1936,16"
-                    }
-                  },
-                  {
                     "Id": 32,
                     "Type": "property",
                     "Properties": {
-                      "_type": "package.nolankicks.open_world_game/PopupUi",
-                      "_name": "Inventory"
+                      "_name": "Inventory",
+                      "_type": "package.nolankicks.open_world_game/PopupUi"
                     },
                     "UserData": {
                       "Position": "720,-352"
@@ -2320,17 +2313,6 @@
                     "SrcName": "_result",
                     "DstId": 12,
                     "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 12,
-                    "SrcName": "_signal",
-                    "DstId": 30,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "hello",
-                    "DstId": 30,
-                    "DstName": "format"
                   },
                   {
                     "SrcId": 7,
@@ -2412,6 +2394,7 @@
       "__guid": "b4dde576-005e-4c00-8283-b0d3cf91706e",
       "Name": "citizen",
       "Position": "-324.0799,-340.368,64.03539",
+      "Rotation": "0,0,0.6087615,0.7933534",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -2436,6 +2419,222 @@
             "component_type": "SkinnedModelRenderer"
           },
           "RigidbodyFlags": 0
+        },
+        {
+          "__type": "DamageTaker",
+          "__guid": "3ca79e06-91df-4af4-ba7f-59318bd7688b",
+          "Health": 100,
+          "OnDeathAction": {
+            "__version": 6,
+            "__guid": "cfe78565-c3fa-4555-befa-ba746235ec6f",
+            "UserData": {
+              "Title": "On Death Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 3,
+                "Type": "resource.ref",
+                "Properties": {
+                  "T": "Sandbox.Engine/Sandbox.PrefabFile",
+                  "value": "prefabs/zombiegibs.prefab"
+                },
+                "UserData": {
+                  "Position": "-64,128"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.instantiate",
+                "UserData": {
+                  "Position": "256,128"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-336,352"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "-112,272"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "-96,400"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "resource.ref",
+                "Properties": {
+                  "T": "Sandbox.Engine/Sandbox.PrefabFile",
+                  "value": "prefabs/weapons/weapon_pistol.prefab"
+                },
+                "UserData": {
+                  "Position": "16,512"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "scene.instantiate",
+                "UserData": {
+                  "Position": "640,320"
+                }
+              },
+              {
+                "Id": 14,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "976,384"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "prefab"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_signal",
+                "DstId": 13,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "prefab"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "rotation"
+              },
+              {
+                "SrcId": 13,
+                "SrcName": "_signal",
+                "DstId": 14,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 14,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "OnTakeDamage": {
+            "__version": 6,
+            "__guid": "787058fb-cfc2-4d95-8460-a1c89dead41e",
+            "UserData": {
+              "Title": "On Take Damage",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "288,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "Took Damage",
+                "DstId": 1,
+                "DstName": "format"
+              }
+            ]
+          }
         }
       ],
       "Children": [
@@ -2585,7 +2784,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-10T11:57:38.2905924-04:00",
+  "LastSaved": "2024-04-10T14:43:56.6076884-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

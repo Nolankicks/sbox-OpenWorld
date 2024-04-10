@@ -12,6 +12,8 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
+	[Sync] public Vector3 WishVelocity { get; set; }
+	[Sync] public Vector3 Velocity { get; set; }
 	public PlayerController player;
 	protected override void OnStart()
 	{
@@ -19,8 +21,8 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	}
 	protected override void OnUpdate()
 	{
-		Log.Info(navMeshAgent.WishVelocity);
-		Log.Info(navMeshAgent.Velocity);
+		WishVelocity = navMeshAgent.WishVelocity;
+		Velocity = navMeshAgent.Velocity;
 		UpdateAnimations();
 		if (!IsProxy)
 		{
@@ -53,8 +55,8 @@ public sealed class Dummy : Component, Component.ITriggerListener
 
 	void UpdateAnimations()
 	{
-		animationHelper.WithVelocity(navMeshAgent.Velocity);
-		animationHelper.WithWishVelocity(navMeshAgent.WishVelocity);
+		animationHelper.WithVelocity(Velocity);
+		animationHelper.WithWishVelocity(WishVelocity);
 	}
 
 	void ITriggerListener.OnTriggerExit(Sandbox.Collider other)

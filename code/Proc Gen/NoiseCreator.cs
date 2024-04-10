@@ -175,7 +175,9 @@ for ( int y = 0; y < gridSizeY; y++ )
 		model = builder.Create();
 		//Create the GameObject
 		var newGameObject = new GameObject();
+		//Model render shit
 		var modelRenderer = newGameObject.Components.Create<ModelRenderer>();
+		//Make the chunk component so it can enable/disable the gameobject
 		var chunk = newGameObject.Components.Create<Chunk>();
 		chunk.player = player.GameObject;
 		var modelCollider = newGameObject.Components.Create<ModelCollider>();

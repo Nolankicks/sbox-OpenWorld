@@ -30,6 +30,7 @@ public sealed class Weapon : Component
 	private TimeSince TimeSinceReload = 0;
 	private TimeSince TimeSinceFire;
 	[Property] public SoundEvent FireSound { get; set; }
+	[Property] public Material DecalMaterial { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property] public GameObject Particle { get; set; }
@@ -100,7 +101,6 @@ public sealed class Weapon : Component
 		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
 
 		
-		Log.Info(Ammo);
 		UpdateWorldModelShadowType();
 		if (PlayerController.IsFirstPerson)
 		{
@@ -178,13 +178,17 @@ public sealed class Weapon : Component
 			if (tr.Hit)
 			{
 				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
+				tr.GameObject.Components.TryGet<DamageTaker>( out var damageTaker);
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage);
 					Particle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 				}
+				else if (damageTaker is not null)
+				{
+					damageTaker.TakeDamage(Damage);
+				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
-				decal.SetParent( tr.GameObject );
 				if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
@@ -210,8 +214,4 @@ public sealed class Weapon : Component
 			MuzzleFlashInstance.Tags.Add("viewmodel");
 		}	
 }
-	void Reload()
-	{
-
-	}
 }
