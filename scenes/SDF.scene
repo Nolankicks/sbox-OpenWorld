@@ -1,0 +1,183 @@
+{
+  "__guid": "572e4935-3e0f-49bc-89d8-83a3c994384f",
+  "GameObjects": [
+    {
+      "__guid": "cf944310-8c52-4358-8f53-12537b08e2d1",
+      "Name": "World",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sdf3DWorldComponent",
+          "__guid": "6ed3535c-fc1a-4230-834c-9214ef67012f"
+        },
+        {
+          "__type": "Sandbox.Sdf.Sdf3DWorld",
+          "__guid": "4e7d359b-f916-4e2a-86b5-c994afedbfac"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "b84268ac-9a42-4b69-9cdc-ab3217d6e6b0",
+          "Name": "cube",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sdf3DBoxBrushComponent",
+              "__guid": "79f00fc7-9036-4a01-88cc-b6d2820e6f96",
+              "CornerRadius": 0,
+              "Operator": "Add",
+              "Size": "5000,5000,2000",
+              "Volume": "resources/vol.sdfvol"
+            },
+            {
+              "__type": "PerlinModifer",
+              "__guid": "e5f32493-009f-408d-a213-15fdb86f98c5",
+              "__enabled": false,
+              "Amplitude": 2,
+              "BiasScale": 0.25,
+              "CellSize": 550,
+              "DistanceOffset": 0,
+              "Seed": 914407190
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "77d924df-e470-417a-b856-b2bce6515257",
+      "Name": "Camera",
+      "Position": "191.9973,5312,1520",
+      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "14c1ecdb-9367-4e12-8874-4c65cbc9275c",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "d8b19ef0-c3c0-4c67-a94b-cc76db7f5136",
+      "Name": "Sun",
+      "Position": "-182.4432,-146.1011,166.2668",
+      "Rotation": "0,0.258819,0,0.9659258",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "bc0e4e33-7c74-4247-a421-53735789a395",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "__guid": "820769d3-b1b6-46a6-bed2-ebd3e1e7af30",
+      "Name": "ChunkCreator",
+      "Position": "-572.8673,-63.99425,258.2975",
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "d6b3efdb-9a77-4699-b611-3db6566ac77b",
+      "Name": "2D Skybox",
+      "Position": "-576.3602,300.6175,290.9907",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "53a2bbc7-0c33-42f4-85b1-27728a62dc75",
+          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "061cd49a-d9b2-49d0-9c74-712a294c253c",
+      "Name": "wooden_crate",
+      "Position": "-320.0011,688,4816",
+      "Rotation": "0,0.7071068,0,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "1c4fa1af-98db-452e-a09e-654f3f0d47e6",
+          "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "0bf9ee4e-4059-42dc-8b15-2cd2ab1f01c3",
+      "Name": "Chunk",
+      "Position": "-414.5018,3870.521,1169.08",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ChunkCreator",
+          "__guid": "d57118f0-b4e8-4651-a549-1a01285e6c76",
+          "sdf3DVolume": "resources/openworld.sdfvol",
+          "SdfWorld": {
+            "_type": "gameobject",
+            "go": "cf944310-8c52-4358-8f53-12537b08e2d1"
+          }
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "Lerping": true,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "sdf",
+  "Description": "",
+  "LastSaved": "2024-04-12T18:22:47.2623514-04:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.wooden_crate"
+  ]
+}

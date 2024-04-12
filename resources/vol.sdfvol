@@ -1,0 +1,15 @@
+{
+  "Material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
+  "IsTextureSourceOnly": false,
+  "CollisionTags": "solid",
+  "QualityLevel": "Medium",
+  "ChunkResolution": 16,
+  "ChunkSize": 256,
+  "MaxDistance": 64,
+  "ReferencedTextures": [],
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": [
+    "facepunch.floor_grass_dirt_weed_blend_a"
+  ]
+}
