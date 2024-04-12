@@ -33,7 +33,8 @@ public sealed class Weapon : Component
 	[Property] public Material DecalMaterial { get; set; }
 	[Property] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
-	[Property] public GameObject Particle { get; set; }
+	[Property] public GameObject BloodParticle { get; set; }
+	[Property] public GameObject ImpactParticle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
 	public int StartingAmmo { get; set; }
 	protected override void OnStart()
@@ -179,16 +180,24 @@ public sealed class Weapon : Component
 			{
 				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
 				tr.GameObject.Components.TryGet<DamageTaker>( out var damageTaker);
+				
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage);
-					Particle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
+					BloodParticle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 				}
-				else if (damageTaker is not null)
+				else
+				{
+					ImpactParticle.Clone(tr.HitPosition, Rotation.LookAt(tr.Normal));
+				}
+				if (damageTaker is not null)
 				{
 					damageTaker.TakeDamage(Damage);
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
+				var surface = tr.Surface;
+				var surfaceSound = surface.PlayCollisionSound(tr.HitPosition);
+				surfaceSound.Volume = 1;
 				if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
@@ -208,6 +217,7 @@ public sealed class Weapon : Component
 			{
 				ViewModelGun.Set("b_attack", true);
 			}
+			FireSound.Volume = 0.1f;
 			Sound.Play(FireSound, tr.StartPosition);
 			var muzzle = ViewModelGun.GetAttachment("muzzle");
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);

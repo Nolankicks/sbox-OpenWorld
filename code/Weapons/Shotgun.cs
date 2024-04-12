@@ -21,6 +21,7 @@ public sealed class Shotgun : Component
 	public int ShotsFired = 0;
 	[Sync] public bool IsAiming { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
+	[Property] public GameObject ImpactEffect { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer arms { get; set; }
 	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
@@ -56,7 +57,11 @@ public sealed class Shotgun : Component
 		
 		if (Input.Pressed("attack1") && timeSinceReload > 2.5)
 		{
-			Shoot();
+			for (int i = 0; i < 8; i++)
+			{
+				Shoot();
+				ShotsFired++;
+			}
 		}
 		if (Input.Down("attack2"))
 		{
@@ -128,10 +133,22 @@ public sealed class Shotgun : Component
 			var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 			decal.SetParent(tr.GameObject);
 			tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy );
+			tr.GameObject.Components.TryGet<DamageTaker>(out var damageTaker);
 			if (dummy is not null)
 			{
 				dummy.Hurt(Damage);
 			}
+			else
+			{
+				ImpactEffect.Clone(tr.HitPosition, Rotation.LookAt(tr.Normal));
+			}
+			if (damageTaker is not null)
+			{
+				damageTaker.TakeDamage(Damage);
+			}
+				var surface = tr.Surface;
+				var surfaceSound = surface.PlayCollisionSound(tr.HitPosition);
+				surfaceSound.Volume = 1;
 		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );

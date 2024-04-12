@@ -13,6 +13,10 @@
           "_type": "gameobject",
           "go": "25b97f30-4838-40df-82d9-d28585a7d114"
         },
+        "BloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
         "Damage": 30,
         "Decal": {
           "_type": "gameobject",
@@ -26,6 +30,10 @@
         "FireRate": 0.6,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Pistol",
+        "ImpactParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
         "IsWeapon": false,
         "ItemPrefab": {
           "_type": "gameobject",
@@ -37,10 +45,6 @@
           "prefab": "prefabs/weapons/muzzleflash.prefab"
         },
         "Name": "USP",
-        "Particle": {
-          "_type": "gameobject",
-          "prefab": "prefabs/bloodparticle.prefab"
-        },
         "Recoil": 0,
         "ReloadTime": 0,
         "Spread": 0.03,

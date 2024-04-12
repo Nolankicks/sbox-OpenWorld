@@ -44,26 +44,6 @@
       ]
     },
     {
-      "__guid": "594837f6-d828-4ba2-b0cd-b8ea54426bf9",
-      "Name": "Directional Light",
-      "Position": "0,0,200",
-      "Rotation": "-0.2459842,0.5938582,0.2931525,0.7077327",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "e629aaa4-01d4-40e2-88c5-7361595ad4c6",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
-        }
-      ]
-    },
-    {
       "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
@@ -2187,9 +2167,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
+                      "_isStatic": false,
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "1104,-336"
@@ -2239,20 +2219,27 @@
                     "Id": 12,
                     "Type": "call",
                     "Properties": {
-                      "_name": "Kill",
+                      "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_isStatic": false
+                      "_name": "Kill"
                     },
                     "UserData": {
                       "Position": "1616,-80"
                     }
                   },
                   {
+                    "Id": 30,
+                    "Type": "log.warning",
+                    "UserData": {
+                      "Position": "1936,16"
+                    }
+                  },
+                  {
                     "Id": 32,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Inventory",
-                      "_type": "package.nolankicks.open_world_game/PopupUi"
+                      "_type": "package.nolankicks.open_world_game/PopupUi",
+                      "_name": "Inventory"
                     },
                     "UserData": {
                       "Position": "720,-352"
@@ -2313,6 +2300,17 @@
                     "SrcName": "_result",
                     "DstId": 12,
                     "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 12,
+                    "SrcName": "_signal",
+                    "DstId": 30,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "Value": "hello",
+                    "DstId": 30,
+                    "DstName": "format"
                   },
                   {
                     "SrcId": 7,
@@ -2394,15 +2392,15 @@
       "__guid": "b4dde576-005e-4c00-8283-b0d3cf91706e",
       "Name": "citizen",
       "Position": "-324.0799,-340.368,64.03539",
-      "Rotation": "0,0,0.6087615,0.7933534",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
-          "BodyGroups": 65,
+          "BodyGroups": 69,
           "CreateBoneObjects": false,
+          "MaterialGroup": "default",
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
@@ -2422,11 +2420,11 @@
         },
         {
           "__type": "DamageTaker",
-          "__guid": "3ca79e06-91df-4af4-ba7f-59318bd7688b",
+          "__guid": "3d471663-dc84-4de6-a338-3105ef96543a",
           "Health": 100,
           "OnDeathAction": {
             "__version": 6,
-            "__guid": "cfe78565-c3fa-4555-befa-ba746235ec6f",
+            "__guid": "1825e3d0-9c25-4453-8b1d-0317c3174419",
             "UserData": {
               "Title": "On Death Action",
               "ReferencedComponentTypes": []
@@ -2436,173 +2434,13 @@
               {
                 "Id": 0,
                 "Type": "input"
-              },
-              {
-                "Id": 3,
-                "Type": "resource.ref",
-                "Properties": {
-                  "T": "Sandbox.Engine/Sandbox.PrefabFile",
-                  "value": "prefabs/zombiegibs.prefab"
-                },
-                "UserData": {
-                  "Position": "-64,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "scene.instantiate",
-                "UserData": {
-                  "Position": "256,128"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "-336,352"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "-112,272"
-                }
-              },
-              {
-                "Id": 9,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "-96,400"
-                }
-              },
-              {
-                "Id": 12,
-                "Type": "resource.ref",
-                "Properties": {
-                  "T": "Sandbox.Engine/Sandbox.PrefabFile",
-                  "value": "prefabs/weapons/weapon_pistol.prefab"
-                },
-                "UserData": {
-                  "Position": "16,512"
-                }
-              },
-              {
-                "Id": 13,
-                "Type": "scene.instantiate",
-                "UserData": {
-                  "Position": "640,320"
-                }
-              },
-              {
-                "Id": 14,
-                "Type": "call",
-                "Properties": {
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "976,384"
-                }
               }
             ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "prefab"
-              },
-              {
-                "SrcId": 9,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "rotation"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 5,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 9,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_signal",
-                "DstId": 13,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_result",
-                "DstId": 13,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 12,
-                "SrcName": "_result",
-                "DstId": 13,
-                "DstName": "prefab"
-              },
-              {
-                "SrcId": 9,
-                "SrcName": "_result",
-                "DstId": 13,
-                "DstName": "rotation"
-              },
-              {
-                "SrcId": 13,
-                "SrcName": "_signal",
-                "DstId": 14,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 14,
-                "DstName": "_target"
-              }
-            ]
+            "Links": []
           },
           "OnTakeDamage": {
             "__version": 6,
-            "__guid": "787058fb-cfc2-4d95-8460-a1c89dead41e",
+            "__guid": "a2a7afe7-f471-43f6-8dd6-84279a690228",
             "UserData": {
               "Title": "On Take Damage",
               "ReferencedComponentTypes": []
@@ -2617,7 +2455,7 @@
                 "Id": 1,
                 "Type": "log.info",
                 "UserData": {
-                  "Position": "288,96"
+                  "Position": "368,64"
                 }
               }
             ],
@@ -2629,7 +2467,7 @@
                 "DstName": "_signal"
               },
               {
-                "Value": "Took Damage",
+                "Value": "Take Damage",
                 "DstId": 1,
                 "DstName": "format"
               }
@@ -2680,7 +2518,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/trousers/cargopants/models/binman_trousers.vmdl",
+              "Model": "models/citizen_clothes/trousers/cargopants/models/brown_cargo_pants.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -2704,7 +2542,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/hair/mutton_chops/models/mutton_chops.vmdl",
+              "Model": "models/citizen_clothes/hair/medium_beard/models/medium_beard.vmdl",
               "RenderType": "On",
               "Tint": "0.14118,0.09804,0.08235,1"
             }
@@ -2712,7 +2550,7 @@
         },
         {
           "__guid": "ff31dd11-9282-429c-bcdc-f10c7f500eb3",
-          "Name": "shirt",
+          "Name": "jacket",
           "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 2,
@@ -2728,7 +2566,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/shirt/polo_shirt/models/binman_shirt.vmdl",
+              "Model": "models/citizen_clothes/jacket/raincoat/models/raincoat.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -2752,7 +2590,31 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/shoes/crocs_and_socks/models/clogs_and_socks.vmdl",
+              "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "1d4dd275-a3e7-4e8a-a3f5-7dc65525276d",
+          "Name": "shirt",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "0c94add2-7363-4f57-a884-019ea3a6e7ad",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/shirt/tshirt/models/tshirt.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -2784,7 +2646,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-10T14:43:56.6076884-04:00",
+  "LastSaved": "2024-04-12T19:26:47.441176-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -23,6 +23,10 @@
         "Description": "A shotgun",
         "FireRate": 1.5,
         "FireSound": "sounds/shootsound.sound",
+        "ImpactEffect": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
         "IsWeapon": false,
         "ItemPrefab": {
           "_type": "gameobject",
@@ -65,7 +69,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "CameraComponent",
+            "__type": "Sandbox.CameraComponent",
             "__guid": "68ea5bdb-bbeb-43b0-a24f-9870d86a5c1a",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
@@ -96,7 +100,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "24667be0-3a6d-40ef-a954-763e9f89fafa",
                     "BodyGroups": 7,
                     "CreateBoneObjects": false,
@@ -113,7 +117,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "aebb9905-f26c-4e04-81d7-55decdb33bc4",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
@@ -140,7 +144,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "BoxCollider",
+            "__type": "Sandbox.BoxCollider",
             "__guid": "3a7a34cd-6ef2-4285-b7c6-cdbf575de736",
             "Center": "0,0,4.399999",
             "IsTrigger": false,
@@ -148,7 +152,7 @@
             "Static": false
           },
           {
-            "__type": "SkinnedModelRenderer",
+            "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "9723ddd5-9590-4332-b228-1dbb33c2fe15",
             "BodyGroups": 7,
             "CreateBoneObjects": false,
@@ -157,7 +161,7 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "Rigidbody",
+            "__type": "Sandbox.Rigidbody",
             "__guid": "f72bb654-6f5e-4a09-8698-23fa0951ae42",
             "AngularDamping": 0,
             "Gravity": true,

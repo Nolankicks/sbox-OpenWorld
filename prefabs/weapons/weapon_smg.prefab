@@ -14,6 +14,10 @@
           "_type": "gameobject",
           "go": "d47c514b-2f6d-47b7-bc30-47618d973a3d"
         },
+        "BloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
         "Damage": 30,
         "Decal": {
           "_type": "gameobject",
@@ -27,6 +31,10 @@
         "FireRate": 0.1,
         "FireSound": "sounds/shootsound.sound",
         "HoldType": "Rifle",
+        "ImpactParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
         "IsWeapon": false,
         "ItemPrefab": {
           "_type": "gameobject",
@@ -38,10 +46,6 @@
           "prefab": "prefabs/weapons/muzzleflash.prefab"
         },
         "Name": "MP5",
-        "Particle": {
-          "_type": "gameobject",
-          "prefab": "prefabs/bloodparticle.prefab"
-        },
         "Recoil": 0.5,
         "ReloadTime": 1,
         "Spread": 0.03,
@@ -79,7 +83,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "CameraComponent",
+            "__type": "Sandbox.CameraComponent",
             "__guid": "7f7d347d-62ee-4ca0-913b-7aa38e556502",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
@@ -111,7 +115,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "e2d69b40-f9bc-4a45-b5e0-336f8682e186",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
@@ -134,7 +138,7 @@
                 "NetworkMode": 1,
                 "Components": [
                   {
-                    "__type": "SkinnedModelRenderer",
+                    "__type": "Sandbox.SkinnedModelRenderer",
                     "__guid": "15f0d20e-3138-4e03-84b7-fdbe50991515",
                     "BodyGroups": 27,
                     "CreateBoneObjects": false,
@@ -155,7 +159,7 @@
         "NetworkMode": 1,
         "Components": [
           {
-            "__type": "SkinnedModelRenderer",
+            "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "e4528ec5-b4da-4396-b5c7-6e9a0a81331b",
             "BodyGroups": 3,
             "CreateBoneObjects": false,
@@ -164,7 +168,7 @@
             "Tint": "1,1,1,1"
           },
           {
-            "__type": "Rigidbody",
+            "__type": "Sandbox.Rigidbody",
             "__guid": "2f3782fe-e04e-4380-91c3-403f4c9cd3dc",
             "AngularDamping": 0,
             "Gravity": true,
@@ -176,7 +180,7 @@
             "StartAsleep": false
           },
           {
-            "__type": "BoxCollider",
+            "__type": "Sandbox.BoxCollider",
             "__guid": "7daf455f-0a5c-442d-a4a8-96c3a2cfeafe",
             "Center": "0,0,5.499997",
             "IsTrigger": false,
