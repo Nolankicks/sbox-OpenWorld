@@ -2167,9 +2167,9 @@
                     "Id": 2,
                     "Type": "call",
                     "Properties": {
+                      "_name": "AddItem",
                       "_isStatic": false,
-                      "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_name": "AddItem"
+                      "_type": "package.nolankicks.open_world_game/Inventory"
                     },
                     "UserData": {
                       "Position": "1104,-336"
@@ -2219,9 +2219,9 @@
                     "Id": 12,
                     "Type": "call",
                     "Properties": {
+                      "_name": "Kill",
                       "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.Prop",
-                      "_name": "Kill"
+                      "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
                       "Position": "1616,-80"
@@ -2238,8 +2238,8 @@
                     "Id": 32,
                     "Type": "property",
                     "Properties": {
-                      "_type": "package.nolankicks.open_world_game/PopupUi",
-                      "_name": "Inventory"
+                      "_name": "Inventory",
+                      "_type": "package.nolankicks.open_world_game/PopupUi"
                     },
                     "UserData": {
                       "Position": "720,-352"
@@ -2619,8 +2619,40 @@
               "Tint": "1,1,1,1"
             }
           ]
+        },
+        {
+          "__guid": "ebea33f6-2d92-4ce5-b412-7aa165efb804",
+          "Name": "Object",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "eef024d8-d67a-43fd-a91a-d6fc62a64c26",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
+                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/makeup/traditional_face_tattoos/models/traditional_face_tattoos.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
         }
       ]
+    },
+    {
+      "__guid": "75b25dfe-8667-4d30-b7a8-fae522c567e3",
+      "Name": "weapon_crossbow",
+      "Position": "-208,-160,365",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "__Prefab": "prefabs/weapons/weapon_crossbow.prefab"
     }
   ],
   "SceneProperties": {
@@ -2646,7 +2678,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-12T19:26:47.441176-04:00",
+  "LastSaved": "2024-04-13T10:18:40.0689771-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

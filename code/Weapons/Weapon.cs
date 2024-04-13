@@ -5,11 +5,10 @@ using Sandbox.UI;
 
 public sealed class Weapon : Component
 {
-	[Property] public int Damage { get; set; }
-	[Property] public int Ammo { get; set; }
-	[Property] public int MaxAmmo { get; set; }
-	[Property, Range(0.1f, 1)] public float FireRate { get; set; }
-	[Property] public GameObject testObject { get; set; }
+	[Property, Category("Weapon Properties")] public int Damage { get; set; }
+	[Property, Category("Weapon Properties")] public int Ammo { get; set; }
+	[Property, Category("Weapon Properties")] public int MaxAmmo { get; set; }
+	[Property, Range(0.1f, 1), Category("Weapon Properties")] public float FireRate { get; set; }
 	public PlayerController PlayerController { get; set; }
 	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
@@ -18,23 +17,35 @@ public sealed class Weapon : Component
 	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
-	[Property] public float ReloadTime { get; set; }
-	[Property] public float Recoil { get; set; }
+	[Property, Category("Weapon Properties")] public float ReloadTime { get; set; }
+	[Property, Category("Weapon Properties")] public float Recoil { get; set; }
 	public GameObject WorldModelInstance { get; set; }
-	[Property] public float Spread { get; set; } = 0.03f;
-	[Property] public GameObject Decal { get; set; }
-	[Property] public GameObject ItemPrefab { get; set; }
+	[Property, Category("Weapon Properties")] public float Spread { get; set; } = 0.03f;
+	[Property, Category("Prefabs")] public GameObject Decal { get; set; }
+	/// <summary>
+	/// The description of the weapon that will be shown in the item popup
+	/// </summary>
+
 	[Property] public string Name { get; set; }
+	/// <summary>
+	/// The description of the weapon that will be shown in the item popup
+	/// </summary>
+
 	[Property, TextArea] public string Description { get; set; }
 	int ShotsFired = 0;
 	private TimeSince TimeSinceReload = 0;
 	private TimeSince TimeSinceFire;
-	[Property] public SoundEvent FireSound { get; set; }
-	[Property] public Material DecalMaterial { get; set; }
-	[Property] public GameObject MuzzleFlash { get; set; }
+	/// <summary>
+	/// The sound that will play when the weapon is fired, if left empty it will not play a sound
+	/// </summary>
+	[Property, Category("Weapon Properties")] public SoundEvent FireSound { get; set; }
+	/// <summary>
+	/// Use this if you want to have a muzzle flash, if left empty it will not spawn a muzzle flash
+	/// </summary>
+	[Property, Category("Prefabs")] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
-	[Property] public GameObject BloodParticle { get; set; }
-	[Property] public GameObject ImpactParticle { get; set; }
+	[Property, Category("Prefabs")] public GameObject BloodParticle { get; set; }
+	[Property, Category("Prefabs")] public GameObject ImpactParticle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
 	public int StartingAmmo { get; set; }
 	protected override void OnStart()
@@ -217,11 +228,17 @@ public sealed class Weapon : Component
 			{
 				ViewModelGun.Set("b_attack", true);
 			}
+			if (FireSound is not null)
+			{
 			FireSound.Volume = 0.1f;
 			Sound.Play(FireSound, tr.StartPosition);
+			}
+			if (MuzzleFlash is not null)
+			{
 			var muzzle = ViewModelGun.GetAttachment("muzzle");
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
 			MuzzleFlashInstance.Tags.Add("viewmodel");
+			}
 		}	
 }
 }

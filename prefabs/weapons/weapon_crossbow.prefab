@@ -1,0 +1,171 @@
+{
+  "RootObject": {
+    "__guid": "baf9e419-cfd1-4233-a264-4dcc8c450160",
+    "Name": "weapon_crossbow",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Weapon",
+        "__guid": "8fab34fd-ad06-4d0f-96c2-37c777b9fa17",
+        "Ammo": 4,
+        "Arms": {
+          "_type": "gameobject",
+          "go": "1a510732-b794-46ca-943b-7712a215c683"
+        },
+        "BloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "Damage": 30,
+        "Decal": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal.prefab"
+        },
+        "Description": "A crossbow",
+        "DroppedItem": {
+          "_type": "gameobject",
+          "go": "aa84bb47-1c88-455a-9337-0e512de6cd35"
+        },
+        "FireRate": 1,
+        "HoldType": "Rifle",
+        "ImpactParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
+        "IsWeapon": false,
+        "MaxAmmo": 12,
+        "Name": "Crossbow",
+        "Recoil": 10,
+        "ReloadTime": 4,
+        "Spread": 0.03,
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "e7fb68aa-424a-4790-874a-307600f735aa"
+        },
+        "ViewModelGun": {
+          "_type": "component",
+          "component_id": "9e04c876-ab0c-46d9-803f-30748fe72f8d",
+          "go": "697d4a05-0767-401c-84d1-54057a946529",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "1b821a6d-63fe-45a9-a88c-d05cc2625c87"
+        },
+        "WorldModel": "weapons/rust_crossbow/rust_crossbow.vmdl"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "adea07cd-0c5f-4790-9bab-f4a583ad549b",
+        "Icon": "assets/mp5.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "e7fb68aa-424a-4790-874a-307600f735aa",
+        "Name": "ViewmodelCamera",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "8782107d-30bd-4656-9a6c-01b97eef90c1",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 85,
+            "IsMainCamera": true,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "1b821a6d-63fe-45a9-a88c-d05cc2625c87",
+            "Name": "Viewmodel",
+            "Tags": "viewmodel",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "Children": [
+              {
+                "__guid": "697d4a05-0767-401c-84d1-54057a946529",
+                "Name": "gun",
+                "Enabled": true,
+                "NetworkMode": 1,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "9e04c876-ab0c-46d9-803f-30748fe72f8d",
+                    "BodyGroups": 18446744073709551615,
+                    "CreateBoneObjects": false,
+                    "Model": "weapons/rust_crossbow/v_rust_crossbow.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "1a510732-b794-46ca-943b-7712a215c683",
+                "Name": "arms",
+                "Enabled": true,
+                "NetworkMode": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "aa84bb47-1c88-455a-9337-0e512de6cd35",
+        "Name": "PickUp",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "45b5538f-940b-4b2e-97a4-0d5e660dbd50",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "weapons/rust_crossbow/rust_crossbow.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "461a30bb-df81-4720-b59d-8c718a32bb6a",
+            "IsTrigger": false,
+            "Model": "weapons/rust_crossbow/rust_crossbow.vmdl",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "6f77c607-c777-4770-a236-36b987430539",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "rust.rust_crossbow",
+    "rust.v_rust_crossbow"
+  ]
+}
