@@ -1,6 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits Panel
+@namespace Kicks
 @attribute [StyleSheet]
 <root>
 	@if (ShowUi)
@@ -77,6 +78,7 @@
 			Style.Position = PositionMode.Absolute;
 			Style.Left = Length.Pixels( pos.x );
 			Style.Top = Length.Pixels( pos.y );
+
 			StateHasChanged();
 		}
 		else

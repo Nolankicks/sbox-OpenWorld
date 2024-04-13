@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Citizen;
-
+namespace Kicks;
 public sealed class PlayerController : Component
 {
 	[Property] public CharacterController CharacterController { get; set; }

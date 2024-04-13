@@ -1,79 +1,80 @@
 {
   "RootObject": {
-    "__guid": "baf9e419-cfd1-4233-a264-4dcc8c450160",
-    "Name": "weapon_crossbow",
+    "__guid": "2dc70298-47e3-4fdd-956d-e97c6f274951",
+    "Name": "rust_smg",
     "Enabled": true,
     "NetworkMode": 1,
     "Components": [
       {
         "__type": "Weapon",
-        "__guid": "8fab34fd-ad06-4d0f-96c2-37c777b9fa17",
-        "Ammo": 1,
+        "__guid": "47603267-360c-46bb-8142-3dc20425919b",
+        "Ammo": 30,
         "Arms": {
           "_type": "gameobject",
-          "go": "1a510732-b794-46ca-943b-7712a215c683"
+          "go": "6960274c-56ad-42e4-9866-66db928b50ac"
         },
         "BloodParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/bloodparticle.prefab"
         },
-        "Damage": 100,
+        "Damage": 15,
         "Decal": {
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
-        "Description": "A crossbow",
+        "Description": "A weak smg",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "aa84bb47-1c88-455a-9337-0e512de6cd35"
+          "go": "48bb0ad1-86a1-4349-82c6-bc8c38f10270"
         },
-        "FireRate": 1,
+        "FireRate": 0.15,
+        "FireSound": "sounds/toolgun/toolgun-fire.sound",
         "HoldType": "Rifle",
         "ImpactParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/impact.prefab"
         },
         "IsWeapon": false,
-        "MaxAmmo": 12,
-        "Name": "Crossbow",
-        "Recoil": 10,
+        "MaxAmmo": 60,
+        "Name": "Rust Smg",
+        "Recoil": 3,
         "ReloadBool": "reload",
-        "ReloadTime": 4,
-        "ShootBool": "fire",
+        "ReloadTime": 5,
+        "ShootBool": "attack",
         "Spread": 0.03,
         "StartingAmmo": 0,
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "e7fb68aa-424a-4790-874a-307600f735aa"
+          "go": "8394f183-113a-4a70-bf5d-b5e3f5d56516"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "9e04c876-ab0c-46d9-803f-30748fe72f8d",
-          "go": "697d4a05-0767-401c-84d1-54057a946529",
+          "component_id": "43a942d1-0fa9-4a03-9b3d-88f0dee21683",
+          "go": "bb2d41d3-658c-4eb0-ad27-80e3ba932a71",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "1b821a6d-63fe-45a9-a88c-d05cc2625c87"
+          "go": "e136aa99-e420-4f94-874a-0911cb080db1"
         },
-        "WorldModel": "weapons/rust_crossbow/rust_crossbow.vmdl"
+        "WorldModel": "weapons/rust_smg/rust_smg.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "adea07cd-0c5f-4790-9bab-f4a583ad549b",
+        "__guid": "66a5c915-148e-44d6-a449-dee46b5866d5",
         "Icon": "assets/mp5.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "e7fb68aa-424a-4790-874a-307600f735aa",
+        "__guid": "8394f183-113a-4a70-bf5d-b5e3f5d56516",
         "Name": "ViewmodelCamera",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "8782107d-30bd-4656-9a6c-01b97eef90c1",
+            "__guid": "48007476-057d-48d1-a60f-e1215eedfdcd",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 85,
@@ -91,31 +92,31 @@
         ],
         "Children": [
           {
-            "__guid": "1b821a6d-63fe-45a9-a88c-d05cc2625c87",
+            "__guid": "e136aa99-e420-4f94-874a-0911cb080db1",
             "Name": "Viewmodel",
             "Tags": "viewmodel",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "697d4a05-0767-401c-84d1-54057a946529",
+                "__guid": "bb2d41d3-658c-4eb0-ad27-80e3ba932a71",
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "9e04c876-ab0c-46d9-803f-30748fe72f8d",
+                    "__guid": "43a942d1-0fa9-4a03-9b3d-88f0dee21683",
                     "BodyGroups": 18446744073709551615,
                     "CreateBoneObjects": false,
-                    "Model": "weapons/rust_crossbow/v_rust_crossbow.vmdl",
+                    "Model": "weapons/rust_smg/v_rust_smg.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   }
                 ]
               },
               {
-                "__guid": "1a510732-b794-46ca-943b-7712a215c683",
+                "__guid": "6960274c-56ad-42e4-9866-66db928b50ac",
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1
@@ -125,30 +126,31 @@
         ]
       },
       {
-        "__guid": "aa84bb47-1c88-455a-9337-0e512de6cd35",
-        "Name": "PickUp",
+        "__guid": "48bb0ad1-86a1-4349-82c6-bc8c38f10270",
+        "Name": "DropedItem",
+        "Position": "162.3796,16.30037,-91.80917",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "45b5538f-940b-4b2e-97a4-0d5e660dbd50",
+            "__guid": "6aed126b-f378-49dc-afee-fc94f84ae295",
             "BodyGroups": 18446744073709551615,
             "CreateBoneObjects": false,
-            "Model": "weapons/rust_crossbow/rust_crossbow.vmdl",
+            "Model": "weapons/rust_smg/rust_smg.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
           },
           {
             "__type": "Sandbox.ModelCollider",
-            "__guid": "461a30bb-df81-4720-b59d-8c718a32bb6a",
+            "__guid": "f82deeb1-1a63-4a0b-8944-2663525e1cdd",
             "IsTrigger": false,
-            "Model": "weapons/rust_crossbow/rust_crossbow.vmdl",
+            "Model": "weapons/rust_smg/rust_smg.vmdl",
             "Static": false
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "6f77c607-c777-4770-a236-36b987430539",
+            "__guid": "bc2132c7-9fa8-4521-876d-99cac2ad6476",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -168,7 +170,8 @@
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
-    "rust.rust_crossbow",
-    "rust.v_rust_crossbow"
+    "mdlresrc.toolgunshoot",
+    "rust.rust_smg",
+    "rust.v_rust_smg"
   ]
 }

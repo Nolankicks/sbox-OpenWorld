@@ -1,5 +1,5 @@
 using Sandbox;
-
+namespace Kicks;
 public sealed class ItemTrigger : Component, Component.ITriggerListener
 {
 	[Property] public GameObject gameObject { get; set; }

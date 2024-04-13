@@ -1,5 +1,5 @@
 using Sandbox;
-
+namespace Kicks;
 public sealed class Interactor : Component
 {
 	PhysicsBody grabbedBody;

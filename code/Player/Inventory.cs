@@ -1,7 +1,8 @@
 using Sandbox;
 using Sandbox.Citizen;
 using System;
-using YourNamespace;
+using Kicks;
+
 public sealed class Inventory : Component
 {
 	[Property] public List<GameObject> Items;

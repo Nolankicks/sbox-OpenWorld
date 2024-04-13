@@ -2,9 +2,11 @@ using System;
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.UI;
-
+namespace Kicks;
 public sealed class Weapon : Component
 {
+	[Property] public string ShootBool { get; set; } = "b_attack";
+	[Property] public string ReloadBool { get; set; } = "b_reload";
 	[Property, Category("Weapon Properties")] public int Damage { get; set; }
 	[Property, Category("Weapon Properties")] public int Ammo { get; set; }
 	[Property, Category("Weapon Properties")] public int MaxAmmo { get; set; }
@@ -19,7 +21,9 @@ public sealed class Weapon : Component
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
 	[Property, Category("Weapon Properties")] public float ReloadTime { get; set; }
 	[Property, Category("Weapon Properties")] public float Recoil { get; set; }
+	[Property] public TestStruct TestStruct { get; set; }
 	public GameObject WorldModelInstance { get; set; }
+
 	[Property, Category("Weapon Properties")] public float Spread { get; set; } = 0.03f;
 	[Property, Category("Prefabs")] public GameObject Decal { get; set; }
 	/// <summary>
@@ -47,7 +51,7 @@ public sealed class Weapon : Component
 	[Property, Category("Prefabs")] public GameObject BloodParticle { get; set; }
 	[Property, Category("Prefabs")] public GameObject ImpactParticle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
-	public int StartingAmmo { get; set; }
+	[Property] public int StartingAmmo { get; set; }
 	protected override void OnStart()
 	{
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
@@ -55,6 +59,7 @@ public sealed class Weapon : Component
 		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		StartingAmmo = Ammo;
 		if (IsWeapon)
 		{
 		if (IsProxy) return;
@@ -120,8 +125,8 @@ public sealed class Weapon : Component
 			{
 				
 				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = 30;
-				ViewModelGun.Set("b_reload", true);
+				Ammo = StartingAmmo;
+				ViewModelGun.Set(ReloadBool, true);
 				ShotsFired = 0;
 				TimeSinceReload = 0;
 			}
@@ -207,8 +212,11 @@ public sealed class Weapon : Component
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 				var surface = tr.Surface;
+				if (surface is not null)
+				{
 				var surfaceSound = surface.PlayCollisionSound(tr.HitPosition);
 				surfaceSound.Volume = 1;
+				}
 				if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
@@ -226,7 +234,7 @@ public sealed class Weapon : Component
 			PlayerController.AnimationHelper.Target.Set("b_attack", true);
 			if (PlayerController.IsFirstPerson)
 			{
-				ViewModelGun.Set("b_attack", true);
+				ViewModelGun.Set(ShootBool, true);
 			}
 			if (FireSound is not null)
 			{

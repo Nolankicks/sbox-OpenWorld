@@ -48,21 +48,7 @@
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
       "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "NoiseCreator",
-          "__guid": "50609ec5-4cd3-4cc4-a5c9-bec48ba8ba3d",
-          "chunksHolder": {
-            "_type": "gameobject",
-            "go": "645fb6b2-91ca-4e4b-a01f-733b89e56994"
-          },
-          "mapHeight": 32,
-          "mapWidth": 32,
-          "material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
-          "noiseScale": 3,
-          "Rock": "models/props/rock_scatter/rock_scatter_03.vmdl"
-        }
-      ]
+      "Components": []
     },
     {
       "__guid": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
@@ -83,39 +69,12 @@
           "StepHeight": 18
         },
         {
-          "__type": "PlayerController",
-          "__guid": "9305808d-636d-4da3-a48d-897d6c5de40a",
-          "AnimationHelper": {
-            "_type": "component",
-            "component_id": "56a752b4-46a1-42ac-82ad-88f441fb85fa",
-            "go": "699a701c-8449-4947-a151-8f93a40161df",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "CharacterController": {
-            "_type": "component",
-            "component_id": "ea93ca2f-fe8b-4040-a757-0071d84e7eaa",
-            "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
-            "component_type": "CharacterController"
-          },
-          "CrouchSpeed": 50,
-          "Hold": {
-            "_type": "gameobject",
-            "go": "2239ce39-0c21-4fa8-9192-ac128166963e"
-          },
-          "RunSpeed": 300,
-          "WalkSpeed": 200
-        },
-        {
           "__type": "Inventory",
           "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
           "Items": [],
           "ItemTextures": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
-        },
-        {
-          "__type": "Interactor",
-          "__guid": "b2541b69-9e89-43dc-8ebf-98875561685e"
         }
       ],
       "Children": [
@@ -1057,10 +1016,6 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
-        },
-        {
-          "__type": "Hud",
-          "__guid": "11e7d669-91e0-4567-ba73-de78023b7127"
         }
       ]
     },
@@ -1092,32 +1047,6 @@
       "NetworkMode": 1,
       "Components": [
         {
-          "__type": "Dummy",
-          "__guid": "93fbf857-8321-430a-a272-997101db775a",
-          "animationHelper": {
-            "_type": "component",
-            "component_id": "cdd7db9b-a30c-40e9-8874-4863c5acda62",
-            "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
-          "navMeshAgent": {
-            "_type": "component",
-            "component_id": "d58ade49-1d8f-4877-ba4d-927225572f35",
-            "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
-            "component_type": "NavMeshAgent"
-          },
-          "players": [],
-          "Ragdoll": {
-            "_type": "gameobject",
-            "prefab": "prefabs/dummy_ragdoll.prefab"
-          },
-          "SpawnGibs": true
-        },
-        {
           "__type": "Sandbox.BoxCollider",
           "__guid": "398e571b-e7bc-44ea-ab28-47b50ef8b335",
           "Center": "0,0,0",
@@ -1128,7 +1057,7 @@
         {
           "__type": "Sandbox.NavMeshAgent",
           "__guid": "d58ade49-1d8f-4877-ba4d-927225572f35",
-          "Acceleration": 50,
+          "Acceleration": 1000,
           "Height": 64,
           "MaxSpeed": 120,
           "Radius": 16,
@@ -1257,6 +1186,24 @@
         {
           "__type": "GameManager",
           "__guid": "6c65f11b-b958-48ae-8999-56b3ad05659b"
+        },
+        {
+          "__type": "Kicks.Weapon",
+          "__guid": "8de8aaba-3523-4853-9b89-fd75c376b595",
+          "Ammo": 0,
+          "Damage": 0,
+          "Description": "",
+          "FireRate": 0,
+          "HoldType": "None",
+          "IsWeapon": false,
+          "MaxAmmo": 0,
+          "Recoil": 0,
+          "ReloadBool": "b_reload",
+          "ReloadTime": 0,
+          "ShootBool": "b_attack",
+          "Spread": 0.03,
+          "StartingAmmo": 0,
+          "TestStruct": {}
         }
       ]
     },
@@ -2137,190 +2084,6 @@
               "IsStatic": false,
               "MaterialGroup": "wood_tv",
               "Model": "models/sbox_props/tv/tv.vmdl"
-            },
-            {
-              "__type": "PopupUi",
-              "__guid": "cadf0af3-9ed6-4707-aaf1-01f14938c169",
-              "Description": "Action Graph Lets go",
-              "Icon": "textures/player_spritesheet_1.vtex",
-              "Name": "Hello",
-              "PickUpAction": {
-                "__version": 6,
-                "__guid": "03fd1564-7f41-4b9c-850f-0614c3684d43",
-                "UserData": {
-                  "Title": "Pick Up Action",
-                  "ReferencedComponentTypes": [
-                    "package.nolankicks.open_world_game/PopupUi",
-                    "Sandbox.Game/Sandbox.Prop"
-                  ]
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input",
-                    "UserData": {
-                      "Position": "752,-528"
-                    }
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false,
-                      "_type": "package.nolankicks.open_world_game/Inventory"
-                    },
-                    "UserData": {
-                      "Position": "1104,-336"
-                    }
-                  },
-                  {
-                    "Id": 4,
-                    "Type": "scene.ref",
-                    "Properties": {
-                      "gameobject": {
-                        "_type": "gameobject",
-                        "go": "10d4ca11-8df4-42ed-b8a9-6f7fc7549c83"
-                      }
-                    },
-                    "UserData": {
-                      "Position": "720,-240"
-                    }
-                  },
-                  {
-                    "Id": 7,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "package.nolankicks.open_world_game/PopupUi"
-                    },
-                    "UserData": {
-                      "Position": "416,-224"
-                    }
-                  },
-                  {
-                    "Id": 8,
-                    "Type": "GetNextSlot",
-                    "UserData": {
-                      "Position": "720,-112"
-                    }
-                  },
-                  {
-                    "Id": 10,
-                    "Type": "scene.get",
-                    "Properties": {
-                      "T": "Sandbox.Game/Sandbox.Prop"
-                    },
-                    "UserData": {
-                      "Position": "1104,-80"
-                    }
-                  },
-                  {
-                    "Id": 12,
-                    "Type": "call",
-                    "Properties": {
-                      "_name": "Kill",
-                      "_isStatic": false,
-                      "_type": "Sandbox.Game/Sandbox.Prop"
-                    },
-                    "UserData": {
-                      "Position": "1616,-80"
-                    }
-                  },
-                  {
-                    "Id": 30,
-                    "Type": "log.warning",
-                    "UserData": {
-                      "Position": "1936,16"
-                    }
-                  },
-                  {
-                    "Id": 32,
-                    "Type": "property",
-                    "Properties": {
-                      "_name": "Inventory",
-                      "_type": "package.nolankicks.open_world_game/PopupUi"
-                    },
-                    "UserData": {
-                      "Position": "720,-352"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 8,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "Slot"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 2,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 32,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "_result",
-                    "DstId": 2,
-                    "DstName": "item"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 7,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 7,
-                    "SrcName": "_result",
-                    "DstId": 8,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 10,
-                    "DstName": "_this"
-                  },
-                  {
-                    "SrcId": 2,
-                    "SrcName": "_signal",
-                    "DstId": 12,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 10,
-                    "SrcName": "_result",
-                    "DstId": 12,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 12,
-                    "SrcName": "_signal",
-                    "DstId": 30,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "Value": "hello",
-                    "DstId": 30,
-                    "DstName": "format"
-                  },
-                  {
-                    "SrcId": 7,
-                    "SrcName": "_result",
-                    "DstId": 32,
-                    "DstName": "_target"
-                  }
-                ]
-              },
-              "selectedInput": "E"
             }
           ]
         }
@@ -2363,28 +2126,6 @@
               "Shadows": true
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "1d21397b-fbf8-4020-9f7c-25bddff093b9",
-      "Name": "Spot Light",
-      "Position": "-423.3115,-296.2773,53.51267",
-      "Tags": "light_spot,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.SpotLight",
-          "__guid": "6eff08ba-f7bc-486e-97ff-d8f471a21f9f",
-          "Attenuation": 1,
-          "ConeInner": 15,
-          "ConeOuter": 45,
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Radius": 500,
-          "Shadows": true
         }
       ]
     },
@@ -2647,12 +2388,37 @@
       ]
     },
     {
-      "__guid": "75b25dfe-8667-4d30-b7a8-fae522c567e3",
-      "Name": "weapon_crossbow",
-      "Position": "-208,-160,365",
+      "__guid": "6e1bcb1a-62cb-4cd2-a949-dafef1d7e3a1",
+      "Name": "rust_crossbow",
+      "Position": "-367.123,-322.795,69.32631",
       "Enabled": true,
       "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "da41a543-6282-48c2-9c24-d716c35ac392",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "weapons/rust_crossbow/rust_crossbow.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "6b864ba4-6738-4904-9892-beae5e47fb22",
+      "Name": "weapon_crossbow",
+      "Position": "-480,-448,365",
+      "Enabled": true,
+      "NetworkMode": 1,
       "__Prefab": "prefabs/weapons/weapon_crossbow.prefab"
+    },
+    {
+      "__guid": "a7ca7c65-5eb1-4c4c-bb9b-fbae05b5a5f3",
+      "Name": "rust_smg",
+      "Position": "-320,-256,209",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/weapons/rust_smg.prefab"
     }
   ],
   "SceneProperties": {
@@ -2672,13 +2438,13 @@
       "AgentRadius": 16,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
-      "ExcludedBodies": "",
+      "ExcludedBodies": "dummy",
       "IncludedBodies": ""
     }
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-13T10:18:40.0689771-04:00",
+  "LastSaved": "2024-04-13T17:14:56.6280212-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -2694,13 +2460,11 @@
     "facepunch.card_box_open",
     "facepunch.electrical_tape_plastic",
     "facepunch.fireextinguisher",
-    "facepunch.floor_grass_dirt_weed_blend_a",
     "facepunch.lantern",
     "facepunch.oilcanbody",
     "facepunch.packing_tape",
     "facepunch.paintspraycan",
     "facepunch.plastic_crate_02",
-    "facepunch.rock_scatter_03",
     "facepunch.saw_blade_a",
     "facepunch.soda_can",
     "facepunch.tv",
@@ -2715,6 +2479,7 @@
     "nolankicks.duckhunt",
     "nolankicks.idel-terry",
     "randkassets.wetfloor_sign",
+    "rust.rust_crossbow",
     "smlp.nes"
   ]
 }

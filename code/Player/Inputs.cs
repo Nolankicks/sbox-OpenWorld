@@ -1,6 +1,6 @@
 using System;
 
-namespace YourNamespace
+namespace Kicks
 {
 	public enum Inputs
 	{

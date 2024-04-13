@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.VR;
-
+namespace Kicks;
 public sealed class Dummy : Component, Component.ITriggerListener
 {
 	[Sync] int health { get; set; } = 100;

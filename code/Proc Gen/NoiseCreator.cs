@@ -4,7 +4,7 @@ using System.Runtime.Intrinsics;
 using System.Security.Cryptography.X509Certificates;
 using Sandbox;
 using Sandbox.Utility;
-
+namespace Kicks;
 public sealed class NoiseCreator : Component
 {
 	public float[,] Luminance { get; private set; }

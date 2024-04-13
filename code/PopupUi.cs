@@ -1,7 +1,8 @@
 using System;
+using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Sandbox;
-using YourNamespace;
+namespace Kicks;
 
 public sealed class PopupUi : Component
 {

@@ -1,6 +1,7 @@
+using System.Linq;
 using Sandbox;
 using Sandbox.UI;
-
+using Kicks;
 public sealed class Shotgun : Component
 {
 	public PlayerController PlayerController { get; set; }
