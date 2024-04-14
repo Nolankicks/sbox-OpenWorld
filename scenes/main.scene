@@ -47,8 +47,7 @@
       "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
-      "NetworkMode": 2,
-      "Components": []
+      "NetworkMode": 2
     },
     {
       "__guid": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
@@ -75,6 +74,41 @@
           "ItemTextures": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
+        },
+        {
+          "__type": "Kicks.PlayerController",
+          "__guid": "480b3a22-de3e-4fce-874e-64996ebbd269",
+          "AbleToMove": true,
+          "AnimationHelper": {
+            "_type": "component",
+            "component_id": "56a752b4-46a1-42ac-82ad-88f441fb85fa",
+            "go": "699a701c-8449-4947-a151-8f93a40161df",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "CharacterController": {
+            "_type": "component",
+            "component_id": "ea93ca2f-fe8b-4040-a757-0071d84e7eaa",
+            "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
+            "component_type": "CharacterController"
+          },
+          "CrouchSpeed": 50,
+          "Hold": {
+            "_type": "gameobject",
+            "go": "2239ce39-0c21-4fa8-9192-ac128166963e"
+          },
+          "Interactor": {
+            "_type": "component",
+            "component_id": "e4a021de-0ea0-486e-b211-77c0dc5af72a",
+            "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
+            "component_type": "Interactor"
+          },
+          "RunSpeed": 200,
+          "ShowShopUi": false,
+          "WalkSpeed": 100
+        },
+        {
+          "__type": "Kicks.Interactor",
+          "__guid": "e4a021de-0ea0-486e-b211-77c0dc5af72a"
         }
       ],
       "Children": [
@@ -1016,6 +1050,14 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        },
+        {
+          "__type": "Kicks.Hud",
+          "__guid": "4d415076-3d0d-45df-bb18-9cf90f0d9550"
+        },
+        {
+          "__type": "Kicks.ShopUi",
+          "__guid": "91674ddb-796e-46f1-8855-41f0f1a38b1a"
         }
       ]
     },
@@ -1040,7 +1082,7 @@
     {
       "__guid": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
       "Name": "Dummy",
-      "Position": "160,0,64",
+      "Position": "329.4576,240.7668,64.00008",
       "Rotation": "0,0,1,0.0000001947072",
       "Tags": "dummy",
       "Enabled": true,
@@ -1064,6 +1106,28 @@
           "Separation": 0.25,
           "UpdatePosition": true,
           "UpdateRotation": false
+        },
+        {
+          "__type": "Kicks.Dummy",
+          "__guid": "14df9b69-dbb3-4c3b-847a-09a6f8eb4f4e",
+          "animationHelper": {
+            "_type": "component",
+            "component_id": "cdd7db9b-a30c-40e9-8874-4863c5acda62",
+            "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "d58ade49-1d8f-4877-ba4d-927225572f35",
+            "go": "1f71f776-77f2-4cd6-bb42-fa4ac2b97354",
+            "component_type": "NavMeshAgent"
+          },
+          "players": [],
+          "SpawnGibs": true
         }
       ],
       "Children": [
@@ -1186,24 +1250,6 @@
         {
           "__type": "GameManager",
           "__guid": "6c65f11b-b958-48ae-8999-56b3ad05659b"
-        },
-        {
-          "__type": "Kicks.Weapon",
-          "__guid": "8de8aaba-3523-4853-9b89-fd75c376b595",
-          "Ammo": 0,
-          "Damage": 0,
-          "Description": "",
-          "FireRate": 0,
-          "HoldType": "None",
-          "IsWeapon": false,
-          "MaxAmmo": 0,
-          "Recoil": 0,
-          "ReloadBool": "b_reload",
-          "ReloadTime": 0,
-          "ShootBool": "b_attack",
-          "Spread": 0.03,
-          "StartingAmmo": 0,
-          "TestStruct": {}
         }
       ]
     },
@@ -2084,6 +2130,18 @@
               "IsStatic": false,
               "MaterialGroup": "wood_tv",
               "Model": "models/sbox_props/tv/tv.vmdl"
+            },
+            {
+              "__type": "Kicks.PopupUi",
+              "__guid": "b6e7fc8c-1a24-4c2d-9319-d268ab1b0171",
+              "Description": "Woooo",
+              "Icon": "textures/player_spritesheet_1.vtex",
+              "Name": "Action Graph \uD83D\uDE32",
+              "selectedInput": "G",
+              "ShopItems": {
+                "ItemTextures": []
+              },
+              "ShowPopUp": false
             }
           ]
         }
@@ -2162,6 +2220,7 @@
         {
           "__type": "DamageTaker",
           "__guid": "3d471663-dc84-4de6-a338-3105ef96543a",
+          "CanDie": true,
           "Health": 100,
           "OnDeathAction": {
             "__version": 6,
@@ -2388,23 +2447,6 @@
       ]
     },
     {
-      "__guid": "6e1bcb1a-62cb-4cd2-a949-dafef1d7e3a1",
-      "Name": "rust_crossbow",
-      "Position": "-367.123,-322.795,69.32631",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "da41a543-6282-48c2-9c24-d716c35ac392",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "weapons/rust_crossbow/rust_crossbow.vmdl"
-        }
-      ]
-    },
-    {
       "__guid": "6b864ba4-6738-4904-9892-beae5e47fb22",
       "Name": "weapon_crossbow",
       "Position": "-480,-448,365",
@@ -2419,6 +2461,807 @@
       "Enabled": true,
       "NetworkMode": 1,
       "__Prefab": "prefabs/weapons/rust_smg.prefab"
+    },
+    {
+      "__guid": "369fa574-0768-4900-8c8f-62ea1e4673f0",
+      "Name": "office_desk",
+      "Position": "208.0001,-415.9998,64.05433",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0c40a5f7-d877-4c7a-8094-1b4960d512b6",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/items/office_set/office_desk.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "fb512ba3-54d0-42fa-9f37-d48a1cfb82c7",
+          "IsTrigger": false,
+          "Model": "models/items/office_set/office_desk.vmdl",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "1a04db57-778d-4edc-90d7-e0fc0d9714c7",
+      "Name": "office_chair",
+      "Position": "208.7161,-453.0054,62.74346",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "a11f6a00-e3ff-4249-8c81-7fb8b147603c",
+          "BodyGroups": 18446744073709551615,
+          "CreateBoneObjects": false,
+          "MaterialGroup": "default",
+          "Model": "models/sbox_props/office_chair/office_chair.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+      "Name": "citizen",
+      "Position": "207.284,-449.146,72.284",
+      "Rotation": "0,0,0.7071068,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "2c118d45-eaeb-41bc-9387-ee2935443351",
+          "BodyGroups": 65,
+          "CreateBoneObjects": false,
+          "MaterialGroup": "default",
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+          "__guid": "373efe48-071a-4c0e-ad46-822a5124ee51",
+          "BodyWeight": 1,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "LookAtEnabled": false,
+          "OnComponentStart": {
+            "__version": 6,
+            "__guid": "33a5ad45-eac1-43e2-a36d-35950cced2da",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": [
+                "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                },
+                "UserData": {
+                  "Position": "-16,224"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
+                },
+                "UserData": {
+                  "Position": "368,160"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
+                },
+                "UserData": {
+                  "Position": "736,288"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 2,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "Value": "Chair",
+                "DstId": 4,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "Target": {
+            "_type": "component",
+            "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+            "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+            "component_type": "SkinnedModelRenderer"
+          }
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "2f09d5b8-8506-486c-96f6-8de208d0fb77",
+          "IsTrigger": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "DamageTaker",
+          "__guid": "0eaf133f-222c-4c09-a91b-8c0fec47d5fc",
+          "CanDie": true,
+          "Health": 100,
+          "OnTakeDamage": {
+            "__version": 6,
+            "__guid": "dfa08b04-1d5f-4dd8-b387-f053a30c0657",
+            "UserData": {
+              "Title": "On Take Damage",
+              "ReferencedComponentTypes": [
+                "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-48,-0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                },
+                "UserData": {
+                  "Position": "-48,176"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_name": "Set"
+                },
+                "UserData": {
+                  "Position": "320,128"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "688,208"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Value": "hit",
+                "DstId": 2,
+                "DstName": "v"
+              },
+              {
+                "Value": true,
+                "DstId": 2,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "hit",
+                "DstId": 3,
+                "DstName": "format"
+              }
+            ]
+          }
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "99b52e38-09c0-458f-9eba-662284fa7954",
+          "Description": "Open the shop",
+          "Icon": "sprites/vidya/particles/ghost.vtex",
+          "Name": "Open Shop",
+          "PickUpAction": {
+            "__version": 6,
+            "__guid": "b8014b91-70e6-4296-a9a1-8bb681110bbb",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.open_world_game/Kicks.PopupUi"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "ShowShopUi"
+                },
+                "UserData": {
+                  "Position": "368,16"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                },
+                "UserData": {
+                  "Position": "464,176"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShowPopUp"
+                },
+                "UserData": {
+                  "Position": "704,160"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
+                },
+                "UserData": {
+                  "Position": "944,416"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                },
+                "UserData": {
+                  "Position": "-208,336"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "AbleToMove"
+                },
+                "UserData": {
+                  "Position": "1360,672"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
+                },
+                "UserData": {
+                  "Position": "1056,944"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
+                },
+                "UserData": {
+                  "Position": "816,1232"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
+                },
+                "UserData": {
+                  "Position": "1792,960"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 1,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 3,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 5,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 6,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_signal",
+                "DstId": 10,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 10,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 10,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemsToBuy": [
+              {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_pistol.prefab"
+              },
+              {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_shotgun.prefab"
+              },
+              {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
+              }
+            ],
+            "ItemTextures": [
+              "assets/usp.vtex",
+              "assets/shotgun.vtex",
+              "assets/mp5.vtex"
+            ]
+          },
+          "ShowPopUp": true
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "d51ea085-6dff-44f5-8d64-78c2afdb2931",
+          "Name": "clothes",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Children": [
+            {
+              "__guid": "534230b2-0eda-4a2d-8a56-91c567e9b2e0",
+              "Name": "shirt",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "6088bad7-96da-4342-a291-8c5725882292",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "03cc1d27-cc41-46cb-b687-d7fc49d0bd74",
+              "Name": "jacket",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "a5086761-a3b5-4d5b-b4aa-cef2292218f6",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/jacket/smart_jacket/models/smart_jacket.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "05f0949e-c2d6-4429-8830-d3630cfed081",
+              "Name": "shoes",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "fa1a8bc9-d940-44cb-8767-04dee32ae830",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/shoes/smartshoes/smartshoes.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "13c979bd-be3c-4380-a93b-e0cd82138d12",
+              "Name": "pants",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "edfd27f0-6235-4a92-829a-c547114f6d2d",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/trousers/smarttrousers/smarttrousers.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "8b84f503-eaef-459b-9495-68c236c64f2c",
+              "Name": "hair",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "1d0b6f76-a4e8-4817-98ef-437555b7c034",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "105a30fc-c9f3-44f0-97d3-e07268ea992f",
+              "Name": "tattoo",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "59cc096b-309b-432e-9a91-5dc02319e636",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
+                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/makeup/traditional_face_tattoos/models/traditional_face_tattoos.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "b92ae3de-c924-4611-bd78-677619827fa9",
+      "Name": "Box",
+      "Position": "271.8397,248.7354,127.9983",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "77342c14-6ef0-487e-bbe7-7f06eade92be",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACjXQBw4DMRACwEu/9F7\u002B/9GEibiVkDGL8drjMAyfYB2oebDs/h5sg2dwbP\u002Bb4pkFq\u002BBaTndObxE8yumyaPrvcnoj/75b\u002B7J2zbY3A04/dC7nX\u002BX0U7Cpz6w4fWyG/Et13Kr4vUse/Vw/THfq7XvXpFnp0zl\u002B/\u002BRN7pSjR\u002BP/AaDJA2ZkAQAA",
+            "TextureOrigin": "271.8397,248.7354,127.9983",
+            "Positions": [
+              "153.6213,107.14,-64",
+              "-72.48227,107.14,-64",
+              "-72.48227,-107.14,-64",
+              "153.6213,-107.14,-64",
+              "153.6213,-107.14,64",
+              "-72.48227,-107.14,64",
+              "-72.48227,107.14,64",
+              "153.6213,107.14,64"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "c15d7b23-8e13-4ea6-967b-bb9b65235ce2",
+      "Name": "ik left",
+      "Position": "192.946,-414.387,94.623",
+      "Rotation": "-0.7058472,-0.7040312,0.001509927,0.07821451",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "5252fcbb-0e99-46ba-9c28-31cf61e49119",
+      "Name": "ik right",
+      "Position": "220.656,-415.817,95.839",
+      "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
+      "Enabled": true,
+      "NetworkMode": 2
     }
   ],
   "SceneProperties": {
@@ -2444,7 +3287,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-13T17:14:56.6280212-04:00",
+  "LastSaved": "2024-04-13T20:50:27.996769-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -2461,6 +3304,7 @@
     "facepunch.electrical_tape_plastic",
     "facepunch.fireextinguisher",
     "facepunch.lantern",
+    "facepunch.office_chair",
     "facepunch.oilcanbody",
     "facepunch.packing_tape",
     "facepunch.paintspraycan",
@@ -2475,11 +3319,12 @@
     "fpopium.can",
     "fpopium.vodka",
     "fpopium.whiskey",
+    "luke.office_desk",
     "lwrs.aperturetvpro",
     "nolankicks.duckhunt",
     "nolankicks.idel-terry",
     "randkassets.wetfloor_sign",
-    "rust.rust_crossbow",
-    "smlp.nes"
+    "smlp.nes",
+    "vidya.particle-ghost"
   ]
 }

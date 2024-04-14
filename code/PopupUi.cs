@@ -8,11 +8,14 @@ public sealed class PopupUi : Component
 {
 	[Property] public string Name { get; set; }
 	[Property] public string Description { get; set; }
-	[Property] public Action PickUpAction { get; set; }
+	public delegate void PickUpActionDelegate( PlayerController PlayerController, Inventory Inventory );
+	[Property] public PickUpActionDelegate PickUpAction { get; set; }
 	[Property] public Inputs selectedInput { get; set; }
 	public PlayerController playerController { get; set; }
 	public Inventory Inventory { get; set; }
 	[Property] public Texture Icon { get; set; }
+	[Property] public bool ShowPopUp { get; set; } = true;
+	[Property, Category("Structs")] public ShopItems ShopItems { get; set; }
 	public Texture Glyph { get; set; }
 	protected override void OnUpdate()
 	{

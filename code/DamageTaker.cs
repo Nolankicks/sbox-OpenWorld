@@ -6,6 +6,7 @@ public sealed class DamageTaker : Component
 	[Property] public Action OnTakeDamage { get; set; }
 	[Property] public Action OnDeathAction { get; set; }
 	[Property] public int Health { get; set; } = 100;
+	[Property, Sync] public bool CanDie { get; set; } = true;
 	protected override void OnUpdate()
 	{
 
@@ -16,7 +17,7 @@ public sealed class DamageTaker : Component
 		if (IsProxy) return;
 		Health -= damage;
 		OnTakeDamage?.Invoke();
-		if (Health <= 0)
+		if (Health <= 0 && CanDie)
 		{
 			OnDeath();
 		}

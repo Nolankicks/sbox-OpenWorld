@@ -1,0 +1,78 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Kicks
+
+<root class="@(playerController.ShowShopUi ? "" : "hide")">
+	@if (playerController.PopupUi is not null && playerController is not null)
+	{
+			<div class="header">
+		SHOP
+	</div>
+	<div class="exitbutton" onclick=@ExitShop>EXIT</div>
+	<div class="shopholder">
+		@for (int i = 0; i < playerController.PopupUi.ShopItems.ItemsToBuy.Count; i++)
+		{
+			<div class=shopitem>
+				<img class="icon" src="playerController.PopupUi.ShopItems.ItemIcons[i].ResourcePath">
+			</div>
+		}
+	</div>
+	<div class="coins">
+		@playerController.Coins
+	</div>
+	}
+</root>
+
+
+@code
+{
+
+	public PlayerController playerController { get; set; }
+	public Inventory inventory { get; set; }
+	[Property] public SoundEvent BuySound { get; set; }
+	[Property] public SoundEvent FailSound { get; set; }
+	[Property] public SoundEvent ExitSound { get; set; }
+	protected override void OnStart()
+	{
+
+	}
+	protected override void OnUpdate()
+	{
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		if (playerController.ShowShopUi && Input.EscapePressed && !IsProxy)
+		{
+			ExitShop();
+		}
+	}
+
+	public void ExitShop()
+	{
+		playerController.ShowShopUi = false;
+		playerController.AbleToMove = true;
+		playerController.PopupUi.ShowPopUp = true;
+		Sound.Play( ExitSound );
+		playerController.PopupUi = null;
+	}
+
+	void BuyItem(GameObject gameObject)
+	{
+		if (playerController.Coins >= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)])
+		{
+			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)];
+			var slot = inventory.GetNextSlot();
+			inventory.AddItem(gameObject, slot);
+			Sound.Play( BuySound );
+		}
+		else
+		{
+			Sound.Play( FailSound );
+		}
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

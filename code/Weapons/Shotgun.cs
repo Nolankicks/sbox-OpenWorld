@@ -147,9 +147,21 @@ public sealed class Shotgun : Component
 			{
 				damageTaker.TakeDamage(Damage);
 			}
-				var surface = tr.Surface;
-				var surfaceSound = surface.PlayCollisionSound(tr.HitPosition);
-				surfaceSound.Volume = 1;
+				if (tr.Surface is null)
+		{
+    			Log.Info("Surface is null");
+		}
+		else
+		{
+    	var surfaceSound = tr.Surface.PlayCollisionSound(tr.HitPosition);
+  		if (surfaceSound is null)
+  		{
+       		 Log.Info("surfaceSound is null");
+   		}
+   		 else
+   		{
+       		surfaceSound.Volume = 1;
+    	}
 		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
@@ -177,4 +189,5 @@ public sealed class Shotgun : Component
 				timeSinceReload = 0;
 			}
 	}
+}
 }

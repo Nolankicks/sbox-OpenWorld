@@ -40,6 +40,7 @@ public class TestEditor : ControlWidget
 			editor.Visible = true;
 			editor.Size = new Vector2( 400, 400 );
 			editor.ConstrainToScreen();
+			
 			var test = new TestWidget( editor );
 
 		}

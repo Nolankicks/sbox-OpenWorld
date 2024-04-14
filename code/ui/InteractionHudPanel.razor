@@ -26,7 +26,9 @@
 	}
 	else if (PopupUi is not null)
 	{
-		<div class="interactioncard">
+		@if (PopupUi.ShowPopUp)
+		{
+			<div class="interactioncard">
 			<div class="name">@PopupUi.Name</div>
 			<div style="font-size: 24pxs" class="description">@PopupUi.Description</div>
 			<img class="glyph" src=@PopupUi.Glyph.ResourcePath>
@@ -35,6 +37,7 @@
 				<img class="icon" texture=@PopupUi.Icon.ResourcePath>
 			}
 		</div>
+		}
 	}
 	}
 </root>

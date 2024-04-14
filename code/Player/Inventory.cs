@@ -44,6 +44,10 @@ public sealed class Inventory : Component
 			AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
 		}
 	}
+	public int GetNextSlot()
+	{
+		return Items.FindIndex(x => x is null);
+	}
 	public void AddTexture(Texture texture, int Slot)
 	{
 		if (IsProxy) return;
@@ -263,7 +267,7 @@ public sealed class Inventory : Component
 		if (popupUi is null) return;
 		if (Input.Pressed(InputHandler.GetInputString(inputAction)))
 		{
-			popupUi.PickUpAction?.Invoke();
+			popupUi.PickUpAction?.Invoke(PlayerController, this);
 		}
 	}
 

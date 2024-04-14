@@ -195,7 +195,7 @@ public sealed class Weapon : Component
 			if (tr.Hit)
 			{
 				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
-				tr.GameObject.Components.TryGet<DamageTaker>( out var damageTaker);
+				var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
 				
 				if (dummy is not null)
 				{
@@ -211,12 +211,23 @@ public sealed class Weapon : Component
 					damageTaker.TakeDamage(Damage);
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
-				var surface = tr.Surface;
-				if (surface is not null)
-				{
-				var surfaceSound = surface.PlayCollisionSound(tr.HitPosition);
-				surfaceSound.Volume = 1;
-				}
+				
+		if (tr.Surface is null)
+		{
+    			Log.Info("Surface is null");
+		}
+		else
+		{
+    	var surfaceSound = tr.Surface.PlayCollisionSound(tr.HitPosition);
+  		if (surfaceSound is null)
+  		{
+       		 Log.Info("surfaceSound is null");
+   		}
+   		 else
+   		{
+       		surfaceSound.Volume = 1;
+    	}
+}
 				if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );

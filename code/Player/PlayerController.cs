@@ -17,6 +17,10 @@ public sealed class PlayerController : Component
 	[Sync] public bool IsGrabbing { get; set; } = false;
 	[Property] public Interactor Interactor { get; set; }
 	[Sync] public float Health { get; set; } = 100;
+	[Property, Sync] public bool ShowShopUi { get; set; } = false;
+	[Property, Sync] public bool AbleToMove { get; set; } = true;
+	public PopupUi PopupUi { get; set; }
+	[Property] public int Coins { get; set; }
 	
 
 	public Item CurrentItem;
@@ -37,7 +41,7 @@ public sealed class PlayerController : Component
 	protected override void OnUpdate()
 	{
 		UpdateAnimation();
-		if (!IsProxy)
+		if (!IsProxy && AbleToMove)
 		{
 			MouseInput();
 			Movement();
