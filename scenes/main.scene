@@ -68,14 +68,6 @@
           "StepHeight": 18
         },
         {
-          "__type": "Inventory",
-          "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
-          "Items": [],
-          "ItemTextures": [],
-          "StartingItems": [],
-          "TestTexture": "textures/player_spritesheet_1.vtex"
-        },
-        {
           "__type": "Kicks.PlayerController",
           "__guid": "480b3a22-de3e-4fce-874e-64996ebbd269",
           "AbleToMove": true,
@@ -91,6 +83,7 @@
             "go": "e0c3ee17-dca5-43bb-923a-5e86e2e542c4",
             "component_type": "CharacterController"
           },
+          "Coins": 50,
           "CrouchSpeed": 50,
           "Hold": {
             "_type": "gameobject",
@@ -105,6 +98,14 @@
           "RunSpeed": 200,
           "ShowShopUi": false,
           "WalkSpeed": 100
+        },
+        {
+          "__type": "Inventory",
+          "__guid": "ee86277f-8999-4390-926e-ab173097e7c2",
+          "Items": [],
+          "ItemTextures": [],
+          "StartingItems": [],
+          "TestTexture": "textures/player_spritesheet_1.vtex"
         },
         {
           "__type": "Kicks.Interactor",
@@ -1057,7 +1058,8 @@
         },
         {
           "__type": "Kicks.ShopUi",
-          "__guid": "91674ddb-796e-46f1-8855-41f0f1a38b1a"
+          "__guid": "91674ddb-796e-46f1-8855-41f0f1a38b1a",
+          "FailSound": "sounds/player_use_fail.sound"
         }
       ]
     },
@@ -2137,11 +2139,103 @@
               "Description": "Woooo",
               "Icon": "textures/player_spritesheet_1.vtex",
               "Name": "Action Graph \uD83D\uDE32",
+              "PickUpAction": {
+                "__version": 6,
+                "__guid": "c606b9d3-060f-4707-9f80-269f6937032f",
+                "UserData": {
+                  "Title": "Pick Up Action",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_name": "AddItem"
+                    },
+                    "UserData": {
+                      "Position": "608,128"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "scene.ref",
+                    "Properties": {
+                      "gameobject": {
+                        "_type": "gameobject",
+                        "go": "1452e70d-b260-4190-aac3-22f4066c50fe"
+                      }
+                    },
+                    "UserData": {
+                      "Position": "336,368"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_name": "GetNextSlot"
+                    },
+                    "UserData": {
+                      "Position": "240,32"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_result",
+                    "DstId": 1,
+                    "DstName": "Slot"
+                  },
+                  {
+                    "SrcId": 4,
+                    "SrcName": "_signal",
+                    "DstId": 1,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "_result",
+                    "DstId": 1,
+                    "DstName": "item"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  }
+                ]
+              },
               "selectedInput": "G",
               "ShopItems": {
-                "ItemTextures": []
+                "ItemsToBuy": [],
+                "ItemTextures": [],
+                "ItemPrices": []
               },
-              "ShowPopUp": false
+              "ShowPopUp": true
             }
           ]
         }
@@ -2474,6 +2568,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "0c40a5f7-d877-4c7a-8094-1b4960d512b6",
           "BodyGroups": 18446744073709551615,
+          "MaterialGroup": "black",
           "Model": "models/items/office_set/office_desk.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
@@ -2966,6 +3061,89 @@
             ]
           },
           "selectedInput": "E",
+          "ShopAction": {
+            "__version": 6,
+            "__guid": "21aa15c6-673a-4b73-a9ff-714dec06021b",
+            "UserData": {
+              "Title": "Shop Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi",
+                  "_name": "BuyItem"
+                },
+                "UserData": {
+                  "Position": "848,-80"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/ShopItems",
+                  "_name": "ItemsToBuy"
+                },
+                "UserData": {
+                  "Position": "288,128"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "640,256"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "shopUi",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "gameObject"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "shopItems",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "index",
+                "DstId": 3,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "list"
+              }
+            ]
+          },
           "ShopItems": {
             "ItemsToBuy": [
               {
@@ -2974,17 +3152,22 @@
               },
               {
                 "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_shotgun.prefab"
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
               },
               {
                 "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_smg.prefab"
+                "prefab": "prefabs/weapons/weapon_shotgun.prefab"
               }
             ],
             "ItemTextures": [
               "assets/usp.vtex",
-              "assets/shotgun.vtex",
-              "assets/mp5.vtex"
+              "assets/mp5.vtex",
+              "assets/shotgun.vtex"
+            ],
+            "ItemPrices": [
+              5,
+              25,
+              5
             ]
           },
           "ShowPopUp": true
@@ -3262,6 +3445,162 @@
       "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
       "Enabled": true,
       "NetworkMode": 2
+    },
+    {
+      "__guid": "ef49759c-3654-491b-9536-de6fdf7e8771",
+      "Name": "AmmoPickUp",
+      "Position": "32,-40.31633,80",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "a8bc90d8-3a7d-45b1-b900-b476b21f9993",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "OnTriggerEnter": {
+            "__version": 6,
+            "__guid": "e9cb5cc9-79be-4212-b42f-18ee8d1777c0",
+            "UserData": {
+              "Title": "On Trigger Enter",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 36,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-1136,-608"
+                }
+              },
+              {
+                "Id": 37,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.open_world_game/Inventory",
+                  "_name": "AddAmmo"
+                },
+                "UserData": {
+                  "Position": "304,-544"
+                }
+              },
+              {
+                "Id": 38,
+                "Type": "call",
+                "Properties": {
+                  "T": "package.nolankicks.open_world_game/Inventory",
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                  "_name": "TryGet"
+                },
+                "UserData": {
+                  "Position": "-688,-400"
+                }
+              },
+              {
+                "Id": 39,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "640,-448"
+                }
+              },
+              {
+                "Id": 40,
+                "Type": "property",
+                "Properties": {
+                  "_type": "package.nolankicks.open_world_game/Inventory",
+                  "_name": "Items"
+                },
+                "UserData": {
+                  "Position": "-288,-304"
+                }
+              },
+              {
+                "Id": 41,
+                "Type": "list.get",
+                "UserData": {
+                  "Position": "-32,-320"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 36,
+                "SrcName": "_signal",
+                "DstId": 37,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 38,
+                "SrcName": "component",
+                "DstId": 37,
+                "DstName": "_target"
+              },
+              {
+                "Value": 5,
+                "DstId": 37,
+                "DstName": "ammo"
+              },
+              {
+                "SrcId": 41,
+                "SrcName": "_result",
+                "DstId": 37,
+                "DstName": "weapon"
+              },
+              {
+                "SrcId": 36,
+                "SrcName": "obj",
+                "DstId": 38,
+                "DstName": "_target"
+              },
+              {
+                "Value": "EnabledInSelf, InParent",
+                "DstId": 38,
+                "DstName": "search"
+              },
+              {
+                "SrcId": 37,
+                "SrcName": "_signal",
+                "DstId": 39,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "Triggered",
+                "DstId": 39,
+                "DstName": "format"
+              },
+              {
+                "SrcId": 38,
+                "SrcName": "component",
+                "DstId": 40,
+                "DstName": "_target"
+              },
+              {
+                "Value": 0,
+                "DstId": 41,
+                "DstName": "index"
+              },
+              {
+                "SrcId": 40,
+                "SrcName": "_result",
+                "DstId": 41,
+                "DstName": "list"
+              }
+            ]
+          },
+          "Scale": "50,50,50",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "7e6c7198-a8cf-4b26-ae3f-4f7d725b6e96",
+          "BodyGroups": 18446744073709551615,
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3287,7 +3626,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-13T20:50:27.996769-04:00",
+  "LastSaved": "2024-04-14T11:05:39.2339539-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

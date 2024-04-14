@@ -9,7 +9,9 @@ public sealed class PopupUi : Component
 	[Property] public string Name { get; set; }
 	[Property] public string Description { get; set; }
 	public delegate void PickUpActionDelegate( PlayerController PlayerController, Inventory Inventory );
+	public delegate void ShopActionDelegate( PlayerController PlayerController, Inventory Inventory, ShopUi shopUi, ShopItems shopItems, int index);
 	[Property] public PickUpActionDelegate PickUpAction { get; set; }
+	[Property] public ShopActionDelegate ShopAction { get; set; }
 	[Property] public Inputs selectedInput { get; set; }
 	public PlayerController playerController { get; set; }
 	public Inventory Inventory { get; set; }

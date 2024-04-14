@@ -1,0 +1,156 @@
+{
+  "Graph": {
+    "__version": 6,
+    "__guid": "401dd836-09f7-4b89-b9bf-0562978d41e1",
+    "UserData": {
+      "Title": "Add Ammo",
+      "Description": "Add ammo to a weapon",
+      "Icon": "add",
+      "Category": "Custom",
+      "ReferencedComponentTypes": []
+    },
+    "Parameters": {
+      "Inputs": [
+        {
+          "Name": "_in1",
+          "Type": "Sandbox.Game/Sandbox.Collider",
+          "Display": {
+            "Title": "Input 1",
+            "Hidden": false
+          },
+          "UsedBy": [
+            "_signal"
+          ]
+        }
+      ],
+      "DefaultSignals": true
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-960,0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_type": "package.nolankicks.open_world_game/Inventory",
+          "_name": "AddAmmo"
+        },
+        "UserData": {
+          "Position": "320,-128"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "call",
+        "Properties": {
+          "T": "package.nolankicks.open_world_game/Inventory",
+          "_isStatic": false,
+          "_type": "Sandbox.Game/Sandbox.IComponentLister",
+          "_name": "TryGet"
+        },
+        "UserData": {
+          "Position": "-672,32"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "log.info",
+        "UserData": {
+          "Position": "672,-32"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "property",
+        "Properties": {
+          "_type": "package.nolankicks.open_world_game/Inventory",
+          "_name": "Items"
+        },
+        "UserData": {
+          "Position": "-256,128"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "list.get",
+        "UserData": {
+          "Position": "-0,96"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "component",
+        "DstId": 1,
+        "DstName": "_target"
+      },
+      {
+        "Value": 5,
+        "DstId": 1,
+        "DstName": "ammo"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "weapon"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in1",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "Value": "EnabledInSelf, InParent",
+        "DstId": 2,
+        "DstName": "search"
+      },
+      {
+        "SrcId": 1,
+        "SrcName": "_signal",
+        "DstId": 3,
+        "DstName": "_signal"
+      },
+      {
+        "Value": "Triggered",
+        "DstId": 3,
+        "DstName": "format"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "component",
+        "DstId": 4,
+        "DstName": "_target"
+      },
+      {
+        "Value": 0,
+        "DstId": 5,
+        "DstName": "index"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 5,
+        "DstName": "list"
+      }
+    ]
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

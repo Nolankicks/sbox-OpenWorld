@@ -8,6 +8,7 @@ public sealed class Weapon : Component
 	[Property] public string ShootBool { get; set; } = "b_attack";
 	[Property] public string ReloadBool { get; set; } = "b_reload";
 	[Property, Category("Weapon Properties")] public int Damage { get; set; }
+	[Property] public string WeaponIndent { get; set; } 
 	[Property, Category("Weapon Properties")] public int Ammo { get; set; }
 	[Property, Category("Weapon Properties")] public int MaxAmmo { get; set; }
 	[Property, Range(0.1f, 1), Category("Weapon Properties")] public float FireRate { get; set; }
@@ -46,6 +47,7 @@ public sealed class Weapon : Component
 	/// <summary>
 	/// Use this if you want to have a muzzle flash, if left empty it will not spawn a muzzle flash
 	/// </summary>
+	[Property, Category("Weapon Properties")] public bool b_twohanded { get; set; }
 	[Property, Category("Prefabs")] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property, Category("Prefabs")] public GameObject BloodParticle { get; set; }
@@ -59,6 +61,8 @@ public sealed class Weapon : Component
 		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		TimeSinceReload = ReloadTime;
+		TimeSinceFire = FireRate;
 		StartingAmmo = Ammo;
 		if (IsWeapon)
 		{
@@ -79,7 +83,7 @@ public sealed class Weapon : Component
 		else
 		{
 			ViewModelGun.Set("b_deploy", true);
-			ViewModelGun.Set("b_twohanded", true);
+			ViewModelGun.Set("b_twohanded", b_twohanded);
 		}
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;

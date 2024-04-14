@@ -26,15 +26,23 @@ public sealed class Inventory : Component
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{
 		if (IsProxy) return;
-		if (Items.Count <= Slot) return;
+		if (Slot > Items.Count) return;
 		if (Spawn)
 		{
 		if (item is null) return;
 		var itemClone = item.Clone();
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;
-		var weapon = itemClone.Components.Get<Weapon>();
-		weapon.IsWeapon = true;
+		itemClone.Components.TryGet<Weapon>( out var weapon );
+		itemClone.Components.TryGet<Shotgun>( out var shotgun );
+		if (weapon is not null)
+		{
+			weapon.IsWeapon = true;
+		}
+		else if (shotgun is not null)
+		{
+			shotgun.IsWeapon = true;
+		}
 		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
 		}
 		else
@@ -280,6 +288,26 @@ public sealed class Inventory : Component
 		if (popup is not null)
 		{
 			PopupUi(popup, popup.selectedInput);
+		}
+	}
+
+		public void AddAmmo(GameObject weapon, int ammo)
+	{
+		Log.Info(weapon);
+		weapon.Enabled = true;
+		weapon.Components.TryGet<Weapon>( out var weaponComponent );
+		weapon.Components.TryGet<Shotgun>(out var shotgunComponent);
+		if (weaponComponent is not null)
+		{
+			weaponComponent.ViewModelCamera.Enabled = false;
+			weaponComponent.Ammo += ammo;
+			weaponComponent.GameObject.Enabled = false;
+		}
+		else if (shotgunComponent is not null)
+		{
+			shotgunComponent.ViewModelCamera.Enabled = false;
+			shotgunComponent.Ammo += ammo;
+			shotgunComponent.GameObject.Enabled = false;
 		}
 	}
 }

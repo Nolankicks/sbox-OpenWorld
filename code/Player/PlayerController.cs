@@ -19,7 +19,7 @@ public sealed class PlayerController : Component
 	[Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
-	public PopupUi PopupUi { get; set; }
+	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	
 

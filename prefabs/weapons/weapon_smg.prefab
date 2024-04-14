@@ -7,13 +7,14 @@
     "NetworkMode": 1,
     "Components": [
       {
-        "__type": "Weapon",
+        "__type": "Kicks.Weapon",
         "__guid": "e32d31f8-d4a5-4fac-8f9e-d6a141749b5f",
         "Ammo": 30,
         "Arms": {
           "_type": "gameobject",
           "go": "d47c514b-2f6d-47b7-bc30-47618d973a3d"
         },
+        "b_twohanded": false,
         "BloodParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/bloodparticle.prefab"
@@ -36,10 +37,6 @@
           "prefab": "prefabs/impact.prefab"
         },
         "IsWeapon": false,
-        "ItemPrefab": {
-          "_type": "gameobject",
-          "prefab": "prefabs/items/item_smg.prefab"
-        },
         "MaxAmmo": 120,
         "MuzzleFlash": {
           "_type": "gameobject",
@@ -47,12 +44,12 @@
         },
         "Name": "MP5",
         "Recoil": 0.5,
+        "ReloadBool": "b_reload",
         "ReloadTime": 1,
+        "ShootBool": "b_attack",
         "Spread": 0.03,
-        "testObject": {
-          "_type": "gameobject",
-          "prefab": "prefabs/cube.prefab"
-        },
+        "StartingAmmo": 0,
+        "TestStruct": {},
         "ViewModelCamera": {
           "_type": "gameobject",
           "go": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a"
@@ -67,6 +64,7 @@
           "_type": "gameobject",
           "go": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e"
         },
+        "WeaponIndent": "weapon_smg",
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       },
       {

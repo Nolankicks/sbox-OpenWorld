@@ -13,9 +13,10 @@
 	<div class="shopholder">
 		@for (int i = 0; i < playerController.PopupUi.ShopItems.ItemsToBuy.Count; i++)
 		{
-			<div class=shopitem>
-				<img class="icon" src="playerController.PopupUi.ShopItems.ItemIcons[i].ResourcePath">
-			</div>
+		var index = i;
+    		<div class=shopitem onclick=@(() => @playerController.PopupUi.ShopAction?.Invoke(playerController, playerController.Inventory, this, playerController.PopupUi.ShopItems, index))>
+        <img class="icon" src=@playerController.PopupUi.ShopItems.ItemTextures[index].ResourcePath>
+    		</div>
 		}
 	</div>
 	<div class="coins">
@@ -45,6 +46,10 @@
 		{
 			ExitShop();
 		}
+		if (playerController is not null && playerController.PopupUi is not null)
+		{
+
+		}
 	}
 
 	public void ExitShop()
@@ -56,7 +61,7 @@
 		playerController.PopupUi = null;
 	}
 
-	void BuyItem(GameObject gameObject)
+	public void BuyItem(GameObject gameObject)
 	{
 		if (playerController.Coins >= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)])
 		{
