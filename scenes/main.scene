@@ -3460,7 +3460,7 @@
           "IsTrigger": true,
           "OnTriggerEnter": {
             "__version": 6,
-            "__guid": "e9cb5cc9-79be-4212-b42f-18ee8d1777c0",
+            "__guid": "68dafcec-ea97-47bb-9f60-aecfab7a0d1f",
             "UserData": {
               "Title": "On Trigger Enter",
               "ReferencedComponentTypes": []
@@ -3468,26 +3468,11 @@
             "Variables": [],
             "Nodes": [
               {
-                "Id": 36,
-                "Type": "input",
-                "UserData": {
-                  "Position": "-1136,-608"
-                }
+                "Id": 0,
+                "Type": "input"
               },
               {
-                "Id": 37,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.open_world_game/Inventory",
-                  "_name": "AddAmmo"
-                },
-                "UserData": {
-                  "Position": "304,-544"
-                }
-              },
-              {
-                "Id": 38,
+                "Id": 1,
                 "Type": "call",
                 "Properties": {
                   "T": "package.nolankicks.open_world_game/Inventory",
@@ -3496,97 +3481,55 @@
                   "_name": "TryGet"
                 },
                 "UserData": {
-                  "Position": "-688,-400"
+                  "Position": "256,224"
                 }
               },
               {
-                "Id": 39,
-                "Type": "log.info",
-                "UserData": {
-                  "Position": "640,-448"
-                }
-              },
-              {
-                "Id": 40,
-                "Type": "property",
+                "Id": 2,
+                "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_type": "package.nolankicks.open_world_game/Inventory",
-                  "_name": "Items"
+                  "_name": "AddAmmo"
                 },
                 "UserData": {
-                  "Position": "-288,-304"
-                }
-              },
-              {
-                "Id": 41,
-                "Type": "list.get",
-                "UserData": {
-                  "Position": "-32,-320"
+                  "Position": "608,96"
                 }
               }
             ],
             "Links": [
               {
-                "SrcId": 36,
-                "SrcName": "_signal",
-                "DstId": 37,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 38,
-                "SrcName": "component",
-                "DstId": 37,
-                "DstName": "_target"
-              },
-              {
-                "Value": 5,
-                "DstId": 37,
-                "DstName": "ammo"
-              },
-              {
-                "SrcId": 41,
-                "SrcName": "_result",
-                "DstId": 37,
-                "DstName": "weapon"
-              },
-              {
-                "SrcId": 36,
+                "SrcId": 0,
                 "SrcName": "obj",
-                "DstId": 38,
+                "DstId": 1,
                 "DstName": "_target"
               },
               {
                 "Value": "EnabledInSelf, InParent",
-                "DstId": 38,
+                "DstId": 1,
                 "DstName": "search"
               },
               {
-                "SrcId": 37,
+                "Value": "weapon_smg",
+                "DstId": 2,
+                "DstName": "WeaponName"
+              },
+              {
+                "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 39,
+                "DstId": 2,
                 "DstName": "_signal"
               },
               {
-                "Value": "Triggered",
-                "DstId": 39,
-                "DstName": "format"
-              },
-              {
-                "SrcId": 38,
+                "SrcId": 1,
                 "SrcName": "component",
-                "DstId": 40,
+                "DstId": 2,
                 "DstName": "_target"
               },
               {
-                "Value": 0,
-                "DstId": 41,
-                "DstName": "index"
-              },
-              {
-                "SrcId": 40,
-                "SrcName": "_result",
-                "DstId": 41,
-                "DstName": "list"
+                "Value": 5,
+                "DstId": 2,
+                "DstName": "ammo"
               }
             ]
           },
@@ -3626,7 +3569,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-14T11:05:39.2339539-04:00",
+  "LastSaved": "2024-04-14T11:45:04.0326518-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

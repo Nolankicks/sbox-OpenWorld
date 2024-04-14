@@ -2,6 +2,7 @@ using Sandbox;
 using Sandbox.Citizen;
 using System;
 using Kicks;
+using System.Security.Cryptography.X509Certificates;
 
 public sealed class Inventory : Component
 {
@@ -291,23 +292,52 @@ public sealed class Inventory : Component
 		}
 	}
 
-		public void AddAmmo(GameObject weapon, int ammo)
+	public void AddAmmo(string WeaponName, int ammo)
+{
+	if (IsProxy) return;
+	if (Items.All(x => x is null))
 	{
-		Log.Info(weapon);
-		weapon.Enabled = true;
-		weapon.Components.TryGet<Weapon>( out var weaponComponent );
-		weapon.Components.TryGet<Shotgun>(out var shotgunComponent);
-		if (weaponComponent is not null)
-		{
-			weaponComponent.ViewModelCamera.Enabled = false;
-			weaponComponent.Ammo += ammo;
-			weaponComponent.GameObject.Enabled = false;
-		}
-		else if (shotgunComponent is not null)
-		{
-			shotgunComponent.ViewModelCamera.Enabled = false;
-			shotgunComponent.Ammo += ammo;
-			shotgunComponent.GameObject.Enabled = false;
-		}
+    Log.Info("All of the items are null");
+    return;
 	}
+    
+	var weapon = Items.Where( x => x.Name == WeaponName ).FirstOrDefault();
+	if (weapon is null) return;
+    if (weapon is not null)
+    {
+        Log.Info(weapon);
+        weapon.Enabled = true;
+        weapon.Components.TryGet<Weapon>( out var weaponComponent );
+        weapon.Components.TryGet<Shotgun>(out var shotgunComponent);
+        if (weaponComponent is not null)
+        {
+            if (weaponComponent.ViewModelCamera is not null)
+            {
+                weaponComponent.ViewModelCamera.Enabled = false;
+            }
+            weaponComponent.MaxAmmo += ammo;
+            if (weaponComponent.GameObject is not null)
+            {
+                weaponComponent.GameObject.Enabled = false;
+            }
+        }
+        else if (shotgunComponent is not null)
+        {
+            if (shotgunComponent.ViewModelCamera is not null)
+            {
+                shotgunComponent.ViewModelCamera.Enabled = false;
+            }
+            shotgunComponent.MaxAmmo += ammo;
+            if (shotgunComponent.GameObject is not null)
+            {
+                shotgunComponent.GameObject.Enabled = false;
+            }
+        }
+    }
+    else
+    {
+        Log.Info("Weapon not found");
+        return;
+	}
+}
 }

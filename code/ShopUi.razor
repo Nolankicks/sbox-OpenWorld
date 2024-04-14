@@ -63,6 +63,7 @@
 
 	public void BuyItem(GameObject gameObject)
 	{
+		if (gameObject is null) return;
 		if (playerController.Coins >= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)])
 		{
 			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)];
