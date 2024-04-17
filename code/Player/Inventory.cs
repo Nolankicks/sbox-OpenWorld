@@ -294,22 +294,27 @@ public sealed class Inventory : Component
 
 	public void AddAmmo(string WeaponName, int ammo)
 {
-	if (IsProxy) return;
-	if (Items.All(x => x is null))
-	{
-    Log.Info("All of the items are null");
-    return;
-	}
-    
-	var weapon = Items.Where( x => x.Name == WeaponName ).FirstOrDefault();
-	if (weapon is null) return;
+    if (IsProxy || Items is null) return;
+    if (Items.All(x => x is null))
+    {
+        Log.Error("Items is null");
+    }
+    else
+    {
+        if (Items.FirstOrDefault(x => x.Name == WeaponName) is null) return;
+        var weapon = Items.FirstOrDefault(x => x.Name == WeaponName);
+        if (weapon is null) return;
+        Log.Info(weapon);
+    }
+}
+
+
+	/*
     if (weapon is not null)
     {
         Log.Info(weapon);
         weapon.Enabled = true;
-        weapon.Components.TryGet<Weapon>( out var weaponComponent );
-        weapon.Components.TryGet<Shotgun>(out var shotgunComponent);
-        if (weaponComponent is not null)
+        if (weapon.Components.TryGet<Weapon>( out var weaponComponent ) && weaponComponent is not null)
         {
             if (weaponComponent.ViewModelCamera is not null)
             {
@@ -321,7 +326,7 @@ public sealed class Inventory : Component
                 weaponComponent.GameObject.Enabled = false;
             }
         }
-        else if (shotgunComponent is not null)
+        else if (weapon.Components.TryGet<Shotgun>(out var shotgunComponent) && shotgunComponent is not null)
         {
             if (shotgunComponent.ViewModelCamera is not null)
             {
@@ -336,8 +341,6 @@ public sealed class Inventory : Component
     }
     else
     {
-        Log.Info("Weapon not found");
-        return;
-	}
-}
+        Log.Error("Weapon not found");
+    }*/
 }
