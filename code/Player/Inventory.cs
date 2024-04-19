@@ -3,6 +3,7 @@ using Sandbox.Citizen;
 using System;
 using Kicks;
 using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics.SymbolStore;
 
 public sealed class Inventory : Component
 {
@@ -297,20 +298,15 @@ public sealed class Inventory : Component
     if (IsProxy || Items is null) return;
     if (Items.All(x => x is null))
     {
-        Log.Error("Items is null");
+        return;
     }
     else
     {
-        if (Items.FirstOrDefault(x => x.Name == WeaponName) is null) return;
-        var weapon = Items.FirstOrDefault(x => x.Name == WeaponName);
-        if (weapon is null) return;
-        Log.Info(weapon);
-    }
-}
-
-
-	/*
-    if (weapon is not null)
+		if (Items is null) return;
+		var index = Items.FindIndex(x => x is not null && x.Name == WeaponName);
+		if (index < 0) return;
+		var weapon = Items[index];
+		if (weapon is not null)
     {
         Log.Info(weapon);
         weapon.Enabled = true;
@@ -339,6 +335,12 @@ public sealed class Inventory : Component
             }
         }
     }
+    }
+}
+
+
+	/*
+  
     else
     {
         Log.Error("Weapon not found");

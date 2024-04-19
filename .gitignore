@@ -13,13 +13,13 @@ code/Properties/*
 *.sln
 
 # Editor Projects
-code/Editor/obj/*
-code/Editor/Properties/*
-code/Editor/*.sln
-code/Editor/.vs/*
-code/Editor/.vscode/*
-maps/
-materials/
+editor/obj/*
+editor/Properties/*
+editor/*.sln
+editor/.vs/*
+editor/.vscode/*
+assets/maps/
+assets/materials/
 
 # Auto-generated asset related files
 *.generated.*

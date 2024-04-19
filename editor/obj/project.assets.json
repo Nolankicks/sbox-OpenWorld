@@ -40,18 +40,18 @@
   "libraries": {
     "Base Editor Library/1.0.0": {
       "type": "project",
-      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/code/Base Editor Library.csproj",
-      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/code/Base Editor Library.csproj"
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
     },
     "Base Library/1.0.0": {
       "type": "project",
-      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/code/Base Library.csproj",
-      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/code/Base Library.csproj"
+      "path": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj",
+      "msbuildProject": "../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj"
     },
     "open_world_game/1.0.0": {
       "type": "project",
-      "path": "../open_world_game.csproj",
-      "msbuildProject": "../open_world_game.csproj"
+      "path": "../Code/open_world_game.csproj",
+      "msbuildProject": "../Code/open_world_game.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -67,11 +67,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\code\\editor\\open_world_game.editor.csproj",
+      "projectUniqueName": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj",
       "projectName": "open_world_game.editor",
-      "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\code\\editor\\open_world_game.editor.csproj",
+      "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj",
       "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
-      "outputPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\code\\editor\\obj\\",
+      "outputPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,11 +93,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\code\\Base Editor Library.csproj": {
-              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\code\\Base Editor Library.csproj"
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
             },
-            "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\code\\open_world_game.csproj": {
-              "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\code\\open_world_game.csproj"
+            "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj": {
+              "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj"
             }
           }
         }
