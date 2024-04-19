@@ -101,10 +101,10 @@
     var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
     if (tr.Hit)
     {
-        tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
-		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
-		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun);
-		tr.GameObject.Components.TryGet<PopupUi>(out var popupUi);
+        tr.GameObject.Parent.Components.TryGet<Weapon>(out var item, FindMode.EverythingInSelfAndParent);
+		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon, FindMode.EverythingInSelfAndParent);
+		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
+		tr.GameObject.Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndParent);
         if (item is not null && icon is not null)
         {
             Item = item;

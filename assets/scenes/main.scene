@@ -1183,9 +1183,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
+                      "_name": "AddItem",
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_name": "AddItem"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1208,9 +1208,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
+                      "_name": "GetNextSlot",
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_name": "GetNextSlot"
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1240,8 +1240,8 @@
                     "Id": 8,
                     "Type": "property",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameObject",
-                      "_name": "Transform"
+                      "_name": "Transform",
+                      "_type": "Sandbox.Game/Sandbox.GameObject"
                     },
                     "UserData": {
                       "Position": "304,592"
@@ -1251,8 +1251,8 @@
                     "Id": 9,
                     "Type": "property",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameTransform",
-                      "_name": "Position"
+                      "_name": "Position",
+                      "_type": "Sandbox.Game/Sandbox.GameTransform"
                     },
                     "UserData": {
                       "Position": "576,560"
@@ -1262,8 +1262,8 @@
                     "Id": 10,
                     "Type": "property",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameTransform",
-                      "_name": "Rotation"
+                      "_name": "Rotation",
+                      "_type": "Sandbox.Game/Sandbox.GameTransform"
                     },
                     "UserData": {
                       "Position": "608,720"
@@ -1777,8 +1777,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "IsSitting"
+                  "_name": "IsSitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -1788,8 +1788,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -1890,9 +1890,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Set",
                   "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_name": "Set"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -1974,8 +1974,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
-                  "_name": "ShowShopUi"
+                  "_name": "ShowShopUi",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "368,16"
@@ -1995,8 +1995,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
-                  "_name": "ShowPopUp"
+                  "_name": "ShowPopUp",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "704,160"
@@ -2006,8 +2006,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
-                  "_name": "PopupUi"
+                  "_name": "PopupUi",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "944,416"
@@ -2027,8 +2027,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
-                  "_name": "AbleToMove"
+                  "_name": "AbleToMove",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "1360,672"
@@ -2038,8 +2038,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
-                  "_name": "PopupUi"
+                  "_name": "PopupUi",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "1056,944"
@@ -2049,8 +2049,8 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
-                  "_name": "ShopItems"
+                  "_name": "ShopItems",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "816,1232"
@@ -2060,8 +2060,8 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
-                  "_name": "ShopItems"
+                  "_name": "ShopItems",
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "1792,960"
@@ -2200,9 +2200,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "BuyItem",
                   "_type": "package.nolankicks.open_world_game/Kicks.ShopUi",
-                  "_name": "BuyItem"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "848,-80"
@@ -2212,8 +2212,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/ShopItems",
-                  "_name": "ItemsToBuy"
+                  "_name": "ItemsToBuy",
+                  "_type": "package.nolankicks.open_world_game/ShopItems"
                 },
                 "UserData": {
                   "Position": "288,128"
@@ -2452,30 +2452,59 @@
       ]
     },
     {
-      "__guid": "b92ae3de-c924-4611-bd78-677619827fa9",
+      "__guid": "c15d7b23-8e13-4ea6-967b-bb9b65235ce2",
+      "Name": "ik left",
+      "Position": "192.946,-414.387,94.623",
+      "Rotation": "-0.7058472,-0.7040312,0.001509927,0.07821451",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "5252fcbb-0e99-46ba-9c28-31cf61e49119",
+      "Name": "ik right",
+      "Position": "220.656,-415.817,95.839",
+      "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "98fe9665-789b-4105-a2ce-62e27a7d2fca",
+      "Name": "light_ammo_pickup",
+      "Position": "-64,-16,66.8509",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/light_ammo_pickup.prefab"
+    },
+    {
+      "__guid": "95986c83-7bf5-4f1a-8b75-930dcaf4f28d",
       "Name": "Box",
-      "Position": "271.8397,248.7354,127.9983",
+      "Position": "344,176,127.9987",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
-          "__guid": "77342c14-6ef0-487e-bbe7-7f06eade92be",
+          "__guid": "12fdef2f-cc9b-42d2-ae75-57172132b48c",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
-            "Topology": "H4sIAAAAAAAACjXQBw4DMRACwEu/9F7\u002B/9GEibiVkDGL8drjMAyfYB2oebDs/h5sg2dwbP\u002Bb4pkFq\u002BBaTndObxE8yumyaPrvcnoj/75b\u002B7J2zbY3A04/dC7nX\u002BX0U7Cpz6w4fWyG/Et13Kr4vUse/Vw/THfq7XvXpFnp0zl\u002B/\u002BRN7pSjR\u002BP/AaDJA2ZkAQAA",
-            "TextureOrigin": "271.8397,248.7354,127.9983",
+            "Topology": "H4sIAAAAAAAACuNhYGDQAGIuIP4/CkYBGQAAN0L2KUQCAAA=",
+            "TextureOrigin": "344,176,127.9987",
             "Positions": [
-              "153.6213,107.14,-64",
-              "-72.48227,107.14,-64",
-              "-72.48227,-107.14,-64",
-              "153.6213,-107.14,-64",
-              "153.6213,-107.14,64",
-              "-72.48227,-107.14,64",
-              "-72.48227,107.14,64",
-              "153.6213,107.14,64"
+              "-88,-16,0.001251221",
+              "120,-16,0.001251221",
+              "120,16,0.001251221",
+              "-88,16,0.001251221",
+              "-88,16,-64",
+              "120,16,-64",
+              "120,-16,-64",
+              "-88,-16,-64",
+              "-88,-16,96.00125",
+              "120,-16,96.00125",
+              "120,16,96.00125",
+              "-88,16,96.00125"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -2483,7 +2512,11 @@
               "0,-1,0",
               "0,1,0",
               "-1,0,0",
-              "1,0,0"
+              "1,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureVAxis": [
               "0,-1,0",
@@ -2491,9 +2524,17 @@
               "0,0,-1",
               "0,0,-1",
               "0,0,-1",
-              "0,0,-1"
+              "0,0,-1",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
             ],
             "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
@@ -2507,11 +2548,127 @@
               0,
               0,
               0,
+              0,
+              0,
+              0,
+              0,
               0
             ],
             "MaterialIndex": [
               0,
               0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "cb55cf40-14f2-4451-9d7d-d1996c543407",
+      "Name": "Box",
+      "Position": "320,192,80",
+      "Rotation": "0.7071067,0,0,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "7c4858bb-600c-4d35-8886-01dc7c43aa12",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2QiwqDUAxDq3N6dc7HNh///6MzB1KwEChpkvbeEhGn0AgvoRI24Sm8hVX4CoeQVVv3V6UnnMHsIezuqdYcerLp74V/tJ9\u002B8H78H/fwnfXkcBc58MVeeLTsw7vYg\u002B7nHr53JnrelXdP9sLz9rwbMIfnL9gJNzsTPv\u002BAW8hhdgHESGaAXAEAAA==",
+            "TextureOrigin": "320,192,63.99877",
+            "Positions": [
+              "-48,-16,0",
+              "128,-16,-0.000002861023",
+              "128,16,0.000002861023",
+              "-48,16,0",
+              "-48,16.00004,-208",
+              "-48,-15.99996,-208",
+              "128,16.00004,-207.9999",
+              "128,-15.99996,-207.9999"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0,0"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
               0,
               0,
               0,
@@ -2551,31 +2708,6 @@
           "Static": true
         }
       ]
-    },
-    {
-      "__guid": "c15d7b23-8e13-4ea6-967b-bb9b65235ce2",
-      "Name": "ik left",
-      "Position": "192.946,-414.387,94.623",
-      "Rotation": "-0.7058472,-0.7040312,0.001509927,0.07821451",
-      "Enabled": true,
-      "NetworkMode": 2
-    },
-    {
-      "__guid": "5252fcbb-0e99-46ba-9c28-31cf61e49119",
-      "Name": "ik right",
-      "Position": "220.656,-415.817,95.839",
-      "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
-      "Enabled": true,
-      "NetworkMode": 2
-    },
-    {
-      "__guid": "98fe9665-789b-4105-a2ce-62e27a7d2fca",
-      "Name": "light_ammo_pickup",
-      "Position": "-64,-16,67",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
     }
   ],
   "SceneProperties": {
@@ -2601,7 +2733,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T14:20:47.1059041-04:00",
+  "LastSaved": "2024-04-19T18:08:24.1618563-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

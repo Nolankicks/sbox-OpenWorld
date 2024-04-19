@@ -2,7 +2,9 @@
 @using Sandbox.UI;
 @inherits PanelComponent;
 @namespace Kicks
-<root>
+@if (Inventory is not null && Player is not null && AmmoContainer is not null)
+{
+	<root>
 	<div class="invholder">
 		@for (int i = 0; i < Inventory.Slots; i++)
 		{
@@ -18,16 +20,42 @@
 	<div class="health">
 		@Player.Health
 	</div>
+	<div class="ammo">
+		@if (AmmoContainer is not null && Inventory is not null && Inventory.Items[Inventory.ActiveSlot] is not null)
+		{
+			@if (Inventory.Items[Inventory.ActiveSlot].Components.Get<Weapon>() is not null)
+		{
+			var weapon = Inventory.Items[Inventory.ActiveSlot].Components.Get<Weapon>();
+			@if (weapon.AmmoType == AmmoContainer.AmmoTypes.LightAmmo)
+			{
+				 <div>@weapon.Ammo / @AmmoContainer.LightAmmo</div>
+			}
+			else if (weapon.AmmoType == AmmoContainer.AmmoTypes.HeavyAmmo)
+			{
+				<div>@weapon.Ammo / @AmmoContainer.HeavyAmmo</div>
+			}
+		}
+		else if (Inventory.Items[Inventory.ActiveSlot].Components.Get<Shotgun>() is not null)
+		{
+			var shotgun = Inventory.Items[Inventory.ActiveSlot].Components.Get<Shotgun>();
+			<div>@shotgun.Ammo / @AmmoContainer.ShotgunShells</div>
+		}
+		}
+	</div>
 </root>
+}
+
 @code
 {
 
-	public Inventory Inventory { get; set; }
 	public PlayerController Player;
+	public AmmoContainer AmmoContainer;
+	public Inventory Inventory;
 	protected override void OnStart()
 	{
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
 		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	protected override void OnUpdate()

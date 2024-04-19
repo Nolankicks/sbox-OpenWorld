@@ -38,8 +38,8 @@
         "Id": 1,
         "Type": "call",
         "Properties": {
-          "T": "package.nolankicks.open_world_game/Kicks.AmmoContainer",
           "_name": "TryGet",
+          "T": "package.nolankicks.open_world_game/Kicks.AmmoContainer",
           "_type": "Sandbox.Game/Sandbox.IComponentLister",
           "_isStatic": false
         },
@@ -58,8 +58,8 @@
         "Id": 3,
         "Type": "call",
         "Properties": {
-          "T": "package.nolankicks.open_world_game/Inventory",
           "_name": "TryGet",
+          "T": "package.nolankicks.open_world_game/Inventory",
           "_type": "Sandbox.Game/Sandbox.IComponentLister",
           "_isStatic": false
         },
@@ -75,38 +75,38 @@
         }
       },
       {
-        "Id": 5,
+        "Id": 39,
         "Type": "call",
         "Properties": {
-          "_isStatic": false,
+          "_name": "AddAmmo",
           "_type": "package.nolankicks.open_world_game/Inventory",
-          "_name": "AddAmmo"
+          "_isStatic": false
         },
         "UserData": {
-          "Position": "-464,16"
+          "Position": "-416,16"
         }
       },
       {
-        "Id": 37,
+        "Id": 41,
         "Type": "property",
         "Properties": {
-          "_type": "Sandbox.Game/Sandbox.GameObject",
-          "_name": "Parent"
+          "_name": "Parent",
+          "_type": "Sandbox.Game/Sandbox.GameObject"
         },
         "UserData": {
-          "Position": "-416,368"
+          "Position": "-272,288"
         }
       },
       {
-        "Id": 38,
+        "Id": 42,
         "Type": "call",
         "Properties": {
-          "_isStatic": false,
+          "_name": "Destroy",
           "_type": "Sandbox.Game/Sandbox.GameObject",
-          "_name": "Destroy"
+          "_isStatic": false
         },
         "UserData": {
-          "Position": "-176,192"
+          "Position": "48,176"
         }
       }
     ],
@@ -160,47 +160,47 @@
       {
         "SrcId": 2,
         "SrcName": "true",
-        "DstId": 5,
+        "DstId": 39,
         "DstName": "_signal"
       },
       {
         "SrcId": 3,
         "SrcName": "component",
-        "DstId": 5,
+        "DstId": 39,
         "DstName": "_target"
       },
       {
-        "Value": 30,
-        "DstId": 5,
+        "Value": 16,
+        "DstId": 39,
         "DstName": "ammo"
       },
       {
         "SrcId": 1,
         "SrcName": "component",
-        "DstId": 5,
+        "DstId": 39,
         "DstName": "ammoContainer"
       },
       {
         "Value": "LightAmmo",
-        "DstId": 5,
+        "DstId": 39,
         "DstName": "ammoType"
       },
       {
         "SrcId": 0,
         "SrcName": "_target",
-        "DstId": 37,
+        "DstId": 41,
         "DstName": "_target"
       },
       {
-        "SrcId": 5,
+        "SrcId": 39,
         "SrcName": "_signal",
-        "DstId": 38,
+        "DstId": 42,
         "DstName": "_signal"
       },
       {
-        "SrcId": 37,
+        "SrcId": 41,
         "SrcName": "_result",
-        "DstId": 38,
+        "DstId": 42,
         "DstName": "_target"
       }
     ]

@@ -34,7 +34,7 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "352,0"
+                "Position": "608,-0"
               }
             },
             {
@@ -46,7 +46,7 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "640,112"
+                "Position": "928,160"
               }
             }
           ],
@@ -100,6 +100,15 @@
           "ItemPrices": []
         },
         "ShowPopUp": true
+      },
+      {
+        "__type": "Sandbox.SphereCollider",
+        "__guid": "ee019628-8748-412a-9fd5-1e2464700cca",
+        "__enabled": false,
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Radius": 10,
+        "Static": false
       }
     ],
     "Children": [
@@ -160,7 +169,7 @@
                 }
               ]
             },
-            "Scale": "50,50,50",
+            "Scale": "10,10,10",
             "Static": false
           }
         ]
@@ -184,7 +193,6 @@
       {
         "__guid": "57ba74fd-ecb2-4c9d-b712-e5b84b741ac7",
         "Name": "Collider",
-        "Tags": "ignore",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
@@ -206,6 +214,15 @@
             "MotionEnabled": true,
             "RigidbodyFlags": 0,
             "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "782caa03-81a0-4874-805b-aeb1caa6e696",
+            "__enabled": false,
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false
           }
         ]
       }

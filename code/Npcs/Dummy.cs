@@ -72,7 +72,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	{
 		if (IsProxy) return;
 		health -= damage;
-		if (health == 0)
+		if (health <= 0)
 		{
 			Kill();
 		}

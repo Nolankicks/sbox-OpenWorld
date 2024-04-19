@@ -3,17 +3,17 @@
     "Allowed": true,
     "Enabled": true,
     "ProjectConfig": {
-      "Title": "9mmprojectfinal",
+      "Title": "9mm Ammo Box",
       "Type": "model",
-      "Org": "local",
-      "Ident": "9mmprojectfinal",
+      "Org": "nolankicks",
+      "Ident": "9mm_ammo",
       "Tags": null,
       "Schema": 0,
       "Resources": null,
       "PackageReferences": null,
       "EditorReferences": null,
       "Metadata": {
-        "SingleAssetSource": "models/source/9mmprojectfinal.vmdl"
+        "SingleAssetSource": "models/light_ammo/source/9mmprojectfinal.vmdl"
       }
     }
   }

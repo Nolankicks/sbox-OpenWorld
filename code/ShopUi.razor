@@ -2,29 +2,30 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 @namespace Kicks
-
-<root class="@(playerController.ShowShopUi || playerController is null ? "" : "hide")">
-	@if (playerController.PopupUi is not null && playerController is not null)
-	{
-			<div class="header">
-		SHOP
-	</div>
-	<div class="exitbutton" onclick=@ExitShop>EXIT</div>
-	<div class="shopholder">
-		@for (int i = 0; i < playerController.PopupUi.ShopItems.ItemsToBuy.Count; i++)
-		{
-		var index = i;
-    		<div class=shopitem onclick=@(() => @playerController.PopupUi.ShopAction?.Invoke(playerController, playerController.Inventory, this, playerController.PopupUi.ShopItems, index))>
-        <img class="icon" src=@playerController.PopupUi.ShopItems.ItemTextures[index].ResourcePath>
-    		</div>
-		}
-	</div>
-	<div class="coins">
-		@playerController.Coins
-	</div>
-	}
+@if (playerController is not null)
+{
+<root class="@(playerController.ShowShopUi ? "" : "hide")">
+    @if (playerController?.PopupUi is not null)
+    {
+        <div class="header">
+            SHOP
+        </div>
+        <div class="exitbutton" onclick=@ExitShop>EXIT</div>
+        <div class="shopholder">
+            @for (int i = 0; i < playerController.PopupUi.ShopItems?.ItemsToBuy?.Count; i++)
+            {
+                var index = i;
+                <div class=shopitem onclick=@(() => @playerController?.PopupUi.ShopAction?.Invoke(playerController, playerController.Inventory, this, playerController.PopupUi.ShopItems, index))>
+                    <img class="icon" src=@playerController.PopupUi.ShopItems?.ItemTextures?[index]?.ResourcePath>
+                </div>
+            }
+        </div>
+        <div class="coins">
+            @playerController?.Coins
+        </div>
+    }
 </root>
-
+}
 
 @code
 {
@@ -43,6 +44,7 @@
 	{
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		if (playerController is null) return;
 		if (playerController.ShowShopUi && Input.EscapePressed && !IsProxy)
 		{
 			ExitShop();

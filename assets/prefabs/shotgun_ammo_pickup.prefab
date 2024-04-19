@@ -9,9 +9,9 @@
       {
         "__type": "Kicks.PopupUi",
         "__guid": "7eb53135-120f-4a7b-90e7-9b2466ced802",
-        "Description": "Ammo for the SMG and Pistol",
+        "Description": "Ammo for the shotgun",
         "Icon": "textures/player_spritesheet_1.vtex",
-        "Name": "Light Ammo",
+        "Name": "Shotgun Shells",
         "PickUpAction": {
           "__version": 6,
           "__guid": "09ff9fc4-589b-4151-837c-e49ae4c91581",
@@ -22,11 +22,14 @@
           "Variables": [],
           "Nodes": [
             {
-              "Id": 0,
-              "Type": "input"
+              "Id": 12,
+              "Type": "input",
+              "UserData": {
+                "Position": "-32,-688"
+              }
             },
             {
-              "Id": 2,
+              "Id": 13,
               "Type": "call",
               "Properties": {
                 "_name": "AddAmmo",
@@ -34,11 +37,11 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "352,0"
+                "Position": "592,-704"
               }
             },
             {
-              "Id": 3,
+              "Id": 17,
               "Type": "call",
               "Properties": {
                 "_name": "Destroy",
@@ -46,49 +49,49 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "640,112"
+                "Position": "1040,-576"
               }
             }
           ],
           "Links": [
             {
-              "SrcId": 0,
+              "SrcId": 12,
               "SrcName": "_signal",
-              "DstId": 2,
+              "DstId": 13,
               "DstName": "_signal"
             },
             {
-              "SrcId": 0,
+              "SrcId": 12,
               "SrcName": "Inventory",
-              "DstId": 2,
+              "DstId": 13,
               "DstName": "_target"
             },
             {
               "Value": 30,
-              "DstId": 2,
+              "DstId": 13,
               "DstName": "ammo"
             },
             {
-              "SrcId": 0,
+              "SrcId": 12,
               "SrcName": "ammoContainer",
-              "DstId": 2,
+              "DstId": 13,
               "DstName": "ammoContainer"
             },
             {
               "Value": "LightAmmo",
-              "DstId": 2,
+              "DstId": 13,
               "DstName": "ammoType"
             },
             {
-              "SrcId": 2,
+              "SrcId": 13,
               "SrcName": "_signal",
-              "DstId": 3,
+              "DstId": 17,
               "DstName": "_signal"
             },
             {
-              "SrcId": 0,
+              "SrcId": 12,
               "SrcName": "_target",
-              "DstId": 3,
+              "DstId": 17,
               "DstName": "_target"
             }
           ]
@@ -160,7 +163,7 @@
                 }
               ]
             },
-            "Scale": "50,50,50",
+            "Scale": "10,10,10",
             "Static": false
           }
         ]

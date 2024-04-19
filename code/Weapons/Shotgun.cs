@@ -86,10 +86,17 @@ public sealed class Shotgun : Component
 			var selelctedAmmo = AmmoContainer.GetAmmo(AmmoType);
 			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0)
 			{
-				var ammoToSet = selelctedAmmo -= ShotsFired;
-				AmmoContainer.SetAmmo(AmmoType, ammoToSet);
-				Ammo = ammoToSet;
-				Ammo = StartingAmmo;
+				var ammoToSet = selelctedAmmo - ShotsFired;
+				if (ammoToSet > selelctedAmmo)
+				{
+					Ammo = selelctedAmmo;
+					AmmoContainer.SetAmmo(AmmoType, 0);
+				}
+				else
+				{
+					AmmoContainer.SetAmmo(AmmoType, ammoToSet);
+					Ammo = StartingAmmo;
+				}
 				ViewModelGun.Set("b_realod", true);
 				ShotsFired = 0;
 				timeSinceReload = 0;
@@ -133,6 +140,7 @@ public sealed class Shotgun : Component
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 		ray.Forward += Vector3.Random * 0.05f;
 		var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
+		Ammo--;
 		ViewModelGun.Set("b_attack", true);
 		if (tr.Hit)
 		{
