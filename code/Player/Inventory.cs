@@ -13,11 +13,13 @@ public sealed class Inventory : Component
 	[Property] public GameObject Gun { get; set; }
 	public PlayerController PlayerController { get; set; }
 	[Property] public Texture TestTexture { get; set; }
+	public AmmoContainer AmmoContainer { get; set; }
  	public int ActiveSlot = 0;
 	public int Slots => 9;
 	protected override void OnStart()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 		Items = new List<GameObject>(new GameObject[9]);
 		ItemTextures = new List<Texture>(new Texture[9]);
 		if (IsProxy) return;
@@ -277,7 +279,7 @@ public sealed class Inventory : Component
 		if (popupUi is null) return;
 		if (Input.Pressed(InputHandler.GetInputString(inputAction)))
 		{
-			popupUi.PickUpAction?.Invoke(PlayerController, this);
+			popupUi.PickUpAction?.Invoke(PlayerController, this, AmmoContainer);
 		}
 	}
 
@@ -293,49 +295,13 @@ public sealed class Inventory : Component
 		}
 	}
 
-	public void AddAmmo(string WeaponName, int ammo)
+	public void AddAmmo(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int ammo)
 {
-    if (IsProxy || Items is null) return;
-    if (Items.All(x => x is null))
-    {
-        return;
-    }
-    else
-    {
-		if (Items is null) return;
-		var index = Items.FindIndex(x => x is not null && x.Name == WeaponName);
-		if (index < 0) return;
-		var weapon = Items[index];
-		if (weapon is not null)
-    {
-        Log.Info(weapon);
-        weapon.Enabled = true;
-        if (weapon.Components.TryGet<Weapon>( out var weaponComponent ) && weaponComponent is not null)
-        {
-            if (weaponComponent.ViewModelCamera is not null)
-            {
-                weaponComponent.ViewModelCamera.Enabled = false;
-            }
-            weaponComponent.MaxAmmo += ammo;
-            if (weaponComponent.GameObject is not null)
-            {
-                weaponComponent.GameObject.Enabled = false;
-            }
-        }
-        else if (weapon.Components.TryGet<Shotgun>(out var shotgunComponent) && shotgunComponent is not null)
-        {
-            if (shotgunComponent.ViewModelCamera is not null)
-            {
-                shotgunComponent.ViewModelCamera.Enabled = false;
-            }
-            shotgunComponent.MaxAmmo += ammo;
-            if (shotgunComponent.GameObject is not null)
-            {
-                shotgunComponent.GameObject.Enabled = false;
-            }
-        }
-    }
-    }
+    if (IsProxy) return;
+	var currentAmmo = ammoContainer.GetAmmo(ammoType);
+	var setAmmo = currentAmmo + ammo;
+	ammoContainer.SetAmmo(ammoType, setAmmo);
+
 }
 
 

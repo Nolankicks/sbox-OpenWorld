@@ -48,12 +48,14 @@ public sealed class Weapon : Component
 	/// Use this if you want to have a muzzle flash, if left empty it will not spawn a muzzle flash
 	/// </summary>
 	[Property, Category("Weapon Properties")] public bool b_twohanded { get; set; }
+	[Property, Category("Weapon Properties")] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	[Property, Category("Prefabs")] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property, Category("Prefabs")] public GameObject BloodParticle { get; set; }
 	[Property, Category("Prefabs")] public GameObject ImpactParticle { get; set; }
 	[Sync] public bool IsAiming { get; set; }
 	[Property] public int StartingAmmo { get; set; }
+	public AmmoContainer AmmoContainer { get; set; }
 	protected override void OnStart()
 	{
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
@@ -99,6 +101,7 @@ public sealed class Weapon : Component
 	protected override void OnUpdate()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
 		if (IsWeapon)
 		{
 		DroppedItem.Enabled = false;
@@ -125,10 +128,12 @@ public sealed class Weapon : Component
 		UpdateWorldModelShadowType();
 		if (PlayerController.IsFirstPerson)
 		{
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
+			var selelctedAmmo = AmmoContainer.GetAmmo(AmmoType);
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0)
 			{
-				
-				Ammo = MaxAmmo -= ShotsFired;
+				var ammoToSet = selelctedAmmo -= ShotsFired;
+				AmmoContainer.SetAmmo(AmmoType, ammoToSet);
+				Ammo = ammoToSet;
 				Ammo = StartingAmmo;
 				ViewModelGun.Set(ReloadBool, true);
 				ShotsFired = 0;
@@ -188,6 +193,7 @@ public sealed class Weapon : Component
 	void Fire()
 	{
 		if (PlayerController.IsGrabbing) return;
+		
 		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
 			PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);

@@ -1,0 +1,172 @@
+{
+  "RootObject": {
+    "__guid": "c965ab3e-a617-4e81-b957-8cd4af7ad6b2",
+    "Name": "light_ammo_pickup",
+    "Tags": "ignore",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "a0f7cf65-a577-47ed-9b6e-dfbbfe05d099",
+        "Description": "Ammo for the SMG and Pistol",
+        "Icon": "textures/player_spritesheet_1.vtex",
+        "Name": "Light Ammo",
+        "PickUpAction": {
+          "__version": 6,
+          "__guid": "e0bbe5cc-3b72-43fc-ac7e-5e32063f80e8",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_name": "AddAmmo",
+                "_type": "package.nolankicks.open_world_game/Inventory",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "352,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 2,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 2,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 2,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "selectedInput": "E",
+        "ShopItems": {
+          "ItemsToBuy": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "5dc38441-4f25-49ec-9b14-d4fb2116d28c",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "50,50,50",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "c9831d8d-9fe2-4cbf-8a73-c3afa3217654",
+        "BodyGroups": 18446744073709551615,
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "2e9863af-b098-48b1-aa93-a8cfa14eda43",
+        "Name": "trigger",
+        "Position": "0.9058228,-1.482529,-1.151749",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "3d50b3a8-2d1c-4c0c-b50d-0168dcfd5278",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "OnTriggerEnter": {
+              "__version": 6,
+              "__guid": "971c64eb-3834-490d-90f7-2f9d112574ea",
+              "UserData": {
+                "Title": "On Trigger Enter",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input",
+                  "UserData": {
+                    "Position": "-208,-16"
+                  }
+                },
+                {
+                  "Id": 9,
+                  "Type": "graph",
+                  "Properties": {
+                    "graph": "actions/ammotrigger.action"
+                  },
+                  "UserData": {
+                    "Position": "320,176"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "obj",
+                  "DstId": 9,
+                  "DstName": "_in1"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 9,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 9,
+                  "DstName": "_target"
+                }
+              ]
+            },
+            "Scale": "50,50,50",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nolankicks.idel-terry"
+  ]
+}

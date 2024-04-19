@@ -1183,9 +1183,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "AddItem",
-                      "_type": "package.nolankicks.open_world_game/Inventory"
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1208,9 +1208,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "GetNextSlot",
-                      "_type": "package.nolankicks.open_world_game/Inventory"
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1890,9 +1890,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -2200,9 +2200,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "BuyItem",
-                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "848,-80"
@@ -2567,203 +2567,6 @@
       "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
       "Enabled": true,
       "NetworkMode": 2
-    },
-    {
-      "__guid": "ef49759c-3654-491b-9536-de6fdf7e8771",
-      "Name": "AmmoPickUp",
-      "Position": "32,-40.31633,80",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "a8bc90d8-3a7d-45b1-b900-b476b21f9993",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "OnTriggerEnter": {
-            "__version": 6,
-            "__guid": "15abbde6-6fc2-4c43-a096-eefacd316f5c",
-            "UserData": {
-              "Title": "On Trigger Enter",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input",
-                "UserData": {
-                  "Position": "-416,0"
-                }
-              },
-              {
-                "Id": 1,
-                "Type": "property",
-                "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Game/Sandbox.Component"
-                },
-                "UserData": {
-                  "Position": "-512,176"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "-160,240"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "TryGet",
-                  "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                  "T": "package.nolankicks.open_world_game/Inventory"
-                },
-                "UserData": {
-                  "Position": "128,160"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "AddAmmo",
-                  "_type": "package.nolankicks.open_world_game/Inventory"
-                },
-                "UserData": {
-                  "Position": "704,0"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "if",
-                "UserData": {
-                  "Position": "416,-48"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "656,256"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "obj",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "Value": "weapon_smg",
-                "DstId": 4,
-                "DstName": "WeaponName"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "true",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "component",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "Value": 5,
-                "DstId": 4,
-                "DstName": "ammo"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 5,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "condition"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_signal",
-                "DstId": 6,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 6,
-                "DstName": "_target"
-              }
-            ]
-          },
-          "Scale": "50,50,50",
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "7e6c7198-a8cf-4b26-ae3f-4f7d725b6e96",
-          "BodyGroups": 18446744073709551615,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Kicks.PopupUi",
-          "__guid": "46410567-37d3-45f1-937f-2715f47db7f3",
-          "Description": "Ammo for the smg",
-          "Icon": "models/weapons/sbox_ammo/12g_shell/12g_shell_normal_tga_2e887dc3.generated.vtex",
-          "Name": "SMG Ammo",
-          "selectedInput": "E",
-          "ShopItems": {
-            "ItemsToBuy": [],
-            "ItemTextures": [],
-            "ItemPrices": []
-          },
-          "ShowPopUp": true
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "9bd82c26-0155-4f7b-960c-a8fded7fe174",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -2789,7 +2592,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-18T14:22:17.148219-04:00",
+  "LastSaved": "2024-04-19T11:42:26.0056419-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -2814,7 +2617,6 @@
     "facepunch.saw_blade_a",
     "facepunch.soda_can",
     "facepunch.tv",
-    "facepunch.v_spaghellim4",
     "facepunch.watermelon",
     "facepunch.wet_floor_sign",
     "facepunch.wooden_crate",

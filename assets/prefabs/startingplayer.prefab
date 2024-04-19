@@ -60,6 +60,13 @@
       {
         "__type": "Kicks.Interactor",
         "__guid": "0ab288d8-8e23-49e0-87be-1c2d473a2427"
+      },
+      {
+        "__type": "Kicks.AmmoContainer",
+        "__guid": "f022752b-7274-46e7-aec7-d25f6be0996f",
+        "HeavyAmmo": 30,
+        "LightAmmo": 30,
+        "ShotgunShells": 30
       }
     ],
     "Children": [
