@@ -1183,9 +1183,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
+                      "_isStatic": false,
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1208,9 +1208,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_name": "GetNextSlot",
+                      "_isStatic": false,
                       "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false
+                      "_name": "GetNextSlot"
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1240,8 +1240,8 @@
                     "Id": 8,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Transform",
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Transform"
                     },
                     "UserData": {
                       "Position": "304,592"
@@ -1251,8 +1251,8 @@
                     "Id": 9,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Position",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Position"
                     },
                     "UserData": {
                       "Position": "576,560"
@@ -1262,8 +1262,8 @@
                     "Id": 10,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Rotation",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Rotation"
                     },
                     "UserData": {
                       "Position": "608,720"
@@ -1777,8 +1777,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsSitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -1788,8 +1788,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -1890,9 +1890,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Set",
+                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false
+                  "_name": "Set"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -1974,8 +1974,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShowShopUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "ShowShopUi"
                 },
                 "UserData": {
                   "Position": "368,16"
@@ -1995,8 +1995,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShowPopUp",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShowPopUp"
                 },
                 "UserData": {
                   "Position": "704,160"
@@ -2006,8 +2006,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "PopupUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
                 },
                 "UserData": {
                   "Position": "944,416"
@@ -2027,8 +2027,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "AbleToMove",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "AbleToMove"
                 },
                 "UserData": {
                   "Position": "1360,672"
@@ -2038,8 +2038,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_name": "PopupUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
                 },
                 "UserData": {
                   "Position": "1056,944"
@@ -2049,8 +2049,8 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShopItems",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
                 },
                 "UserData": {
                   "Position": "816,1232"
@@ -2060,8 +2060,8 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShopItems",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
                 },
                 "UserData": {
                   "Position": "1792,960"
@@ -2200,9 +2200,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "BuyItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.open_world_game/Kicks.ShopUi",
-                  "_isStatic": false
+                  "_name": "BuyItem"
                 },
                 "UserData": {
                   "Position": "848,-80"
@@ -2212,8 +2212,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ItemsToBuy",
-                  "_type": "package.nolankicks.open_world_game/ShopItems"
+                  "_type": "package.nolankicks.open_world_game/ShopItems",
+                  "_name": "ItemsToBuy"
                 },
                 "UserData": {
                   "Position": "288,128"
@@ -2567,6 +2567,15 @@
       "Rotation": "0.03807228,-0.03840598,0.7029845,0.7091461",
       "Enabled": true,
       "NetworkMode": 2
+    },
+    {
+      "__guid": "98fe9665-789b-4105-a2ce-62e27a7d2fca",
+      "Name": "light_ammo_pickup",
+      "Position": "-64,-16,67",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/light_ammo_pickup.prefab"
     }
   ],
   "SceneProperties": {
@@ -2592,7 +2601,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T11:42:26.0056419-04:00",
+  "LastSaved": "2024-04-19T14:20:47.1059041-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -1,0 +1,221 @@
+{
+  "RootObject": {
+    "__guid": "149c0f55-517b-4a88-bafc-8b86eda406f7",
+    "Name": "shotgun_ammo_pickup",
+    "Tags": "ignore",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "7eb53135-120f-4a7b-90e7-9b2466ced802",
+        "Description": "Ammo for the SMG and Pistol",
+        "Icon": "textures/player_spritesheet_1.vtex",
+        "Name": "Light Ammo",
+        "PickUpAction": {
+          "__version": 6,
+          "__guid": "09ff9fc4-589b-4151-837c-e49ae4c91581",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_name": "AddAmmo",
+                "_type": "package.nolankicks.open_world_game/Inventory",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "352,0"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "call",
+              "Properties": {
+                "_name": "Destroy",
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "640,112"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 2,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 2,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 2,
+              "DstName": "ammoType"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 3,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "selectedInput": "E",
+        "ShopItems": {
+          "ItemsToBuy": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "83b5f96e-e524-40cc-b159-18b646556430",
+        "Name": "trigger",
+        "Scale": "3,3,3",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "5e37a4c1-7212-4244-9bd4-f1dfa0e8ab5d",
+            "Center": "0,0,0",
+            "IsTrigger": true,
+            "OnTriggerEnter": {
+              "__version": 6,
+              "__guid": "c6338893-2356-480c-a785-422d87eb870f",
+              "UserData": {
+                "Title": "On Trigger Enter",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 2,
+                  "Type": "graph",
+                  "Properties": {
+                    "graph": "actions/ammotrigger.action"
+                  },
+                  "UserData": {
+                    "Position": "320,48"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "obj",
+                  "DstId": 2,
+                  "DstName": "_in1"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 2,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 2,
+                  "DstName": "_target"
+                }
+              ]
+            },
+            "Scale": "50,50,50",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "2ba5a3d8-0d35-4b71-a42c-171feeae6a63",
+        "Name": "render",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2c8e1830-e09b-42af-aec1-572d60093fc7",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/shotgun/source/12_gauge_00_buck_pack_hp_(fbx).vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "57ba74fd-ecb2-4c9d-b712-e5b84b741ac7",
+        "Name": "Collider",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "9d334457-1f74-489f-b809-e41635a3b564",
+            "IsTrigger": false,
+            "Model": "models/shotgun/source/12_gauge_00_buck_pack_hp_(fbx).vmdl",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "e4ebdc53-0f35-4378-ba57-73bbbbd254ae",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nolankicks.idel-terry"
+  ]
+}

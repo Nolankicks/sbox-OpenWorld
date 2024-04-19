@@ -3,7 +3,7 @@
 @inherits PanelComponent
 @namespace Kicks
 
-<root class="@(playerController.ShowShopUi ? "" : "hide")">
+<root class="@(playerController.ShowShopUi || playerController is null ? "" : "hide")">
 	@if (playerController.PopupUi is not null && playerController is not null)
 	{
 			<div class="header">
@@ -36,7 +36,8 @@
 	[Property] public SoundEvent ExitSound { get; set; }
 	protected override void OnStart()
 	{
-
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
 	}
 	protected override void OnUpdate()
 	{

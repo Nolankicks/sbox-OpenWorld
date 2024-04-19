@@ -24,10 +24,12 @@ public sealed class Shotgun : Component
 	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property] public GameObject ImpactEffect { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
+	[Property] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer arms { get; set; }
 	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
 	[Property, Category("GameObjects")] public GameObject pickUpObject { get; set; }
 	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
+	public AmmoContainer AmmoContainer { get; set; }
 	protected override void OnStart()
 	{
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
@@ -37,6 +39,7 @@ public sealed class Shotgun : Component
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		Interactor = Scene.GetAllComponents<Interactor>().FirstOrDefault( x => !x.IsProxy);
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
 		if (IsProxy) return;
 		StartingAmmo = Ammo;
 		TimeSinceFire = FireRate;
@@ -80,12 +83,14 @@ public sealed class Shotgun : Component
 		Log.Info(Ammo);
 		if (PlayerController.IsFirstPerson)
 		{
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
+			var selelctedAmmo = AmmoContainer.GetAmmo(AmmoType);
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0)
 			{
-				
-				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = 30;
-				ViewModelGun.Set("b_reload", true);
+				var ammoToSet = selelctedAmmo -= ShotsFired;
+				AmmoContainer.SetAmmo(AmmoType, ammoToSet);
+				Ammo = ammoToSet;
+				Ammo = StartingAmmo;
+				ViewModelGun.Set("b_realod", true);
 				ShotsFired = 0;
 				timeSinceReload = 0;
 			}

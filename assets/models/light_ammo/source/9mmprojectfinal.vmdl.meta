@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "9mmprojectfinal",
+      "Type": "model",
+      "Org": "local",
+      "Ident": "9mmprojectfinal",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/source/9mmprojectfinal.vmdl"
+      }
+    }
+  }
+}

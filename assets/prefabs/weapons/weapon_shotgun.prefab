@@ -9,6 +9,7 @@
         "__type": "Shotgun",
         "__guid": "731afc76-aee3-40b4-b0a6-dea0c74f13ca",
         "Ammo": 12,
+        "AmmoType": "ShotgunShells",
         "arms": {
           "_type": "component",
           "component_id": "aebb9905-f26c-4e04-81d7-55decdb33bc4",
@@ -57,7 +58,7 @@
       {
         "__type": "IconComponent",
         "__guid": "94bc9f2f-67a9-40ec-8963-a517e3708cea",
-        "Icon": "assets/shotgun.vtex"
+        "Icon": "shotgun.vtex"
       }
     ],
     "Children": [

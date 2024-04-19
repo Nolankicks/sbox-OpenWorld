@@ -1,7 +1,7 @@
 {
   "Sequences": [
     {
-      "Source": "assets/mp5.png",
+      "Source": "mp5.png",
       "IsLooping": true,
       "Frames": 64
     }

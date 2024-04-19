@@ -1,7 +1,7 @@
 {
   "Sequences": [
     {
-      "Source": "assets/usp.png",
+      "Source": "usp.png",
       "IsLooping": true,
       "Frames": 64
     }

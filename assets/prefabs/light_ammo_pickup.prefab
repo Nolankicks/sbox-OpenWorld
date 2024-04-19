@@ -1,20 +1,20 @@
 {
   "RootObject": {
-    "__guid": "c965ab3e-a617-4e81-b957-8cd4af7ad6b2",
+    "__guid": "149c0f55-517b-4a88-bafc-8b86eda406f7",
     "Name": "light_ammo_pickup",
     "Tags": "ignore",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "Components": [
       {
         "__type": "Kicks.PopupUi",
-        "__guid": "a0f7cf65-a577-47ed-9b6e-dfbbfe05d099",
+        "__guid": "7eb53135-120f-4a7b-90e7-9b2466ced802",
         "Description": "Ammo for the SMG and Pistol",
         "Icon": "textures/player_spritesheet_1.vtex",
         "Name": "Light Ammo",
         "PickUpAction": {
           "__version": 6,
-          "__guid": "e0bbe5cc-3b72-43fc-ac7e-5e32063f80e8",
+          "__guid": "09ff9fc4-589b-4151-837c-e49ae4c91581",
           "UserData": {
             "Title": "Pick Up Action",
             "ReferencedComponentTypes": []
@@ -35,6 +35,18 @@
               },
               "UserData": {
                 "Position": "352,0"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "call",
+              "Properties": {
+                "_name": "Destroy",
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "640,112"
               }
             }
           ],
@@ -66,6 +78,18 @@
               "Value": "LightAmmo",
               "DstId": 2,
               "DstName": "ammoType"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 3,
+              "DstName": "_target"
             }
           ]
         },
@@ -76,39 +100,24 @@
           "ItemPrices": []
         },
         "ShowPopUp": true
-      },
-      {
-        "__type": "Sandbox.BoxCollider",
-        "__guid": "5dc38441-4f25-49ec-9b14-d4fb2116d28c",
-        "Center": "0,0,0",
-        "IsTrigger": false,
-        "Scale": "50,50,50",
-        "Static": false
-      },
-      {
-        "__type": "Sandbox.ModelRenderer",
-        "__guid": "c9831d8d-9fe2-4cbf-8a73-c3afa3217654",
-        "BodyGroups": 18446744073709551615,
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
       }
     ],
     "Children": [
       {
-        "__guid": "2e9863af-b098-48b1-aa93-a8cfa14eda43",
+        "__guid": "83b5f96e-e524-40cc-b159-18b646556430",
         "Name": "trigger",
-        "Position": "0.9058228,-1.482529,-1.151749",
+        "Scale": "3,3,3",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "3d50b3a8-2d1c-4c0c-b50d-0168dcfd5278",
+            "__guid": "5e37a4c1-7212-4244-9bd4-f1dfa0e8ab5d",
             "Center": "0,0,0",
             "IsTrigger": true,
             "OnTriggerEnter": {
               "__version": 6,
-              "__guid": "971c64eb-3834-490d-90f7-2f9d112574ea",
+              "__guid": "c6338893-2356-480c-a785-422d87eb870f",
               "UserData": {
                 "Title": "On Trigger Enter",
                 "ReferencedComponentTypes": []
@@ -117,19 +126,16 @@
               "Nodes": [
                 {
                   "Id": 0,
-                  "Type": "input",
-                  "UserData": {
-                    "Position": "-208,-16"
-                  }
+                  "Type": "input"
                 },
                 {
-                  "Id": 9,
+                  "Id": 2,
                   "Type": "graph",
                   "Properties": {
                     "graph": "actions/ammotrigger.action"
                   },
                   "UserData": {
-                    "Position": "320,176"
+                    "Position": "320,48"
                   }
                 }
               ],
@@ -137,25 +143,69 @@
                 {
                   "SrcId": 0,
                   "SrcName": "obj",
-                  "DstId": 9,
+                  "DstId": 2,
                   "DstName": "_in1"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "_signal",
-                  "DstId": 9,
+                  "DstId": 2,
                   "DstName": "_signal"
                 },
                 {
                   "SrcId": 0,
                   "SrcName": "_target",
-                  "DstId": 9,
+                  "DstId": 2,
                   "DstName": "_target"
                 }
               ]
             },
             "Scale": "50,50,50",
             "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "2ba5a3d8-0d35-4b71-a42c-171feeae6a63",
+        "Name": "render",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2c8e1830-e09b-42af-aec1-572d60093fc7",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/light_ammo/source/9mmprojectfinal.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "57ba74fd-ecb2-4c9d-b712-e5b84b741ac7",
+        "Name": "Collider",
+        "Tags": "ignore",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "9d334457-1f74-489f-b809-e41635a3b564",
+            "IsTrigger": false,
+            "Model": "models/light_ammo/source/9mmprojectfinal.vmdl",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "e4ebdc53-0f35-4378-ba57-73bbbbd254ae",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
           }
         ]
       }

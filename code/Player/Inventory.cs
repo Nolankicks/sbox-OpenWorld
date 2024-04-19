@@ -288,7 +288,7 @@ public sealed class Inventory : Component
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
 		if (!tr.Hit) return;
-		tr.GameObject.Components.TryGet<PopupUi>(out var popup);
+		var popup = tr.GameObject.Components.Get<PopupUi>(FindMode.EverythingInSelfAndParent);
 		if (popup is not null)
 		{
 			PopupUi(popup, popup.selectedInput);

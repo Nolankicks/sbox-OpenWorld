@@ -1,7 +1,7 @@
 {
   "Sequences": [
     {
-      "Source": "assets/shotgun.png",
+      "Source": "shotgun.png",
       "IsLooping": true,
       "Frames": 64
     }

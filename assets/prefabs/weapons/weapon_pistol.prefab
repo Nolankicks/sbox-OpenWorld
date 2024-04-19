@@ -9,6 +9,7 @@
         "__type": "Kicks.Weapon",
         "__guid": "bc924426-ef94-4a7a-924f-e79ca5ea74df",
         "Ammo": 12,
+        "AmmoType": "LightAmmo",
         "Arms": {
           "_type": "gameobject",
           "go": "6a7aa83f-5ca4-4975-bc72-8993638c714a"
@@ -69,7 +70,7 @@
       {
         "__type": "IconComponent",
         "__guid": "a064b7db-6767-45ab-800c-097b37d6f95a",
-        "Icon": "assets/usp.vtex"
+        "Icon": "usp.vtex"
       }
     ],
     "Children": [

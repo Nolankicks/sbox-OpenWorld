@@ -6,7 +6,8 @@
       "Title": "Ammo Trigger",
       "Description": "No description provided.",
       "Icon": "account_tree",
-      "Category": "Custom"
+      "Category": "Custom",
+      "ReferencedComponentTypes": []
     },
     "Parameters": {
       "Inputs": [
@@ -30,7 +31,7 @@
         "Id": 0,
         "Type": "input",
         "UserData": {
-          "Position": "-644,0"
+          "Position": "-1456,-16"
         }
       },
       {
@@ -43,14 +44,14 @@
           "_isStatic": false
         },
         "UserData": {
-          "Position": "-344,-64"
+          "Position": "-1168,-80"
         }
       },
       {
         "Id": 2,
         "Type": "if",
         "UserData": {
-          "Position": "120,-144"
+          "Position": "-688,-160"
         }
       },
       {
@@ -63,26 +64,49 @@
           "_isStatic": false
         },
         "UserData": {
-          "Position": "-280,144"
+          "Position": "-1104,128"
         }
       },
       {
         "Id": 4,
         "Type": "op.and",
         "UserData": {
-          "Position": "-24,0"
+          "Position": "-848,-16"
         }
       },
       {
         "Id": 5,
         "Type": "call",
         "Properties": {
-          "_name": "AddAmmo",
+          "_isStatic": false,
           "_type": "package.nolankicks.open_world_game/Inventory",
-          "_isStatic": false
+          "_name": "AddAmmo"
         },
         "UserData": {
-          "Position": "344,32"
+          "Position": "-464,16"
+        }
+      },
+      {
+        "Id": 37,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameObject",
+          "_name": "Parent"
+        },
+        "UserData": {
+          "Position": "-416,368"
+        }
+      },
+      {
+        "Id": 38,
+        "Type": "call",
+        "Properties": {
+          "_isStatic": false,
+          "_type": "Sandbox.Game/Sandbox.GameObject",
+          "_name": "Destroy"
+        },
+        "UserData": {
+          "Position": "-176,192"
         }
       }
     ],
@@ -160,6 +184,24 @@
         "Value": "LightAmmo",
         "DstId": 5,
         "DstName": "ammoType"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 37,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_signal",
+        "DstId": 38,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 37,
+        "SrcName": "_result",
+        "DstId": 38,
+        "DstName": "_target"
       }
     ]
   },
