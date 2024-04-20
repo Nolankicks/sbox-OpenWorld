@@ -2200,9 +2200,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "BuyItem",
-                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi"
                 },
                 "UserData": {
                   "Position": "848,-80"
@@ -2282,9 +2282,9 @@
               }
             ],
             "ItemTextures": [
-              "assets/usp.vtex",
-              "assets/mp5.vtex",
-              "assets/shotgun.vtex"
+              "usp.vtex",
+              "mp5.vtex",
+              "shotgun.vtex"
             ],
             "ItemPrices": [
               5,
@@ -2733,7 +2733,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T18:08:24.1618563-04:00",
+  "LastSaved": "2024-04-19T22:05:57.0871507-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

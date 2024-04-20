@@ -102,6 +102,10 @@ public sealed class Weapon : Component
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
+		if (IsProxy)
+		{
+			ViewModelCamera.Enabled = false;
+		}
 		if (IsWeapon)
 		{
 		DroppedItem.Enabled = false;

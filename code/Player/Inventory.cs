@@ -221,7 +221,6 @@ public sealed class Inventory : Component
 
 		}
 	}
-
 	void Drop()
 	{
 		if (ActiveSlot < 0 || ActiveSlot >= Items.Count || Items[ActiveSlot] is null) return;

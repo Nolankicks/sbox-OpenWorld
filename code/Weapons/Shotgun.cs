@@ -53,6 +53,10 @@ public sealed class Shotgun : Component
 		protected override void OnUpdate()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		if (IsProxy)
+		{
+			ViewModelCamera.Enabled = false;
+		}
 		if (IsWeapon)
 		{
 		pickUpObject.Enabled = false;

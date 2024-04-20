@@ -22,7 +22,7 @@ public sealed class PopupUi : Component
 	protected override void OnUpdate()
 	{
 			playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-			Glyph = Input.GetGlyph(InputHandler.GetInputString(selectedInput), InputGlyphSize.Small, false);
+			Glyph = Input.GetGlyph(InputHandler.GetInputString(selectedInput), InputGlyphSize.Large, false);
 			Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 			if (PickUpAction is null) return;
 	}
