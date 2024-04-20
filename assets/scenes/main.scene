@@ -86,6 +86,7 @@
         {
           "__type": "Kicks.ShopUi",
           "__guid": "91674ddb-796e-46f1-8855-41f0f1a38b1a",
+          "CoinIcon": "textures/kickscoin.vtex",
           "FailSound": "sounds/player_use_fail.sound"
         }
       ]
@@ -1184,8 +1185,8 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_name": "AddItem",
-                      "_type": "package.nolankicks.open_world_game/Inventory"
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1209,8 +1210,8 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_name": "GetNextSlot",
-                      "_type": "package.nolankicks.open_world_game/Inventory"
+                      "_type": "package.nolankicks.open_world_game/Inventory",
+                      "_name": "GetNextSlot"
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1240,8 +1241,8 @@
                     "Id": 8,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Transform",
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Transform"
                     },
                     "UserData": {
                       "Position": "304,592"
@@ -1251,8 +1252,8 @@
                     "Id": 9,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Position",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Position"
                     },
                     "UserData": {
                       "Position": "576,560"
@@ -1262,8 +1263,8 @@
                     "Id": 10,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Rotation",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Rotation"
                     },
                     "UserData": {
                       "Position": "608,720"
@@ -1353,7 +1354,8 @@
               },
               "selectedInput": "C",
               "ShopItems": {
-                "ItemsToBuy": [],
+                "ItemNames": [],
+                "ShopActions": [],
                 "ItemTextures": [],
                 "ItemPrices": []
               },
@@ -1777,8 +1779,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsSitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -1788,8 +1790,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -1891,8 +1893,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_name": "Set"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -1974,8 +1976,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShowShopUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "ShowShopUi"
                 },
                 "UserData": {
                   "Position": "368,16"
@@ -1995,8 +1997,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShowPopUp",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShowPopUp"
                 },
                 "UserData": {
                   "Position": "704,160"
@@ -2006,8 +2008,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "PopupUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
                 },
                 "UserData": {
                   "Position": "944,416"
@@ -2027,8 +2029,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "AbleToMove",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "AbleToMove"
                 },
                 "UserData": {
                   "Position": "1360,672"
@@ -2038,8 +2040,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_name": "PopupUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                  "_name": "PopupUi"
                 },
                 "UserData": {
                   "Position": "1056,944"
@@ -2049,8 +2051,8 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShopItems",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
                 },
                 "UserData": {
                   "Position": "816,1232"
@@ -2060,8 +2062,8 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShopItems",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
+                  "_name": "ShopItems"
                 },
                 "UserData": {
                   "Position": "1792,960"
@@ -2183,102 +2185,49 @@
             ]
           },
           "selectedInput": "E",
-          "ShopAction": {
-            "__version": 6,
-            "__guid": "21aa15c6-673a-4b73-a9ff-714dec06021b",
-            "UserData": {
-              "Title": "Shop Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "BuyItem",
-                  "_type": "package.nolankicks.open_world_game/Kicks.ShopUi"
-                },
-                "UserData": {
-                  "Position": "848,-80"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "property",
-                "Properties": {
-                  "_name": "ItemsToBuy",
-                  "_type": "package.nolankicks.open_world_game/ShopItems"
-                },
-                "UserData": {
-                  "Position": "288,128"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "list.get",
-                "UserData": {
-                  "Position": "640,256"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "shopUi",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 1,
-                "DstName": "gameObject"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "shopItems",
-                "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "index",
-                "DstId": 3,
-                "DstName": "index"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "list"
-              }
-            ]
-          },
           "ShopItems": {
-            "ItemsToBuy": [
+            "ItemNames": [
+              "USP",
+              "MP5",
+              "Shotgun"
+            ],
+            "ShopActions": [
               {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_pistol.prefab"
-              },
-              {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_smg.prefab"
-              },
-              {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_shotgun.prefab"
+                "__version": 6,
+                "__guid": "4d6d0ab9-61be-49a9-b000-0514ada5a966",
+                "UserData": {
+                  "Title": null,
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "log.info",
+                    "UserData": {
+                      "Position": "336,64"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 4,
+                    "DstName": "args",
+                    "DstIndex": 0
+                  }
+                ]
               }
             ],
             "ItemTextures": [
@@ -2717,7 +2666,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T23:04:09.206817-04:00",
+  "LastSaved": "2024-04-20T16:09:29.3939927-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

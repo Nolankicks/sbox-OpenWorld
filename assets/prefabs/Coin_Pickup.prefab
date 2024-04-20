@@ -1,0 +1,268 @@
+{
+  "RootObject": {
+    "__guid": "2e6f0342-0098-4fb8-8f32-153d86d86b3d",
+    "Name": "coin_pickup",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "21dcbe76-604b-4d80-a020-9171ba859cb7",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "1bfbd438-52d1-40a1-817b-f690e1005651",
+        "Description": "A coin",
+        "Icon": "textures/kickscoin.vtex",
+        "Name": "Coin",
+        "PickUpAction": {
+          "__version": 6,
+          "__guid": "e209352f-32ad-4a54-8fe1-404c38c398eb",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                "_name": "Coins"
+              },
+              "UserData": {
+                "Position": "304,96"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "op.add",
+              "UserData": {
+                "Position": "560,128"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "property",
+              "Properties": {
+                "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                "_name": "Coins"
+              },
+              "UserData": {
+                "Position": "704,-16"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "1024,128"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "PlayerController",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "a"
+            },
+            {
+              "Value": 5,
+              "DstId": 2,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "PlayerController",
+              "DstId": 4,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 5,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "selectedInput": "E",
+        "ShopItems": {
+          "ItemNames": [],
+          "ShopActions": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "ce657089-3be7-4b05-8d23-cc772b2a9763",
+        "Name": "collider",
+        "Position": "0,-0.3465881,1.241535",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.HullCollider",
+            "__guid": "6ab49c72-cb3e-4c1d-8de6-3dc9a9ce55f0",
+            "BoxSize": "5.399955,5.199954,3.29998",
+            "Center": "0,0,0",
+            "Height": 50,
+            "IsTrigger": false,
+            "Radius": 25,
+            "Radius2": 0,
+            "Slices": 16,
+            "Static": false,
+            "Type": "Box"
+          }
+        ]
+      },
+      {
+        "__guid": "f4222e98-e5b8-46aa-a151-9d214b96cded",
+        "Name": "render",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "789f380f-b946-4d27-9df2-db2ff2831386",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/kickscoin.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "a429ae2d-5132-42c5-9343-97d0a8a400b4",
+        "Name": "render",
+        "Position": "0,0,0.5980034",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "a81eede1-673b-45a1-af9a-3d1b5e5047c4",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/kickscoin.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "849451cc-e781-4775-9c0c-2249f7d8fb70",
+        "Name": "render",
+        "Position": "0,0,1.199472",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "618dfbbb-bdfb-41a7-ad88-a962d3ab19bc",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/kickscoin.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "1d3fa479-f6b7-47b3-862b-8a1b1b35a892",
+        "Name": "render",
+        "Position": "0,0,1.782148",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "68e2da10-adb7-4e3a-9ac5-430d5e48b8de",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/kickscoin.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "5c5a8791-b1c3-4d81-868e-60357e8ee072",
+        "Name": "render",
+        "Position": "0,0,2.388885",
+        "Rotation": "0,0.7071068,0,0.7071068",
+        "Scale": "0.1,0.1,0.1",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "8d61bcc9-2e23-4c76-8d31-9818f509d893",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/kickscoin.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "nolankicks.kickscoin"
+  ]
+}

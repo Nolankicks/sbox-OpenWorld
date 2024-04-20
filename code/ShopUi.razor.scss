@@ -88,6 +88,7 @@ ShopUi
 			border-radius: 16px;
 			align-items: center;
 			transition: all 0.1s ease;
+			z-index: 10000;
 			.icon
 			{
 				width: 100%;
@@ -124,5 +125,11 @@ ShopUi
 		justify-content: center;
 		border-radius: 16px;
 		box-shadow: 16px 16px 32px black;
+
+		.coinicon
+		{
+			width: 64px;
+			height: 64px;
+		}
 	}
 }

@@ -220,7 +220,7 @@ public sealed class Weapon : Component
 				
 				if (dummy is not null)
 				{
-					dummy.Hurt(Damage);
+					dummy.Hurt(Damage, GameObject.Parent.Id);
 					BloodParticle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
 				}
 				else

@@ -12,6 +12,8 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
+	public delegate void OnDeath( PlayerController attacker);
+	[Property] public OnDeath OnDeathAction { get; set; }
 	[Property] public GameObject ItemDrop { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Sync] public Vector3 Velocity { get; set; }
@@ -69,13 +71,17 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	}
 
 	[Broadcast]
-	public void Hurt(int damage)
+	public void Hurt(int damage, Guid player)
 	{
 		if (IsProxy) return;
 		health -= damage;
 		if (health <= 0)
 		{
 			Kill();
+			var attacker = Scene.Directory.FindByGuid(player);
+			var playerController = attacker.Components.Get<PlayerController>();
+			if (playerController is null) return;
+			OnDeathAction?.Invoke(playerController);
 		}
 	}
 

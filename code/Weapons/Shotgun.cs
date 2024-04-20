@@ -154,7 +154,7 @@ public sealed class Shotgun : Component
 			tr.GameObject.Components.TryGet<DamageTaker>(out var damageTaker);
 			if (dummy is not null)
 			{
-				dummy.Hurt(Damage);
+				dummy.Hurt(Damage, GameObject.Parent.Id);
 			}
 			else
 			{

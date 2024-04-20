@@ -21,7 +21,8 @@
             }
         </div>
         <div class="coins">
-            @playerController?.Coins
+            <div>@playerController?.Coins</div>
+			<img class="coinicon" src="@CoinIcon.ResourcePath">
         </div>
     }
 </root>
@@ -35,6 +36,7 @@
 	[Property] public SoundEvent BuySound { get; set; }
 	[Property] public SoundEvent FailSound { get; set; }
 	[Property] public SoundEvent ExitSound { get; set; }
+	[Property] public Texture CoinIcon { get; set; }
 	protected override void OnStart()
 	{
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
@@ -70,8 +72,8 @@
 		{
 			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
 			var slot = inventory.GetNextSlot();
-			var action = playerController.PopupUi.ShopItems.actions[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
-			action?.Invoke();
+			var action = playerController.PopupUi.ShopItems.ShopActions[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
+			action?.Invoke(playerController, inventory);
 			Sound.Play( BuySound );
 		}
 		else
