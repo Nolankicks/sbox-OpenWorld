@@ -123,9 +123,6 @@ for ( int y = 0; y < gridSizeY; y++ )
 	}
 	public void CreateNoiseTexture()
 	{
-		int octavas = 4;
-		float persistence = 0.5f;
-		float lacunarity = 2;
 		int offsetX = 0; // Define the offsetX
 		int offsetY = 0; // Define the offsetY
 		var noise = CreateNoise( mapWidth, mapHeight, noiseScale, offsetX, offsetY ); // Use the offsets

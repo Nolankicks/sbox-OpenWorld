@@ -41,7 +41,7 @@ public class TestEditor : ControlWidget
 			editor.Size = new Vector2( 400, 400 );
 			editor.ConstrainToScreen();
 			
-			var test = new TestWidget( editor );
+			//var test = new TestWidget( editor );
 
 		}
 	}
@@ -49,7 +49,7 @@ public class TestEditor : ControlWidget
 
 public class TestWidget : GraphicsView
 {
-	private SceneObject _obj;
+	/*private SceneObject _obj;
 
 	private SceneCamera _camera;
 	private SceneLight _light;
@@ -61,5 +61,5 @@ public class TestWidget : GraphicsView
 		{
 			var button = Layout.Add( new global::Editor.Button( "Close" ) );
 		}
-	}
+	}*/
 }

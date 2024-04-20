@@ -194,17 +194,5 @@ public sealed class Shotgun : Component
 		}
 
 	}
-
-	void Reload()
-	{
-		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy)
-			{
-				Ammo = MaxAmmo -= ShotsFired;
-				Ammo = StartingAmmo;
-				ViewModelGun.Set("b_reload", true);
-				ShotsFired = 0;
-				timeSinceReload = 0;
-			}
-	}
 }
 }

@@ -1183,9 +1183,9 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
+                      "_isStatic": false,
                       "_name": "AddItem",
-                      "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false
+                      "_type": "package.nolankicks.open_world_game/Inventory"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1208,9 +1208,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
+                      "_isStatic": false,
                       "_name": "GetNextSlot",
-                      "_type": "package.nolankicks.open_world_game/Inventory",
-                      "_isStatic": false
+                      "_type": "package.nolankicks.open_world_game/Inventory"
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1890,9 +1890,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -2733,7 +2733,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T22:05:57.0871507-04:00",
+  "LastSaved": "2024-04-19T22:14:55.5227209-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
