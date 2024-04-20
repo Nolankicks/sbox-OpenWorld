@@ -12,6 +12,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
+	[Property] public GameObject ItemDrop { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Sync] public Vector3 Velocity { get; set; }
 	public PlayerController player;
@@ -85,14 +86,23 @@ public sealed class Dummy : Component, Component.ITriggerListener
 			var clone = GibGameObject.Clone(GameObject.Transform.World);
 			var prop = clone.Components.Get<Prop>();
 			prop.Kill();
-			GameObject.Destroy();
+			if (ItemDrop is not null)
+			{
+				var item = ItemDrop.Clone(GameObject.Transform.Position + Vector3.Up * 50f);
+				item.NetworkSpawn(null);
+			}
 		}
 		else
 		{
 			var ragdoll = Ragdoll.Clone(GameObject.Transform.World);
 			ragdoll.NetworkSpawn(null);
-			GameObject.Destroy();
+			if (ItemDrop is not null)
+			{
+				var item = ItemDrop.Clone(GameObject.Transform.Position + Vector3.Up * 50f);
+				item.NetworkSpawn(null);
+			}
 		}
+		GameObject.Destroy();
 	}
 
 }

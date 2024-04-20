@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "16a23515-6c58-4904-bce8-c29d6f774221",
+    "__guid": "3b21b6a1-c118-449a-b70a-86f7c5bc3124",
     "Name": "weapon_smg",
     "Tags": "weapon",
     "Enabled": true,
@@ -8,12 +8,12 @@
     "Components": [
       {
         "__type": "Kicks.Weapon",
-        "__guid": "e32d31f8-d4a5-4fac-8f9e-d6a141749b5f",
+        "__guid": "79404d41-eefc-4144-b90d-2439008e4962",
         "Ammo": 30,
         "AmmoType": "LightAmmo",
         "Arms": {
           "_type": "gameobject",
-          "go": "d47c514b-2f6d-47b7-bc30-47618d973a3d"
+          "go": "4d6df18c-b30b-473e-880c-8d0c0b692f56"
         },
         "b_twohanded": false,
         "BloodParticle": {
@@ -28,7 +28,7 @@
         "Description": "A swift SMG",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "bff2660b-91fa-4193-9cb6-6ac193bed2c8"
+          "go": "ae85e1dc-4cf1-4dd0-a959-92c3ad32c9af"
         },
         "FireRate": 0.1,
         "FireSound": "sounds/shootsound.sound",
@@ -53,37 +53,37 @@
         "TestStruct": {},
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a"
+          "go": "8a8ff8b3-9164-44e5-b645-e4a34e865e2d"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "15f0d20e-3138-4e03-84b7-fdbe50991515",
-          "go": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
+          "component_id": "98ff4d14-5fbd-4041-b30b-15c1444362ec",
+          "go": "ea622444-818c-4507-8129-1ab4b479f6cb",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e"
+          "go": "fef3f6ac-ab1b-48ff-aefe-034376a1737c"
         },
         "WeaponIndent": "weapon_smg",
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "764ff820-0b81-4db0-93a3-5f6ade4a4378",
+        "__guid": "c9e8447f-6bab-49fb-89f5-036f89c71b28",
         "Icon": "mp5.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "cbf38ebb-cea7-485d-94e4-afbe1fbb9d7a",
+        "__guid": "8a8ff8b3-9164-44e5-b645-e4a34e865e2d",
         "Name": "ViewModelCamera",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "7f7d347d-62ee-4ca0-913b-7aa38e556502",
+            "__guid": "ae3b9e25-09bd-4a70-aaa6-580ef33e0f62",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -101,26 +101,26 @@
         ],
         "Children": [
           {
-            "__guid": "2feb6a52-52bf-4d2e-b087-38b2d8af9c1e",
+            "__guid": "fef3f6ac-ab1b-48ff-aefe-034376a1737c",
             "Name": "ViewModel",
             "Tags": "viewmodel",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "d47c514b-2f6d-47b7-bc30-47618d973a3d",
+                "__guid": "4d6df18c-b30b-473e-880c-8d0c0b692f56",
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "e2d69b40-f9bc-4a45-b5e0-336f8682e186",
+                    "__guid": "a4c49464-bc76-41b1-b535-56b1456b0dec",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "15f0d20e-3138-4e03-84b7-fdbe50991515",
-                      "go": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
+                      "component_id": "98ff4d14-5fbd-4041-b30b-15c1444362ec",
+                      "go": "ea622444-818c-4507-8129-1ab4b479f6cb",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -131,14 +131,14 @@
                 ]
               },
               {
-                "__guid": "9b7a1701-0d56-46f0-a74b-7454a05049d9",
+                "__guid": "ea622444-818c-4507-8129-1ab4b479f6cb",
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "15f0d20e-3138-4e03-84b7-fdbe50991515",
+                    "__guid": "98ff4d14-5fbd-4041-b30b-15c1444362ec",
                     "BodyGroups": 27,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -152,14 +152,14 @@
         ]
       },
       {
-        "__guid": "bff2660b-91fa-4193-9cb6-6ac193bed2c8",
+        "__guid": "ae85e1dc-4cf1-4dd0-a959-92c3ad32c9af",
         "Name": "Dropped Item",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "e4528ec5-b4da-4396-b5c7-6e9a0a81331b",
+            "__guid": "c1c8ebe2-83f7-4975-8a1a-fcbb8a020d83",
             "BodyGroups": 3,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
@@ -168,7 +168,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "2f3782fe-e04e-4380-91c3-403f4c9cd3dc",
+            "__guid": "3c8c5e86-c4a2-45a4-84c1-654d50168047",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -180,7 +180,7 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "7daf455f-0a5c-442d-a4a8-96c3a2cfeafe",
+            "__guid": "fd715c68-5c6e-4ce4-9aee-8affcdefe37e",
             "Center": "0,0,5.499997",
             "IsTrigger": false,
             "Scale": "24.20012,3.800029,10.99995",

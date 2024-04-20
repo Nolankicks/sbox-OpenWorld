@@ -12,10 +12,10 @@
         </div>
         <div class="exitbutton" onclick=@ExitShop>EXIT</div>
         <div class="shopholder">
-            @for (int i = 0; i < playerController.PopupUi.ShopItems?.ItemsToBuy?.Count; i++)
+            @for (int i = 0; i < playerController.PopupUi.ShopItems.ItemNames.Count; i++)
             {
                 var index = i;
-                <div class=shopitem onclick=@(() => @playerController?.PopupUi.ShopAction?.Invoke(playerController, playerController.Inventory, this, playerController.PopupUi.ShopItems, index))>
+                <div class=shopitem onclick=@( () => BuyItem(playerController.PopupUi.ShopItems.ItemNames[index]))>
                     <img class="icon" src=@playerController.PopupUi.ShopItems?.ItemTextures?[index]?.ResourcePath>
                 </div>
             }
@@ -64,14 +64,14 @@
 		playerController.PopupUi = null;
 	}
 
-	public void BuyItem(GameObject gameObject)
+	public void BuyItem(string ItemName)
 	{
-		if (gameObject is null) return;
-		if (playerController.Coins >= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)])
+		if (playerController.Coins >= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)])
 		{
-			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemsToBuy.IndexOf(gameObject)];
+			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
 			var slot = inventory.GetNextSlot();
-			inventory.AddItem(gameObject, slot);
+			var action = playerController.PopupUi.ShopItems.actions[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
+			action?.Invoke();
 			Sound.Play( BuySound );
 		}
 		else

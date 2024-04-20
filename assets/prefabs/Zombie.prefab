@@ -1,0 +1,145 @@
+{
+  "RootObject": {
+    "__guid": "33df18c4-2a13-45d0-bab0-82e182b87352",
+    "Name": "zombie",
+    "Tags": "dummy",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "52a16d96-f7be-47ae-83c3-363ce341a38a",
+        "Center": "0,0,0",
+        "IsTrigger": true,
+        "Scale": "600,600,400",
+        "Static": false
+      },
+      {
+        "__type": "Sandbox.NavMeshAgent",
+        "__guid": "9655f46e-38db-47a6-84d4-0c1bb09d5495",
+        "Acceleration": 1000,
+        "Height": 64,
+        "MaxSpeed": 120,
+        "Radius": 16,
+        "Separation": 0.25,
+        "UpdatePosition": true,
+        "UpdateRotation": false
+      },
+      {
+        "__type": "Kicks.Dummy",
+        "__guid": "c74b7bc3-72c6-4875-8a0b-704857b6d4dc",
+        "animationHelper": {
+          "_type": "component",
+          "component_id": "d5edcfe8-4b6e-4fe5-a8ef-05dc190df77a",
+          "go": "e31f3222-0db8-4714-ad80-12253b367153",
+          "component_type": "CitizenAnimationHelper"
+        },
+        "GibGameObject": {
+          "_type": "gameobject",
+          "prefab": "prefabs/zombiegibs.prefab"
+        },
+        "navMeshAgent": {
+          "_type": "component",
+          "component_id": "9655f46e-38db-47a6-84d4-0c1bb09d5495",
+          "go": "33df18c4-2a13-45d0-bab0-82e182b87352",
+          "component_type": "NavMeshAgent"
+        },
+        "players": [],
+        "SpawnGibs": true
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "e31f3222-0db8-4714-ad80-12253b367153",
+        "Name": "body",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "4ec6b9ab-07b9-4659-8c23-cfa344b7be3b",
+            "BodyGroups": 0,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+            "__guid": "d5edcfe8-4b6e-4fe5-a8ef-05dc190df77a",
+            "BodyWeight": 1,
+            "EyeSource": {
+              "_type": "gameobject",
+              "go": "c6f777b8-3443-476b-8e9a-bcb2f63c6e7d"
+            },
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "LookAtEnabled": true,
+            "Target": {
+              "_type": "component",
+              "component_id": "4ec6b9ab-07b9-4659-8c23-cfa344b7be3b",
+              "go": "e31f3222-0db8-4714-ad80-12253b367153",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "11be8fd3-b417-4dcd-acf4-abce27c73a87",
+            "Name": "Cloths",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "e52729ee-e32f-43f8-baa5-4235362a02d0",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "4ec6b9ab-07b9-4659-8c23-cfa344b7be3b",
+                  "go": "e31f3222-0db8-4714-ad80-12253b367153",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "ff7b269d-2ae4-4826-ae0f-14348be9b7be",
+        "Name": "Collider",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "Components": [
+          {
+            "__type": "Sandbox.CapsuleCollider",
+            "__guid": "dbb099f9-0986-4bed-8571-7139c31f2318",
+            "End": "0,0,54.37019",
+            "IsTrigger": false,
+            "Radius": 25,
+            "Start": "0,0,0",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "c6f777b8-3443-476b-8e9a-bcb2f63c6e7d",
+        "Name": "eyes",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "NetworkMode": 2
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

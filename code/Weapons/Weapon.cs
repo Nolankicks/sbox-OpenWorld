@@ -146,7 +146,7 @@ public sealed class Weapon : Component
 					AmmoContainer.SetAmmo(AmmoType, ammoToSet);
 					Ammo = StartingAmmo;
 				}
-				ViewModelGun.Set("b_realod", true);
+				ViewModelGun.Set("b_reload", true);
 				ShotsFired = 0;
 				TimeSinceReload = 0;
 			}

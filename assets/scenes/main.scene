@@ -2381,23 +2381,7 @@
               "Position": "0,0,0",
               "Enabled": true,
               "NetworkMode": 2,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "edfd27f0-6235-4a92-829a-c547114f6d2d",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "2c118d45-eaeb-41bc-9387-ee2935443351",
-                    "go": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/trousers/smarttrousers/smarttrousers.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
+              "__Prefab": "prefabs/shop.prefab"
             },
             {
               "__guid": "8b84f503-eaef-459b-9495-68c236c64f2c",
@@ -2733,7 +2717,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-19T22:14:55.5227209-04:00",
+  "LastSaved": "2024-04-19T23:04:09.206817-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
