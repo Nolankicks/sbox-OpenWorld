@@ -19,6 +19,7 @@ public sealed class PlayerController : Component
 	[Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
+	[Property] public SceneFile SceneFile { get; set; }
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	
@@ -265,11 +266,6 @@ public sealed class PlayerController : Component
 	}
 	void Kill()
 	{
-		if (IsProxy) return;
-		var spawns = Scene.GetAllComponents<SpawnPoint>().ToList();
-		if (spawns.Count == 0) return;
-		var spawn = Game.Random.FromList(spawns);
-		Transform.Position = spawn.Transform.Position;
-		Health = 100;
+		Game.ActiveScene.Load(SceneFile);
 	}
 }

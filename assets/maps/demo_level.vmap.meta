@@ -37,7 +37,8 @@
         "facepunch.concrete_c_damaged_hs#28940",
         "facepunch.concrete_wall_bare_02#47059",
         "facepunch.wood_varnished_a_hs#28977",
-        "facepunch.decal_street_arrow_marking_a#33802"
+        "facepunch.decal_street_arrow_marking_a#33802",
+        "facepunch.floor_grass_wetdirt_blend_a#18652"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level.vmap"

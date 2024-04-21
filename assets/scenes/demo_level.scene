@@ -1,5 +1,5 @@
 {
-  "__guid": "11340afa-05f0-4a6a-9a31-b4e3e57ab9aa",
+  "__guid": "ab1e943c-0f6f-465c-8836-9e221a649a4f",
   "GameObjects": [
     {
       "__guid": "362f40d3-b98f-42c3-a8d6-8b2fb04951c5",
@@ -327,7 +327,7 @@
             "UserData": {
               "Title": "Pick Up Action",
               "ReferencedComponentTypes": [
-                "package.nolankicks.open_world_game/Kicks.PopupUi"
+                "package.nolankicks.dead4left2/Kicks.PopupUi"
               ]
             },
             "Variables": [],
@@ -351,7 +351,7 @@
                 "Id": 2,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "464,176"
@@ -361,8 +361,7 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShowPopUp",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_name": "ShowPopUp"
                 },
                 "UserData": {
                   "Position": "704,160"
@@ -372,8 +371,7 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "PopupUi",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_name": "PopupUi"
                 },
                 "UserData": {
                   "Position": "944,416"
@@ -383,7 +381,7 @@
                 "Id": 5,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "-208,336"
@@ -393,8 +391,7 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "AbleToMove",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController"
+                  "_name": "AbleToMove"
                 },
                 "UserData": {
                   "Position": "1360,672"
@@ -415,7 +412,6 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi",
                   "_name": "ShopItems"
                 },
                 "UserData": {
@@ -426,8 +422,7 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_name": "ShopItems",
-                  "_type": "package.nolankicks.open_world_game/Kicks.PopupUi"
+                  "_name": "ShopItems"
                 },
                 "UserData": {
                   "Position": "1792,960"
@@ -572,7 +567,6 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_type": "package.nolankicks.open_world_game/Inventory",
                       "_name": "AddItem"
                     },
                     "UserData": {
@@ -613,8 +607,12 @@
                   },
                   {
                     "Value": {
-                      "_type": "gameobject",
-                      "prefab": "prefabs/weapons/weapon_smg.prefab"
+                      "$type": "Simple",
+                      "Type": "Sandbox.Game/Sandbox.PrefabScene",
+                      "Value": {
+                        "_type": "gameobject",
+                        "prefab": "prefabs/weapons/weapon_smg.prefab"
+                      }
                     },
                     "DstId": 1,
                     "DstName": "item"
@@ -850,7 +848,7 @@
     {
       "__guid": "fe310cf9-c058-4366-bfe8-436ce1eb68ba",
       "Name": "weapon_pistol",
-      "Position": "156,-159.9997,0",
+      "Position": "163.1197,-159.9994,0.9996414",
       "Rotation": "-0.1830127,0.1830126,-0.6830125,0.6830126",
       "Enabled": true,
       "NetworkMode": 1,
@@ -2315,8 +2313,8 @@
             "UserData": {
               "Title": "Pick Up Action",
               "ReferencedComponentTypes": [
-                "package.nolankicks.open_world_game/GateInteraction",
-                "package.nolankicks.open_world_game/BoatController"
+                "package.nolankicks.dead4left2/GateInteraction",
+                "package.nolankicks.dead4left2/BoatController"
               ]
             },
             "Variables": [],
@@ -2332,7 +2330,7 @@
                 "Id": 2,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.open_world_game/GateInteraction"
+                  "T": "package.nolankicks.dead4left2/GateInteraction"
                 },
                 "UserData": {
                   "Position": "208,-512"
@@ -2342,12 +2340,11 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.open_world_game/GateInteraction",
-                  "_name": "OpenGate"
+                  "_name": "OpenGate",
+                  "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "-896,-16"
+                  "Position": "-880,-64"
                 }
               },
               {
@@ -2366,8 +2363,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.CharacterController",
-                  "_name": "MoveTo"
+                  "_name": "MoveTo",
+                  "_type": "Sandbox.Game/Sandbox.CharacterController"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2438,8 +2435,7 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "TransformCamera",
-                  "_type": "package.nolankicks.open_world_game/GateInteraction"
+                  "_name": "TransformCamera"
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2449,9 +2445,8 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.open_world_game/GateInteraction",
-                  "_name": "CloseGate"
+                  "_name": "CloseGate",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1600,48"
@@ -2505,9 +2500,9 @@
                 "Id": 18,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "SetParent"
+                  "_name": "SetParent",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2368,128"
@@ -2518,8 +2513,7 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "StartHint",
-                  "_type": "package.nolankicks.open_world_game/InputHint"
+                  "_name": "StartHint"
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -2529,7 +2523,7 @@
                 "Id": 21,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.open_world_game/BoatController"
+                  "T": "package.nolankicks.dead4left2/BoatController"
                 },
                 "UserData": {
                   "Position": "2064,512"
@@ -2539,7 +2533,6 @@
                 "Id": 22,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/BoatController",
                   "_name": "IsUsing"
                 },
                 "UserData": {
@@ -2821,6 +2814,14 @@
             "component_type": "CharacterController"
           },
           "IsUsing": false
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "d0d70dd7-a1a8-4690-b6a9-dba839ec401f",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 10,
+          "Static": false
         }
       ]
     },
@@ -2859,7 +2860,7 @@
             "go": "5fb505d6-1106-4de2-92c4-85b12ea4c120",
             "component_type": "CharacterController"
           },
-          "Coins": 50,
+          "Coins": 0,
           "CrouchSpeed": 50,
           "Hold": {
             "_type": "gameobject",
@@ -3804,6 +3805,28 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "1dd655ff-32b1-438a-8da0-2f6dd3af49f3",
+      "Name": "End Trigger",
+      "Position": "-2170.653,-5010.12,-24.10054",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "SceneTrigger",
+          "__guid": "3ea4fec6-c6c7-402a-af78-2133eb801724",
+          "SceneFile": "scenes/thanksscene.scene"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "4c8b8530-cd8d-40a9-8931-3f094e8e6198",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "50,395.3999,795.6006",
+          "Static": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3829,7 +3852,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-20T23:34:38.4492128-04:00",
+  "LastSaved": "2024-04-21T18:49:19.6506647-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

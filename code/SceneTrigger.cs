@@ -11,7 +11,7 @@ public sealed class SceneTrigger : Component, Component.ITriggerListener
 
 	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 	{
-		if (other.GameObject.Tags.Has("player") || other.GameObject.Tags.Has("boat"))
+		if (other.GameObject.Parent.Tags.Has("player") || other.GameObject.Tags.Has("boat"))
 		{
 			Game.ActiveScene.Load(SceneFile);
 		}

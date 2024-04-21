@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj": {}
+    "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Editor\\open_world_game.editor.csproj": {}
   },
   "projects": {
     "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj": {
@@ -114,14 +114,14 @@
         }
       }
     },
-    "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj": {
+    "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\open_world_game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj",
+        "projectUniqueName": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\open_world_game.csproj",
         "projectName": "open_world_game",
-        "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj",
+        "projectPath": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\open_world_game.csproj",
         "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
-        "outputPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\obj\\",
+        "outputPath": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -173,14 +173,14 @@
         }
       }
     },
-    "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj": {
+    "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Editor\\open_world_game.editor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj",
+        "projectUniqueName": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Editor\\open_world_game.editor.csproj",
         "projectName": "open_world_game.editor",
-        "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\open_world_game.editor.csproj",
+        "projectPath": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Editor\\open_world_game.editor.csproj",
         "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
-        "outputPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Editor\\obj\\",
+        "outputPath": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Editor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -205,8 +205,8 @@
               "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
                 "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
               },
-              "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj": {
-                "projectPath": "C:\\users\\talle\\documents\\s&box projects\\open_world_game\\Code\\open_world_game.csproj"
+              "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\open_world_game.csproj": {
+                "projectPath": "C:\\Users\\talle\\Downloads\\sbox-OpenWorld-Demo\\sbox-OpenWorld-Demo\\Code\\open_world_game.csproj"
               }
             }
           }

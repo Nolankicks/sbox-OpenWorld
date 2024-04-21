@@ -121,6 +121,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	void Attack()
 	{
 		var tr = Scene.Trace.Ray(GameObject.Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 300).WithoutTags("dummy").Run();
+		if (!tr.Hit) return;
 		if (tr.GameObject is null) return;
 		tr.GameObject.Parent.Components.TryGet<PlayerController>(out var player);
 		if (tr.Hit && player is not null)
@@ -139,7 +140,14 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		{
 			Attack();
 			Log.Info("attack");
-			await Task.DelaySeconds(1);
+			try
+			{
+				await Task.DelaySeconds(1);
+			}
+			catch (TaskCanceledException)
+			{
+				return;
+			}
 		}
 	}
 }

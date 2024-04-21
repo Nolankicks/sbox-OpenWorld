@@ -1,8 +1,8 @@
 {
-  "Title": "Open World Game",
+  "Title": "DEAD 4 LEFT 2 (Demo)",
   "Type": "game",
   "Org": "nolankicks",
-  "Ident": "open_world_game",
+  "Ident": "dead4left2",
   "Tags": null,
   "Schema": 1,
   "Resources": null,
@@ -21,7 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene",
+    "StartupScene": "scenes/demo_level.scene",
     "ControlModes": {},
     "InputSettings": {
       "Actions": [
@@ -212,6 +212,7 @@
         }
       ],
       "__guid": "c5e4bcd1-44bd-4bf7-89c1-6999d64f568b"
-    }
+    },
+    "LaunchMode": "Normal"
   }
 }
