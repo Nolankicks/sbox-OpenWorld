@@ -14,12 +14,14 @@ public sealed class Inventory : Component
 	public PlayerController PlayerController { get; set; }
 	[Property] public Texture TestTexture { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
+	public InputHint inputHint { get; set; }
  	public int ActiveSlot = 0;
 	public int Slots => 9;
 	protected override void OnStart()
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
+		inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault(x => !x.IsProxy);
 		Items = new List<GameObject>(new GameObject[9]);
 		ItemTextures = new List<Texture>(new Texture[9]);
 		if (IsProxy) return;
@@ -278,7 +280,7 @@ public sealed class Inventory : Component
 		if (popupUi is null) return;
 		if (Input.Pressed(InputHandler.GetInputString(inputAction)))
 		{
-			popupUi.PickUpAction?.Invoke(PlayerController, this, AmmoContainer);
+			popupUi.PickUpAction?.Invoke(PlayerController, this, AmmoContainer, inputHint);
 		}
 	}
 
