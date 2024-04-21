@@ -32,4 +32,9 @@ public sealed class GateInteraction : Component
 		Scene.Camera.Transform.Position -= new Vector3(0, 0, 30);
 	}
 
+	public void PlaySound2d(SoundEvent soundEvent)
+	{
+		soundEvent.UI = true;
+		Sound.Play(soundEvent);
+	}
 }

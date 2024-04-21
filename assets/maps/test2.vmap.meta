@@ -1,0 +1,37 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "test2",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "test2",
+      "Tags": null,
+      "Schema": 0,
+      "HasAssets": false,
+      "AssetsPath": null,
+      "Resources": null,
+      "HasCode": false,
+      "CodePath": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.wooden_crate#29138",
+        "facepunch.plastic_crate_02#47050",
+        "facepunch.butcher_desk_01#43523",
+        "facepunch.metal_trim_01#43480",
+        "facepunch.binbag_a3#17183",
+        "facepunch.gas_cylinder#28838",
+        "facepunch.electrical_tape#33717",
+        "facepunch.bugspray#44113",
+        "facepunch.wood_trim_burnt_blend_02#43514",
+        "facepunch.iron_trim_rust_blend#43479",
+        "facepunch.modern_shelving_wall_a1#43553",
+        "facepunch.binbag_a1#17181"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/test2.vmap"
+      }
+    }
+  }
+}
