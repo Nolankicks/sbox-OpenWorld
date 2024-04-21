@@ -1,7 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using Sandbox;
 using Sandbox.Citizen;
-using Sandbox.VR;
+using System.Threading.Tasks;
+using System.Security;
 namespace Kicks;
 public sealed class Dummy : Component, Component.ITriggerListener
 {
@@ -21,6 +22,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	protected override void OnStart()
 	{
 		player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		_ = FireAttack();
 	}
 	protected override void OnUpdate()
 	{
@@ -44,8 +46,14 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		var player = Game.Random.FromList(players);
 		var targetRot = Rotation.LookAt(player.Transform.Position.WithZ(Transform.Position.z) - Transform.Position, Vector3.Up);
 		animationHelper.Target.Transform.Rotation = Rotation.Slerp(animationHelper.Target.Transform.Rotation, targetRot, Time.Delta * 10f);
-		navMeshAgent.MoveTo(player.Transform.Position);
-		animationHelper.LookAt = player;
+		if (Vector3.DistanceBetween(player.Transform.Position, Transform.Position) > 50)
+		{
+			navMeshAgent.MoveTo(player.Transform.Position);
+		}
+		else
+		{
+			navMeshAgent.Stop();
+		}
 		}
 	}
 	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
@@ -110,5 +118,28 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		}
 		GameObject.Destroy();
 	}
+	void Attack()
+	{
+		var tr = Scene.Trace.Ray(GameObject.Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 300).WithoutTags("dummy").Run();
+		if (tr.GameObject is null) return;
+		tr.GameObject.Parent.Components.TryGet<PlayerController>(out var player);
+		if (tr.Hit && player is not null)
+		{
+			Log.Info("Hit Player");
+			player.TakeDamage(15);
+			animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
+			animationHelper.Target.Set("b_attack", true);
+		}
+		
+	}
 
+	async Task FireAttack()
+	{
+		while (true)
+		{
+			Attack();
+			Log.Info("attack");
+			await Task.DelaySeconds(1);
+		}
+	}
 }

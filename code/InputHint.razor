@@ -1,0 +1,38 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using System.Threading.Tasks;
+@inherits PanelComponent
+
+<root>
+	@if (ShowHint && HintText is not null && HintTexture is not null)
+	{
+		<div class="hint">
+			<img class="img" src="@HintTexture.ResourcePath">
+			<div>@HintText</div>
+		</div>
+	}
+</root>
+
+@code
+{
+	public string HintText { get; set; }
+	public Texture HintTexture { get; set; }
+	public bool ShowHint { get; set; }
+	public async Task StartHint(float duration, string text, string key)
+	{
+		HintText = text;
+		ShowHint = true;
+		HintTexture = Input.GetGlyph(key, InputGlyphSize.Small, false);
+		await Task.DelaySeconds(duration);
+		ShowHint = false;
+	}
+
+	public void CreateHint(float duration, string texture, string key)
+	{
+		_ = StartHint(duration, texture, key);
+	}
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

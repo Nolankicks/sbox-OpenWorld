@@ -1,0 +1,58 @@
+ThanksUi
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+	pointer-events: all;
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	.middletext
+	{
+		position: absolute;
+		font-family: poppins;
+		font-size: 64px;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		color: white;
+	}
+
+	.button
+	{
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		right: 24px;
+		bottom: 24px;
+		width: 300px;
+		height: 100px;
+		border-radius: 12px;
+		background-color: gray;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+		font-family: poppins;
+		transition: all 0.1s ease;
+		&:hover
+		{
+			background-color: #555555;
+			color: #000;
+			transform: scale(1.1);
+			sound-in: ui.button.over;
+		}
+		&:active
+		{
+			transform: scale(0.9);
+			sound-in: ui.button.press;
+		}
+	}
+}

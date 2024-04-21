@@ -1,0 +1,47 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "demo_level",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "demo_level",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.floor_grass_dirt_weed_blend_a#18756",
+        "facepunch.tree_oak_small_a#33693",
+        "facepunch.pavement_tile_01#28798",
+        "facepunch.beech_bush_small#29089",
+        "facepunch.street_lamp_open#33847",
+        "facepunch.fire_exit_light#33598",
+        "facepunch.industrial_strip_light#27425",
+        "facepunch.pine_bush_regular_b#29109",
+        "facepunch.beech_shrub_tall_large#29099",
+        "facepunch.metal_wheely_bin#33619",
+        "facepunch.trash_pile_c_05#37530",
+        "facepunch.wet_floor_sign#19202",
+        "facepunch.trash_pile_c_cigs_02#37376",
+        "facepunch.trash_pile_c_cigs_01#37375",
+        "facepunch.water_drum_01#47586",
+        "facepunch.pendant_light#42627",
+        "facepunch.sconce_wall_light#42946",
+        "nolankicks.kickscoin#51053",
+        "facepunch.fence_panel_large#44051",
+        "tesssssssssst.untitled_13102630#35254",
+        "brax.fence_128#32335",
+        "facepunch.fence_panel_gate#29175",
+        "facepunch.concrete_c_damaged_hs#28940",
+        "facepunch.concrete_wall_bare_02#47059",
+        "facepunch.wood_varnished_a_hs#28977",
+        "facepunch.decal_street_arrow_marking_a#33802"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/demo_level.vmap"
+      }
+    }
+  }
+}

@@ -8,7 +8,8 @@ public sealed class PopupUi : Component
 {
 	[Property] public string Name { get; set; }
 	[Property] public string Description { get; set; }
-	public delegate void PickUpActionDelegate( PlayerController PlayerController, Inventory Inventory, AmmoContainer ammoContainer );
+	public InputHint inputHint { get; set; }
+	public delegate void PickUpActionDelegate( PlayerController PlayerController, Inventory Inventory, AmmoContainer ammoContainer, InputHint inputHint );
 	public delegate void ShopActionDelegate( PlayerController PlayerController, Inventory Inventory, ShopUi shopUi, ShopItems shopItems, int index);
 	[Property] public PickUpActionDelegate PickUpAction { get; set; }
 	[Property] public ShopActionDelegate ShopAction { get; set; }
@@ -22,6 +23,7 @@ public sealed class PopupUi : Component
 	protected override void OnUpdate()
 	{
 			playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+			inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault(x => !x.IsProxy);
 			Glyph = Input.GetGlyph(InputHandler.GetInputString(selectedInput), InputGlyphSize.Large, false);
 			Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 			if (PickUpAction is null) return;

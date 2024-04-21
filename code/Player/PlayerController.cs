@@ -46,6 +46,7 @@ public sealed class PlayerController : Component
 			MouseInput();
 			Movement();
 			Crouch();
+			CamPos();
 			//UpdateBodyShit();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
@@ -193,7 +194,7 @@ public sealed class PlayerController : Component
 		if ( IsProxy )
 			return;
 
-		CamPos();
+		
 	}
 	private void UpdateAnimation()
 	{
@@ -238,6 +239,10 @@ public sealed class PlayerController : Component
 	{
 		if (IsProxy) return;
 		Health -= damage;
+		if (Health <= 0)
+		{
+			Kill();
+		}
 	}
 
 	[Broadcast]
@@ -257,5 +262,14 @@ public sealed class PlayerController : Component
 	public void HealNode(float amount)
 	{
 		Heal(amount);
+	}
+	void Kill()
+	{
+		if (IsProxy) return;
+		var spawns = Scene.GetAllComponents<SpawnPoint>().ToList();
+		if (spawns.Count == 0) return;
+		var spawn = Game.Random.FromList(spawns);
+		Transform.Position = spawn.Transform.Position;
+		Health = 100;
 	}
 }
