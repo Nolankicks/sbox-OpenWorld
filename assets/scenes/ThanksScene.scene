@@ -18,6 +18,27 @@
       "Children": []
     },
     {
+      "__guid": "9dbcc29d-682b-49c9-b895-f76038986680",
+      "Name": "Cubemap Fog",
+      "Position": "928.4135,352,463.713",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.CubemapFog",
+          "__guid": "cbb9360c-c826-4f79-af96-511a74abdb73",
+          "Blur": 0,
+          "EndDistance": 1024,
+          "FalloffExponent": 2,
+          "HeightExponent": 2,
+          "HeightStart": 2000,
+          "HeightWidth": 0,
+          "Sky": "materials/skybox/light_test_sky_night_basic.vmat",
+          "StartDistance": 0
+        }
+      ]
+    },
+    {
       "__guid": "c115884d-02b4-4aee-a618-aca23f189f81",
       "Name": "Camera",
       "Position": "331.9331,6.88939,160",
@@ -104,6 +125,11 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        },
+        {
+          "__type": "ThanksUi",
+          "__guid": "7e594759-fcca-4d20-8dd5-8d992257cfc6",
+          "MyStringValue": "Hello World!"
         }
       ]
     }
@@ -131,7 +157,7 @@
   },
   "Title": "thanksscene",
   "Description": "",
-  "LastSaved": "2024-04-20T23:11:45.7647768-04:00",
+  "LastSaved": "2024-04-21T00:02:55.1869853-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []

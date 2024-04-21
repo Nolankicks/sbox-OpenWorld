@@ -29,9 +29,8 @@
               "Id": 2,
               "Type": "call",
               "Properties": {
-                "_name": "AddAmmo",
-                "_type": "package.nolankicks.open_world_game/Inventory",
-                "_isStatic": false
+                "_isStatic": false,
+                "_name": "AddAmmo"
               },
               "UserData": {
                 "Position": "608,-0"
@@ -41,9 +40,9 @@
               "Id": 3,
               "Type": "call",
               "Properties": {
-                "_name": "Destroy",
+                "_isStatic": false,
                 "_type": "Sandbox.Game/Sandbox.GameObject",
-                "_isStatic": false
+                "_name": "Destroy"
               },
               "UserData": {
                 "Position": "928,160"
@@ -75,7 +74,15 @@
               "DstName": "ammoContainer"
             },
             {
-              "Value": "LightAmmo",
+              "Value": {
+                "$type": "Simple",
+                "Type": {
+                  "$type": "Nested",
+                  "DeclaringType": "package.nolankicks.dead4left2/Kicks.AmmoContainer",
+                  "Name": "AmmoTypes"
+                },
+                "Value": "LightAmmo"
+              },
               "DstId": 2,
               "DstName": "ammoType"
             },
