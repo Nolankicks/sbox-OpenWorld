@@ -41,4 +41,20 @@ public sealed class AmmoContainer : Component
 				break;
 		}
 	}
+
+	protected override void OnUpdate()
+	{
+		if (LightAmmo <= 0)
+		{
+			LightAmmo = 0;
+		}
+		if (ShotgunShells <= 0)
+		{
+			ShotgunShells = 0;
+		}
+		if (HeavyAmmo <= 0)
+		{
+			HeavyAmmo = 0;
+		}
+	}
 }

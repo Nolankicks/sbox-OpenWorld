@@ -139,7 +139,14 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		{
 			Attack();
 			Log.Info("attack");
-			await Task.DelaySeconds(1);
+			try
+			{
+				await Task.DelaySeconds(1);
+			}
+			catch (TaskCanceledException)
+			{
+				return;
+			}
 		}
 	}
 }

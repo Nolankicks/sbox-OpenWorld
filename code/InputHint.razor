@@ -23,7 +23,14 @@
 		HintText = text;
 		ShowHint = true;
 		HintTexture = Input.GetGlyph(key, InputGlyphSize.Small, false);
-		await Task.DelaySeconds(duration);
+		try
+		{
+			await Task.DelaySeconds(duration);
+		}
+		catch (TaskCanceledException)
+		{
+			return;
+		}
 		ShowHint = false;
 	}
 
