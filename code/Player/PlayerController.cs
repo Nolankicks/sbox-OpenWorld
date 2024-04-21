@@ -250,7 +250,10 @@ public sealed class PlayerController : Component
 	public void Heal(float amount)
 	{
 		if (IsProxy) return;
-		Health += amount;
+		if (Health < 120)
+		{
+			Health += amount;
+		}
 	}
 
 	[ActionGraphNode("Take Damage Node"), Pure]

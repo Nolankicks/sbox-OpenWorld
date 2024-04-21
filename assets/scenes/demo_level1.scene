@@ -1,5 +1,5 @@
 {
-  "__guid": "ab1e943c-0f6f-465c-8836-9e221a649a4f",
+  "__guid": "5e173637-f9df-4bb4-891f-a1d40e7b572b",
   "GameObjects": [
     {
       "__guid": "362f40d3-b98f-42c3-a8d6-8b2fb04951c5",
@@ -11,7 +11,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "3c208445-8c2b-472d-a77f-d5eea2f05af7",
-          "MapName": "maps/demo_level.vmap",
+          "MapName": "maps/demo_level1.vmap",
           "UseMapFromLaunch": false
         }
       ],
@@ -154,8 +154,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -566,8 +566,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -848,7 +848,7 @@
     {
       "__guid": "fe310cf9-c058-4366-bfe8-436ce1eb68ba",
       "Name": "weapon_pistol",
-      "Position": "163.1197,-159.9994,0.9996414",
+      "Position": "152.6959,-159.9994,1.031585",
       "Rotation": "-0.1830127,0.1830126,-0.6830125,0.6830126",
       "Enabled": true,
       "NetworkMode": 1,
@@ -2362,9 +2362,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.CharacterController",
                   "_name": "MoveTo",
-                  "_type": "Sandbox.Game/Sandbox.CharacterController"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2434,8 +2434,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "TransformCamera"
+                  "_name": "TransformCamera",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2512,8 +2512,8 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "StartHint"
+                  "_name": "StartHint",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -3827,6 +3827,279 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "efcd3ef3-e473-45df-87de-8cc3351adb9a",
+      "Name": "plastic_crate_01",
+      "Position": "526.4519,-950.1403,0.000002176127",
+      "Rotation": "0,0,0.258819,0.9659258",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "435cec75-ac41-4a80-be6b-469bd6fcda26",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/plastic_crate/plastic_crate_01.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "8e0e2dfe-ab31-4a28-a174-21735767198b",
+      "Name": "can_long (3)",
+      "Position": "524.2074,-952.3007,0.286614",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "9d0cdca5-c3c9-4c7f-a4b8-8003a8a56de0",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/packaged_food/can_long.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "8daa9f58-b81c-4b1e-8978-4b53580981be",
+          "Description": "Eat for some health",
+          "Icon": "textures/can.vtex",
+          "Name": "Can",
+          "PickUpAction": {
+            "__version": 6,
+            "__guid": "c77e0843-b0e3-4e63-a7e9-a450c9a33c56",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Heal",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "256,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "496,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": 10,
+                "DstId": 1,
+                "DstName": "amount"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        }
+      ]
+    },
+    {
+      "__guid": "1cdceda8-3db9-41a5-8535-afc72bf234cb",
+      "Name": "can_long (4)",
+      "Position": "527.9177,-948.8304,0.2866256",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "d799e8db-7132-4ca6-aa7f-40a169b6e27e",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/packaged_food/can_long.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "2543cd1a-c54d-4497-bac9-ed82c693cf27",
+          "Description": "Eat for some health",
+          "Icon": "textures/can.vtex",
+          "Name": "Can",
+          "PickUpAction": {
+            "__version": 6,
+            "__guid": "4253e02a-24fa-4ff5-a364-f7cf5b1a8ebe",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Heal",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "256,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Destroy",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "496,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": 10,
+                "DstId": 1,
+                "DstName": "amount"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        }
+      ]
+    },
+    {
+      "__guid": "177eae15-03af-4eed-a895-80b23d97be93",
+      "Name": "cola_can_gib",
+      "Position": "532.6057,-945.9564,0.7508113",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "1189310e-b3a6-4619-a499-9aefe6e19b35",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "37f2cdb3-6950-410c-a24a-2d06518329b2",
+      "Name": "cola_can_gib",
+      "Position": "518.9253,-950.9756,0.7508081",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "cdd959b2-0bb7-41ff-a683-7b85d687ea10",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "1ce1a9f6-7a42-417f-b1bc-b17b6e8b2d04",
+      "Name": "cola_can_gib",
+      "Position": "521.501,-955.0948,0.7508103",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "880cee30-8bcb-4bfd-af31-371306e37ea7",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3852,12 +4125,15 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-21T18:49:19.6506647-04:00",
+  "LastSaved": "2024-04-21T19:12:31.6787868-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "facepunch.can_long",
+    "facepunch.cola_can_gib",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
+    "facepunch.plastic_crate_01",
     "luke.office_desk",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630",
