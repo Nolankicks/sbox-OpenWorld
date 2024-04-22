@@ -21,7 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/demo_level.scene",
+    "StartupScene": "scenes/demo_level1.scene",
     "ControlModes": {},
     "InputSettings": {
       "Actions": [

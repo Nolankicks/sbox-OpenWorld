@@ -13,7 +13,7 @@ public sealed class PlayerController : Component
 	[Property] public GameObject Hold { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
-	[Sync] public Angles eyeAngles { get; set; }
+	[Property, Sync] public Angles eyeAngles { get; set; }
 	[Sync] public bool IsGrabbing { get; set; } = false;
 	[Property] public Interactor Interactor { get; set; }
 	[Sync] public float Health { get; set; } = 100;

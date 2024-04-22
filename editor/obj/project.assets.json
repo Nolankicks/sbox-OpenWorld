@@ -11,6 +11,29 @@
         "runtime": {
           "bin/placeholder/Base Editor Library.dll": {}
         }
+      },
+      "Base Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Base Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Base Library.dll": {}
+        }
+      },
+      "dead4left2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/dead4left2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/dead4left2.dll": {}
+        }
       }
     }
   },
@@ -19,11 +42,22 @@
       "type": "project",
       "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
       "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
+    },
+    "Base Library/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj",
+      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj"
+    },
+    "dead4left2/1.0.0": {
+      "type": "project",
+      "path": "../Code/dead4left2.csproj",
+      "msbuildProject": "../Code/dead4left2.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Base Editor Library >= 1.0.0"
+      "Base Editor Library >= 1.0.0",
+      "dead4left2 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -33,9 +67,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Editor\\open_world_game.editor.csproj",
-      "projectName": "open_world_game.editor",
-      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Editor\\open_world_game.editor.csproj",
+      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
+      "projectName": "dead4left2.editor",
+      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
       "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Editor\\obj\\",
       "projectStyle": "PackageReference",
@@ -61,6 +95,9 @@
           "projectReferences": {
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
+            "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Code\\dead4left2.csproj": {
+              "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\Kanye Simulator\\sbox-OpenWorld\\Code\\dead4left2.csproj"
             }
           }
         }

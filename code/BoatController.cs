@@ -11,6 +11,7 @@ public sealed class BoatController : Component
 		{
 			Move();
 		}
+		Grav();
 	}
 
 	void Move()
@@ -25,5 +26,22 @@ public sealed class BoatController : Component
 			cc.Accelerate(WishVelo);
 			cc.Move();
 		}
+		if (Input.Down("backward"))
+		{
+			var cc = Controller;
+			WishVelo = Scene.Camera.Transform.Rotation.Backward;
+			WishVelo *= 500;
+			WishVelo = WishVelo.WithZ(0);
+			WishVelo.ClampLength(1);
+			cc.Accelerate(WishVelo);
+			cc.Move();
+		}
+	}
+
+	void Grav()
+	{
+		var cc = Controller;
+		var halfGrav = Scene.PhysicsWorld.Gravity * Time.Delta;
+		cc.Velocity += halfGrav;
 	}
 }
