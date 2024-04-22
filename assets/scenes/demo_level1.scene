@@ -35,7 +35,7 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "",
+          "RenderExcludeTags": "viewmodel",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
@@ -143,8 +143,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "IsSitting"
+                  "_name": "IsSitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -154,8 +154,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -257,8 +257,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -340,7 +340,6 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "ShowShopUi"
                 },
                 "UserData": {
@@ -401,7 +400,6 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "PopupUi"
                 },
                 "UserData": {
@@ -566,8 +564,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -578,7 +576,6 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_type": "package.nolankicks.open_world_game/Inventory",
                       "_name": "GetNextSlot"
                     },
                     "UserData": {
@@ -925,8 +922,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-208,208"
@@ -936,8 +933,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-48,96"
@@ -1333,8 +1330,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,192"
@@ -1344,8 +1341,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "64,80"
@@ -1599,8 +1596,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-160,240"
@@ -1610,8 +1607,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-0,128"
@@ -1865,8 +1862,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-176,272"
@@ -1876,8 +1873,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-16,160"
@@ -2340,8 +2337,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "OpenGate",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "OpenGate"
                 },
                 "UserData": {
                   "Position": "-880,-64"
@@ -2351,7 +2348,6 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "CharacterController"
                 },
                 "UserData": {
@@ -2362,9 +2358,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.CharacterController",
+                  "_isStatic": false,
                   "_name": "MoveTo",
-                  "_isStatic": false
+                  "_type": "Sandbox.Game/Sandbox.CharacterController"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2387,8 +2383,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-928,544"
@@ -2398,8 +2394,8 @@
                 "Id": 8,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-688,544"
@@ -2416,7 +2412,6 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "AbleToMove"
                 },
                 "UserData": {
@@ -2434,8 +2429,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_name": "TransformCamera",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "TransformCamera"
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2445,8 +2440,8 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_name": "CloseGate",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "CloseGate"
                 },
                 "UserData": {
                   "Position": "1600,48"
@@ -2463,8 +2458,8 @@
                 "Id": 15,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Component",
-                  "_name": "GameObject"
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Game/Sandbox.Component"
                 },
                 "UserData": {
                   "Position": "1616,128"
@@ -2500,9 +2495,9 @@
                 "Id": 18,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "SetParent",
-                  "_isStatic": false
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "2368,128"
@@ -2512,8 +2507,8 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_name": "StartHint",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "StartHint"
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -2862,6 +2857,7 @@
           },
           "Coins": 0,
           "CrouchSpeed": 50,
+          "eyeAngles": "0,0,0",
           "Hold": {
             "_type": "gameobject",
             "go": "5e9e67de-5b4e-4986-8fa6-d9fac37ae794"
@@ -3884,9 +3880,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -3896,9 +3892,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_isStatic": false
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -3986,9 +3982,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -3998,9 +3994,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_isStatic": false
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4125,15 +4121,15 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-21T19:12:31.6787868-04:00",
+  "LastSaved": "2024-04-21T21:22:12.1062629-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.can_long",
-    "facepunch.cola_can_gib",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
     "facepunch.plastic_crate_01",
+    "facepunch.soda_can",
     "luke.office_desk",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630",

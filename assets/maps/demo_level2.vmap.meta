@@ -11,7 +11,14 @@
       "Schema": 0,
       "Resources": null,
       "PackageReferences": [],
-      "EditorReferences": [],
+      "EditorReferences": [
+        "facepunch.glass_dotted_a#19950",
+        "facepunch.pipe_a_corner_32#33818",
+        "facepunch.pipe_a_32#33813",
+        "facepunch.pipe_a_64#33815",
+        "facepunch.pipe_a_t_32#33822",
+        "facepunch.pipe_a_corner_64#33819"
+      ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"
       }
