@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+    "__guid": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
     "Name": "shooter",
     "Tags": "enemy",
     "Enabled": true,
@@ -8,8 +8,8 @@
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
-        "__guid": "72aff783-38fe-46b8-810f-245db333966a",
-        "BodyGroups": 65,
+        "__guid": "ff480824-405c-4b63-8646-b80223fbbd2b",
+        "BodyGroups": 1,
         "CreateBoneObjects": false,
         "Model": "models/citizen/citizen.vmdl",
         "RenderType": "On",
@@ -17,23 +17,23 @@
       },
       {
         "__type": "ShooterEnemy",
-        "__guid": "074b5cfe-eefb-4e39-bc00-ed60452281fb",
+        "__guid": "31d7fd27-15a0-4d08-ba4c-62f623137fec",
         "citizenAnimationHelper": {
           "_type": "component",
-          "component_id": "140d403e-2cbf-4a2c-b600-47a1c24b93f2",
-          "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+          "component_id": "fbb6bf94-3c4d-4a20-8730-797484830e1f",
+          "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
           "component_type": "CitizenAnimationHelper"
         },
         "navMeshAgent": {
           "_type": "component",
-          "component_id": "b82bb9f0-688a-45af-b001-8b81a4c1cead",
-          "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+          "component_id": "b58a7400-480a-41ad-bac0-a42e8e7cff1e",
+          "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
           "component_type": "NavMeshAgent"
         }
       },
       {
         "__type": "Sandbox.NavMeshAgent",
-        "__guid": "b82bb9f0-688a-45af-b001-8b81a4c1cead",
+        "__guid": "b58a7400-480a-41ad-bac0-a42e8e7cff1e",
         "Acceleration": 50,
         "Height": 64,
         "MaxSpeed": 120,
@@ -44,25 +44,25 @@
       },
       {
         "__type": "Sandbox.Citizen.CitizenAnimationHelper",
-        "__guid": "140d403e-2cbf-4a2c-b600-47a1c24b93f2",
+        "__guid": "fbb6bf94-3c4d-4a20-8730-797484830e1f",
         "BodyWeight": 1,
         "EyesWeight": 1,
         "HeadWeight": 1,
         "LookAtEnabled": false,
         "Target": {
           "_type": "component",
-          "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-          "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+          "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+          "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
           "component_type": "SkinnedModelRenderer"
         }
       },
       {
         "__type": "Kicks.EnemyHealthComponent",
-        "__guid": "f51a17c2-88ea-4d54-87c9-e14f7daf2a79"
+        "__guid": "97ad66c3-fda0-495a-9860-3eefa8d3ef58"
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "dcdf24ee-5cf6-4d98-b10d-17f48f4d8c80",
+        "__guid": "36b6bb2d-07bf-4703-bebc-5d9462505751",
         "Center": "0,0,0",
         "IsTrigger": true,
         "Scale": "2000,2000,2000",
@@ -71,14 +71,14 @@
     ],
     "Children": [
       {
-        "__guid": "c34c61c3-41e0-4c35-9a49-86fc41c647bd",
+        "__guid": "90644eb2-a3dd-4547-bf09-54c270a5b0f8",
         "Name": "collider",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.CapsuleCollider",
-            "__guid": "f6089f21-2a55-49a2-825b-aa15b69097f7",
+            "__guid": "7cc994cb-aff3-4784-9c3f-95dd44a99f8e",
             "End": "0,0,71.54469",
             "IsTrigger": false,
             "Radius": 25,
@@ -88,25 +88,25 @@
         ]
       },
       {
-        "__guid": "b6b66264-b7f6-4740-9954-83ad758fa6e5",
+        "__guid": "b5586e58-0a9f-45f7-b36a-8a5a394e285f",
         "Name": "clothes",
         "Enabled": true,
         "NetworkMode": 1,
         "Children": [
           {
-            "__guid": "69f9d35a-6a01-4a36-990a-f4f96992d057",
+            "__guid": "a68a6b2d-6ff0-43c4-bbe5-6b8c3a4290a4",
             "Name": "glasses",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "05510fac-c234-484d-87ad-81b414ea4cb5",
+                "__guid": "9040ac5b-575c-4efc-8c85-89f9d4566e16",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-                  "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
@@ -117,19 +117,19 @@
             ]
           },
           {
-            "__guid": "136b2573-a166-4817-a2bd-0bc0d8cfcbea",
+            "__guid": "4831e7f0-74b1-4020-b970-c7f637413968",
             "Name": "pants",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "cac0112a-ea43-4b2f-b4f5-66bf32ba60e0",
+                "__guid": "defa47ec-6faf-4b21-8fc2-7e12e6083c07",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-                  "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
@@ -140,19 +140,19 @@
             ]
           },
           {
-            "__guid": "54868f7f-9464-4a78-9b90-2ad92c5b6fb1",
+            "__guid": "a85a9b78-7fdc-4c76-a5c4-b8bd8ea326ed",
             "Name": "shoes",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "990fca89-596b-4f75-ad9e-e17036f69e80",
+                "__guid": "903b6ac2-6feb-4290-b1d2-8afe8e4a59ce",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-                  "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
@@ -163,19 +163,19 @@
             ]
           },
           {
-            "__guid": "823fd51e-46f2-4a61-b9c9-9e3be6cbcb32",
+            "__guid": "3420c583-be44-45ae-b510-ee51c01c4b1d",
             "Name": "shirt",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "805bb7e0-4545-4683-9352-bc834da051ec",
+                "__guid": "d7536db3-7035-45a1-a505-5a870cee1d3d",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-                  "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
@@ -186,23 +186,46 @@
             ]
           },
           {
-            "__guid": "f41ee525-bafd-4989-905a-1c61407eee80",
+            "__guid": "85460e9e-6a1b-4280-9a01-bf57e0963701",
             "Name": "hat",
             "Enabled": true,
             "NetworkMode": 1,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "49e7e241-e082-4c4f-a946-ee7fe616b287",
+                "__guid": "94f0c81d-0aab-45e4-a8df-4538ff73f04c",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "72aff783-38fe-46b8-810f-245db333966a",
-                  "go": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/hat/baseball_cap/model/baseball_cap_black.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "1f3d4b93-bf47-46bb-8641-18b4630776f1",
+            "Name": "gloves",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "4aaeb410-8568-4e85-823c-5418b0e0a17b",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "ff480824-405c-4b63-8646-b80223fbbd2b",
+                  "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen_clothes/gloves/tactical_gloves/models/tactical_gloves.vmdl",
                 "RenderType": "On",
                 "Tint": "1,1,1,1"
               }

@@ -1,7 +1,7 @@
 {
   "publish": {
     "Allowed": true,
-    "Enabled": false,
+    "Enabled": true,
     "ProjectConfig": {
       "Title": "demo_level2",
       "Type": "map",
@@ -30,7 +30,13 @@
         "drakefruit.glass_blocks_001#20452",
         "saandy.ceiling_light_tile_01_32c#38911",
         "fpopium.football#55029",
-        "facepunch.metal_brushed_a_hs#28945"
+        "facepunch.metal_brushed_a_hs#28945",
+        "wujekfoliarz.skyboxnowy#40943",
+        "facepunch.industrial_light#27423",
+        "facepunch.sconce_wall_light#42946",
+        "facepunch.cctv#29019",
+        "facepunch.cctv_mount#29021",
+        "facepunch.cctv_rotating_mount#29022"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

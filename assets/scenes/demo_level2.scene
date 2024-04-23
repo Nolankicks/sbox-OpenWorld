@@ -101,7 +101,7 @@
                 "go": "c3590f36-47c0-4ddb-977d-df20e2818b16",
                 "component_type": "CharacterController"
               },
-              "Coins": 50,
+              "Coins": 0,
               "CrouchSpeed": 50,
               "eyeAngles": "0,0,0",
               "Hold": {
@@ -1081,7 +1081,7 @@
                   "Orthographic": false,
                   "OrthographicHeight": 1204,
                   "Priority": 1,
-                  "RenderExcludeTags": "",
+                  "RenderExcludeTags": "viewmodel",
                   "RenderTags": "",
                   "TargetEye": "None",
                   "Viewport": "0,0,1,1",
@@ -1146,8 +1146,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Parent",
                   "_kind": "Set",
+                  "_name": "Parent",
                   "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
@@ -1171,9 +1171,9 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1287,9 +1287,9 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -1382,8 +1382,8 @@
                 "Id": 60,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
                   "_kind": "Set",
+                  "_name": "Position",
                   "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
@@ -1394,8 +1394,8 @@
                 "Id": 62,
                 "Type": "property",
                 "Properties": {
-                  "_name": "AbleToMove",
                   "_kind": "Set",
+                  "_name": "AbleToMove",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -1406,8 +1406,8 @@
                 "Id": 65,
                 "Type": "property",
                 "Properties": {
-                  "_name": "eyeAngles",
                   "_kind": "Set",
+                  "_name": "eyeAngles",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -2576,8 +2576,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -2863,12 +2863,12 @@
           "selectedInput": "E",
           "ShopItems": {
             "ItemNames": [
-              "MP5"
+              "Light Ammo"
             ],
             "ShopActions": [
               {
                 "__version": 6,
-                "__guid": "95f7d50a-5dbf-4430-b9f4-063cd745ca75",
+                "__guid": "81800d2e-3e91-4f6e-8fe7-7e4e89d8e34f",
                 "UserData": {
                   "Title": null,
                   "ReferencedComponentTypes": []
@@ -2880,82 +2880,52 @@
                     "Type": "input"
                   },
                   {
-                    "Id": 1,
+                    "Id": 6,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_name": "AddAmmo",
+                      "_isStatic": false,
+                      "_type": "package.nolankicks.dead4left2/Inventory"
                     },
                     "UserData": {
-                      "Position": "672,112"
-                    }
-                  },
-                  {
-                    "Id": 4,
-                    "Type": "call",
-                    "Properties": {
-                      "_name": "GetNextSlot",
-                      "_isStatic": false
-                    },
-                    "UserData": {
-                      "Position": "224,128"
+                      "Position": "448,0"
                     }
                   }
                 ],
                 "Links": [
                   {
-                    "SrcId": 4,
-                    "SrcName": "_result",
-                    "DstId": 1,
-                    "DstName": "Slot"
-                  },
-                  {
-                    "SrcId": 4,
+                    "SrcId": 0,
                     "SrcName": "_signal",
-                    "DstId": 1,
+                    "DstId": 6,
                     "DstName": "_signal"
                   },
                   {
                     "SrcId": 0,
                     "SrcName": "Inventory",
-                    "DstId": 1,
+                    "DstId": 6,
                     "DstName": "_target"
                   },
                   {
-                    "Value": {
-                      "$type": "Simple",
-                      "Type": "Sandbox.Game/Sandbox.PrefabScene",
-                      "Value": {
-                        "_type": "gameobject",
-                        "prefab": "prefabs/weapons/weapon_smg.prefab"
-                      }
-                    },
-                    "DstId": 1,
-                    "DstName": "item"
+                    "Value": 30,
+                    "DstId": 6,
+                    "DstName": "ammo"
                   },
                   {
                     "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 4,
-                    "DstName": "_signal"
+                    "SrcName": "ammoContainer",
+                    "DstId": 6,
+                    "DstName": "ammoContainer"
                   },
                   {
-                    "SrcId": 0,
-                    "SrcName": "Inventory",
-                    "DstId": 4,
-                    "DstName": "_target"
+                    "Value": "LightAmmo",
+                    "DstId": 6,
+                    "DstName": "ammoType"
                   }
-                ],
-                "Defaults": {
-                  "$5._value": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/weapons/weapon_smg.prefab"
-                  }
-                }
+                ]
               }
             ],
             "ItemTextures": [
-              "mp5.vtex"
+              "models/light_ammo/source/9mmprojectfinal.vmdl.vtex"
             ],
             "ItemPrices": [
               5
@@ -3625,7 +3595,7 @@
               }
             ],
             "Defaults": {
-              "$2._value": {
+              "$5._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/coin_pickup.prefab"
               }
@@ -3633,6 +3603,36 @@
           }
         }
       ]
+    },
+    {
+      "__guid": "ab4c24a2-0008-4713-b96a-540aae31aa79",
+      "Name": "shooter",
+      "Position": "-1112.446,4147.439,1034",
+      "Rotation": "0,0,-0.891878,0.452276",
+      "Tags": "enemy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/shooter.prefab"
+    },
+    {
+      "__guid": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
+      "Name": "shooter (1)",
+      "Position": "-1664.596,4207.302,1034",
+      "Rotation": "0,0,-0.4291936,0.9032125",
+      "Tags": "enemy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/shooter.prefab"
+    },
+    {
+      "__guid": "72ab86d8-b97a-4490-a215-081cf90c5b9a",
+      "Name": "zombie (1)",
+      "Position": "-1113.273,5465.616,1028",
+      "Rotation": "0,0,-0.9323266,0.3616175",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "__Prefab": "prefabs/zombie.prefab"
     }
   ],
   "SceneProperties": {
@@ -3658,7 +3658,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-22T22:57:15.2574224-04:00",
+  "LastSaved": "2024-04-23T11:35:36.0024237-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
