@@ -27,7 +27,10 @@ async Task FindPlayer()
         var targetPos = tr.EndPosition;
         while (Vector3.DistanceBetween(targetPos, Transform.Position) > 100)
         {
-            navMeshAgent.MoveTo(targetPos);
+            if (navMeshAgent is not null)
+		{
+    	navMeshAgent.MoveTo(targetPos);
+		}
             await Task.Delay(100);
         }
 
@@ -50,6 +53,7 @@ async Task FindPlayer()
 	while (true)
 	{
 		var tr = Scene.Trace.Ray(Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 1000).WithoutTags("enemy").Run();
+		if (!tr.Hit) return;
 		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 		if (player is not null)
 		{

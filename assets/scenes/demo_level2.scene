@@ -1172,8 +1172,8 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Parent",
-                  "_kind": "Set",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1288,8 +1288,8 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Rotation",
-                  "_kind": "Set",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -1897,8 +1897,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2155,8 +2155,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -3214,8 +3214,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -3405,80 +3405,232 @@
     {
       "__guid": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
       "Name": "citizen",
-      "Position": "-1659.841,2392.335,704.0353",
+      "Position": "-1659.84,2392.333,160",
       "Rotation": "0,0,-0.7071067,0.7071068",
       "Tags": "enemy",
       "Enabled": true,
       "NetworkMode": 2,
+      "__Prefab": "prefabs/shooter.prefab"
+    },
+    {
+      "__guid": "b9bbc43c-2116-48d3-b8a4-5011f6f3d52b",
+      "Name": "wooden_crate",
+      "Position": "-1123.97,926.4974,0.0000008764858",
+      "Rotation": "0,0,0.258819,0.965926",
+      "Enabled": true,
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "6b792d12-7c0f-4429-b7e8-1ef9446395ea",
-          "BodyGroups": 341,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "ShooterEnemy",
-          "__guid": "751b507f-a20d-450a-bcae-d7250a9275eb",
-          "citizenAnimationHelper": {
-            "_type": "component",
-            "component_id": "c01065de-d339-45b5-91de-f0da7807b160",
-            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "navMeshAgent": {
-            "_type": "component",
-            "component_id": "1ee480ae-083c-4fa2-a18e-b73e6e060f11",
-            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
-            "component_type": "NavMeshAgent"
-          }
-        },
-        {
-          "__type": "Sandbox.NavMeshAgent",
-          "__guid": "1ee480ae-083c-4fa2-a18e-b73e6e060f11",
-          "Acceleration": 50,
-          "Height": 64,
-          "MaxSpeed": 120,
-          "Radius": 16,
-          "Separation": 0.25,
-          "UpdatePosition": true,
-          "UpdateRotation": false
-        },
-        {
-          "__type": "Sandbox.Citizen.CitizenAnimationHelper",
-          "__guid": "c01065de-d339-45b5-91de-f0da7807b160",
-          "BodyWeight": 1,
-          "EyesWeight": 1,
-          "HeadWeight": 1,
-          "LookAtEnabled": false,
-          "Target": {
-            "_type": "component",
-            "component_id": "6b792d12-7c0f-4429-b7e8-1ef9446395ea",
-            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
-            "component_type": "SkinnedModelRenderer"
+          "__type": "Sandbox.Prop",
+          "__guid": "4068a7d1-6404-4a49-bd46-57fa40e4072e",
+          "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnPropBreak": {
+            "__version": 6,
+            "__guid": "1bce5a46-e756-41d4-ade3-be9e0c0ad2da",
+            "UserData": {
+              "Title": "On Prop Break",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 3,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "528,16"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-96,96"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "144,64"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "position"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/light_ammo_pickup.prefab"
+                },
+                "DstId": 3,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$7._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/light_ammo_pickup.prefab"
+              }
+            }
           }
         }
-      ],
-      "Children": [
+      ]
+    },
+    {
+      "__guid": "d607846f-8d56-4701-8124-821e544d49ed",
+      "Name": "wooden_crate (1)",
+      "Position": "-1142.896,956.4236,0.000005856794",
+      "Rotation": "0,0,0.3274702,0.9448617",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
         {
-          "__guid": "74d7a619-b71d-4a0e-9ba7-aadabfd93ad9",
-          "Name": "Collider",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "5b7cc2ac-00e7-433f-bf31-e22495adc90c",
-              "Center": "0,0,0",
-              "IsTrigger": true,
-              "Scale": "1000,1000,1000",
-              "Static": false
+          "__type": "Sandbox.Prop",
+          "__guid": "1c7d0a70-bb10-4648-95c8-012574a51bc5",
+          "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "43dbe801-0ea7-4caa-9966-5fb334ff9e75",
+      "Name": "wooden_crate (2)",
+      "Position": "-1133.945,947.6716,33.54415",
+      "Rotation": "0,0,0.3826834,0.9238797",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "3f091eb1-6be4-42dc-8d58-9dc8b487afc7",
+          "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "OnPropBreak": {
+            "__version": 6,
+            "__guid": "56ad9d2d-143d-4833-8fbd-d0790a33916a",
+            "UserData": {
+              "Title": "On Prop Break",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "432,-0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-96,64"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "128,80"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "position"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/coin_pickup.prefab"
+                },
+                "DstId": 1,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$2._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/coin_pickup.prefab"
+              }
             }
-          ]
+          }
         }
       ]
     }
@@ -3506,11 +3658,12 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-22T21:28:39.2160453-04:00",
+  "LastSaved": "2024-04-22T22:57:15.2574224-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.office_chair",
+    "facepunch.wooden_crate",
     "luke.office_desk",
     "nolankicks.idel-terry",
     "nolankicks.kickscoin",
