@@ -36,7 +36,11 @@
         "facepunch.sconce_wall_light#42946",
         "facepunch.cctv#29019",
         "facepunch.cctv_mount#29021",
-        "facepunch.cctv_rotating_mount#29022"
+        "facepunch.cctv_rotating_mount#29022",
+        "facepunch.plaster_hs_01#33578",
+        "facepunch.decal_damp_leak_01a#47065",
+        "facepunch.floor_tile_blend_01#28812",
+        "facepunch.stickers_1#33877"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

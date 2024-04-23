@@ -13,8 +13,6 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
-	public delegate void OnDeath( PlayerController attacker);
-	[Property] public OnDeath OnDeathAction { get; set; }
 	[Property] public GameObject ItemDrop { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Sync] public Vector3 Velocity { get; set; }
