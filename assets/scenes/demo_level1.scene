@@ -319,7 +319,7 @@
           "__type": "Kicks.PopupUi",
           "__guid": "2b5f687c-19d8-4eaa-bcb2-440446821e01",
           "Description": "Open the shop",
-          "Icon": "sprites/vidya/particles/ghost.vtex",
+          "Icon": "textures/kickscoin.vtex",
           "Name": "Open Shop",
           "PickUpAction": {
             "__version": 6,
@@ -564,8 +564,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -626,7 +626,13 @@
                     "DstId": 4,
                     "DstName": "_target"
                   }
-                ]
+                ],
+                "Defaults": {
+                  "$5._value": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/weapons/weapon_smg.prefab"
+                  }
+                }
               }
             ],
             "ItemTextures": [
@@ -1020,7 +1026,13 @@
                 "DstId": 6,
                 "DstName": "z"
               }
-            ]
+            ],
+            "Defaults": {
+              "$8._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/coin_pickup.prefab"
+              }
+            }
           },
           "players": [],
           "SpawnGibs": true
@@ -1166,6 +1178,10 @@
           },
           "players": [],
           "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "d3406ff0-93ab-4921-bca8-2078ccafda83"
         }
       ],
       "Children": [
@@ -1428,10 +1444,20 @@
                 "DstId": 8,
                 "DstName": "z"
               }
-            ]
+            ],
+            "Defaults": {
+              "$10._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/light_ammo_pickup.prefab"
+              }
+            }
           },
           "players": [],
           "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "b6a40fc8-05a0-46ac-a603-02262909dc2e"
         }
       ],
       "Children": [
@@ -1694,10 +1720,20 @@
                 "DstId": 5,
                 "DstName": "z"
               }
-            ]
+            ],
+            "Defaults": {
+              "$7._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/light_ammo_pickup.prefab"
+              }
+            }
           },
           "players": [],
           "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "6f19e9c8-635d-4f5e-a2c1-0c9e0c0dddc7"
         }
       ],
       "Children": [
@@ -1960,10 +1996,20 @@
                 "DstId": 5,
                 "DstName": "z"
               }
-            ]
+            ],
+            "Defaults": {
+              "$7._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/light_ammo_pickup.prefab"
+              }
+            }
           },
           "players": [],
           "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "617081fd-de51-48d6-82c9-77696862367b"
         }
       ],
       "Children": [
@@ -2106,6 +2152,10 @@
           },
           "players": [],
           "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "5743b908-7a93-412e-8fe4-046c5004706b"
         }
       ],
       "Children": [
@@ -2358,9 +2408,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "MoveTo",
-                  "_type": "Sandbox.Game/Sandbox.CharacterController"
+                  "_type": "Sandbox.Game/Sandbox.CharacterController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2429,8 +2479,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "TransformCamera"
+                  "_name": "TransformCamera",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2507,8 +2557,8 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "StartHint"
+                  "_name": "StartHint",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -2743,7 +2793,21 @@
                 "DstId": 22,
                 "DstName": "_value"
               }
-            ]
+            ],
+            "Defaults": {
+              "$6.gameobject": {
+                "_type": "gameobject",
+                "go": "e3890457-e0a3-4161-b45f-6b3ac9b009c5"
+              },
+              "$16.gameobject": {
+                "_type": "gameobject",
+                "go": "e17dbc10-794e-4dec-8714-79cbe1a44b32"
+              },
+              "$17.gameobject": {
+                "_type": "gameobject",
+                "go": "e87a4cc8-4a3e-449f-87e1-28def6ce9988"
+              }
+            }
           },
           "selectedInput": "E",
           "ShopItems": {
@@ -4121,7 +4185,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-21T21:22:12.1062629-04:00",
+  "LastSaved": "2024-04-22T21:56:40.1125407-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -4132,7 +4196,6 @@
     "facepunch.soda_can",
     "luke.office_desk",
     "nolankicks.idel-terry",
-    "tesssssssssst.untitled_13102630",
-    "vidya.particle-ghost"
+    "tesssssssssst.untitled_13102630"
   ]
 }

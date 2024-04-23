@@ -17,7 +17,14 @@
         "facepunch.pipe_a_32#33813",
         "facepunch.pipe_a_64#33815",
         "facepunch.pipe_a_t_32#33822",
-        "facepunch.pipe_a_corner_64#33819"
+        "facepunch.pipe_a_corner_64#33819",
+        "facepunch.glass_b#19947",
+        "facepunch.glass_a#19946",
+        "facepunch.pipe_a_128#33816",
+        "facepunch.pipe_a_4#33810",
+        "facepunch.pipe_a_16#33808",
+        "rustextended.glass_tiling#43278",
+        "facepunch.wood_painted_black_a_hs#28973"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

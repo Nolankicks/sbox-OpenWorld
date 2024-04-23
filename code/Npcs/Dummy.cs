@@ -78,46 +78,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		}
 	}
 
-	[Broadcast]
-	public void Hurt(int damage, Guid player)
-	{
-		if (IsProxy) return;
-		health -= damage;
-		if (health <= 0)
-		{
-			Kill();
-			var attacker = Scene.Directory.FindByGuid(player);
-			var playerController = attacker.Components.Get<PlayerController>();
-			if (playerController is null) return;
-			OnDeathAction?.Invoke(playerController);
-		}
-	}
-
-	public void Kill()
-	{
-		if (SpawnGibs)
-		{
-			var clone = GibGameObject.Clone(GameObject.Transform.World);
-			var prop = clone.Components.Get<Prop>();
-			prop.Kill();
-			if (ItemDrop is not null)
-			{
-				var item = ItemDrop.Clone(GameObject.Transform.Position + Vector3.Up * 50f);
-				item.NetworkSpawn(null);
-			}
-		}
-		else
-		{
-			var ragdoll = Ragdoll.Clone(GameObject.Transform.World);
-			ragdoll.NetworkSpawn(null);
-			if (ItemDrop is not null)
-			{
-				var item = ItemDrop.Clone(GameObject.Transform.Position + Vector3.Up * 50f);
-				item.NetworkSpawn(null);
-			}
-		}
-		GameObject.Destroy();
-	}
+	
 	void Attack()
 	{
 		var tr = Scene.Trace.Ray(GameObject.Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 300).WithoutTags("dummy").Run();

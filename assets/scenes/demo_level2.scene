@@ -1146,8 +1146,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Parent",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
@@ -1171,8 +1171,8 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Parent",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
@@ -1287,8 +1287,8 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Rotation",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
@@ -1382,8 +1382,8 @@
                 "Id": 60,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Position",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
@@ -1394,8 +1394,8 @@
                 "Id": 62,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "AbleToMove",
+                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -1406,8 +1406,8 @@
                 "Id": 65,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "eyeAngles",
+                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -1660,7 +1660,29 @@
                 "DstId": 65,
                 "DstName": "_value"
               }
-            ]
+            ],
+            "Defaults": {
+              "$2.gameobject": {
+                "_type": "gameobject",
+                "go": "c3590f36-47c0-4ddb-977d-df20e2818b16"
+              },
+              "$8.gameobject": {
+                "_type": "gameobject",
+                "go": "a9a1c9aa-49bf-48d6-b204-ba93de338c8f"
+              },
+              "$21.gameobject": {
+                "_type": "gameobject",
+                "go": "4bfc5a6a-a5e1-475d-8d48-9fbb14a38eef"
+              },
+              "$30.gameobject": {
+                "_type": "gameobject",
+                "go": "da84a63e-fef5-49b3-8388-3a1b865e78cd"
+              },
+              "$36.gameobject": {
+                "_type": "gameobject",
+                "go": "502b7fa8-2aa0-49ed-a1ec-696bea2e026a"
+              }
+            }
           },
           "selectedInput": "E",
           "ShopItems": {
@@ -1699,6 +1721,12 @@
           "Opacity": 1,
           "Scale": 1,
           "ZIndex": 100
+        },
+        {
+          "__type": "Kicks.ShopUi",
+          "__guid": "f74d1a6d-e2e9-40c0-bd0b-b4faaede84ee",
+          "CoinIcon": "textures/kickscoin.vtex",
+          "FailSound": "sounds/player_use_fail.sound"
         }
       ]
     },
@@ -1841,7 +1869,6 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "Coins"
                 },
                 "UserData": {
@@ -1869,9 +1896,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2100,7 +2127,6 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "Coins"
                 },
                 "UserData": {
@@ -2128,9 +2154,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2390,7 +2416,7 @@
         {
           "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "cb568165-f54e-4b81-8e39-1cf54b86883b",
-          "BodyGroups": 65,
+          "BodyGroups": 1,
           "CreateBoneObjects": false,
           "MaterialGroup": "default",
           "Model": "models/citizen/citizen.vmdl",
@@ -2417,7 +2443,10 @@
             "Nodes": [
               {
                 "Id": 0,
-                "Type": "input"
+                "Type": "input",
+                "UserData": {
+                  "Position": "-224,-80"
+                }
               },
               {
                 "Id": 1,
@@ -2426,7 +2455,7 @@
                   "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
-                  "Position": "-16,224"
+                  "Position": "-240,144"
                 }
               },
               {
@@ -2437,7 +2466,7 @@
                   "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
-                  "Position": "368,160"
+                  "Position": "144,80"
                 }
               },
               {
@@ -2448,7 +2477,7 @@
                   "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
-                  "Position": "736,288"
+                  "Position": "512,208"
                 }
               }
             ],
@@ -2546,9 +2575,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -2854,8 +2883,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -2865,8 +2894,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "GetNextSlot"
+                      "_name": "GetNextSlot",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "224,128"
@@ -2916,7 +2945,13 @@
                     "DstId": 4,
                     "DstName": "_target"
                   }
-                ]
+                ],
+                "Defaults": {
+                  "$5._value": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/weapons/weapon_smg.prefab"
+                  }
+                }
               }
             ],
             "ItemTextures": [
@@ -2955,7 +2990,7 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt.vmdl",
+                  "Model": "models/citizen_clothes/shirt/loose_shirt/models/loose_shirts.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -2979,7 +3014,7 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/jacket/smart_jacket/models/smart_jacket.vmdl",
+                  "Model": "models/citizen_clothes/jacket/biker_jacket/models/biker_jacket.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -3003,7 +3038,7 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/shoes/smartshoes/smartshoes.vmdl",
+                  "Model": "models/citizen_clothes/shoes/trainers/trainers.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -3027,7 +3062,7 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/trousers/cargopants/models/brown_cargo_pants.vmdl",
+                  "Model": "models/citizen_clothes/trousers/jeans/models/jeans_black.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -3051,15 +3086,15 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
+                  "Model": "models/citizen_clothes/hair/hair_scruffy_shaved_sides/models/scruffy_shaved_sides.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "0.15349,0.10994,0.10994,1"
                 }
               ]
             },
             {
               "__guid": "d9762455-f24a-4512-823c-80a347cb43b0",
-              "Name": "tattoo",
+              "Name": "brused face",
               "Position": "0,0,0",
               "Enabled": true,
               "NetworkMode": 2,
@@ -3075,7 +3110,31 @@
                     "component_type": "SkinnedModelRenderer"
                   },
                   "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/makeup/traditional_face_tattoos/models/traditional_face_tattoos.vmdl",
+                  "Model": "models/citizen_clothes/makeup/bruised_face/models/bruised_face.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            },
+            {
+              "__guid": "0414dfef-7f6b-4027-a2f4-f0110daf0c42",
+              "Name": "gloves",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "24eff948-1bb3-4d1d-a63d-8cc6c32de368",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "cb568165-f54e-4b81-8e39-1cf54b86883b",
+                    "go": "78396649-9686-43e6-b5c8-66376323b3f8",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen_clothes/gloves/tactical_gloves/models/tactical_gloves.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
                 }
@@ -3127,7 +3186,6 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
                   "_name": "Coins"
                 },
                 "UserData": {
@@ -3155,9 +3213,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -3343,6 +3401,86 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
+      "Name": "citizen",
+      "Position": "-1659.841,2392.335,704.0353",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Tags": "enemy",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "6b792d12-7c0f-4429-b7e8-1ef9446395ea",
+          "BodyGroups": 341,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "ShooterEnemy",
+          "__guid": "751b507f-a20d-450a-bcae-d7250a9275eb",
+          "citizenAnimationHelper": {
+            "_type": "component",
+            "component_id": "c01065de-d339-45b5-91de-f0da7807b160",
+            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "1ee480ae-083c-4fa2-a18e-b73e6e060f11",
+            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
+            "component_type": "NavMeshAgent"
+          }
+        },
+        {
+          "__type": "Sandbox.NavMeshAgent",
+          "__guid": "1ee480ae-083c-4fa2-a18e-b73e6e060f11",
+          "Acceleration": 50,
+          "Height": 64,
+          "MaxSpeed": 120,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true,
+          "UpdateRotation": false
+        },
+        {
+          "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+          "__guid": "c01065de-d339-45b5-91de-f0da7807b160",
+          "BodyWeight": 1,
+          "EyesWeight": 1,
+          "HeadWeight": 1,
+          "LookAtEnabled": false,
+          "Target": {
+            "_type": "component",
+            "component_id": "6b792d12-7c0f-4429-b7e8-1ef9446395ea",
+            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d",
+            "component_type": "SkinnedModelRenderer"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "74d7a619-b71d-4a0e-9ba7-aadabfd93ad9",
+          "Name": "Collider",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5b7cc2ac-00e7-433f-bf31-e22495adc90c",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "1000,1000,1000",
+              "Static": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3368,7 +3506,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-21T21:37:39.7679674-04:00",
+  "LastSaved": "2024-04-22T21:28:39.2160453-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -215,7 +215,7 @@ public sealed class Weapon : Component
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
 			if (tr.Hit)
 			{
-				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
+				tr.GameObject.Parent.Components.TryGet<EnemyHealthComponent>( out var dummy);
 				var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
 				
 				if (dummy is not null)
