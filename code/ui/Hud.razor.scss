@@ -9,7 +9,7 @@ Hud
 	align-items: center;
 	font-weight: bold;
 	border-radius: 20px;
-
+	transition: opacity 0.5s ease-in-out;
 	.invholder
 	{
 		width: 1000px;

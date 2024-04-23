@@ -256,9 +256,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -575,8 +575,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "GetNextSlot"
+                      "_name": "GetNextSlot",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "224,128"
@@ -834,7 +834,8 @@
         },
         {
           "__type": "Kicks.Hud",
-          "__guid": "1a983748-17db-4dec-830d-adcea8582ef7"
+          "__guid": "1a983748-17db-4dec-830d-adcea8582ef7",
+          "opacity": 1
         },
         {
           "__type": "Kicks.ShopUi",
@@ -904,11 +905,18 @@
             "go": "33df18c4-2a13-45d0-bab0-82e182b87352",
             "component_type": "NavMeshAgent"
           },
-          "OnDeathAction": {
+          "players": [],
+          "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "a2a948d3-bc5e-4ee4-8857-be3a93e84668",
+          "health": 100,
+          "OnDeath": {
             "__version": 6,
-            "__guid": "f73eefca-9f35-4bc2-98af-32cba5c9a616",
+            "__guid": "a8866053-624e-46fc-82ea-d35424bdf186",
             "UserData": {
-              "Title": "On Death Action",
+              "Title": "On Death",
               "ReferencedComponentTypes": []
             },
             "Variables": [],
@@ -918,46 +926,13 @@
                 "Type": "input"
               },
               {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "496,64"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
+                "Id": 1,
+                "Type": "graph",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "graph": "actions/drop coin action.action"
                 },
                 "UserData": {
-                  "Position": "-208,208"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "-48,96"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "op.add",
-                "UserData": {
-                  "Position": "224,208"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "vec3.new",
-                "UserData": {
-                  "Position": "16,288"
+                  "Position": "224,-0"
                 }
               }
             ],
@@ -965,77 +940,17 @@
               {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 2,
+                "DstId": 1,
                 "DstName": "_signal"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "Value": "2,2,2",
-                "DstId": 2,
-                "DstName": "scale"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/coin_pickup.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
               },
               {
                 "SrcId": 0,
                 "SrcName": "_target",
-                "DstId": 3,
+                "DstId": 1,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "a"
-              },
-              {
-                "SrcId": 6,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "b"
-              },
-              {
-                "Value": 0,
-                "DstId": 6,
-                "DstName": "x"
-              },
-              {
-                "Value": 0,
-                "DstId": 6,
-                "DstName": "y"
-              },
-              {
-                "Value": 50,
-                "DstId": 6,
-                "DstName": "z"
               }
-            ],
-            "Defaults": {
-              "$8._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/coin_pickup.prefab"
-              }
-            }
-          },
-          "players": [],
-          "SpawnGibs": true
+            ]
+          }
         }
       ],
       "Children": [
@@ -1181,7 +1096,8 @@
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "d3406ff0-93ab-4921-bca8-2078ccafda83"
+          "__guid": "d3406ff0-93ab-4921-bca8-2078ccafda83",
+          "health": 100
         }
       ],
       "Children": [
@@ -1322,142 +1238,13 @@
             "go": "19990e13-8810-4367-88f9-e535682065bc",
             "component_type": "NavMeshAgent"
           },
-          "OnDeathAction": {
-            "__version": 6,
-            "__guid": "32ad7718-f28e-4ea3-914e-7f3c86770115",
-            "UserData": {
-              "Title": "On Death Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 4,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "608,48"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "-96,192"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "64,80"
-                }
-              },
-              {
-                "Id": 7,
-                "Type": "op.add",
-                "UserData": {
-                  "Position": "336,192"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "vec3.new",
-                "UserData": {
-                  "Position": "128,272"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 7,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "position"
-              },
-              {
-                "Value": "1,1,1",
-                "DstId": 4,
-                "DstName": "scale"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/light_ammo_pickup.prefab"
-                },
-                "DstId": 4,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 5,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 6,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 6,
-                "SrcName": "_result",
-                "DstId": 7,
-                "DstName": "a"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_result",
-                "DstId": 7,
-                "DstName": "b"
-              },
-              {
-                "Value": 0,
-                "DstId": 8,
-                "DstName": "x"
-              },
-              {
-                "Value": 0,
-                "DstId": 8,
-                "DstName": "y"
-              },
-              {
-                "Value": 50,
-                "DstId": 8,
-                "DstName": "z"
-              }
-            ],
-            "Defaults": {
-              "$10._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/light_ammo_pickup.prefab"
-              }
-            }
-          },
           "players": [],
           "SpawnGibs": true
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "b6a40fc8-05a0-46ac-a603-02262909dc2e"
+          "__guid": "b6a40fc8-05a0-46ac-a603-02262909dc2e",
+          "health": 100
         }
       ],
       "Children": [
@@ -1598,142 +1385,13 @@
             "go": "25f904e2-f6a2-4ec5-a70b-e08c28cc1d34",
             "component_type": "NavMeshAgent"
           },
-          "OnDeathAction": {
-            "__version": 6,
-            "__guid": "d8c7f8cb-710d-4e46-909c-c2986173feb9",
-            "UserData": {
-              "Title": "On Death Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "544,96"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "-160,240"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "-0,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "op.add",
-                "UserData": {
-                  "Position": "272,240"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "vec3.new",
-                "UserData": {
-                  "Position": "64,320"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 1,
-                "DstName": "position"
-              },
-              {
-                "Value": "1,1,1",
-                "DstId": 1,
-                "DstName": "scale"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/light_ammo_pickup.prefab"
-                },
-                "DstId": 1,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "a"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "b"
-              },
-              {
-                "Value": 0,
-                "DstId": 5,
-                "DstName": "x"
-              },
-              {
-                "Value": 0,
-                "DstId": 5,
-                "DstName": "y"
-              },
-              {
-                "Value": 50,
-                "DstId": 5,
-                "DstName": "z"
-              }
-            ],
-            "Defaults": {
-              "$7._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/light_ammo_pickup.prefab"
-              }
-            }
-          },
           "players": [],
           "SpawnGibs": true
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "6f19e9c8-635d-4f5e-a2c1-0c9e0c0dddc7"
+          "__guid": "6f19e9c8-635d-4f5e-a2c1-0c9e0c0dddc7",
+          "health": 100
         }
       ],
       "Children": [
@@ -1874,142 +1532,13 @@
             "go": "8bafe5fd-3381-4a25-a434-672c1ed3defc",
             "component_type": "NavMeshAgent"
           },
-          "OnDeathAction": {
-            "__version": 6,
-            "__guid": "bf503510-5540-48b1-a449-52fd213f5931",
-            "UserData": {
-              "Title": "On Death Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "528,128"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "-176,272"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
-                },
-                "UserData": {
-                  "Position": "-16,160"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "op.add",
-                "UserData": {
-                  "Position": "256,272"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "vec3.new",
-                "UserData": {
-                  "Position": "48,352"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 1,
-                "DstName": "position"
-              },
-              {
-                "Value": "1,1,1",
-                "DstId": 1,
-                "DstName": "scale"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/light_ammo_pickup.prefab"
-                },
-                "DstId": 1,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "a"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "b"
-              },
-              {
-                "Value": 0,
-                "DstId": 5,
-                "DstName": "x"
-              },
-              {
-                "Value": 0,
-                "DstId": 5,
-                "DstName": "y"
-              },
-              {
-                "Value": 50,
-                "DstId": 5,
-                "DstName": "z"
-              }
-            ],
-            "Defaults": {
-              "$7._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/light_ammo_pickup.prefab"
-              }
-            }
-          },
           "players": [],
           "SpawnGibs": true
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "617081fd-de51-48d6-82c9-77696862367b"
+          "__guid": "617081fd-de51-48d6-82c9-77696862367b",
+          "health": 100
         }
       ],
       "Children": [
@@ -2155,7 +1684,8 @@
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "5743b908-7a93-412e-8fe4-046c5004706b"
+          "__guid": "5743b908-7a93-412e-8fe4-046c5004706b",
+          "health": 100
         }
       ],
       "Children": [
@@ -2265,7 +1795,7 @@
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "Sky": "materials/skybox/light_test_sky_night_basic.vmat",
+          "Sky": "materials/skybox/light_test_default.vmat",
           "StartDistance": 0
         }
       ]
@@ -2387,8 +1917,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "OpenGate"
+                  "_name": "OpenGate",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "-880,-64"
@@ -2490,8 +2020,8 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
-                  "_name": "CloseGate"
+                  "_name": "CloseGate",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1600,48"
@@ -2545,9 +2075,9 @@
                 "Id": 18,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SetParent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2368,128"
@@ -2941,6 +2471,7 @@
           "__guid": "674122ee-2153-4d73-b4fe-862a1c1a4945",
           "Items": [],
           "ItemTextures": [],
+          "AllWeaponsEnabled": true,
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -3876,7 +3407,7 @@
         {
           "__type": "SceneTrigger",
           "__guid": "3ea4fec6-c6c7-402a-af78-2133eb801724",
-          "SceneFile": "scenes/thanksscene.scene"
+          "SceneFile": "scenes/demo_level2.scene"
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -3944,9 +3475,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -3956,9 +3487,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4046,9 +3577,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -4058,9 +3589,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4185,15 +3716,15 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-22T21:56:40.1125407-04:00",
+  "LastSaved": "2024-04-23T18:12:55.3597518-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.can_long",
+    "facepunch.cola_can_gib",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
     "facepunch.plastic_crate_01",
-    "facepunch.soda_can",
     "luke.office_desk",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630"

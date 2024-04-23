@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">DEAD 4 LEFT 2</div>
+	<div class="levelselect">
+		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The escape</div>
+		<div class="level" onclick=@(() => OpenScene(GameScenes[1]))>Warehouse</div>
+	</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	[Property] public List<SceneFile> GameScenes { get; set; } = new();
+
+	void OpenScene(SceneFile sceneFile)
+	{
+		Game.ActiveScene.Load( sceneFile );
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+}

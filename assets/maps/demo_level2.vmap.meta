@@ -40,7 +40,18 @@
         "facepunch.plaster_hs_01#33578",
         "facepunch.decal_damp_leak_01a#47065",
         "facepunch.floor_tile_blend_01#28812",
-        "facepunch.stickers_1#33877"
+        "facepunch.stickers_1#33877",
+        "facepunch.ceiling_plaster_01#33577",
+        "facepunch.wooden_crate#29138",
+        "facepunch.fence_panel_large#44051",
+        "facepunch.wet_floor_sign#19202",
+        "facepunch.telephone_box_no_door#33639",
+        "facepunch.wired_glass_b#19957",
+        "audiotrope.streetlight#50767",
+        "facepunch.glass_c#19949",
+        "facepunch.metal_trim_01#43480",
+        "facepunch.wooden_crate_02#43575",
+        "facepunch.packing_tape#33719"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

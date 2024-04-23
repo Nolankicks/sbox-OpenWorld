@@ -2,7 +2,7 @@ using Sandbox;
 namespace Kicks;
 public sealed class EnemyHealthComponent : Component
 {
-	[Sync] public int health { get; set; } = 100;
+	[Property, Sync] public int health { get; set; } = 100;
 	public delegate void OnHurtDelgate(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
 	public delegate void OnDeathDelegate(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
 	[Property] public OnHurtDelgate OnHurt { get; set; }
