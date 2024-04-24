@@ -12,6 +12,16 @@ public sealed class AmmoContainer : Component
 	[Property, Sync] public int LightAmmo { get; set; }
 	[Property, Sync] public int ShotgunShells { get; set; }
 	[Property, Sync] public int HeavyAmmo { get; set; }
+	[Property, Sync] public int StartingLightAmmo { get; set; }
+	[Property, Sync] public int StartingShotgunShells { get; set; }
+	[Property, Sync] public int StartingHeavyAmmo { get; set; }
+
+	protected override void OnStart()
+	{
+		StartingLightAmmo = LightAmmo;
+		StartingShotgunShells = ShotgunShells;
+		StartingHeavyAmmo = HeavyAmmo;
+	}
 	public int GetAmmo(AmmoTypes ammo)
 	{
 		switch (ammo)
@@ -56,5 +66,12 @@ public sealed class AmmoContainer : Component
 		{
 			HeavyAmmo = 0;
 		}
+	}
+
+	public void ResetAmmo()
+	{
+		LightAmmo = StartingLightAmmo;
+		ShotgunShells = StartingShotgunShells;
+		HeavyAmmo = StartingHeavyAmmo;
 	}
 }

@@ -34,6 +34,11 @@
           "go": "e31f3222-0db8-4714-ad80-12253b367153",
           "component_type": "CitizenAnimationHelper"
         },
+        "body": {
+          "_type": "gameobject",
+          "go": "e31f3222-0db8-4714-ad80-12253b367153"
+        },
+        "ChangeScene": true,
         "GibGameObject": {
           "_type": "gameobject",
           "prefab": "prefabs/zombiegibs.prefab"
@@ -49,7 +54,8 @@
       },
       {
         "__type": "Kicks.EnemyHealthComponent",
-        "__guid": "a125a851-ee40-42e1-a94c-aa03e44b4b6e"
+        "__guid": "a125a851-ee40-42e1-a94c-aa03e44b4b6e",
+        "health": 100
       }
     ],
     "Children": [

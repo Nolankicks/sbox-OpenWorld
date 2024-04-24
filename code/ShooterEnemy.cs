@@ -8,6 +8,7 @@ public sealed class ShooterEnemy : Component, Component.ITriggerListener
 	[Property] public CitizenAnimationHelper citizenAnimationHelper { get; set; }
 	[Property] public NavMeshAgent navMeshAgent { get; set; }
 	[Sync] Vector3 WishVelocity { get; set; }
+	[Property] public GameObject body { get; set; }
 	[Sync] Vector3 Velocity { get; set; }
 	[Sync] int health { get; set; } = 100;
 	[Property] public SoundEvent ShootSound { get; set; }
@@ -53,21 +54,26 @@ async Task FindPlayer()
 	{
 	while (true)
 	{
-		var tr = Scene.Trace.Ray(Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 1000).WithoutTags("enemy").Run();
-		if (!tr.Hit) return;
-		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
-		if (player is not null)
-		{
-			player.TakeDamage(10);
-			citizenAnimationHelper.Target.Set("b_attack", true);
-			Sound.Play(ShootSound, tr.EndPosition);
-		}
+		Attack();
 		await Task.DelaySeconds(3);
 	}
 	}
 
 	CancellationTokenSource lookAtPlayerCts;
-
+void Attack()
+{
+		var tr = Scene.Trace.Ray(new Ray(Transform.Position + Vector3.Up * 55, Transform.Rotation.Forward), 5000).WithoutTags("enemy").Run();
+		if (!tr.Hit) return;
+		Log.Info(tr.GameObject);
+		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+		if (player is not null)
+		{
+			Log.Info("Hit player");
+			player.TakeDamage(10);
+			citizenAnimationHelper.Target.Set("b_attack", true);
+			Sound.Play(ShootSound, tr.EndPosition);
+		}
+}
 void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 	{
 		Log.Info("Triggered");

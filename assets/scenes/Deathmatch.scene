@@ -305,8 +305,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "368,96"
@@ -365,7 +365,10 @@
           "__guid": "ca807bea-11f7-4663-b867-9d741aac7219",
           "HeavyAmmo": 30,
           "LightAmmo": 30,
-          "ShotgunShells": 30
+          "ShotgunShells": 30,
+          "StartingHeavyAmmo": 0,
+          "StartingLightAmmo": 0,
+          "StartingShotgunShells": 0
         }
       ],
       "Children": [
@@ -1335,7 +1338,7 @@
           "Dummies": [],
           "Dummy": {
             "_type": "gameobject",
-            "prefab": "prefabs/zombie.prefab"
+            "go": "602d3496-988a-4968-8f35-19c6285407e2"
           },
           "SpawnLocations": [
             {
@@ -1361,6 +1364,14 @@
             {
               "_type": "gameobject",
               "go": "d3f2de85-304a-4777-afa3-944853ae60dc"
+            },
+            {
+              "_type": "gameobject",
+              "go": "154613cc-da54-4b7c-9550-866a7fd4ef76"
+            },
+            {
+              "_type": "gameobject",
+              "go": "17c2a159-0507-4650-9e70-c5c1c62cac7f"
             }
           ]
         }
@@ -1407,6 +1418,278 @@
       "Position": "-1801.928,2296.099,279.9944",
       "Enabled": true,
       "NetworkMode": 2
+    },
+    {
+      "__guid": "154613cc-da54-4b7c-9550-866a7fd4ef76",
+      "Name": "Ammo Spawn 6 (1)",
+      "Position": "-1693.342,1148.283,328.741",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "17c2a159-0507-4650-9e70-c5c1c62cac7f",
+      "Name": "Ammo Spawn 6 (3)",
+      "Position": "-785.0284,-816.0422,405.3192",
+      "Enabled": true,
+      "NetworkMode": 2
+    },
+    {
+      "__guid": "602d3496-988a-4968-8f35-19c6285407e2",
+      "Name": "zombie",
+      "Position": "-405.3969,849.0869,239.8515",
+      "Rotation": "0.00000001900674,0.00000001900675,0.7071069,0.7071067",
+      "Tags": "dummy",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "6b4816d2-3875-4dee-8c7e-4f3c473658d7",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "2000,2000,2000",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.NavMeshAgent",
+          "__guid": "ce300588-f5f8-4876-865d-8fb20ac0a3a3",
+          "Acceleration": 1000,
+          "Height": 64,
+          "MaxSpeed": 150,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true,
+          "UpdateRotation": false
+        },
+        {
+          "__type": "Kicks.Dummy",
+          "__guid": "5d059ae5-dc1d-4b74-9134-a2e0f3c74b30",
+          "animationHelper": {
+            "_type": "component",
+            "component_id": "13f956e4-1acf-4fd9-aa1e-fc2f4981b475",
+            "go": "07920133-5e92-4a62-90f9-7d9a019f441b",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "body": {
+            "_type": "gameobject",
+            "go": "07920133-5e92-4a62-90f9-7d9a019f441b"
+          },
+          "ChangeScene": false,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "ce300588-f5f8-4876-865d-8fb20ac0a3a3",
+            "go": "602d3496-988a-4968-8f35-19c6285407e2",
+            "component_type": "NavMeshAgent"
+          },
+          "players": [],
+          "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "69504df3-1dd4-438e-a59a-6bd715fc26fe",
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "5c8b5558-7fe5-4291-a8f7-6e479b0c7393",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "464,0"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-160,128"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "64,112"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "80,192"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 1,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$7._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "07920133-5e92-4a62-90f9-7d9a019f441b",
+          "Name": "body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "08f84bf5-5df0-42a9-9d2e-0be7120f61bc",
+              "BodyGroups": 0,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "13f956e4-1acf-4fd9-aa1e-fc2f4981b475",
+              "BodyWeight": 1,
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "c00ce0be-1c1e-45ba-ab44-2e16d835c015"
+              },
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": true,
+              "Target": {
+                "_type": "component",
+                "component_id": "08f84bf5-5df0-42a9-9d2e-0be7120f61bc",
+                "go": "07920133-5e92-4a62-90f9-7d9a019f441b",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "1474f75c-990c-4846-8258-e2fd8f0ac7e3",
+              "Name": "Cloths",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "d25ea534-d32f-4290-b438-3263bc13fbe4",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "08f84bf5-5df0-42a9-9d2e-0be7120f61bc",
+                    "go": "07920133-5e92-4a62-90f9-7d9a019f441b",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "0aeaefb4-0271-4a5f-83ce-14c4e825b778",
+          "Name": "Collider",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "06f3f9b8-716f-43f0-89cc-838ef3b45390",
+              "End": "0,0,54.37019",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Start": "0,0,0",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "c00ce0be-1c1e-45ba-ab44-2e16d835c015",
+          "Name": "eyes",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1432,7 +1715,7 @@
   },
   "Title": "deathmatch",
   "Description": "",
-  "LastSaved": "2024-04-24T14:13:36.2863685-04:00",
+  "LastSaved": "2024-04-24T18:06:22.826982-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

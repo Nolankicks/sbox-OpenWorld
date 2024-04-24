@@ -8,11 +8,13 @@ public sealed class Dummy : Component, Component.ITriggerListener
 {
 	[Sync] int health { get; set; } = 100;
 	[Property] public NavMeshAgent navMeshAgent { get; set; }
+	[Property] public GameObject body { get; set; }
 	[Property] public List<GameObject> players { get; set; } = new();
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
-	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }	
+	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }
+	[Property, Sync] public bool ChangeScene { get; set; } = true;
 	[Property] public GameObject ItemDrop { get; set; }
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Sync] public Vector3 Velocity { get; set; }
@@ -77,18 +79,18 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	}
 
 	
-	void Attack()
+void Attack()
 	{
-		var tr = Scene.Trace.Ray(GameObject.Transform.Position, Transform.Position + Vector3.Up * 55 + Transform.Rotation.Forward * 300).WithoutTags("dummy").Run();
+		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 500).WithoutTags("dummy").Run();
 		if (!tr.Hit) return;
-		if (tr.GameObject is null) return;
-		tr.GameObject.Parent.Components.TryGet<PlayerController>(out var player);
+		//Gizmo.Draw.Line(tr.StartPosition, tr.EndPosition);
+		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+		Log.Info(tr.GameObject);
 		if (tr.Hit && player is not null)
 		{
-			Log.Info("Hit Player");
-			player.TakeDamage(15);
 			animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 			animationHelper.Target.Set("b_attack", true);
+			player.TakeDamage(10);
 		}
 		
 	}
@@ -98,14 +100,15 @@ public sealed class Dummy : Component, Component.ITriggerListener
 		while (true)
 		{
 			Attack();
-			Log.Info("attack");
+
+			Log.Info("Attacking");
 			try
 			{
 				await Task.DelaySeconds(1);
 			}
 			catch (TaskCanceledException)
 			{
-				return;
+				break;
 			}
 		}
 	}

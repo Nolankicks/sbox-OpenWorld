@@ -24,7 +24,7 @@ public sealed class PlayerController : Component
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	
-
+	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;
 
@@ -33,6 +33,7 @@ public sealed class PlayerController : Component
 		var steamId = Steam.SteamId.ToString();
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 	}
 	private void MouseInput()
 	{
@@ -285,6 +286,7 @@ public sealed class PlayerController : Component
 			var selectedPoint = Game.Random.FromList(spawnPoints);
 			Transform.World = selectedPoint.Transform.World;
 			Health = 100;
+			AmmoContainer.ResetAmmo();
 		}
 		else
 		{

@@ -895,6 +895,11 @@
             "go": "d7808a0e-2607-4be6-9d81-d2238f22d508",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "d7808a0e-2607-4be6-9d81-d2238f22d508"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1081,6 +1086,11 @@
             "go": "721eb08b-2369-41bd-a877-2e3b9ffc6c2f",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "721eb08b-2369-41bd-a877-2e3b9ffc6c2f"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1228,6 +1238,11 @@
             "go": "fbdab401-eb21-4709-aba5-d5915ae300fd",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "fbdab401-eb21-4709-aba5-d5915ae300fd"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1375,6 +1390,11 @@
             "go": "ea6617dc-4261-4e85-9f73-4205b72ec865",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "ea6617dc-4261-4e85-9f73-4205b72ec865"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1522,6 +1542,11 @@
             "go": "f07763c8-91fb-49f8-b00d-986c12139ae4",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "f07763c8-91fb-49f8-b00d-986c12139ae4"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1669,6 +1694,11 @@
             "go": "98a4d122-d0bb-4cf7-8569-8d91aaea3984",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "98a4d122-d0bb-4cf7-8569-8d91aaea3984"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -2486,7 +2516,10 @@
           "__guid": "694e873a-f696-4117-b8e1-2d8aca5016db",
           "HeavyAmmo": 30,
           "LightAmmo": 30,
-          "ShotgunShells": 30
+          "ShotgunShells": 30,
+          "StartingHeavyAmmo": 0,
+          "StartingLightAmmo": 0,
+          "StartingShotgunShells": 0
         }
       ],
       "Children": [
@@ -3718,7 +3751,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-24T14:50:45.9839008-04:00",
+  "LastSaved": "2024-04-24T18:00:26.2220931-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
