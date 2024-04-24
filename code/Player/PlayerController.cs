@@ -17,7 +17,7 @@ public sealed class PlayerController : Component
 	[Property, Sync] public Angles eyeAngles { get; set; }
 	[Sync] public bool IsGrabbing { get; set; } = false;
 	[Property] public Interactor Interactor { get; set; }
-	[Sync] public float Health { get; set; } = 100;
+	[Property, Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
 	[Property] public SceneFile SceneFile { get; set; }
@@ -284,6 +284,7 @@ public sealed class PlayerController : Component
 			var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 			var selectedPoint = Game.Random.FromList(spawnPoints);
 			Transform.World = selectedPoint.Transform.World;
+			Health = 100;
 		}
 		else
 		{

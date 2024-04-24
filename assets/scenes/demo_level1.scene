@@ -1795,7 +1795,7 @@
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "Sky": "materials/skybox/light_test_default.vmat",
+          "Sky": "materials/skybox/skybox_overcast_01.vmat",
           "StartDistance": 0
         }
       ]
@@ -2452,6 +2452,7 @@
           "Coins": 0,
           "CrouchSpeed": 50,
           "eyeAngles": "0,0,0",
+          "Health": 100,
           "Hold": {
             "_type": "gameobject",
             "go": "5e9e67de-5b4e-4986-8fa6-d9fac37ae794"
@@ -3717,7 +3718,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-24T11:44:43.0167591-04:00",
+  "LastSaved": "2024-04-24T14:39:51.6842769-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

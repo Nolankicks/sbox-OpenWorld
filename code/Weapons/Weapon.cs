@@ -186,13 +186,18 @@ public sealed class Weapon : Component
 			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags(Steam.SteamId.ToString()).Run();
 			if (tr.Hit)
 			{
-				tr.GameObject.Parent.Components.TryGet<EnemyHealthComponent>( out var dummy, FindMode.EverythingInSelfAndParent);
+				tr.GameObject.Components.TryGet<EnemyHealthComponent>( out var dummy, FindMode.EverythingInSelfAndParent);
+				tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 				var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
 				
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage, GameObject.Parent.Id);
 					BloodParticle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
+				}
+				else if (player is not null)
+				{
+					player.TakeDamage(Damage, false);
 				}
 				else
 				{

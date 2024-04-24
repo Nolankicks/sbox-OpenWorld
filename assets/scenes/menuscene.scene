@@ -422,8 +422,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -730,8 +730,8 @@
                     "Type": "call",
                     "Properties": {
                       "_name": "AddAmmo",
-                      "_type": "package.nolankicks.dead4left2/Inventory",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_type": "package.nolankicks.dead4left2/Inventory"
                     },
                     "UserData": {
                       "Position": "448,0"
@@ -1040,11 +1040,12 @@
         {
           "__type": "MenuUi",
           "__guid": "9ada1625-fd07-40c7-9c4f-f540325c67c6",
+          "DeathmatchScene": "scenes/deathmatch.scene",
           "GameScenes": [
             "scenes/demo_level1.scene",
             "scenes/demo_level2.scene"
           ],
-          "MyStringValue": "Hello World!"
+          "ShowLobby": false
         }
       ]
     },
@@ -1088,7 +1089,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-04-24T09:42:10.4347043-04:00",
+  "LastSaved": "2024-04-24T13:21:26.8409451-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

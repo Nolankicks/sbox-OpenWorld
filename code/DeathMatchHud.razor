@@ -1,0 +1,34 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	@if (ConnectionsZero)
+	{
+		<div style="position: absolute; left: 12px; bottom: 12px; font-family: poppins;">Waiting for players...</div>
+	}
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	public bool ConnectionsZero { get; set; }
+
+	protected override void OnFixedUpdate()
+	{
+		if (Connection.All.Count == 1)
+		{
+			ConnectionsZero = true;
+		}
+		else
+		{
+			ConnectionsZero = false;
+		}
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

@@ -35,6 +35,8 @@
         },
         "Coins": 50,
         "CrouchSpeed": 50,
+        "eyeAngles": "0,0,0",
+        "Health": 100,
         "Hold": {
           "_type": "gameobject",
           "go": "9a1320a2-76a8-4878-9c21-202405e2a4a9"
@@ -45,15 +47,16 @@
           "go": "2424bd86-9325-4b43-96ff-38e5099d1df3",
           "component_type": "Interactor"
         },
-        "RunSpeed": 200,
+        "RunSpeed": 300,
         "ShowShopUi": false,
-        "WalkSpeed": 100
+        "WalkSpeed": 200
       },
       {
         "__type": "Inventory",
         "__guid": "4bb66703-56e2-4439-b53e-9304f89ea762",
         "Items": [],
         "ItemTextures": [],
+        "AllWeaponsEnabled": true,
         "StartingItems": [],
         "TestTexture": "textures/player_spritesheet_1.vtex"
       },
