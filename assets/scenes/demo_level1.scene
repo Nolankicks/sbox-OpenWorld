@@ -1795,7 +1795,7 @@
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "Sky": "materials/skybox/skybox_overcast_01.vmat",
+          "Sky": "materials/skybox/skybox_day_01.vmat",
           "StartDistance": 0
         }
       ]
@@ -3718,7 +3718,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-24T14:39:51.6842769-04:00",
+  "LastSaved": "2024-04-24T14:50:45.9839008-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
