@@ -29,7 +29,8 @@
           "component_id": "b58a7400-480a-41ad-bac0-a42e8e7cff1e",
           "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
           "component_type": "NavMeshAgent"
-        }
+        },
+        "ShootSound": "sounds/dead4left2shootsound.sound"
       },
       {
         "__type": "Sandbox.NavMeshAgent",
@@ -58,7 +59,8 @@
       },
       {
         "__type": "Kicks.EnemyHealthComponent",
-        "__guid": "97ad66c3-fda0-495a-9860-3eefa8d3ef58"
+        "__guid": "97ad66c3-fda0-495a-9860-3eefa8d3ef58",
+        "health": 100
       },
       {
         "__type": "Sandbox.BoxCollider",

@@ -51,7 +51,8 @@
         "facepunch.glass_c#19949",
         "facepunch.metal_trim_01#43480",
         "facepunch.wooden_crate_02#43575",
-        "facepunch.packing_tape#33719"
+        "facepunch.packing_tape#33719",
+        "saandy.caged_light01_wall#35996"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

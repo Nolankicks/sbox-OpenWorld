@@ -10,6 +10,7 @@ public sealed class ShooterEnemy : Component, Component.ITriggerListener
 	[Sync] Vector3 WishVelocity { get; set; }
 	[Sync] Vector3 Velocity { get; set; }
 	[Sync] int health { get; set; } = 100;
+	[Property] public SoundEvent ShootSound { get; set; }
 	protected override void OnStart()
 	{
 		_ = FindPlayer();
@@ -59,6 +60,7 @@ async Task FindPlayer()
 		{
 			player.TakeDamage(10);
 			citizenAnimationHelper.Target.Set("b_attack", true);
+			Sound.Play(ShootSound, tr.EndPosition);
 		}
 		await Task.DelaySeconds(3);
 	}

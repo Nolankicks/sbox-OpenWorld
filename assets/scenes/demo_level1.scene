@@ -1939,8 +1939,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "MoveTo",
-                  "_type": "Sandbox.Game/Sandbox.CharacterController",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.CharacterController"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2463,6 +2463,7 @@
             "component_type": "Interactor"
           },
           "RunSpeed": 300,
+          "SceneFile": "scenes/demo_level1.scene",
           "ShowShopUi": false,
           "WalkSpeed": 200
         },
@@ -3716,15 +3717,15 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-23T18:12:55.3597518-04:00",
+  "LastSaved": "2024-04-24T11:44:43.0167591-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.can_long",
-    "facepunch.cola_can_gib",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
     "facepunch.plastic_crate_01",
+    "facepunch.soda_can",
     "luke.office_desk",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630"

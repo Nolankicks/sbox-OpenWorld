@@ -32,7 +32,7 @@
     {
       "__guid": "110c7acd-665b-42a4-b987-d02629a0cc28",
       "Name": "wooden_crate (2)",
-      "Position": "-1133.945,951.2662,33.54415",
+      "Position": "-1132.843,952.3681,33.54415",
       "Rotation": "0,0,0.3826834,0.9238797",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1088,7 +1088,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-04-23T18:14:20.6645504-04:00",
+  "LastSaved": "2024-04-24T09:42:10.4347043-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

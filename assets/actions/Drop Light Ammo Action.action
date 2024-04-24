@@ -23,28 +23,6 @@
         }
       },
       {
-        "Id": 2,
-        "Type": "property",
-        "Properties": {
-          "_type": "Sandbox.Game/Sandbox.GameObject",
-          "_name": "Transform"
-        },
-        "UserData": {
-          "Position": "-80,224"
-        }
-      },
-      {
-        "Id": 3,
-        "Type": "property",
-        "Properties": {
-          "_type": "Sandbox.Game/Sandbox.GameTransform",
-          "_name": "Position"
-        },
-        "UserData": {
-          "Position": "112,192"
-        }
-      },
-      {
         "Id": 4,
         "Type": "op.add",
         "UserData": {
@@ -56,6 +34,28 @@
         "Type": "vec3.new",
         "UserData": {
           "Position": "80,320"
+        }
+      },
+      {
+        "Id": 10,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameObject",
+          "_name": "Transform"
+        },
+        "UserData": {
+          "Position": "-288,192"
+        }
+      },
+      {
+        "Id": 11,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameTransform",
+          "_name": "Position"
+        },
+        "UserData": {
+          "Position": "-0,176"
         }
       }
     ],
@@ -81,19 +81,7 @@
         "DstName": "target"
       },
       {
-        "SrcId": 0,
-        "SrcName": "target",
-        "DstId": 2,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 2,
-        "SrcName": "_result",
-        "DstId": 3,
-        "DstName": "_target"
-      },
-      {
-        "SrcId": 3,
+        "SrcId": 11,
         "SrcName": "_result",
         "DstId": 4,
         "DstName": "a"
@@ -118,6 +106,18 @@
         "Value": 55,
         "DstId": 5,
         "DstName": "z"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 10,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 10,
+        "SrcName": "_result",
+        "DstId": 11,
+        "DstName": "_target"
       }
     ]
   },

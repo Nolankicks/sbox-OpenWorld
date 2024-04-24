@@ -1,5 +1,5 @@
 {
-  "__guid": "523d600c-76db-4e18-b412-1e9ad269421b",
+  "__guid": "02882d46-4514-490d-90bd-984571212087",
   "GameObjects": [
     {
       "__guid": "8e6b089d-d8f4-4f5e-9796-c4755f3b74af",
@@ -3781,7 +3781,8 @@
             "component_id": "707668b7-a882-4070-a81f-65e3ac7a11c9",
             "go": "ab4c24a2-0008-4713-b96a-540aae31aa79",
             "component_type": "NavMeshAgent"
-          }
+          },
+          "ShootSound": "sounds/dead4left2shootsound.sound"
         },
         {
           "__type": "Sandbox.NavMeshAgent",
@@ -4919,7 +4920,8 @@
             "component_id": "c858e9e8-240c-4f51-b884-4e0a36c09616",
             "go": "d0a80f55-2c67-482c-9780-db021b0ef4cd",
             "component_type": "NavMeshAgent"
-          }
+          },
+          "ShootSound": "sounds/dead4left2shootsound.sound"
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
@@ -4939,13 +4941,13 @@
                 "Type": "input"
               },
               {
-                "Id": 1,
+                "Id": 3,
                 "Type": "graph",
                 "Properties": {
                   "graph": "actions/drop light ammo action.action"
                 },
                 "UserData": {
-                  "Position": "320,0"
+                  "Position": "336,0"
                 }
               }
             ],
@@ -4953,14 +4955,14 @@
               {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 1,
+                "DstId": 3,
                 "DstName": "_signal"
               },
               {
                 "SrcId": 0,
                 "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "target"
+                "DstId": 3,
+                "DstName": "_target"
               }
             ]
           }
@@ -6056,7 +6058,8 @@
             "component_id": "bf1b39b3-6adc-4481-afc8-086165562acc",
             "go": "bc5bbad6-c75e-4173-a8ce-90df5777c048",
             "component_type": "NavMeshAgent"
-          }
+          },
+          "ShootSound": "sounds/dead4left2shootsound.sound"
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
@@ -6076,13 +6079,13 @@
                 "Type": "input"
               },
               {
-                "Id": 1,
+                "Id": 2,
                 "Type": "graph",
                 "Properties": {
                   "graph": "actions/drop light ammo action.action"
                 },
                 "UserData": {
-                  "Position": "320,0"
+                  "Position": "288,0"
                 }
               }
             ],
@@ -6090,14 +6093,14 @@
               {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 1,
+                "DstId": 2,
                 "DstName": "_signal"
               },
               {
                 "SrcId": 0,
                 "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "target"
+                "DstId": 2,
+                "DstName": "_target"
               }
             ]
           }
@@ -7734,7 +7737,7 @@
                 "DstName": "_target"
               },
               {
-                "Value": "scenes/thanksscene.scene",
+                "Value": "scenes/menuscene.scene",
                 "DstId": 28,
                 "DstName": "scene"
               }
@@ -7793,9 +7796,27 @@
       ]
     },
     {
+      "__guid": "3811b169-e10d-40a5-ac3a-ee787ba8e8b3",
+      "Name": "wooden_crate (3)",
+      "Position": "-247.7263,5627.031,1055.975",
+      "Rotation": "0,0,0.2659411,0.9639893",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "d68b6f89-0a31-4234-9508-8fe0097485f7",
+          "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+        }
+      ]
+    },
+    {
       "__guid": "62c80cec-cf34-4a4e-b994-ca6b5a280b6f",
       "Name": "wooden_crate",
-      "Position": "-304.9987,5623.152,1024",
+      "Position": "-299.274,5626.623,1024",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -7812,7 +7833,7 @@
     {
       "__guid": "09160b10-81af-4ad9-8c4b-67a0a0c09335",
       "Name": "wooden_crate",
-      "Position": "-247.6542,5593.244,1024",
+      "Position": "-247.6542,5599.071,1024",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -8059,12 +8080,19 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "15dc0c95-19fe-49fa-af35-5a7310d06150",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "2517f173-ca1f-4775-98f1-52db0b7d27e5",
           "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "models/sbox_props/binbags/binbag_pile_a1.vmdl"
+          "Model": "models/sbox_props/binbags/binbag_pile_a1.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "0cea1647-0343-4dbd-9dfa-0ace1a6a18af",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/binbags/binbag_pile_a1.vmdl",
+          "Static": false
         }
       ]
     },
@@ -8096,12 +8124,19 @@
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "045f2d0d-dd52-4a65-9b4e-7ea2f1794c67",
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b214e4a2-75ca-4410-957c-fb847dae9440",
           "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "models/sbox_props/binbags/binbag_pile_a2.vmdl"
+          "Model": "models/sbox_props/binbags/binbag_pile_a2.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "31be5a76-3cd8-4aee-a88a-038e146d2088",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/binbags/binbag_pile_a2.vmdl",
+          "Static": false
         }
       ]
     },
@@ -8344,6 +8379,256 @@
           "Model": "models/props/wet_floor_sign/wet_floor_sign.vmdl"
         }
       ]
+    },
+    {
+      "__guid": "18394209-fa93-4853-acba-6424ed61e7df",
+      "Name": "plastic_bucket_a",
+      "Position": "-286.5371,5578.763,1024",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "a655a26b-2192-48c6-b50b-1ea2b079d251",
+          "BodyGroups": 18446744073709551615,
+          "Health": 300,
+          "IsStatic": false,
+          "Model": "models/sbox_props/plastic_bucket_a/plastic_bucket_a.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "766421c5-5fc5-4bc6-8114-186293043919",
+      "Name": "electrical_tape",
+      "Position": "-330.3385,5625.755,1024.698",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "4cfcfadb-6905-426e-82f4-c9d5f5fbdb5a",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "2292401a-c470-4ebc-9409-d1aedd2b4c72",
+      "Name": "electrical_tape",
+      "Position": "-334.3441,5625.169,1024.698",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "94712263-20cc-4294-87e8-c9bf4f842b8f",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "3dcd8b0b-3088-45ca-8a29-d0082764d38c",
+      "Name": "electrical_tape",
+      "Position": "-330.6069,5625.725,1025.598",
+      "Rotation": "-0.00000002980232,0.000000005995774,0.9999999,0.00000001798732",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "861c5072-4f28-4ebf-a483-b79065399499",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "fec094c8-9793-43b4-aec6-0e7aa205c71a",
+      "Name": "electrical_tape",
+      "Position": "-334.2027,5625.238,1025.598",
+      "Rotation": "-0.00000002980232,0.000000005995774,0.9999999,0.00000001798732",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "60496440-4a2c-4fac-8405-9234b1c3a45e",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "383c838d-f6fc-47c4-bf41-b9b8de50034c",
+      "Name": "electrical_tape",
+      "Position": "-331.5734,5622.43,1024.698",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "c3a24525-28d4-4efd-95b7-1aac4a60943d",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "be920081-ed08-4f2b-a886-062659443d75",
+      "Name": "storage_plastic_box_01",
+      "Position": "-386.1026,5594.253,1024",
+      "Rotation": "0,0,-0.2848549,0.9585707",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "0f5a2b64-ddaa-4f7b-9eb0-30ab26ea45a6",
+          "BodyGroups": 18446744073709551615,
+          "Health": 25,
+          "IsStatic": false,
+          "MaterialGroup": "default",
+          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "a0277692-52d9-4dcb-b498-1f7f8b0c1a0c",
+      "Name": "bugbody",
+      "Position": "-334.7318,5628.514,1024.248",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "480527b2-8a3c-44e9-bd7b-aefa9f0e5794",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/spraycans/bugbody.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "e5a147a4-e745-4964-b17a-008e0f91201f",
+      "Name": "street_bin",
+      "Position": "-888,4016.269,1024.054",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "52209552-7d36-4722-ae9e-b274a75a7f19",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sbox_props/bin/street_bin.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "9755c17d-4b7d-4ff9-8b54-edd5df2b9ee2",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/bin/street_bin.vmdl",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "17c8da73-119d-43e9-ad38-add7a2216a26",
+      "Name": "oilbody",
+      "Position": "-338.1332,5628.932,1024.249",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "b0f2aae1-5a87-439d-bae0-588a041856ed",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/spraycans/oilbody.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "dd723a7c-dd1c-4753-b2ba-7f724d2d4ab1",
+      "Name": "paintbody",
+      "Position": "-338.9042,5625.573,1024.248",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "1fd120b1-6258-492a-8c6c-c7a63838fec6",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/props/spraycans/paintbody.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "f42b9b04-8ca8-41bd-b31d-212fe3cd0c93",
+      "Name": "cola_can",
+      "Position": "-341.8094,5627.885,1024.282",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "e8519934-94d1-4394-8c8d-379ff3dee261",
+          "BodyGroups": 18446744073709551615,
+          "Health": 10,
+          "IsStatic": false,
+          "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+        }
+      ]
+    },
+    {
+      "__guid": "82d4da77-7fe3-4358-9d7c-e91e401b51c9",
+      "Name": "trash_pile_a_02",
+      "Position": "836.2238,5675.953,1024.21",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b105ff9a-bfa0-406f-ae27-b805a8fcfc90",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/props/trash_pile_a/trash_pile_a_02.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "54efa3b2-f747-4cdd-9945-89621918d58a",
+      "Name": "ivy_fresh_06a",
+      "Position": "519.9978,5566.442,1028.001",
+      "Rotation": "0.00000005960464,0.00000005960464,-0.7071066,0.7071066",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "376519a8-8672-41c1-a7ab-dc2a242cb367",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/nature/ivy_fresh/ivy_fresh_06/ivy_fresh_06a.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -8369,7 +8654,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-23T18:19:11.8774576-04:00",
+  "LastSaved": "2024-04-24T11:30:41.2350305-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -8381,13 +8666,20 @@
     "facepunch.can_long",
     "facepunch.can_small",
     "facepunch.can_standard",
-    "facepunch.cola_can_gib",
+    "facepunch.electrical_tape",
+    "facepunch.ivy_fresh_06a",
     "facepunch.office_chair",
     "facepunch.oilcanbody",
     "facepunch.packing_tape",
+    "facepunch.paintspraycan",
     "facepunch.plastic_crate_01",
     "facepunch.plastic_crate_04",
+    "facepunch.plasticbucketa1",
     "facepunch.saw_blade_a",
+    "facepunch.soda_can",
+    "facepunch.storage_plastic_box_01",
+    "facepunch.street_bin",
+    "facepunch.trash_pile_a_02",
     "facepunch.w_usp",
     "facepunch.wet_floor_sign",
     "facepunch.wheely_bin",

@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.Utility;
 namespace Kicks;
 public sealed class PlayerController : Component
 {
@@ -29,7 +30,9 @@ public sealed class PlayerController : Component
 
 	protected override void OnStart()
 	{
-		
+		var steamId = Steam.SteamId.ToString();
+		GameObject.Tags.Add(steamId);
+		CharacterController.IgnoreLayers.Add(steamId);
 	}
 	private void MouseInput()
 	{
@@ -236,13 +239,20 @@ public sealed class PlayerController : Component
 	}
 
 	[Broadcast]
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, bool ChangeScene = true)
 	{
 		if (IsProxy) return;
 		Health -= damage;
 		if (Health <= 0)
 		{
-			Kill();
+			if (ChangeScene)
+			{
+				Kill();
+			}
+			else
+			{
+				Kill(true);
+			}
 		}
 	}
 
@@ -267,8 +277,17 @@ public sealed class PlayerController : Component
 	{
 		Heal(amount);
 	}
-	void Kill()
+	void Kill(bool Respawn = false)
 	{
-		Game.ActiveScene.Load(SceneFile);
+		if (Respawn)
+		{
+			var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+			var selectedPoint = Game.Random.FromList(spawnPoints);
+			Transform.World = selectedPoint.Transform.World;
+		}
+		else
+		{
+			Game.ActiveScene.Load(SceneFile);
+		}
 	}
 }

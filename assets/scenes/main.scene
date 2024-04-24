@@ -65,7 +65,8 @@
         },
         {
           "__type": "Kicks.Hud",
-          "__guid": "4d415076-3d0d-45df-bb18-9cf90f0d9550"
+          "__guid": "4d415076-3d0d-45df-bb18-9cf90f0d9550",
+          "opacity": 1
         },
         {
           "__type": "Kicks.ShopUi",
@@ -78,12 +79,13 @@
     {
       "__guid": "2e5d2a50-d1cd-403a-96cc-1f3cfddaa30e",
       "Name": "Network",
+      "Position": "-416,0,96",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.NetworkHelper",
-          "__guid": "55d0e907-b843-4705-8b00-c95b938034bd",
+          "__type": "NetworkManager",
+          "__guid": "a7e157e9-caf0-409b-9e4e-68d6d30764b9",
           "PlayerPrefab": {
             "_type": "gameobject",
             "prefab": "prefabs/startingplayer.prefab"
@@ -1885,8 +1887,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -2493,7 +2495,8 @@
         },
         {
           "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "91a07ba6-0117-418b-9fb7-0480e6f55d77"
+          "__guid": "91a07ba6-0117-418b-9fb7-0480e6f55d77",
+          "health": 100
         }
       ],
       "Children": [
@@ -3349,20 +3352,137 @@
       ]
     },
     {
-      "__guid": "e86a8aae-8024-4666-bd87-084d4d860abb",
-      "Name": "Map",
-      "Position": "-127.41,-121.7767,98.44094",
+      "__guid": "ff5ff9d2-f4ca-49d6-9cc0-cc06fe7a704a",
+      "Name": "Box",
+      "Position": "0,0,63.99534",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.MapInstance",
-          "__guid": "f970a4fc-129d-4ae0-8b7b-c39512a459fa",
-          "MapName": "maps/testmap.vmap",
-          "UseMapFromLaunch": false
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "fb472d15-61ca-4e57-98b1-c5a9debb3c7f",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACk2MAQoAIAgDrSz7/4drBwoOjmKbczO7Ygg0hYuTHuB1hXgS/so\u002Bqi4vOdnOrb6NT15bJXy63JDz/\u002Bg6SXigAAAA",
+            "TextureOrigin": "0,0,63.99534",
+            "Positions": [
+              "-512,-512,0",
+              "512,-512,0",
+              "512,512,0",
+              "-512,512,0"
+            ],
+            "TextureUAxis": [
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0"
+            ],
+            "TextureScale": [
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0
+            ],
+            "MaterialIndex": [
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": false
         }
-      ],
-      "Children": []
+      ]
+    },
+    {
+      "__guid": "5de94423-0263-46a1-805b-785f9e8cdd71",
+      "Name": "Sun",
+      "Position": "-252.4197,234.0647,750.5575",
+      "Rotation": "0,0.258819,0,0.9659258",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "2bb3f975-f505-493e-b8e3-19098bd909b9",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0.05882,0.07451,0.08235,1"
+        }
+      ]
+    },
+    {
+      "__guid": "d5d69a39-a47f-40a3-8043-fe71707bbae3",
+      "Name": "Envmap Probe",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "2dcd7ac3-b451-47ce-ab49-fc89a69d99cd",
+          "Texture": "textures/cubemaps/default2.vtex",
+          "Bounds": {
+            "Mins": "-1000,-1000,-1000",
+            "Maxs": "1000,1000,1000"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Box",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "OnEnabled",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "d8145dce-f90e-4455-a784-da487843ff0c",
+      "Name": "2D Skybox",
+      "Position": "-504.4049,-407.0588,-4.128632",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "27904534-3841-4cba-ac04-359de63c2630",
+          "SkyMaterial": "materials/dev/default_sky.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "070914c4-c6b1-48de-9e40-1bdc127ff8f1",
+      "Name": "Spawn",
+      "Position": "-448,-17.8479,64",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "1b3af714-f18c-4ef2-867c-48e49c9ba9f3",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3388,7 +3508,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-22T21:55:47.300059-04:00",
+  "LastSaved": "2024-04-24T11:40:32.9028092-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
