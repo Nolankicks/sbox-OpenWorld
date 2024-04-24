@@ -6,4 +6,9 @@ public sealed class GameManager : Component
 	{
 		
 	}
+
+	public void ChangeScene(SceneFile scene)
+	{
+		Game.ActiveScene.Load(scene);
+	}
 }

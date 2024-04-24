@@ -33,6 +33,7 @@
 
 	public PlayerController playerController { get; set; }
 	public Inventory inventory { get; set; }
+	public AmmoContainer ammoContainer { get; set; }
 	[Property] public SoundEvent BuySound { get; set; }
 	[Property] public SoundEvent FailSound { get; set; }
 	[Property] public SoundEvent ExitSound { get; set; }
@@ -41,6 +42,7 @@
 	{
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		ammoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
 	}
 	protected override void OnUpdate()
 	{
@@ -73,7 +75,7 @@
 			playerController.Coins -= playerController.PopupUi.ShopItems.ItemPrices[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
 			var slot = inventory.GetNextSlot();
 			var action = playerController.PopupUi.ShopItems.ShopActions[playerController.PopupUi.ShopItems.ItemNames.IndexOf(ItemName)];
-			action?.Invoke(playerController, inventory);
+			action?.Invoke(playerController, inventory, ammoContainer);
 			Sound.Play( BuySound );
 		}
 		else

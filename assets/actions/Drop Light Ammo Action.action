@@ -1,0 +1,127 @@
+{
+  "Graph": {
+    "__version": 6,
+    "__guid": "e7828b68-13cf-48d4-b6c6-d84eaa740657",
+    "UserData": {
+      "Title": "Drop Light Ammo Action",
+      "ReferencedComponentTypes": []
+    },
+    "Parameters": {
+      "DefaultSignals": true
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input"
+      },
+      {
+        "Id": 1,
+        "Type": "scene.clone",
+        "UserData": {
+          "Position": "560,0"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "op.add",
+        "UserData": {
+          "Position": "368,192"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "vec3.new",
+        "UserData": {
+          "Position": "80,320"
+        }
+      },
+      {
+        "Id": 10,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameObject",
+          "_name": "Transform"
+        },
+        "UserData": {
+          "Position": "-288,192"
+        }
+      },
+      {
+        "Id": 11,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameTransform",
+          "_name": "Position"
+        },
+        "UserData": {
+          "Position": "-0,176"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "position"
+      },
+      {
+        "Value": {
+          "_type": "gameobject",
+          "prefab": "prefabs/light_ammo_pickup.prefab"
+        },
+        "DstId": 1,
+        "DstName": "target"
+      },
+      {
+        "SrcId": 11,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "b"
+      },
+      {
+        "Value": 0,
+        "DstId": 5,
+        "DstName": "x"
+      },
+      {
+        "Value": 0,
+        "DstId": 5,
+        "DstName": "y"
+      },
+      {
+        "Value": 55,
+        "DstId": 5,
+        "DstName": "z"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 10,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 10,
+        "SrcName": "_result",
+        "DstId": 11,
+        "DstName": "_target"
+      }
+    ]
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

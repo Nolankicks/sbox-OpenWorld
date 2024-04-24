@@ -1,0 +1,133 @@
+{
+  "Graph": {
+    "__version": 6,
+    "__guid": "20673ebc-b9f4-4028-b368-1ec12a09ca0f",
+    "UserData": {
+      "Title": "Drop Coin Action",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom",
+      "ReferencedComponentTypes": []
+    },
+    "Parameters": {
+      "DefaultSignals": true
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-416,-160"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "scene.clone",
+        "UserData": {
+          "Position": "320,-160"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameObject",
+          "_name": "Transform"
+        },
+        "UserData": {
+          "Position": "-320,64"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "property",
+        "Properties": {
+          "_type": "Sandbox.Game/Sandbox.GameTransform",
+          "_name": "Position"
+        },
+        "UserData": {
+          "Position": "-128,32"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "op.add",
+        "UserData": {
+          "Position": "128,32"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "vec3.new",
+        "UserData": {
+          "Position": "-160,160"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "position"
+      },
+      {
+        "Value": {
+          "_type": "gameobject",
+          "prefab": "prefabs/coin_pickup.prefab"
+        },
+        "DstId": 1,
+        "DstName": "target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 3,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "b"
+      },
+      {
+        "Value": 0,
+        "DstId": 5,
+        "DstName": "x"
+      },
+      {
+        "Value": 0,
+        "DstId": 5,
+        "DstName": "y"
+      },
+      {
+        "Value": 55,
+        "DstId": 5,
+        "DstName": "z"
+      }
+    ]
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

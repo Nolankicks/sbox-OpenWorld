@@ -1,0 +1,62 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "demo_level2",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "demo_level2",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.glass_dotted_a#19950",
+        "facepunch.pipe_a_corner_32#33818",
+        "facepunch.pipe_a_32#33813",
+        "facepunch.pipe_a_64#33815",
+        "facepunch.pipe_a_t_32#33822",
+        "facepunch.pipe_a_corner_64#33819",
+        "facepunch.glass_b#19947",
+        "facepunch.glass_a#19946",
+        "facepunch.pipe_a_128#33816",
+        "facepunch.pipe_a_4#33810",
+        "facepunch.pipe_a_16#33808",
+        "rustextended.glass_tiling#43278",
+        "facepunch.wood_painted_black_a_hs#28973",
+        "facepunch.studio_light_projector#29115",
+        "facepunch.fire_exit_light#33598",
+        "drakefruit.glass_blocks_001#20452",
+        "saandy.ceiling_light_tile_01_32c#38911",
+        "fpopium.football#55029",
+        "facepunch.metal_brushed_a_hs#28945",
+        "wujekfoliarz.skyboxnowy#40943",
+        "facepunch.industrial_light#27423",
+        "facepunch.sconce_wall_light#42946",
+        "facepunch.cctv#29019",
+        "facepunch.cctv_mount#29021",
+        "facepunch.cctv_rotating_mount#29022",
+        "facepunch.plaster_hs_01#33578",
+        "facepunch.decal_damp_leak_01a#47065",
+        "facepunch.floor_tile_blend_01#28812",
+        "facepunch.stickers_1#33877",
+        "facepunch.ceiling_plaster_01#33577",
+        "facepunch.wooden_crate#29138",
+        "facepunch.fence_panel_large#44051",
+        "facepunch.wet_floor_sign#19202",
+        "facepunch.telephone_box_no_door#33639",
+        "facepunch.wired_glass_b#19957",
+        "audiotrope.streetlight#50767",
+        "facepunch.glass_c#19949",
+        "facepunch.metal_trim_01#43480",
+        "facepunch.wooden_crate_02#43575",
+        "facepunch.packing_tape#33719",
+        "saandy.caged_light01_wall#35996"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/demo_level2.vmap"
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@
 @namespace Kicks
 @if (Inventory is not null && Player is not null && AmmoContainer is not null)
 {
-	<root>
+	<root style="opacity: @opacity;">
 	<div class="invholder">
 		@for (int i = 0; i < Inventory.Slots; i++)
 		{
@@ -51,6 +51,7 @@
 	public PlayerController Player;
 	public AmmoContainer AmmoContainer;
 	public Inventory Inventory;
+	[Property] public float opacity { get; set; } = 1;
 	protected override void OnStart()
 	{
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );

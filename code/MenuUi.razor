@@ -1,0 +1,64 @@
+@using Sandbox;
+@using Sandbox.Network;
+@using System.Threading.Tasks;
+@using Sandbox.Utility;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title">DEAD 4 LEFT 2</div>
+	<div class="levelselect">
+		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The escape</div>
+		<div class="level" onclick=@( () => OpenScene(GameScenes[1]))>Warehouse</div>
+		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Deathmatch</div>
+	</div>
+	<div class="lobbies @(ShowLobby ? "" : "hide")">
+		<div class="header">Lobbies</div>
+		<div class="createlobby" onclick=@( () => OpenScene(DeathmatchScene))>Create Lobby</div>
+		@foreach (var lobby in Lobbies)
+		{
+			<div class="lobby" onclick=@(() => JoinLobby(lobby))>
+				<div class="name">@lobby.OwnerId</div>
+				<div class="players">@lobby.Members / @lobby.MaxMembers</div>
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public List<SceneFile> GameScenes { get; set; } = new();
+	private List<LobbyInformation> Lobbies { get; set; } = new();
+	[Property] public bool ShowLobby { get; set; } = false;
+	[Property] public SceneFile DeathmatchScene { get; set; }
+	void JoinLobby(LobbyInformation lobby)
+	{
+		GameNetworkSystem.Connect(lobby.LobbyId);
+	}
+	protected override void OnStart()
+	{
+		_ = GetLobbies();
+	}
+	void OpenScene(SceneFile scene)
+	{
+		Game.ActiveScene.Load(scene);
+	}
+	async Task GetLobbies()
+	{
+		while (true)
+		{
+			StateHasChanged();
+
+			Lobbies = await Networking.QueryLobbies();
+
+			StateHasChanged();
+
+			await Task.DelayRealtimeSeconds(5);
+		}
+	}
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

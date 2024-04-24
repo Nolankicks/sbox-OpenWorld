@@ -15,6 +15,7 @@ public sealed class Inventory : Component
 	[Property] public Texture TestTexture { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
 	public InputHint inputHint { get; set; }
+	[Property, Sync] public bool AllWeaponsEnabled { get; set; } = true;
  	public int ActiveSlot = 0;
 	public int Slots => 9;
 	protected override void OnStart()
@@ -56,6 +57,36 @@ public sealed class Inventory : Component
 			Items[Slot] = item;
 			item.Parent = GameObject;
 			AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
+		}
+	}
+
+	public void DisableAllWeapons()
+	{
+		if (IsProxy) return;
+		AllWeaponsEnabled = false;
+		foreach (var weapon in Items)
+		{
+			if (weapon is not null)
+			{
+				weapon.Components.TryGet<SkinnedModelRenderer>(out var model);
+				if (model is not null)
+				{
+					model.Set("b_holster", true);
+				}
+				weapon.Enabled = false;
+			}
+		}
+	}
+	public void EnableAllWeapons()
+	{
+		if (IsProxy) return;
+		AllWeaponsEnabled = true;
+		foreach (var weapon in Items)
+		{
+			if (weapon is not null)
+			{
+				weapon.Enabled = true;
+			}
 		}
 	}
 	public int GetNextSlot()
@@ -160,7 +191,9 @@ public sealed class Inventory : Component
 	}
 	void ChangeItems()
 	{
-	foreach (GameObject weapon in Items)
+		if (AllWeaponsEnabled)
+		{
+		foreach (GameObject weapon in Items)
 		{
 			if (weapon is not null && weapon == Items[ActiveSlot] && !IsProxy)
 			{
@@ -170,6 +203,7 @@ public sealed class Inventory : Component
 			{
 				weapon.Enabled = false;
 			}
+		}
 		}
 	}
 	void Pickup()

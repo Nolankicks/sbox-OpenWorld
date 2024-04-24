@@ -150,7 +150,7 @@ public sealed class Shotgun : Component
 		{
 			var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 			decal.SetParent(tr.GameObject);
-			tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy );
+			tr.GameObject.Parent.Components.TryGet<EnemyHealthComponent>( out var dummy );
 			tr.GameObject.Components.TryGet<DamageTaker>(out var damageTaker);
 			if (dummy is not null)
 			{

@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.Utility;
 namespace Kicks;
 public sealed class PlayerController : Component
 {
@@ -13,10 +14,10 @@ public sealed class PlayerController : Component
 	[Property] public GameObject Hold { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
-	[Sync] public Angles eyeAngles { get; set; }
+	[Property, Sync] public Angles eyeAngles { get; set; }
 	[Sync] public bool IsGrabbing { get; set; } = false;
 	[Property] public Interactor Interactor { get; set; }
-	[Sync] public float Health { get; set; } = 100;
+	[Property, Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
 	[Property] public SceneFile SceneFile { get; set; }
@@ -29,7 +30,9 @@ public sealed class PlayerController : Component
 
 	protected override void OnStart()
 	{
-		
+		var steamId = Steam.SteamId.ToString();
+		GameObject.Tags.Add(steamId);
+		CharacterController.IgnoreLayers.Add(steamId);
 	}
 	private void MouseInput()
 	{
@@ -236,13 +239,20 @@ public sealed class PlayerController : Component
 	}
 
 	[Broadcast]
-	public void TakeDamage(float damage)
+	public void TakeDamage(float damage, bool ChangeScene = true)
 	{
 		if (IsProxy) return;
 		Health -= damage;
 		if (Health <= 0)
 		{
-			Kill();
+			if (ChangeScene)
+			{
+				Kill();
+			}
+			else
+			{
+				Kill(true);
+			}
 		}
 	}
 
@@ -250,7 +260,10 @@ public sealed class PlayerController : Component
 	public void Heal(float amount)
 	{
 		if (IsProxy) return;
-		Health += amount;
+		if (Health < 120)
+		{
+			Health += amount;
+		}
 	}
 
 	[ActionGraphNode("Take Damage Node"), Pure]
@@ -264,8 +277,18 @@ public sealed class PlayerController : Component
 	{
 		Heal(amount);
 	}
-	void Kill()
+	void Kill(bool Respawn = false)
 	{
-		Game.ActiveScene.Load(SceneFile);
+		if (Respawn)
+		{
+			var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+			var selectedPoint = Game.Random.FromList(spawnPoints);
+			Transform.World = selectedPoint.Transform.World;
+			Health = 100;
+		}
+		else
+		{
+			Game.ActiveScene.Load(SceneFile);
+		}
 	}
 }

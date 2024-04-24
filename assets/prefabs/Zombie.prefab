@@ -46,6 +46,10 @@
         },
         "players": [],
         "SpawnGibs": true
+      },
+      {
+        "__type": "Kicks.EnemyHealthComponent",
+        "__guid": "a125a851-ee40-42e1-a94c-aa03e44b4b6e"
       }
     ],
     "Children": [

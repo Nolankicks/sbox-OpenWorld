@@ -77,6 +77,7 @@
       {
         "__guid": "315fe8da-a598-4bcd-95aa-da1e8597087c",
         "Name": "ViewModelCamera",
+        "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [

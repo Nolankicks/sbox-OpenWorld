@@ -2,6 +2,7 @@ using System;
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.UI;
+using Sandbox.Utility;
 namespace Kicks;
 public sealed class Weapon : Component
 {
@@ -66,37 +67,6 @@ public sealed class Weapon : Component
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 		StartingAmmo = Ammo;
-		if (IsWeapon)
-		{
-		if (IsProxy) return;
-		DroppedItem.Enabled = false;
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
-		StartingAmmo = Ammo;
-		TimeSinceFire = FireRate;
-		if (!PlayerController.IsFirstPerson)
-		{
-			var worldModel = new GameObject();
-			var modelRenderer = worldModel.Components.Create<ModelRenderer>();
-			modelRenderer.Model = WorldModel;
-			WorldModelInstance = worldModel;
-			worldModel.Parent = PlayerController.Hold;
-			worldModel.Transform.LocalPosition = new(4.653f, 0.688f, -4.365f);
-		}
-		else
-		{
-			ViewModelGun.Set("b_deploy", true);
-			ViewModelGun.Set("b_twohanded", b_twohanded);
-		}
-		TimeSinceReload = ReloadTime;
-		TimeSinceFire = FireRate;
-		Log.Info("Weapon started");
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
-			ViewModelGun.GameObject.Enabled = false;
-			DroppedItem.Enabled = true;
-		}
 	}
 	protected override void OnUpdate()
 	{
@@ -109,9 +79,10 @@ public sealed class Weapon : Component
 		if (IsWeapon)
 		{
 		DroppedItem.Enabled = false;
-		ViewModelGun.GameObject.Enabled = true;
 		if ( IsProxy ) return;
-		
+		ViewModelCamera.Enabled = true;
+		Arms.Enabled = true;
+		ViewModelGun.GameObject.Enabled = true;
 		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
 			Fire();
@@ -167,7 +138,6 @@ public sealed class Weapon : Component
 				ViewModelGun.Set("b_grounded", true);
 			}
 			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
-			ViewModelCamera.Enabled = IsProxy ? false : true;
 		}
 		else
 		{
@@ -178,6 +148,7 @@ public sealed class Weapon : Component
 		{
 			ViewModelCamera.Enabled = false;
 			ViewModelGun.GameObject.Enabled = false;
+			Arms.Enabled = false;
 			DroppedItem.Enabled = true;
 		}
 	}
@@ -212,16 +183,21 @@ public sealed class Weapon : Component
 			ShotsFired++;
 			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 			ray.Forward += Vector3.Random * Spread;
-			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags("player").Run();
+			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags(Steam.SteamId.ToString()).Run();
 			if (tr.Hit)
 			{
-				tr.GameObject.Parent.Components.TryGet<Dummy>( out var dummy);
+				tr.GameObject.Components.TryGet<EnemyHealthComponent>( out var dummy, FindMode.EverythingInSelfAndParent);
+				tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 				var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
 				
 				if (dummy is not null)
 				{
 					dummy.Hurt(Damage, GameObject.Parent.Id);
 					BloodParticle.Clone(tr.HitPosition, Rotation.LookAt(-tr.Normal));
+				}
+				else if (player is not null)
+				{
+					player.TakeDamage(Damage, false);
 				}
 				else
 				{
