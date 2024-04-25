@@ -29,7 +29,7 @@ async Task FindPlayer()
         var targetPos = tr.EndPosition;
         while (Vector3.DistanceBetween(targetPos, Transform.Position) > 100)
         {
-            if (navMeshAgent is not null)
+        if (navMeshAgent is not null)
 		{
     	navMeshAgent.MoveTo(targetPos);
 		}
@@ -103,7 +103,7 @@ async Task LookAtPlayer(GameObject player, CancellationToken cancellationToken)
             break;
         }
 		Log.Info("Looking at player");
-        GameObject.Transform.Rotation = Rotation.LookAt(player.Transform.Position - GameObject.Transform.Position);
+        GameObject.Transform.Rotation = Rotation.LookAt(player.Transform.Position.WithZ(0) - GameObject.Transform.Position.WithZ(0));
         await Task.DelayRealtime(1);
     }
 }

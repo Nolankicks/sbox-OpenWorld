@@ -103,6 +103,10 @@
               },
               "Coins": 0,
               "CrouchSpeed": 50,
+              "Eye": {
+                "_type": "gameobject",
+                "go": "47e7ac56-8952-42ef-840b-2ff60b7414cd"
+              },
               "eyeAngles": "0,0,0",
               "Health": 100,
               "Hold": {
@@ -1094,6 +1098,13 @@
                   "ZNear": 10
                 }
               ]
+            },
+            {
+              "__guid": "47e7ac56-8952-42ef-840b-2ff60b7414cd",
+              "Name": "eye",
+              "Position": "0,0,64",
+              "Enabled": true,
+              "NetworkMode": 2
             }
           ]
         },
@@ -1151,9 +1162,9 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "352,64"
@@ -1176,9 +1187,9 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1292,9 +1303,9 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -1387,9 +1398,9 @@
                 "Id": 60,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_kind": "Set"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "2048,224"
@@ -1399,9 +1410,9 @@
                 "Id": 62,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "AbleToMove",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_kind": "Set"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "2560,112"
@@ -1411,9 +1422,9 @@
                 "Id": 65,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "eyeAngles",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_kind": "Set"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "2288,48"
@@ -1887,7 +1898,46 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "59927185-bed3-49d9-834a-f9a52e97da47",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "f069444e-76df-4a00-a471-d28fcc20bdd4",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "288,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ],
       "Children": [
@@ -2051,8 +2101,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2309,8 +2359,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2581,9 +2631,17 @@
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
           "__guid": "75510240-3790-4485-b8c0-c3173134fbf1",
           "BodyWeight": 1,
+          "EyeSource": {
+            "_type": "gameobject",
+            "go": "4f7852fc-9bf4-4c77-a8d9-49d1747d996a"
+          },
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAt": {
+            "_type": "gameobject",
+            "go": "47e7ac56-8952-42ef-840b-2ff60b7414cd"
+          },
+          "LookAtEnabled": true,
           "OnComponentStart": {
             "__version": 6,
             "__guid": "88e0f4d7-eede-49ff-8167-6d43dbfc9398",
@@ -2730,8 +2788,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Set",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -3017,7 +3075,8 @@
           "selectedInput": "E",
           "ShopItems": {
             "ItemNames": [
-              "Light Ammo"
+              "Light Ammo",
+              "USP"
             ],
             "ShopActions": [
               {
@@ -3038,8 +3097,8 @@
                     "Type": "call",
                     "Properties": {
                       "_name": "AddAmmo",
-                      "_isStatic": false,
-                      "_type": "package.nolankicks.dead4left2/Inventory"
+                      "_type": "package.nolankicks.dead4left2/Inventory",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "448,0"
@@ -3076,13 +3135,100 @@
                     "DstName": "ammoType"
                   }
                 ]
+              },
+              {
+                "__version": 6,
+                "__guid": "6f5037c7-93e7-4ddc-9438-e7d3b58d60a3",
+                "UserData": {
+                  "Title": null,
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "call",
+                    "Properties": {
+                      "_name": "AddItem",
+                      "_type": "package.nolankicks.dead4left2/Inventory",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "560,0"
+                    }
+                  },
+                  {
+                    "Id": 5,
+                    "Type": "call",
+                    "Properties": {
+                      "_name": "GetNextSlot",
+                      "_type": "package.nolankicks.dead4left2/Inventory",
+                      "_isStatic": false
+                    },
+                    "UserData": {
+                      "Position": "224,-48"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "Slot"
+                  },
+                  {
+                    "SrcId": 5,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 3,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": {
+                      "_type": "gameobject",
+                      "prefab": "prefabs/weapons/weapon_pistol.prefab"
+                    },
+                    "DstId": 3,
+                    "DstName": "item"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 5,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 5,
+                    "DstName": "_target"
+                  }
+                ],
+                "Defaults": {
+                  "$6._value": {
+                    "_type": "gameobject",
+                    "prefab": "prefabs/weapons/weapon_pistol.prefab"
+                  }
+                }
               }
             ],
             "ItemTextures": [
-              "models/light_ammo/source/9mmprojectfinal.vmdl.vtex"
+              "models/light_ammo/source/9mmprojectfinal.vmdl.vtex",
+              "usp.vtex"
             ],
             "ItemPrices": [
-              5
+              5,
+              10
             ]
           },
           "ShowPopUp": true
@@ -3265,6 +3411,13 @@
               ]
             }
           ]
+        },
+        {
+          "__guid": "4f7852fc-9bf4-4c77-a8d9-49d1747d996a",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
@@ -3560,8 +3713,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -3769,6 +3922,10 @@
         {
           "__type": "ShooterEnemy",
           "__guid": "799b00b7-4f36-4c10-b7d1-1e8b34a79c96",
+          "body": {
+            "_type": "gameobject",
+            "go": "d2054d80-2989-441a-a3b8-c71ee0d2866d"
+          },
           "citizenAnimationHelper": {
             "_type": "component",
             "component_id": "4654be69-5449-4293-b155-172abf7cbb21",
@@ -3811,7 +3968,46 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "a52dab7a-136c-4563-be3f-86612f6d8ee9",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "c679506d-770a-4c83-bcb1-a246e86ead0c",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "256,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -4903,7 +5099,7 @@
           "BodyWeight": 1,
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAtEnabled": true,
           "Target": {
             "_type": "component",
             "component_id": "c34dac58-651a-4808-bd6e-82c67d0032f9",
@@ -4935,7 +5131,17 @@
                   "graph": "actions/drop coin action.action"
                 },
                 "UserData": {
-                  "Position": "352,0"
+                  "Position": "224,-0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "512,-0"
                 }
               }
             ],
@@ -4950,6 +5156,18 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 2,
                 "DstName": "_target"
               }
             ]
@@ -6053,7 +6271,17 @@
                   "graph": "actions/drop light ammo action.action"
                 },
                 "UserData": {
-                  "Position": "336,0"
+                  "Position": "208,0"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "544,0"
                 }
               }
             ],
@@ -6068,6 +6296,18 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 4,
                 "DstName": "_target"
               }
             ]
@@ -6090,7 +6330,7 @@
           "BodyWeight": 1,
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAtEnabled": true,
           "Target": {
             "_type": "component",
             "component_id": "5d23d797-e789-4ff5-87f7-7c0a66251128",
@@ -7195,7 +7435,17 @@
                   "graph": "actions/drop light ammo action.action"
                 },
                 "UserData": {
-                  "Position": "288,0"
+                  "Position": "192,-0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "560,-0"
                 }
               }
             ],
@@ -7210,6 +7460,18 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
                 "DstName": "_target"
               }
             ]
@@ -7232,7 +7494,7 @@
           "BodyWeight": 1,
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAtEnabled": true,
           "Target": {
             "_type": "component",
             "component_id": "a7eb017d-e513-4193-a01e-5acbc5f3b96f",
@@ -8332,7 +8594,46 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "d4439e89-7d7a-44ca-991a-bfe7b8da0e7c",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "4ec2071b-e782-4039-b76e-92260cf2aa13",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "304,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ],
       "Children": [
@@ -8484,7 +8785,46 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "c266128c-afb1-4cab-bb89-93d5adae7258",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "2ea4ef25-874d-47ef-a60d-0e29ea6c8052",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "240,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ],
       "Children": [
@@ -8643,8 +8983,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "DisableAllWeapons",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "288,80"
@@ -8668,9 +9008,9 @@
                 "Id": 11,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "opacity",
-                  "_type": "package.nolankicks.dead4left2/Kicks.Hud",
-                  "_kind": "Set"
+                  "_type": "package.nolankicks.dead4left2/Kicks.Hud"
                 },
                 "UserData": {
                   "Position": "880,208"
@@ -8690,9 +9030,9 @@
                 "Id": 21,
                 "Type": "property",
                 "Properties": {
+                  "_kind": "Set",
                   "_name": "StartFade",
-                  "_type": "package.nolankicks.dead4left2/FadeOutUi",
-                  "_kind": "Set"
+                  "_type": "package.nolankicks.dead4left2/FadeOutUi"
                 },
                 "UserData": {
                   "Position": "1424,448"
@@ -8733,8 +9073,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "ChangeScene",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/GameManager"
+                  "_type": "package.nolankicks.dead4left2/GameManager",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2064,592"
@@ -9317,8 +9657,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Heal",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -9329,8 +9669,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -9419,8 +9759,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Heal",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -9431,8 +9771,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -9774,7 +10114,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-24T18:06:18.5922345-04:00",
+  "LastSaved": "2024-04-24T19:31:34.2033713-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

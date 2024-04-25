@@ -26,13 +26,38 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Base Library": "1.0.0"
+          "Base Library": "1.0.0",
+          "libpolygon": "1.0.0",
+          "libsdf": "1.0.0"
         },
         "compile": {
           "bin/placeholder/dead4left2.dll": {}
         },
         "runtime": {
           "bin/placeholder/dead4left2.dll": {}
+        }
+      },
+      "libpolygon/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/libpolygon.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libpolygon.dll": {}
+        }
+      },
+      "libsdf/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "libpolygon": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/libsdf.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/libsdf.dll": {}
         }
       }
     }
@@ -52,6 +77,16 @@
       "type": "project",
       "path": "../Code/dead4left2.csproj",
       "msbuildProject": "../Code/dead4left2.csproj"
+    },
+    "libpolygon/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/facepunch.libpolygon/Code/libpolygon.csproj",
+      "msbuildProject": "../Libraries/facepunch.libpolygon/Code/libpolygon.csproj"
+    },
+    "libsdf/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/sdf/Code/libsdf.csproj",
+      "msbuildProject": "../Libraries/sdf/Code/libsdf.csproj"
     }
   },
   "projectFileDependencyGroups": {

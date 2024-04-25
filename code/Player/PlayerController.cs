@@ -12,6 +12,7 @@ public sealed class PlayerController : Component
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public GameObject Hold { get; set; }
+	[Property] public GameObject Eye { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
 	[Property, Sync] public Angles eyeAngles { get; set; }

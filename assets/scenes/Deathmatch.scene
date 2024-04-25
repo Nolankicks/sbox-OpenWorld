@@ -369,6 +369,23 @@
           "StartingHeavyAmmo": 0,
           "StartingLightAmmo": 0,
           "StartingShotgunShells": 0
+        },
+        {
+          "__type": "Sandbox.Voice",
+          "__guid": "11c806d9-f3a3-4dc1-b49a-084d7976de6c",
+          "Loopback": false,
+          "Mode": "PushToTalk",
+          "MorphScale": 3,
+          "MorphSmoothTime": 0.1,
+          "PushToTalkInput": "voice",
+          "Renderer": {
+            "_type": "component",
+            "component_id": "2501007c-45e1-4778-82c3-4cc252fba21a",
+            "go": "31b17f6e-a173-435c-b1a8-5dc548073634",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "Volume": 1,
+          "WorldspacePlayback": true
         }
       ],
       "Children": [
@@ -1278,6 +1295,13 @@
               "Static": false
             }
           ]
+        },
+        {
+          "__guid": "4c2e5e0a-1183-4a15-906b-cb4d5a8e805e",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
@@ -1715,7 +1739,7 @@
   },
   "Title": "deathmatch",
   "Description": "",
-  "LastSaved": "2024-04-24T18:06:22.826982-04:00",
+  "LastSaved": "2024-04-24T19:01:42.6177591-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

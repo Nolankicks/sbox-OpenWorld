@@ -273,9 +273,17 @@
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
           "__guid": "96994df3-9312-41ca-ba45-4ad49900d08c",
           "BodyWeight": 1,
+          "EyeSource": {
+            "_type": "gameobject",
+            "go": "e1515aa7-f571-40ee-a9ce-3bb0c19508e3"
+          },
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAt": {
+            "_type": "gameobject",
+            "go": "8b532a66-9227-48fa-ad95-97c5deed0867"
+          },
+          "LookAtEnabled": true,
           "OnComponentStart": {
             "__version": 6,
             "__guid": "a2ae2465-1b4d-47c2-9313-52da5119964b",
@@ -957,6 +965,13 @@
               ]
             }
           ]
+        },
+        {
+          "__guid": "e1515aa7-f571-40ee-a9ce-3bb0c19508e3",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
@@ -1089,7 +1104,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-04-24T13:21:26.8409451-04:00",
+  "LastSaved": "2024-04-24T19:21:54.7045322-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

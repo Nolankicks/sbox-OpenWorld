@@ -11,6 +11,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	[Property] public GameObject body { get; set; }
 	[Property] public List<GameObject> players { get; set; } = new();
 	[Property] public CitizenAnimationHelper animationHelper { get; set; }
+	[Property] public SoundEvent HurtSound { get; set; }
 	[Property] public GameObject GibGameObject { get; set; }
 	[Property] public bool SpawnGibs { get; set; }
 	[Property, ShowIf("SpawnGibs", false)] public GameObject Ragdoll { get; set; }
@@ -81,7 +82,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	
 void Attack()
 	{
-		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 500).WithoutTags("dummy").Run();
+		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 300).WithoutTags("dummy").Run();
 		if (!tr.Hit) return;
 		//Gizmo.Draw.Line(tr.StartPosition, tr.EndPosition);
 		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
@@ -90,7 +91,8 @@ void Attack()
 		{
 			animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
 			animationHelper.Target.Set("b_attack", true);
-			player.TakeDamage(10);
+			player.TakeDamage(10, ChangeScene);
+			Sound.Play(HurtSound, tr.EndPosition);
 		}
 		
 	}
