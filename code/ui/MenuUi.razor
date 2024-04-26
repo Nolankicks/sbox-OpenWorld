@@ -11,6 +11,7 @@
 		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The Escape</div>
 		<div class="level" onclick=@( () => OpenScene(GameScenes[1]))>Warehouse</div>
 		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Deathmatch</div>
+		<div class="level" onclick=@( () => OpenScene(GameScenes[2]))>Proc Gen</div>
 	</div>
 	<div class="lobbies @(ShowLobby ? "" : "hide")">
 		<div class="header">Lobbies</div>

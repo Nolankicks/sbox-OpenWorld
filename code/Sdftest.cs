@@ -4,15 +4,20 @@ using Sandbox.Sdf;
 using Sandbox.Utility;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+
+[Title("SDF Manager")]
+[Icon("dashboard")]
 public sealed class Sdftest : Component
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
-	[Property] public GameObject NetworkManager { get; set; }
+	[Property] public List<GameObject> ItemsToSpawnAfterWorld { get; set; } = new();
 	public float[,] PerlinValues { get; set; }
     [Property] public GameObject TreePrefab { get; set; }
+	[Property] public GameObject RockPrefab { get; set; }
     [Property] public float Scale { get; set; }
+	[Property] public float Amplitude { get; set; }
 
 	protected override void OnStart()
 	{
@@ -25,7 +30,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
     var cube = new BoxSdf3D(0, 1000 * scale);
     //world.AddAsync(cube, volume);
 
-    var noiseMap = CreateNoise((int)(10 * scale), (int)(10 * scale), 1, 0, 0);
+    var noiseMap = CreateNoise((int)(10 * scale), (int)(10 * scale), 1, 0, 0, Amplitude);
 
     for (int i = 0; i < 10 * scale; i++)
     {
@@ -37,32 +42,51 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
             await world.AddAsync(sphere, volume);
         }
     }
-	NetworkManager.Clone();
-    for (int i = 0; i < 100; i++)
+	LoadingScreen.Title = "Creating world...";
+	await Task.DelaySeconds(1);
+	foreach(var gameObject in ItemsToSpawnAfterWorld)
+	{
+		gameObject.Clone();
+	}
+    for (int i = 0; i < 150; i++)
     {
-        CreateTree(TreePrefab, world);
+		CreateSpawnPoints(world);
+        CreateTree(TreePrefab, world);	
+		CreateRock(RockPrefab, world);
     }
 
+}
+void CreateSpawnPoints(Sdf3DWorld world)
+{
+	var pos = GetBounds(world);
+	var spawn = new GameObject();
+	spawn.Components.Create<SpawnPoint>();
+	spawn.Clone(pos);
 }
 
 void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
 {
-    Vector3 dim = world.Dimensions * 1000 * Scale;
-    var x = GetRandom(0, dim.x);
-    var y = GetRandom(0, dim.y);
-    Log.Info(x + " " + y);
-    var trace = Scene.Trace.Ray(new Vector3(x, y, 5000), Vector3.Down * 10000).Run();
-    Log.Info(trace.HitPosition);
-    TreePrefab.Clone(trace.HitPosition);
+    TreePrefab.Clone(GetBounds(world));
+}
+
+void CreateRock(GameObject RockPrefab, Sdf3DWorld world)
+{
+	RockPrefab.Clone(GetBounds(world));
 }
 
 public Vector3 GetBounds(Sdf3DWorld world)
 {
-    Vector3 dim = world.Dimensions * 1000 * Scale;
-    var x = GetRandom(0, dim.x);
-    var y = GetRandom(0, dim.y);
-    var trace = Scene.Trace.Ray(new Vector3(x, y, 5000), Vector3.Down * 10000).Run();
-    return trace.HitPosition;
+    Vector3 dim = world.Dimensions * 10000 * Scale;
+    while (true)
+    {
+        var x = GetRandom(0, dim.x);
+        var y = GetRandom(0, dim.y);
+        var trace = Scene.Trace.Ray(new Vector3(x, y, 5000), Vector3.Down * 10000).Run();
+        if (trace.Hit && !trace.GameObject.Tags.Has("world"))
+        {
+            return trace.HitPosition;
+        }
+    }
 }
 
 void RandomEvent(float propbiability, GameObject prefab)
@@ -72,7 +96,8 @@ void RandomEvent(float propbiability, GameObject prefab)
         prefab.Clone(GetBounds(World));
     }
 }
-
+[Title("Random Event")]
+[Icon("water")]
 public class RandomEventComponent : Component
 {
 	/// <summary>
@@ -81,7 +106,9 @@ public class RandomEventComponent : Component
    	[Property, Range(0, 1)]  public float Probability { get; set; }
 
     [Property] public GameObject Prefab { get; set; }
+	[Property] public Action OnSpawn { get; set; }
     public Sdftest Sdftest { get; set; }
+	[Property, Range(1, 100)] public int TimesInvoked { get; set; }
 
 	protected override void OnStart()
 	{
@@ -92,10 +119,12 @@ public class RandomEventComponent : Component
 	public async Task SpawnEvent()
 	{
 		await Sdftest.CreateWorld(Sdftest.World, Sdftest.Volume, Sdftest.Scale);
+		for (int i = 0; i < TimesInvoked; i++)
+		{
 		Sdftest.RandomEvent(Probability, Prefab);
-		Log.Info("Spawned");
+		OnSpawn?.Invoke();
+		}
 	}
-
 }
 
 
@@ -104,7 +133,7 @@ public float GetRandom(float Min, float Max)
     return Random.Shared.Float(Min, Max);
 }
 
-public float[,] CreateNoise(int width, int height, float scale, int offsetX, int offsetY)
+public float[,] CreateNoise(int width, int height, float scale, int offsetX, int offsetY, float amplitude)
 {
     float[,] noiseMap = new float[width + 1, height + 1];
 
@@ -112,18 +141,18 @@ public float[,] CreateNoise(int width, int height, float scale, int offsetX, int
     var random = new Random();
     var seed = random.NextDouble() * 1000;
 
-for (int y = 0; y < height + 1; y++)
-{
-	for (int x = 0; x < width + 1; x++)
-	{
-		float sampleX = (float)((x + offsetX + seed) / scale);
-		float sampleY = (float)((y + offsetY + seed) / scale);
+    for (int y = 0; y < height + 1; y++)
+    {
+        for (int x = 0; x < width + 1; x++)
+        {
+            float sampleX = (float)((x + offsetX + seed) / scale);
+            float sampleY = (float)((y + offsetY + seed) / scale);
 
-		float noise = Noise.Perlin(sampleX, sampleY);
+            float noise = Noise.Perlin(sampleX, sampleY);
 
-		noiseMap[x, y] = noise;
-	}
-}
+            noiseMap[x, y] = noise * amplitude; // Scale the noise by the amplitude
+        }
+    }
 
     return noiseMap;
 }
