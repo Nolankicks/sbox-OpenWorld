@@ -44,17 +44,18 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
     }
 	LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
-	foreach(var gameObject in ItemsToSpawnAfterWorld)
-	{
-		gameObject.Clone();
-	}
-    for (int i = 0; i < 150; i++)
+	for (int i = 0; i < 150; i++)
     {
 		CreateSpawnPoints(world);
         CreateTree(TreePrefab, world);	
 		CreateRock(RockPrefab, world);
     }
-
+	LoadingScreen.Title = "Spawning items...";
+	await Task.DelaySeconds(1);
+	foreach(var gameObject in ItemsToSpawnAfterWorld)
+	{
+		gameObject.Clone();
+	}
 }
 void CreateSpawnPoints(Sdf3DWorld world)
 {
@@ -76,13 +77,22 @@ void CreateRock(GameObject RockPrefab, Sdf3DWorld world)
 
 public Vector3 GetBounds(Sdf3DWorld world)
 {
-    Vector3 dim = world.Dimensions * 10000 * Scale;
+    Vector3 dim = world.Dimensions * 10000;
+    int buffer = 200; // Increase buffer size
+
     while (true)
     {
-        var x = GetRandom(0, dim.x);
-        var y = GetRandom(0, dim.y);
-        var trace = Scene.Trace.Ray(new Vector3(x, y, 5000), Vector3.Down * 10000).Run();
-        if (trace.Hit && !trace.GameObject.Tags.Has("world"))
+        // Generate random position within the adjusted boundaries
+        var x = GetRandom(buffer, dim.x - buffer);
+        var y = GetRandom(buffer, dim.y - buffer);
+
+        // Check if the position is valid by casting a downward ray from a higher position
+        var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 5000), Vector3.Down * 10000).Run();
+
+        // Validate the position
+        if (trace.Hit && trace.HitPosition.x > buffer && trace.HitPosition.x < dim.x - buffer &&
+            trace.HitPosition.y > buffer && trace.HitPosition.y < dim.y - buffer &&
+            trace.HitPosition.z < dim.z - buffer) // Make sure it's not too close to the top boundary
         {
             return trace.HitPosition;
         }
