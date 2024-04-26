@@ -69,6 +69,10 @@
         {
           "__type": "Sdftest",
           "__guid": "7801a492-c461-4370-9e2a-ee4ce25eb357",
+          "NetworkManager": {
+            "_type": "gameobject",
+            "prefab": "prefabs/network prefab.prefab"
+          },
           "Volume": "sdfvol/main.sdfvol",
           "World": {
             "_type": "component",
@@ -92,24 +96,6 @@
           "__guid": "2823f9b0-e24e-4fef-87bd-b7036df4c940",
           "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
           "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "997aef36-3cd0-46c7-b7f4-3fe1c79706c8",
-      "Name": "Network",
-      "Position": "-1668.87,-5.708847,1429.176",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "NetworkManager",
-          "__guid": "c777eb08-70f8-4872-a6f9-b7ec7bfb3872",
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "prefab": "prefabs/startingplayer.prefab"
-          },
-          "StartServer": true
         }
       ]
     },
@@ -151,7 +137,7 @@
   },
   "Title": "sdf",
   "Description": "",
-  "LastSaved": "2024-04-25T20:56:35.9789302-04:00",
+  "LastSaved": "2024-04-25T21:14:06.462168-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
