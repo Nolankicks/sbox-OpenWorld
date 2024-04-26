@@ -8,52 +8,53 @@ public sealed class Sdftest : Component
 
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
-	[Property] public int WorldLength { get; set; }
-	[Property] public int WorldWidth { get; set; }
 	public float[,] PerlinValues { get; set; }
 
 	protected override void OnStart()
 	{
 		World.GameObject.NetworkSpawn();
-		CreateWorld(World, Volume);
+		CreateWorld(World, Volume, 5);
 	}
 
-public void CreateWorld(Sdf3DWorld world, Sdf3DVolume volume)
+public void CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
-    var cube = new BoxSdf3D(0, 1000);
-    world.AddAsync(cube, volume);
+    var cube = new BoxSdf3D(0, 1000 * scale);
+    //world.AddAsync(cube, volume);
 
-    var noiseMap = CreateNoise(10, 10, 1, 0, 0);
+    var noiseMap = CreateNoise((int)(10 * scale), (int)(10 * scale), 1, 0, 0);
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10 * scale; i++)
     {
-        for (int j = 0; j < 10; j++)
+        for (int j = 0; j < 10 * scale; j++)
         {
-            var z = noiseMap[i, j] * 1000; // Scale the noise value to match your world's scale
-            Log.Info(1000 - z);
-            var pos = new Vector3(i * 100, j * 100, 1000 - z); // Subtract z from the height of the SDF
-            var sphere = new SphereSdf3D(pos, 100);
-            world.SubtractAsync(sphere, volume);
+            var z = noiseMap[i, j] * 1000;
+            var pos = new Vector3(i * 100, j * 100, z);
+            var sphere = new SphereSdf3D(pos * scale, 100 * scale); // Adjust the radius based on the scale
+            world.AddAsync(sphere, volume);
         }
     }
 }
-	public float[,] CreateNoise( int width, int height, float scale, int offsetX, int offsetY )
+public float[,] CreateNoise(int width, int height, float scale, int offsetX, int offsetY)
+{
+    float[,] noiseMap = new float[width + 1, height + 1];
+
+    // Create a random seed
+    var random = new Random();
+    var seed = random.NextDouble() * 1000;
+
+for (int y = 0; y < height + 1; y++)
+{
+	for (int x = 0; x < width + 1; x++)
 	{
-		float[,] noiseMap = new float[width + 1, height + 1];
+		float sampleX = (float)((x + offsetX + seed) / scale);
+		float sampleY = (float)((y + offsetY + seed) / scale);
 
-		for ( int y = 0; y < height + 1; y++ )
-		{
-			for ( int x = 0; x < width + 1; x++ )
-			{
-				float sampleX = (x + offsetX) / scale;
-				float sampleY = (y + offsetY) / scale;
+		float noise = Noise.Perlin(sampleX, sampleY);
 
-				float noise = Noise.Perlin( sampleX, sampleY );
-
-				noiseMap[x, y] = noise;
-			}
-		}
-
-		return noiseMap; // return noiseMap instead of Luminance
+		noiseMap[x, y] = noise;
 	}
+}
+
+    return noiseMap;
+}
 }

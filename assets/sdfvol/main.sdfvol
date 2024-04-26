@@ -1,5 +1,5 @@
 {
-  "Material": "materials/grass/floor_grass_dirt_weed_blend_a.vmat",
+  "Material": "materials/dev/reflectivity_30.vmat",
   "IsTextureSourceOnly": false,
   "CollisionTags": "solid",
   "QualityLevel": "Medium",
@@ -9,7 +9,5 @@
   "ReferencedTextures": [],
   "ResourceVersion": 0,
   "__version": 0,
-  "__references": [
-    "facepunch.floor_grass_dirt_weed_blend_a"
-  ]
+  "__references": []
 }
