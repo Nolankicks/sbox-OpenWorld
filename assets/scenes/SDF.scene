@@ -75,9 +75,55 @@
             "component_id": "4e7d359b-f916-4e2a-86b5-c994afedbfac",
             "go": "cf944310-8c52-4358-8f53-12537b08e2d1",
             "component_type": "Sdf3DWorld"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "5a6a140a-2d13-48ea-a7e6-2cd06afdbe95",
+      "Name": "2D Skybox",
+      "Position": "-902.8589,162.3916,1088.019",
+      "Tags": "skybox",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "2823f9b0-e24e-4fef-87bd-b7036df4c940",
+          "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "997aef36-3cd0-46c7-b7f4-3fe1c79706c8",
+      "Name": "Network",
+      "Position": "-1668.87,-5.708847,1429.176",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__guid": "c777eb08-70f8-4872-a6f9-b7ec7bfb3872",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/startingplayer.prefab"
           },
-          "WorldLength": 2,
-          "WorldWidth": 2
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "1bbb9838-e12a-4f2b-b9d4-b14703be92bf",
+      "Name": "Spawn",
+      "Position": "437.6699,-448,10496",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "65613355-4e65-4be4-bb7e-8307e7bbcf4d",
+          "Color": "0.8902,0.31765,0.05098,1"
         }
       ]
     }
@@ -105,7 +151,7 @@
   },
   "Title": "sdf",
   "Description": "",
-  "LastSaved": "2024-04-25T20:43:30.7142851-04:00",
+  "LastSaved": "2024-04-25T20:56:35.9789302-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": []
