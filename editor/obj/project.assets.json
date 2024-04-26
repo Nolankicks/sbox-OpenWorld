@@ -85,8 +85,8 @@
     },
     "libsdf/1.0.0": {
       "type": "project",
-      "path": "../Libraries/sdf/Code/libsdf.csproj",
-      "msbuildProject": "../Libraries/sdf/Code/libsdf.csproj"
+      "path": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj",
+      "msbuildProject": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj"
     }
   },
   "projectFileDependencyGroups": {

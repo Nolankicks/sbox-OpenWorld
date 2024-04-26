@@ -4,44 +4,11 @@
     {
       "__guid": "cf944310-8c52-4358-8f53-12537b08e2d1",
       "Name": "World",
-      "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sdf3DWorldComponent",
-          "__guid": "6ed3535c-fc1a-4230-834c-9214ef67012f"
-        },
-        {
           "__type": "Sandbox.Sdf.Sdf3DWorld",
           "__guid": "4e7d359b-f916-4e2a-86b5-c994afedbfac"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "b84268ac-9a42-4b69-9cdc-ab3217d6e6b0",
-          "Name": "cube",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sdf3DBoxBrushComponent",
-              "__guid": "79f00fc7-9036-4a01-88cc-b6d2820e6f96",
-              "CornerRadius": 0,
-              "Operator": "Add",
-              "Size": "5000,5000,2000",
-              "Volume": "resources/vol.sdfvol"
-            },
-            {
-              "__type": "PerlinModifer",
-              "__guid": "e5f32493-009f-408d-a213-15fdb86f98c5",
-              "__enabled": false,
-              "Amplitude": 2,
-              "BiasScale": 0.25,
-              "CellSize": 550,
-              "DistanceOffset": 0,
-              "Seed": 914407190
-            }
-          ]
         }
       ]
     },
@@ -96,57 +63,21 @@
     {
       "__guid": "820769d3-b1b6-46a6-bed2-ebd3e1e7af30",
       "Name": "ChunkCreator",
-      "Position": "-572.8673,-63.99425,258.2975",
-      "NetworkMode": 2
-    },
-    {
-      "__guid": "d6b3efdb-9a77-4699-b611-3db6566ac77b",
-      "Name": "2D Skybox",
-      "Position": "-576.3602,300.6175,290.9907",
-      "Tags": "skybox",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "53a2bbc7-0c33-42f4-85b1-27728a62dc75",
-          "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
-      "__guid": "061cd49a-d9b2-49d0-9c74-712a294c253c",
-      "Name": "wooden_crate",
-      "Position": "-320.0011,688,4816",
-      "Rotation": "0,0.7071068,0,0.7071068",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "1c4fa1af-98db-452e-a09e-654f3f0d47e6",
-          "BodyGroups": 18446744073709551615,
-          "Health": 50,
-          "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
-        }
-      ]
-    },
-    {
-      "__guid": "0bf9ee4e-4059-42dc-8b15-2cd2ab1f01c3",
-      "Name": "Chunk",
-      "Position": "-414.5018,3870.521,1169.08",
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "ChunkCreator",
-          "__guid": "d57118f0-b4e8-4651-a549-1a01285e6c76",
-          "sdf3DVolume": "resources/openworld.sdfvol",
-          "SdfWorld": {
-            "_type": "gameobject",
-            "go": "cf944310-8c52-4358-8f53-12537b08e2d1"
-          }
+          "__type": "Sdftest",
+          "__guid": "7801a492-c461-4370-9e2a-ee4ce25eb357",
+          "Volume": "sdfvol/main.sdfvol",
+          "World": {
+            "_type": "component",
+            "component_id": "4e7d359b-f916-4e2a-86b5-c994afedbfac",
+            "go": "cf944310-8c52-4358-8f53-12537b08e2d1",
+            "component_type": "Sdf3DWorld"
+          },
+          "WorldLength": 2,
+          "WorldWidth": 2
         }
       ]
     }
@@ -174,10 +105,8 @@
   },
   "Title": "sdf",
   "Description": "",
-  "LastSaved": "2024-04-12T18:22:47.2623514-04:00",
+  "LastSaved": "2024-04-25T20:30:22.5195232-04:00",
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": [
-    "facepunch.wooden_crate"
-  ]
+  "__references": []
 }
