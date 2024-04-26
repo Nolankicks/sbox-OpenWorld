@@ -1,0 +1,25 @@
+{
+  "RootObject": {
+    "__guid": "997aef36-3cd0-46c7-b7f4-3fe1c79706c8",
+    "Name": "Network Prefab",
+    "Position": "-1668.87,-5.708847,1429.176",
+    "NetworkMode": 2,
+    "Components": [
+      {
+        "__type": "NetworkManager",
+        "__guid": "c777eb08-70f8-4872-a6f9-b7ec7bfb3872",
+        "PlayerPrefab": {
+          "_type": "gameobject",
+          "prefab": "prefabs/startingplayer.prefab"
+        },
+        "StartServer": true
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

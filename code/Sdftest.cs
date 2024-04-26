@@ -2,21 +2,22 @@ using System.Net.Http;
 using Sandbox;
 using Sandbox.Sdf;
 using Sandbox.Utility;
-
+using System.Threading.Tasks;
 public sealed class Sdftest : Component
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
+	[Property] public GameObject NetworkManager { get; set; }
 	public float[,] PerlinValues { get; set; }
 
 	protected override void OnStart()
 	{
 		World.GameObject.NetworkSpawn();
-		CreateWorld(World, Volume, 5);
+		_ = CreateWorld(World, Volume, 5);
 	}
 
-public void CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
+public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
     var cube = new BoxSdf3D(0, 1000 * scale);
     //world.AddAsync(cube, volume);
@@ -30,9 +31,11 @@ public void CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
             var z = noiseMap[i, j] * 1000;
             var pos = new Vector3(i * 100, j * 100, z);
             var sphere = new SphereSdf3D(pos * scale, 100 * scale); // Adjust the radius based on the scale
-            world.AddAsync(sphere, volume);
+            await world.AddAsync(sphere, volume);
         }
     }
+	NetworkManager.Clone();
+
 }
 public float[,] CreateNoise(int width, int height, float scale, int offsetX, int offsetY)
 {
