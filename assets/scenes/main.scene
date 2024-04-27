@@ -90,7 +90,6 @@
             "_type": "gameobject",
             "prefab": "prefabs/startingplayer.prefab"
           },
-          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -132,6 +131,7 @@
             "go": "8473c8dc-a526-4c8e-bef7-e8f4cdd1de19",
             "component_type": "CitizenAnimationHelper"
           },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -1194,8 +1194,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_name": "GetNextSlot",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "GetNextSlot"
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1886,8 +1886,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Set",
                   "_isStatic": false,
+                  "_name": "Set",
                   "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
@@ -3403,7 +3403,7 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": false
+          "Static": true
         }
       ]
     },
@@ -3465,7 +3465,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "27904534-3841-4cba-ac04-359de63c2630",
-          "SkyMaterial": "materials/dev/default_sky.vmat",
+          "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -3481,6 +3481,22 @@
           "__type": "Sandbox.SpawnPoint",
           "__guid": "1b3af714-f18c-4ef2-867c-48e49c9ba9f3",
           "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "fd07c926-84f2-49d4-8d4d-dc4e277288fa",
+      "Name": "Object",
+      "Position": "0,-2.093109,128",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Polygons.PolygonModelRenderer",
+          "__guid": "fd6dcb49-fe4f-4fed-aed0-c89d240fb091",
+          "BodyGroups": 18446744073709551615,
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         }
       ]
     }
@@ -3508,7 +3524,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-24T11:40:32.9028092-04:00",
+  "LastSaved": "2024-04-25T14:30:14.2118963-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -12,6 +12,7 @@ public sealed class PlayerController : Component
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
 	[Property] public GameObject Hold { get; set; }
+	[Property] public GameObject Eye { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;
 	[Sync] public bool IsCrouching { get; set; }
 	[Property, Sync] public Angles eyeAngles { get; set; }
@@ -24,7 +25,7 @@ public sealed class PlayerController : Component
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	
-
+	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;
 
@@ -33,6 +34,7 @@ public sealed class PlayerController : Component
 		var steamId = Steam.SteamId.ToString();
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 	}
 	private void MouseInput()
 	{
@@ -285,6 +287,7 @@ public sealed class PlayerController : Component
 			var selectedPoint = Game.Random.FromList(spawnPoints);
 			Transform.World = selectedPoint.Transform.World;
 			Health = 100;
+			AmmoContainer.ResetAmmo();
 		}
 		else
 		{

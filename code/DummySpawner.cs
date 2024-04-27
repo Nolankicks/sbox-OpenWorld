@@ -8,6 +8,7 @@ public sealed class DummySpawner : Component
 	[Property] public List<GameObject> Dummies { get; set; } = new();
 	[Property] public List<GameObject> SpawnLocations { get; set; } = new();
 	[Property] public bool DestroyAll { get; set; }
+	[Property] public bool UseNavMesh { get; set; } = false;
 
 	protected override void OnStart()
 	{
@@ -19,7 +20,7 @@ public sealed class DummySpawner : Component
 		while (true)
 		{
 			if (Connection.All.Count < 1) return;
-			var pos = Game.Random.FromList(SpawnLocations).Transform.Position;
+			var pos = UseNavMesh ? Scene.NavMesh.GetRandomPoint().GetValueOrDefault() :  Game.Random.FromList(SpawnLocations).Transform.Position;			
 			var dummy = Dummy.Clone(pos);
 			Dummies.Add(dummy);
 			try

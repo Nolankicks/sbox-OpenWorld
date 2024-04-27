@@ -61,7 +61,9 @@
 
 	protected override void OnUpdate()
 	{
-
+		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	/// <summary>

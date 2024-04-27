@@ -1,0 +1,114 @@
+{
+  "Graph": {
+    "__version": 6,
+    "__guid": "3e8ee72a-7200-4383-af6e-eb28964283a3",
+    "UserData": {
+      "Title": "Spawn Zombie Gibs",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom"
+    },
+    "Parameters": {
+      "DefaultSignals": true
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-572,0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "scene.clone",
+        "UserData": {
+          "Position": "272,-112"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "property",
+        "Properties": {
+          "_name": "Transform",
+          "_type": "Sandbox.Game/Sandbox.GameObject"
+        },
+        "UserData": {
+          "Position": "-272,16"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "property",
+        "Properties": {
+          "_name": "LocalPosition",
+          "_type": "Sandbox.Game/Sandbox.GameTransform"
+        },
+        "UserData": {
+          "Position": "-48,112"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "property",
+        "Properties": {
+          "_name": "Rotation",
+          "_type": "Sandbox.Game/Sandbox.GameTransform"
+        },
+        "UserData": {
+          "Position": "-64,-16"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "position"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "rotation"
+      },
+      {
+        "Value": {
+          "_type": "gameobject",
+          "prefab": "prefabs/zombiegibs.prefab"
+        },
+        "DstId": 1,
+        "DstName": "target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_target",
+        "DstId": 2,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 3,
+        "DstName": "_target"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "_target"
+      }
+    ]
+  },
+  "ResourceVersion": 0,
+  "__version": 0,
+  "__references": []
+}

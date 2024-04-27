@@ -4,6 +4,7 @@ using System;
 using Kicks;
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics.SymbolStore;
+using System.Threading.Tasks;
 
 public sealed class Inventory : Component
 {
@@ -16,6 +17,7 @@ public sealed class Inventory : Component
 	public AmmoContainer AmmoContainer { get; set; }
 	public InputHint inputHint { get; set; }
 	[Property, Sync] public bool AllWeaponsEnabled { get; set; } = true;
+	[Property] public List<GameObject> ItemsToSpawnWith { get; set; } = new();
  	public int ActiveSlot = 0;
 	public int Slots => 9;
 	protected override void OnStart()
@@ -28,6 +30,19 @@ public sealed class Inventory : Component
 		if (IsProxy) return;
 		Log.Info(Items.Count);
 		AddItem(Gun, 0);
+		_ = SpawnItems();
+	}
+
+	public async Task SpawnItems()
+	{
+		if (IsProxy) return;
+		await Task.DelaySeconds(3);
+		foreach (var item in ItemsToSpawnWith)
+		{
+			var slot = Items.FindIndex(x => x is null);
+			AddItem(item, slot);
+			await Task.DelaySeconds(0.1f);
+		}
 	}
 
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
@@ -320,14 +335,23 @@ public sealed class Inventory : Component
 
 	void Trace()
 	{
+		try
+		{
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
 		if (!tr.Hit) return;
 		var popup = tr.GameObject.Components.Get<PopupUi>(FindMode.EverythingInSelfAndParent);
+		if (Items is null) return;
 		if (popup is not null)
 		{
 			PopupUi(popup, popup.selectedInput);
 		}
+		}
+		catch (System.InvalidOperationException)
+		{
+			return;
+		}
+		
 	}
 
 	public void AddAmmo(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int ammo)

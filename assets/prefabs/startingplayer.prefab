@@ -35,6 +35,10 @@
         },
         "Coins": 50,
         "CrouchSpeed": 50,
+        "Eye": {
+          "_type": "gameobject",
+          "go": "a8edd446-140b-4a9a-9cf3-10bd16b45464"
+        },
         "eyeAngles": "0,0,0",
         "Health": 100,
         "Hold": {
@@ -69,7 +73,10 @@
         "__guid": "0a474a71-3188-4ed9-8eff-2ce8b18b59d2",
         "HeavyAmmo": 30,
         "LightAmmo": 30,
-        "ShotgunShells": 30
+        "ShotgunShells": 30,
+        "StartingHeavyAmmo": 0,
+        "StartingLightAmmo": 0,
+        "StartingShotgunShells": 0
       }
     ],
     "Children": [
@@ -976,6 +983,13 @@
             "Static": false
           }
         ]
+      },
+      {
+        "__guid": "a8edd446-140b-4a9a-9cf3-10bd16b45464",
+        "Name": "eye",
+        "Position": "0,0,64",
+        "Enabled": true,
+        "NetworkMode": 2
       }
     ]
   },

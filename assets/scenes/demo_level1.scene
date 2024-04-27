@@ -111,9 +111,17 @@
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
           "__guid": "94dc74f2-072a-48b2-8edf-fc7fbc4aed36",
           "BodyWeight": 1,
+          "EyeSource": {
+            "_type": "gameobject",
+            "go": "c199f02f-c6b4-4be9-93c0-6493ca435680"
+          },
           "EyesWeight": 1,
           "HeadWeight": 1,
-          "LookAtEnabled": false,
+          "LookAt": {
+            "_type": "gameobject",
+            "go": "407c992f-3fc4-4ec6-8e1f-2f616e36472b"
+          },
+          "LookAtEnabled": true,
           "OnComponentStart": {
             "__version": 6,
             "__guid": "04d200c1-dbd3-44d5-b40e-12e63c1ac89a",
@@ -798,6 +806,13 @@
               ]
             }
           ]
+        },
+        {
+          "__guid": "c199f02f-c6b4-4be9-93c0-6493ca435680",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
@@ -895,6 +910,11 @@
             "go": "d7808a0e-2607-4be6-9d81-d2238f22d508",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "d7808a0e-2607-4be6-9d81-d2238f22d508"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
@@ -934,6 +954,46 @@
                 "UserData": {
                   "Position": "224,-0"
                 }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "544,-0"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "0,128"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "property",
+                "Properties": {
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "224,224"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "208,96"
+                }
               }
             ],
             "Links": [
@@ -948,8 +1008,58 @@
                 "SrcName": "_target",
                 "DstId": 1,
                 "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 9,
+                "DstName": "_target"
               }
-            ]
+            ],
+            "Defaults": {
+              "$10._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
           }
         }
       ],
@@ -1081,10 +1191,16 @@
             "go": "721eb08b-2369-41bd-a877-2e3b9ffc6c2f",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "721eb08b-2369-41bd-a877-2e3b9ffc6c2f"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
           },
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
             "component_id": "31d311a8-38fd-458a-ab78-365ea86b3a6d",
@@ -1097,7 +1213,68 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "d3406ff0-93ab-4921-bca8-2078ccafda83",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "4d0fa14b-3e9c-4f7b-b347-b5245244878e",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "224,0"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/spawn zombie gibs.action"
+                },
+                "UserData": {
+                  "Position": "496,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 7,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 7,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ],
       "Children": [
@@ -1228,10 +1405,16 @@
             "go": "fbdab401-eb21-4709-aba5-d5915ae300fd",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "fbdab401-eb21-4709-aba5-d5915ae300fd"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
           },
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
             "component_id": "16e4bd18-f4fe-4a88-bd41-a206b919336e",
@@ -1244,7 +1427,136 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "b6a40fc8-05a0-46ac-a603-02262909dc2e",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "697023e5-6512-4670-ad6e-81c6d42199f3",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "192,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "512,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-32,128"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "192,224"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "176,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$6._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
+          }
         }
       ],
       "Children": [
@@ -1375,10 +1687,16 @@
             "go": "ea6617dc-4261-4e85-9f73-4205b72ec865",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "ea6617dc-4261-4e85-9f73-4205b72ec865"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
           },
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
             "component_id": "d5c38257-3525-4501-986b-1d1b2e49abcd",
@@ -1391,7 +1709,136 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "6f19e9c8-635d-4f5e-a2c1-0c9e0c0dddc7",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "a8d07ddc-ce7b-4540-8933-3a25a918810b",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "192,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "512,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-32,128"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "192,224"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "176,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$6._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
+          }
         }
       ],
       "Children": [
@@ -1522,10 +1969,16 @@
             "go": "f07763c8-91fb-49f8-b00d-986c12139ae4",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "f07763c8-91fb-49f8-b00d-986c12139ae4"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
           },
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
             "component_id": "861832f9-f1d9-4942-8ee6-c08cc5d93708",
@@ -1538,7 +1991,136 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "617081fd-de51-48d6-82c9-77696862367b",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "c47185a0-fd8b-43c5-b10f-bc22cc903564",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "208,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "528,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-16,128"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "208,224"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "192,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$6._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
+          }
         }
       ],
       "Children": [
@@ -1669,10 +2251,16 @@
             "go": "98a4d122-d0bb-4cf7-8569-8d91aaea3984",
             "component_type": "CitizenAnimationHelper"
           },
+          "body": {
+            "_type": "gameobject",
+            "go": "98a4d122-d0bb-4cf7-8569-8d91aaea3984"
+          },
+          "ChangeScene": true,
           "GibGameObject": {
             "_type": "gameobject",
             "prefab": "prefabs/zombiegibs.prefab"
           },
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
             "component_id": "4c2ca556-9c31-4e94-ab41-f525ed5dc95f",
@@ -1685,7 +2273,136 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "5743b908-7a93-412e-8fe4-046c5004706b",
-          "health": 100
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "256fe9f2-e351-4a9f-9212-16db3e2f3ab0",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "208,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "528,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "-16,128"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "208,224"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Rotation",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "192,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "position"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "rotation"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/zombiegibs.prefab"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$6._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
+          }
         }
       ],
       "Children": [
@@ -1795,7 +2512,7 @@
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "Sky": "materials/skybox/skybox_day_01.vmat",
+          "Sky": "materials/skybox/skybox_dark_01.vmat",
           "StartDistance": 0
         }
       ]
@@ -1939,8 +2656,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "MoveTo",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.CharacterController"
+                  "_type": "Sandbox.Game/Sandbox.CharacterController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2451,6 +3168,10 @@
           },
           "Coins": 0,
           "CrouchSpeed": 50,
+          "Eye": {
+            "_type": "gameobject",
+            "go": "407c992f-3fc4-4ec6-8e1f-2f616e36472b"
+          },
           "eyeAngles": "0,0,0",
           "Health": 100,
           "Hold": {
@@ -2486,7 +3207,10 @@
           "__guid": "694e873a-f696-4117-b8e1-2d8aca5016db",
           "HeavyAmmo": 30,
           "LightAmmo": 30,
-          "ShotgunShells": 30
+          "ShotgunShells": 30,
+          "StartingHeavyAmmo": 0,
+          "StartingLightAmmo": 0,
+          "StartingShotgunShells": 0
         }
       ],
       "Children": [
@@ -3396,6 +4120,13 @@
               "Static": false
             }
           ]
+        },
+        {
+          "__guid": "407c992f-3fc4-4ec6-8e1f-2f616e36472b",
+          "Name": "eye",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     },
@@ -3718,7 +4449,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-24T14:50:45.9839008-04:00",
+  "LastSaved": "2024-04-24T19:26:59.371646-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
