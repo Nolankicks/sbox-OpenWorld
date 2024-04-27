@@ -22,7 +22,7 @@
         {
           "__type": "Sdftest",
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
-          "Amplitude": 2,
+          "Amplitude": 1.5,
           "ItemsToSpawnAfterWorld": [],
           "Player": {
             "_type": "gameobject",
@@ -99,7 +99,7 @@
                 }
               ],
               "Defaults": {
-                "$4._value": {
+                "$3._value": {
                   "_type": "gameobject",
                   "prefab": "prefabs/light_ammo_pickup.prefab"
                 }
@@ -175,7 +175,7 @@
                 }
               ],
               "Defaults": {
-                "$2._value": {
+                "$3._value": {
                   "_type": "gameobject",
                   "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
                 }
@@ -251,7 +251,7 @@
                 }
               ],
               "Defaults": {
-                "$2._value": {
+                "$3._value": {
                   "_type": "gameobject",
                   "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
                 }
@@ -1634,7 +1634,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-27T11:15:40.2501116-04:00",
+  "LastSaved": "2024-04-27T11:41:07.9863568-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

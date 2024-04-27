@@ -136,7 +136,7 @@ public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
         // Validate the position
         if (trace.Hit && trace.HitPosition.x > buffer && trace.HitPosition.x < dim.x - buffer &&
             trace.HitPosition.y > buffer && trace.HitPosition.y < dim.y - buffer &&
-            trace.HitPosition.z < dim.z - buffer) // Make sure it's not too close to the top boundary
+            trace.HitPosition.z < dim.z - buffer && !trace.GameObject.Tags.Has("world")) // Make sure it's not too close to the top boundary
         {
             return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
         }
