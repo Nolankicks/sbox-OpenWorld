@@ -21,8 +21,9 @@ public sealed class Sdftest : Component
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
 	[Property] public ProcGenUi ProcGenUi { get; set; }
+    [Property] public GameObject SpawnPoint { get; set; }
 	[Property] public bool StartServer { get; set; } = false;
-	public delegate void RandomAction(Sdftest sdftest);
+	public delegate void RandomAction(Sdftest SDFManager, Sdf3DWorld world);
 	[Property] public List<RandomAction> randomActions { get; set; } = new();
 	protected override void OnStart()
 	{
@@ -51,18 +52,16 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await Task.DelaySeconds(1);
 	for (int i = 0; i < 150; i++)
     {
+        //CreateSpawns(SpawnPoint, world);
         CreateTree(TreePrefab, world);	
 		CreateRock(RockPrefab, world);
     }
 	await Task.DelaySeconds(1);
 	foreach (var action in randomActions)
 	{
-		action?.Invoke(this);
+		action?.Invoke(this, world);
 	}
-	for (int i = 0; i < 10; i++)
-	{
-		RandomEvent(1, 1, new GameObject().Components.Create<SpawnPoint>().GameObject);
-	}
+
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
 	foreach(var gameObject in ItemsToSpawnAfterWorld)
@@ -78,11 +77,11 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await Task.DelaySeconds(1);
     if (Player is not null)
     {
-        SpawnPlayer(Player, Scene.GetAllComponents<SpawnPoint>().FirstOrDefault());
+        SpawnPlayer(Player);
     }
 }
 
-void SpawnPlayer(GameObject player, SpawnPoint spawnPoint)
+void SpawnPlayer(GameObject player)
 {
 	var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
 	if (spawnPoints.Count == 0) Log.Error("No spawn points found");
@@ -103,7 +102,24 @@ void CreateRock(GameObject RockPrefab, Sdf3DWorld world)
 	RockPrefab.Clone(GetBounds(world));
 }
 
-public Vector3 GetBounds(Sdf3DWorld world)
+void CreateSpawns(GameObject prefab, Sdf3DWorld world)
+{
+    prefab.Clone(GetBounds(world));
+}
+
+public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset)
+{
+    for (int i = 0; i < times; i++)
+    {
+        if (GetRandom(0, 1) < propbiability)
+        {
+            var pos = GetBounds(world, Offset);
+            var clone = gameObject.Clone(pos);
+            Log.Info(clone.Transform.Position);
+        }
+    }
+}
+public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
 {
     Vector3 dim = world.Dimensions * 10000;
     int buffer = 200; // Increase buffer size
@@ -122,53 +138,9 @@ public Vector3 GetBounds(Sdf3DWorld world)
             trace.HitPosition.y > buffer && trace.HitPosition.y < dim.y - buffer &&
             trace.HitPosition.z < dim.z - buffer) // Make sure it's not too close to the top boundary
         {
-            return trace.HitPosition;
+            return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
         }
-
-        // Add logging
-        Log.Info($"Trace hit: {trace.Hit}, Hit position: {trace.HitPosition}");
     }
-}
-
-public void RandomEvent(float propbiability, int times, GameObject prefab)
-{
-	for (int i = 0; i < times; i++)
-	{
-	if (GetRandom(0, 1) < propbiability)
-    {
-        prefab.Clone(GetBounds(World));
-    }
-	}
-}
-[Title("Random Event")]
-[Icon("water")]
-public class RandomEventComponent : Component
-{
-	/// <summary>
-    /// A number between 0 and 1, with 1 being certain and 0 being impossible
-    /// </summary>
-   	[Property, Range(0, 1)]  public float Probability { get; set; }
-
-    [Property] public GameObject Prefab { get; set; }
-	[Property] public Action OnSpawn { get; set; }
-    public Sdftest Sdftest { get; set; }
-	[Property, Range(1, 100)] public int TimesInvoked { get; set; }
-
-	protected override void OnStart()
-	{
-		Sdftest = Scene.GetAllComponents<Sdftest>().FirstOrDefault();
-		_ = SpawnEvent();
-	}
-
-	public async Task SpawnEvent()
-	{
-		await Task.DelaySeconds(10);
-		for (int i = 0; i < TimesInvoked; i++)
-		{
-		Sdftest.RandomEvent(Probability, 1, Prefab);
-		OnSpawn?.Invoke();
-		}
-	}
 }
 
 

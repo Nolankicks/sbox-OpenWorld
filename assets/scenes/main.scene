@@ -31,6 +31,7 @@
       "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
+      "Enabled": true,
       "NetworkMode": 2
     },
     {
@@ -1170,8 +1171,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1784,8 +1785,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -3524,7 +3525,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-25T14:30:14.2118963-04:00",
+  "LastSaved": "2024-04-27T10:17:09.6316479-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

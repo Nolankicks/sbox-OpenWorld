@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "70bdcfb5-63d9-401f-a435-f0b965ce4e5f",
+    "__guid": "0541ec83-523f-4cbb-932a-19a032684984",
     "Name": "weapon_smg",
     "Tags": "weapon",
     "Enabled": true,
@@ -8,12 +8,12 @@
     "Components": [
       {
         "__type": "Kicks.Weapon",
-        "__guid": "87976925-925c-4dd9-b0b7-af1d17acbb71",
+        "__guid": "6c43a2d0-5780-4de4-aa14-b394578b932a",
         "Ammo": 30,
         "AmmoType": "LightAmmo",
         "Arms": {
           "_type": "gameobject",
-          "go": "09e437f6-8ac3-486f-ae03-99ded54a9cf3"
+          "go": "5b5810d4-44b8-41eb-a3ec-464622cea33c"
         },
         "b_twohanded": false,
         "BloodParticle": {
@@ -28,7 +28,7 @@
         "Description": "A swift SMG",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "27434320-b173-4b09-874f-9c0ca8055db7"
+          "go": "76fe2497-aee7-4f79-b0d2-0e5f63b3c0d5"
         },
         "FireRate": 0.1,
         "FireSound": "sounds/shootsound.sound",
@@ -53,30 +53,30 @@
         "TestStruct": {},
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "5f8a85c3-9eb7-493f-8edc-44e01d24bbc9"
+          "go": "ad8cc203-9a8f-423a-a6f2-8a3293627e92"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "6961c2bf-b774-4e5e-aaf8-8dcc3213682f",
-          "go": "3562696b-eca5-463c-b52b-270735e22088",
+          "component_id": "90f95f82-6488-4da4-88a6-d16d29f85607",
+          "go": "81cde192-c7bf-4546-82f0-18b3d2fec641",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "c993cc95-73ac-476f-8f65-500cabd6ba8a"
+          "go": "e3b47167-ce26-46c5-b344-a9222a51b0bc"
         },
         "WeaponIndent": "weapon_smg",
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "abc363f8-680a-425c-a364-8842206f859f",
+        "__guid": "1df0cb71-9a3b-4230-9c5d-463af9c1396f",
         "Icon": "mp5.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "5f8a85c3-9eb7-493f-8edc-44e01d24bbc9",
+        "__guid": "ad8cc203-9a8f-423a-a6f2-8a3293627e92",
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -84,7 +84,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "c408ed35-3744-4b43-afaa-6043a1f1e0a2",
+            "__guid": "b3661ce0-1907-4de3-b2e2-50b5efd3c723",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -102,25 +102,25 @@
         ],
         "Children": [
           {
-            "__guid": "c993cc95-73ac-476f-8f65-500cabd6ba8a",
+            "__guid": "e3b47167-ce26-46c5-b344-a9222a51b0bc",
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [
               {
-                "__guid": "09e437f6-8ac3-486f-ae03-99ded54a9cf3",
+                "__guid": "5b5810d4-44b8-41eb-a3ec-464622cea33c",
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "1aaac087-72c7-4df0-80da-c44655772c09",
+                    "__guid": "626bdcfa-df80-4b4d-a7fa-592aea7bc339",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "6961c2bf-b774-4e5e-aaf8-8dcc3213682f",
-                      "go": "3562696b-eca5-463c-b52b-270735e22088",
+                      "component_id": "90f95f82-6488-4da4-88a6-d16d29f85607",
+                      "go": "81cde192-c7bf-4546-82f0-18b3d2fec641",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -131,14 +131,14 @@
                 ]
               },
               {
-                "__guid": "3562696b-eca5-463c-b52b-270735e22088",
+                "__guid": "81cde192-c7bf-4546-82f0-18b3d2fec641",
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "6961c2bf-b774-4e5e-aaf8-8dcc3213682f",
+                    "__guid": "90f95f82-6488-4da4-88a6-d16d29f85607",
                     "BodyGroups": 27,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -152,14 +152,14 @@
         ]
       },
       {
-        "__guid": "27434320-b173-4b09-874f-9c0ca8055db7",
+        "__guid": "76fe2497-aee7-4f79-b0d2-0e5f63b3c0d5",
         "Name": "Dropped Item",
         "Enabled": true,
         "NetworkMode": 1,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "28ec7f16-c894-4429-a913-74f21a85373f",
+            "__guid": "5b130e1d-a399-49a9-bca5-5dfbcb8f53c1",
             "BodyGroups": 3,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
@@ -168,7 +168,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "98f3e065-7845-4699-8814-5b1aaba917d8",
+            "__guid": "b2181bb9-1335-499a-a654-b2b48618c6c1",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -180,7 +180,7 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "398d4d78-4819-4f5b-b3e3-a49659ba849e",
+            "__guid": "97a79a6a-1b5a-490d-9be4-4abc704250de",
             "Center": "0,0,5.499997",
             "IsTrigger": false,
             "Scale": "24.20012,3.800029,10.99995",
