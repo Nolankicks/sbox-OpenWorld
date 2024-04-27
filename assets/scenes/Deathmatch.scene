@@ -304,9 +304,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "368,96"
@@ -1359,6 +1359,7 @@
           "__type": "DummySpawner",
           "__guid": "8f832573-b17a-47c4-92f4-59bec8b12044",
           "DestroyAll": false,
+          "DestroyOnJoin": true,
           "Dummies": [],
           "Dummy": {
             "_type": "gameobject",
@@ -1397,7 +1398,8 @@
               "_type": "gameobject",
               "go": "17c2a159-0507-4650-9e70-c5c1c62cac7f"
             }
-          ]
+          ],
+          "UseNavMesh": false
         }
       ]
     },
@@ -1539,8 +1541,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-160,128"
@@ -1550,8 +1552,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "64,112"
@@ -1561,8 +1563,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Rotation"
                 },
                 "UserData": {
                   "Position": "80,192"
@@ -1739,7 +1741,7 @@
   },
   "Title": "deathmatch",
   "Description": "",
-  "LastSaved": "2024-04-24T19:01:42.6177591-04:00",
+  "LastSaved": "2024-04-26T19:23:52.6234436-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

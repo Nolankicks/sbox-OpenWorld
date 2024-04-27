@@ -15,8 +15,8 @@
     {
       "__guid": "77d924df-e470-417a-b856-b2bce6515257",
       "Name": "Camera",
-      "Position": "191.9973,5312,1520",
-      "Rotation": "0,-0,-0.7071068,0.7071068",
+      "Position": "6720,14720,6656",
+      "Rotation": "0.09229596,0.09229596,-0.7010574,0.7010574",
       "Tags": "maincamera",
       "Enabled": true,
       "NetworkMode": 2,
@@ -26,12 +26,12 @@
           "__guid": "14c1ecdb-9367-4e12-8874-4c65cbc9275c",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 80,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "",
+          "RenderExcludeTags": "viewmodel",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
@@ -63,19 +63,25 @@
     {
       "__guid": "820769d3-b1b6-46a6-bed2-ebd3e1e7af30",
       "Name": "ChunkCreator",
+      "Position": "1536,0,6656",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sdftest",
           "__guid": "7801a492-c461-4370-9e2a-ee4ce25eb357",
-          "Amplitude": 1,
-          "ItemsToSpawnAfterWorld": [
-            {
-              "_type": "gameobject",
-              "go": "e7b37b9d-5681-4069-8220-89877e4c4e53"
-            }
-          ],
+          "Amplitude": 2,
+          "ItemsToSpawnAfterWorld": [],
+          "Player": {
+            "_type": "gameobject",
+            "go": "2697df60-7fd0-4c77-bb29-f843f9d1ebe2"
+          },
+          "ProcGenUi": {
+            "_type": "component",
+            "component_id": "f4fa25a6-1b78-487f-9c85-4b272fbfe292",
+            "go": "9acaa61d-f470-4ec3-9267-0888194005f8",
+            "component_type": "ProcGenUi"
+          },
           "RockPrefab": {
             "_type": "gameobject",
             "go": "ca543684-8eb7-42dc-a561-9267cb05c086"
@@ -139,6 +145,7 @@
       "__guid": "ca543684-8eb7-42dc-a561-9267cb05c086",
       "Name": "Rock",
       "Position": "570.9663,-1006.349,9784.636",
+      "Scale": "0.1,0.1,0.1",
       "Tags": "world",
       "NetworkMode": 2,
       "Components": [
@@ -146,7 +153,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "88b192ab-efbf-4daa-8947-08e8200ead0b",
           "BodyGroups": 18446744073709551615,
-          "Model": "rock kit/rock_1.vmdl",
+          "Model": "models/rust_nature/rocks/rock_cliff_a.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         }
@@ -208,8 +215,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,144"
@@ -219,8 +226,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
+                  "_name": "LocalPosition",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "144,80"
@@ -268,22 +275,6 @@
               }
             }
           }
-        }
-      ]
-    },
-    {
-      "__guid": "a68361b5-c6c8-4dee-b838-917d3e911b5e",
-      "Name": "DummySpawner",
-      "Position": "570.9663,-1006.348,9784.636",
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "DummySpawner",
-          "__guid": "9a63b103-b81e-4e3c-bca4-d67e63ea1943",
-          "DestroyAll": false,
-          "Dummies": [],
-          "SpawnLocations": [],
-          "UseNavMesh": false
         }
       ]
     },
@@ -349,6 +340,16 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
+          "ItemsToSpawnWith": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapons/weapon_smg.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapons/weapon_pistol.prefab"
+            }
+          ],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -1285,23 +1286,6 @@
       ]
     },
     {
-      "__guid": "e7b37b9d-5681-4069-8220-89877e4c4e53",
-      "Name": "network prefab",
-      "Position": "-5504,16512,2",
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "NetworkManager",
-          "__guid": "c556d7a5-c7e7-4c7e-a0c9-3a90bfd7ded4",
-          "PlayerPrefab": {
-            "_type": "gameobject",
-            "go": "2697df60-7fd0-4c77-bb29-f843f9d1ebe2"
-          },
-          "StartServer": true
-        }
-      ]
-    },
-    {
       "__guid": "9acaa61d-f470-4ec3-9267-0888194005f8",
       "Name": "Screen",
       "Position": "1270.708,-2231.801,9809.742",
@@ -1320,6 +1304,218 @@
           "__type": "Kicks.Hud",
           "__guid": "7006d09e-6827-4f7a-8a0f-e63fd8d232e0",
           "opacity": 1
+        },
+        {
+          "__type": "ProcGenUi",
+          "__guid": "f4fa25a6-1b78-487f-9c85-4b272fbfe292",
+          "MyStringValue": "Hello World!"
+        }
+      ]
+    },
+    {
+      "__guid": "f809d5c5-4477-4152-8b6d-4eecd04e6dd2",
+      "Name": "Network",
+      "Position": "500,500,7398.646",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "NetworkManager",
+          "__guid": "754ac99a-b9f1-4e08-9cf1-0d953bada629",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "go": "2697df60-7fd0-4c77-bb29-f843f9d1ebe2"
+          },
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "1c4d722e-62ff-4cb0-bca1-96d69b7c47c5",
+      "Name": "zombie",
+      "Position": "1024,384,4",
+      "Tags": "dummy",
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "331c8b37-5be6-4287-91e8-6cf0c3318206",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "5000,5000,5000",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.NavMeshAgent",
+          "__guid": "e5d87d43-6b8a-415b-a58b-60cd838cd7f2",
+          "Acceleration": 1000,
+          "Height": 64,
+          "MaxSpeed": 120,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true,
+          "UpdateRotation": false
+        },
+        {
+          "__type": "Kicks.Dummy",
+          "__guid": "7624b8d8-7f81-4143-a113-2d0cf51bff37",
+          "animationHelper": {
+            "_type": "component",
+            "component_id": "0e87dd61-0805-447b-aa40-eb08d0bb6a5d",
+            "go": "4201dbb7-0454-41a0-94e9-2d78a3003520",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "body": {
+            "_type": "gameobject",
+            "go": "4201dbb7-0454-41a0-94e9-2d78a3003520"
+          },
+          "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "e5d87d43-6b8a-415b-a58b-60cd838cd7f2",
+            "go": "1c4d722e-62ff-4cb0-bca1-96d69b7c47c5",
+            "component_type": "NavMeshAgent"
+          },
+          "players": [],
+          "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "e8c760df-6dee-4bfc-b271-3cd4d2e05275",
+          "health": 100,
+          "OnDeath": {
+            "__version": 6,
+            "__guid": "c0019f85-5981-4f85-92e0-f1a56b46f7c7",
+            "UserData": {
+              "Title": "On Death",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "graph",
+                "Properties": {
+                  "graph": "actions/drop light ammo action.action"
+                },
+                "UserData": {
+                  "Position": "272,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              }
+            ]
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "4201dbb7-0454-41a0-94e9-2d78a3003520",
+          "Name": "body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "db5c0545-2dc4-484c-82df-98c22b3b6ade",
+              "BodyGroups": 0,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "0e87dd61-0805-447b-aa40-eb08d0bb6a5d",
+              "BodyWeight": 1,
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "f83ce3ad-8d5d-4c6c-8ae8-0f76311a4702"
+              },
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": true,
+              "Target": {
+                "_type": "component",
+                "component_id": "db5c0545-2dc4-484c-82df-98c22b3b6ade",
+                "go": "4201dbb7-0454-41a0-94e9-2d78a3003520",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "724489b5-17b8-4fed-837f-82716d7d9efd",
+              "Name": "Cloths",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "d336d5c6-57f6-410d-bb85-319222ce3911",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "db5c0545-2dc4-484c-82df-98c22b3b6ade",
+                    "go": "4201dbb7-0454-41a0-94e9-2d78a3003520",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "b4527742-f925-47bc-ac6f-aee9855c8151",
+          "Name": "Collider",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "c9714ee9-d0c9-40c3-b009-17222d7c6d6a",
+              "End": "0,0,54.37019",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Start": "0,0,0",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "f83ce3ad-8d5d-4c6c-8ae8-0f76311a4702",
+          "Name": "eyes",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
         }
       ]
     }
@@ -1341,19 +1537,19 @@
       "AgentRadius": 16,
       "AgentStepSize": 18,
       "AgentMaxSlope": 40,
-      "ExcludedBodies": "",
+      "ExcludedBodies": "dummy",
       "IncludedBodies": ""
     }
   },
   "Title": "sdf",
   "Description": "",
-  "LastSaved": "2024-04-26T18:13:06.1656222-04:00",
+  "LastSaved": "2024-04-26T20:29:37.4011639-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.tree_oak_small_a",
     "facepunch.wooden_crate",
-    "gkaf.rock_1",
-    "nolankicks.idel-terry"
+    "nolankicks.idel-terry",
+    "rust.rock_cliff_a"
   ]
 }

@@ -11,13 +11,16 @@ public sealed class Sdftest : Component
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
+    [Property] public GameObject Player { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
 	[Property] public List<GameObject> ItemsToSpawnAfterWorld { get; set; } = new();
+	[Property] public GameObject SpawnPoint { get; set; }
 	public float[,] PerlinValues { get; set; }
     [Property] public GameObject TreePrefab { get; set; }
 	[Property] public GameObject RockPrefab { get; set; }
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
+	[Property] public ProcGenUi ProcGenUi { get; set; }
 
 	protected override void OnStart()
 	{
@@ -51,11 +54,19 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 		CreateRock(RockPrefab, world);
     }
 	LoadingScreen.Title = "Spawning items...";
-	await Task.DelaySeconds(1);
+	await Task.DelaySeconds(3);
 	foreach(var gameObject in ItemsToSpawnAfterWorld)
 	{
 		gameObject.Clone();
 	}
+	ProcGenUi.Destroy();
+	await Task.DelaySeconds(1);
+	//ClonePlayer();
+}
+
+void ClonePlayer()
+{
+	Player.Clone(new Vector3(0, 0, 1000));
 }
 void CreateSpawnPoints(Sdf3DWorld world)
 {
@@ -128,7 +139,7 @@ public class RandomEventComponent : Component
 
 	public async Task SpawnEvent()
 	{
-		await Sdftest.CreateWorld(Sdftest.World, Sdftest.Volume, Sdftest.Scale);
+		await Task.DelaySeconds(10);
 		for (int i = 0; i < TimesInvoked; i++)
 		{
 		Sdftest.RandomEvent(Probability, Prefab);

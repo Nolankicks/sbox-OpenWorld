@@ -1055,10 +1055,11 @@
         {
           "__type": "MenuUi",
           "__guid": "9ada1625-fd07-40c7-9c4f-f540325c67c6",
-          "DeathmatchScene": "scenes/deathmatch.scene",
           "GameScenes": [
             "scenes/demo_level1.scene",
-            "scenes/demo_level2.scene"
+            "scenes/demo_level2.scene",
+            "scenes/deathmatch.scene",
+            "scenes/sdf.scene"
           ],
           "ShowLobby": false
         }
@@ -1104,7 +1105,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-04-24T19:21:54.7045322-04:00",
+  "LastSaved": "2024-04-26T20:33:51.1416124-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
