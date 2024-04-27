@@ -72,10 +72,6 @@
           "__guid": "7801a492-c461-4370-9e2a-ee4ce25eb357",
           "Amplitude": 2,
           "ItemsToSpawnAfterWorld": [],
-          "Player": {
-            "_type": "gameobject",
-            "go": "2697df60-7fd0-4c77-bb29-f843f9d1ebe2"
-          },
           "ProcGenUi": {
             "_type": "component",
             "component_id": "f4fa25a6-1b78-487f-9c85-4b272fbfe292",
@@ -128,7 +124,7 @@
           "__type": "Sandbox.ModelRenderer",
           "__guid": "48b358b1-5f6e-4b7f-b328-1eebe1e1062e",
           "BodyGroups": 18446744073709551615,
-          "Model": "models/sbox_props/trees/oak/tree_oak_small_a.vmdl",
+          "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -1543,10 +1539,11 @@
   },
   "Title": "sdf",
   "Description": "",
-  "LastSaved": "2024-04-26T20:29:37.4011639-04:00",
+  "LastSaved": "2024-04-26T21:04:03.9699191-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "facepunch.tree_oak_medium_a",
     "facepunch.tree_oak_small_a",
     "facepunch.wooden_crate",
     "nolankicks.idel-terry",

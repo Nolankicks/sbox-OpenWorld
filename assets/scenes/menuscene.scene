@@ -327,8 +327,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -1059,7 +1059,7 @@
             "scenes/demo_level1.scene",
             "scenes/demo_level2.scene",
             "scenes/deathmatch.scene",
-            "scenes/sdf.scene"
+            "scenes/sdf_demo.scene"
           ],
           "ShowLobby": false
         }
@@ -1105,7 +1105,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-04-26T20:33:51.1416124-04:00",
+  "LastSaved": "2024-04-26T20:56:59.3955409-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

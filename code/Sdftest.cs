@@ -4,6 +4,7 @@ using Sandbox.Sdf;
 using Sandbox.Utility;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
+using Sandbox.Network;
 
 [Title("SDF Manager")]
 [Icon("dashboard")]
@@ -11,17 +12,18 @@ public sealed class Sdftest : Component
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
-    [Property] public GameObject Player { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
 	[Property] public List<GameObject> ItemsToSpawnAfterWorld { get; set; } = new();
-	[Property] public GameObject SpawnPoint { get; set; }
 	public float[,] PerlinValues { get; set; }
     [Property] public GameObject TreePrefab { get; set; }
+    [Property] public GameObject Player { get; set; }
 	[Property] public GameObject RockPrefab { get; set; }
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
 	[Property] public ProcGenUi ProcGenUi { get; set; }
-
+	[Property] public bool StartServer { get; set; } = false;
+	public delegate void RandomAction(Sdftest sdftest);
+	[Property] public List<RandomAction> randomActions { get; set; } = new();
 	protected override void OnStart()
 	{
 		World.GameObject.NetworkSpawn();
@@ -49,32 +51,47 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await Task.DelaySeconds(1);
 	for (int i = 0; i < 150; i++)
     {
-		CreateSpawnPoints(world);
         CreateTree(TreePrefab, world);	
 		CreateRock(RockPrefab, world);
     }
+	await Task.DelaySeconds(1);
+	foreach (var action in randomActions)
+	{
+		action?.Invoke(this);
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		RandomEvent(1, 1, new GameObject().Components.Create<SpawnPoint>().GameObject);
+	}
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
 	foreach(var gameObject in ItemsToSpawnAfterWorld)
 	{
 		gameObject.Clone();
 	}
-	ProcGenUi.Destroy();
+    if (ProcGenUi is not null)
+    {
+        ProcGenUi.Destroy();
+    }
 	await Task.DelaySeconds(1);
-	//ClonePlayer();
+	GameNetworkSystem.CreateLobby();
+	await Task.DelaySeconds(1);
+    if (Player is not null)
+    {
+        SpawnPlayer(Player, Scene.GetAllComponents<SpawnPoint>().FirstOrDefault());
+    }
 }
 
-void ClonePlayer()
+void SpawnPlayer(GameObject player, SpawnPoint spawnPoint)
 {
-	Player.Clone(new Vector3(0, 0, 1000));
+	var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
+	if (spawnPoints.Count == 0) Log.Error("No spawn points found");
+	var selectedPoint = Game.Random.FromList(spawnPoints);
+	Log.Info(selectedPoint);
+    var playerClone = player.Clone(selectedPoint.Transform.Position);
+	playerClone.NetworkSpawn();
 }
-void CreateSpawnPoints(Sdf3DWorld world)
-{
-	var pos = GetBounds(world);
-	var spawn = new GameObject();
-	spawn.Components.Create<SpawnPoint>();
-	spawn.Clone(pos);
-}
+
 
 void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
 {
@@ -107,15 +124,21 @@ public Vector3 GetBounds(Sdf3DWorld world)
         {
             return trace.HitPosition;
         }
+
+        // Add logging
+        Log.Info($"Trace hit: {trace.Hit}, Hit position: {trace.HitPosition}");
     }
 }
 
-void RandomEvent(float propbiability, GameObject prefab)
+public void RandomEvent(float propbiability, int times, GameObject prefab)
 {
-    if (GetRandom(0, 1) < propbiability)
+	for (int i = 0; i < times; i++)
+	{
+	if (GetRandom(0, 1) < propbiability)
     {
         prefab.Clone(GetBounds(World));
     }
+	}
 }
 [Title("Random Event")]
 [Icon("water")]
@@ -142,7 +165,7 @@ public class RandomEventComponent : Component
 		await Task.DelaySeconds(10);
 		for (int i = 0; i < TimesInvoked; i++)
 		{
-		Sdftest.RandomEvent(Probability, Prefab);
+		Sdftest.RandomEvent(Probability, 1, Prefab);
 		OnSpawn?.Invoke();
 		}
 	}
