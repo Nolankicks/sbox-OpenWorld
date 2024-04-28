@@ -162,7 +162,7 @@ public sealed class Shotgun : Component
 			}
 			if (damageTaker is not null)
 			{
-				damageTaker.TakeDamage(Damage);
+				damageTaker.TakeDamage(Damage, GameObject.Parent.Id);
 			}
 				if (tr.Surface is null)
 		{

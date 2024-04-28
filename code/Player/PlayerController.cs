@@ -11,6 +11,9 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property, Sync] public int Wood { get; set; }
+	[Property, Sync] public int Stone { get; set; }
+	[Property, Sync] public int Metal { get; set; }
 	[Property] public GameObject Hold { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;

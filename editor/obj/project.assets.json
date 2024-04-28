@@ -29,8 +29,7 @@
           "Base Library": "1.0.0",
           "libpolygon": "1.0.0",
           "libsdf": "1.0.0",
-          "sfxr": "1.0.0",
-          "tiktoktts": "1.0.0"
+          "stuffthatisntbuiltin": "1.0.0"
         },
         "compile": {
           "bin/placeholder/dead4left2.dll": {}
@@ -62,24 +61,14 @@
           "bin/placeholder/libsdf.dll": {}
         }
       },
-      "sfxr/1.0.0": {
+      "stuffthatisntbuiltin/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/sfxr.dll": {}
+          "bin/placeholder/stuffthatisntbuiltin.dll": {}
         },
         "runtime": {
-          "bin/placeholder/sfxr.dll": {}
-        }
-      },
-      "tiktoktts/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/tiktoktts.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/tiktoktts.dll": {}
+          "bin/placeholder/stuffthatisntbuiltin.dll": {}
         }
       }
     }
@@ -110,15 +99,10 @@
       "path": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj"
     },
-    "sfxr/1.0.0": {
+    "stuffthatisntbuiltin/1.0.0": {
       "type": "project",
-      "path": "../Libraries/carsonk.sfxr/Code/sfxr.csproj",
-      "msbuildProject": "../Libraries/carsonk.sfxr/Code/sfxr.csproj"
-    },
-    "tiktoktts/1.0.0": {
-      "type": "project",
-      "path": "../Libraries/carsonk.tiktoktts/Code/tiktoktts.csproj",
-      "msbuildProject": "../Libraries/carsonk.tiktoktts/Code/tiktoktts.csproj"
+      "path": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj",
+      "msbuildProject": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj"
     }
   },
   "projectFileDependencyGroups": {

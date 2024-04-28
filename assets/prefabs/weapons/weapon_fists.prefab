@@ -1,0 +1,82 @@
+{
+  "RootObject": {
+    "__guid": "d925f86e-8088-4cb0-a3b9-42d4816d8fa3",
+    "Name": "weapon_fists",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Fists",
+        "__guid": "de5578a0-9648-41fb-98eb-1f44e07268b2",
+        "Damage": 10,
+        "fists": {
+          "_type": "component",
+          "component_id": "b55c76cc-2d07-43f0-8504-9814bcdb0571",
+          "go": "1184e3e0-c233-4569-8041-eb44a3edfd0c",
+          "component_type": "SkinnedModelRenderer"
+        }
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "73447e05-1554-4a1a-84f6-89b42b456513",
+        "Icon": "shadergraph/clothing_icons/army_shirt_png_shadergraph.generated.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "bcdc7c7a-fd8e-49ec-ab62-638257c9fc90",
+        "Name": "Viewmodel",
+        "Position": "-6.989685,-4.8022,9.835373",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "d27377c2-2d2a-49cf-a70d-577ac4a97b2b",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 80,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "1184e3e0-c233-4569-8041-eb44a3edfd0c",
+            "Name": "fists",
+            "Position": "0,0,0",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "b55c76cc-2d07-43f0-8504-9814bcdb0571",
+                "AnimationGraph": "models/first_person/first_person_arms_punching.vanmgrph",
+                "BodyGroups": 21,
+                "CreateBoneObjects": false,
+                "Model": "models/first_person/first_person_arms.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

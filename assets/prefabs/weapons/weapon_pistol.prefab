@@ -103,7 +103,6 @@
           {
             "__guid": "42ed7496-1ddf-4a15-820b-f34d834c2fb5",
             "Name": "ViewModel",
-            "Tags": "viewmodel",
             "Enabled": true,
             "NetworkMode": 1,
             "Children": [

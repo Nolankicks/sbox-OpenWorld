@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "s\u0026box 3Ds cartridge",
+      "Type": "model",
+      "Org": "sandcastle",
+      "Ident": "sbox3ds",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/ds/sbox3ds.vmdl"
+      }
+    }
+  }
+}

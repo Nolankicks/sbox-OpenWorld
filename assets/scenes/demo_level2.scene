@@ -1188,9 +1188,9 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_name": "Parent",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1211,8 +1211,8 @@
                 "Id": 14,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "1184,304"
@@ -1271,8 +1271,8 @@
                 "Id": 22,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "688,256"
@@ -1304,9 +1304,9 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
                   "_name": "Rotation",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -2101,9 +2101,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Destroy",
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2359,9 +2359,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Destroy",
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2686,8 +2686,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -3713,9 +3713,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_name": "Destroy",
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -10115,7 +10115,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-27T20:48:42.3337356-04:00",
+  "LastSaved": "2024-04-27T21:29:19.8454235-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -153,6 +153,7 @@ public sealed class Weapon : Component
 		}
 	}
 
+
 	void UpdateWorldModelShadowType()
 	{
 		if (WorldModelInstance is null) return;
@@ -205,7 +206,7 @@ public sealed class Weapon : Component
 				}
 				if (damageTaker is not null)
 				{
-					damageTaker.TakeDamage(Damage);
+					damageTaker.TakeDamage(Damage, GameObject.Parent.Id);
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 				
@@ -225,7 +226,7 @@ public sealed class Weapon : Component
        		surfaceSound.Volume = 1;
     	}
 }
-				if ( tr.Body is not null )
+		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
 		}

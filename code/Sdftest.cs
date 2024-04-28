@@ -8,7 +8,7 @@ using Sandbox.Network;
 
 [Title("SDF Manager")]
 [Icon("dashboard")]
-public sealed class Sdftest : Component
+public sealed class Sdftest : Component, Component.INetworkListener
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
@@ -16,7 +16,6 @@ public sealed class Sdftest : Component
 	[Property] public List<GameObject> ItemsToSpawnAfterWorld { get; set; } = new();
 	public float[,] PerlinValues { get; set; }
     [Property] public GameObject TreePrefab { get; set; }
-    [Property] public GameObject Player { get; set; }
 	[Property] public GameObject RockPrefab { get; set; }
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
@@ -25,6 +24,7 @@ public sealed class Sdftest : Component
 	[Property] public bool StartServer { get; set; } = false;
 	public delegate void RandomAction(Sdftest SDFManager, Sdf3DWorld world);
 	[Property] public List<RandomAction> randomActions { get; set; } = new();
+	[Property] public GameObject PlayerPrefab { get; set; }
     [Property] public Action OnWorldSpawned { get; set; }
 	protected override void OnStart()
 	{
@@ -70,22 +70,28 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await Task.DelaySeconds(1);
 	GameNetworkSystem.CreateLobby();
 	await Task.DelaySeconds(1);
-    if (Player is not null)
-    {
-        SpawnPlayer(Player);
-    }
     OnWorldSpawned?.Invoke();
+
 }
 
-void SpawnPlayer(GameObject player)
-{
-	var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
-	if (spawnPoints.Count == 0) Log.Error("No spawn points found");
-	var selectedPoint = Game.Random.FromList(spawnPoints);
-	Log.Info(selectedPoint);
-    var playerClone = player.Clone(selectedPoint.Transform.Position);
-	playerClone.NetworkSpawn();
-}
+public void OnActive( Connection channel )
+	{
+		Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
+
+		if ( PlayerPrefab is null )
+			return;
+
+		//
+		// Find a spawn location for this player
+		//
+		var spawns = Scene.GetAllComponents<SpawnPoint>().ToList();
+		var startLocation = Game.Random.FromList( spawns ).Transform.World.WithScale( 1 );
+
+		// Spawn this object and make the client the owner
+		var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
+		player.NetworkSpawn( channel );
+	}
+
 
 
 void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
@@ -109,7 +115,7 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
 }
 public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
 {
-    Vector3 dim = world.Dimensions * 10000;
+    Vector3 dim = world.Dimensions * 10000 * Scale;
     int buffer = 200; // Increase buffer size
 
     while (true)

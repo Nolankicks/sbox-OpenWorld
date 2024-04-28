@@ -22,53 +22,9 @@
         {
           "__type": "Sdftest",
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
-          "Amplitude": 1.5,
+          "Amplitude": 2,
           "ItemsToSpawnAfterWorld": [],
-          "OnWorldSpawned": {
-            "__version": 6,
-            "__guid": "43402d45-e7a6-4c66-8b67-89ad139783c8",
-            "UserData": {
-              "Title": "On World Spawned",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "400,-0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "go": "6077c025-fddb-466e-afcf-ace32852c9c0"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              }
-            ],
-            "Defaults": {
-              "$3._value": {
-                "_type": "gameobject",
-                "go": "6077c025-fddb-466e-afcf-ace32852c9c0"
-              }
-            }
-          },
-          "Player": {
+          "PlayerPrefab": {
             "_type": "gameobject",
             "go": "56cb1d67-0f5a-43d6-8edb-a0cfca5f79d5"
           },
@@ -90,9 +46,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_name": "SpawnItem",
                     "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_name": "SpawnItem"
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
                   },
                   "UserData": {
                     "Position": "384,0"
@@ -166,9 +122,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_name": "SpawnItem",
                     "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_name": "SpawnItem"
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
                   },
                   "UserData": {
                     "Position": "368,-0"
@@ -242,9 +198,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_name": "SpawnItem",
                     "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_name": "SpawnItem"
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
                   },
                   "UserData": {
                     "Position": "336,-0"
@@ -318,9 +274,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_name": "SpawnItem",
                     "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_name": "SpawnItem"
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
                   },
                   "UserData": {
                     "Position": "336,0"
@@ -394,9 +350,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_name": "SpawnItem",
                     "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_name": "SpawnItem"
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
                   },
                   "UserData": {
                     "Position": "400,0"
@@ -452,6 +408,157 @@
                   "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
                 }
               }
+            },
+            {
+              "__version": 6,
+              "__guid": "b7ab5919-a845-40da-97a5-1e358bac71de",
+              "UserData": {
+                "Title": null
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 4,
+                  "Type": "call",
+                  "Properties": {
+                    "_name": "SpawnItem",
+                    "_isStatic": false,
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
+                  },
+                  "UserData": {
+                    "Position": "368,-0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "Value": true,
+                  "DstId": 4,
+                  "DstName": "Offset"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "SDFManager",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": {
+                    "_type": "gameobject",
+                    "go": "da99a89e-ad94-415b-8c7f-bf61baf1c42f"
+                  },
+                  "DstId": 4,
+                  "DstName": "gameObject"
+                },
+                {
+                  "Value": 0.2,
+                  "DstId": 4,
+                  "DstName": "propbiability"
+                },
+                {
+                  "Value": 25,
+                  "DstId": 4,
+                  "DstName": "times"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "world",
+                  "DstId": 4,
+                  "DstName": "world"
+                }
+              ],
+              "Defaults": {
+                "$5._value": {
+                  "_type": "gameobject",
+                  "go": "da99a89e-ad94-415b-8c7f-bf61baf1c42f"
+                }
+              }
+            },
+            {
+              "__version": 6,
+              "__guid": "521cdc51-2489-4ffd-a6a8-8bab38b58baa",
+              "UserData": {
+                "Title": null,
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 2,
+                  "Type": "call",
+                  "Properties": {
+                    "_name": "SpawnItem",
+                    "_isStatic": false,
+                    "_type": "package.nolankicks.dead4left2/Sdftest"
+                  },
+                  "UserData": {
+                    "Position": "416,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "Value": true,
+                  "DstId": 2,
+                  "DstName": "Offset"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 2,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "SDFManager",
+                  "DstId": 2,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": {
+                    "_type": "gameobject",
+                    "go": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f"
+                  },
+                  "DstId": 2,
+                  "DstName": "gameObject"
+                },
+                {
+                  "Value": 0.2,
+                  "DstId": 2,
+                  "DstName": "propbiability"
+                },
+                {
+                  "Value": 25,
+                  "DstId": 2,
+                  "DstName": "times"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "world",
+                  "DstId": 2,
+                  "DstName": "world"
+                }
+              ],
+              "Defaults": {
+                "$7._value": {
+                  "_type": "gameobject",
+                  "go": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f"
+                }
+              }
             }
           ],
           "RockPrefab": {
@@ -475,15 +582,6 @@
             "go": "374e00fe-93bd-41b8-99c7-e61d34162d6b",
             "component_type": "Sdf3DWorld"
           }
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "f31468ad-3674-4935-8463-d9a94955ed94",
-          "Name": "Box",
-          "Position": "-835.4169,2246.421,1759.262",
-          "Enabled": true,
-          "NetworkMode": 2
         }
       ]
     },
@@ -529,7 +627,7 @@
           "__type": "Sandbox.ModelCollider",
           "__guid": "3aecd059-4cd2-43da-bdbb-849853f5af6d",
           "IsTrigger": false,
-          "Model": "models/rust_nature/rocks/rock_small_a_cave.vmdl",
+          "Model": "models/rust_nature/rocks/rock_med_c.vmdl",
           "Static": false
         }
       ]
@@ -557,7 +655,7 @@
     {
       "__guid": "dafb40c0-b65c-4729-ade4-4c5d70eab3ef",
       "Name": "Camera",
-      "Position": "-1984,-1024,5056",
+      "Position": "-1984,-1024,6848",
       "Rotation": "-0.09904575,0.2391176,0.3696438,0.8923993",
       "Tags": "maincamera",
       "Enabled": true,
@@ -599,44 +697,6 @@
       ]
     },
     {
-      "__guid": "da99a89e-ad94-415b-8c7f-bf61baf1c42f",
-      "Name": "Water",
-      "Position": "-738.3582,-5788.863,9301.156",
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "bbab28e0-2db5-48e6-9cf5-cb33e9037240",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/rust_props/small_junk/water_bottle.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Kicks.PopupUi",
-          "__guid": "cc33197a-5d4c-4870-8663-b888efbd101f",
-          "Description": "Drink it",
-          "Name": "Water",
-          "selectedInput": "E",
-          "ShopItems": {
-            "ItemNames": [],
-            "ShopActions": [],
-            "ItemTextures": [],
-            "ItemPrices": []
-          },
-          "ShowPopUp": true
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "71926801-85e8-492b-b4c2-d074807334a1",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Radius": 25,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd",
       "Name": "Spawn",
       "Position": "-2148.235,-4761.689,8982.378",
@@ -646,21 +706,6 @@
           "__type": "Sandbox.SpawnPoint",
           "__guid": "e31acb9e-95e3-4aec-a254-db1326340203",
           "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "65c6952d-d13e-4e8a-b7c2-07e42ce4c217",
-      "Name": "cube",
-      "Position": "2232.692,1226.847,-60988.8",
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "27efc92b-36e9-4c19-b327-a6710a4dc96d",
-          "BodyGroups": 18446744073709551615,
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -826,19 +871,31 @@
                   "T": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
-                  "Position": "-0,112"
+                  "Position": "0,320"
                 }
               },
               {
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_name": "AddItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem"
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "304,0"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "640,0"
                 }
               }
             ],
@@ -873,12 +930,41 @@
                 },
                 "DstId": 3,
                 "DstName": "item"
+              },
+              {
+                "Value": 1,
+                "DstId": 6,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_fists.prefab"
+                },
+                "DstId": 6,
+                "DstName": "item"
               }
             ],
             "Defaults": {
               "$5._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_smg.prefab"
+              },
+              "$8._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_fists.prefab"
               }
             }
           },
@@ -1818,168 +1904,170 @@
       ]
     },
     {
-      "__guid": "6077c025-fddb-466e-afcf-ace32852c9c0",
-      "Name": "Zombie Spawner",
-      "Position": "2390.761,-2270.769,3125.315",
+      "__guid": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f",
+      "Name": "beer_bottle",
+      "Position": "811.553,7819.609,0.03397867",
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "ProcGenZombieSpawner",
-          "__guid": "e2cf4490-3fd4-44bc-87b2-e93817d7e86a",
-          "Zombie": {
-            "_type": "gameobject",
-            "go": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c"
-          }
+          "__type": "Sandbox.Prop",
+          "__guid": "c3570b1a-8710-4165-89e1-5eb6570707c6",
+          "BodyGroups": 18446744073709551615,
+          "Health": 1,
+          "IsStatic": false,
+          "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "cebc1616-1abf-4575-af7d-fdc59b623a48",
+          "Description": "Drink for some health",
+          "Name": "Beer",
+          "PickUpAction": {
+            "__version": 6,
+            "__guid": "bf70ec1d-1c30-4a69-a107-0e34c009b4ab",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Heal",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                },
+                "UserData": {
+                  "Position": "320,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": 25,
+                "DstId": 1,
+                "DstName": "amount"
+              }
+            ]
+          },
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "11070ac3-3b46-44c5-909e-b641ff3a9902",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 25,
+          "Static": false
         }
       ]
     },
     {
-      "__guid": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c",
-      "Name": "zombie",
-      "Position": "3840,-832,4",
-      "Tags": "dummy",
-      "NetworkMode": 1,
+      "__guid": "da99a89e-ad94-415b-8c7f-bf61baf1c42f",
+      "Name": "Water",
+      "Position": "-738.3582,-5788.863,9301.156",
+      "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "1e040c2f-cfdd-4402-93c5-a7f846e46d91",
-          "Center": "0,0,0",
-          "IsTrigger": true,
-          "Scale": "5000,5000,5000",
-          "Static": false
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "bbab28e0-2db5-48e6-9cf5-cb33e9037240",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/rust_props/small_junk/water_bottle.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
         },
         {
-          "__type": "Sandbox.NavMeshAgent",
-          "__guid": "6e91aa11-b06a-49f2-9229-e14997e04207",
-          "Acceleration": 1000,
-          "Height": 64,
-          "MaxSpeed": 120,
-          "Radius": 16,
-          "Separation": 0.25,
-          "UpdatePosition": true,
-          "UpdateRotation": false
-        },
-        {
-          "__type": "Kicks.Dummy",
-          "__guid": "b9031c7f-e5db-48e8-8158-7f9b5e55a615",
-          "animationHelper": {
-            "_type": "component",
-            "component_id": "c38d95d0-9cf7-4c63-b029-9b2e63f3b9ab",
-            "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
-            "component_type": "CitizenAnimationHelper"
-          },
-          "body": {
-            "_type": "gameobject",
-            "go": "0b13f207-106a-40fd-bc42-02ded3b23927"
-          },
-          "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
-          "navMeshAgent": {
-            "_type": "component",
-            "component_id": "6e91aa11-b06a-49f2-9229-e14997e04207",
-            "go": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c",
-            "component_type": "NavMeshAgent"
-          },
-          "players": [],
-          "SpawnGibs": true
-        },
-        {
-          "__type": "Kicks.EnemyHealthComponent",
-          "__guid": "04650fee-85b5-49e4-8715-19b0569cc998",
-          "health": 100
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "0b13f207-106a-40fd-bc42-02ded3b23927",
-          "Name": "body",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
-              "BodyGroups": 0,
-              "CreateBoneObjects": false,
-              "MaterialGroup": "default",
-              "Model": "models/citizen/citizen.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
+          "__type": "Kicks.PopupUi",
+          "__guid": "cc33197a-5d4c-4870-8663-b888efbd101f",
+          "Description": "Drink for some health",
+          "Name": "Water",
+          "PickUpAction": {
+            "__version": 6,
+            "__guid": "37ec24a0-d4f6-44d1-8a2f-e7284d50adb5",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
             },
-            {
-              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
-              "__guid": "c38d95d0-9cf7-4c63-b029-9b2e63f3b9ab",
-              "BodyWeight": 1,
-              "EyeSource": {
-                "_type": "gameobject",
-                "go": "2e495ce7-2245-4162-9305-d104e089f7bc"
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
               },
-              "EyesWeight": 1,
-              "HeadWeight": 1,
-              "LookAtEnabled": true,
-              "Target": {
-                "_type": "component",
-                "component_id": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
-                "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
-                "component_type": "SkinnedModelRenderer"
-              }
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "5df27790-6253-4e0b-bdf7-c49931def385",
-              "Name": "Cloths",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "ff018e11-6bfd-4c37-90b1-2a89e91f064c",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
-                    "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_name": "Heal",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                },
+                "UserData": {
+                  "Position": "304,0"
                 }
-              ]
-            }
-          ]
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": 25,
+                "DstId": 1,
+                "DstName": "amount"
+              }
+            ]
+          },
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
         },
         {
-          "__guid": "0e263e0c-f801-4c68-924e-1d9d3009ff06",
-          "Name": "Collider",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.CapsuleCollider",
-              "__guid": "93d0494c-e06d-4b28-8bce-97b92b10cf61",
-              "End": "0,0,54.37019",
-              "IsTrigger": false,
-              "Radius": 25,
-              "Start": "0,0,0",
-              "Static": false
-            }
-          ]
-        },
-        {
-          "__guid": "2e495ce7-2245-4162-9305-d104e089f7bc",
-          "Name": "eyes",
-          "Position": "0,0,64",
-          "Enabled": true,
-          "NetworkMode": 2
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "71926801-85e8-492b-b4c2-d074807334a1",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 25,
+          "Static": false
         }
       ]
     }
@@ -2007,15 +2095,15 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-27T20:48:59.290733-04:00",
+  "LastSaved": "2024-04-28T16:34:27.2768368-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "facepunch.beer_bottle",
     "facepunch.tree_oak_medium_a",
     "facepunch.wooden_crate",
     "nolankicks.idel-terry",
     "rust.rock_med_c",
-    "rust.rock_small_a_cave",
     "rust.water_bottle"
   ]
 }
