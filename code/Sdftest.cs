@@ -25,6 +25,7 @@ public sealed class Sdftest : Component
 	[Property] public bool StartServer { get; set; } = false;
 	public delegate void RandomAction(Sdftest SDFManager, Sdf3DWorld world);
 	[Property] public List<RandomAction> randomActions { get; set; } = new();
+    [Property] public Action OnWorldSpawned { get; set; }
 	protected override void OnStart()
 	{
 		World.GameObject.NetworkSpawn();
@@ -50,13 +51,6 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
     }
 	LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
-	for (int i = 0; i < 150; i++)
-    {
-        //CreateSpawns(SpawnPoint, world);
-        CreateTree(TreePrefab, world);	
-		CreateRock(RockPrefab, world);
-    }
-	await Task.DelaySeconds(1);
 	foreach (var action in randomActions)
 	{
 		action?.Invoke(this, world);
@@ -64,6 +58,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
+   
 	foreach(var gameObject in ItemsToSpawnAfterWorld)
 	{
 		gameObject.Clone();
@@ -79,6 +74,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
     {
         SpawnPlayer(Player);
     }
+    OnWorldSpawned?.Invoke();
 }
 
 void SpawnPlayer(GameObject player)
@@ -97,15 +93,7 @@ void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
     TreePrefab.Clone(GetBounds(world));
 }
 
-void CreateRock(GameObject RockPrefab, Sdf3DWorld world)
-{
-	RockPrefab.Clone(GetBounds(world));
-}
 
-void CreateSpawns(GameObject prefab, Sdf3DWorld world)
-{
-    prefab.Clone(GetBounds(world));
-}
 
 public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset)
 {

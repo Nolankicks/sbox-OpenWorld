@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\libpolygon.csproj",
+      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\libpolygon.csproj",
       "projectName": "libpolygon",
-      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\libpolygon.csproj",
+      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\libpolygon.csproj",
       "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\obj\\",
+      "outputPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\facepunch.libpolygon\\Code\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

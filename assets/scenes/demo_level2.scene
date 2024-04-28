@@ -11,7 +11,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "8dc94fac-baa2-4c76-9a34-8ad912c3a1d2",
-          "MapName": "maps/demo_level2.vmap",
+          "MapName": "nolankicks.demo_level2",
           "UseMapFromLaunch": false
         }
       ],
@@ -145,6 +145,7 @@
               "Items": [],
               "ItemTextures": [],
               "AllWeaponsEnabled": true,
+              "ItemsToSpawnWith": [],
               "StartingItems": [],
               "TestTexture": "textures/player_spritesheet_1.vtex"
             },
@@ -1187,9 +1188,9 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1210,8 +1211,8 @@
                 "Id": 14,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "1184,304"
@@ -1270,8 +1271,8 @@
                 "Id": 22,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "688,256"
@@ -1303,9 +1304,9 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
                   "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -2100,9 +2101,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2358,9 +2359,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2685,8 +2686,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -3712,9 +3713,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -10114,7 +10115,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-24T19:31:34.2033713-04:00",
+  "LastSaved": "2024-04-27T20:48:42.3337356-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

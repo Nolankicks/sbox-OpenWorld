@@ -28,7 +28,9 @@
         "dependencies": {
           "Base Library": "1.0.0",
           "libpolygon": "1.0.0",
-          "libsdf": "1.0.0"
+          "libsdf": "1.0.0",
+          "sfxr": "1.0.0",
+          "tiktoktts": "1.0.0"
         },
         "compile": {
           "bin/placeholder/dead4left2.dll": {}
@@ -59,6 +61,26 @@
         "runtime": {
           "bin/placeholder/libsdf.dll": {}
         }
+      },
+      "sfxr/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/sfxr.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/sfxr.dll": {}
+        }
+      },
+      "tiktoktts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/tiktoktts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/tiktoktts.dll": {}
+        }
       }
     }
   },
@@ -87,6 +109,16 @@
       "type": "project",
       "path": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj"
+    },
+    "sfxr/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/carsonk.sfxr/Code/sfxr.csproj",
+      "msbuildProject": "../Libraries/carsonk.sfxr/Code/sfxr.csproj"
+    },
+    "tiktoktts/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/carsonk.tiktoktts/Code/tiktoktts.csproj",
+      "msbuildProject": "../Libraries/carsonk.tiktoktts/Code/tiktoktts.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -102,11 +134,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
+      "projectUniqueName": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
       "projectName": "dead4left2.editor",
-      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
+      "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Editor\\dead4left2.editor.csproj",
       "packagesPath": "C:\\Users\\talle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Editor\\obj\\",
+      "outputPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Editor\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -131,8 +163,8 @@
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
             },
-            "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Code\\dead4left2.csproj": {
-              "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\openworld\\sbox-OpenWorld\\Code\\dead4left2.csproj"
+            "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj": {
+              "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj"
             }
           }
         }

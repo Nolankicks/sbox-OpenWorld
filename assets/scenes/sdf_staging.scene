@@ -24,6 +24,50 @@
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
           "Amplitude": 1.5,
           "ItemsToSpawnAfterWorld": [],
+          "OnWorldSpawned": {
+            "__version": 6,
+            "__guid": "43402d45-e7a6-4c66-8b67-89ad139783c8",
+            "UserData": {
+              "Title": "On World Spawned",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 2,
+                "Type": "scene.clone",
+                "UserData": {
+                  "Position": "400,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "6077c025-fddb-466e-afcf-ace32852c9c0"
+                },
+                "DstId": 2,
+                "DstName": "target"
+              }
+            ],
+            "Defaults": {
+              "$3._value": {
+                "_type": "gameobject",
+                "go": "6077c025-fddb-466e-afcf-ace32852c9c0"
+              }
+            }
+          },
           "Player": {
             "_type": "gameobject",
             "go": "56cb1d67-0f5a-43d6-8edb-a0cfca5f79d5"
@@ -163,7 +207,7 @@
                   "DstName": "propbiability"
                 },
                 {
-                  "Value": 5,
+                  "Value": 50,
                   "DstId": 1,
                   "DstName": "times"
                 },
@@ -256,6 +300,158 @@
                   "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
                 }
               }
+            },
+            {
+              "__version": 6,
+              "__guid": "b22fb26e-df98-430a-a252-c9dc1bd21d7c",
+              "UserData": {
+                "Title": null,
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_type": "package.nolankicks.dead4left2/Sdftest",
+                    "_name": "SpawnItem"
+                  },
+                  "UserData": {
+                    "Position": "336,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "Value": false,
+                  "DstId": 1,
+                  "DstName": "Offset"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "SDFManager",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": {
+                    "_type": "gameobject",
+                    "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
+                  },
+                  "DstId": 1,
+                  "DstName": "gameObject"
+                },
+                {
+                  "Value": 1,
+                  "DstId": 1,
+                  "DstName": "propbiability"
+                },
+                {
+                  "Value": 150,
+                  "DstId": 1,
+                  "DstName": "times"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "world",
+                  "DstId": 1,
+                  "DstName": "world"
+                }
+              ],
+              "Defaults": {
+                "$3._value": {
+                  "_type": "gameobject",
+                  "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
+                }
+              }
+            },
+            {
+              "__version": 6,
+              "__guid": "9e7837c9-30f9-4d1b-a4ec-e777f899e9af",
+              "UserData": {
+                "Title": null,
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_type": "package.nolankicks.dead4left2/Sdftest",
+                    "_name": "SpawnItem"
+                  },
+                  "UserData": {
+                    "Position": "400,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "Value": false,
+                  "DstId": 1,
+                  "DstName": "Offset"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "SDFManager",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": {
+                    "_type": "gameobject",
+                    "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
+                  },
+                  "DstId": 1,
+                  "DstName": "gameObject"
+                },
+                {
+                  "Value": 0.2,
+                  "DstId": 1,
+                  "DstName": "propbiability"
+                },
+                {
+                  "Value": 100,
+                  "DstId": 1,
+                  "DstName": "times"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "world",
+                  "DstId": 1,
+                  "DstName": "world"
+                }
+              ],
+              "Defaults": {
+                "$3._value": {
+                  "_type": "gameobject",
+                  "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
+                }
+              }
             }
           ],
           "RockPrefab": {
@@ -280,12 +476,22 @@
             "component_type": "Sdf3DWorld"
           }
         }
+      ],
+      "Children": [
+        {
+          "__guid": "f31468ad-3674-4935-8463-d9a94955ed94",
+          "Name": "Box",
+          "Position": "-835.4169,2246.421,1759.262",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
       ]
     },
     {
       "__guid": "73540080-9f61-46d8-a51d-3f7deff0de66",
       "Name": "Tree",
       "Position": "-289.0161,-201.3819,340.5177",
+      "Tags": "world",
       "NetworkMode": 2,
       "Components": [
         {
@@ -308,13 +514,14 @@
     {
       "__guid": "b30d3ced-c49e-42ec-a179-001d180b2632",
       "Name": "Rock",
+      "Tags": "world",
       "NetworkMode": 2,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "5036c25a-c142-45be-981f-34b538dd9dda",
           "BodyGroups": 18446744073709551615,
-          "Model": "models/rust_nature/rocks/rock_small_a_cave.vmdl",
+          "Model": "models/rust_nature/rocks/rock_med_c.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
         },
@@ -1609,6 +1816,172 @@
           "NetworkMode": 2
         }
       ]
+    },
+    {
+      "__guid": "6077c025-fddb-466e-afcf-ace32852c9c0",
+      "Name": "Zombie Spawner",
+      "Position": "2390.761,-2270.769,3125.315",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "ProcGenZombieSpawner",
+          "__guid": "e2cf4490-3fd4-44bc-87b2-e93817d7e86a",
+          "Zombie": {
+            "_type": "gameobject",
+            "go": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c",
+      "Name": "zombie",
+      "Position": "3840,-832,4",
+      "Tags": "dummy",
+      "NetworkMode": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "1e040c2f-cfdd-4402-93c5-a7f846e46d91",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "5000,5000,5000",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.NavMeshAgent",
+          "__guid": "6e91aa11-b06a-49f2-9229-e14997e04207",
+          "Acceleration": 1000,
+          "Height": 64,
+          "MaxSpeed": 120,
+          "Radius": 16,
+          "Separation": 0.25,
+          "UpdatePosition": true,
+          "UpdateRotation": false
+        },
+        {
+          "__type": "Kicks.Dummy",
+          "__guid": "b9031c7f-e5db-48e8-8158-7f9b5e55a615",
+          "animationHelper": {
+            "_type": "component",
+            "component_id": "c38d95d0-9cf7-4c63-b029-9b2e63f3b9ab",
+            "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
+            "component_type": "CitizenAnimationHelper"
+          },
+          "body": {
+            "_type": "gameobject",
+            "go": "0b13f207-106a-40fd-bc42-02ded3b23927"
+          },
+          "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
+          "navMeshAgent": {
+            "_type": "component",
+            "component_id": "6e91aa11-b06a-49f2-9229-e14997e04207",
+            "go": "a9a0069c-05e1-40e1-9c8b-57a8cef3841c",
+            "component_type": "NavMeshAgent"
+          },
+          "players": [],
+          "SpawnGibs": true
+        },
+        {
+          "__type": "Kicks.EnemyHealthComponent",
+          "__guid": "04650fee-85b5-49e4-8715-19b0569cc998",
+          "health": 100
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "0b13f207-106a-40fd-bc42-02ded3b23927",
+          "Name": "body",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
+              "BodyGroups": 0,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "Model": "models/citizen/citizen.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+              "__guid": "c38d95d0-9cf7-4c63-b029-9b2e63f3b9ab",
+              "BodyWeight": 1,
+              "EyeSource": {
+                "_type": "gameobject",
+                "go": "2e495ce7-2245-4162-9305-d104e089f7bc"
+              },
+              "EyesWeight": 1,
+              "HeadWeight": 1,
+              "LookAtEnabled": true,
+              "Target": {
+                "_type": "component",
+                "component_id": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
+                "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
+                "component_type": "SkinnedModelRenderer"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "5df27790-6253-4e0b-bdf7-c49931def385",
+              "Name": "Cloths",
+              "Position": "0,0,0",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "Components": [
+                {
+                  "__type": "Sandbox.SkinnedModelRenderer",
+                  "__guid": "ff018e11-6bfd-4c37-90b1-2a89e91f064c",
+                  "BodyGroups": 18446744073709551615,
+                  "BoneMergeTarget": {
+                    "_type": "component",
+                    "component_id": "88f2ed8c-e1a8-44c9-bf57-02198afe2dbd",
+                    "go": "0b13f207-106a-40fd-bc42-02ded3b23927",
+                    "component_type": "SkinnedModelRenderer"
+                  },
+                  "CreateBoneObjects": false,
+                  "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__guid": "0e263e0c-f801-4c68-924e-1d9d3009ff06",
+          "Name": "Collider",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.CapsuleCollider",
+              "__guid": "93d0494c-e06d-4b28-8bce-97b92b10cf61",
+              "End": "0,0,54.37019",
+              "IsTrigger": false,
+              "Radius": 25,
+              "Start": "0,0,0",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "2e495ce7-2245-4162-9305-d104e089f7bc",
+          "Name": "eyes",
+          "Position": "0,0,64",
+          "Enabled": true,
+          "NetworkMode": 2
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -1634,13 +2007,14 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-27T11:41:07.9863568-04:00",
+  "LastSaved": "2024-04-27T20:48:59.290733-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.tree_oak_medium_a",
     "facepunch.wooden_crate",
     "nolankicks.idel-terry",
+    "rust.rock_med_c",
     "rust.rock_small_a_cave",
     "rust.water_bottle"
   ]

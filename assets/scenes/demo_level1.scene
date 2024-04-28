@@ -11,7 +11,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "3c208445-8c2b-472d-a77f-d5eea2f05af7",
-          "MapName": "maps/demo_level1.vmap",
+          "MapName": "nolankicks.demo_level1",
           "UseMapFromLaunch": false
         }
       ],
@@ -162,8 +162,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -572,8 +572,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -2655,9 +2655,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "MoveTo",
+                  "_isStatic": false,
                   "_type": "Sandbox.Game/Sandbox.CharacterController",
-                  "_isStatic": false
+                  "_name": "MoveTo"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2726,8 +2726,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_name": "TransformCamera",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "TransformCamera"
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2804,8 +2804,8 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_name": "StartHint",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "StartHint"
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -3195,6 +3195,7 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
+          "ItemsToSpawnWith": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -4449,7 +4450,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-24T19:26:59.371646-04:00",
+  "LastSaved": "2024-04-27T20:48:29.3833741-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

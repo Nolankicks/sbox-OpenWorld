@@ -1785,8 +1785,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -3500,6 +3500,24 @@
           "Tint": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "7fc0bf20-51b2-4ce0-a07f-4bcc28c9d37b",
+      "Name": "disc",
+      "Position": "-316.6165,-241.9355,128",
+      "Rotation": "-0.5,0,0,0.8660254",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "90f98404-1d8d-489e-98b9-52eb9622a1a7",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/error.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3525,7 +3543,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-27T10:17:09.6316479-04:00",
+  "LastSaved": "2024-04-27T19:19:11.2280161-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

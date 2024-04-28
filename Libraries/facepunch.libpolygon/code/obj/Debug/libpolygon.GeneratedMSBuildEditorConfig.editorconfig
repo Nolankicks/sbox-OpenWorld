@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Sandbox.Polygons
-build_property.ProjectDir = C:\Users\talle\Documents\s&box projects\openworld\sbox-OpenWorld\Libraries\facepunch.libpolygon\Code\
+build_property.ProjectDir = C:\Users\talle\Documents\s&box projects\gitprojects\sbox-OpenWorld\Libraries\facepunch.libpolygon\Code\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

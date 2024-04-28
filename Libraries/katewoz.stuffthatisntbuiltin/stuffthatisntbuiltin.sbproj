@@ -1,0 +1,14 @@
+{
+  "Title": "Stuff That Isnt Built In",
+  "Type": "library",
+  "Org": "katewoz",
+  "Ident": "stuffthatisntbuiltin",
+  "Tags": null,
+  "Schema": 1,
+  "Resources": null,
+  "PackageReferences": [],
+  "EditorReferences": null,
+  "Metadata": {
+    "CsProjName": ""
+  }
+}
