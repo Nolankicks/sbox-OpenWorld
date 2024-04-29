@@ -3,17 +3,17 @@
     "Allowed": true,
     "Enabled": true,
     "ProjectConfig": {
-      "Title": "s\u0026box Xbox 360 disc",
+      "Title": "Glass Shard 2",
       "Type": "model",
-      "Org": "sandcastle",
-      "Ident": "sbox_cd",
+      "Org": "nolankicks",
+      "Ident": "glass_shard2",
       "Tags": null,
       "Schema": 0,
       "Resources": null,
       "PackageReferences": null,
       "EditorReferences": null,
       "Metadata": {
-        "SingleAssetSource": "models/disc/disc.vmdl"
+        "SingleAssetSource": "models/glass_shard2.vmdl"
       }
     }
   }

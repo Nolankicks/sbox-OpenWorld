@@ -320,7 +320,7 @@ public sealed class Inventory : Component
 		}
 		else
 		{
-			Log.Error("Item is not a weapon");
+			return;
 		}
 	}
 	}

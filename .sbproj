@@ -52,6 +52,7 @@
         {
           "Name": "Jump",
           "KeyboardCode": "space",
+          "GamepadCode": "None",
           "GroupName": "Movement"
         },
         {
@@ -207,6 +208,12 @@
         {
           "Name": "Chat",
           "KeyboardCode": "enter",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "build",
+          "KeyboardCode": "T",
           "GamepadCode": "None",
           "GroupName": "Other"
         }

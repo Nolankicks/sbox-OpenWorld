@@ -70,6 +70,91 @@
 					},
 				]
 			},
+			{
+				_class = "BreakPieceList"
+				children = 
+				[
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						offset = [ 0.568506, -4.412171, 3.149473 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						collision_tags = "debris"
+						model = "models/glass_shard2.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						offset = [ 7.252664, 8.510602, 3.071297 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						collision_tags = "debris"
+						model = "models/glass_shard3.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						offset = [ -7.439851, 0.113634, 2.465627 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						collision_tags = "debris"
+						model = "models/glass_shard1.vmdl"
+					},
+					{
+						_class = "BreakPieceExternal"
+						placement_mode = "default"
+						placement_bone = ""
+						placement_attach = ""
+						is_ragdoll = false
+						offset = [ 1.394213, 3.595227, 2.678631 ]
+						fadetime = 20.0
+						fade_min_dist = 0.0
+						fade_max_dist = 0.0
+						name_mode = "none"
+						random_spawn_chance = 1.0
+						is_essential_piece = false
+						collision_tags = "debris"
+						model = "models/glass_shard3.vmdl"
+					},
+				]
+			},
+			{
+				_class = "GameDataList"
+				children = 
+				[
+					{
+						_class = "GenericGameData"
+						game_class = "prop_data"
+						game_keys = 
+						{
+							bakelighting = false
+							health = 1.0
+						}
+					},
+				]
+			},
 		]
 		model_archetype = ""
 		primary_associated_entity = ""

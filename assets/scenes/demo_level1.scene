@@ -550,6 +550,21 @@
             ]
           },
           "selectedInput": "E",
+          "ShopAction": {
+            "__version": 6,
+            "__guid": "4eb5b331-e331-4755-b2ee-c48f210e63ba",
+            "UserData": {
+              "Title": "Shop Action"
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              }
+            ],
+            "Links": []
+          },
           "ShopItems": {
             "ItemNames": [
               "MP5"
@@ -3184,10 +3199,13 @@
             "go": "5fb505d6-1106-4de2-92c4-85b12ea4c120",
             "component_type": "Interactor"
           },
+          "Metal": 0,
           "RunSpeed": 300,
           "SceneFile": "scenes/demo_level1.scene",
           "ShowShopUi": false,
-          "WalkSpeed": 200
+          "Stone": 0,
+          "WalkSpeed": 200,
+          "Wood": 0
         },
         {
           "__type": "Inventory",
@@ -4450,7 +4468,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-04-27T20:48:29.3833741-04:00",
+  "LastSaved": "2024-04-28T20:11:33.0865144-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -1,18 +1,30 @@
 @using Sandbox;
 @using Sandbox.UI;
+@namespace Kicks
 @inherits PanelComponent
 
-<root>
-	<div class="title">@MyStringValue</div>
+<root style="opacity: @(ShowUi ? 1 : 0);">
+	<div class="resources">
+		<div>🪵 @playerController.Wood</div>
+		<div>🪨 @playerController.Stone</div>
+		<div>⚙️ @playerController.Metal</div>
+	</div>
 </root>
 
 @code
 {
+	public PlayerController playerController { get; set; }
+	public bool ShowUi { get; set; } = false;
 
-	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	protected override void OnUpdate()
+	{
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		ShowUi = Input.Down("score");
+		Log.Info(ShowUi);
+	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( MyStringValue );
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
 }

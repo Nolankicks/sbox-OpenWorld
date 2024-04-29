@@ -74,6 +74,10 @@
           "__guid": "91674ddb-796e-46f1-8855-41f0f1a38b1a",
           "CoinIcon": "textures/kickscoin.vtex",
           "FailSound": "sounds/player_use_fail.sound"
+        },
+        {
+          "__type": "Kicks.TabUi",
+          "__guid": "3279d3cc-05b0-46c9-9cc8-ae980a6d40e3"
         }
       ]
     },
@@ -1001,8 +1005,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1025,8 +1029,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_name": "GetNextSlot",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "GetNextSlot"
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1056,8 +1060,8 @@
                     "Id": 8,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Transform",
-                      "_type": "Sandbox.Game/Sandbox.GameObject"
+                      "_type": "Sandbox.Game/Sandbox.GameObject",
+                      "_name": "Transform"
                     },
                     "UserData": {
                       "Position": "304,592"
@@ -1067,8 +1071,8 @@
                     "Id": 9,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Position",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Position"
                     },
                     "UserData": {
                       "Position": "576,560"
@@ -1078,8 +1082,8 @@
                     "Id": 10,
                     "Type": "property",
                     "Properties": {
-                      "_name": "Rotation",
-                      "_type": "Sandbox.Game/Sandbox.GameTransform"
+                      "_type": "Sandbox.Game/Sandbox.GameTransform",
+                      "_name": "Rotation"
                     },
                     "UserData": {
                       "Position": "608,720"
@@ -1167,10 +1171,6 @@
                   }
                 ],
                 "Defaults": {
-                  "$3.gameobject": {
-                    "_type": "gameobject",
-                    "go": "1452e70d-b260-4190-aac3-22f4066c50fe"
-                  },
                   "$6.gameobject": {
                     "_type": "gameobject",
                     "go": "4c819182-4368-4e16-b281-4d82ddc2e742"
@@ -1185,46 +1185,6 @@
                 "ItemPrices": []
               },
               "ShowPopUp": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "__guid": "c314eae8-d016-415e-90c5-bb4bd5a7ccab",
-      "Name": "lantern",
-      "Position": "-448,-272,64.00008",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "4fa35576-91be-4dd1-9ae5-81c3084c5a13",
-          "BodyGroups": 18446744073709551615,
-          "Health": 10,
-          "IsStatic": false,
-          "MaterialGroup": "default",
-          "Model": "models/props/lantern/lantern.vmdl"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "7f0f37c9-a6ec-4721-84f5-78aef942db3d",
-          "Name": "light",
-          "Position": "0,0,0",
-          "Tags": "light_point,light",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "Components": [
-            {
-              "__type": "Sandbox.PointLight",
-              "__guid": "648935d7-6baf-4246-9f16-a01f6e9408dc",
-              "Attenuation": 1,
-              "FogMode": "Enabled",
-              "FogStrength": 1,
-              "LightColor": "0.94884,0.63476,0.41043,1",
-              "Radius": 400,
-              "Shadows": true
             }
           ]
         }
@@ -1435,51 +1395,51 @@
               "Tint": "1,1,1,1"
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "369fa574-0768-4900-8c8f-62ea1e4673f0",
-      "Name": "office_desk",
-      "Position": "208.0001,-415.9998,64.05433",
-      "Rotation": "0,0,-0.7071067,0.7071068",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0c40a5f7-d877-4c7a-8094-1b4960d512b6",
-          "BodyGroups": 18446744073709551615,
-          "MaterialGroup": "black",
-          "Model": "models/items/office_set/office_desk.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
         },
         {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "fb512ba3-54d0-42fa-9f37-d48a1cfb82c7",
-          "IsTrigger": false,
-          "Model": "models/items/office_set/office_desk.vmdl",
-          "Static": false
-        }
-      ]
-    },
-    {
-      "__guid": "1a04db57-778d-4edc-90d7-e0fc0d9714c7",
-      "Name": "office_chair",
-      "Position": "208.7161,-453.0054,62.74346",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
+          "__guid": "369fa574-0768-4900-8c8f-62ea1e4673f0",
+          "Name": "office_desk",
+          "Position": "532.08,-75.63177,0.01893616",
+          "Rotation": "0,0,-0.7071067,0.7071068",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0c40a5f7-d877-4c7a-8094-1b4960d512b6",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": "black",
+              "Model": "models/items/office_set/office_desk.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "fb512ba3-54d0-42fa-9f37-d48a1cfb82c7",
+              "IsTrigger": false,
+              "Model": "models/items/office_set/office_desk.vmdl",
+              "Static": false
+            }
+          ]
+        },
         {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "a11f6a00-e3ff-4249-8c81-7fb8b147603c",
-          "BodyGroups": 18446744073709551615,
-          "CreateBoneObjects": false,
-          "MaterialGroup": "default",
-          "Model": "models/sbox_props/office_chair/office_chair.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "__guid": "1a04db57-778d-4edc-90d7-e0fc0d9714c7",
+          "Name": "office_chair",
+          "Position": "532.796,-112.6374,-1.291931",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "a11f6a00-e3ff-4249-8c81-7fb8b147603c",
+              "BodyGroups": 18446744073709551615,
+              "CreateBoneObjects": false,
+              "MaterialGroup": "default",
+              "Model": "models/sbox_props/office_chair/office_chair.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ]
         }
       ]
     },
@@ -1537,8 +1497,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsSitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -1548,8 +1508,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -3028,125 +2988,6 @@
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
           "ItemsToSpawnWith": [],
-          "OnComponentStart": {
-            "__version": 6,
-            "__guid": "27833bb6-1bb5-411c-9e3b-53ed62344df2",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/Inventory"
-              ]
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "package.nolankicks.dead4left2/Inventory"
-                },
-                "UserData": {
-                  "Position": "0,320"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "call",
-                "Properties": {
-                  "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
-                },
-                "UserData": {
-                  "Position": "304,0"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "call",
-                "Properties": {
-                  "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
-                },
-                "UserData": {
-                  "Position": "640,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_this"
-              },
-              {
-                "Value": 0,
-                "DstId": 3,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_smg.prefab"
-                },
-                "DstId": 3,
-                "DstName": "item"
-              },
-              {
-                "Value": 1,
-                "DstId": 6,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_signal",
-                "DstId": 6,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 6,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_fists.prefab"
-                },
-                "DstId": 6,
-                "DstName": "item"
-              }
-            ],
-            "Defaults": {
-              "$8._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_smg.prefab"
-              },
-              "$10._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_fists.prefab"
-              }
-            }
-          },
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -3163,6 +3004,17 @@
           "StartingHeavyAmmo": 0,
           "StartingLightAmmo": 0,
           "StartingShotgunShells": 0
+        },
+        {
+          "__type": "Builder",
+          "__guid": "afc6ff99-3114-4158-bfe2-b290e98aa37d",
+          "Box": {
+            "_type": "gameobject",
+            "go": "64229196-466c-4a9c-a123-242d3272d786"
+          },
+          "CanPlace": false,
+          "PlaceRotation": "0,0,0",
+          "wall": "models/wall.vmdl"
         }
       ],
       "Children": [
@@ -4083,126 +3935,6 @@
       ]
     },
     {
-      "__guid": "ff5ff9d2-f4ca-49d6-9cc0-cc06fe7a704a",
-      "Name": "Box",
-      "Position": "0,0,63.99534",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.MeshComponent",
-          "__guid": "fb472d15-61ca-4e57-98b1-c5a9debb3c7f",
-          "Collision": "Mesh",
-          "Color": "1,1,1,1",
-          "IsTrigger": false,
-          "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2MAQoAIAgDrSz7/4drBwoOjmKbczO7Ygg0hYuTHuB1hXgS/so\u002Bqi4vOdnOrb6NT15bJXy63JDz/\u002Bg6SXigAAAA",
-            "TextureOrigin": "0,0,63.99534",
-            "Positions": [
-              "-512,-512,0",
-              "512,-512,0",
-              "512,512,0",
-              "-512,512,0"
-            ],
-            "TextureUAxis": [
-              "1,0,0"
-            ],
-            "TextureVAxis": [
-              "0,-1,0"
-            ],
-            "TextureScale": [
-              "0.25,0.25"
-            ],
-            "TextureAngle": [
-              0
-            ],
-            "MaterialIndex": [
-              0
-            ],
-            "EdgeFlags": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "Materials": [
-              "materials/dev/reflectivity_30.vmat",
-              "materials/decals/decal_logo_construkt_a.vmat"
-            ]
-          },
-          "SmoothingAngle": 40,
-          "Static": true
-        }
-      ]
-    },
-    {
-      "__guid": "5de94423-0263-46a1-805b-785f9e8cdd71",
-      "Name": "Sun",
-      "Position": "-252.4197,234.0647,750.5575",
-      "Rotation": "0,0.258819,0,0.9659258",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "2bb3f975-f505-493e-b8e3-19098bd909b9",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
-        }
-      ]
-    },
-    {
-      "__guid": "d5d69a39-a47f-40a3-8043-fe71707bbae3",
-      "Name": "Envmap Probe",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.EnvmapProbe",
-          "__guid": "2dcd7ac3-b451-47ce-ab49-fc89a69d99cd",
-          "Texture": "textures/cubemaps/default2.vtex",
-          "Bounds": {
-            "Mins": "-1000,-1000,-1000",
-            "Maxs": "1000,1000,1000"
-          },
-          "DelayBetweenUpdates": 0.1,
-          "Feathering": 0.02,
-          "FrameInterval": 5,
-          "MaxDistance": 512,
-          "Projection": "Box",
-          "RenderDynamically": true,
-          "TintColor": "1,1,1,1",
-          "UpdateStrategy": "EveryFrame",
-          "ZFar": 4096,
-          "ZNear": 16
-        }
-      ]
-    },
-    {
-      "__guid": "d8145dce-f90e-4455-a784-da487843ff0c",
-      "Name": "2D Skybox",
-      "Position": "-504.4049,-407.0588,-4.128632",
-      "Tags": "skybox",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "Components": [
-        {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "27904534-3841-4cba-ac04-359de63c2630",
-          "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "070914c4-c6b1-48de-9e40-1bdc127ff8f1",
       "Name": "Spawn",
       "Position": "-448,-17.8479,64",
@@ -4244,138 +3976,253 @@
           "__type": "Sandbox.Prop",
           "__guid": "29f6367b-8920-4ec5-99a4-4a27ae03325c",
           "BodyGroups": 18446744073709551615,
-          "Health": 0,
+          "Health": 1,
           "IsStatic": false,
           "Model": "models/disc/disc.vmdl"
         }
       ]
     },
     {
-      "__guid": "dc5de5d5-84ed-4fc9-b487-4d028e75cbf0",
-      "Name": "tree_oak_small_a",
-      "Position": "64.03882,171.4605,83.46095",
+      "__guid": "94a3dfe0-45f4-478a-bad8-9ff5b3743849",
+      "Name": "Scene Map",
+      "Position": "694.0851,453.8329,276.1924",
+      "NetworkMode": 2,
+      "Children": [
+        {
+          "__guid": "d8145dce-f90e-4455-a784-da487843ff0c",
+          "Name": "2D Skybox",
+          "Position": "-1198.49,-860.8917,-280.321",
+          "Tags": "skybox",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.SkyBox2D",
+              "__guid": "27904534-3841-4cba-ac04-359de63c2630",
+              "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "d5d69a39-a47f-40a3-8043-fe71707bbae3",
+          "Name": "Envmap Probe",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.EnvmapProbe",
+              "__guid": "2dcd7ac3-b451-47ce-ab49-fc89a69d99cd",
+              "Texture": "textures/cubemaps/default2.vtex",
+              "Bounds": {
+                "Mins": "-1000,-1000,-1000",
+                "Maxs": "1000,1000,1000"
+              },
+              "DelayBetweenUpdates": 0.1,
+              "Feathering": 0.02,
+              "FrameInterval": 5,
+              "MaxDistance": 512,
+              "Projection": "Box",
+              "RenderDynamically": true,
+              "TintColor": "1,1,1,1",
+              "UpdateStrategy": "EveryFrame",
+              "ZFar": 4096,
+              "ZNear": 16
+            }
+          ]
+        },
+        {
+          "__guid": "5de94423-0263-46a1-805b-785f9e8cdd71",
+          "Name": "Sun",
+          "Position": "-946.5048,-219.7682,474.3651",
+          "Rotation": "0,0.258819,0,0.9659258",
+          "Tags": "light_directional,light",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.DirectionalLight",
+              "__guid": "2bb3f975-f505-493e-b8e3-19098bd909b9",
+              "FogMode": "Enabled",
+              "FogStrength": 1,
+              "LightColor": "0.91373,0.98039,1,1",
+              "Shadows": true,
+              "SkyColor": "0.05882,0.07451,0.08235,1"
+            }
+          ]
+        },
+        {
+          "__guid": "ff5ff9d2-f4ca-49d6-9cc0-cc06fe7a704a",
+          "Name": "Box",
+          "Position": "-694.0851,-453.8329,-212.197",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "Components": [
+            {
+              "__type": "Sandbox.MeshComponent",
+              "__guid": "fb472d15-61ca-4e57-98b1-c5a9debb3c7f",
+              "Collision": "Mesh",
+              "Color": "1,1,1,1",
+              "IsTrigger": false,
+              "Mesh": {
+                "Topology": "H4sIAAAAAAAACk2MAQoAIAgDrSz7/4drBwoOjmKbczO7Ygg0hYuTHuB1hXgS/so\u002Bqi4vOdnOrb6NT15bJXy63JDz/\u002Bg6SXigAAAA",
+                "TextureOrigin": "0,0,63.99534",
+                "Positions": [
+                  "-512,-512,0",
+                  "512,-512,0",
+                  "512,512,0",
+                  "-512,512,0"
+                ],
+                "TextureUAxis": [
+                  "1,0,0"
+                ],
+                "TextureVAxis": [
+                  "0,-1,0"
+                ],
+                "TextureScale": [
+                  "0.25,0.25"
+                ],
+                "TextureAngle": [
+                  0
+                ],
+                "MaterialIndex": [
+                  0
+                ],
+                "EdgeFlags": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "Materials": [
+                  "materials/dev/reflectivity_30.vmat",
+                  "materials/decals/decal_logo_construkt_a.vmat"
+                ]
+              },
+              "SmoothingAngle": 40,
+              "Static": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "f4609eb0-b8c1-4c80-b726-1fd00f438a94",
+      "Name": "Map",
+      "Position": "694.0851,453.8329,276.1924",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
         {
-          "__type": "Sandbox.Prop",
-          "__guid": "caa70174-e477-4f6b-93d8-eb22dac6cc8e",
-          "BodyGroups": 18446744073709551615,
-          "Health": 0,
-          "IsStatic": false,
-          "Model": "models/sbox_props/trees/oak/tree_oak_small_a.vmdl"
-        },
+          "__type": "Sandbox.MapInstance",
+          "__guid": "9f6c4a41-e273-42fe-b434-f92fcb6bd293",
+          "MapName": "facepunch.construct",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "64229196-466c-4a9c-a123-242d3272d786",
+      "Name": "Box",
+      "Position": "-1302,-966,49.99989",
+      "NetworkMode": 2,
+      "Components": [
         {
-          "__type": "DamageTaker",
-          "__guid": "b307bf22-364e-4b46-b9ff-ff87f3ac33e1",
-          "CanDie": true,
-          "Health": 100,
-          "OnTakeDamage": {
-            "__version": 6,
-            "__guid": "db591a91-e258-446d-ac7b-a19e90f61465",
-            "UserData": {
-              "Title": "On Take Damage",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Wood",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
-                },
-                "UserData": {
-                  "Position": "176,-128"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "op.add",
-                "UserData": {
-                  "Position": "432,-128"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "property",
-                "Properties": {
-                  "_name": "Wood",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_kind": "Set"
-                },
-                "UserData": {
-                  "Position": "656,-0"
-                }
-              },
-              {
-                "Id": 10,
-                "Type": "call",
-                "Properties": {
-                  "_name": "Destroy",
-                  "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "960,64"
-                }
-              }
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "80706f65-c0d5-48e2-bf6d-c8128b598f6a",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "TextureOrigin": "-1302,-966,49.99989",
+            "Positions": [
+              "-50,-10,50",
+              "50,-10,50",
+              "50,10,50",
+              "-50,10,50",
+              "-50,10,-50",
+              "50,10,-50",
+              "50,-10,-50",
+              "-50,-10,-50"
             ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "PlayerController",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "a"
-              },
-              {
-                "Value": 100,
-                "DstId": 2,
-                "DstName": "b"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 6,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "PlayerController",
-                "DstId": 6,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 6,
-                "DstName": "_value"
-              },
-              {
-                "SrcId": 6,
-                "SrcName": "_signal",
-                "DstId": 10,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 10,
-                "DstName": "_target"
-              }
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
             ]
-          }
+          },
+          "SmoothingAngle": 40,
+          "Static": false
         }
       ]
     }
@@ -4403,7 +4250,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-28T17:00:58.4399608-04:00",
+  "LastSaved": "2024-04-28T20:17:46.6621429-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
@@ -4420,7 +4267,6 @@
     "facepunch.decal_logo_construkt_a",
     "facepunch.electrical_tape_plastic",
     "facepunch.fireextinguisher",
-    "facepunch.lantern",
     "facepunch.office_chair",
     "facepunch.oilcanbody",
     "facepunch.packing_tape",
@@ -4428,7 +4274,6 @@
     "facepunch.plastic_crate_02",
     "facepunch.saw_blade_a",
     "facepunch.soda_can",
-    "facepunch.tree_oak_small_a",
     "facepunch.tv",
     "facepunch.watermelon",
     "facepunch.wet_floor_sign",
@@ -4442,8 +4287,6 @@
     "nolankicks.duckhunt",
     "nolankicks.idel-terry",
     "randkassets.wetfloor_sign",
-    "sandcastle.sbox_cd",
-    "sandcastle.sbox3ds",
     "smlp.nes",
     "vidya.particle-ghost"
   ]
