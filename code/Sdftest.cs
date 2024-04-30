@@ -125,7 +125,7 @@ public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
         var y = GetRandom(buffer, dim.y - buffer);
 
         // Check if the position is valid by casting a downward ray from a higher position
-        var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 5000), Vector3.Down * 10000).Run();
+        var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();
 
         // Validate the position
         if (trace.Hit && trace.HitPosition.x > buffer && trace.HitPosition.x < dim.x - buffer &&
