@@ -25,914 +25,637 @@
           "__type": "Sdftest",
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
           "Amplitude": 3,
-          "ItemsToSpawnAfterWorld": [],
+          "OnWorldSpawned": {
+            "__version": 6,
+            "__guid": "2aa1785b-8c0a-49d8-8e9f-97b5e8a9a104",
+            "UserData": {
+              "Title": "On World Spawned",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [
+              {
+                "Name": "SDFManager",
+                "Type": "package.nolankicks.dead4left2/Sdftest"
+              },
+              {
+                "Name": "SDFWorld",
+                "Type": "package.facepunch.libsdf/Sandbox.Sdf.Sdf3DWorld"
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "var",
+                "Properties": {
+                  "_var": "SDFManager"
+                },
+                "UserData": {
+                  "Position": "304,-0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "var",
+                "Properties": {
+                  "_var": "SDFWorld"
+                },
+                "UserData": {
+                  "Position": "544,32"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "800,32"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "1184,32"
+                }
+              },
+              {
+                "Id": 21,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "1520,32"
+                }
+              },
+              {
+                "Id": 29,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "1856,32"
+                }
+              },
+              {
+                "Id": 41,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "2192,32"
+                }
+              },
+              {
+                "Id": 49,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "2560,32"
+                }
+              },
+              {
+                "Id": 57,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "2960,32"
+                }
+              },
+              {
+                "Id": 65,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "3312,32"
+                }
+              },
+              {
+                "Id": 74,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "3728,32"
+                }
+              },
+              {
+                "Id": 82,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "4112,32"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "SDFManager",
+                "DstId": 1,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "world",
+                "DstId": 2,
+                "DstName": "_value"
+              },
+              {
+                "Value": false,
+                "DstId": 3,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
+                },
+                "DstId": 3,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 3,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 3,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 3,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 13,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 13,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 13,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
+                },
+                "DstId": 13,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 13,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 100,
+                "DstId": 13,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 13,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 21,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 13,
+                "SrcName": "_signal",
+                "DstId": 21,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 21,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+                },
+                "DstId": 21,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 21,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 21,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 21,
+                "DstName": "world"
+              },
+              {
+                "Value": true,
+                "DstId": 29,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 21,
+                "SrcName": "_signal",
+                "DstId": 29,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 29,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
+                },
+                "DstId": 29,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 29,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 29,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 29,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 41,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 29,
+                "SrcName": "_signal",
+                "DstId": 41,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 41,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "6ff9a9f6-cbde-4402-adb5-133114d97ad8"
+                },
+                "DstId": 41,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 41,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 41,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 41,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 49,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 41,
+                "SrcName": "_signal",
+                "DstId": 49,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 49,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "c0212c9e-ffc9-425a-b747-8f9851812887"
+                },
+                "DstId": 49,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 49,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 49,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 49,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 57,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 49,
+                "SrcName": "_signal",
+                "DstId": 57,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 57,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "da604886-d5f1-42ea-ae9b-99810113b6ac"
+                },
+                "DstId": 57,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 57,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 57,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 57,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 65,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 57,
+                "SrcName": "_signal",
+                "DstId": 65,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 65,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
+                },
+                "DstId": 65,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 65,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 65,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 65,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 74,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 65,
+                "SrcName": "_signal",
+                "DstId": 74,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 74,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
+                },
+                "DstId": 74,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 74,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 74,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 74,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 82,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 74,
+                "SrcName": "_signal",
+                "DstId": 82,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 82,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "af8b3619-ec2c-4997-a2c7-fc2b45c100ff"
+                },
+                "DstId": 82,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 82,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 500,
+                "DstId": 82,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 82,
+                "DstName": "world"
+              }
+            ],
+            "Defaults": {
+              "$9._value": {
+                "_type": "gameobject",
+                "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
+              },
+              "$20._value": {
+                "_type": "gameobject",
+                "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
+              },
+              "$28._value": {
+                "_type": "gameobject",
+                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+              },
+              "$40._value": {
+                "_type": "gameobject",
+                "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
+              },
+              "$48._value": {
+                "_type": "gameobject",
+                "go": "6ff9a9f6-cbde-4402-adb5-133114d97ad8"
+              },
+              "$56._value": {
+                "_type": "gameobject",
+                "go": "c0212c9e-ffc9-425a-b747-8f9851812887"
+              },
+              "$64._value": {
+                "_type": "gameobject",
+                "go": "da604886-d5f1-42ea-ae9b-99810113b6ac"
+              },
+              "$73._value": {
+                "_type": "gameobject",
+                "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
+              },
+              "$81._value": {
+                "_type": "gameobject",
+                "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
+              },
+              "$89._value": {
+                "_type": "gameobject",
+                "go": "af8b3619-ec2c-4997-a2c7-fc2b45c100ff"
+              }
+            }
+          },
           "PlayerPrefab": {
             "_type": "gameobject",
             "go": "56cb1d67-0f5a-43d6-8edb-a0cfca5f79d5"
           },
-          "randomActions": [
-            {
-              "__version": 6,
-              "__guid": "9d6b235a-e804-46f6-95c2-df67efd4c6db",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "call",
-                  "Properties": {
-                    "_name": "SpawnItem",
-                    "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest"
-                  },
-                  "UserData": {
-                    "Position": "384,0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": true,
-                  "DstId": 1,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 1,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/light_ammo_pickup.prefab"
-                  },
-                  "DstId": 1,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 1,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 1,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 1,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$3._value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/light_ammo_pickup.prefab"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "13647dc4-6610-410f-93cb-81f71a0c272d",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "368,-0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": false,
-                  "DstId": 1,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 1,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
-                  },
-                  "DstId": 1,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 1,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 100,
-                  "DstId": 1,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 1,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$3._value": {
-                  "_type": "gameobject",
-                  "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "795602de-aab9-4b7a-a837-0efe2245d5be",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "call",
-                  "Properties": {
-                    "_name": "SpawnItem",
-                    "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest"
-                  },
-                  "UserData": {
-                    "Position": "336,-0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": true,
-                  "DstId": 1,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 1,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
-                  },
-                  "DstId": 1,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 0.5,
-                  "DstId": 1,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 1,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 1,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$3._value": {
-                  "_type": "gameobject",
-                  "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "b22fb26e-df98-430a-a252-c9dc1bd21d7c",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "336,0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": false,
-                  "DstId": 1,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 1,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
-                  },
-                  "DstId": 1,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 1,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 1000,
-                  "DstId": 1,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 1,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$3._value": {
-                  "_type": "gameobject",
-                  "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "9e7837c9-30f9-4d1b-a4ec-e777f899e9af",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "call",
-                  "Properties": {
-                    "_name": "SpawnItem",
-                    "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest"
-                  },
-                  "UserData": {
-                    "Position": "400,0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": false,
-                  "DstId": 1,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 1,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 1,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
-                  },
-                  "DstId": 1,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 0.2,
-                  "DstId": 1,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 100,
-                  "DstId": 1,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 1,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$3._value": {
-                  "_type": "gameobject",
-                  "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "b7ab5919-a845-40da-97a5-1e358bac71de",
-              "UserData": {
-                "Title": null
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 4,
-                  "Type": "call",
-                  "Properties": {
-                    "_name": "SpawnItem",
-                    "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest"
-                  },
-                  "UserData": {
-                    "Position": "368,-0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": true,
-                  "DstId": 4,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 4,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 4,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "da99a89e-ad94-415b-8c7f-bf61baf1c42f"
-                  },
-                  "DstId": 4,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 0.2,
-                  "DstId": 4,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 4,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 4,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$6._value": {
-                  "_type": "gameobject",
-                  "go": "da99a89e-ad94-415b-8c7f-bf61baf1c42f"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "521cdc51-2489-4ffd-a6a8-8bab38b58baa",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 2,
-                  "Type": "call",
-                  "Properties": {
-                    "_name": "SpawnItem",
-                    "_isStatic": false,
-                    "_type": "package.nolankicks.dead4left2/Sdftest"
-                  },
-                  "UserData": {
-                    "Position": "416,0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "Value": true,
-                  "DstId": 2,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 2,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 2,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f"
-                  },
-                  "DstId": 2,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 0.2,
-                  "DstId": 2,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 2,
-                  "DstName": "times"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 2,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$4._value": {
-                  "_type": "gameobject",
-                  "go": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f"
-                }
-              }
-            },
-            {
-              "__version": 6,
-              "__guid": "d34595a6-4e40-4ac8-a908-2aecd8d69104",
-              "UserData": {
-                "Title": null
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                }
-              ],
-              "Links": []
-            },
-            {
-              "__version": 6,
-              "__guid": "0358114b-22c4-4d8e-a44c-26d53b5e6809",
-              "UserData": {
-                "Title": null,
-                "ReferencedComponentTypes": []
-              },
-              "Variables": [
-                {
-                  "Name": "SDF Manager",
-                  "Type": "package.nolankicks.dead4left2/Sdftest"
-                },
-                {
-                  "Name": "SDF World",
-                  "Type": "package.facepunch.libsdf/Sandbox.Sdf.Sdf3DWorld"
-                }
-              ],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input",
-                  "UserData": {
-                    "Position": "-864,-176"
-                  }
-                },
-                {
-                  "Id": 2,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "SDF World"
-                  },
-                  "UserData": {
-                    "Position": "-448,-112"
-                  }
-                },
-                {
-                  "Id": 3,
-                  "Type": "var",
-                  "Properties": {
-                    "_var": "SDF Manager"
-                  },
-                  "UserData": {
-                    "Position": "-672,-176"
-                  }
-                },
-                {
-                  "Id": 5,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "-208,-112"
-                  }
-                },
-                {
-                  "Id": 14,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "160,-112"
-                  }
-                },
-                {
-                  "Id": 22,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "560,-112"
-                  }
-                },
-                {
-                  "Id": 30,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "960,-112"
-                  }
-                },
-                {
-                  "Id": 38,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "package.nolankicks.dead4left2/Sdftest",
-                    "_isStatic": false,
-                    "_name": "SpawnItem"
-                  },
-                  "UserData": {
-                    "Position": "1360,-112"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "SrcId": 3,
-                  "SrcName": "_signal",
-                  "DstId": 2,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "world",
-                  "DstId": 2,
-                  "DstName": "_value"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 3,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "SDFManager",
-                  "DstId": 3,
-                  "DstName": "_value"
-                },
-                {
-                  "Value": false,
-                  "DstId": 5,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 2,
-                  "SrcName": "_signal",
-                  "DstId": 5,
-                  "DstName": "_signal"
-                },
-                {
-                  "VarName": "SDF Manager",
-                  "DstId": 5,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "6ff9a9f6-cbde-4402-adb5-133114d97ad8"
-                  },
-                  "DstId": 5,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 5,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 5,
-                  "DstName": "times"
-                },
-                {
-                  "VarName": "SDF World",
-                  "DstId": 5,
-                  "DstName": "world"
-                },
-                {
-                  "Value": false,
-                  "DstId": 14,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 5,
-                  "SrcName": "_signal",
-                  "DstId": 14,
-                  "DstName": "_signal"
-                },
-                {
-                  "VarName": "SDF Manager",
-                  "DstId": 14,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "c0212c9e-ffc9-425a-b747-8f9851812887"
-                  },
-                  "DstId": 14,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 14,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 14,
-                  "DstName": "times"
-                },
-                {
-                  "VarName": "SDF World",
-                  "DstId": 14,
-                  "DstName": "world"
-                },
-                {
-                  "Value": false,
-                  "DstId": 22,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 14,
-                  "SrcName": "_signal",
-                  "DstId": 22,
-                  "DstName": "_signal"
-                },
-                {
-                  "VarName": "SDF Manager",
-                  "DstId": 22,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "da604886-d5f1-42ea-ae9b-99810113b6ac"
-                  },
-                  "DstId": 22,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 22,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 22,
-                  "DstName": "times"
-                },
-                {
-                  "VarName": "SDF World",
-                  "DstId": 22,
-                  "DstName": "world"
-                },
-                {
-                  "Value": false,
-                  "DstId": 30,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 22,
-                  "SrcName": "_signal",
-                  "DstId": 30,
-                  "DstName": "_signal"
-                },
-                {
-                  "VarName": "SDF Manager",
-                  "DstId": 30,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
-                  },
-                  "DstId": 30,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 30,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 30,
-                  "DstName": "times"
-                },
-                {
-                  "VarName": "SDF World",
-                  "DstId": 30,
-                  "DstName": "world"
-                },
-                {
-                  "Value": false,
-                  "DstId": 38,
-                  "DstName": "Offset"
-                },
-                {
-                  "SrcId": 30,
-                  "SrcName": "_signal",
-                  "DstId": 38,
-                  "DstName": "_signal"
-                },
-                {
-                  "VarName": "SDF Manager",
-                  "DstId": 38,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": {
-                    "_type": "gameobject",
-                    "go": "af8b3619-ec2c-4997-a2c7-fc2b45c100ff"
-                  },
-                  "DstId": 38,
-                  "DstName": "gameObject"
-                },
-                {
-                  "Value": 1,
-                  "DstId": 38,
-                  "DstName": "propbiability"
-                },
-                {
-                  "Value": 25,
-                  "DstId": 38,
-                  "DstName": "times"
-                },
-                {
-                  "VarName": "SDF World",
-                  "DstId": 38,
-                  "DstName": "world"
-                }
-              ],
-              "Defaults": {
-                "$8._value": {
-                  "_type": "gameobject",
-                  "go": "6ff9a9f6-cbde-4402-adb5-133114d97ad8"
-                },
-                "$21._value": {
-                  "_type": "gameobject",
-                  "go": "c0212c9e-ffc9-425a-b747-8f9851812887"
-                },
-                "$29._value": {
-                  "_type": "gameobject",
-                  "go": "da604886-d5f1-42ea-ae9b-99810113b6ac"
-                },
-                "$37._value": {
-                  "_type": "gameobject",
-                  "go": "90838507-5b66-46fd-8bd9-3efd2746cf6c"
-                },
-                "$45._value": {
-                  "_type": "gameobject",
-                  "go": "af8b3619-ec2c-4997-a2c7-fc2b45c100ff"
-                }
-              }
-            }
-          ],
           "RockPrefab": {
             "_type": "gameobject",
             "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
           },
-          "Scale": 4.5,
+          "Scale": 3,
           "SpawnPoint": {
             "_type": "gameobject",
             "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
@@ -1257,9 +980,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -1269,9 +992,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "640,0"
@@ -2418,9 +2141,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "320,0"
@@ -2503,9 +2226,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2567,12 +2290,12 @@
           },
           "DelayBetweenUpdates": 0.1,
           "Feathering": 0.02,
-          "FrameInterval": 5,
+          "FrameInterval": 16,
           "MaxDistance": 512,
           "Projection": "Box",
           "RenderDynamically": true,
           "TintColor": "1,1,1,1",
-          "UpdateStrategy": "EveryFrame",
+          "UpdateStrategy": "FrameInterval",
           "ZFar": 4096,
           "ZNear": 16
         }
@@ -2717,7 +2440,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-30T14:39:42.494151-04:00",
+  "LastSaved": "2024-04-30T19:35:30.2423491-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

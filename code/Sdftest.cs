@@ -13,7 +13,6 @@ public sealed class Sdftest : Component, Component.INetworkListener
 
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
-	[Property] public List<GameObject> ItemsToSpawnAfterWorld { get; set; } = new();
 	public float[,] PerlinValues { get; set; }
     [Property] public GameObject TreePrefab { get; set; }
 	[Property] public GameObject RockPrefab { get; set; }
@@ -22,10 +21,9 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property] public ProcGenUi ProcGenUi { get; set; }
     [Property] public GameObject SpawnPoint { get; set; }
 	[Property] public bool StartServer { get; set; } = false;
-	public delegate void RandomAction(Sdftest SDFManager, Sdf3DWorld world);
-	[Property] public List<RandomAction> randomActions { get; set; } = new();
 	[Property] public GameObject PlayerPrefab { get; set; }
-    [Property] public Action OnWorldSpawned { get; set; }
+    public delegate void OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
+	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
 	protected override void OnStart()
 	{
 		World.GameObject.NetworkSpawn();
@@ -51,18 +49,10 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
     }
 	LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
-	foreach (var action in randomActions)
-	{
-		action?.Invoke(this, world);
-	}
+	OnWorldSpawned?.Invoke(this, world);
 
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
-   
-	foreach(var gameObject in ItemsToSpawnAfterWorld)
-	{
-		gameObject.Clone();
-	}
     if (ProcGenUi is not null)
     {
         ProcGenUi.Destroy();
@@ -70,7 +60,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await Task.DelaySeconds(1);
 	GameNetworkSystem.CreateLobby();
 	await Task.DelaySeconds(1);
-    OnWorldSpawned?.Invoke();
+    
 
 }
 
