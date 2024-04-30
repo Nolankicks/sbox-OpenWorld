@@ -98,7 +98,7 @@ public sealed class PlayerController : Component
 		{
 			return;
 		}
-		WishVelocity = Input.AnalogMove;
+		WishVelocity = Input.AnalogMove.Normal;
 		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
 		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
 		{
@@ -159,6 +159,7 @@ public sealed class PlayerController : Component
 		if (camera is null) return;
 		if (IsFirstPerson)
 		{
+		camera.FieldOfView = Preferences.FieldOfView;
 		var targetPosEyePos = IsCrouching ? 32 : 64;
 		var targetPos = Transform.Position + new Vector3(0, 0, targetPosEyePos);
 		camera.Transform.Position = targetPos;

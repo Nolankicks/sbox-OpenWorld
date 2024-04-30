@@ -32,7 +32,16 @@
       "Name": "Noise Creator",
       "Position": "-279.6543,-185.6967,88.42834",
       "Enabled": true,
-      "NetworkMode": 2
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Kicks.NoiseCreator",
+          "__guid": "6d407068-9b3c-4e97-ac6d-53a3077dcd84",
+          "mapHeight": 0,
+          "mapWidth": 0,
+          "noiseScale": 0
+        }
+      ]
     },
     {
       "__guid": "645fb6b2-91ca-4e4b-a01f-733b89e56994",
@@ -115,6 +124,7 @@
     {
       "__guid": "d983fe7c-090b-4a08-bd09-81143cb75aab",
       "Name": "Props",
+      "Position": "0,0,-56",
       "Enabled": true,
       "NetworkMode": 2,
       "Children": [
@@ -1005,8 +1015,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1029,8 +1039,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "GetNextSlot"
+                      "_name": "GetNextSlot",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1193,7 +1203,7 @@
     {
       "__guid": "b4dde576-005e-4c00-8283-b0d3cf91706e",
       "Name": "citizen",
-      "Position": "-324.0799,-340.368,64.03539",
+      "Position": "-324.0799,-340.368,8",
       "Enabled": true,
       "NetworkMode": 2,
       "Components": [
@@ -1446,7 +1456,7 @@
     {
       "__guid": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
       "Name": "citizen",
-      "Position": "207.284,-449.146,72.284",
+      "Position": "207.284,-449.146,12",
       "Rotation": "0,0,0.7071068,0.7071068",
       "Enabled": true,
       "NetworkMode": 2,
@@ -4007,6 +4017,7 @@
         {
           "__guid": "d5d69a39-a47f-40a3-8043-fe71707bbae3",
           "Name": "Envmap Probe",
+          "Position": "0,0,0",
           "Enabled": true,
           "NetworkMode": 2,
           "Components": [
@@ -4128,7 +4139,7 @@
     },
     {
       "__guid": "64229196-466c-4a9c-a123-242d3272d786",
-      "Name": "Box",
+      "Name": "wall",
       "Position": "-1302,-966,49.99989",
       "NetworkMode": 2,
       "Components": [
@@ -4150,6 +4161,106 @@
               "50,10,-50",
               "50,-10,-50",
               "-50,-10,-50"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureAngle": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "MaterialIndex": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        }
+      ]
+    },
+    {
+      "__guid": "70547b90-a2b1-4197-b22e-28a315c6544a",
+      "Name": "floor",
+      "Position": "-1530,-102,12.49631",
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "ade56d03-3f82-478f-90a7-10583302abe9",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "TextureOrigin": "-1530,-102,12.49631",
+            "Positions": [
+              "-50,-50,12.5",
+              "50,-50,12.5",
+              "50,50,12.5",
+              "-50,50,12.5",
+              "-50,50,-12.5",
+              "50,50,-12.5",
+              "50,-50,-12.5",
+              "-50,-50,-12.5"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -4250,7 +4361,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-28T20:17:46.6621429-04:00",
+  "LastSaved": "2024-04-29T18:14:03.2583161-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

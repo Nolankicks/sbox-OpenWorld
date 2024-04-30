@@ -51,9 +51,6 @@
       "libsdf/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "libpolygon": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/libsdf.dll": {}
         },
@@ -96,8 +93,8 @@
     },
     "libsdf/1.0.0": {
       "type": "project",
-      "path": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj",
-      "msbuildProject": "../Libraries/sbox-sdf-85f29327a90ff8bd1eaf3b27ecbc9de8e2cef1ae/Code/libsdf.csproj"
+      "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
+      "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
     },
     "stuffthatisntbuiltin/1.0.0": {
       "type": "project",

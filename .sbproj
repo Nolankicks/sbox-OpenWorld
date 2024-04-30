@@ -216,6 +216,42 @@
           "KeyboardCode": "T",
           "GamepadCode": "None",
           "GroupName": "Other"
+        },
+        {
+          "Name": "switch",
+          "KeyboardCode": "Y",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "material",
+          "KeyboardCode": "B",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowup",
+          "KeyboardCode": "UPARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowdown",
+          "KeyboardCode": "DOWNARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowleft",
+          "KeyboardCode": "LEFTARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowright",
+          "KeyboardCode": "RIGHTARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
         }
       ],
       "__guid": "c5e4bcd1-44bd-4bf7-89c1-6999d64f568b"

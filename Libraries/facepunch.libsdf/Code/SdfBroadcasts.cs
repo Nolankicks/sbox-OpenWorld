@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Sandbox.Diagnostics;
 
 namespace Sandbox.Sdf;
 
@@ -15,26 +17,20 @@ public sealed class SdfNetwork : Component
 	{
 		Instance = this;
 	}
-	
-	[Broadcast]
-	public void SendMeMissing( Guid to, int clearCount, int modificationCount )
-	{
-		if ( Connection.Local != Connection.Host )
-			return;
 
-		var conn = Connection.Find( to );
-		Log.Info( $"Want to send missing to {conn.DisplayName} : {conn.Name} with {clearCount}-{modificationCount}" );
-		SdfWorld.RequestMissing( conn, clearCount, modificationCount );
+	[Broadcast]
+	private void SendMeMissing( int clearCount, int modificationCount )
+	{
+		Log.Info( $"Want to send missing to {Rpc.Caller.DisplayName} : {Rpc.Caller.Name} with {clearCount}-{modificationCount}" );
+
+		SdfWorld.RequestMissing( Rpc.Caller, clearCount, modificationCount );
 	}
 
-	private float _notifiedMissingModifications = float.PositiveInfinity;
+	private TimeSince _notifiedMissingModifications = float.PositiveInfinity;
 
 	[Broadcast]
-	public void WriteRpc( Guid guid, byte[] bytes )
+	public void WriteRpc( byte[] bytes )
 	{
-		if ( Connection.Local.Id != guid )
-			return;
-
 		var byteStream = ByteStream.CreateReader( bytes );
 		if ( SdfWorld.Read( ref byteStream ) )
 		{
@@ -46,7 +42,10 @@ public sealed class SdfNetwork : Component
 		{
 			_notifiedMissingModifications = 0f;
 
-			SendMeMissing( Connection.Local.Id, SdfWorld.ClearCount, SdfWorld.ModificationCount );
+			using ( Rpc.FilterInclude( Rpc.Caller ) )
+			{
+				SendMeMissing( SdfWorld.ClearCount, SdfWorld.ModificationCount );
+			}
 		}
 	}
 }

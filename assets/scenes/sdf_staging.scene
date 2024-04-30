@@ -478,7 +478,7 @@
                 }
               ],
               "Defaults": {
-                "$5._value": {
+                "$6._value": {
                   "_type": "gameobject",
                   "go": "da99a89e-ad94-415b-8c7f-bf61baf1c42f"
                 }
@@ -554,7 +554,7 @@
                 }
               ],
               "Defaults": {
-                "$7._value": {
+                "$4._value": {
                   "_type": "gameobject",
                   "go": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f"
                 }
@@ -838,9 +838,12 @@
             "go": "56cb1d67-0f5a-43d6-8edb-a0cfca5f79d5",
             "component_type": "Interactor"
           },
+          "Metal": 0,
           "RunSpeed": 300,
           "ShowShopUi": false,
-          "WalkSpeed": 200
+          "Stone": 0,
+          "WalkSpeed": 200,
+          "Wood": 0
         },
         {
           "__type": "Inventory",
@@ -958,11 +961,11 @@
               }
             ],
             "Defaults": {
-              "$5._value": {
+              "$8._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_smg.prefab"
               },
-              "$8._value": {
+              "$10._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_fists.prefab"
               }
@@ -2070,6 +2073,61 @@
           "Static": false
         }
       ]
+    },
+    {
+      "__guid": "e8a43780-02f8-413e-bf3a-c676fcb9962a",
+      "Name": "Cubemap",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.EnvmapProbe",
+          "__guid": "f969f522-66be-4c0e-873a-a6dde6eb551a",
+          "Bounds": {
+            "Mins": "-20000,-20000,-20000",
+            "Maxs": "20000,20000,20000"
+          },
+          "DelayBetweenUpdates": 0.1,
+          "Feathering": 0.02,
+          "FrameInterval": 5,
+          "MaxDistance": 512,
+          "Projection": "Box",
+          "RenderDynamically": true,
+          "TintColor": "1,1,1,1",
+          "UpdateStrategy": "EveryFrame",
+          "ZFar": 4096,
+          "ZNear": 16
+        }
+      ]
+    },
+    {
+      "__guid": "d2f8bf8d-f174-456a-9754-25bf72251766",
+      "Name": "tv",
+      "Position": "4214.254,1322.057,0.01870366",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "e28b192f-79e4-413f-b91d-b171ef20388f",
+          "BodyGroups": 18446744073709551615,
+          "Health": 20,
+          "IsStatic": false,
+          "Model": "models/sbox_props/tv/tv.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "de75a6cd-1cb3-48c9-bd46-fb9d291bd77c",
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2095,12 +2153,13 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-28T16:34:27.2768368-04:00",
+  "LastSaved": "2024-04-29T20:24:54.6039468-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.beer_bottle",
     "facepunch.tree_oak_medium_a",
+    "facepunch.tv",
     "facepunch.wooden_crate",
     "nolankicks.idel-terry",
     "rust.rock_med_c",
