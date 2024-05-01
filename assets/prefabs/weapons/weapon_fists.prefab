@@ -1,39 +1,45 @@
 {
   "RootObject": {
-    "__guid": "d925f86e-8088-4cb0-a3b9-42d4816d8fa3",
+    "__guid": "f3b80304-fc99-4a6f-a297-cd3ceb53578f",
     "Name": "weapon_fists",
     "Enabled": true,
     "NetworkMode": 1,
+    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Fists",
-        "__guid": "de5578a0-9648-41fb-98eb-1f44e07268b2",
+        "__guid": "1aae0ed2-88c9-41fa-a1b7-643bf1c4bf6b",
         "Damage": 10,
         "fists": {
           "_type": "component",
-          "component_id": "b55c76cc-2d07-43f0-8504-9814bcdb0571",
-          "go": "1184e3e0-c233-4569-8041-eb44a3edfd0c",
+          "component_id": "8296e51f-fcd1-4733-8c91-67be5d4d2e47",
+          "go": "6e0bfe9d-6d93-4c22-952f-cd62c447ab47",
           "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "ffdd51a9-813c-4e5d-8c36-dd53827bcef5"
         }
       },
       {
         "__type": "IconComponent",
-        "__guid": "73447e05-1554-4a1a-84f6-89b42b456513",
+        "__guid": "07243a6b-e251-4e74-a297-fe35c65c9870",
         "Icon": "shadergraph/clothing_icons/army_shirt_png_shadergraph.generated.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "bcdc7c7a-fd8e-49ec-ab62-638257c9fc90",
+        "__guid": "ffdd51a9-813c-4e5d-8c36-dd53827bcef5",
         "Name": "Viewmodel",
         "Position": "-6.989685,-4.8022,9.835373",
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 1,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "d27377c2-2d2a-49cf-a70d-577ac4a97b2b",
+            "__guid": "0a5b8fb2-0466-4e7f-822f-5900c28a1a19",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 80,
@@ -51,15 +57,16 @@
         ],
         "Children": [
           {
-            "__guid": "1184e3e0-c233-4569-8041-eb44a3edfd0c",
+            "__guid": "6e0bfe9d-6d93-4c22-952f-cd62c447ab47",
             "Name": "fists",
             "Position": "0,0,0",
             "Enabled": true,
             "NetworkMode": 1,
+            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "b55c76cc-2d07-43f0-8504-9814bcdb0571",
+                "__guid": "8296e51f-fcd1-4733-8c91-67be5d4d2e47",
                 "AnimationGraph": "models/first_person/first_person_arms_punching.vanmgrph",
                 "BodyGroups": 21,
                 "CreateBoneObjects": false,

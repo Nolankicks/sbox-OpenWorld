@@ -21,6 +21,7 @@ public sealed class Weapon : Component
 	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
+	[Property] public SkinnedModelRenderer armsRenderer { get; set; }
 	[Property, Category("Weapon Properties")] public float ReloadTime { get; set; }
 	[Property, Category("Weapon Properties")] public float Recoil { get; set; }
 	[Property] public TestStruct TestStruct { get; set; }
@@ -258,4 +259,25 @@ public sealed class Weapon : Component
 			}
 		}	
 }
+	protected override void OnDisabled()
+	{
+		if (IsProxy) return;
+		ViewModelCamera.Enabled = false;
+		ViewModelHolder.Enabled = false;
+		ViewModelGun.GameObject.Enabled = false;
+		armsRenderer.GameObject.Enabled = false;
+		ViewModelGun.Enabled = false;
+		armsRenderer.Enabled = false;
+	}
+
+	protected override void OnEnabled()
+	{
+		if (IsProxy) return;
+		ViewModelCamera.Enabled = true;
+		ViewModelHolder.Enabled = true;
+		ViewModelGun.GameObject.Enabled = true;
+		armsRenderer.GameObject.Enabled = true;
+		ViewModelGun.Enabled = true;
+		armsRenderer.Enabled = true;
+	}
 }

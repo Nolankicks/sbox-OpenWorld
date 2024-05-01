@@ -4,6 +4,7 @@ using Sandbox;
 public sealed class Fists : Component
 {
 	[Property] public SkinnedModelRenderer fists { get; set; }
+	[Property] public GameObject ViewModelCamera { get; set; }
 	public PlayerController playerController { get; set; }
 	[Property] public int Damage { get; set; } = 10;
 
@@ -24,12 +25,18 @@ public sealed class Fists : Component
 			}
 			UpdateAnimations();
 		}
+		if (IsProxy)
+		{
+			ViewModelCamera.Enabled = false;
+		}
 	}
 	protected override void OnEnabled()
 	{
 		if (!IsProxy)
 		{
 			fists.Set("b_deploy", true);
+			ViewModelCamera.Enabled = true;
+			fists.Enabled = false;
 		}
 	}
 	protected override void OnDisabled()
@@ -37,6 +44,8 @@ public sealed class Fists : Component
 		if (!IsProxy)
 		{
 			fists.Set("b_attack", false);
+			ViewModelCamera.Enabled = false;
+			fists.Enabled = false;
 		}
 	}
 	void Attack()
@@ -87,4 +96,6 @@ public sealed class Fists : Component
 			}
 			fists.Set("move_groundspeed", playerController.CharacterController.Velocity.Length);
 	}
+
+	
 }
