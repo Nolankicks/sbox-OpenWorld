@@ -23,6 +23,10 @@ public sealed class Builder : Component
 		if (Input.Pressed("build"))
 		{
 			CanPlace = !CanPlace;
+			if (!CanPlace)
+			{
+				Inventory.EnableAllWeapons();
+			}
 		}
 		if (CanPlace)
 		{
@@ -67,10 +71,6 @@ public sealed class Builder : Component
 			{
 				Box = Floor;
 			}
-		}
-		else
-		{
-			Inventory.EnableAllWeapons();
 		}
 	}
 

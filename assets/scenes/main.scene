@@ -1,5 +1,5 @@
 {
-  "__guid": "1c1a85b5-7de8-462f-b1c7-73e7071fdc50",
+  "__guid": "af6d67e8-3c76-4775-81b9-43428798c83e",
   "GameObjects": [
     {
       "__guid": "fbf8615d-cab5-4fc6-b8d5-f2b2d9c5ba70",
@@ -25,23 +25,6 @@
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
-        }
-      ]
-    },
-    {
-      "__guid": "6af4414c-45d1-430d-98f8-7154fea853a9",
-      "Name": "Noise Creator",
-      "Position": "-279.6543,-185.6967,88.42834",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Kicks.NoiseCreator",
-          "__guid": "6d407068-9b3c-4e97-ac6d-53a3077dcd84",
-          "mapHeight": 0,
-          "mapWidth": 0,
-          "noiseScale": 0
         }
       ]
     },
@@ -3159,190 +3142,6 @@
             "component_type": "Interactor"
           },
           "Metal": 0,
-          "OnComponentStart": {
-            "__version": 6,
-            "__guid": "e14e6c49-20d5-40cd-85f9-3cdbd7d5a5e8",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/Inventory"
-              ]
-            },
-            "Variables": [
-              {
-                "Name": "Inventory",
-                "Type": "package.nolankicks.dead4left2/Inventory"
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "package.nolankicks.dead4left2/Inventory"
-                },
-                "UserData": {
-                  "Position": "16,64"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "var",
-                "Properties": {
-                  "_var": "Inventory"
-                },
-                "UserData": {
-                  "Position": "224,0"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "576,0"
-                }
-              },
-              {
-                "Id": 7,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "928,-0"
-                }
-              },
-              {
-                "Id": 13,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "1232,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_this"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "_value"
-              },
-              {
-                "Value": 0,
-                "DstId": 3,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_fists.prefab"
-                },
-                "DstId": 3,
-                "DstName": "item"
-              },
-              {
-                "Value": 1,
-                "DstId": 7,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_signal",
-                "DstId": 7,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 7,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_smg.prefab"
-                },
-                "DstId": 7,
-                "DstName": "item"
-              },
-              {
-                "Value": 2,
-                "DstId": 13,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 7,
-                "SrcName": "_signal",
-                "DstId": 13,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 13,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_pistol.prefab"
-                },
-                "DstId": 13,
-                "DstName": "item"
-              }
-            ],
-            "Defaults": {
-              "$5._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_fists.prefab"
-              },
-              "$10._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_smg.prefab"
-              },
-              "$15._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_pistol.prefab"
-              }
-            }
-          },
           "RunSpeed": 300,
           "ShowShopUi": false,
           "Stone": 0,
@@ -4804,6 +4603,26 @@
           "Static": true
         }
       ]
+    },
+    {
+      "__guid": "67f31b73-6160-44f1-a667-6c0838f73b37",
+      "Name": "weapon_pistol",
+      "Position": "-36.00015,-320,31.99996",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/weapon_pistol.prefab"
+    },
+    {
+      "__guid": "0a751c36-24a8-408b-b309-9a973d96779d",
+      "Name": "weapon_smg",
+      "Position": "-123.9998,-303.9999,44",
+      "Rotation": "-0.00000002980232,-0.00000005646728,0.9999999,-0.0000001694018",
+      "Tags": "weapon",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/weapon_smg.prefab"
     }
   ],
   "SceneProperties": {
@@ -4829,7 +4648,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-30T20:43:07.6436783-04:00",
+  "LastSaved": "2024-04-30T21:28:41.4556186-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

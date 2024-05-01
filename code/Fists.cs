@@ -35,8 +35,6 @@ public sealed class Fists : Component
 		if (!IsProxy)
 		{
 			fists.Set("b_deploy", true);
-			ViewModelCamera.Enabled = true;
-			fists.Enabled = false;
 		}
 	}
 	protected override void OnDisabled()
@@ -44,8 +42,6 @@ public sealed class Fists : Component
 		if (!IsProxy)
 		{
 			fists.Set("b_attack", false);
-			ViewModelCamera.Enabled = false;
-			fists.Enabled = false;
 		}
 	}
 	void Attack()

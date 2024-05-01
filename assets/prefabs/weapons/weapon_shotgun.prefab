@@ -4,6 +4,7 @@
     "Name": "weapon_shotgun",
     "Enabled": true,
     "NetworkMode": 1,
+    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Shotgun",
@@ -68,6 +69,7 @@
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 1,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
@@ -93,12 +95,14 @@
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
+            "NetworkInterpolation": true,
             "Children": [
               {
                 "__guid": "55f96f61-4a9a-459d-9b7e-6966f478dba5",
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
+                "NetworkInterpolation": true,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
@@ -116,6 +120,7 @@
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
+                "NetworkInterpolation": true,
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
@@ -143,6 +148,7 @@
         "Name": "PickUpObject",
         "Enabled": true,
         "NetworkMode": 1,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.BoxCollider",
