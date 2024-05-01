@@ -29,6 +29,7 @@
           "Base Library": "1.0.0",
           "libpolygon": "1.0.0",
           "libsdf": "1.0.0",
+          "shatterglass": "1.0.0",
           "stuffthatisntbuiltin": "1.0.0"
         },
         "compile": {
@@ -56,6 +57,16 @@
         },
         "runtime": {
           "bin/placeholder/libsdf.dll": {}
+        }
+      },
+      "shatterglass/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/shatterglass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shatterglass.dll": {}
         }
       },
       "stuffthatisntbuiltin/1.0.0": {
@@ -95,6 +106,11 @@
       "type": "project",
       "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
+    },
+    "shatterglass/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj",
+      "msbuildProject": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj"
     },
     "stuffthatisntbuiltin/1.0.0": {
       "type": "project",

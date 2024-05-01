@@ -71,9 +71,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "864,32"
@@ -83,9 +83,9 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1184,32"
@@ -95,9 +95,9 @@
                 "Id": 21,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1520,32"
@@ -107,9 +107,9 @@
                 "Id": 29,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1856,32"
@@ -119,9 +119,9 @@
                 "Id": 41,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2192,32"
@@ -131,9 +131,9 @@
                 "Id": 49,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2560,32"
@@ -143,9 +143,9 @@
                 "Id": 57,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2960,32"
@@ -155,9 +155,9 @@
                 "Id": 65,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "3312,32"
@@ -167,9 +167,9 @@
                 "Id": 74,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "3728,32"
@@ -179,9 +179,9 @@
                 "Id": 82,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "4112,32"
@@ -725,6 +725,14 @@
               "0.25,0.25",
               "0.25,0.25"
             ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0"
+            ],
             "TextureAngle": [
               0,
               0,
@@ -826,6 +834,14 @@
               "0.25,0.25",
               "0.25,0.25"
             ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0"
+            ],
             "TextureAngle": [
               0,
               0,
@@ -899,6 +915,10 @@
           "IsTrigger": false,
           "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
           "Static": false
+        },
+        {
+          "__type": "RandomMaterialGroup",
+          "__guid": "575c04c8-adfa-47da-8860-949f5686ac8e"
         }
       ]
     },
@@ -923,6 +943,18 @@
           "IsTrigger": false,
           "Model": "models/rust_nature/rocks/rock_med_c.vmdl",
           "Static": false
+        },
+        {
+          "__type": "RandomModel",
+          "__guid": "3a13a1ba-ef3c-4c29-ab3a-ff490a475291",
+          "RandomModels": [
+            "models/rust_nature/rocks/rock_med_c.vmdl",
+            "models/rust_nature/rocks/rock_small_a_cave.vmdl",
+            "models/rust_nature/rocks/rock_small_a.vmdl",
+            "models/rust_nature/rocks/rock_small_b.vmdl",
+            "models/rust_nature/rocks/rock_med_b.vmdl",
+            "models/rust_nature/rocks/rock_small_b_cave.vmdl"
+          ]
         }
       ]
     },
@@ -1039,9 +1071,6 @@
               {
                 "Id": 2,
                 "Type": "scene.get",
-                "Properties": {
-                  "T": "package.nolankicks.dead4left2/RandomWeaponDrop"
-                },
                 "UserData": {
                   "Position": "-0,64"
                 }
@@ -1050,9 +1079,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/RandomWeaponDrop",
-                  "_name": "DropWeapon",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "DropWeapon"
                 },
                 "UserData": {
                   "Position": "336,-0"
@@ -1080,20 +1108,6 @@
               }
             ]
           }
-        },
-        {
-          "__type": "RandomWeaponDrop",
-          "__guid": "b509b77a-6c80-4be5-b993-18d28a3611a1",
-          "RandomWeapons": [
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/weapons/weapon_smg.prefab"
-            },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/weapons/weapon_pistol.prefab"
-            }
-          ]
         }
       ]
     },
@@ -1174,6 +1188,190 @@
             "component_type": "Interactor"
           },
           "Metal": 0,
+          "OnComponentStart": {
+            "__version": 6,
+            "__guid": "31ab65d8-f446-42ac-96f2-016395a75989",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/Inventory"
+              ]
+            },
+            "Variables": [
+              {
+                "Name": "Inventory",
+                "Type": "package.nolankicks.dead4left2/Inventory"
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "-16,112"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Inventory"
+                },
+                "UserData": {
+                  "Position": "240,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "512,-0"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "960,-0"
+                }
+              },
+              {
+                "Id": 15,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "1312,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_value"
+              },
+              {
+                "Value": 0,
+                "DstId": 3,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_smg.prefab"
+                },
+                "DstId": 3,
+                "DstName": "item"
+              },
+              {
+                "Value": 1,
+                "DstId": 8,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 8,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 8,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_pistol.prefab"
+                },
+                "DstId": 8,
+                "DstName": "item"
+              },
+              {
+                "Value": 2,
+                "DstId": 15,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_signal",
+                "DstId": 15,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 15,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_fists.prefab"
+                },
+                "DstId": 15,
+                "DstName": "item"
+              }
+            ],
+            "Defaults": {
+              "$18._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
+              },
+              "$21._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_pistol.prefab"
+              },
+              "$24._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_fists.prefab"
+              }
+            }
+          },
           "RunSpeed": 300,
           "ShowShopUi": false,
           "Stone": 0,
@@ -2236,91 +2434,6 @@
       ]
     },
     {
-      "__guid": "1637fd38-fee7-4d5b-aad6-cd7e5f45256f",
-      "Name": "beer_bottle",
-      "Position": "811.553,7819.609,0.03397867",
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "c3570b1a-8710-4165-89e1-5eb6570707c6",
-          "BodyGroups": 18446744073709551615,
-          "Health": 1,
-          "IsStatic": false,
-          "Model": "models/sbox_props/beer_bottle/beer_bottle.vmdl"
-        },
-        {
-          "__type": "Kicks.PopupUi",
-          "__guid": "cebc1616-1abf-4575-af7d-fdc59b623a48",
-          "Description": "Drink for some health",
-          "Name": "Beer",
-          "PickUpAction": {
-            "__version": 6,
-            "__guid": "bf70ec1d-1c30-4a69-a107-0e34c009b4ab",
-            "UserData": {
-              "Title": "Pick Up Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "call",
-                "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_name": "Heal",
-                  "_isStatic": false
-                },
-                "UserData": {
-                  "Position": "320,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "PlayerController",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "Value": 25,
-                "DstId": 1,
-                "DstName": "amount"
-              }
-            ]
-          },
-          "selectedInput": "E",
-          "ShopItems": {
-            "ItemNames": [],
-            "ShopActions": [],
-            "ItemTextures": [],
-            "ItemPrices": []
-          },
-          "ShowPopUp": true
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "11070ac3-3b46-44c5-909e-b641ff3a9902",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Radius": 25,
-          "Static": false
-        }
-      ]
-    },
-    {
       "__guid": "da99a89e-ad94-415b-8c7f-bf61baf1c42f",
       "Name": "Water",
       "Position": "-738.3582,-5788.863,9301.156",
@@ -2357,9 +2470,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2571,11 +2684,10 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-04-30T21:23:37.6806799-04:00",
+  "LastSaved": "2024-05-01T12:24:17.3832363-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
-    "facepunch.beer_bottle",
     "facepunch.grass_clump_a",
     "facepunch.grass_clump_b",
     "facepunch.grass_clump_c",
@@ -2585,7 +2697,12 @@
     "facepunch.tv",
     "facepunch.wooden_crate",
     "nolankicks.idel-terry",
+    "rust.rock_med_b",
     "rust.rock_med_c",
+    "rust.rock_small_a",
+    "rust.rock_small_a_cave",
+    "rust.rock_small_b",
+    "rust.rock_small_b_cave",
     "rust.water_bottle"
   ]
 }

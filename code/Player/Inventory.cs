@@ -75,13 +75,6 @@ public sealed class Inventory : Component
 		}
 	}
 
-	public void AddItems(GameObject gameObject1, GameObject gameObject2)
-	{
-		if (IsProxy) return;
-		AddItem(gameObject1, 0);
-		AddItem(gameObject2, 1);
-	}
-
 	public void DisableAllWeapons()
 	{
 		if (IsProxy) return;
