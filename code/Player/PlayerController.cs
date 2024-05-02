@@ -11,6 +11,9 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	[Property, Sync] public int Wood { get; set; }
+	[Property, Sync] public int Stone { get; set; }
+	[Property, Sync] public int Metal { get; set; }
 	[Property] public GameObject Hold { get; set; }
 	[Property] public GameObject Eye { get; set; }
 	[Sync] public bool IsFirstPerson { get; set; } = true;
@@ -20,6 +23,7 @@ public sealed class PlayerController : Component
 	[Property] public Interactor Interactor { get; set; }
 	[Property, Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
+	[Property] public Action OnJump { get; set; }
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
 	[Property] public SceneFile SceneFile { get; set; }
 	[Property] public PopupUi PopupUi { get; set; }
@@ -35,6 +39,8 @@ public sealed class PlayerController : Component
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
+		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
+		OnJump += () => Log.Info("Jumped");
 	}
 	private void MouseInput()
 	{
@@ -44,7 +50,7 @@ public sealed class PlayerController : Component
 		e.roll = 0.0f;
 		eyeAngles = e;
 	}
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		UpdateAnimation();
 		if (!IsProxy && AbleToMove)
@@ -53,7 +59,6 @@ public sealed class PlayerController : Component
 			Movement();
 			Crouch();
 			CamPos();
-			//UpdateBodyShit();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
 	}
@@ -86,6 +91,18 @@ public sealed class PlayerController : Component
 				return 0.2f;
 			}
 	}
+	TimeSince timeSinceFootstep;
+	void OnFootStep(SceneModel.FootstepEvent footstepEvent)
+	{
+		if (timeSinceFootstep > 0.2f) return;
+		var tr = Scene.Trace.Ray( footstepEvent.Transform.Position + Vector3.Up * 20, footstepEvent.Transform.Position + Vector3.Up * -20 ).Run();
+		if (!tr.Hit) return;
+		if (tr.Surface is null) return;
+		timeSinceFootstep = 0;
+		var sound = footstepEvent.FootId == 0 ? tr.Surface.Sounds.FootLeft : tr.Surface.Sounds.FootRight;
+		var soundeevent = Sound.Play(sound);
+		soundeevent.Volume = footstepEvent.Volume;
+	}
 	RealTimeSince timeSinceJump = 0;
 	RealTimeSince timeSinceGround = 0;
 	void Movement()
@@ -95,11 +112,12 @@ public sealed class PlayerController : Component
 		{
 			return;
 		}
-		WishVelocity = Input.AnalogMove;
+		WishVelocity = Input.AnalogMove.Normal;
 		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
 		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
 		{
 			CharacterController.Punch(Vector3.Up * 300);
+			OnJump?.Invoke();
 			AnimationHelper.TriggerJump();
 			timeSinceJump = 0;
 		}
@@ -156,9 +174,10 @@ public sealed class PlayerController : Component
 		if (camera is null) return;
 		if (IsFirstPerson)
 		{
+		camera.FieldOfView = Preferences.FieldOfView;
 		var targetPosEyePos = IsCrouching ? 32 : 64;
 		var targetPos = Transform.Position + new Vector3(0, 0, targetPosEyePos);
-		camera.Transform.Position = targetPos;
+		camera.Transform.Position = Transform.Position.LerpTo(targetPos, 1f);
 		camera.Transform.Rotation = eyeAngles;
 		}
 		else

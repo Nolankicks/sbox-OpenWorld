@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Glass Shard 3",
+      "Type": "model",
+      "Org": "nolankicks",
+      "Ident": "glass_shard3",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/glass_shard3.vmdl"
+      }
+    }
+  }
+}

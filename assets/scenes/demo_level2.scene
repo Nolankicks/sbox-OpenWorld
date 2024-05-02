@@ -11,7 +11,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "8dc94fac-baa2-4c76-9a34-8ad912c3a1d2",
-          "MapName": "maps/demo_level2.vmap",
+          "MapName": "nolankicks.demo_level2",
           "UseMapFromLaunch": false
         }
       ],
@@ -145,6 +145,7 @@
               "Items": [],
               "ItemTextures": [],
               "AllWeaponsEnabled": true,
+              "ItemsToSpawnWith": [],
               "StartingItems": [],
               "TestTexture": "textures/player_spritesheet_1.vtex"
             },
@@ -1187,8 +1188,8 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Parent",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
@@ -1303,8 +1304,8 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Rotation",
+                  "_kind": "Set",
                   "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
@@ -10114,7 +10115,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-04-24T19:31:34.2033713-04:00",
+  "LastSaved": "2024-04-27T21:29:19.8454235-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

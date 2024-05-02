@@ -52,6 +52,7 @@
         {
           "Name": "Jump",
           "KeyboardCode": "space",
+          "GamepadCode": "None",
           "GroupName": "Movement"
         },
         {
@@ -207,6 +208,48 @@
         {
           "Name": "Chat",
           "KeyboardCode": "enter",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "build",
+          "KeyboardCode": "T",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "switch",
+          "KeyboardCode": "Y",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "material",
+          "KeyboardCode": "B",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowup",
+          "KeyboardCode": "UPARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowdown",
+          "KeyboardCode": "DOWNARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowleft",
+          "KeyboardCode": "LEFTARROW",
+          "GamepadCode": "None",
+          "GroupName": "Other"
+        },
+        {
+          "Name": "arrowright",
+          "KeyboardCode": "RIGHTARROW",
           "GamepadCode": "None",
           "GroupName": "Other"
         }

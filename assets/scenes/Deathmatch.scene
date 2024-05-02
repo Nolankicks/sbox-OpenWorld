@@ -275,6 +275,7 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
+          "ItemsToSpawnWith": [],
           "OnComponentStart": {
             "__version": 6,
             "__guid": "84581c6b-7437-428e-b91d-31a283d40ae1",
@@ -1359,7 +1360,6 @@
           "__type": "DummySpawner",
           "__guid": "8f832573-b17a-47c4-92f4-59bec8b12044",
           "DestroyAll": false,
-          "DestroyOnJoin": true,
           "Dummies": [],
           "Dummy": {
             "_type": "gameobject",
@@ -1741,7 +1741,7 @@
   },
   "Title": "deathmatch",
   "Description": "",
-  "LastSaved": "2024-04-26T19:23:52.6234436-04:00",
+  "LastSaved": "2024-04-27T21:18:36.9311711-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

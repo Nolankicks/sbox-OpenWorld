@@ -21,6 +21,7 @@ public sealed class Weapon : Component
 	[Property, Category("GameObjects")] public GameObject ViewModelHolder { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public CitizenAnimationHelper.HoldTypes HoldType { get; set; }
+	[Property] public SkinnedModelRenderer armsRenderer { get; set; }
 	[Property, Category("Weapon Properties")] public float ReloadTime { get; set; }
 	[Property, Category("Weapon Properties")] public float Recoil { get; set; }
 	[Property] public TestStruct TestStruct { get; set; }
@@ -83,6 +84,7 @@ public sealed class Weapon : Component
 		ViewModelCamera.Enabled = true;
 		Arms.Enabled = true;
 		ViewModelGun.GameObject.Enabled = true;
+		ViewModelGun.Set("b_twohanded", true);
 		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
 			Fire();
@@ -97,7 +99,7 @@ public sealed class Weapon : Component
 		}
 
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
-		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
+		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
 
 		
 		UpdateWorldModelShadowType();
@@ -138,6 +140,18 @@ public sealed class Weapon : Component
 				ViewModelGun.Set("b_grounded", true);
 			}
 			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+			if (Ammo == 0)
+			{
+				ViewModelGun.Set("b_empty", true);
+			}
+			else
+			{
+				ViewModelGun.Set("b_empty", false);
+			}
+			if (Input.Pressed("attack1") && Ammo <= 0)
+			{
+				ViewModelGun.Set("b_attack_dry", true);
+			}
 		}
 		else
 		{
@@ -152,6 +166,7 @@ public sealed class Weapon : Component
 			DroppedItem.Enabled = true;
 		}
 	}
+
 
 	void UpdateWorldModelShadowType()
 	{
@@ -205,7 +220,7 @@ public sealed class Weapon : Component
 				}
 				if (damageTaker is not null)
 				{
-					damageTaker.TakeDamage(Damage);
+					damageTaker.TakeDamage(Damage, GameObject.Parent.Id);
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 				
@@ -225,7 +240,7 @@ public sealed class Weapon : Component
        		surfaceSound.Volume = 1;
     	}
 }
-				if ( tr.Body is not null )
+		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );
 		}
@@ -255,6 +270,6 @@ public sealed class Weapon : Component
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
 			MuzzleFlashInstance.Tags.Add("viewmodel");
 			}
-		}	
+		}
 }
 }

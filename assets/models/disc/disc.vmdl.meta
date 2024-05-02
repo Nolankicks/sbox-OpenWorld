@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "s\u0026box Xbox 360 disc",
+      "Type": "model",
+      "Org": "sandcastle",
+      "Ident": "sbox_cd",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/disc/disc.vmdl"
+      }
+    }
+  }
+}

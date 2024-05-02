@@ -1,0 +1,33 @@
+TabUi
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	z-index: 10000;
+	font-family: poppins;
+	background-color: rgba(black, 0.9);
+	font-family: Poppins;
+	color: white;
+	transition: opacity 0.1s ease;
+
+	.resources
+	{
+		position: absolute;
+		padding: 16px;
+		font-size: 32px;
+		gap: 12px;
+		top: 32px;
+		left: 32px;
+		width: 300px;
+		align-items: flex-start;
+	}
+	.hide
+	{
+		opacity: 0;
+	}
+}

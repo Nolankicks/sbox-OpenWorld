@@ -11,14 +11,13 @@ public sealed class ProcGenZombieSpawner : Component
 
 	public async Task SpawnZombie()
 	{
-		await Task.DelaySeconds(10);
 		while (true)
 		{
-			Log.Info("test");
+			Log.Info("Spawn");
 			_ = GetNewPos();
 			await Task.DelaySeconds(1);
 			var zombie = Zombie.Clone(transform);
-			
+			await Task.DelaySeconds(5);
 		}
 	}
 	async Task GetNewPos()
