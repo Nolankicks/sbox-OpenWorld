@@ -49,7 +49,7 @@ public sealed class PlayerController : Component
 		e.roll = 0.0f;
 		eyeAngles = e;
 	}
-	protected override void OnUpdate()
+	protected override void OnFixedUpdate()
 	{
 		UpdateAnimation();
 		if (!IsProxy && AbleToMove)

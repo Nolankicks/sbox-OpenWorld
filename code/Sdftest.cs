@@ -123,7 +123,7 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
         {
             var pos = GetBounds(world, Offset);
             var clone = gameObject.Clone(pos);
-            Log.Info(clone.Transform.Position);
+            clone.NetworkSpawn(null);
         }
     }
 }
