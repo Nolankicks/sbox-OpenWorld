@@ -23,6 +23,7 @@ public sealed class PlayerController : Component
 	[Property] public Interactor Interactor { get; set; }
 	[Property, Sync] public float Health { get; set; } = 100;
 	[Property, Sync] public bool ShowShopUi { get; set; } = false;
+	[Property] public Action OnJump { get; set; }
 	[Property, Sync] public bool AbleToMove { get; set; } = true;
 	[Property] public SceneFile SceneFile { get; set; }
 	[Property] public PopupUi PopupUi { get; set; }
@@ -38,6 +39,7 @@ public sealed class PlayerController : Component
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
+		OnJump += () => Log.Info("Jumped");
 	}
 	private void MouseInput()
 	{
@@ -103,6 +105,7 @@ public sealed class PlayerController : Component
 		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
 		{
 			CharacterController.Punch(Vector3.Up * 300);
+			OnJump?.Invoke();
 			AnimationHelper.TriggerJump();
 			timeSinceJump = 0;
 		}

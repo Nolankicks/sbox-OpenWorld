@@ -84,6 +84,7 @@ public sealed class Weapon : Component
 		ViewModelCamera.Enabled = true;
 		Arms.Enabled = true;
 		ViewModelGun.GameObject.Enabled = true;
+		ViewModelGun.Set("b_twohanded", true);
 		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
 			Fire();
@@ -98,7 +99,7 @@ public sealed class Weapon : Component
 		}
 
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
-		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.3f : 0f );
+		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
 
 		
 		UpdateWorldModelShadowType();
@@ -139,6 +140,18 @@ public sealed class Weapon : Component
 				ViewModelGun.Set("b_grounded", true);
 			}
 			ViewModelGun.Set("move_groundspeed", PlayerController.CharacterController.Velocity.Length);
+			if (Ammo == 0)
+			{
+				ViewModelGun.Set("b_empty", true);
+			}
+			else
+			{
+				ViewModelGun.Set("b_empty", false);
+			}
+			if (Input.Pressed("attack1") && Ammo <= 0)
+			{
+				ViewModelGun.Set("b_attack_dry", true);
+			}
 		}
 		else
 		{
@@ -257,6 +270,6 @@ public sealed class Weapon : Component
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
 			MuzzleFlashInstance.Tags.Add("viewmodel");
 			}
-		}	
+		}
 }
 }

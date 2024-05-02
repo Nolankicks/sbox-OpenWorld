@@ -1056,8 +1056,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1570,8 +1570,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -4357,6 +4357,9 @@
                 "TextureScale": [
                   "0.25,0.25"
                 ],
+                "TextureOffset": [
+                  "0,0"
+                ],
                 "TextureAngle": [
                   0
                 ],
@@ -4451,6 +4454,14 @@
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0"
             ],
             "TextureAngle": [
               0,
@@ -4553,6 +4564,14 @@
               "0.25,0.25",
               "0.25,0.25"
             ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0",
+              "0,0"
+            ],
             "TextureAngle": [
               0,
               0,
@@ -4623,6 +4642,39 @@
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "__Prefab": "prefabs/weapons/weapon_smg.prefab"
+    },
+    {
+      "__guid": "a860f96e-d758-43f4-9d65-10c897a6b990",
+      "Name": "Example PopupUi",
+      "Position": "-236,-380.9045,32",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "1464b826-cc61-41c9-967c-f1d34485265b",
+          "Description": "Press to interact",
+          "Icon": "textures/player_spritesheet_1.vtex",
+          "Name": "This is a pop up ui",
+          "selectedInput": "E",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        },
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "8e41a31c-8690-4378-adbd-f79b2b7da09d",
+          "BodyGroups": 18446744073709551615,
+          "Health": 20,
+          "IsStatic": false,
+          "Model": "models/sbox_props/tv/tv.vmdl"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -4648,7 +4700,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-04-30T21:28:41.4556186-04:00",
+  "LastSaved": "2024-05-01T18:47:27.4006185-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
