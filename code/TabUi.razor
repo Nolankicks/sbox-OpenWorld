@@ -20,7 +20,6 @@
 	{
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		ShowUi = Input.Down("score");
-		Log.Info(ShowUi);
 	}
 
 	/// <summary>

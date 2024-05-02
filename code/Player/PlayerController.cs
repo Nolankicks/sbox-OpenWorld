@@ -39,6 +39,7 @@ public sealed class PlayerController : Component
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
+		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
 		OnJump += () => Log.Info("Jumped");
 	}
 	private void MouseInput()
@@ -58,7 +59,6 @@ public sealed class PlayerController : Component
 			Movement();
 			Crouch();
 			CamPos();
-			//UpdateBodyShit();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
 	}
@@ -90,6 +90,18 @@ public sealed class PlayerController : Component
 			{
 				return 0.2f;
 			}
+	}
+	TimeSince timeSinceFootstep;
+	void OnFootStep(SceneModel.FootstepEvent footstepEvent)
+	{
+		if (timeSinceFootstep > 0.2f) return;
+		var tr = Scene.Trace.Ray( footstepEvent.Transform.Position + Vector3.Up * 20, footstepEvent.Transform.Position + Vector3.Up * -20 ).Run();
+		if (!tr.Hit) return;
+		if (tr.Surface is null) return;
+		timeSinceFootstep = 0;
+		var sound = footstepEvent.FootId == 0 ? tr.Surface.Sounds.FootLeft : tr.Surface.Sounds.FootRight;
+		var soundeevent = Sound.Play(sound);
+		soundeevent.Volume = footstepEvent.Volume;
 	}
 	RealTimeSince timeSinceJump = 0;
 	RealTimeSince timeSinceGround = 0;
@@ -165,7 +177,7 @@ public sealed class PlayerController : Component
 		camera.FieldOfView = Preferences.FieldOfView;
 		var targetPosEyePos = IsCrouching ? 32 : 64;
 		var targetPos = Transform.Position + new Vector3(0, 0, targetPosEyePos);
-		camera.Transform.Position = targetPos;
+		camera.Transform.Position = Transform.Position.LerpTo(targetPos, 1f);
 		camera.Transform.Rotation = eyeAngles;
 		}
 		else
