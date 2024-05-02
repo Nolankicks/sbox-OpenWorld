@@ -29,23 +29,6 @@
       ]
     },
     {
-      "__guid": "645fb6b2-91ca-4e4b-a01f-733b89e56994",
-      "Name": "Chunks Holder",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true
-    },
-    {
-      "__guid": "9d80653f-b00d-41ea-8ef5-7c75552fe984",
-      "Name": "Decal",
-      "Position": "-106.7242,-635.4746,349.9205",
-      "Rotation": "0,0.7071067,0,0.7071068",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/decal.prefab"
-    },
-    {
       "__guid": "560a358b-8166-4a3f-914c-00f2d5b62f29",
       "Name": "Screen",
       "Position": "-85.58495,49.80608,99.89261",
@@ -114,7 +97,7 @@
     {
       "__guid": "d983fe7c-090b-4a08-bd09-81143cb75aab",
       "Name": "Props",
-      "Position": "0,0,-56",
+      "Position": "0,-2207.427,-64",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -1056,8 +1039,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1244,7 +1227,7 @@
     {
       "__guid": "b4dde576-005e-4c00-8283-b0d3cf91706e",
       "Name": "citizen",
-      "Position": "-324.0799,-340.368,8",
+      "Position": "-324.0799,-2547.795,0",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -1299,7 +1282,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/hair/hair_longcurly/models/hair_longcurly_brown.vmdl",
+              "Model": "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
               "RenderType": "On",
               "Tint": "0.14419,0.09843,0.0845,1"
             }
@@ -1374,7 +1357,7 @@
                 "component_type": "SkinnedModelRenderer"
               },
               "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/jacket/raincoat/models/raincoat.vmdl",
+              "Model": "models/citizen_clothes/jacket/winter_coat/models/winter_coat.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -1425,31 +1408,6 @@
               },
               "CreateBoneObjects": false,
               "Model": "models/citizen_clothes/shirt/tshirt/models/tshirt.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            }
-          ]
-        },
-        {
-          "__guid": "ebea33f6-2d92-4ce5-b412-7aa165efb804",
-          "Name": "Object",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SkinnedModelRenderer",
-              "__guid": "eef024d8-d67a-43fd-a91a-d6fc62a64c26",
-              "BodyGroups": 18446744073709551615,
-              "BoneMergeTarget": {
-                "_type": "component",
-                "component_id": "f35cdeaa-08b6-4cd3-be94-0e009e5e6949",
-                "go": "b4dde576-005e-4c00-8283-b0d3cf91706e",
-                "component_type": "SkinnedModelRenderer"
-              },
-              "CreateBoneObjects": false,
-              "Model": "models/citizen_clothes/makeup/traditional_face_tattoos/models/traditional_face_tattoos.vmdl",
               "RenderType": "On",
               "Tint": "1,1,1,1"
             }
@@ -1507,7 +1465,7 @@
     {
       "__guid": "81b4f20c-8625-4c34-8a3f-5dff9f0bdf00",
       "Name": "citizen",
-      "Position": "207.284,-449.146,12",
+      "Position": "207.284,-2656.573,12",
       "Rotation": "0,0,0.7071068,0.7071068",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1570,8 +1528,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -2071,7 +2029,7 @@
     {
       "__guid": "82f69f7d-093f-4bd3-95ce-ee90c0eec202",
       "Name": "citizen (1)",
-      "Position": "128,-224,80",
+      "Position": "128,-2431.427,80",
       "Tags": "enemy",
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -3091,7 +3049,7 @@
     {
       "__guid": "3d6b4c72-c08c-446d-a5e4-86adf3a5a15a",
       "Name": "startingplayer",
-      "Position": "0,0,7",
+      "Position": "0,-2207.427,7",
       "Tags": "player",
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -4201,24 +4159,9 @@
       ]
     },
     {
-      "__guid": "070914c4-c6b1-48de-9e40-1bdc127ff8f1",
-      "Name": "Spawn",
-      "Position": "-448,-17.8479,64",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "1b3af714-f18c-4ef2-867c-48e49c9ba9f3",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
       "__guid": "3743af3c-b618-4d39-b76d-a578a456e195",
       "Name": "sbox_3ds",
-      "Position": "-433.0557,-276.4535,64.36568",
+      "Position": "-433.0557,-2483.88,64.36568",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -4236,7 +4179,7 @@
     {
       "__guid": "f9eaee32-b960-4488-9be1-304d97854225",
       "Name": "disc",
-      "Position": "-414.9515,-282.0821,63.99575",
+      "Position": "-414.9515,-2489.509,63.99575",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -4700,7 +4643,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-01T18:47:27.4006185-04:00",
+  "LastSaved": "2024-05-02T18:26:39.4602584-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

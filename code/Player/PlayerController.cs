@@ -40,7 +40,16 @@ public sealed class PlayerController : Component
 		CharacterController.IgnoreLayers.Add(steamId);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
-		OnJump += () => Log.Info("Jumped");
+		OnJump += PlayJumpSound;
+	}
+	void PlayJumpSound()
+	{
+		var tr = Scene.Trace.Ray(Transform.Position + Vector3.Up * 20, Transform.Position + Vector3.Up * -20).Run();
+		if (!tr.Hit) return;
+		if (tr.Surface is null) return;
+		var sound = tr.Surface.Sounds.FootLaunch;
+		var soundeevent = Sound.Play(sound);
+		soundeevent.Volume = 0.5f;
 	}
 	private void MouseInput()
 	{
@@ -102,9 +111,10 @@ public sealed class PlayerController : Component
 		var sound = footstepEvent.FootId == 0 ? tr.Surface.Sounds.FootLeft : tr.Surface.Sounds.FootRight;
 		var soundeevent = Sound.Play(sound);
 		soundeevent.Volume = footstepEvent.Volume;
+		timeSinceGround = 0;
 	}
 	RealTimeSince timeSinceJump = 0;
-	RealTimeSince timeSinceGround = 0;
+	RealTimeSince timeSinceGround = 1;
 	void Movement()
 	{
 		var cc = CharacterController;
@@ -153,10 +163,6 @@ public sealed class PlayerController : Component
 	else
 	{
 		cc.Velocity = cc.Velocity.WithZ(0);
-	}
-	if (!cc.IsOnGround)
-	{
-		timeSinceGround = 0;
 	}
 	}
 	bool UnCrouch()

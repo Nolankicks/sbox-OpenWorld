@@ -1,5 +1,5 @@
 {
-  "Material": "materials/dev/reflectivity_30.vmat",
+  "Material": "materials/grass/grass001_1k-jpg.vmat",
   "IsTextureSourceOnly": false,
   "CollisionTags": "solid",
   "QualityLevel": "Medium",
