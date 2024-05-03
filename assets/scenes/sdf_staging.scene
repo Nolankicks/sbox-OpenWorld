@@ -75,8 +75,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "SpawnItem"
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "-1152,-720"
@@ -87,8 +87,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "SpawnItem"
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "-832,-720"
@@ -99,8 +99,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "SpawnItem"
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "-496,-720"
@@ -111,8 +111,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "SpawnItem"
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "-160,-720"
@@ -210,7 +210,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 100,
+                "Value": 500,
                 "DstId": 3,
                 "DstName": "times"
               },
@@ -249,7 +249,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 100,
+                "Value": 500,
                 "DstId": 13,
                 "DstName": "times"
               },
@@ -288,7 +288,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 100,
+                "Value": 500,
                 "DstId": 21,
                 "DstName": "times"
               },
@@ -327,7 +327,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 100,
+                "Value": 500,
                 "DstId": 29,
                 "DstName": "times"
               },
@@ -784,9 +784,9 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_kind": "Set",
-                  "_name": "Wood"
+                  "_name": "Wood",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "592,80"
@@ -1181,8 +1181,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem"
+                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -2602,7 +2602,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-03T17:19:48.4646973-04:00",
+  "LastSaved": "2024-05-03T17:31:38.2515068-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
