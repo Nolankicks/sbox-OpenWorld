@@ -1,4 +1,3 @@
-using Kicks;
 using Sandbox;
 
 public sealed class SceneTrigger : Component, Component.ITriggerListener

@@ -1023,7 +1023,7 @@
               "Icon": "textures/player_spritesheet_1.vtex",
               "Name": "Action Graph \uD83D\uDE32",
               "PickUpAction": {
-                "__version": 6,
+                "__version": 7,
                 "__guid": "c606b9d3-060f-4707-9f80-269f6937032f",
                 "UserData": {
                   "Title": "Pick Up Action",
@@ -1145,7 +1145,7 @@
                   }
                 ],
                 "Defaults": {
-                  "$11._value": {
+                  "$14._value": {
                     "_type": "gameobject",
                     "go": "0a751c36-24a8-408b-b309-9a973d96779d"
                   }
@@ -1429,7 +1429,7 @@
           "HeadWeight": 1,
           "LookAtEnabled": false,
           "OnComponentStart": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "33a5ad45-eac1-43e2-a36d-35950cced2da",
             "UserData": {
               "Title": "On Component Start",
@@ -1546,7 +1546,7 @@
           "Icon": "sprites/vidya/particles/ghost.vtex",
           "Name": "Open Shop",
           "PickUpAction": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "b8014b91-70e6-4296-a9a1-8bb681110bbb",
             "UserData": {
               "Title": "Pick Up Action",
@@ -1768,7 +1768,7 @@
             ],
             "ShopActions": [
               {
-                "__version": 6,
+                "__version": 7,
                 "__guid": "4d6d0ab9-61be-49a9-b000-0514ada5a966",
                 "UserData": {
                   "Title": null,
@@ -3053,6 +3053,84 @@
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
           "ItemsToSpawnWith": [],
+          "OnComponentStart": {
+            "__version": 7,
+            "__guid": "b513133e-2ebb-40e4-9eaf-30e0a11c24f7",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/Inventory"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "-32,176"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "336,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "Value": 0,
+                "DstId": 2,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_crowbar.prefab"
+                },
+                "DstId": 2,
+                "DstName": "item"
+              }
+            ],
+            "Defaults": {
+              "$4._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_crowbar.prefab"
+              }
+            }
+          },
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -4583,7 +4661,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-02T20:09:44.2132481-04:00",
+  "LastSaved": "2024-05-03T16:00:48.2438494-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

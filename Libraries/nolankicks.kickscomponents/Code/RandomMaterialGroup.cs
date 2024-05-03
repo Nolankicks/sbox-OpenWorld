@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 [Icon("shuffle")]
 public sealed class RandomMaterialGroup : Component
 {

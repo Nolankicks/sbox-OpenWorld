@@ -1,4 +1,6 @@
 using Sandbox;
+using System;
+using System.Collections.Generic;
 [Icon("shuffle")]
 public sealed class RandomModel : Component
 {
