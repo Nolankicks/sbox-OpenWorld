@@ -24,7 +24,7 @@
         {
           "__type": "Sdftest",
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
-          "Amplitude": 3,
+          "Amplitude": 1.2,
           "OnWorldSpawned": {
             "__version": 6,
             "__guid": "2aa1785b-8c0a-49d8-8e9f-97b5e8a9a104",
@@ -75,8 +75,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "400,-800"
@@ -658,7 +658,7 @@
             "_type": "gameobject",
             "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
           },
-          "Scale": 3,
+          "Scale": 5,
           "SpawnPoint": {
             "_type": "gameobject",
             "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
@@ -668,7 +668,7 @@
             "_type": "gameobject",
             "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
           },
-          "Volume": "resources/vol.sdfvol",
+          "Volume": "sdfvol/main.sdfvol",
           "World": {
             "_type": "component",
             "component_id": "1afae3b6-16d7-43d1-903b-2ba0c5a015bd",
@@ -956,8 +956,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_kind": "Set",
                   "_name": "Wood"
                 },
                 "UserData": {
@@ -1353,8 +1353,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_name": "AddItem",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -2774,7 +2774,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-02T18:21:42.2433509-04:00",
+  "LastSaved": "2024-05-02T19:45:40.2708308-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

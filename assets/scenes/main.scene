@@ -304,7 +304,7 @@
         {
           "__guid": "6bcad1e7-97f4-4cdd-919b-5e4397ebca25",
           "Name": "can_long",
-          "Position": "-442.8752,-295.078,64.00248",
+          "Position": "-442.8752,-295.0779,64.00248",
           "Enabled": true,
           "NetworkMode": 2,
           "NetworkInterpolation": true,
@@ -341,7 +341,7 @@
         {
           "__guid": "833e5549-dd85-42dc-a84d-793cc3eb8bcb",
           "Name": "paintbody",
-          "Position": "-449.0753,-332.1051,64.00007",
+          "Position": "-449.0753,-332.1052,64.00007",
           "Enabled": true,
           "NetworkMode": 2,
           "NetworkInterpolation": true,
@@ -396,7 +396,7 @@
         {
           "__guid": "36118ab6-0201-4bbf-b31e-3a5d499a548a",
           "Name": "electrical_tape_plastic",
-          "Position": "-431.3857,-328.2677,66.71007",
+          "Position": "-431.3857,-328.2678,66.71007",
           "Enabled": true,
           "NetworkMode": 2,
           "NetworkInterpolation": true,
@@ -703,7 +703,7 @@
         {
           "__guid": "2c9af1df-6883-4cb1-af75-ae8fd08a9433",
           "Name": "wetfloor_sign",
-          "Position": "-376.7996,-359.515,64.01579",
+          "Position": "-376.7996,-359.5149,64.01579",
           "Rotation": "0,0,0.5,0.8660254",
           "Enabled": true,
           "NetworkMode": 2,
@@ -905,7 +905,7 @@
         {
           "__guid": "3ded8590-ad93-4d99-bf5c-134afb3bc1d0",
           "Name": "brick_single_04",
-          "Position": "-427.9828,-297.557,64.0127",
+          "Position": "-427.9828,-297.5569,64.0127",
           "Rotation": "0,0,0.3826834,0.9238796",
           "Enabled": true,
           "NetworkMode": 2,
@@ -1027,7 +1027,9 @@
                 "__guid": "c606b9d3-060f-4707-9f80-269f6937032f",
                 "UserData": {
                   "Title": "Pick Up Action",
-                  "ReferencedComponentTypes": []
+                  "ReferencedComponentTypes": [
+                    "Sandbox.Game/Sandbox.Prop"
+                  ]
                 },
                 "Variables": [],
                 "Nodes": [
@@ -1047,19 +1049,6 @@
                     }
                   },
                   {
-                    "Id": 3,
-                    "Type": "scene.ref",
-                    "Properties": {
-                      "gameobject": {
-                        "_type": "gameobject",
-                        "go": "1452e70d-b260-4190-aac3-22f4066c50fe"
-                      }
-                    },
-                    "UserData": {
-                      "Position": "336,368"
-                    }
-                  },
-                  {
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
@@ -1071,56 +1060,25 @@
                     }
                   },
                   {
-                    "Id": 6,
-                    "Type": "scene.ref",
+                    "Id": 12,
+                    "Type": "scene.get",
                     "Properties": {
-                      "gameobject": {
-                        "_type": "gameobject",
-                        "go": "4c819182-4368-4e16-b281-4d82ddc2e742"
-                      }
+                      "T": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
-                      "Position": "736,384"
+                      "Position": "608,336"
                     }
                   },
                   {
-                    "Id": 7,
-                    "Type": "scene.clone",
-                    "UserData": {
-                      "Position": "976,336"
-                    }
-                  },
-                  {
-                    "Id": 8,
-                    "Type": "property",
+                    "Id": 13,
+                    "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameObject",
-                      "_name": "Transform"
+                      "_name": "Kill",
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.Prop"
                     },
                     "UserData": {
-                      "Position": "304,592"
-                    }
-                  },
-                  {
-                    "Id": 9,
-                    "Type": "property",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameTransform",
-                      "_name": "Position"
-                    },
-                    "UserData": {
-                      "Position": "576,560"
-                    }
-                  },
-                  {
-                    "Id": 10,
-                    "Type": "property",
-                    "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.GameTransform",
-                      "_name": "Rotation"
-                    },
-                    "UserData": {
-                      "Position": "608,720"
+                      "Position": "912,176"
                     }
                   }
                 ],
@@ -1144,8 +1102,14 @@
                     "DstName": "_target"
                   },
                   {
-                    "SrcId": 3,
-                    "SrcName": "_result",
+                    "Value": {
+                      "$type": "Simple",
+                      "Type": "Sandbox.Game/Sandbox.GameObject",
+                      "Value": {
+                        "_type": "gameobject",
+                        "go": "0a751c36-24a8-408b-b309-9a973d96779d"
+                      }
+                    },
                     "DstId": 1,
                     "DstName": "item"
                   },
@@ -1162,52 +1126,28 @@
                     "DstName": "_target"
                   },
                   {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 12,
+                    "DstName": "_this"
+                  },
+                  {
                     "SrcId": 1,
                     "SrcName": "_signal",
-                    "DstId": 7,
+                    "DstId": 13,
                     "DstName": "_signal"
                   },
                   {
-                    "SrcId": 9,
+                    "SrcId": 12,
                     "SrcName": "_result",
-                    "DstId": 7,
-                    "DstName": "position"
-                  },
-                  {
-                    "SrcId": 10,
-                    "SrcName": "_result",
-                    "DstId": 7,
-                    "DstName": "rotation"
-                  },
-                  {
-                    "SrcId": 6,
-                    "SrcName": "_result",
-                    "DstId": 7,
-                    "DstName": "target"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 8,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 8,
-                    "SrcName": "_result",
-                    "DstId": 9,
-                    "DstName": "_target"
-                  },
-                  {
-                    "SrcId": 8,
-                    "SrcName": "_result",
-                    "DstId": 10,
+                    "DstId": 13,
                     "DstName": "_target"
                   }
                 ],
                 "Defaults": {
-                  "$6.gameobject": {
+                  "$11._value": {
                     "_type": "gameobject",
-                    "go": "4c819182-4368-4e16-b281-4d82ddc2e742"
+                    "go": "0a751c36-24a8-408b-b309-9a973d96779d"
                   }
                 }
               },
@@ -1528,8 +1468,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -4643,7 +4583,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-02T18:26:39.4602584-04:00",
+  "LastSaved": "2024-05-02T20:09:44.2132481-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

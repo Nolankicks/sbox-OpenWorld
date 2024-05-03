@@ -167,8 +167,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -2721,8 +2721,8 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.CharacterController",
                   "_name": "MoveTo",
+                  "_type": "Sandbox.Game/Sandbox.CharacterController",
                   "_isStatic": false
                 },
                 "UserData": {
@@ -4628,7 +4628,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-05-02T18:36:32.5002011-04:00",
+  "LastSaved": "2024-05-02T19:07:55.1733357-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

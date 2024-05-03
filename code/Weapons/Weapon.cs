@@ -152,6 +152,9 @@ public sealed class Weapon : Component
 			{
 				ViewModelGun.Set("b_attack_dry", true);
 			}
+			ViewModelGun.Set("aim_yaw", PlayerController.eyeAngles.yaw);
+			ViewModelGun.Set("aim_pitch", PlayerController.eyeAngles.pitch);
+			
 		}
 		else
 		{

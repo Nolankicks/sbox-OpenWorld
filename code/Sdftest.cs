@@ -41,7 +41,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
         for (int j = 0; j < 10 * scale; j++)
         {
             var z = noiseMap[i, j] * 1000;
-            var pos = new Vector3(i * 100, j * 100, z);
+            var pos = new Vector3(i * 30, j * 30, z);
             var sphere = new SphereSdf3D(pos * scale, 100 * scale); // Adjust the radius based on the scale
 			string biomeType;
             if (noiseMap[i, j] < -0.5)
@@ -129,7 +129,7 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
 }
 public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false, string BiomeType = "")
 {
-    Vector3 dim = world.Dimensions * 10000 * Scale;
+    Vector3 dim = world.Dimensions * 1000 * Scale;
     int buffer = 200; // Increase buffer size
 
     while (true)
