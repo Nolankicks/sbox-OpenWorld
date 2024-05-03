@@ -34,43 +34,14 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		World.GameObject.NetworkSpawn();
 		_ = CreateWorld(World, Volume, Scale);
 	}
-public Vector3 RoundVector3(Vector3 vector3)
-{
-	return new Vector3((float)Math.Round(vector3.x), (float)Math.Round(vector3.y), (float)Math.Round(vector3.z));
-}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
     var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
-	var testSphere = new SphereSdf3D(new Vector3(0, 0, 0), 500);
-	await world.SubtractAsync(testSphere, volume);
-    for (int i = 0; i < 20 * scale; i++)
-    {
-        for (int j = 0; j < 20 * scale; j++)
-        {
-            var z = noiseMap[i, j] * 1000;
-            var pos = new Vector3(i * TerrainSmoothness, j * TerrainSmoothness, z);
-            var sphere = new SphereSdf3D(pos * scale, 500); // Adjust the radius based on the scale
-			string biomeType;
-            if (noiseMap[i, j] < -0.5)
-            {
-                biomeType = "ocean";
-            }
-            else if (noiseMap[i, j] < 0.5)
-            {
-                biomeType = "plains";
-            }
-            else
-            {
-                biomeType = "mountains";
-            }
-
-            biomes.Add(new Biome(pos, biomeType));
-            await world.AddAsync(sphere, volume);
-        }
-    }
-	LoadingScreen.Title = "Creating world...";
+	var heightmap = new PerlinNoiseSdf3D(0, Vector3.Zero, Vector3.One * 1000);
+	await world.AddAsync(heightmap, volume);
+  LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
-	OnWorldSpawned?.Invoke(this, world);
+	//OnWorldSpawned?.Invoke(this, world);
 
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
@@ -79,10 +50,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
         ProcGenUi.Destroy();
     }
 	await Task.DelaySeconds(1);
-    if (!GameNetworkSystem.IsActive)
-    {
-        GameNetworkSystem.CreateLobby();
-    }
+	GameNetworkSystem.CreateLobby();
 	await Task.DelaySeconds(1);
 }
 public class Biome

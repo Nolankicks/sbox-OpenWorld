@@ -11,6 +11,7 @@ public sealed class Weapon : Component
 	[Property, Category("Weapon Properties")] public int Damage { get; set; }
 	[Property] public string WeaponIndent { get; set; } 
 	[Property, Category("Weapon Properties")] public int Ammo { get; set; }
+	[Property] public bool UsesAmmo { get; set; } = true;
 	[Property, Category("Weapon Properties")] public int MaxAmmo { get; set; }
 	[Property, Range(0.1f, 1), Category("Weapon Properties")] public float FireRate { get; set; }
 	[Property, Category("Weapon Properties")] public int TraceLength { get; set; } = 5000;
@@ -47,11 +48,11 @@ public sealed class Weapon : Component
 	/// The sound that will play when the weapon is fired, if left empty it will not play a sound
 	/// </summary>
 	[Property, Category("Weapon Properties")] public SoundEvent FireSound { get; set; }
-	/// <summary>
+
+	[Property, Category("Weapon Properties")] public AmmoContainer.AmmoTypes AmmoType { get; set; }
+		/// <summary>
 	/// Use this if you want to have a muzzle flash, if left empty it will not spawn a muzzle flash
 	/// </summary>
-	[Property, Category("Weapon Properties")] public bool b_twohanded { get; set; }
-	[Property, Category("Weapon Properties")] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	[Property, Category("Prefabs")] public GameObject MuzzleFlash { get; set; }
 	[Property, Sync] public bool IsWeapon { get; set; }
 	[Property, Category("Prefabs")] public GameObject BloodParticle { get; set; }
@@ -107,7 +108,7 @@ public sealed class Weapon : Component
 		if (PlayerController.IsFirstPerson)
 		{
 			var selelctedAmmo = AmmoContainer.GetAmmo(AmmoType);
-			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0)
+			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0 && UsesAmmo)
 			{
 				var ammoToSet = selelctedAmmo - ShotsFired;
 				if (ammoToSet > selelctedAmmo)
@@ -198,8 +199,11 @@ public sealed class Weapon : Component
 		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
 			PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
+			if (UsesAmmo)
+			{
 			Ammo--;
 			ShotsFired++;
+			}
 			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 			ray.Forward += Vector3.Random * Spread;
 			var tr = Scene.Trace.Ray(ray, TraceLength).WithoutTags(Steam.SteamId.ToString()).Run();
