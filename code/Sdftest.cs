@@ -37,11 +37,11 @@ public sealed class Sdftest : Component, Component.INetworkListener
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
     var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
-	var heightmap = new PerlinNoiseSdf3D(0, Vector3.Zero, Vector3.One * 1000);
+	var heightmap = new PerlinNoiseSdf3D(0, 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(5000));
 	await world.AddAsync(heightmap, volume);
-  LoadingScreen.Title = "Creating world...";
+    LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
-	//OnWorldSpawned?.Invoke(this, world);
+	OnWorldSpawned?.Invoke(this, world);
 
 	LoadingScreen.Title = "Spawning items...";
 	await Task.DelaySeconds(3);
@@ -103,47 +103,26 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
         }
     }
 }
-public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false, string BiomeType = "")
+public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
 {
-    Vector3 dim = world.Dimensions * 1000 * Scale;
-    int buffer = 200; // Increase buffer size
+	while (true)
+	{
+	Vector3 dim =  Vector3.One * 5000;
+    var x = GetRandom(0, dim.x);
+    var y = GetRandom(0, dim.y);
 
-    while (true)
+    // Check if the position is valid by casting a downward ray from a higher position
+    var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();
+
+    // Log the result of the ray cast
+    Log.Info($"Ray cast hit: {trace.Hit}, GameObject tag: {trace.GameObject?.Tags}");
+
+    // Validate the position
+    if (trace.Hit && !trace.GameObject.Tags.Has("world")) // Make sure it's not too close to the top boundary
     {
-        // Generate random position within the adjusted boundaries
-        var x = GetRandom(buffer, dim.x - buffer);
-        var y = GetRandom(buffer, dim.y - buffer);
-
-        // Check if the position is valid by casting a downward ray from a higher position
-		if (BiomeType == "")
-		{
-			        var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();
-
-        // Validate the position
-        if (trace.Hit && trace.HitPosition.x > buffer && trace.HitPosition.x < dim.x - buffer &&
-            trace.HitPosition.y > buffer && trace.HitPosition.y < dim.y - buffer &&
-            trace.HitPosition.z < dim.z - buffer && !trace.GameObject.Tags.Has("world")) // Make sure it's not too close to the top boundary
-        {
-            return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
-        }
-   		}
-		else
-		{
-			List<Biome> filteredBiomes = biomes;
-		var chosenBiome = filteredBiomes[Random.Shared.Next(filteredBiomes.Count)];
-
-        // Check if the position is valid by casting a downward ray from a higher position
-        var trace = Scene.Trace.Ray(chosenBiome.Location + new Vector3(0, 0, dim.z + 10000), Vector3.Down * 10000000).Run();
-
-        // Validate the position
-        if (trace.Hit && trace.HitPosition.x > buffer && trace.HitPosition.x < dim.x - buffer &&
-            trace.HitPosition.y > buffer && trace.HitPosition.y < dim.y - buffer &&
-            trace.HitPosition.z < dim.z - buffer && !trace.GameObject.Tags.Has("world")) // Make sure it's not too close to the top boundary
-        {
-            return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
-        }
-		}
-		}
+        return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
+    }
+	}
 
 }
 

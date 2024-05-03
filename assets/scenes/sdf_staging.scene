@@ -74,9 +74,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "-1152,-720"
@@ -86,9 +86,9 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "-832,-720"
@@ -98,9 +98,9 @@
                 "Id": 21,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "-496,-720"
@@ -110,9 +110,9 @@
                 "Id": 29,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "-160,-720"
@@ -122,9 +122,9 @@
                 "Id": 41,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "176,-720"
@@ -134,9 +134,9 @@
                 "Id": 49,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "544,-720"
@@ -146,9 +146,9 @@
                 "Id": 57,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "944,-720"
@@ -210,7 +210,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 100,
                 "DstId": 3,
                 "DstName": "times"
               },
@@ -288,7 +288,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 100,
                 "DstId": 21,
                 "DstName": "times"
               },
@@ -366,7 +366,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 10,
                 "DstId": 41,
                 "DstName": "times"
               },
@@ -405,7 +405,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 10,
                 "DstId": 49,
                 "DstName": "times"
               },
@@ -444,7 +444,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 10,
                 "DstId": 57,
                 "DstName": "times"
               },
@@ -773,8 +773,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Wood",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Wood"
                 },
                 "UserData": {
                   "Position": "192,-64"
@@ -784,9 +784,9 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Wood",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_kind": "Set",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_name": "Wood"
                 },
                 "UserData": {
                   "Position": "592,80"
@@ -996,8 +996,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-144,224"
@@ -1007,8 +1007,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "96,144"
@@ -1180,9 +1180,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -1192,9 +1192,9 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "864,-0"
@@ -1204,9 +1204,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "1232,0"
@@ -2418,9 +2418,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2602,7 +2602,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-03T15:52:16.051973-04:00",
+  "LastSaved": "2024-05-03T17:19:48.4646973-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

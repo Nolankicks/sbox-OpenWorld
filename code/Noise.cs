@@ -1,52 +1,22 @@
+using Sandbox.Utility;
+
 namespace Sandbox.Sdf.Noise
 {
-    public record struct PerlinNoiseSdf3D(int Seed, Vector3 Position, Vector3 SizeOfArea, float[,] Noise) : ISdf3D
+    public record struct PerlinNoiseSdf3D(int Seed, float noiseScalar, Vector3 Position, Vector3 SizeOfArea) : ISdf3D
     {
-        public PerlinNoiseSdf3D(int Seed, Vector3 Position, Vector3 SizeOfArea)
-        : this(Seed, Position, SizeOfArea, CreateNoise(Seed, SizeOfArea))
+        public BBox? Bounds => new BBox(Position, Position + SizeOfArea);
+		
+        public float this[Vector3 pos]
         {
-        }
-
-        //Stole Kick's code, line 180
-        //https://github.com/Nolankicks/sbox-OpenWorld/blob/main/code/Sdftest.cs
-        public static float[,] CreateNoise(int seed, Vector3 SizeOfArea)
-        {
-            var width = (int)((SizeOfArea.x / 16) + 1);
-            var length = (int)((SizeOfArea.y / 16) + 1);
-            float[,] noiseMap = new float[width, length];
-
-            for (int y = 0; y < width; y ++)
+            get
             {
-                for (int x = 0; x < length; x ++)
-                {
-                    float sampleX = (x + seed);
-                    float sampleY = (y + seed);
-
-                    float noise = Utility.Noise.Perlin(sampleX, sampleY);
-
-                    noiseMap[x, y] = (noise * 0.5f) + 0.5f;
-                    Log.Info($"{x},{y}: {noise}");
-                }
+                var xNoise = ((pos.x - Position.x) * noiseScalar) / 10;
+                var yNoise = ((pos.y - Position.y) * noiseScalar) / 10;
+                var noiseValue = Utility.Noise.Perlin(xNoise + Seed, yNoise + Seed);
+                noiseValue *= SizeOfArea.z;
+                return pos.z - (Position.z + noiseValue);
             }
-
-            return noiseMap;
         }
-		public BBox? Bounds => new BBox(Position, Position + SizeOfArea);
-
-public float this[Vector3 pos]
-{
-    get
-    {
-        var noiseX = (int)((pos.x - Position.x) / 16);
-        var noiseY = (int)((pos.y - Position.y) / 16);
-
-        // Wrap the noise coordinates around to the other side of the noise map
-        noiseX = (noiseX % (int)(SizeOfArea.x / 16) + (int)(SizeOfArea.x / 16)) % (int)(SizeOfArea.x / 16);
-        noiseY = (noiseY % (int)(SizeOfArea.y / 16) + (int)(SizeOfArea.y / 16)) % (int)(SizeOfArea.y / 16);
-
-        return pos.z - (Position.z + (Noise[noiseX, noiseY] * SizeOfArea.z));
-    }
-}
 
         public void WriteRaw(ref ByteStream writer, Dictionary<TypeDescription, int> sdfTypes)
         {
@@ -57,7 +27,7 @@ public float this[Vector3 pos]
 
         public static PerlinNoiseSdf3D ReadRaw(ref ByteStream reader, IReadOnlyDictionary<int, SdfReader<ISdf3D>> sdfTypes)
         {
-            return new PerlinNoiseSdf3D(reader.Read<int>(), reader.Read<Vector3>(), reader.Read<Vector3>());
+            return new PerlinNoiseSdf3D(reader.Read<int>(), reader.Read<float>(), reader.Read<Vector3>(), reader.Read<Vector3>());
         }
     }
 }
