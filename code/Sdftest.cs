@@ -37,7 +37,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
     var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
-	var heightmap = new PerlinNoiseSdf3D(0, 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(5000));
+	var heightmap = new PerlinNoiseSdf3D(0, 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(3000));
 	await world.AddAsync(heightmap, volume);
     LoadingScreen.Title = "Creating world...";
 	await Task.DelaySeconds(1);
@@ -107,7 +107,7 @@ public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
 {
 	while (true)
 	{
-	Vector3 dim =  Vector3.One * 5000;
+	Vector3 dim =  new Vector3(10000 - 200, 10000 - 200, 5000 - 200);
     var x = GetRandom(0, dim.x);
     var y = GetRandom(0, dim.y);
 
