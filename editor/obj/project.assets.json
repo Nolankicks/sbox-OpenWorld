@@ -27,6 +27,7 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Base Library": "1.0.0",
+          "kickscomponents": "1.0.0",
           "libpolygon": "1.0.0",
           "libsdf": "1.0.0",
           "shatterglass": "1.0.0",
@@ -39,9 +40,25 @@
           "bin/placeholder/dead4left2.dll": {}
         }
       },
+      "kickscomponents/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/kickscomponents.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/kickscomponents.dll": {}
+        }
+      },
       "libpolygon/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/libpolygon.dll": {}
         },
@@ -52,6 +69,9 @@
       "libsdf/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/libsdf.dll": {}
         },
@@ -62,6 +82,9 @@
       "shatterglass/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/shatterglass.dll": {}
         },
@@ -72,6 +95,9 @@
       "stuffthatisntbuiltin/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/stuffthatisntbuiltin.dll": {}
         },
@@ -97,6 +123,11 @@
       "path": "../Code/dead4left2.csproj",
       "msbuildProject": "../Code/dead4left2.csproj"
     },
+    "kickscomponents/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/nolankicks.kickscomponents/Code/kickscomponents.csproj",
+      "msbuildProject": "../Libraries/nolankicks.kickscomponents/Code/kickscomponents.csproj"
+    },
     "libpolygon/1.0.0": {
       "type": "project",
       "path": "../Libraries/facepunch.libpolygon/Code/libpolygon.csproj",
@@ -104,8 +135,8 @@
     },
     "libsdf/1.0.0": {
       "type": "project",
-      "path": "../Libraries/sbox-sdf-scene-fix/Code/libsdf.csproj",
-      "msbuildProject": "../Libraries/sbox-sdf-scene-fix/Code/libsdf.csproj"
+      "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
+      "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
     },
     "shatterglass/1.0.0": {
       "type": "project",

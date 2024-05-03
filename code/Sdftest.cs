@@ -5,6 +5,7 @@ using Sandbox.Utility;
 using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using Sandbox.Network;
+using Sandbox.Sdf.Noise;
 
 [Title("SDF Manager")]
 [Icon("dashboard")]
@@ -14,13 +15,15 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DVolume Volume { get; set; }
 	public float[,] PerlinValues { get; set; }
-    [Property] public GameObject TreePrefab { get; set; }
-	[Property] public GameObject RockPrefab { get; set; }
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
 	[Property] public ProcGenUi ProcGenUi { get; set; }
     [Property] public GameObject SpawnPoint { get; set; }
 	[Property] public bool StartServer { get; set; } = false;
+    /// <summary>
+    /// Distance between each SDF, deafult value is 30
+    /// </summary>
+    [Property] public int TerrainSmoothness { get; set; } = 30;
 	[Property] public GameObject PlayerPrefab { get; set; }
 	public List<Biome> biomes { get; set; }
     public delegate void OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
@@ -31,18 +34,22 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		World.GameObject.NetworkSpawn();
 		_ = CreateWorld(World, Volume, Scale);
 	}
-
+public Vector3 RoundVector3(Vector3 vector3)
+{
+	return new Vector3((float)Math.Round(vector3.x), (float)Math.Round(vector3.y), (float)Math.Round(vector3.z));
+}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
-    var noiseMap = CreateNoise((int)(10 * scale), (int)(10 * scale), 1, 0, 0, Amplitude);
-
-    for (int i = 0; i < 10 * scale; i++)
+    var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
+	var testSphere = new SphereSdf3D(new Vector3(0, 0, 0), 500);
+	await world.SubtractAsync(testSphere, volume);
+    for (int i = 0; i < 20 * scale; i++)
     {
-        for (int j = 0; j < 10 * scale; j++)
+        for (int j = 0; j < 20 * scale; j++)
         {
             var z = noiseMap[i, j] * 1000;
-            var pos = new Vector3(i * 30, j * 30, z);
-            var sphere = new SphereSdf3D(pos * scale, 100 * scale); // Adjust the radius based on the scale
+            var pos = new Vector3(i * TerrainSmoothness, j * TerrainSmoothness, z);
+            var sphere = new SphereSdf3D(pos * scale, 500); // Adjust the radius based on the scale
 			string biomeType;
             if (noiseMap[i, j] < -0.5)
             {
@@ -72,10 +79,11 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
         ProcGenUi.Destroy();
     }
 	await Task.DelaySeconds(1);
-	GameNetworkSystem.CreateLobby();
+    if (!GameNetworkSystem.IsActive)
+    {
+        GameNetworkSystem.CreateLobby();
+    }
 	await Task.DelaySeconds(1);
-    
-
 }
 public class Biome
 {

@@ -13,6 +13,7 @@ public sealed class Weapon : Component
 	[Property, Category("Weapon Properties")] public int Ammo { get; set; }
 	[Property, Category("Weapon Properties")] public int MaxAmmo { get; set; }
 	[Property, Range(0.1f, 1), Category("Weapon Properties")] public float FireRate { get; set; }
+	[Property, Category("Weapon Properties")] public int TraceLength { get; set; } = 5000;
 	public PlayerController PlayerController { get; set; }
 	[Property, Category("GameObjects")] public GameObject ViewModelCamera { get; set; }
 	[Property, Category("GameObjects")] public SkinnedModelRenderer ViewModelGun { get; set; }
@@ -201,7 +202,7 @@ public sealed class Weapon : Component
 			ShotsFired++;
 			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
 			ray.Forward += Vector3.Random * Spread;
-			var tr = Scene.Trace.Ray(ray, 5000).WithoutTags(Steam.SteamId.ToString()).Run();
+			var tr = Scene.Trace.Ray(ray, TraceLength).WithoutTags(Steam.SteamId.ToString()).Run();
 			if (tr.Hit)
 			{
 				tr.GameObject.Components.TryGet<EnemyHealthComponent>( out var dummy, FindMode.EverythingInSelfAndParent);
