@@ -7,6 +7,7 @@ public sealed class AmmoContainer : Component
 		LightAmmo,
 		ShotgunShells,
 		HeavyAmmo,
+		NoAmmo
 	}
 
 	[Property, Sync] public int LightAmmo { get; set; }

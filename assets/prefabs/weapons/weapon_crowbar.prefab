@@ -1,19 +1,25 @@
 {
   "RootObject": {
-    "__guid": "019fee1d-27db-4b44-a7b1-32d45541b85a",
+    "__guid": "e92db3ec-7602-430d-bd47-31a77cb1c0ef",
     "Name": "weapon_crowbar",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
     "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Kicks.Weapon",
-        "__guid": "56b66734-de06-469b-8863-bdd50a9e38f2",
-        "Ammo": 30,
-        "AmmoType": "LightAmmo",
+        "__guid": "aaca953c-5517-4e15-906c-a640519e200a",
+        "Ammo": 12,
+        "AmmoType": "NoAmmo",
         "Arms": {
           "_type": "gameobject",
-          "go": "0937d892-583b-4185-8020-4b8be9500315"
+          "go": "bc7fb431-de40-4cae-990c-7a7ecbf6769e"
+        },
+        "armsRenderer": {
+          "_type": "component",
+          "component_id": "15133194-2560-4e01-a93d-7d72d522e7d6",
+          "go": "bc7fb431-de40-4cae-990c-7a7ecbf6769e",
+          "component_type": "SkinnedModelRenderer"
         },
         "BloodParticle": {
           "_type": "gameobject",
@@ -24,94 +30,56 @@
           "_type": "gameobject",
           "prefab": "prefabs/decal.prefab"
         },
-        "Description": "A swift SMG",
+        "Description": "A powerful pistol",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "b42bdf35-d676-4eb4-bbdb-25d100c7576d"
+          "go": "25f87a92-ec49-4f52-b6f2-29a3f676d22f"
         },
-        "FireRate": 1,
-        "HoldType": "Rifle",
+        "FireRate": 0.6,
+        "FireSound": "sounds/shootsound.sound",
+        "HoldType": "Pistol",
         "ImpactParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/impact.prefab"
         },
         "IsWeapon": false,
         "MaxAmmo": 120,
-        "Name": "MP5",
+        "Name": "Crowbar",
         "Recoil": 0,
         "ReloadBool": "b_reload",
-        "ReloadTime": 1,
+        "ReloadTime": 0,
         "ShootBool": "b_attack",
-        "Spread": 0,
+        "Spread": 0.03,
         "StartingAmmo": 0,
         "TestStruct": {},
-        "TraceLength": 200,
-        "UsesAmmo": true,
+        "TraceLength": 100,
+        "UsesAmmo": false,
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "39cf6385-cc9c-4d20-a569-e7ec2468affc"
+          "go": "4d7e973f-ff2e-4f9f-9eab-df453d7745fa"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "f4699b5d-87bd-480d-b8c8-1d91d9b46a79",
-          "go": "c241cbb4-beb8-4d7b-821c-75d6f49cbf69",
+          "component_id": "f850dedf-6fdc-443e-94db-632dc116d531",
+          "go": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "3e553247-72a3-4bbb-824a-f34417ec43c3"
+          "go": "f5d45a56-e7eb-438f-a57f-5f63d730dc13"
         },
-        "WeaponIndent": "weapon_smg",
-        "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
+        "WeaponIndent": "weapon_crowbar",
+        "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "8c5adc72-c58f-4398-a82d-a7d3ec291aa3",
+        "Icon": "textures/crowbar.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "b42bdf35-d676-4eb4-bbdb-25d100c7576d",
-        "Name": "Dropped Item",
-        "Enabled": true,
-        "NetworkMode": 1,
-        "NetworkInterpolation": true,
-        "Components": [
-          {
-            "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "5ebd97ee-8f7f-4dd1-8ef7-94977d252416",
-            "BodyGroups": 18446744073709551615,
-            "BoneMergeTarget": {
-              "_type": "component",
-              "component_id": "5ebd97ee-8f7f-4dd1-8ef7-94977d252416",
-              "go": "b42bdf35-d676-4eb4-bbdb-25d100c7576d",
-              "component_type": "SkinnedModelRenderer"
-            },
-            "CreateBoneObjects": false,
-            "Model": "models/weapons/sbox_melee_crowbar/w_crowbar.vmdl",
-            "RenderType": "On",
-            "Tint": "1,1,1,1"
-          },
-          {
-            "__type": "Sandbox.Rigidbody",
-            "__guid": "f12a1de5-c549-4b35-8eae-73eb787330d3",
-            "AngularDamping": 0,
-            "Gravity": true,
-            "LinearDamping": 0,
-            "Locking": {},
-            "MassOverride": 0,
-            "MotionEnabled": true,
-            "RigidbodyFlags": 0,
-            "StartAsleep": false
-          },
-          {
-            "__type": "Sandbox.BoxCollider",
-            "__guid": "61376b2b-7f88-4501-9ecf-3e114fca3428",
-            "Center": "0,0,5.499997",
-            "IsTrigger": false,
-            "Scale": "24.20012,3.800029,10.99995",
-            "Static": false
-          }
-        ]
-      },
-      {
-        "__guid": "39cf6385-cc9c-4d20-a569-e7ec2468affc",
+        "__guid": "4d7e973f-ff2e-4f9f-9eab-df453d7745fa",
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -120,7 +88,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "d01020fb-0fa3-431e-995c-15e1f8d92b15",
+            "__guid": "7518440f-a399-4d31-b045-8d4ded112c5a",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -138,14 +106,32 @@
         ],
         "Children": [
           {
-            "__guid": "3e553247-72a3-4bbb-824a-f34417ec43c3",
+            "__guid": "f5d45a56-e7eb-438f-a57f-5f63d730dc13",
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
             "NetworkInterpolation": true,
             "Children": [
               {
-                "__guid": "0937d892-583b-4185-8020-4b8be9500315",
+                "__guid": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
+                "Name": "gun",
+                "Enabled": true,
+                "NetworkMode": 1,
+                "NetworkInterpolation": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "f850dedf-6fdc-443e-94db-632dc116d531",
+                    "BodyGroups": 18446744073709551615,
+                    "CreateBoneObjects": false,
+                    "Model": "models/weapons/sbox_melee_crowbar/v_crowbar.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "bc7fb431-de40-4cae-990c-7a7ecbf6769e",
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -153,12 +139,12 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "91e82613-56fd-49e8-8245-6ea8a72688c5",
+                    "__guid": "15133194-2560-4e01-a93d-7d72d522e7d6",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "f4699b5d-87bd-480d-b8c8-1d91d9b46a79",
-                      "go": "c241cbb4-beb8-4d7b-821c-75d6f49cbf69",
+                      "component_id": "f850dedf-6fdc-443e-94db-632dc116d531",
+                      "go": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -167,32 +153,46 @@
                     "Tint": "1,1,1,1"
                   }
                 ]
-              },
-              {
-                "__guid": "c241cbb4-beb8-4d7b-821c-75d6f49cbf69",
-                "Name": "gun",
-                "Enabled": true,
-                "NetworkMode": 1,
-                "NetworkInterpolation": true,
-                "Components": [
-                  {
-                    "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "f4699b5d-87bd-480d-b8c8-1d91d9b46a79",
-                    "BodyGroups": 18446744073709551615,
-                    "BoneMergeTarget": {
-                      "_type": "component",
-                      "component_id": "91e82613-56fd-49e8-8245-6ea8a72688c5",
-                      "go": "0937d892-583b-4185-8020-4b8be9500315",
-                      "component_type": "SkinnedModelRenderer"
-                    },
-                    "CreateBoneObjects": false,
-                    "Model": "models/weapons/sbox_melee_crowbar/v_crowbar.vmdl",
-                    "RenderType": "On",
-                    "Tint": "1,1,1,1"
-                  }
-                ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "__guid": "25f87a92-ec49-4f52-b6f2-29a3f676d22f",
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "0c639e61-ea4a-4d57-afad-53ffc7763ba5",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_melee_crowbar/w_crowbar.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "57697c9e-430d-4386-881b-a92f60794bad",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "330396d6-8147-4fca-9013-2ca5bde7b21e",
+            "Center": "0.9000002,0,11.69998",
+            "IsTrigger": false,
+            "Scale": "10.19996,2.200034,31.40023",
+            "Static": false
           }
         ]
       }
@@ -206,6 +206,7 @@
   "__references": [
     "facepunch.v_crowbar",
     "facepunch.w_crowbar",
-    "facepunch.w_mp5"
+    "facepunch.w_usp",
+    "nolankicks.2d_game_test"
   ]
 }

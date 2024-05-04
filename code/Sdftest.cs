@@ -13,17 +13,20 @@ public sealed class Sdftest : Component, Component.INetworkListener
 {
 
 	[Property] public Sdf3DWorld World { get; set; }
-	[Property] public Sdf3DVolume Volume { get; set; }
+	[Property] public Sdf3DWorld WaterWorld { get; set; }
+	[Property] public int WorldHeight { get; set; } = 3000;
+	[Property, Category("Volumes")] public Sdf3DVolume Grass { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Stone { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Water { get; set; }
 	public float[,] PerlinValues { get; set; }
     [Property] public float Scale { get; set; }
 	[Property] public float Amplitude { get; set; }
-	[Property] public ProcGenUi ProcGenUi { get; set; }
+	public ProcGenUi ProcGenUi { get; set; }
     [Property] public GameObject SpawnPoint { get; set; }
 	[Property] public bool StartServer { get; set; } = false;
     /// <summary>
     /// Distance between each SDF, deafult value is 30
     /// </summary>
-    [Property] public int TerrainSmoothness { get; set; } = 30;
 	[Property] public GameObject PlayerPrefab { get; set; }
 	public List<Biome> biomes { get; set; }
     public delegate void OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
@@ -31,25 +34,21 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	protected override void OnStart()
 	{
 		biomes = new List<Biome>();
-		World.GameObject.NetworkSpawn();
-		_ = CreateWorld(World, Volume, Scale);
+		_ = CreateWorld(World, Grass, Scale);
 	}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
+	World.GameObject.NetworkSpawn();
+	WaterWorld.GameObject.NetworkSpawn();
+	await Task.DelaySeconds(1);
     var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
-	var heightmap = new PerlinNoiseSdf3D(0, 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(3000));
+	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
 	await world.AddAsync(heightmap, volume);
-    LoadingScreen.Title = "Creating world...";
+	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(10000, 10000, 1500));
+	await WaterWorld.AddAsync(waterSDF, Water);
 	await Task.DelaySeconds(1);
 	OnWorldSpawned?.Invoke(this, world);
-
-	LoadingScreen.Title = "Spawning items...";
-	await Task.DelaySeconds(3);
-    if (ProcGenUi is not null)
-    {
-        ProcGenUi.Destroy();
-    }
-	await Task.DelaySeconds(1);
+	await Task.DelaySeconds(5);
 	GameNetworkSystem.CreateLobby();
 	await Task.DelaySeconds(1);
 }
@@ -91,7 +90,7 @@ void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
 
 
 
-public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset, string BiomeType = "")
+public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, string BiomeType = "", bool NetworkSpawn = true)
 {
     for (int i = 0; i < times; i++)
     {
@@ -99,7 +98,10 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
         {
             var pos = GetBounds(world, Offset);
             var clone = gameObject.Clone(pos);
-            clone.NetworkSpawn(null);
+			if (NetworkSpawn)
+			{
+				clone.NetworkSpawn(null);
+			}
         }
     }
 }
@@ -111,14 +113,10 @@ public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
     var x = GetRandom(0, dim.x);
     var y = GetRandom(0, dim.y);
 
-    // Check if the position is valid by casting a downward ray from a higher position
     var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();
 
-    // Log the result of the ray cast
     Log.Info($"Ray cast hit: {trace.Hit}, GameObject tag: {trace.GameObject?.Tags}");
-
-    // Validate the position
-    if (trace.Hit && !trace.GameObject.Tags.Has("world")) // Make sure it's not too close to the top boundary
+    if (trace.Hit && !trace.GameObject.Tags.Has("world") && !trace.GameObject.Tags.Has("water"))
     {
         return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
     }

@@ -60,6 +60,8 @@ public sealed class Weapon : Component
 	[Sync] public bool IsAiming { get; set; }
 	[Property] public int StartingAmmo { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
+	public delegate void OnFireDel(PlayerController playerController, Weapon weapon, AmmoContainer ammoContainer);
+	[Property] public OnFireDel OnFire { get; set; }
 	protected override void OnStart()
 	{
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
@@ -129,6 +131,8 @@ public sealed class Weapon : Component
 			{
 				ViewModelGun.Set("b_reload", false);
 			}
+			ViewModelGun.Set("aim_pitch", PlayerController.eyeAngles.pitch);
+			ViewModelGun.Set("aim_yaw", PlayerController.eyeAngles.yaw);
 			if (Input.Pressed("jump") && !IsProxy)
 			{
 				ViewModelGun.Set("b_jump", true);
@@ -195,7 +199,7 @@ public sealed class Weapon : Component
 	void Fire()
 	{
 		if (PlayerController.IsGrabbing) return;
-		
+		OnFire?.Invoke(PlayerController, this, AmmoContainer);
 		if (Ammo > 0 && TimeSinceFire > FireRate)
 		{
 			PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
@@ -278,6 +282,10 @@ public sealed class Weapon : Component
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
 			MuzzleFlashInstance.Tags.Add("viewmodel");
 			}
+		}
+		else
+		{
+			ViewModelGun.Set("b_attack", false);
 		}
 }
 }

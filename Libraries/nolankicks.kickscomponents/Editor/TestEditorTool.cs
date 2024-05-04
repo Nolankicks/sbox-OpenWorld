@@ -11,12 +11,10 @@ public class MyRocketTool : EditorTool
 {
 	public override void OnEnabled()
 	{
-
 	}
 
 	public override void OnDisabled()
 	{
-
 	}
 
 public override void OnUpdate()
@@ -25,15 +23,5 @@ public override void OnUpdate()
 					.UseRenderMeshes( true )
 					.UsePhysicsWorld( false )
 					.Run();
-
-	if ( tr.Hit )
-	{
-		using ( Gizmo.Scope( "cursor" ) )
-		{
-			Gizmo.Transform = new Transform( tr.HitPosition, Rotation.LookAt( tr.Normal ) );
-			Gizmo.Draw.LineCircle( 0, 100 );
-		}
-	}
-		
 }
 }

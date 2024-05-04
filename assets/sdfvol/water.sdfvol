@@ -1,7 +1,7 @@
 {
   "Material": "materials/water/water_pond_a.vmat",
   "IsTextureSourceOnly": false,
-  "CollisionTags": "solid",
+  "CollisionTags": "water",
   "QualityLevel": "Medium",
   "ChunkResolution": 16,
   "ChunkSize": 256,
