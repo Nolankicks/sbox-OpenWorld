@@ -285,42 +285,40 @@ public sealed class Inventory : Component
 		item.Components.TryGet<IconComponent>(out var icon);
 		if (weapon is not null && icon is not null)
 		{
-		//God I hate this, i'm too dumb for the foreach shit
-		weapon.GameObject.Parent = null;
-		weapon.IsWeapon = false;
-		weapon.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
-		weapon.GameObject.Network.DropOwnership();
-		weapon.GameObject.Network.DropOwnership();
-		weapon.ViewModelCamera.Network.DropOwnership();
-		weapon.ViewModelGun.GameObject.Network.DropOwnership();
-		weapon.Arms.Network.DropOwnership();
-		weapon.ViewModelHolder.Network.DropOwnership();
-
-		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		Network.Refresh();
-
+			refreshThing("weapon");
 		}
 		else if (shotgun is not null && icon is not null)
 		{
-		shotgun.GameObject.Parent = null;
-		shotgun.IsWeapon = false;
-		shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
-		shotgun.GameObject.Network.DropOwnership();
-		shotgun.GameObject.Network.DropOwnership();
-		shotgun.ViewModelCamera.Network.DropOwnership();
-		shotgun.ViewModelGun.GameObject.Network.DropOwnership();
-		shotgun.arms.GameObject.Network.DropOwnership();
-		shotgun.ViewModelHolder.Network.DropOwnership();
-	
-		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		Network.Refresh();
-		
+			refreshThing("shotgun");
 		}
 		else
 		{
 			return;
+		}
+		void refreshThing(string itemName)
+		{
+			// Assign name of item to variable
+			Type itemType = Type.GetType(itemName);
+			if (itemType != null)
+			{
+				// Create an item object
+				dynamic itemInstance = Activator.CreateInstance(itemType);
+				itemInstance.GameObject.Parent = null;
+				itemInstance.IsWeapon = false;
+				itemInstance.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
+				RemoveItem(itemInstance, false);
+				itemInstance.GameObject.Network.DropOwnership();
+				itemInstance.ViewModelCamera.Network.DropOwnership();
+				itemInstance.ViewModelGun.GameObject.Network.DropOwnership();
+				itemInstance.arms.GameObject.Network.DropOwnership();
+				itemInstance.ViewModelHolder.Network.DropOwnership();
+
+				Network.Refresh();
+			}
+			else
+			{
+				Console.WriteLine("Error with item" + itemName + "in function 'refreshThing'");
+			}
 		}
 	}
 	}
