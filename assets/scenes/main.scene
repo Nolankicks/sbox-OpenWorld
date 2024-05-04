@@ -1041,8 +1041,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -1052,8 +1052,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "GetNextSlot"
+                      "_name": "GetNextSlot",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1073,9 +1073,9 @@
                     "Id": 13,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "Kill",
-                      "_type": "Sandbox.Game/Sandbox.Prop"
+                      "_type": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "912,176"
@@ -2518,9 +2518,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "336,-0"
@@ -4094,7 +4094,7 @@
     },
     {
       "__guid": "9c93466d-ed93-40c8-b4d6-9ac087c85958",
-      "Name": "Object",
+      "Name": "water",
       "Position": "55.82856,-830.401,8.759758",
       "Scale": "3.600004,4.499999,4.999998",
       "Enabled": true,
@@ -4126,6 +4126,43 @@
           "Type": "Box"
         }
       ]
+    },
+    {
+      "__guid": "5f76a15a-a819-4f4b-98b7-357e73573415",
+      "Name": "Object",
+      "Position": "31.93054,-640,0",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "1ce454db-4c7b-4dca-97f5-252bbbaa8766",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "5199ef64-4860-4ca4-92c3-77e001bdd8eb",
+          "IsTrigger": false,
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "5f113180-cbb3-4ba7-af6e-4462fe7328d2",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -4151,7 +4188,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-03T22:30:25.7229252-04:00",
+  "LastSaved": "2024-05-04T14:29:52.7112264-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

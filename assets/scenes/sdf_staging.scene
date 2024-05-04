@@ -52,7 +52,7 @@
                 "Id": 59,
                 "Type": "input",
                 "UserData": {
-                  "Position": "-208,176"
+                  "Position": "-160,-0"
                 }
               },
               {
@@ -62,7 +62,7 @@
                   "_var": "SDFManager"
                 },
                 "UserData": {
-                  "Position": "224,32"
+                  "Position": "160,-80"
                 }
               },
               {
@@ -72,16 +72,16 @@
                   "_var": "SDFWorld"
                 },
                 "UserData": {
-                  "Position": "416,32"
+                  "Position": "416,-64"
                 }
               },
               {
                 "Id": 62,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "768,-80"
@@ -91,70 +91,48 @@
                 "Id": 63,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "1120,-80"
+                  "Position": "1360,-80"
                 }
               },
               {
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "1456,-80"
+                  "Position": "1920,-80"
                 }
               },
               {
                 "Id": 65,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "1808,-80"
+                  "Position": "2496,-80"
                 }
               },
               {
                 "Id": 66,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "2208,-80"
-                }
-              },
-              {
-                "Id": 68,
-                "Type": "comment",
-                "UserData": {
-                  "Position": "656,-112",
-                  "Size": "1824,298",
-                  "Title": "Ignores water",
-                  "Color": 3,
-                  "Layer": 2
-                }
-              },
-              {
-                "Id": 69,
-                "Type": "comment",
-                "UserData": {
-                  "Position": "-64,-16",
-                  "Size": "624,144",
-                  "Title": "Set vars",
-                  "Layer": 1,
-                  "Color": 5
+                  "Position": "3136,-80"
                 }
               }
             ],
@@ -400,23 +378,23 @@
               }
             ],
             "Defaults": {
-              "$73._value": {
+              "$116._value": {
                 "_type": "gameobject",
                 "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
               },
-              "$80._value": {
+              "$123._value": {
                 "_type": "gameobject",
                 "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
               },
-              "$87._value": {
+              "$130._value": {
                 "_type": "gameobject",
                 "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
               },
-              "$94._value": {
+              "$137._value": {
                 "_type": "gameobject",
                 "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
               },
-              "$100._value": {
+              "$143._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/shop.prefab"
               }
@@ -921,31 +899,174 @@
           ]
         },
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "ac33383d-eab7-4550-93b9-990c89bd795c",
+          "__type": "Sandbox.Prop",
+          "__guid": "9d18df0f-a404-4154-bce2-c1ca04693bc1",
           "BodyGroups": 18446744073709551615,
+          "Health": 50,
+          "IsStatic": false,
           "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.ModelCollider",
-          "__guid": "cf6b8c73-a0f9-4d24-b77a-3bf8e51844c1",
-          "IsTrigger": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "e61ec621-7436-4309-8f79-5009260cd05c",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
+          "OnComponentStart": {
+            "__version": 7,
+            "__guid": "f6836694-1a3a-4bd7-af10-5a4dbceda82a",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "TryGet",
+                  "T": "Sandbox.Game/Sandbox.Rigidbody",
+                  "_type": "Sandbox.Game/Sandbox.IComponentLister"
+                },
+                "UserData": {
+                  "Position": "0,96"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "if",
+                "UserData": {
+                  "Position": "240,0"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "800,256"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "property",
+                "Properties": {
+                  "_name": "StartAsleep",
+                  "_type": "Sandbox.Game/Sandbox.Rigidbody"
+                },
+                "UserData": {
+                  "Position": "496,48"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "args",
+                "DstIndex": 0
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "true",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "component",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 6,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "OnPropBreak": {
+            "__version": 7,
+            "__guid": "78a780b7-0d55-44af-b32e-774f720581a2",
+            "UserData": {
+              "Title": "On Prop Break",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.kickscomponents/RandomItemDrop"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.kickscomponents/RandomItemDrop"
+                },
+                "UserData": {
+                  "Position": "-16,112"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "DropRandomItem",
+                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop"
+                },
+                "UserData": {
+                  "Position": "256,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 1,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1070,9 +1191,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -1082,9 +1203,9 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "976,0"
@@ -1094,9 +1215,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "1664,-0"
@@ -1106,9 +1227,9 @@
                 "Id": 38,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "1328,0"
@@ -2367,9 +2488,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2464,12 +2585,13 @@
       "Components": [
         {
           "__type": "Water",
-          "__guid": "711c50fd-bc3f-4e41-bd5a-071dcdabe691"
+          "__guid": "711c50fd-bc3f-4e41-bd5a-071dcdabe691",
+          "rigidbodies": []
         },
         {
           "__type": "Sandbox.HullCollider",
           "__guid": "57f611e9-4774-4bad-be75-9913a5c3ec53",
-          "BoxSize": "100000,100000,3000",
+          "BoxSize": "200000,200000,3000",
           "Center": "0,0,0",
           "Height": 50,
           "IsTrigger": true,
@@ -2505,7 +2627,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-03T23:04:00.0794226-04:00",
+  "LastSaved": "2024-05-04T15:21:22.9615934-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

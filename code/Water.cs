@@ -4,7 +4,7 @@ using Sandbox;
 public sealed class Water : Component, Component.ITriggerListener
 {
    	PlayerController PlayerController;
-    private Rigidbody rb;
+    [Property] List<Rigidbody> rigidbodies = new();
 
     protected override void OnFixedUpdate()
     {
@@ -14,20 +14,36 @@ public sealed class Water : Component, Component.ITriggerListener
 			PlayerController.CharacterController.Punch(Vector3.Up * 20);
 			PlayerController.AnimationHelper.IsSwimming = true;
         }
+		foreach (var rb in rigidbodies)
+		{
+		if (rb is not null)
+		{
+			rb.ApplyForce(Vector3.Up * 550000);
+		}
+		}
     }
 void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 {
-    if (!other.GameObject.Tags.Has("watercollider")) return;
-    other.Components.TryGet<PlayerController>(out var cc, FindMode.InParent);
+	if (other.GameObject.Tags.Has("watercollider"))
+	{
+	other.Components.TryGet<PlayerController>(out var cc, FindMode.InParent);
     if (cc is not null)
     {
         PlayerController = cc;
     }
 	Log.Info("Player entered water");
+	}
+	other.GameObject.Components.TryGet<Rigidbody>(out var rig);
+	if (rig is not null)
+	{
+		rigidbodies.Add(rig);
+	}
+  
 }
 	void ITriggerListener.OnTriggerExit(Sandbox.Collider other)
 	{
-		if (!other.GameObject.Tags.Has("watercollider")) return;
+		if (other.GameObject.Tags.Has("watercollider"))
+		{
 		if (PlayerController is not null)
 		{
 			PlayerController.AnimationHelper.IsSwimming = false;
@@ -35,6 +51,12 @@ void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 			PlayerController = null;
 		}
 		Log.Info("Player exited water");
+		}
+		other.GameObject.Components.TryGet<Rigidbody>(out var rig);
+		if (rig is not null)
+		{
+			rigidbodies.Remove(rig);
+		}
 	}
 
 }

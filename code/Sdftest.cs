@@ -48,9 +48,7 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await WaterWorld.AddAsync(waterSDF, Water);
 	await Task.DelaySeconds(1);
 	OnWorldSpawned?.Invoke(this, world);
-	await Task.DelaySeconds(5);
 	GameNetworkSystem.CreateLobby();
-	await Task.DelaySeconds(1);
 }
 public class Biome
 {
