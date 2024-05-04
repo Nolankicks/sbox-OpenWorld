@@ -14,26 +14,19 @@ public sealed class Sdftest : Component, Component.INetworkListener
 
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DWorld WaterWorld { get; set; }
-	[Property] public int WorldHeight { get; set; } = 3000;
+	[Property, Category("World Properties")] public int WorldHeight { get; set; } = 3000;
 	[Property, Category("Volumes")] public Sdf3DVolume Grass { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Stone { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Water { get; set; }
 	public float[,] PerlinValues { get; set; }
-    [Property] public float Scale { get; set; }
-	[Property] public float Amplitude { get; set; }
+    [Property, Category("World Properties")] public float Scale { get; set; }
+	[Property, Category("World Properties")] public float Amplitude { get; set; }
 	public ProcGenUi ProcGenUi { get; set; }
-    [Property] public GameObject SpawnPoint { get; set; }
-	[Property] public bool StartServer { get; set; } = false;
-    /// <summary>
-    /// Distance between each SDF, deafult value is 30
-    /// </summary>
 	[Property] public GameObject PlayerPrefab { get; set; }
-	public List<Biome> biomes { get; set; }
     public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
 	protected override async void OnStart()
 	{
-		biomes = new List<Biome>();
 		await CreateWorld(World, Grass, Scale);
 		GameNetworkSystem.CreateLobby();
 	}
@@ -42,27 +35,14 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	World.GameObject.NetworkSpawn();
 	WaterWorld.GameObject.NetworkSpawn();
 	Log.Info("Network Spaned");
-	await Task.DelaySeconds(1);
 	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
 	Log.Info("Heightmap created");
 	await world.AddAsync(heightmap, volume);
 	Log.Info("Heightmap added to world");
-	var waterSDF = new BoxSdf3D(new Vector3(-10000, -10000, 0), new Vector3(20000, 20000, 1500));
+	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(10000, 10000, 1500));
 	await WaterWorld.AddAsync(waterSDF, Water);
 	Log.Info("Water added to world");
-	await Task.DelaySeconds(1);
 	await OnWorldSpawned?.Invoke(this, world);
-}
-public class Biome
-{
-    public Vector3 Location { get; set; }
-    public string Type { get; set; }
-
-    public Biome(Vector3 location, string type)
-    {
-        Location = location;
-        Type = type;
-    }
 }
 public void OnActive( Connection channel )
 	{

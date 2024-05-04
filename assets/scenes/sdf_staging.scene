@@ -284,7 +284,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 100,
                 "DstId": 64,
                 "DstName": "times"
               },
@@ -405,11 +405,6 @@
             "go": "56cb1d67-0f5a-43d6-8edb-a0cfca5f79d5"
           },
           "Scale": 4,
-          "SpawnPoint": {
-            "_type": "gameobject",
-            "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
-          },
-          "StartServer": false,
           "Stone": "sdfvol/stone.sdfvol",
           "Water": "sdfvol/water.sdfvol",
           "WaterWorld": {
@@ -2524,7 +2519,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-04T17:13:30.2026316-04:00",
+  "LastSaved": "2024-05-04T17:24:16.7756937-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

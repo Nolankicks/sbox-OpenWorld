@@ -1,4 +1,4 @@
-using Editor;
+/*using Editor;
 
 public static class MyEditorMenu
 {
@@ -7,4 +7,4 @@ public static class MyEditorMenu
 	{
 		EditorUtility.DisplayDialog( "It worked!", "This is being called from your library's editor code!" );
 	}
-}
+}*/

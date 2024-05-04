@@ -1,5 +1,5 @@
 {
-  "Material": "materials/generic/floor_gravel_asphalt.vmat",
+  "Material": "materials/generic/floor_gravel_sand_a.vmat",
   "IsTextureSourceOnly": false,
   "CollisionTags": "solid",
   "QualityLevel": "Medium",
@@ -10,6 +10,6 @@
   "ResourceVersion": 0,
   "__version": 0,
   "__references": [
-    "facepunch.floor_gravel_asphalt"
+    "facepunch.floor_gravel_sand_a"
   ]
 }
