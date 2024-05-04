@@ -279,8 +279,11 @@ public sealed class Weapon : Component
 			if (MuzzleFlash is not null)
 			{
 			var muzzle = ViewModelGun.GetAttachment("muzzle");
+			if (muzzle is not null)
+			{
 			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
 			MuzzleFlashInstance.Tags.Add("viewmodel");
+			}
 			}
 		}
 		else

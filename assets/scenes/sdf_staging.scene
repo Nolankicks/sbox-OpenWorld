@@ -79,8 +79,8 @@
                 "Id": 62,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SpawnItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
@@ -91,8 +91,8 @@
                 "Id": 63,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SpawnItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
@@ -103,8 +103,8 @@
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SpawnItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
@@ -115,8 +115,8 @@
                 "Id": 65,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SpawnItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
@@ -127,8 +127,8 @@
                 "Id": 66,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SpawnItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
@@ -191,7 +191,7 @@
                 "DstName": "gameObject"
               },
               {
-                "Value": 1,
+                "Value": 0.5,
                 "DstId": 62,
                 "DstName": "propbiability"
               },
@@ -235,7 +235,7 @@
                 "DstName": "gameObject"
               },
               {
-                "Value": 1,
+                "Value": 0.5,
                 "DstId": 63,
                 "DstName": "propbiability"
               },
@@ -378,23 +378,23 @@
               }
             ],
             "Defaults": {
-              "$116._value": {
+              "$70._value": {
                 "_type": "gameobject",
                 "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
               },
-              "$123._value": {
+              "$77._value": {
                 "_type": "gameobject",
                 "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
               },
-              "$130._value": {
+              "$84._value": {
                 "_type": "gameobject",
                 "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
               },
-              "$137._value": {
+              "$91._value": {
                 "_type": "gameobject",
                 "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
               },
-              "$143._value": {
+              "$97._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/shop.prefab"
               }
@@ -698,8 +698,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Wood",
+                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -905,109 +905,6 @@
           "Health": 50,
           "IsStatic": false,
           "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
-          "OnComponentStart": {
-            "__version": 7,
-            "__guid": "f6836694-1a3a-4bd7-af10-5a4dbceda82a",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "TryGet",
-                  "T": "Sandbox.Game/Sandbox.Rigidbody",
-                  "_type": "Sandbox.Game/Sandbox.IComponentLister"
-                },
-                "UserData": {
-                  "Position": "0,96"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "if",
-                "UserData": {
-                  "Position": "240,0"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "log.info",
-                "UserData": {
-                  "Position": "800,256"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "property",
-                "Properties": {
-                  "_name": "StartAsleep",
-                  "_type": "Sandbox.Game/Sandbox.Rigidbody"
-                },
-                "UserData": {
-                  "Position": "496,48"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "condition"
-              },
-              {
-                "SrcId": 6,
-                "SrcName": "_signal",
-                "DstId": 5,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "args",
-                "DstIndex": 0
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "true",
-                "DstId": 6,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "component",
-                "DstId": 6,
-                "DstName": "_target"
-              },
-              {
-                "Value": true,
-                "DstId": 6,
-                "DstName": "_value"
-              }
-            ]
-          },
           "OnPropBreak": {
             "__version": 7,
             "__guid": "78a780b7-0d55-44af-b32e-774f720581a2",
@@ -1037,8 +934,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "DropRandomItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.kickscomponents/RandomItemDrop"
                 },
                 "UserData": {
@@ -1191,8 +1088,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
@@ -1203,8 +1100,8 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
@@ -1215,8 +1112,8 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
@@ -1227,8 +1124,8 @@
                 "Id": 38,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
@@ -2488,8 +2385,8 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Heal",
+                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
@@ -2627,7 +2524,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-04T15:21:22.9615934-04:00",
+  "LastSaved": "2024-05-04T17:13:30.2026316-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

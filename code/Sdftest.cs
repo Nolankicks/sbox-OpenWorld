@@ -29,26 +29,29 @@ public sealed class Sdftest : Component, Component.INetworkListener
     /// </summary>
 	[Property] public GameObject PlayerPrefab { get; set; }
 	public List<Biome> biomes { get; set; }
-    public delegate void OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
+    public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
-	protected override void OnStart()
+	protected override async void OnStart()
 	{
 		biomes = new List<Biome>();
-		_ = CreateWorld(World, Grass, Scale);
+		await CreateWorld(World, Grass, Scale);
+		GameNetworkSystem.CreateLobby();
 	}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
 	World.GameObject.NetworkSpawn();
 	WaterWorld.GameObject.NetworkSpawn();
+	Log.Info("Network Spaned");
 	await Task.DelaySeconds(1);
-    var noiseMap = CreateNoise((int)(20 * scale), (int)(20 * scale), 1, 0, 0, Amplitude);
 	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
+	Log.Info("Heightmap created");
 	await world.AddAsync(heightmap, volume);
-	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(10000, 10000, 1500));
+	Log.Info("Heightmap added to world");
+	var waterSDF = new BoxSdf3D(new Vector3(-10000, -10000, 0), new Vector3(20000, 20000, 1500));
 	await WaterWorld.AddAsync(waterSDF, Water);
+	Log.Info("Water added to world");
 	await Task.DelaySeconds(1);
-	OnWorldSpawned?.Invoke(this, world);
-	GameNetworkSystem.CreateLobby();
+	await OnWorldSpawned?.Invoke(this, world);
 }
 public class Biome
 {
@@ -81,21 +84,17 @@ public void OnActive( Connection channel )
 
 
 
-void CreateTree(GameObject TreePrefab, Sdf3DWorld world)
-{
-    TreePrefab.Clone(GetBounds(world));
-}
 
 
-
-public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, string BiomeType = "", bool NetworkSpawn = true)
+public async Task SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, string BiomeType = "", bool NetworkSpawn = true)
 {
     for (int i = 0; i < times; i++)
     {
         if (GetRandom(0, 1) < propbiability)
         {
-            var pos = GetBounds(world, Offset);
+            var pos = await GetBounds(world, Offset).ContinueWith(Task => Task.Result);
             var clone = gameObject.Clone(pos);
+			Log.Info(clone);
 			if (NetworkSpawn)
 			{
 				clone.NetworkSpawn(null);
@@ -103,21 +102,19 @@ public void SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiabili
         }
     }
 }
-public Vector3 GetBounds(Sdf3DWorld world, bool Offset = false)
+public async Task<Vector3> GetBounds(Sdf3DWorld world, bool Offset = false)
 {
 	while (true)
 	{
 	Vector3 dim =  new Vector3(10000 - 200, 10000 - 200, 5000 - 200);
     var x = GetRandom(0, dim.x);
     var y = GetRandom(0, dim.y);
-
     var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();
-
-    Log.Info($"Ray cast hit: {trace.Hit}, GameObject tag: {trace.GameObject?.Tags}");
     if (trace.Hit && !trace.GameObject.Tags.Has("world") && !trace.GameObject.Tags.Has("water"))
     {
         return trace.HitPosition + (Offset ? trace.Normal * 100 : Vector3.Zero);
     }
+	await Task.Delay(1);
 	}
 
 }
