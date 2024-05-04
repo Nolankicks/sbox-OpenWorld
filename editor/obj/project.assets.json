@@ -30,6 +30,7 @@
           "kickscomponents": "1.0.0",
           "libpolygon": "1.0.0",
           "libsdf": "1.0.0",
+          "quickswitcher": "1.0.0",
           "shatterglass": "1.0.0",
           "stuffthatisntbuiltin": "1.0.0"
         },
@@ -77,6 +78,19 @@
         },
         "runtime": {
           "bin/placeholder/libsdf.dll": {}
+        }
+      },
+      "quickswitcher/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/quickswitcher.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/quickswitcher.dll": {}
         }
       },
       "shatterglass/1.0.0": {
@@ -137,6 +151,11 @@
       "type": "project",
       "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
+    },
+    "quickswitcher/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/nolankicks.quickswitcher/Code/quickswitcher.csproj",
+      "msbuildProject": "../Libraries/nolankicks.quickswitcher/Code/quickswitcher.csproj"
     },
     "shatterglass/1.0.0": {
       "type": "project",

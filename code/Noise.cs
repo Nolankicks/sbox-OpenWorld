@@ -2,7 +2,7 @@ using Sandbox.Utility;
 
 namespace Sandbox.Sdf.Noise
 {
-    public record struct PerlinNoiseSdf3D(int Seed, float noiseScalar, Vector3 Position, Vector3 SizeOfArea) : ISdf3D
+    public record struct PerlinNoiseSdf3D(int Seed, Vector3 Position, Vector3 SizeOfArea) : ISdf3D
     {
         public BBox? Bounds => new BBox(Position, Position + SizeOfArea);
 		
@@ -10,8 +10,8 @@ namespace Sandbox.Sdf.Noise
         {
             get
             {
-                var xNoise = ((pos.x - Position.x) * noiseScalar) / 10;
-                var yNoise = ((pos.y - Position.y) * noiseScalar) / 10;
+                var xNoise = ((pos.x - Position.x) * 0.125f) / 10;
+                var yNoise = ((pos.y - Position.y) * 0.125f) / 10;
                 var noiseValue = Utility.Noise.Perlin(xNoise + Seed, yNoise + Seed);
                 noiseValue *= SizeOfArea.z;
                 return pos.z - (Position.z + noiseValue);
@@ -27,7 +27,7 @@ namespace Sandbox.Sdf.Noise
 
         public static PerlinNoiseSdf3D ReadRaw(ref ByteStream reader, IReadOnlyDictionary<int, SdfReader<ISdf3D>> sdfTypes)
         {
-            return new PerlinNoiseSdf3D(reader.Read<int>(), reader.Read<float>(), reader.Read<Vector3>(), reader.Read<Vector3>());
+            return new PerlinNoiseSdf3D(reader.Read<int>(), reader.Read<Vector3>(), reader.Read<Vector3>());
         }
     }
 }

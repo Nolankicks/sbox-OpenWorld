@@ -52,7 +52,7 @@
                 "Id": 59,
                 "Type": "input",
                 "UserData": {
-                  "Position": "-160,-0"
+                  "Position": "-64,-96"
                 }
               },
               {
@@ -62,7 +62,7 @@
                   "_var": "SDFManager"
                 },
                 "UserData": {
-                  "Position": "160,-80"
+                  "Position": "256,-112"
                 }
               },
               {
@@ -72,7 +72,7 @@
                   "_var": "SDFWorld"
                 },
                 "UserData": {
-                  "Position": "416,-64"
+                  "Position": "528,-80"
                 }
               },
               {
@@ -80,8 +80,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "SpawnItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "768,-80"
@@ -92,8 +92,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "SpawnItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1360,-80"
@@ -104,8 +104,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "SpawnItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1920,-80"
@@ -116,8 +116,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "SpawnItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2496,-80"
@@ -128,8 +128,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "SpawnItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3136,-80"
@@ -323,12 +323,12 @@
                 "DstName": "gameObject"
               },
               {
-                "Value": 0.5,
+                "Value": 1,
                 "DstId": 65,
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 100,
                 "DstId": 65,
                 "DstName": "times"
               },
@@ -438,7 +438,6 @@
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
-            "TextureOrigin": "-1530,-102,12.49631",
             "Positions": [
               "-50,-50,12.5",
               "50,-50,12.5",
@@ -448,6 +447,22 @@
               "50,50,-12.5",
               "50,-50,-12.5",
               "-50,-50,-12.5"
+            ],
+            "TextureOrigin": [
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureRotation": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -547,7 +562,6 @@
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
-            "TextureOrigin": "-1302,-966,49.99989",
             "Positions": [
               "-50,-10,50",
               "50,-10,50",
@@ -557,6 +571,22 @@
               "50,10,-50",
               "50,-10,-50",
               "-50,-10,-50"
+            ],
+            "TextureOrigin": [
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureRotation": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -930,8 +960,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "DropRandomItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop"
+                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -1084,8 +1114,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -1096,8 +1126,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "976,0"
@@ -1108,8 +1138,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1664,-0"
@@ -1120,8 +1150,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1328,0"
@@ -2381,8 +2411,8 @@
                 "Type": "call",
                 "Properties": {
                   "_name": "Heal",
-                  "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2519,7 +2549,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-04T17:24:16.7756937-04:00",
+  "LastSaved": "2024-05-04T18:52:07.2239141-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "DS Gib2",
+      "Type": "model",
+      "Org": "sandcastle",
+      "Ident": "gib2",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/gib2.vmdl"
+      }
+    }
+  }
+}

@@ -2498,7 +2498,12 @@
                 "package.nolankicks.dead4left2/Inventory"
               ]
             },
-            "Variables": [],
+            "Variables": [
+              {
+                "Name": "Inventory",
+                "Type": "package.nolankicks.dead4left2/Inventory"
+              }
+            ],
             "Nodes": [
               {
                 "Id": 0,
@@ -2511,19 +2516,53 @@
                   "T": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
-                  "Position": "-32,176"
+                  "Position": "16,80"
                 }
               },
               {
-                "Id": 2,
+                "Id": 5,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Inventory"
+                },
+                "UserData": {
+                  "Position": "272,-0"
+                }
+              },
+              {
+                "Id": 6,
                 "Type": "call",
                 "Properties": {
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
-                  "Position": "336,-0"
+                  "Position": "496,-0"
+                }
+              },
+              {
+                "Id": 11,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "832,-0"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "1184,0"
                 }
               }
             ],
@@ -2535,20 +2574,79 @@
                 "DstName": "_this"
               },
               {
-                "Value": 0,
-                "DstId": 2,
-                "DstName": "Slot"
-              },
-              {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 2,
+                "DstId": 5,
                 "DstName": "_signal"
               },
               {
                 "SrcId": 1,
                 "SrcName": "_result",
-                "DstId": 2,
+                "DstId": 5,
+                "DstName": "_value"
+              },
+              {
+                "Value": 0,
+                "DstId": 6,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_smg.prefab"
+                },
+                "DstId": 6,
+                "DstName": "item"
+              },
+              {
+                "Value": 1,
+                "DstId": 11,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 6,
+                "SrcName": "_signal",
+                "DstId": 11,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 11,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_pistol.prefab"
+                },
+                "DstId": 11,
+                "DstName": "item"
+              },
+              {
+                "Value": 2,
+                "DstId": 17,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 11,
+                "SrcName": "_signal",
+                "DstId": 17,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 17,
                 "DstName": "_target"
               },
               {
@@ -2556,12 +2654,20 @@
                   "_type": "gameobject",
                   "prefab": "prefabs/weapons/weapon_crowbar.prefab"
                 },
-                "DstId": 2,
+                "DstId": 17,
                 "DstName": "item"
               }
             ],
             "Defaults": {
-              "$4._value": {
+              "$9._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
+              },
+              "$15._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_pistol.prefab"
+              },
+              "$22._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_crowbar.prefab"
               }
@@ -3757,12 +3863,17 @@
               "IsTrigger": false,
               "Mesh": {
                 "Topology": "H4sIAAAAAAAACk2MAQoAIAgDrSz7/4drBwoOjmKbczO7Ygg0hYuTHuB1hXgS/so\u002Bqi4vOdnOrb6NT15bJXy63JDz/\u002Bg6SXigAAAA",
-                "TextureOrigin": "0,0,63.99534",
                 "Positions": [
                   "-512,-512,0",
                   "512,-512,0",
                   "512,512,0",
                   "-512,512,0"
+                ],
+                "TextureOrigin": [
+                  "0,0,0"
+                ],
+                "TextureRotation": [
+                  "0,0,0,0"
                 ],
                 "TextureUAxis": [
                   "1,0,0"
@@ -3819,7 +3930,6 @@
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
-            "TextureOrigin": "-1302,-966,49.99989",
             "Positions": [
               "-50,-10,50",
               "50,-10,50",
@@ -3829,6 +3939,22 @@
               "50,10,-50",
               "50,-10,-50",
               "-50,-10,-50"
+            ],
+            "TextureOrigin": [
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureRotation": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -3928,7 +4054,6 @@
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
-            "TextureOrigin": "-1530,-102,12.49631",
             "Positions": [
               "-50,-50,12.5",
               "50,-50,12.5",
@@ -3938,6 +4063,22 @@
               "50,50,-12.5",
               "50,-50,-12.5",
               "-50,-50,-12.5"
+            ],
+            "TextureOrigin": [
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0",
+              "0,0,0"
+            ],
+            "TextureRotation": [
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0",
+              "0,0,0,0"
             ],
             "TextureUAxis": [
               "1,0,0",
@@ -4110,7 +4251,8 @@
         },
         {
           "__type": "Water",
-          "__guid": "e1413368-c7e6-4ba1-b7e9-6fe8e2fdd6ab"
+          "__guid": "e1413368-c7e6-4ba1-b7e9-6fe8e2fdd6ab",
+          "rigidbodies": []
         },
         {
           "__type": "Sandbox.HullCollider",
@@ -4188,7 +4330,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-04T14:29:52.7112264-04:00",
+  "LastSaved": "2024-05-04T19:02:40.3969593-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

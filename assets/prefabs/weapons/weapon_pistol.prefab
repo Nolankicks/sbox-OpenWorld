@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "5c3322b3-45e6-4d79-8e87-c2559503c815",
+    "__guid": "01422078-8869-4ea5-ba1e-fa5e05e8bc56",
     "Name": "weapon_pistol",
     "Enabled": true,
     "NetworkMode": 1,
@@ -8,20 +8,19 @@
     "Components": [
       {
         "__type": "Kicks.Weapon",
-        "__guid": "2ecd65b2-d232-4199-a01c-4d11dd3b1e40",
+        "__guid": "67fe870a-067c-4424-a2b3-211e984a0d97",
         "Ammo": 12,
         "AmmoType": "LightAmmo",
         "Arms": {
           "_type": "gameobject",
-          "go": "95aee936-736d-432a-a6b1-3d145e5beb54"
+          "go": "b4bdc06c-5c23-425a-b641-9f7c521ad670"
         },
         "armsRenderer": {
           "_type": "component",
-          "component_id": "c578a99e-78e4-451b-ad89-72096f7f7ed6",
-          "go": "95aee936-736d-432a-a6b1-3d145e5beb54",
+          "component_id": "1fb142ad-7bec-49dd-90d4-b5fffe5a8045",
+          "go": "b4bdc06c-5c23-425a-b641-9f7c521ad670",
           "component_type": "SkinnedModelRenderer"
         },
-        "b_twohanded": false,
         "BloodParticle": {
           "_type": "gameobject",
           "prefab": "prefabs/bloodparticle.prefab"
@@ -34,7 +33,7 @@
         "Description": "A powerful pistol",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "64866756-7dd5-454f-8c02-b66cae1ef7a1"
+          "go": "74f3b91e-adc0-4623-8a4c-12b2b788ff40"
         },
         "FireRate": 0.6,
         "FireSound": "sounds/shootsound.sound",
@@ -57,32 +56,34 @@
         "Spread": 0.03,
         "StartingAmmo": 0,
         "TestStruct": {},
+        "TraceLength": 5000,
+        "UsesAmmo": true,
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "4866dd69-a109-44d1-8041-de9b59660860"
+          "go": "67462e3c-7a38-4997-9fab-657721aeccf0"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "0c96e041-e985-464c-bfd2-be4c87acff29",
-          "go": "b6c5c305-e82e-461a-8fc5-5c146e990fa2",
+          "component_id": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+          "go": "93a16984-a98a-41b2-9d60-e4971c7f7364",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "426b90eb-f925-4cc5-885b-e0b48dcb7583"
+          "go": "018bd555-ec96-4998-a28c-fa030c247621"
         },
         "WeaponIndent": "weapon_pistol",
         "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "cb2edc26-7b49-43ba-bfab-3d943c4c63e7",
+        "__guid": "7390fbfe-39ba-4fed-b132-a196a3d2fd63",
         "Icon": "usp.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "4866dd69-a109-44d1-8041-de9b59660860",
+        "__guid": "67462e3c-7a38-4997-9fab-657721aeccf0",
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -91,7 +92,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "6826105b-a872-4226-a16e-a5e730474a5a",
+            "__guid": "9df6d89f-3148-4024-86e0-7ed703ce1cf4",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -109,14 +110,14 @@
         ],
         "Children": [
           {
-            "__guid": "426b90eb-f925-4cc5-885b-e0b48dcb7583",
+            "__guid": "018bd555-ec96-4998-a28c-fa030c247621",
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
             "NetworkInterpolation": true,
             "Children": [
               {
-                "__guid": "b6c5c305-e82e-461a-8fc5-5c146e990fa2",
+                "__guid": "93a16984-a98a-41b2-9d60-e4971c7f7364",
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -124,8 +125,8 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "0c96e041-e985-464c-bfd2-be4c87acff29",
-                    "BodyGroups": 18757,
+                    "__guid": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+                    "BodyGroups": 20805,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
                     "RenderType": "On",
@@ -134,7 +135,7 @@
                 ]
               },
               {
-                "__guid": "95aee936-736d-432a-a6b1-3d145e5beb54",
+                "__guid": "b4bdc06c-5c23-425a-b641-9f7c521ad670",
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -142,12 +143,12 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "c578a99e-78e4-451b-ad89-72096f7f7ed6",
+                    "__guid": "1fb142ad-7bec-49dd-90d4-b5fffe5a8045",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "0c96e041-e985-464c-bfd2-be4c87acff29",
-                      "go": "b6c5c305-e82e-461a-8fc5-5c146e990fa2",
+                      "component_id": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+                      "go": "93a16984-a98a-41b2-9d60-e4971c7f7364",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -162,7 +163,7 @@
         ]
       },
       {
-        "__guid": "64866756-7dd5-454f-8c02-b66cae1ef7a1",
+        "__guid": "74f3b91e-adc0-4623-8a4c-12b2b788ff40",
         "Name": "Dropped Item",
         "Enabled": true,
         "NetworkMode": 1,
@@ -170,7 +171,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "8cc1563d-3476-432c-a521-e407dfb556d0",
+            "__guid": "b2fee642-9845-429b-9294-b378245b9ea7",
             "BodyGroups": 10565,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_pistol_usp/w_usp.vmdl",
@@ -179,7 +180,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "f4467ccd-64b2-4f3f-956c-340b955334e7",
+            "__guid": "459817c2-4df7-4aef-b00b-14c524c4f991",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -191,7 +192,7 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "85ba44dc-631e-4f95-b302-1e992e6fdeaf",
+            "__guid": "d5d92935-7e0f-474a-b165-7f8a86e481f4",
             "Center": "3.599999,0,2.6",
             "IsTrigger": false,
             "Scale": "15.39998,1.800034,7.10002",

@@ -35,11 +35,11 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	World.GameObject.NetworkSpawn();
 	WaterWorld.GameObject.NetworkSpawn();
 	Log.Info("Network Spaned");
-	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), 0.125f, Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
+	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
 	Log.Info("Heightmap created");
 	await world.AddAsync(heightmap, volume);
 	Log.Info("Heightmap added to world");
-	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(10000, 10000, 1500));
+	var waterSDF = new BoxSdf3D(new Vector3(-10000, -10000, 0), new Vector3(20000, 20000, 1500));
 	await WaterWorld.AddAsync(waterSDF, Water);
 	Log.Info("Water added to world");
 	await OnWorldSpawned?.Invoke(this, world);
@@ -66,7 +66,7 @@ public void OnActive( Connection channel )
 
 
 
-public async Task SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, string BiomeType = "", bool NetworkSpawn = true)
+public async Task SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, bool NetworkSpawn = true)
 {
     for (int i = 0; i < times; i++)
     {
