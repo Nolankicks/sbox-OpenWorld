@@ -1,5 +1,5 @@
 {
-  "Material": "materials/water/water_pond_a.vmat",
+  "Material": "materials/lake_water.vmat",
   "IsTextureSourceOnly": false,
   "CollisionTags": "water",
   "QualityLevel": "Medium",
