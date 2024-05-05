@@ -1047,8 +1047,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -2539,9 +2539,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,-0"
@@ -7082,7 +7082,7 @@
         {
           "__guid": "75e13b8a-ef62-4c81-ba13-7d44ec100a46",
           "Name": "wooden_door_01a",
-          "Position": "0,0,-8.414707",
+          "Position": "0,-0,-8.414707",
           "Rotation": "0,0,0.7071067,0.7071068",
           "Enabled": true,
           "NetworkMode": 2,
@@ -7851,7 +7851,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-04T23:26:22.6978641-04:00",
+  "LastSaved": "2024-05-05T14:44:30.6924007-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

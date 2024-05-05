@@ -11,7 +11,7 @@
 		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The Escape</div>
 		<div class="level" onclick=@( () => OpenScene(GameScenes[1]))>Warehouse</div>
 		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Deathmatch</div>
-		<div class="level" onclick=@( () => OpenScene(GameScenes[3]))>Proc Gen</div>
+		<div class="level" onclick=@( () => ShowBiomeSelect = !ShowBiomeSelect)>Proc Gen</div>
 	</div>
 	<div class="lobbies @(ShowLobby ? "" : "hide")">
 		<div class="header">Lobbies</div>
@@ -24,6 +24,26 @@
 			</div>
 		}
 	</div>
+	<div class="button" style="position: absolute; left: 32px; bottom: 32px;" onclick=@( () => Game.Overlay.ShowBinds())>Settings</div>
+		<div class="biomeselect @(ShowBiomeSelect ? "" : "hide")">
+			<div class="header">Biome Select</div>
+			<div class="biome" onclick=@( () => OpenBiomeScene(GameScenes[3], "Grass"))>
+				<img class="img" src=@BiomeTextures[0].ResourcePath>
+				<div class="name">Forest</div>
+			</div>
+			<div class="biome" onclick=@( () => OpenBiomeScene(GameScenes[3], "Swamp"))>
+				<img class="img" src=@BiomeTextures[1].ResourcePath>
+				<div class="name">Swamp</div>
+			</div>
+			<div class="biome" onclick=@( () => OpenBiomeScene(GameScenes[3], "Sand"))>
+				<img class="img" src=@BiomeTextures[2].ResourcePath>
+				<div class="name">Desert</div>
+			</div>
+			<div class="biome" onclick=@( () => OpenBiomeScene(GameScenes[3], "Snow"))>
+				<img class="img" src=@BiomeTextures[3].ResourcePath>
+				<div class="name">Tundra</div>
+			</div>
+		</div>
 </root>
 
 @code
@@ -32,6 +52,8 @@
 	[Property] public List<SceneFile> GameScenes { get; set; } = new();
 	private List<LobbyInformation> Lobbies { get; set; } = new();
 	[Property] public bool ShowLobby { get; set; } = false;
+	[Property] public bool ShowBiomeSelect { get; set; } = false;
+	[Property] public List<Texture> BiomeTextures { get; set; }
 	void JoinLobby(LobbyInformation lobby)
 	{
 		GameNetworkSystem.Connect(lobby.LobbyId);
@@ -42,6 +64,11 @@
 	}
 	void OpenScene(SceneFile scene)
 	{
+		Game.ActiveScene.Load(scene);
+	}
+	void OpenBiomeScene(SceneFile scene, string biome)
+	{
+		FileSystem.Data.WriteAllText("biome.txt", biome);
 		Game.ActiveScene.Load(scene);
 	}
 	async Task GetLobbies()

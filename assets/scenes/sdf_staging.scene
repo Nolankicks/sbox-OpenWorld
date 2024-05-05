@@ -25,7 +25,7 @@
           "__type": "Sdftest",
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
           "Amplitude": 1.2,
-          "Biome": "Grass",
+          "Biome": "Snow",
           "Grass": "sdfvol/grass.sdfvol",
           "OceanHeight": 1500,
           "OceanSize": 15000,
@@ -34,9 +34,15 @@
             "__guid": "be5aca85-f4ce-467b-821c-c996fd13bd90",
             "UserData": {
               "Title": "On World Spawned",
-              "ReferencedComponentTypes": []
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/ProcGenUi"
+              ]
             },
             "Variables": [
+              {
+                "Name": "Proc Gen Ui",
+                "Type": "package.nolankicks.dead4left2/ProcGenUi"
+              },
               {
                 "Name": "SDFManager",
                 "Type": "package.nolankicks.dead4left2/Sdftest"
@@ -90,9 +96,9 @@
                 "Id": 62,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1664,-448"
@@ -102,9 +108,9 @@
                 "Id": 63,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2016,-448"
@@ -114,9 +120,9 @@
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2368,-448"
@@ -126,9 +132,9 @@
                 "Id": 65,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2720,-448"
@@ -141,15 +147,15 @@
                   "Position": "1536,-480",
                   "Size": "1440,256",
                   "Title": "Grass Biome",
-                  "Layer": 3
+                  "Layer": 4
                 }
               },
               {
                 "Id": 146,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
-                  "_name": "Biome"
+                  "_name": "Biome",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "464,16"
@@ -197,9 +203,9 @@
                 "Id": 195,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1664,-112"
@@ -213,16 +219,16 @@
                   "Size": "1104,288",
                   "Title": "Sand Biome",
                   "Description": "",
-                  "Layer": 2
+                  "Layer": 3
                 }
               },
               {
                 "Id": 210,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2016,-112"
@@ -232,9 +238,9 @@
                 "Id": 218,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2368,-112"
@@ -244,23 +250,23 @@
                 "Id": 226,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1536,256"
+                  "Position": "1488,256"
                 }
               },
               {
                 "Id": 227,
                 "Type": "op.equal",
                 "UserData": {
-                  "Position": "1392,368"
+                  "Position": "1312,368"
                 }
               },
               {
                 "Id": 231,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "1888,176"
@@ -270,9 +276,9 @@
                 "Id": 241,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
                   "Position": "2272,176"
@@ -283,9 +289,150 @@
                 "Type": "comment",
                 "UserData": {
                   "Position": "1760,128",
-                  "Size": "784,288",
+                  "Size": "1120,304",
                   "Title": "Snow Biome",
+                  "Layer": 2
+                }
+              },
+              {
+                "Id": 327,
+                "Type": "if",
+                "UserData": {
+                  "Position": "1712,496"
+                }
+              },
+              {
+                "Id": 329,
+                "Type": "op.equal",
+                "UserData": {
+                  "Position": "1520,608"
+                }
+              },
+              {
+                "Id": 333,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "2144,560"
+                }
+              },
+              {
+                "Id": 362,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "2624,176"
+                }
+              },
+              {
+                "Id": 370,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "2528,560"
+                }
+              },
+              {
+                "Id": 378,
+                "Type": "comment",
+                "UserData": {
+                  "Position": "2000,496",
+                  "Size": "784,288",
+                  "Title": "Swamp Biome",
                   "Layer": 1
+                }
+              },
+              {
+                "Id": 382,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "92dd1fe3-92ff-476d-8ea1-81e67da0c8ba"
+                  }
+                },
+                "UserData": {
+                  "Position": "192,320"
+                }
+              },
+              {
+                "Id": 383,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/ProcGenUi"
+                },
+                "UserData": {
+                  "Position": "448,256"
+                }
+              },
+              {
+                "Id": 384,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "2864,560"
+                }
+              },
+              {
+                "Id": 385,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Proc Gen Ui"
+                },
+                "UserData": {
+                  "Position": "752,176"
+                }
+              },
+              {
+                "Id": 387,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "2976,176"
+                }
+              },
+              {
+                "Id": 389,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "2736,-112"
+                }
+              },
+              {
+                "Id": 391,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component"
+                },
+                "UserData": {
+                  "Position": "3088,-448"
                 }
               }
             ],
@@ -508,7 +655,7 @@
                 "DstName": "_value"
               },
               {
-                "SrcId": 147,
+                "SrcId": 385,
                 "SrcName": "_signal",
                 "DstId": 149,
                 "DstName": "_signal"
@@ -811,44 +958,284 @@
                 "VarName": "SDFWorld",
                 "DstId": 241,
                 "DstName": "world"
+              },
+              {
+                "SrcId": 226,
+                "SrcName": "false",
+                "DstId": 327,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 329,
+                "SrcName": "_result",
+                "DstId": 327,
+                "DstName": "condition"
+              },
+              {
+                "VarName": "Seleted Biome",
+                "DstId": 329,
+                "DstName": "a"
+              },
+              {
+                "Value": {
+                  "$type": "Simple",
+                  "Type": {
+                    "$type": "Nested",
+                    "DeclaringType": "package.nolankicks.dead4left2/Sdftest",
+                    "Name": "BiomeType"
+                  },
+                  "Value": "Swamp"
+                },
+                "DstId": 329,
+                "DstName": "b"
+              },
+              {
+                "Value": false,
+                "DstId": 333,
+                "DstName": "NetworkSpawn"
+              },
+              {
+                "Value": false,
+                "DstId": 333,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 327,
+                "SrcName": "true",
+                "DstId": 333,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 333,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "1a41235e-c17e-4180-be3b-1f52a76e4ee7"
+                },
+                "DstId": 333,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 333,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 1000,
+                "DstId": 333,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 333,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 362,
+                "DstName": "NetworkSpawn"
+              },
+              {
+                "Value": false,
+                "DstId": 362,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 241,
+                "SrcName": "_signal",
+                "DstId": 362,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 362,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+                },
+                "DstId": 362,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 362,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 100,
+                "DstId": 362,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 362,
+                "DstName": "world"
+              },
+              {
+                "Value": false,
+                "DstId": 370,
+                "DstName": "NetworkSpawn"
+              },
+              {
+                "Value": false,
+                "DstId": 370,
+                "DstName": "Offset"
+              },
+              {
+                "SrcId": 333,
+                "SrcName": "_signal",
+                "DstId": 370,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 370,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+                },
+                "DstId": 370,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 370,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 100,
+                "DstId": 370,
+                "DstName": "times"
+              },
+              {
+                "VarName": "SDFWorld",
+                "DstId": 370,
+                "DstName": "world"
+              },
+              {
+                "SrcId": 382,
+                "SrcName": "_result",
+                "DstId": 383,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 370,
+                "SrcName": "_signal",
+                "DstId": 384,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Proc Gen Ui",
+                "DstId": 384,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 147,
+                "SrcName": "_signal",
+                "DstId": 385,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 383,
+                "SrcName": "_result",
+                "DstId": 385,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 362,
+                "SrcName": "_signal",
+                "DstId": 387,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Proc Gen Ui",
+                "DstId": 387,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 218,
+                "SrcName": "_signal",
+                "DstId": 389,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Proc Gen Ui",
+                "DstId": 389,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 65,
+                "SrcName": "_signal",
+                "DstId": 391,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Proc Gen Ui",
+                "DstId": 391,
+                "DstName": "_target"
               }
             ],
             "Defaults": {
-              "$181._value": {
+              "$382.gameobject": {
                 "_type": "gameobject",
-                "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
+                "go": "92dd1fe3-92ff-476d-8ea1-81e67da0c8ba"
               },
-              "$174._value": {
-                "_type": "gameobject",
-                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
-              },
-              "$167._value": {
-                "_type": "gameobject",
-                "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
-              },
-              "$160._value": {
+              "$395._value": {
                 "_type": "gameobject",
                 "go": "73540080-9f61-46d8-a51d-3f7deff0de66"
               },
-              "$205._value": {
+              "$402._value": {
                 "_type": "gameobject",
-                "go": "063e7946-3893-4525-8f34-9ddb2011b8f3"
+                "go": "b30d3ced-c49e-42ec-a179-001d180b2632"
               },
-              "$214._value": {
+              "$409._value": {
                 "_type": "gameobject",
                 "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
               },
-              "$222._value": {
+              "$416._value": {
                 "_type": "gameobject",
                 "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
               },
-              "$238._value": {
+              "$427._value": {
+                "_type": "gameobject",
+                "go": "063e7946-3893-4525-8f34-9ddb2011b8f3"
+              },
+              "$434._value": {
+                "_type": "gameobject",
+                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+              },
+              "$441._value": {
+                "_type": "gameobject",
+                "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
+              },
+              "$450._value": {
                 "_type": "gameobject",
                 "go": "f7129590-dc7e-4420-bde5-86b0fc59cccc"
               },
-              "$245._value": {
+              "$457._value": {
                 "_type": "gameobject",
                 "go": "e880f14c-4c10-4ed3-969b-9011d457b709"
+              },
+              "$466._value": {
+                "_type": "gameobject",
+                "go": "1a41235e-c17e-4180-be3b-1f52a76e4ee7"
+              },
+              "$473._value": {
+                "_type": "gameobject",
+                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+              },
+              "$480._value": {
+                "_type": "gameobject",
+                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
               }
             }
           },
@@ -859,7 +1246,8 @@
           "Sand": "sdfvol/sand.sdfvol",
           "Scale": 4,
           "Snow": "sdfvol/snow.sdfvol",
-          "SpawnWater": true,
+          "Stone": "sdfvol/stone.sdfvol",
+          "Swamp": "sdfvol/swamp.sdfvol",
           "Water": "sdfvol/water.sdfvol",
           "WaterWorld": {
             "_type": "component",
@@ -873,7 +1261,7 @@
             "go": "374e00fe-93bd-41b8-99c7-e61d34162d6b",
             "component_type": "Sdf3DWorld"
           },
-          "WorldHeight": 3500,
+          "WorldHeight": 4000,
           "WorldSize": 15000
         }
       ]
@@ -1167,8 +1555,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_name": "Wood"
+                  "_name": "Wood",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "192,-64"
@@ -1178,9 +1566,9 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
+                  "_name": "Wood",
                   "_kind": "Set",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_name": "Wood"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "592,80"
@@ -1191,6 +1579,18 @@
                 "Type": "op.add",
                 "UserData": {
                   "Position": "464,-64"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "864,80"
                 }
               }
             ],
@@ -1229,6 +1629,18 @@
                 "Value": 100,
                 "DstId": 3,
                 "DstName": "b"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 5,
+                "DstName": "_target"
               }
             ]
           }
@@ -1281,6 +1693,120 @@
           "Model": "rock kit/rock_1.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "DamageTaker",
+          "__guid": "de32ebb6-9366-4ce4-beda-05f1240e97d1",
+          "CanDie": true,
+          "Health": 100,
+          "OnDeathAction": {
+            "__version": 7,
+            "__guid": "61c4de2a-d574-4b26-9d73-fdb82c3cfdb8",
+            "UserData": {
+              "Title": "On Death Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-96,-0"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Stone",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                },
+                "UserData": {
+                  "Position": "128,-128"
+                }
+              },
+              {
+                "Id": 8,
+                "Type": "op.add",
+                "UserData": {
+                  "Position": "416,-176"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Stone",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                },
+                "UserData": {
+                  "Position": "608,-32"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "880,-32"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 7,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_result",
+                "DstId": 8,
+                "DstName": "a"
+              },
+              {
+                "Value": 100,
+                "DstId": 8,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 12,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "PlayerController",
+                "DstId": 12,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 8,
+                "SrcName": "_result",
+                "DstId": 12,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_signal",
+                "DstId": 13,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 13,
+                "DstName": "_target"
+              }
+            ]
+          }
         }
       ]
     },
@@ -1422,9 +1948,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop",
+                  "_isStatic": false,
                   "_name": "DropRandomItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -1475,6 +2001,12 @@
           "__type": "Kicks.Hud",
           "__guid": "6c052ce9-efc0-4d74-a334-bd4bee1debb4",
           "opacity": 1
+        },
+        {
+          "__type": "ProcGenUi",
+          "__guid": "995d7726-e0de-4933-836c-5eb98d9762b4",
+          "MyStringValue": "Hello World!",
+          "RestartScene": "scenes/sdf_staging.scene"
         }
       ]
     },
@@ -1576,9 +2108,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -1588,9 +2120,9 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "976,0"
@@ -1600,9 +2132,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "1664,-0"
@@ -1612,9 +2144,9 @@
                 "Id": 38,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Inventory"
                 },
                 "UserData": {
                   "Position": "1328,0"
@@ -2873,9 +3405,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -2971,7 +3503,128 @@
         {
           "__type": "Water",
           "__guid": "711c50fd-bc3f-4e41-bd5a-071dcdabe691",
-          "rigidbodies": []
+          "rigidbodies": [],
+          "OnComponentStart": {
+            "__version": 7,
+            "__guid": "8dbea96f-9c95-4cc0-8205-04328c2f54e5",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/Sdftest"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "if",
+                "UserData": {
+                  "Position": "864,112"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
+                  }
+                },
+                "UserData": {
+                  "Position": "-160,192"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "128,160"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "WaterBool",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "464,144"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "1120,160"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "false",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 6,
+                "DstName": "_target"
+              }
+            ],
+            "Defaults": {
+              "$3.gameobject": {
+                "_type": "gameobject",
+                "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
+              }
+            }
+          }
         },
         {
           "__type": "Sandbox.HullCollider",
@@ -3043,6 +3696,33 @@
           "RandomModels": []
         }
       ]
+    },
+    {
+      "__guid": "1a41235e-c17e-4180-be3b-1f52a76e4ee7",
+      "Name": "swamp grass",
+      "Position": "10739.75,10253.4,2635.112",
+      "Scale": "5,5,5",
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "b0165bf8-503e-4af1-8f17-23c809f56fa3",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/sbox_props/nature/tallgrass/tallgrass_a.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "RandomModel",
+          "__guid": "940d93b3-0cf9-4553-b5ea-a253178fd3fb",
+          "RandomModels": [
+            "models/sbox_props/nature/tallgrass/tallgrass_a.vmdl",
+            "models/sbox_props/nature/tallgrass/tallgrass_c.vmdl",
+            "models/sbox_props/nature/tallgrass/tallgrass_b.vmdl"
+          ]
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -3068,10 +3748,13 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-05T13:06:34.6746464-04:00",
+  "LastSaved": "2024-05-05T15:45:00.3004196-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
+    "facepunch.tallgrass_a",
+    "facepunch.tallgrass_b",
+    "facepunch.tallgrass_c",
     "facepunch.tree_oak_medium_a",
     "facepunch.tree_oak_small_a",
     "facepunch.wooden_crate",

@@ -20,6 +20,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property, Category("Volumes")] public Sdf3DVolume Water { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Snow { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Stone { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Swamp { get; set; }
 	public float[,] PerlinValues { get; set; }
     [Property, Category("World Properties")] public float Scale { get; set; }
 	[Property, Category("World Properties")] public float Amplitude { get; set; }
@@ -29,7 +30,6 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanHeight { get; set; } = 1500;
-	[Property, Category("World Properties")] public bool SpawnWater { get; set; } = true;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
 	public enum BiomeType
 	{
@@ -37,6 +37,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		Sand,
 		Snow,
 		Stone,
+		Swamp,
 	}
 	[Property, Category("World Properties")] public BiomeType Biome { get; set; }
 	public Sdf3DVolume GetVolume()
@@ -51,29 +52,49 @@ public sealed class Sdftest : Component, Component.INetworkListener
 				return Snow;
 			case BiomeType.Stone:
 				return Stone;
+			case BiomeType.Swamp:
+				return Swamp;
 			default:
 				return Grass;
 		}
 	}
+	public bool WaterBool()
+	{
+		switch (Biome)
+		{
+			case BiomeType.Grass:
+				return true;
+			case BiomeType.Sand:
+				return true;
+			case BiomeType.Snow:
+				return false;
+			case BiomeType.Stone:
+				return true;
+			case BiomeType.Swamp:
+				return true;
+			default:
+				return false;
+		}
+	}
 	protected override async void OnStart()
 	{
-		
+		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
+		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
+		World.GameObject.NetworkSpawn();
+		WaterWorld.GameObject.NetworkSpawn();
 		await CreateWorld(World, GetVolume(), Scale);
 		GameNetworkSystem.CreateLobby();
 	}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
-	//Network spawn SDF worlds
-	World.GameObject.NetworkSpawn();
-	WaterWorld.GameObject.NetworkSpawn();
 	Log.Info("Network Spaned");
 	//Create heightmap
-	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight));
+	var heightmap = new FractialPerlinNoise(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight), 4, 0.5f);
 	Log.Info("Heightmap created");
 	await world.AddAsync(heightmap, volume);
 	Log.Info("Heightmap added to world");
 	//Create water
-	if (SpawnWater)
+	if (WaterBool())
 	{
 		var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, OceanHeight));
 		await WaterWorld.AddAsync(waterSDF, Water);

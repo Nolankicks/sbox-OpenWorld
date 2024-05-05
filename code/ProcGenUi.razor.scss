@@ -9,11 +9,35 @@ ProcGenUi
 	align-items: center;
 	font-weight: bold;
 	border-radius: 20px;
+	pointer-events: all;
 
 	.title
 	{
 		font-size: 25px;
 		font-family: Poppins;
 		color: #fff;
+	}
+	.button
+	{
+		font-family: poppins;
+			font-size: 32px;
+			align-items: center;
+			justify-content: center;
+			border-radius: 16px;
+			width: 500px;
+			height: 100px;
+			align-items: center;
+			backdrop-filter: blur(64px);
+			transition: all 0.1s ease;
+			&:hover
+			{
+				transform: scale(1.1);
+				sound-in: ui.button.over;
+			}
+			&:active
+			{
+				transform: scale(0.9);
+				sound-in: ui.button.press;
+			}
 	}
 }

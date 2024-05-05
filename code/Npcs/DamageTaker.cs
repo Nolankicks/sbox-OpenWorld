@@ -1,7 +1,7 @@
 using System;
 using Kicks;
 using Sandbox;
-
+[Icon("download")]
 public sealed class DamageTaker : Component
 {
 	public delegate void OnTakeDamageVoid(PlayerController PlayerController, Inventory Inventory);

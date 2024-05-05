@@ -33,8 +33,8 @@
     {
       "__guid": "110c7acd-665b-42a4-b987-d02629a0cc28",
       "Name": "wooden_crate (2)",
-      "Position": "-1132.843,952.3681,33.54415",
-      "Rotation": "0,0,0.3826834,0.9238797",
+      "Position": "-1132.845,952.3218,32.21825",
+      "Rotation": "-0.0000009560963,0.0000005357383,0.3826814,0.9238805",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -47,7 +47,7 @@
           "IsStatic": false,
           "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
           "OnPropBreak": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "b753bd2c-cd2e-4f23-acd8-08adbb349e43",
             "UserData": {
               "Title": "On Prop Break",
@@ -70,8 +70,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-96,64"
@@ -81,8 +81,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "128,80"
@@ -136,8 +136,8 @@
     {
       "__guid": "b2d13b78-c667-4b4c-929e-a7758601e40c",
       "Name": "wooden_crate (1)",
-      "Position": "-1142.896,960.0182,0.000005856794",
-      "Rotation": "0,0,0.3274702,0.9448617",
+      "Position": "-1142.918,960.0281,0.1245651",
+      "Rotation": "0.0000001002229,0.0000003399829,0.3274687,0.9448621",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -155,8 +155,8 @@
     {
       "__guid": "a66755c5-a4d3-4c65-a23d-fa56b071ff25",
       "Name": "wooden_crate",
-      "Position": "-1123.97,930.092,0.0000008764858",
-      "Rotation": "0,0,0.258819,0.965926",
+      "Position": "-1123.967,930.0514,0.124609",
+      "Rotation": "-0.000001567212,-0.000000003318455,0.2588193,0.9659258",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -169,7 +169,7 @@
           "IsStatic": false,
           "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
           "OnPropBreak": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "d24b562f-1e71-4c33-a89b-58d91d42622d",
             "UserData": {
               "Title": "On Prop Break",
@@ -192,8 +192,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-96,96"
@@ -203,8 +203,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "144,64"
@@ -290,7 +290,7 @@
           },
           "LookAtEnabled": true,
           "OnComponentStart": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "a2ae2465-1b4d-47c2-9313-52da5119964b",
             "UserData": {
               "Title": "On Component Start",
@@ -321,8 +321,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsSitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
                 },
                 "UserData": {
                   "Position": "144,80"
@@ -403,7 +403,7 @@
           "CanDie": true,
           "Health": 100,
           "OnTakeDamage": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "a022b6f8-ba32-4ed0-b212-9cb1f3c52e9f",
             "UserData": {
               "Title": "On Take Damage",
@@ -434,9 +434,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Set",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_name": "Set"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -500,7 +500,7 @@
           "Icon": "sprites/vidya/particles/ghost.vtex",
           "Name": "Open Shop",
           "PickUpAction": {
-            "__version": 6,
+            "__version": 7,
             "__guid": "f46d2d50-7d15-4aee-8617-ad2249b2b92f",
             "UserData": {
               "Title": "Pick Up Action",
@@ -726,7 +726,7 @@
             ],
             "ShopActions": [
               {
-                "__version": 6,
+                "__version": 7,
                 "__guid": "669115cd-2765-4e78-b41c-db82ac815f2d",
                 "UserData": {
                   "Title": null,
@@ -742,9 +742,9 @@
                     "Id": 6,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddAmmo",
                       "_isStatic": false,
-                      "_type": "package.nolankicks.dead4left2/Inventory"
+                      "_type": "package.nolankicks.dead4left2/Inventory",
+                      "_name": "AddAmmo"
                     },
                     "UserData": {
                       "Position": "448,0"
@@ -1074,12 +1074,19 @@
         {
           "__type": "MenuUi",
           "__guid": "9ada1625-fd07-40c7-9c4f-f540325c67c6",
+          "BiomeTextures": [
+            "textures/grass.vtex",
+            "textures/swamp.vtex",
+            "textures/sand.vtex",
+            "textures/snow.vtex"
+          ],
           "GameScenes": [
             "scenes/demo_level1.scene",
             "scenes/demo_level2.scene",
             "scenes/deathmatch.scene",
             "scenes/sdf_staging.scene"
           ],
+          "ShowBiomeSelect": false,
           "ShowLobby": false
         }
       ]
@@ -1125,7 +1132,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-05-02T18:35:28.1335842-04:00",
+  "LastSaved": "2024-05-05T14:37:16.6631641-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
