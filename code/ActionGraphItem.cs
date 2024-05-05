@@ -61,6 +61,7 @@ public sealed class ActionGraphItem : Component
 			gb.Network.TakeOwnership();
 		}
 		GameObject.Parent = PlayerController.GameObject;
+		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
 		Inventory.AddItem(GameObject, Inventory.GetNextSlot(), false);
 		InInventory = true;
 		Network.Refresh();

@@ -33,12 +33,12 @@
                 "-320,-186,-8"
               ],
               "TextureOrigin": [
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-250.998,68,7.997803",
+                "-250.998,68,7.997803",
+                "-250.998,68,7.997803",
+                "-250.998,68,7.997803",
+                "-250.998,68,7.997803",
+                "-250.998,68,7.997803"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -214,88 +214,88 @@
                 "-120.0001,32,80"
               ],
               "TextureOrigin": [
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "0,0,0",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385",
+                "-450.998,252,95.99385"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -1566,8 +1566,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "-98.99799,-114,267.9949",
+                "-98.99799,-114,267.9949",
                 "0,0,0",
                 "0,0,0"
               ],
@@ -1707,8 +1707,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "-98.99799,259.5,267.9949",
+                "-98.99799,259.5,267.9949",
                 "0,0,0",
                 "0,0,0"
               ],
@@ -1848,8 +1848,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "-414.998,-113,267.995",
+                "-414.998,-113,267.995",
                 "0,0,0"
               ],
               "TextureRotation": [
@@ -1981,8 +1981,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "-414.998,260.5,267.995",
+                "-414.998,260.5,267.995",
                 "0,0,0"
               ],
               "TextureRotation": [
@@ -2114,8 +2114,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-257.998,-113,267.9952",
+                "-257.998,-113,267.9952"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -2239,8 +2239,8 @@
                 "0,0,0",
                 "0,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-257.998,260.5,267.9952",
+                "-257.998,260.5,267.9952"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -2351,12 +2351,12 @@
               "Topology": "H4sIAAAAAAAACk2Th07DQBBEXcA2NjEhgVBD6L33//8x2Ce9k\u002B6kkS\u002B3s7uzJdOiKH4D0wCnCqwFmkAX6AObgTGwHzgMHAdOAreB\u002B8Bj4DlQikt909kOrBu7DnwGJnJ52/G9lndh3qRlzy\u002BnDZz6rdU5k4vvhr6lPuiYZzUN1lPKh7swVquuUXsjd1cuMbaMWcof7V2V1dr6u9U2yfznxki9mGW2xlyDttLeJK2Vvch7tbBm/PkeOKM0P2Z2ls3yyPk18uF\u002BqIm8S2fbyId7450YK2OmXsI9t9bOXCt/F86q0FY720b7oO/S\u002BOi5soYu26VX59Cr5du\u002B049ra\u002B/t8507mebMjr5lc31wXwff4H5powdPAXYZO29wf7QR78WY2HmD\u002B64NkAtO2jG0o5Nc1EevqRE7/viSkzsctFADd/z4r1AjWgBaqIE7NdMLZor/Xxze2Sn2gl1hn9KMmA0ceph0o5ecxP0Htm7ATgwEAAA=",
               "Positions": [
                 "-20,-8,54",
-                "20,-8,54",
-                "20,8,54",
+                "13.998,-8,54",
+                "18.998,8,54",
                 "-20,8,54",
                 "-20,8,-54",
-                "20,8,-54",
-                "20,-8,-54",
+                "18.998,8,-54",
+                "13.998,-8,-54",
                 "-20,-8,-54",
                 "-20,-8,106.0026",
                 "20,-8,106.0026",
@@ -2369,21 +2369,21 @@
               ],
               "TextureOrigin": [
                 "0,0,0",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742",
+                "-198.998,252,69.99742"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -2411,15 +2411,15 @@
                 "-1,0,0",
                 "1,0,0",
                 "1,0,0",
+                "0,-1,0",
+                "1,0,0",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "-1,0,0",
                 "0,1,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "1,0,0",
+                "1,0,0",
+                "-1,0,0",
+                "1,0,0"
               ],
               "TextureVAxis": [
                 "0,-1,0",
@@ -2429,15 +2429,15 @@
                 "0,0,-1",
                 "0,0,-1",
                 "0,-1,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
+                "0,0,-1",
                 "0,0,-1",
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,-1",
+                "0,-1,0",
+                "0,0,-1",
+                "0,-1,0"
               ],
               "TextureScale": [
                 "0.25,0.25",
@@ -2610,16 +2610,16 @@
               ],
               "TextureOrigin": [
                 "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684",
+                "-110.998,252,69.99684"
               ],
               "TextureRotation": [
                 "0,0,0,1",
@@ -2642,10 +2642,10 @@
                 "-1,0,0",
                 "1,0,0",
                 "1,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "0,-1,0",
+                "1,0,0",
+                "0,1,0",
+                "-1,0,0"
               ],
               "TextureVAxis": [
                 "0,-1,0",
@@ -2655,10 +2655,10 @@
                 "0,0,-1",
                 "0,0,-1",
                 "0,-1,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0",
-                "0,0,0"
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,-1",
+                "0,0,-1"
               ],
               "TextureScale": [
                 "0.25,0.25",
@@ -2836,7 +2836,7 @@
           {
             "__guid": "9562e6cb-a7ca-4ed2-84a2-2e39d7f708fc",
             "Name": "wooden_door_01a",
-            "Position": "0,0,-8.414707",
+            "Position": "0.0001220703,3,-8.414707",
             "Rotation": "0,0,0.7071067,0.7071068",
             "Enabled": true,
             "NetworkMode": 2,
@@ -3333,10 +3333,10 @@
             "Mesh": {
               "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
               "Positions": [
-                "-23.99622,-2,106",
-                "23.99622,-2,106",
-                "23.99622,2,106",
-                "-23.99622,2,106",
+                "-23.99622,-2,-54.0009",
+                "23.99619,-1.999905,-22.0009",
+                "23.99619,2.000095,-22.0009",
+                "-23.99622,2,-54.0009",
                 "-23.99622,2,-106",
                 "23.99622,2,-106",
                 "23.99622,-2,-106",
@@ -3477,6 +3477,511 @@
             "Model": "sink/sink.vmdl"
           }
         ]
+      },
+      {
+        "__guid": "ba08be1c-876a-47e9-9456-a468903c7f52",
+        "Name": "couch",
+        "Position": "-328,-16.00006,16.48028",
+        "Rotation": "0,0,-0.7071067,0.7071068",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "2e71aad8-00bf-44da-a7ad-b8f6927d0800",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/props/couch/couch.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "23ceb93d-a77e-454a-af7d-a54b9c756c60",
+            "IsTrigger": false,
+            "Model": "models/props/couch/couch.vmdl",
+            "Static": false
+          }
+        ]
+      },
+      {
+        "__guid": "fac22eee-d343-4cf1-b783-014129851f7c",
+        "Name": "cabinet_a1",
+        "Position": "-288,-89.1581,15.9978",
+        "Rotation": "0,0,0.7071068,0.7071068",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "f6a1f10c-fb10-4f3b-a4c1-af98752e1dcf",
+            "BodyGroups": 18446744073709551615,
+            "Health": 0,
+            "IsStatic": false,
+            "Model": "models/props/trim_sheets/cabinets/cabinet_a1.vmdl"
+          }
+        ]
+      },
+      {
+        "__guid": "164b4a5d-c329-4c04-9d0f-54b82a20bc1c",
+        "Name": "cola_can",
+        "Position": "-305.3399,-77.31065,48.03201",
+        "Rotation": "0.000000000000001854888,0.00000000000001408928,0.9914448,-0.1305262",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "d6532513-9246-480a-8529-dbe261852f6a",
+            "BodyGroups": 18446744073709551615,
+            "Health": 10,
+            "IsStatic": false,
+            "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "ae02a879-eae7-4186-9f54-057b48d57f67",
+            "Description": "Consume",
+            "Name": "Can",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "acb93303-bfe2-4d63-b7da-4971bc988593",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Heal",
+                    "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "272,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "PlayerController",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": 10,
+                  "DstId": 1,
+                  "DstName": "amount"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          }
+        ]
+      },
+      {
+        "__guid": "a25f7fa8-780d-451b-8bcf-5e2295dcb150",
+        "Name": "cola_can (1)",
+        "Position": "-296.9998,-81.99996,48.03201",
+        "Rotation": "0,0.00000000000001421085,0.9999999,0.00000000000004263256",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "26d6b7b9-006d-4bec-af4b-dbc5cd310adc",
+            "BodyGroups": 18446744073709551615,
+            "Health": 10,
+            "IsStatic": false,
+            "MaterialGroup": "bright",
+            "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "789b642f-d5d7-4ccf-9a59-74bfc25bbc29",
+            "Description": "Consume",
+            "Name": "Can",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "acb93303-bfe2-4d63-b7da-4971bc988593",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Heal",
+                    "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "272,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "PlayerController",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": 10,
+                  "DstId": 1,
+                  "DstName": "amount"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          }
+        ]
+      },
+      {
+        "__guid": "610b0d36-7714-44f5-a53b-a0020d4a82f0",
+        "Name": "cola_can (2)",
+        "Position": "-294.9998,-76.99996,48.03201",
+        "Rotation": "-0.000000000000001854888,0.00000000000001408927,0.9914448,0.1305262",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "300304bf-17ef-42e2-b801-d8684e6338db",
+            "BodyGroups": 18446744073709551615,
+            "Health": 10,
+            "IsStatic": false,
+            "MaterialGroup": "orange",
+            "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "d9032600-8708-4577-87d1-d1ff6c1402ee",
+            "Description": "Consume",
+            "Name": "Can",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "acb93303-bfe2-4d63-b7da-4971bc988593",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Heal",
+                    "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "272,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "PlayerController",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": 10,
+                  "DstId": 1,
+                  "DstName": "amount"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          }
+        ]
+      },
+      {
+        "__guid": "669934a8-f234-4d3b-8135-8a833b26ef83",
+        "Name": "tv",
+        "Position": "-20,-37,51",
+        "Rotation": "0,0,0.9914448,0.1305264",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "096b4279-59d4-4134-a361-c73ee23f7c82",
+            "BodyGroups": 18446744073709551615,
+            "Health": 20,
+            "IsStatic": false,
+            "Model": "models/sbox_props/tv/tv.vmdl"
+          }
+        ]
+      },
+      {
+        "__guid": "530c8915-b481-49c4-9a25-73a993c7a647",
+        "Name": "cereal_open",
+        "Position": "-321.4584,28,17",
+        "Rotation": "0.09229595,-0.09229595,0.7010573,0.7010574",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "03e18dcf-92b7-4df6-b0b2-97438b36a94b",
+            "BodyGroups": 18446744073709551615,
+            "Health": 0,
+            "IsStatic": false,
+            "Model": "models/props/packaged_food/cereal_open.vmdl"
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "35556230-8777-4eca-9173-85d3c7b620f4",
+            "Description": "Consume",
+            "Name": "Cereal",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "acb93303-bfe2-4d63-b7da-4971bc988593",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Heal",
+                    "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "272,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "PlayerController",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": 10,
+                  "DstId": 1,
+                  "DstName": "amount"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          }
+        ]
+      },
+      {
+        "__guid": "203df689-a034-46a8-b671-18b6bf03f727",
+        "Name": "wooden_door_frame_single_02a",
+        "Position": "-157,257,15.9978",
+        "Rotation": "0,0,0.7071067,0.7071068",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "9ac298c6-e18c-415e-92d0-6c752b04b3a7",
+            "BodyGroups": 18446744073709551615,
+            "Health": 0,
+            "IsStatic": false,
+            "Model": "models/props/trim_sheets/doors/wooden_door_frame/wooden_door_frame_single_02a.vmdl"
+          }
+        ]
+      },
+      {
+        "__guid": "01b01c08-2c81-42f4-911f-d46e129e4353",
+        "Name": "chocolate",
+        "Position": "-328.4423,26,16.03552",
+        "Rotation": "0,0,0.8660254,0.5",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.Prop",
+            "__guid": "41e1a729-00ef-49e9-80b0-23f9f61788b7",
+            "BodyGroups": 18446744073709551615,
+            "Health": 0,
+            "IsStatic": false,
+            "Model": "models/props/packaged_food/chocolate.vmdl"
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "6a8b18b9-54c0-4b1c-bb75-6703d9db0eae",
+            "Description": "Consume",
+            "Name": "Chocolate",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "acb93303-bfe2-4d63-b7da-4971bc988593",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "Heal",
+                    "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  },
+                  "UserData": {
+                    "Position": "272,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 1,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "PlayerController",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": 10,
+                  "DstId": 1,
+                  "DstName": "amount"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          }
+        ]
+      },
+      {
+        "__guid": "e41abbf1-c91f-4d0d-ac45-eef387aedadc",
+        "Name": "foldabletable_a",
+        "Position": "-18,-40,15.99781",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "5aed015c-5122-47b5-8788-dd6294db8cc9",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/props/foldabletable/foldabletable_a.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "289e3d7c-c24c-403f-884e-fdb1fee3cee9",
+            "IsTrigger": false,
+            "Model": "models/props/foldabletable/foldabletable_a.vmdl",
+            "Static": false
+          }
+        ]
       }
     ]
   },
@@ -3488,6 +3993,14 @@
   "__references": [
     "dotpack.sink",
     "facepunch.bathtub",
-    "facepunch.wooden_door_01a"
+    "facepunch.cabinet_a1",
+    "facepunch.cereal_open",
+    "facepunch.chocolate",
+    "facepunch.couch",
+    "facepunch.soda_can",
+    "facepunch.tv",
+    "facepunch.wooden_door_01a",
+    "facepunch.wooden_door_frame_single_02a",
+    "fpopium.foldabletable_a"
   ]
 }

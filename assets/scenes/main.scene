@@ -4457,10 +4457,10 @@
             "Positions": [
               "-104.0001,-8,80",
               "231.9999,-8,80",
-              "231.9999,8,80",
-              "-104.0001,8,80",
-              "-104.0001,8,-80",
-              "231.9999,8,-80",
+              "231.9999,8.000244,80.00615",
+              "-104.0001,8.000244,80.00615",
+              "-104.0001,8.000244,-79.99385",
+              "231.9999,8.000244,-79.99385",
               "231.9999,-8,-80",
               "-104.0001,-8,-80",
               "-120.0001,8,-80",
@@ -7802,282 +7802,11 @@
     {
       "__guid": "deb8b7a3-75f6-4519-83e1-5c7660ee9094",
       "Name": "Item Test",
-      "Position": "-1529,-134,20",
+      "Position": "-143,-134,188",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "ActionGraphItem",
-          "__guid": "b491bc6c-f229-4171-8ee2-a3aebef8c53b",
-          "DropppedItem": {
-            "_type": "gameobject",
-            "go": "018e76f3-a05a-4aa2-9265-720e57c495cc"
-          },
-          "InInventory": false,
-          "Object": {
-            "_type": "gameobject",
-            "go": "3dcd8194-8e09-4a2c-8efd-20789857d1df"
-          },
-          "OnUse": {
-            "__version": 7,
-            "__guid": "919bb0c1-4240-4329-b891-feb697e8b477",
-            "UserData": {
-              "Title": "On Use",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 8,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "RemoveItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
-                },
-                "UserData": {
-                  "Position": "496,-0"
-                }
-              },
-              {
-                "Id": 11,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
-                },
-                "UserData": {
-                  "Position": "240,-64"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 11,
-                "SrcName": "_signal",
-                "DstId": 8,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "inventory",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 8,
-                "DstName": "item"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 11,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "playerController",
-                "DstId": 11,
-                "DstName": "_target"
-              },
-              {
-                "Value": 25,
-                "DstId": 11,
-                "DstName": "amount"
-              }
-            ]
-          }
-        },
-        {
-          "__type": "IconComponent",
-          "__guid": "9688960b-45db-4300-b5ab-dd063a500947",
-          "Icon": "textures/player_spritesheet_1.vtex"
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "018e76f3-a05a-4aa2-9265-720e57c495cc",
-          "Name": "Droped Item",
-          "Position": "49,0,-17",
-          "Enabled": true,
-          "NetworkMode": 1,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Kicks.PopupUi",
-              "__guid": "333da3b4-d4bb-4a8f-8264-b43a1f8686c8",
-              "Description": "Shit",
-              "Name": "Tv",
-              "PickUpAction": {
-                "__version": 7,
-                "__guid": "07dac39f-2085-41f1-9782-41b2f338ef62",
-                "UserData": {
-                  "Title": "Pick Up Action",
-                  "ReferencedComponentTypes": []
-                },
-                "Variables": [],
-                "Nodes": [
-                  {
-                    "Id": 0,
-                    "Type": "input"
-                  },
-                  {
-                    "Id": 2,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "TryGet",
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem",
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister"
-                    },
-                    "UserData": {
-                      "Position": "-32,192"
-                    }
-                  },
-                  {
-                    "Id": 4,
-                    "Type": "if",
-                    "UserData": {
-                      "Position": "320,-16"
-                    }
-                  },
-                  {
-                    "Id": 5,
-                    "Type": "call",
-                    "Properties": {
-                      "_isStatic": false,
-                      "_name": "PickUp",
-                      "_type": "package.nolankicks.dead4left2/ActionGraphItem"
-                    },
-                    "UserData": {
-                      "Position": "608,304"
-                    }
-                  }
-                ],
-                "Links": [
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_target",
-                    "DstId": 2,
-                    "DstName": "_target"
-                  },
-                  {
-                    "Value": "EnabledInSelf, InParent",
-                    "DstId": 2,
-                    "DstName": "search"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 4,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 2,
-                    "SrcName": "_result",
-                    "DstId": 4,
-                    "DstName": "condition"
-                  },
-                  {
-                    "SrcId": 4,
-                    "SrcName": "true",
-                    "DstId": 5,
-                    "DstName": "_signal"
-                  },
-                  {
-                    "SrcId": 2,
-                    "SrcName": "component",
-                    "DstId": 5,
-                    "DstName": "_target"
-                  }
-                ]
-              },
-              "selectedInput": "E",
-              "ShopItems": {
-                "ItemNames": [],
-                "ShopActions": [],
-                "ItemTextures": [],
-                "ItemPrices": []
-              },
-              "ShowPopUp": true
-            },
-            {
-              "__type": "Sandbox.Prop",
-              "__guid": "5802b39f-afd2-4f16-a7c1-c022124a6ebf",
-              "BodyGroups": 18446744073709551615,
-              "Health": 20,
-              "IsStatic": false,
-              "Model": "models/sbox_props/tv/tv.vmdl"
-            }
-          ]
-        },
-        {
-          "__guid": "3dcd8194-8e09-4a2c-8efd-20789857d1df",
-          "Name": "object",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 1,
-          "NetworkInterpolation": true,
-          "Children": [
-            {
-              "__guid": "2a79442a-0564-4900-a0d7-832bc767f4f2",
-              "Name": "viewmodel camera",
-              "Position": "0,0,0",
-              "Tags": "viewmodel",
-              "Enabled": true,
-              "NetworkMode": 1,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.CameraComponent",
-                  "__guid": "f1708d18-b4d4-4f92-b657-870538b1bd3a",
-                  "BackgroundColor": "0.33333,0.46275,0.52157,1",
-                  "ClearFlags": "Depth, Stencil",
-                  "FieldOfView": 60,
-                  "IsMainCamera": true,
-                  "Orthographic": false,
-                  "OrthographicHeight": 1204,
-                  "Priority": 1,
-                  "RenderExcludeTags": "",
-                  "RenderTags": "light,viewmodel",
-                  "TargetEye": "None",
-                  "Viewport": "0,0,1,1",
-                  "ZFar": 10000,
-                  "ZNear": 10
-                }
-              ],
-              "Children": [
-                {
-                  "__guid": "ce36f91f-93f1-4bd5-b5fb-d61990ed5cbe",
-                  "Name": "item",
-                  "Position": "16,-5,-4",
-                  "Enabled": true,
-                  "NetworkMode": 1,
-                  "NetworkInterpolation": true,
-                  "Components": [
-                    {
-                      "__type": "Sandbox.ModelRenderer",
-                      "__guid": "19fe2674-e0db-443d-8637-f561c88fcfd6",
-                      "BodyGroups": 18446744073709551615,
-                      "Model": "models/props/packaged_food/can_small.vmdl",
-                      "RenderType": "On",
-                      "Tint": "1,1,1,1"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "__Prefab": "prefabs/canoftuna.prefab"
     },
     {
       "__guid": "92e3aac0-b82d-4f3f-a7de-cefd446f8460",
@@ -8122,7 +7851,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-04T22:43:58.9382298-04:00",
+  "LastSaved": "2024-05-04T23:26:22.6978641-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
