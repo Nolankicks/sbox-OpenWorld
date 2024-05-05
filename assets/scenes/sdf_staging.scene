@@ -27,7 +27,7 @@
           "Amplitude": 1.2,
           "Biome": "Snow",
           "Grass": "sdfvol/grass.sdfvol",
-          "OceanHeight": 1500,
+          "OceanHeight": 2000,
           "OceanSize": 15000,
           "OnWorldSpawned": {
             "__version": 7,
@@ -1248,6 +1248,7 @@
           "Snow": "sdfvol/snow.sdfvol",
           "Stone": "sdfvol/stone.sdfvol",
           "Swamp": "sdfvol/swamp.sdfvol",
+          "UseFractalPerlinNoise": true,
           "Water": "sdfvol/water.sdfvol",
           "WaterWorld": {
             "_type": "component",
@@ -1261,8 +1262,319 @@
             "go": "374e00fe-93bd-41b8-99c7-e61d34162d6b",
             "component_type": "Sdf3DWorld"
           },
-          "WorldHeight": 4000,
+          "WorldHeight": 4500,
           "WorldSize": 15000
+        }
+      ]
+    },
+    {
+      "__guid": "36216bda-3c44-48d8-9698-40772c376d05",
+      "Name": "Water Trigger",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Water",
+          "__guid": "711c50fd-bc3f-4e41-bd5a-071dcdabe691",
+          "rigidbodies": [],
+          "OnComponentStart": {
+            "__version": 7,
+            "__guid": "8dbea96f-9c95-4cc0-8205-04328c2f54e5",
+            "UserData": {
+              "Title": "On Component Start",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/Sdftest",
+                "Sandbox.Game/Sandbox.HullCollider"
+              ]
+            },
+            "Variables": [
+              {
+                "Name": "Collider",
+                "Type": "Sandbox.Game/Sandbox.HullCollider"
+              },
+              {
+                "Name": "SDF Manager",
+                "Type": "package.nolankicks.dead4left2/Sdftest"
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-160,-128"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "if",
+                "UserData": {
+                  "Position": "864,112"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
+                  }
+                },
+                "UserData": {
+                  "Position": "-528,224"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "-288,176"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "WaterBool",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "464,144"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "1120,160"
+                }
+              },
+              {
+                "Id": 7,
+                "Type": "var",
+                "Properties": {
+                  "_var": "SDF Manager"
+                },
+                "UserData": {
+                  "Position": "96,0"
+                }
+              },
+              {
+                "Id": 9,
+                "Type": "property",
+                "Properties": {
+                  "_name": "UseFractalPerlinNoise",
+                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                },
+                "UserData": {
+                  "Position": "672,-48"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "if",
+                "UserData": {
+                  "Position": "1104,-16"
+                }
+              },
+              {
+                "Id": 12,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "Sandbox.Game/Sandbox.HullCollider"
+                },
+                "UserData": {
+                  "Position": "16,176"
+                }
+              },
+              {
+                "Id": 13,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Collider"
+                },
+                "UserData": {
+                  "Position": "272,96"
+                }
+              },
+              {
+                "Id": 16,
+                "Type": "property",
+                "Properties": {
+                  "_name": "BoxSize",
+                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.HullCollider"
+                },
+                "UserData": {
+                  "Position": "1408,80"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "property",
+                "Properties": {
+                  "_name": "BoxSize",
+                  "_kind": "Set",
+                  "_type": "Sandbox.Game/Sandbox.HullCollider"
+                },
+                "UserData": {
+                  "Position": "1488,-32"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 13,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDF Manager",
+                "DstId": 5,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "false",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 7,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 7,
+                "DstName": "_value"
+              },
+              {
+                "VarName": "SDF Manager",
+                "DstId": 9,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "true",
+                "DstId": 10,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 9,
+                "SrcName": "_result",
+                "DstId": 10,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 12,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 7,
+                "SrcName": "_signal",
+                "DstId": 13,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 12,
+                "SrcName": "_result",
+                "DstId": 13,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "false",
+                "DstId": 16,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Collider",
+                "DstId": 16,
+                "DstName": "_target"
+              },
+              {
+                "Value": "200000,200000,3000",
+                "DstId": 16,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "true",
+                "DstId": 19,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Collider",
+                "DstId": 19,
+                "DstName": "_target"
+              },
+              {
+                "Value": "200000,200000,4000",
+                "DstId": 19,
+                "DstName": "_value"
+              }
+            ],
+            "Defaults": {
+              "$3.gameobject": {
+                "_type": "gameobject",
+                "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
+              }
+            }
+          }
+        },
+        {
+          "__type": "Sandbox.HullCollider",
+          "__guid": "57f611e9-4774-4bad-be75-9913a5c3ec53",
+          "BoxSize": "200000,200000,3000",
+          "Center": "0,0,0",
+          "Height": 50,
+          "IsTrigger": true,
+          "Radius": 25,
+          "Radius2": 0,
+          "Slices": 16,
+          "Static": false,
+          "Type": "Box"
         }
       ]
     },
@@ -3494,154 +3806,6 @@
       ]
     },
     {
-      "__guid": "36216bda-3c44-48d8-9698-40772c376d05",
-      "Name": "Water Trigger",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Water",
-          "__guid": "711c50fd-bc3f-4e41-bd5a-071dcdabe691",
-          "rigidbodies": [],
-          "OnComponentStart": {
-            "__version": 7,
-            "__guid": "8dbea96f-9c95-4cc0-8205-04328c2f54e5",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/Sdftest"
-              ]
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "if",
-                "UserData": {
-                  "Position": "864,112"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "scene.ref",
-                "Properties": {
-                  "gameobject": {
-                    "_type": "gameobject",
-                    "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
-                  }
-                },
-                "UserData": {
-                  "Position": "-160,192"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "package.nolankicks.dead4left2/Sdftest"
-                },
-                "UserData": {
-                  "Position": "128,160"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "WaterBool",
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
-                },
-                "UserData": {
-                  "Position": "464,144"
-                }
-              },
-              {
-                "Id": 6,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
-                },
-                "UserData": {
-                  "Position": "1120,160"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 5,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 1,
-                "DstName": "condition"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_this"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 5,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "false",
-                "DstId": 6,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 6,
-                "DstName": "_target"
-              }
-            ],
-            "Defaults": {
-              "$3.gameobject": {
-                "_type": "gameobject",
-                "go": "f4cb36aa-14cb-407b-95cd-3a0d2e44b655"
-              }
-            }
-          }
-        },
-        {
-          "__type": "Sandbox.HullCollider",
-          "__guid": "57f611e9-4774-4bad-be75-9913a5c3ec53",
-          "BoxSize": "200000,200000,3000",
-          "Center": "0,0,0",
-          "Height": 50,
-          "IsTrigger": true,
-          "Radius": 25,
-          "Radius2": 0,
-          "Slices": 16,
-          "Static": false,
-          "Type": "Box"
-        }
-      ]
-    },
-    {
       "__guid": "063e7946-3893-4525-8f34-9ddb2011b8f3",
       "Name": "Palm Tree",
       "Position": "5609.725,-788.0684,3621.732",
@@ -3748,7 +3912,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-05T15:45:00.3004196-04:00",
+  "LastSaved": "2024-05-05T16:29:01.2933229-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

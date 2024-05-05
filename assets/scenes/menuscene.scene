@@ -70,8 +70,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,64"
@@ -81,8 +81,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "128,80"
@@ -192,8 +192,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.Game/Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,96"
@@ -203,8 +203,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.Game/Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "144,64"
@@ -321,8 +321,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "IsSitting"
+                  "_name": "IsSitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "144,80"
@@ -332,8 +332,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -435,8 +435,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -743,8 +743,8 @@
                     "Type": "call",
                     "Properties": {
                       "_isStatic": false,
-                      "_type": "package.nolankicks.dead4left2/Inventory",
-                      "_name": "AddAmmo"
+                      "_name": "AddAmmo",
+                      "_type": "package.nolankicks.dead4left2/Inventory"
                     },
                     "UserData": {
                       "Position": "448,0"
@@ -1132,7 +1132,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-05-05T14:37:16.6631641-04:00",
+  "LastSaved": "2024-05-05T16:26:59.5704078-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

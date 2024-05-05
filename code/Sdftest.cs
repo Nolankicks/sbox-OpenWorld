@@ -28,6 +28,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property] public GameObject PlayerPrefab { get; set; }
     public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
 	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
+	[Property, Category("World Properties")] public bool UseFractalPerlinNoise { get; set; } 
 	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanHeight { get; set; } = 1500;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
@@ -76,32 +77,38 @@ public sealed class Sdftest : Component, Component.INetworkListener
 				return false;
 		}
 	}
-	protected override async void OnStart()
+	protected override void OnStart()
 	{
-		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
-		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
+		_ = TaskBuildWorld();
+	}
+	public async Task TaskBuildWorld()
+	{
 		World.GameObject.NetworkSpawn();
 		WaterWorld.GameObject.NetworkSpawn();
-		await CreateWorld(World, GetVolume(), Scale);
+		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
+		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
+		await CreateWorld(World, GetVolume(), Scale, UseFractalPerlinNoise);
+		await OnWorldSpawned?.Invoke(this, World);
+		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
 	}
-public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
+public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, bool UseFractal)
 {
-	Log.Info("Network Spaned");
-	//Create heightmap
-	var heightmap = new FractialPerlinNoise(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight), 4, 0.5f);
-	Log.Info("Heightmap created");
-	await world.AddAsync(heightmap, volume);
-	Log.Info("Heightmap added to world");
-	//Create water
+	if (world is null || volume is null || Water is null) return;
+	if (UseFractal)
+	{
+	await world.AddAsync(new FractialPerlinNoise(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight), 4, 0.5f), volume);
+	}
+	else
+	{
+	await world.AddAsync(new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight)), volume);
+	}
 	if (WaterBool())
 	{
-		var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, OceanHeight));
+		var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 2000 : 1500));
 		await WaterWorld.AddAsync(waterSDF, Water);
 	}
 	Log.Info("Water added to world");
-	//Create items
-	await OnWorldSpawned?.Invoke(this, world);
 }
 public async Task AddCube(Sdf3DWorld world, Vector3 pos, Vector3 size, Sdf3DVolume volume)
 {

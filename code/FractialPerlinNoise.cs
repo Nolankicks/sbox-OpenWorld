@@ -12,8 +12,8 @@ namespace Sandbox.Sdf.Noise
         {
             float total = 0;
             float frequency = 1;
-            float amplitude = 1;
-            float maxValue = 0;  // Used for normalizing result to 0.0 - 1.0
+            float amplitude = 1.5f;
+            float maxValue = 0;
             for(int i=0;i<Octaves;i++) {
                 var xNoise = ((pos.x - Position.x) * 0.125f * frequency) / 10;
                 var yNoise = ((pos.y - Position.y) * 0.125f * frequency) / 10;
