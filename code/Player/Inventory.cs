@@ -5,6 +5,7 @@ using Kicks;
 using System.Security.Cryptography.X509Certificates;
 using System.Diagnostics.SymbolStore;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 public sealed class Inventory : Component
 {
@@ -52,7 +53,7 @@ public sealed class Inventory : Component
 		if (Spawn)
 		{
 		if (item is null) return;
-		var itemClone = item.Clone();
+		var itemClone = item.Clone(Vector3.Up * 70);
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;
 		itemClone.Components.TryGet<Weapon>( out var weapon );
@@ -153,6 +154,10 @@ public sealed class Inventory : Component
 				ItemTextures[Items.FindIndex(x => x == item)] = icon.Icon;
 			}
 		}
+		else
+		{
+			ItemTextures[Items.FindIndex(x => x == item)] = null;
+		}
 	}
 }
 	void ChangeSlots()
@@ -227,9 +232,9 @@ public sealed class Inventory : Component
 		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
 		if (tr.Hit && Input.Pressed("use"))
 		{
-			tr.GameObject.Parent.Components.TryGet<Weapon>(out var item);
-			tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon);
-			tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun);
+			tr.GameObject.Components.TryGet<Weapon>(out var item, FindMode.EverythingInSelfAndParent);
+			tr.GameObject.Components.TryGet<IconComponent>(out var icon, FindMode.EverythingInSelfAndParent);
+			tr.GameObject.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
 			if (item is not null && icon is not null)
 			{
 				//Add Ownership, yay
@@ -269,7 +274,6 @@ public sealed class Inventory : Component
 				//Idk if I need to refresh this shit but I will anyway 🤓☝️
 				Network.Refresh();
 			}
-
 		}
 	}
 	void Drop()
@@ -283,6 +287,7 @@ public sealed class Inventory : Component
 		item.Components.TryGet<Weapon>( out var weapon );
 		item.Components.TryGet<Shotgun>( out var shotgun );
 		item.Components.TryGet<IconComponent>(out var icon);
+		item.Components.TryGet<ActionGraphItem>(out var graphItem, FindMode.EverythingInSelfAndParent);
 		if (weapon is not null && icon is not null)
 		{
 		//God I hate this, i'm too dumb for the foreach shit
@@ -316,7 +321,10 @@ public sealed class Inventory : Component
 	
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
 		Network.Refresh();
-		
+		}
+		else if (graphItem is not null)
+		{
+			graphItem.DropItem();
 		}
 		else
 		{

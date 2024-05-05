@@ -24,6 +24,8 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	public ProcGenUi ProcGenUi { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
     public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
+	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
+	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
 	protected override async void OnStart()
 	{
@@ -32,16 +34,20 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 {
+	//Network spawn SDF worlds
 	World.GameObject.NetworkSpawn();
 	WaterWorld.GameObject.NetworkSpawn();
 	Log.Info("Network Spaned");
-	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * 10000).WithZ(WorldHeight));
+	//Create heightmap
+	var heightmap = new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight));
 	Log.Info("Heightmap created");
 	await world.AddAsync(heightmap, volume);
 	Log.Info("Heightmap added to world");
-	var waterSDF = new BoxSdf3D(new Vector3(-10000, -10000, 0), new Vector3(20000, 20000, 1500));
+	//Create water
+	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, 1500));
 	await WaterWorld.AddAsync(waterSDF, Water);
 	Log.Info("Water added to world");
+	//Create items
 	await OnWorldSpawned?.Invoke(this, world);
 }
 public void OnActive( Connection channel )
@@ -86,7 +92,7 @@ public async Task<Vector3> GetBounds(Sdf3DWorld world, bool Offset = false)
 {
 	while (true)
 	{
-	Vector3 dim =  new Vector3(10000 - 200, 10000 - 200, 5000 - 200);
+	Vector3 dim =  new Vector3(WorldSize - 200, WorldSize - 200, WorldHeight - 200);
     var x = GetRandom(0, dim.x);
     var y = GetRandom(0, dim.y);
     var trace = Scene.Trace.Ray(new Vector3(x, y, dim.z + 10000), Vector3.Down * 10000000).Run();

@@ -26,6 +26,7 @@
           "__guid": "bdd2ad30-4dd0-469b-a2e5-7c508e477cc3",
           "Amplitude": 1.2,
           "Grass": "sdfvol/grass.sdfvol",
+          "OceanSize": 15000,
           "OnWorldSpawned": {
             "__version": 7,
             "__guid": "be5aca85-f4ce-467b-821c-c996fd13bd90",
@@ -419,34 +420,35 @@
             "go": "374e00fe-93bd-41b8-99c7-e61d34162d6b",
             "component_type": "Sdf3DWorld"
           },
-          "WorldHeight": 3500
+          "WorldHeight": 3500,
+          "WorldSize": 15000
         }
       ]
     },
     {
-      "__guid": "141f87d4-4142-4aae-91e7-60917826ae4b",
-      "Name": "floor",
-      "Position": "-1530,-102,12.49631",
+      "__guid": "e6dd83c2-19b0-46b2-bee9-634dc9b3b810",
+      "Name": "wall",
+      "Position": "-1302,-966,49.99989",
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
-          "__guid": "878838ed-4be9-40ce-85d0-495d553e8f1d",
+          "__guid": "42bd7460-f05b-4601-8d0e-e22f1fe9c139",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
             "Positions": [
-              "-50,-50,12.5",
-              "50,-50,12.5",
-              "50,50,12.5",
-              "-50,50,12.5",
-              "-50,50,-12.5",
-              "50,50,-12.5",
-              "50,-50,-12.5",
-              "-50,-50,-12.5"
+              "-50,-10,50",
+              "50,-10,50",
+              "50,10,50",
+              "-50,10,50",
+              "-50,10,-50",
+              "50,10,-50",
+              "50,-10,-50",
+              "-50,-10,-50"
             ],
             "TextureOrigin": [
               "0,0,0",
@@ -548,29 +550,29 @@
       ]
     },
     {
-      "__guid": "e6dd83c2-19b0-46b2-bee9-634dc9b3b810",
-      "Name": "wall",
-      "Position": "-1302,-966,49.99989",
+      "__guid": "141f87d4-4142-4aae-91e7-60917826ae4b",
+      "Name": "floor",
+      "Position": "-1530,-102,12.49631",
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.MeshComponent",
-          "__guid": "42bd7460-f05b-4601-8d0e-e22f1fe9c139",
+          "__guid": "878838ed-4be9-40ce-85d0-495d553e8f1d",
           "Collision": "Mesh",
           "Color": "1,1,1,1",
           "IsTrigger": false,
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
             "Positions": [
-              "-50,-10,50",
-              "50,-10,50",
-              "50,10,50",
-              "-50,10,50",
-              "-50,10,-50",
-              "50,10,-50",
-              "50,-10,-50",
-              "-50,-10,-50"
+              "-50,-50,12.5",
+              "50,-50,12.5",
+              "50,50,12.5",
+              "-50,50,12.5",
+              "-50,50,-12.5",
+              "50,50,-12.5",
+              "50,-50,-12.5",
+              "-50,-50,-12.5"
             ],
             "TextureOrigin": [
               "0,0,0",
@@ -785,6 +787,14 @@
           "Model": "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "RandomModel",
+          "__guid": "c7d7a10a-10a2-4a34-bec4-a4267f4aa0e3",
+          "RandomModels": [
+            "models/sbox_props/trees/oak/tree_oak_medium_a.vmdl",
+            "models/sbox_props/trees/oak/tree_oak_small_a.vmdl"
+          ]
         }
       ]
     },
@@ -883,7 +893,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "37c54d35-2f82-44c5-8b55-9fc7c04b2505",
-          "SkyMaterial": "materials/skybox/skybox_sunrise_01.vmat",
+          "SkyMaterial": "materials/skybox/skybox_overcast_02.vmat",
           "Tint": "1,1,1,1"
         }
       ]
@@ -2549,11 +2559,12 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-04T18:52:07.2239141-04:00",
+  "LastSaved": "2024-05-04T20:50:12.9719276-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.tree_oak_medium_a",
+    "facepunch.tree_oak_small_a",
     "facepunch.wooden_crate",
     "gkaf.rock_1",
     "gkaf.rock_2",
