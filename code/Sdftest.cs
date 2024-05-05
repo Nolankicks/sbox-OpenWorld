@@ -16,8 +16,10 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property] public Sdf3DWorld WaterWorld { get; set; }
 	[Property, Category("World Properties")] public int WorldHeight { get; set; } = 3000;
 	[Property, Category("Volumes")] public Sdf3DVolume Grass { get; set; }
-	[Property, Category("Volumes")] public Sdf3DVolume Stone { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Sand { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Water { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Snow { get; set; }
+	[Property, Category("Volumes")] public Sdf3DVolume Stone { get; set; }
 	public float[,] PerlinValues { get; set; }
     [Property, Category("World Properties")] public float Scale { get; set; }
 	[Property, Category("World Properties")] public float Amplitude { get; set; }
@@ -26,10 +28,37 @@ public sealed class Sdftest : Component, Component.INetworkListener
     public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
 	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
+	[Property, Category("World Properties")] public int OceanHeight { get; set; } = 1500;
+	[Property, Category("World Properties")] public bool SpawnWater { get; set; } = true;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
+	public enum BiomeType
+	{
+		Grass,
+		Sand,
+		Snow,
+		Stone,
+	}
+	[Property, Category("World Properties")] public BiomeType Biome { get; set; }
+	public Sdf3DVolume GetVolume()
+	{
+		switch (Biome)
+		{
+			case BiomeType.Grass:
+				return Grass;
+			case BiomeType.Sand:
+				return Sand;
+			case BiomeType.Snow:
+				return Snow;
+			case BiomeType.Stone:
+				return Stone;
+			default:
+				return Grass;
+		}
+	}
 	protected override async void OnStart()
 	{
-		await CreateWorld(World, Grass, Scale);
+		
+		await CreateWorld(World, GetVolume(), Scale);
 		GameNetworkSystem.CreateLobby();
 	}
 public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
@@ -44,11 +73,34 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale)
 	await world.AddAsync(heightmap, volume);
 	Log.Info("Heightmap added to world");
 	//Create water
-	var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, 1500));
-	await WaterWorld.AddAsync(waterSDF, Water);
+	if (SpawnWater)
+	{
+		var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, OceanHeight));
+		await WaterWorld.AddAsync(waterSDF, Water);
+	}
 	Log.Info("Water added to world");
 	//Create items
 	await OnWorldSpawned?.Invoke(this, world);
+}
+public async Task AddCube(Sdf3DWorld world, Vector3 pos, Vector3 size, Sdf3DVolume volume)
+{
+	var cube = new BoxSdf3D(Vector3.Zero, size).Transform(pos);
+	await world.AddAsync(cube, volume);
+}
+public async Task SubtractCube(Sdf3DWorld world, Vector3 pos, Vector3 size, Sdf3DVolume volume)
+{
+	var cube = new BoxSdf3D(Vector3.Zero, size).Transform(pos);
+	await world.SubtractAsync(cube, volume);
+}
+public async Task AddSphere(Sdf3DWorld world, Vector3 pos, float radius, Sdf3DVolume volume)
+{
+	var sphere = new SphereSdf3D(Vector3.Zero, radius).Transform(pos);
+	await world.AddAsync(sphere, volume);
+}
+public async Task SubtractSphere(Sdf3DWorld world, Vector3 pos, float radius, Sdf3DVolume volume)
+{
+	var sphere = new SphereSdf3D(Vector3.Zero, radius).Transform(pos);
+	await world.SubtractAsync(sphere, volume);
 }
 public void OnActive( Connection channel )
 	{
