@@ -2,7 +2,8 @@
 @using Sandbox.UI;
 @namespace Kicks
 @inherits PanelComponent
-
+@if (playerController is not null)
+{
 <root style="opacity: @(ShowUi ? 1 : 0);">
 	<div class="resources">
 		<div>🪵 @playerController.Wood</div>
@@ -10,6 +11,14 @@
 		<div>⚙️ @playerController.Metal</div>
 	</div>
 </root>
+}
+else
+{
+	<root style="opacity: 0;">
+
+	</root>
+}
+
 
 @code
 {

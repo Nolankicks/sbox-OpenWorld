@@ -69,7 +69,7 @@
                 "Id": 59,
                 "Type": "input",
                 "UserData": {
-                  "Position": "16,-96"
+                  "Position": "48,480"
                 }
               },
               {
@@ -79,7 +79,7 @@
                   "_var": "SDFManager"
                 },
                 "UserData": {
-                  "Position": "288,-112"
+                  "Position": "320,464"
                 }
               },
               {
@@ -89,19 +89,19 @@
                   "_var": "SDFWorld"
                 },
                 "UserData": {
-                  "Position": "512,-80"
+                  "Position": "544,496"
                 }
               },
               {
                 "Id": 62,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "1664,-448"
+                  "Position": "1696,128"
                 }
               },
               {
@@ -113,7 +113,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2016,-448"
+                  "Position": "2048,128"
                 }
               },
               {
@@ -125,7 +125,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2368,-448"
+                  "Position": "2400,128"
                 }
               },
               {
@@ -137,14 +137,14 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2720,-448"
+                  "Position": "2752,128"
                 }
               },
               {
                 "Id": 114,
                 "Type": "comment",
                 "UserData": {
-                  "Position": "1536,-480",
+                  "Position": "1568,96",
                   "Size": "1440,256",
                   "Title": "Grass Biome",
                   "Layer": 4
@@ -158,7 +158,7 @@
                   "_name": "Biome"
                 },
                 "UserData": {
-                  "Position": "464,16"
+                  "Position": "496,592"
                 }
               },
               {
@@ -168,35 +168,35 @@
                   "_var": "Seleted Biome"
                 },
                 "UserData": {
-                  "Position": "720,-80"
+                  "Position": "752,496"
                 }
               },
               {
                 "Id": 149,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1056,-80"
+                  "Position": "1088,496"
                 }
               },
               {
                 "Id": 152,
                 "Type": "op.equal",
                 "UserData": {
-                  "Position": "896,32"
+                  "Position": "928,608"
                 }
               },
               {
                 "Id": 191,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1312,64"
+                  "Position": "1344,640"
                 }
               },
               {
                 "Id": 192,
                 "Type": "op.equal",
                 "UserData": {
-                  "Position": "1088,176"
+                  "Position": "1120,752"
                 }
               },
               {
@@ -208,14 +208,14 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "1664,-112"
+                  "Position": "1696,464"
                 }
               },
               {
                 "Id": 206,
                 "Type": "comment",
                 "UserData": {
-                  "Position": "1536,-192",
+                  "Position": "1568,384",
                   "Size": "1104,288",
                   "Title": "Sand Biome",
                   "Description": "",
@@ -231,7 +231,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2016,-112"
+                  "Position": "2048,464"
                 }
               },
               {
@@ -243,21 +243,21 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2368,-112"
+                  "Position": "2400,464"
                 }
               },
               {
                 "Id": 226,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1488,256"
+                  "Position": "1520,832"
                 }
               },
               {
                 "Id": 227,
                 "Type": "op.equal",
                 "UserData": {
-                  "Position": "1312,368"
+                  "Position": "1344,944"
                 }
               },
               {
@@ -269,7 +269,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "1888,176"
+                  "Position": "1920,752"
                 }
               },
               {
@@ -281,14 +281,14 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2272,176"
+                  "Position": "2304,752"
                 }
               },
               {
                 "Id": 249,
                 "Type": "comment",
                 "UserData": {
-                  "Position": "1760,128",
+                  "Position": "1792,704",
                   "Size": "1120,304",
                   "Title": "Snow Biome",
                   "Layer": 2
@@ -298,14 +298,14 @@
                 "Id": 327,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1712,496"
+                  "Position": "1744,1072"
                 }
               },
               {
                 "Id": 329,
                 "Type": "op.equal",
                 "UserData": {
-                  "Position": "1520,608"
+                  "Position": "1552,1184"
                 }
               },
               {
@@ -317,7 +317,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2144,560"
+                  "Position": "2176,1136"
                 }
               },
               {
@@ -329,7 +329,7 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2624,176"
+                  "Position": "2656,752"
                 }
               },
               {
@@ -341,14 +341,14 @@
                   "_name": "SpawnItem"
                 },
                 "UserData": {
-                  "Position": "2528,560"
+                  "Position": "2560,1136"
                 }
               },
               {
                 "Id": 378,
                 "Type": "comment",
                 "UserData": {
-                  "Position": "2000,496",
+                  "Position": "2032,1072",
                   "Size": "784,288",
                   "Title": "Swamp Biome",
                   "Layer": 1
@@ -364,7 +364,7 @@
                   }
                 },
                 "UserData": {
-                  "Position": "192,320"
+                  "Position": "224,896"
                 }
               },
               {
@@ -374,7 +374,7 @@
                   "T": "package.nolankicks.dead4left2/ProcGenUi"
                 },
                 "UserData": {
-                  "Position": "448,256"
+                  "Position": "480,832"
                 }
               },
               {
@@ -386,7 +386,7 @@
                   "_name": "Destroy"
                 },
                 "UserData": {
-                  "Position": "2864,560"
+                  "Position": "2896,1136"
                 }
               },
               {
@@ -396,7 +396,7 @@
                   "_var": "Proc Gen Ui"
                 },
                 "UserData": {
-                  "Position": "752,176"
+                  "Position": "784,752"
                 }
               },
               {
@@ -408,7 +408,7 @@
                   "_name": "Destroy"
                 },
                 "UserData": {
-                  "Position": "2976,176"
+                  "Position": "3008,752"
                 }
               },
               {
@@ -420,7 +420,7 @@
                   "_name": "Destroy"
                 },
                 "UserData": {
-                  "Position": "2736,-112"
+                  "Position": "2768,464"
                 }
               },
               {
@@ -432,7 +432,7 @@
                   "_name": "Destroy"
                 },
                 "UserData": {
-                  "Position": "3088,-448"
+                  "Position": "3120,128"
                 }
               }
             ],
@@ -496,7 +496,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 500,
+                "Value": 1000,
                 "DstId": 62,
                 "DstName": "times"
               },
@@ -1877,8 +1877,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_kind": "Set",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_name": "Wood"
                 },
                 "UserData": {
@@ -2316,6 +2316,10 @@
         {
           "__type": "ProcGenUi",
           "__guid": "995d7726-e0de-4933-836c-5eb98d9762b4"
+        },
+        {
+          "__type": "Kicks.TabUi",
+          "__guid": "39b081d7-5bd9-498c-a297-b0b620262770"
         }
       ]
     },
@@ -3909,7 +3913,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-05T21:07:18.6130673-04:00",
+  "LastSaved": "2024-05-06T11:50:56.6219345-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
