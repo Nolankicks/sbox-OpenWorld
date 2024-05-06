@@ -87,28 +87,42 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		WaterWorld.GameObject.NetworkSpawn();
 		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
 		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
-		await CreateWorld(World, GetVolume(), Scale, UseFractalPerlinNoise);
+		await CreateWorld(World, GetVolume(), Scale, UseFractalPerlinNoise, 0);
 		await OnWorldSpawned?.Invoke(this, World);
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
 	}
-public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, bool UseFractal)
+public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, bool UseFractal, int seed)
 {
-	if (world is null || volume is null || Water is null) return;
-	if (UseFractal)
-	{
-	await world.AddAsync(new FractialPerlinNoise(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight), 4, 0.5f), volume);
-	}
-	else
-	{
-	await world.AddAsync(new PerlinNoiseSdf3D(Random.Shared.Int(0, 100000), Vector3.Zero, (Vector3.One * WorldSize).WithZ(WorldHeight)), volume);
-	}
-	if (WaterBool())
-	{
-		var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 2000 : 1500));
-		await WaterWorld.AddAsync(waterSDF, Water);
-	}
-	Log.Info("Water added to world");
+    if (world is null || volume is null || Water is null) return;
+
+    int chunkSize = 1000; // Define the size of each chunk
+    int numChunks = WorldSize / chunkSize; // Calculate the number of chunks
+
+    for (int i = 0; i < numChunks; i++)
+    {
+        for (int j = 0; j < numChunks; j++)
+        {
+            Vector3 chunkPosition = new Vector3(i * chunkSize, j * chunkSize, 0);
+
+            if (UseFractal)
+            {
+                await world.AddAsync(new FractalPerlinNoise(seed, Vector3.Zero, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight), 4, 0.5f), volume);
+            }
+            else
+            {
+                await world.AddAsync(new PerlinNoiseSdf3D(seed, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight)), volume);
+            }
+        }
+    }
+
+    if (WaterBool())
+    {
+        var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 2000 : 1500));
+        await WaterWorld.AddAsync(waterSDF, Water);
+    }
+
+    Log.Info("Water added to world");
 }
 public async Task AddCube(Sdf3DWorld world, Vector3 pos, Vector3 size, Sdf3DVolume volume)
 {

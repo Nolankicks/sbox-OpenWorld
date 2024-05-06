@@ -1058,8 +1058,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "GetNextSlot"
+                      "_name": "GetNextSlot",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "240,32"
@@ -1079,9 +1079,9 @@
                     "Id": 13,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "Kill",
-                      "_type": "Sandbox.Game/Sandbox.Prop"
+                      "_type": "Sandbox.Game/Sandbox.Prop",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "912,176"
@@ -2539,8 +2539,8 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false
                 },
                 "UserData": {
@@ -2551,9 +2551,9 @@
                 "Id": 11,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "832,-0"
@@ -2563,9 +2563,9 @@
                 "Id": 17,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1184,0"
@@ -7851,7 +7851,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-05T14:44:30.6924007-04:00",
+  "LastSaved": "2024-05-05T18:45:36.210294-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
