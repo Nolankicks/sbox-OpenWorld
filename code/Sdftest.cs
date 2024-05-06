@@ -118,8 +118,8 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale,
 
     if (WaterBool())
     {
-        var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 2000 : 1500));
-        await WaterWorld.AddAsync(waterSDF, Water);
+        //var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 3000 : 1500));
+        //await WaterWorld.AddAsync(waterSDF, Water);
     }
 
     Log.Info("Water added to world");

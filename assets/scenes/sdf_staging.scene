@@ -27,7 +27,7 @@
           "Amplitude": 1.2,
           "Biome": "Snow",
           "Grass": "sdfvol/grass.sdfvol",
-          "OceanHeight": 2000,
+          "OceanHeight": 4500,
           "OceanSize": 15000,
           "OnWorldSpawned": {
             "__version": 7,
@@ -1262,15 +1262,14 @@
             "go": "374e00fe-93bd-41b8-99c7-e61d34162d6b",
             "component_type": "Sdf3DWorld"
           },
-          "WorldHeight": 4500,
-          "WorldSize": 20000
+          "WorldHeight": 6000,
+          "WorldSize": 10000
         }
       ]
     },
     {
       "__guid": "36216bda-3c44-48d8-9698-40772c376d05",
       "Name": "Water Trigger",
-      "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
@@ -1566,7 +1565,7 @@
         {
           "__type": "Sandbox.HullCollider",
           "__guid": "57f611e9-4774-4bad-be75-9913a5c3ec53",
-          "BoxSize": "200000,200000,3000",
+          "BoxSize": "200000,200000,2250",
           "Center": "0,0,0",
           "Height": 50,
           "IsTrigger": true,
@@ -1878,8 +1877,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_kind": "Set",
                   "_name": "Wood"
                 },
                 "UserData": {
@@ -3910,7 +3909,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-05T20:39:41.6946753-04:00",
+  "LastSaved": "2024-05-05T21:07:18.6130673-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
