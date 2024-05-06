@@ -1,6 +1,6 @@
 using Kicks;
 using Sandbox;
-
+[Icon("water_drop")]
 public sealed class Water : Component, Component.ITriggerListener
 {
    	PlayerController PlayerController;

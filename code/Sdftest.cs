@@ -26,9 +26,9 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property, Category("World Properties")] public float Amplitude { get; set; }
 	public ProcGenUi ProcGenUi { get; set; }
 	[Property] public GameObject PlayerPrefab { get; set; }
-    public delegate Task OnWorldSpawnedDel(Sdftest SDFManager, Sdf3DWorld world);
+    public delegate Task OnWorldSpawnedDel(Sdftest SDFManager);
+	[Property] public GameObject WaterTrigger { get; set; }
 	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
-	[Property, Category("World Properties")] public bool UseFractalPerlinNoise { get; set; } 
 	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanHeight { get; set; } = 1500;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
@@ -87,12 +87,13 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		WaterWorld.GameObject.NetworkSpawn();
 		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
 		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
-		await CreateWorld(World, GetVolume(), Scale, UseFractalPerlinNoise, 0);
-		await OnWorldSpawned?.Invoke(this, World);
+		await CreateWorld(World, GetVolume(), Scale, Random.Shared.Int(0, 10000));
+		WaterTrigger.Transform.Position = new Vector3(WorldSize / 2, WorldSize / 2, 0);
+		await OnWorldSpawned?.Invoke(this);
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
 	}
-public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, bool UseFractal, int seed)
+public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, int seed)
 {
     if (world is null || volume is null || Water is null) return;
 
@@ -104,25 +105,15 @@ public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale,
         for (int j = 0; j < numChunks; j++)
         {
             Vector3 chunkPosition = new Vector3(i * chunkSize, j * chunkSize, 0);
-
-            if (UseFractal)
-            {
-                await world.AddAsync(new FractalPerlinNoise(seed, Vector3.Zero, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight), 4, 0.5f), volume);
-            }
-            else
-            {
-                await world.AddAsync(new PerlinNoiseSdf3D(seed, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight)), volume);
-            }
+            await world.AddAsync(new FractalPerlinNoise(seed, Vector3.Zero, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight), 4, 0.5f), volume);
         }
     }
 
     if (WaterBool())
     {
-        //var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(OceanSize, OceanSize, UseFractalPerlinNoise ? 3000 : 1500));
-        //await WaterWorld.AddAsync(waterSDF, Water);
+        var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(WorldSize, WorldSize, 2500));
+        await WaterWorld.AddAsync(waterSDF, Water);
     }
-
-    Log.Info("Water added to world");
 }
 public async Task AddCube(Sdf3DWorld world, Vector3 pos, Vector3 size, Sdf3DVolume volume)
 {
@@ -166,13 +157,13 @@ public void OnActive( Connection channel )
 
 
 
-public async Task SpawnItem(GameObject gameObject, Sdf3DWorld world, float propbiability, int times, bool Offset = false, bool NetworkSpawn = true)
+public async Task SpawnItem(GameObject gameObject, float propbiability, int times, bool Offset = false, bool NetworkSpawn = true)
 {
     for (int i = 0; i < times; i++)
     {
         if (GetRandom(0, 1) < propbiability)
         {
-            var pos = await GetBounds(world, Offset).ContinueWith(Task => Task.Result);
+            var pos = await GetBounds(Offset).ContinueWith(Task => Task.Result);
             var clone = gameObject.Clone(pos);
 			Log.Info(clone);
 			if (NetworkSpawn)
@@ -182,7 +173,7 @@ public async Task SpawnItem(GameObject gameObject, Sdf3DWorld world, float propb
         }
     }
 }
-public async Task<Vector3> GetBounds(Sdf3DWorld world, bool Offset = false)
+public async Task<Vector3> GetBounds( bool Offset = false)
 {
 	while (true)
 	{
