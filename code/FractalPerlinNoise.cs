@@ -2,7 +2,7 @@ using Sandbox.Utility;
 
 namespace Sandbox.Sdf.Noise
 {
-    public record struct FractalPerlinNoise(int Seed, Vector3 GlobalPosition, Vector3 ChunkPosition, Vector3 SizeOfArea, int Octaves, float Persistence) : ISdf3D
+    public record struct FractalPerlinNoise(int Seed, Vector3 GlobalPosition, Vector3 ChunkPosition, Vector3 SizeOfArea, int Octaves, float Persistence, float amp = 1.5f) : ISdf3D
 {
     public BBox? Bounds => new BBox(ChunkPosition, ChunkPosition + SizeOfArea);
     
@@ -12,7 +12,7 @@ namespace Sandbox.Sdf.Noise
         {
             float total = 0;
             float frequency = 1;
-            float amplitude = 1.5f;
+            float amplitude = amp;
             float maxValue = 0;
             for(int i=0;i<Octaves;i++) {
                 var xNoise = (pos.x * 0.125f * frequency) / 10;

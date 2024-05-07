@@ -86,7 +86,14 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		World.GameObject.NetworkSpawn();
 		WaterWorld.GameObject.NetworkSpawn();
 		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
-		Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
+		if (biomeString != null && biomeString != "")
+		{
+			Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
+		}
+		else
+		{
+			Biome = BiomeType.Grass;
+		}
 		await CreateWorld(World, GetVolume(), Scale, Random.Shared.Int(0, 10000));
 		WaterTrigger.Transform.Position = new Vector3(WorldSize / 2, WorldSize / 2, 0);
 		await OnWorldSpawned?.Invoke(this);

@@ -82,9 +82,9 @@
                 "Id": 62,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "2816,-256"
@@ -94,9 +94,9 @@
                 "Id": 63,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3168,-256"
@@ -106,9 +106,9 @@
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3520,-256"
@@ -118,9 +118,9 @@
                 "Id": 65,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3872,-256"
@@ -140,8 +140,8 @@
                 "Id": 146,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Biome",
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_name": "Biome"
                 },
                 "UserData": {
                   "Position": "1616,208"
@@ -189,9 +189,9 @@
                 "Id": 195,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "2816,80"
@@ -212,9 +212,9 @@
                 "Id": 210,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3168,80"
@@ -224,9 +224,9 @@
                 "Id": 218,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3520,80"
@@ -250,9 +250,9 @@
                 "Id": 231,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3040,368"
@@ -262,9 +262,9 @@
                 "Id": 241,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3424,368"
@@ -298,9 +298,9 @@
                 "Id": 333,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3296,752"
@@ -310,9 +310,9 @@
                 "Id": 362,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3776,368"
@@ -322,9 +322,9 @@
                 "Id": 370,
                 "Type": "call",
                 "Properties": {
-                  "_name": "SpawnItem",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "SpawnItem"
                 },
                 "UserData": {
                   "Position": "3680,752"
@@ -367,9 +367,9 @@
                 "Id": 384,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "4016,752"
@@ -389,9 +389,9 @@
                 "Id": 387,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "4128,368"
@@ -401,9 +401,9 @@
                 "Id": 389,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "3888,80"
@@ -413,9 +413,9 @@
                 "Id": 391,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.Component",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.Component"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "4240,-256"
@@ -470,7 +470,7 @@
                 "DstName": "propbiability"
               },
               {
-                "Value": 1000,
+                "Value": 700,
                 "DstId": 62,
                 "DstName": "times"
               },
@@ -1258,9 +1258,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "WaterBool",
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_name": "WaterBool"
                 },
                 "UserData": {
                   "Position": "464,144"
@@ -1270,9 +1270,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1120,160"
@@ -1694,8 +1694,8 @@
                 "Id": 1,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Wood",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Wood"
                 },
                 "UserData": {
                   "Position": "192,-64"
@@ -1705,9 +1705,9 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Wood",
+                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_kind": "Set"
+                  "_name": "Wood"
                 },
                 "UserData": {
                   "Position": "592,80"
@@ -1724,9 +1724,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "864,80"
@@ -1858,8 +1858,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Stone",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Stone"
                 },
                 "UserData": {
                   "Position": "128,-128"
@@ -1876,8 +1876,8 @@
                 "Id": 12,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Stone",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_name": "Stone"
                 },
                 "UserData": {
                   "Position": "608,-32"
@@ -1887,9 +1887,9 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
                   "_isStatic": false,
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "880,-32"
@@ -2074,25 +2074,25 @@
                 "Type": "input"
               },
               {
-                "Id": 1,
+                "Id": 3,
                 "Type": "scene.get",
                 "Properties": {
                   "T": "package.nolankicks.kickscomponents/RandomItemDrop"
                 },
                 "UserData": {
-                  "Position": "-16,112"
+                  "Position": "0,112"
                 }
               },
               {
-                "Id": 2,
+                "Id": 4,
                 "Type": "call",
                 "Properties": {
-                  "_name": "DropRandomItem",
+                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.kickscomponents/RandomItemDrop"
+                  "_name": "DropRandomItem"
                 },
                 "UserData": {
-                  "Position": "256,0"
+                  "Position": "288,0"
                 }
               }
             ],
@@ -2100,19 +2100,19 @@
               {
                 "SrcId": 0,
                 "SrcName": "_target",
-                "DstId": 1,
+                "DstId": 3,
                 "DstName": "_this"
               },
               {
                 "SrcId": 0,
                 "SrcName": "_signal",
-                "DstId": 2,
+                "DstId": 4,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 1,
+                "SrcId": 3,
                 "SrcName": "_result",
-                "DstId": 2,
+                "DstId": 4,
                 "DstName": "_target"
               }
             ]
@@ -2249,9 +2249,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "512,-0"
@@ -2261,9 +2261,9 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "976,0"
@@ -2273,9 +2273,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "1664,-0"
@@ -2285,9 +2285,9 @@
                 "Id": 38,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "1328,0"
@@ -3546,9 +3546,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "304,0"
@@ -3741,7 +3741,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-06T18:10:09.1689499-04:00",
+  "LastSaved": "2024-05-06T19:10:05.3660619-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
