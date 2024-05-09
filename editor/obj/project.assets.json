@@ -28,7 +28,6 @@
         "dependencies": {
           "Base Library": "1.0.0",
           "kickscomponents": "1.0.0",
-          "libpolygon": "1.0.0",
           "libsdf": "1.0.0",
           "quickswitcher": "1.0.0",
           "shatterglass": "1.0.0",
@@ -52,19 +51,6 @@
         },
         "runtime": {
           "bin/placeholder/kickscomponents.dll": {}
-        }
-      },
-      "libpolygon/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/libpolygon.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/libpolygon.dll": {}
         }
       },
       "libsdf/1.0.0": {
@@ -141,11 +127,6 @@
       "type": "project",
       "path": "../Libraries/nolankicks.kickscomponents/Code/kickscomponents.csproj",
       "msbuildProject": "../Libraries/nolankicks.kickscomponents/Code/kickscomponents.csproj"
-    },
-    "libpolygon/1.0.0": {
-      "type": "project",
-      "path": "../Libraries/facepunch.libpolygon/Code/libpolygon.csproj",
-      "msbuildProject": "../Libraries/facepunch.libpolygon/Code/libpolygon.csproj"
     },
     "libsdf/1.0.0": {
       "type": "project",

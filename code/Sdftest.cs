@@ -31,6 +31,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property, Category("World Properties")] public int WorldSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanSize { get; set; } = 20000;
 	[Property, Category("World Properties")] public int OceanHeight { get; set; } = 1500;
+	[Property, Category("World Properties")] public bool UseUserBiome { get; set; } = true;
 	[Property] public OnWorldSpawnedDel OnWorldSpawned { get; set; }
 	public enum BiomeType
 	{
@@ -86,13 +87,9 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		World.GameObject.NetworkSpawn();
 		WaterWorld.GameObject.NetworkSpawn();
 		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
-		if (biomeString != null && biomeString != "")
+		if (biomeString != null && biomeString != "" && UseUserBiome)
 		{
 			Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
-		}
-		else
-		{
-			Biome = BiomeType.Grass;
 		}
 		await CreateWorld(World, GetVolume(), Scale, Random.Shared.Int(0, 10000));
 		WaterTrigger.Transform.Position = new Vector3(WorldSize / 2, WorldSize / 2, 0);

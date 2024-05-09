@@ -1,0 +1,26 @@
+{
+  "RootObject": {
+    "__guid": "6b00d005-89f6-4c25-8c26-7661ba304888",
+    "Flags": 0,
+    "Name": "subtractor",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "SDFGun",
+        "__guid": "2d96388d-2f3b-4d5c-8fb8-b73fe848acce",
+        "AddBool": true,
+        "sdf3DVolume": "sdfvol/grass.sdfvol",
+        "SphereSize": 100
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
