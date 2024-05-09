@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "6b00d005-89f6-4c25-8c26-7661ba304888",
+    "__guid": "5e8fa140-7c44-4b33-b0ef-a2aa40f3a864",
     "Flags": 0,
     "Name": "subtractor",
     "Enabled": true,
@@ -9,18 +9,41 @@
     "Components": [
       {
         "__type": "SDFGun",
-        "__guid": "2d96388d-2f3b-4d5c-8fb8-b73fe848acce",
+        "__guid": "e108c8ed-e13f-4ef5-b911-535c781ff29e",
         "AddBool": true,
+        "CanAdd": false,
         "sdf3DVolume": "sdfvol/grass.sdfvol",
         "SphereSize": 100
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "05bfb36d-858b-4bf3-b1ad-3f9a884eace1",
+        "Icon": "logo.vtex"
+      },
+      {
+        "__type": "ActionGraphItem",
+        "__guid": "c4a9e1a7-191c-4c0a-af81-40e5ef174921",
+        "InInventory": false
       }
     ],
-    "Children": []
+    "Children": [
+      {
+        "__guid": "297ba720-9c20-48b3-aeef-1fb03b25b1cf",
+        "Flags": 0,
+        "Name": "Viewmodel",
+        "Position": "-168.4456,-6.62192,213.258",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true
+      }
+    ]
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__version": 1,
-  "__references": []
+  "__references": [
+    "sbux.logo"
+  ]
 }

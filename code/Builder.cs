@@ -31,22 +31,6 @@ public sealed class Builder : Component
 		if (CanPlace)
 		{
 			Place();
-			if (Input.Pressed("arrowup"))
-			{
-				offsetY = offsetY + 25;
-			}
-			if (Input.Pressed("arrowdown"))
-			{
-				offsetY = offsetY - 25;
-			}
-			if (Input.Pressed("arrowleft"))
-			{
-				offsetX = offsetX - 25;
-			}
-			if (Input.Pressed("arrowright"))
-			{
-				offsetX = offsetX + 25;
-			}
 			Inventory.DisableAllWeapons();
 			if (Input.Pressed("reload"))
 			{
@@ -70,6 +54,10 @@ public sealed class Builder : Component
 			else
 			{
 				Box = Floor;
+			}
+			if (Input.Down("scroll"))
+			{
+				
 			}
 		}
 	}

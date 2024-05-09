@@ -42,6 +42,7 @@ namespace Sandbox.Sdf.Noise
         writer.Write(SizeOfArea);
         writer.Write(Octaves);
         writer.Write(Persistence);
+		writer.Write(amp);
     }
 
     public static FractalPerlinNoise ReadRaw(ref ByteStream reader, IReadOnlyDictionary<int, SdfReader<ISdf3D>> sdfTypes)

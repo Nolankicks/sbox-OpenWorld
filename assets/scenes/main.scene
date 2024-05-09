@@ -1102,8 +1102,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
-                      "_name": "AddItem"
+                      "_name": "AddItem",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -2709,7 +2709,7 @@
                   "_name": "AddItem"
                 },
                 "UserData": {
-                  "Position": "416,16"
+                  "Position": "1392,-0"
                 }
               },
               {
@@ -2721,7 +2721,7 @@
                   "_name": "AddItem"
                 },
                 "UserData": {
-                  "Position": "656,16"
+                  "Position": "1632,-0"
                 }
               },
               {
@@ -2733,7 +2733,7 @@
                   "_name": "AddItem"
                 },
                 "UserData": {
-                  "Position": "1008,16"
+                  "Position": "1984,-0"
                 }
               },
               {
@@ -2745,7 +2745,19 @@
                   "_name": "AddItem"
                 },
                 "UserData": {
-                  "Position": "400,-32"
+                  "Position": "1056,0"
+                }
+              },
+              {
+                "Id": 40,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "package.nolankicks.dead4left2/Inventory"
+                },
+                "UserData": {
+                  "Position": "400,16"
                 }
               }
             ],
@@ -2840,12 +2852,6 @@
                 "DstName": "Slot"
               },
               {
-                "SrcId": 5,
-                "SrcName": "_signal",
-                "DstId": 27,
-                "DstName": "_signal"
-              },
-              {
                 "VarName": "Inventory",
                 "DstId": 27,
                 "DstName": "_target"
@@ -2857,24 +2863,52 @@
                 },
                 "DstId": 27,
                 "DstName": "item"
+              },
+              {
+                "Value": 0,
+                "DstId": 40,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 40,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Inventory",
+                "DstId": 40,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/canoftuna.prefab"
+                },
+                "DstId": 40,
+                "DstName": "item"
               }
             ],
             "Defaults": {
-              "$30._value": {
+              "$43._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_smg.prefab"
               },
-              "$33._value": {
+              "$46._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_pistol.prefab"
               },
-              "$36._value": {
+              "$49._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_crowbar.prefab"
               },
-              "$39._value": {
+              "$52._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/subtractor.prefab"
+              },
+              "$55._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/canoftuna.prefab"
               }
             }
           },
@@ -8195,6 +8229,22 @@
           "__type": "Sandbox.Sdf.Sdf3DWorld",
           "__guid": "96696296-b2d5-41f7-826e-25003ce164fd"
         }
+      ],
+      "Children": [
+        {
+          "__guid": "41d762cb-d8b7-49a0-9ebe-f801455e5160",
+          "Flags": 0,
+          "Name": "Point",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "MotionPathPoint",
+              "__guid": "be6c9267-0dfd-4351-bf89-8f6e7059d425"
+            }
+          ]
+        }
       ]
     }
   ],
@@ -8221,7 +8271,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-08T21:08:36.2477709-04:00",
+  "LastSaved": "2024-05-09T14:43:11.355426-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

@@ -1,0 +1,38 @@
+{
+  "RootObject": {
+    "__guid": "1ba04f4a-33a4-4314-b19c-5fc0991281af",
+    "Flags": 0,
+    "Name": "placer",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "ItemPlacer",
+        "__guid": "0d74723d-6ad1-4c3c-b1f9-bff53787a54f",
+        "color": "0.43673,0.74958,0.95814,0.41",
+        "ItemToPlace": {
+          "_type": "gameobject",
+          "prefab": "prefabs/light_ammo_pickup.prefab"
+        },
+        "ModelToPlace": "models/sbox_props/tv/tv.vmdl",
+        "Rotation": "0,0,0"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "2a29271a-f350-413a-866b-8569740121cb",
+        "Icon": "logo.vtex"
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.tv",
+    "sbux.logo"
+  ]
+}

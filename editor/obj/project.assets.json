@@ -29,6 +29,7 @@
           "Base Library": "1.0.0",
           "kickscomponents": "1.0.0",
           "libsdf": "1.0.0",
+          "motionpath": "1.0.0",
           "quickswitcher": "1.0.0",
           "shatterglass": "1.0.0",
           "stuffthatisntbuiltin": "1.0.0"
@@ -64,6 +65,19 @@
         },
         "runtime": {
           "bin/placeholder/libsdf.dll": {}
+        }
+      },
+      "motionpath/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/motionpath.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/motionpath.dll": {}
         }
       },
       "quickswitcher/1.0.0": {
@@ -132,6 +146,11 @@
       "type": "project",
       "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
+    },
+    "motionpath/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/facepunch.motionpath/Code/motionpath.csproj",
+      "msbuildProject": "../Libraries/facepunch.motionpath/Code/motionpath.csproj"
     },
     "quickswitcher/1.0.0": {
       "type": "project",

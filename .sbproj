@@ -252,6 +252,12 @@
           "KeyboardCode": "RIGHTARROW",
           "GamepadCode": "None",
           "GroupName": "Other"
+        },
+        {
+          "Name": "scroll",
+          "KeyboardCode": "MOUSE3",
+          "GamepadCode": "None",
+          "GroupName": "Other"
         }
       ],
       "__guid": "c5e4bcd1-44bd-4bf7-89c1-6999d64f568b"
