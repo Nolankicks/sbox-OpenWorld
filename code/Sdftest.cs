@@ -91,16 +91,17 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		{
 			Biome = (BiomeType)Enum.Parse(typeof(BiomeType), biomeString);
 		}
-		await CreateWorld(World, GetVolume(), Scale, Random.Shared.Int(0, 10000));
+		await CreateWorld(World, Random.Shared.Int(0, 10000));
 		WaterTrigger.Transform.Position = new Vector3(WorldSize / 2, WorldSize / 2, 0);
 		await OnWorldSpawned?.Invoke(this);
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
 	}
-public async Task CreateWorld(Sdf3DWorld world, Sdf3DVolume volume, float scale, int seed)
+public async Task CreateWorld(Sdf3DWorld world, int seed)
 {
-    if (world is null || volume is null || Water is null) return;
-
+    if (world is null || Water is null) return;
+	await World.ClearAsync();
+	var volume = GetVolume();
     int chunkSize = 1000; // Define the size of each chunk
     int numChunks = WorldSize / chunkSize; // Calculate the number of chunks
 

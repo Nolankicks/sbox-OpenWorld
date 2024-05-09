@@ -1102,8 +1102,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "608,128"
@@ -2752,9 +2752,9 @@
                 "Id": 40,
                 "Type": "call",
                 "Properties": {
-                  "_name": "AddItem",
+                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_name": "AddItem"
                 },
                 "UserData": {
                   "Position": "400,16"
@@ -8173,7 +8173,7 @@
       "__guid": "deb8b7a3-75f6-4519-83e1-5c7660ee9094",
       "Flags": 0,
       "Name": "Item Test",
-      "Position": "-143,-134,188",
+      "Position": "-143,-134,192",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
@@ -8271,7 +8271,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-09T14:43:11.355426-04:00",
+  "LastSaved": "2024-05-09T18:16:45.2537384-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
