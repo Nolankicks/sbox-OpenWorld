@@ -60,6 +60,11 @@ public sealed class Sdftest : Component, Component.INetworkListener
 				return Grass;
 		}
 	}
+	[RegisterSdfTypes]
+	public static void RegisterSdfTypes()
+	{
+		ISdf3D.RegisterType(FractalPerlinNoise.ReadRaw);
+	}
 	public bool WaterBool()
 	{
 		switch (Biome)
@@ -80,12 +85,17 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	}
 	protected override void OnStart()
 	{
-		_ = TaskBuildWorld();
+		if (Connection.Local == Connection.Host)
+		{
+			World.Network.TakeOwnership();
+			WaterWorld.Network.TakeOwnership();
+			GameObject.Network.TakeOwnership();
+			TaskBuildWorld();
+		}
 	}
-	public async Task TaskBuildWorld()
+	public async void TaskBuildWorld()
 	{
-		World.GameObject.NetworkSpawn();
-		WaterWorld.GameObject.NetworkSpawn();
+		Log.Info("Building World");
 		var biomeString = Sandbox.FileSystem.Data.ReadAllText("biome.txt");
 		if (biomeString != null && biomeString != "" && UseUserBiome)
 		{
@@ -104,13 +114,14 @@ public async Task CreateWorld(Sdf3DWorld world, int seed)
 	var volume = GetVolume();
     int chunkSize = 1000; // Define the size of each chunk
     int numChunks = WorldSize / chunkSize; // Calculate the number of chunks
-
+	await world.AddAsync(new BoxSdf3D(Vector3.Zero, chunkSize), volume);
     for (int i = 0; i < numChunks; i++)
     {
         for (int j = 0; j < numChunks; j++)
         {
             Vector3 chunkPosition = new Vector3(i * chunkSize, j * chunkSize, 0);
             await world.AddAsync(new FractalPerlinNoise(seed, Vector3.Zero, chunkPosition, (Vector3.One * chunkSize).WithZ(WorldHeight), 4, 0.5f), volume);
+			
         }
     }
 
@@ -154,11 +165,15 @@ public void OnActive( Connection channel )
 		var startLocation = Game.Random.FromList( spawns ).Transform.World.WithScale( 1 );
 
 		// Spawn this object and make the client the owner
-		var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
-		player.NetworkSpawn( channel );
+		_ = SpawnPlayer( startLocation, channel );
 	}
 
-
+public async Task SpawnPlayer(Transform transform, Connection connection)
+{
+	await Task.DelayRealtimeSeconds(1);
+	var player = PlayerPrefab.Clone(transform, name: $"Player - {connection.DisplayName}");
+	player.NetworkSpawn(connection);
+}
 
 
 

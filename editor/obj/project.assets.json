@@ -130,8 +130,8 @@
     },
     "libsdf/1.0.0": {
       "type": "project",
-      "path": "../Libraries/sbox-sdf/Code/libsdf.csproj",
-      "msbuildProject": "../Libraries/sbox-sdf/Code/libsdf.csproj"
+      "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
+      "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
     },
     "quickswitcher/1.0.0": {
       "type": "project",

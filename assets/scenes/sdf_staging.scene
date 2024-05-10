@@ -6,7 +6,8 @@
       "Flags": 0,
       "Name": "World",
       "Tags": "sdf",
-      "NetworkMode": 2,
+      "Enabled": true,
+      "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
         {
@@ -21,7 +22,7 @@
       "Name": "Sdf Manager",
       "Position": "-289.0161,-201.3819,340.5177",
       "Enabled": true,
-      "NetworkMode": 2,
+      "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
         {
@@ -423,6 +424,18 @@
                 "UserData": {
                   "Position": "4240,-256"
                 }
+              },
+              {
+                "Id": 476,
+                "Type": "call",
+                "Properties": {
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false,
+                  "_name": "SpawnItem"
+                },
+                "UserData": {
+                  "Position": "1744,0"
+                }
               }
             ],
             "Links": [
@@ -598,12 +611,6 @@
                 "VarName": "SDFManager",
                 "DstId": 146,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 60,
-                "SrcName": "_signal",
-                "DstId": 147,
-                "DstName": "_signal"
               },
               {
                 "SrcId": 146,
@@ -1099,6 +1106,40 @@
                 "VarName": "Proc Gen Ui",
                 "DstId": 391,
                 "DstName": "_target"
+              },
+              {
+                "Value": false,
+                "DstId": 476,
+                "DstName": "NetworkSpawn"
+              },
+              {
+                "SrcId": 60,
+                "SrcName": "_signal",
+                "DstId": 476,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "SDFManager",
+                "DstId": 476,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+                },
+                "DstId": 476,
+                "DstName": "gameObject"
+              },
+              {
+                "Value": 1,
+                "DstId": 476,
+                "DstName": "propbiability"
+              },
+              {
+                "Value": 1,
+                "DstId": 476,
+                "DstName": "times"
               }
             ],
             "Defaults": {
@@ -1153,6 +1194,10 @@
               "$469._value": {
                 "_type": "gameobject",
                 "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
+              },
+              "$482._value": {
+                "_type": "gameobject",
+                "go": "e2c4eb2f-0fb1-44cb-90cd-20ee84ad46dd"
               }
             }
           },
@@ -1184,7 +1229,7 @@
             "component_type": "Sdf3DWorld"
           },
           "WorldHeight": 6000,
-          "WorldSize": 10000
+          "WorldSize": 5000
         }
       ]
     },
@@ -1193,7 +1238,6 @@
       "Flags": 0,
       "Name": "Water Trigger",
       "Tags": "water",
-      "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
@@ -1713,8 +1757,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_kind": "Set",
                   "_name": "Wood"
                 },
                 "UserData": {
@@ -1981,36 +2025,6 @@
       ]
     },
     {
-      "__guid": "dafb40c0-b65c-4729-ade4-4c5d70eab3ef",
-      "Flags": 0,
-      "Name": "Camera",
-      "Position": "-1984,-1024,8800",
-      "Rotation": "-0.09904575,0.2391176,0.3696438,0.8923993",
-      "Tags": "maincamera",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CameraComponent",
-          "__guid": "f6aa8e39-27c7-4451-a1bb-aefda8a2e0a2",
-          "BackgroundColor": "0.33333,0.46275,0.52157,1",
-          "ClearFlags": "All",
-          "FieldOfView": 80,
-          "IsMainCamera": true,
-          "Orthographic": false,
-          "OrthographicHeight": 1204,
-          "Priority": 1,
-          "RenderExcludeTags": "viewmodel",
-          "RenderTags": "",
-          "TargetEye": "None",
-          "Viewport": "0,0,1,1",
-          "ZFar": 10000,
-          "ZNear": 10
-        }
-      ]
-    },
-    {
       "__guid": "104b8c58-858c-4ab5-a542-3c2d22d67ef3",
       "Flags": 0,
       "Name": "2D Skybox",
@@ -2040,6 +2054,36 @@
           "__type": "Sandbox.SpawnPoint",
           "__guid": "e31acb9e-95e3-4aec-a254-db1326340203",
           "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "dafb40c0-b65c-4729-ade4-4c5d70eab3ef",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-1984,-1024,8800",
+      "Rotation": "-0.09904575,0.2391176,0.3696438,0.8923993",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "f6aa8e39-27c7-4451-a1bb-aefda8a2e0a2",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 80,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "viewmodel",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
         }
       ]
     },
@@ -2139,7 +2183,6 @@
       "Flags": 0,
       "Name": "Screen",
       "Position": "7490.988,2610.141,2460.392",
-      "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
@@ -2430,19 +2473,19 @@
               }
             ],
             "Defaults": {
-              "$54._value": {
+              "$41._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_smg.prefab"
               },
-              "$57._value": {
+              "$44._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_pistol.prefab"
               },
-              "$60._value": {
+              "$47._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_fists.prefab"
               },
-              "$63._value": {
+              "$50._value": {
                 "_type": "gameobject",
                 "prefab": "prefabs/weapons/weapon_crowbar.prefab"
               }
@@ -3752,7 +3795,8 @@
       "Flags": 0,
       "Name": "Water World",
       "Tags": "water",
-      "NetworkMode": 2,
+      "Enabled": true,
+      "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
         {
@@ -3846,22 +3890,6 @@
           ]
         }
       ]
-    },
-    {
-      "__guid": "646bb96b-b561-4398-8949-f70016a29bf3",
-      "Flags": 0,
-      "Name": "player",
-      "Position": "2405.086,4907.763,3040.782",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sdfsubtractor",
-          "__guid": "a99fa06e-1aa2-412f-9bf4-4328a8910e50",
-          "SphereSize": 100
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -3887,7 +3915,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-09T18:51:57.4156522-04:00",
+  "LastSaved": "2024-05-09T20:29:45.1081858-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
