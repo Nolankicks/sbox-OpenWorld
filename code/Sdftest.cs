@@ -85,13 +85,17 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	}
 	protected override void OnStart()
 	{
-		if (Connection.Local == Connection.Host)
+		if (Networking.IsHost)
 		{
-			World.Network.TakeOwnership();
-			WaterWorld.Network.TakeOwnership();
-			GameObject.Network.TakeOwnership();
-			TaskBuildWorld();
+			_ = Test();
 		}
+	}
+	public async Task Test()
+	{
+		await World.AddAsync(new BoxSdf3D(Vector3.Zero, new Vector3(WorldSize, WorldSize, WorldHeight)), Grass);
+		await OnWorldSpawned?.Invoke(this);
+		await Task.Delay(1000);
+		GameNetworkSystem.CreateLobby();
 	}
 	public async void TaskBuildWorld()
 	{
@@ -165,15 +169,10 @@ public void OnActive( Connection channel )
 		var startLocation = Game.Random.FromList( spawns ).Transform.World.WithScale( 1 );
 
 		// Spawn this object and make the client the owner
-		_ = SpawnPlayer( startLocation, channel );
+		var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
+		player.NetworkSpawn( channel );
 	}
 
-public async Task SpawnPlayer(Transform transform, Connection connection)
-{
-	await Task.DelayRealtimeSeconds(1);
-	var player = PlayerPrefab.Clone(transform, name: $"Player - {connection.DisplayName}");
-	player.NetworkSpawn(connection);
-}
 
 
 

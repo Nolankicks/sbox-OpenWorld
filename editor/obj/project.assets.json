@@ -29,9 +29,7 @@
           "Base Library": "1.0.0",
           "kickscomponents": "1.0.0",
           "libsdf": "1.0.0",
-          "quickswitcher": "1.0.0",
-          "shatterglass": "1.0.0",
-          "stuffthatisntbuiltin": "1.0.0"
+          "shatterglass": "1.0.0"
         },
         "compile": {
           "bin/placeholder/dead4left2.dll": {}
@@ -66,19 +64,6 @@
           "bin/placeholder/libsdf.dll": {}
         }
       },
-      "quickswitcher/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/quickswitcher.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/quickswitcher.dll": {}
-        }
-      },
       "shatterglass/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -90,19 +75,6 @@
         },
         "runtime": {
           "bin/placeholder/shatterglass.dll": {}
-        }
-      },
-      "stuffthatisntbuiltin/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/stuffthatisntbuiltin.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/stuffthatisntbuiltin.dll": {}
         }
       }
     }
@@ -133,20 +105,10 @@
       "path": "../Libraries/facepunch.libsdf/Code/libsdf.csproj",
       "msbuildProject": "../Libraries/facepunch.libsdf/Code/libsdf.csproj"
     },
-    "quickswitcher/1.0.0": {
-      "type": "project",
-      "path": "../Libraries/nolankicks.quickswitcher/Code/quickswitcher.csproj",
-      "msbuildProject": "../Libraries/nolankicks.quickswitcher/Code/quickswitcher.csproj"
-    },
     "shatterglass/1.0.0": {
       "type": "project",
       "path": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj",
       "msbuildProject": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj"
-    },
-    "stuffthatisntbuiltin/1.0.0": {
-      "type": "project",
-      "path": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj",
-      "msbuildProject": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj"
     }
   },
   "projectFileDependencyGroups": {
