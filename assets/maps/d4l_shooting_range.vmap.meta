@@ -1,11 +1,11 @@
 {
   "publish": {
     "Allowed": true,
-    "Enabled": false,
+    "Enabled": true,
     "ProjectConfig": {
       "Title": "d4l_shooting_range",
       "Type": "map",
-      "Org": "local",
+      "Org": "nolankicks",
       "Ident": "d4l_shooting_range",
       "Tags": null,
       "Schema": 0,

@@ -39,10 +39,11 @@ public sealed class Interactor : Component
 		if (Input.Down("flashlight") && grabbedBody is not null && PhysicsGameObject is not null)
 		{
 			if (grabbedBody is null) return;
-				var targetTx = aimTransform.ToWorld( grabbedOffset );
-				grabbedBody.SmoothMove( targetTx, Time.Delta * 50, Time.Delta );
 				PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 				PhysicsGameObject.Network.TakeOwnership();
+				var targetTx = aimTransform.ToWorld( grabbedOffset );
+				grabbedBody.SmoothMove( targetTx, Time.Delta * 50, Time.Delta );
+
 				return;
 		}
 		else

@@ -295,7 +295,7 @@ public sealed class Inventory : Component
 		}
 		else if (graphItem is not null)
 		{
-			graphItem.DropItem();
+			graphItem.DropItem(this);
 		}
 		else
 		{

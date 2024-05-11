@@ -84,9 +84,7 @@ void Attack()
 	{
 		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 300).WithoutTags("dummy").Run();
 		if (!tr.Hit) return;
-		//Gizmo.Draw.Line(tr.StartPosition, tr.EndPosition);
 		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
-		Log.Info(tr.GameObject);
 		if (tr.Hit && player is not null)
 		{
 			animationHelper.HoldType = CitizenAnimationHelper.HoldTypes.Swing;
@@ -102,8 +100,6 @@ void Attack()
 		while (true)
 		{
 			Attack();
-
-			Log.Info("Attacking");
 			try
 			{
 				await Task.DelaySeconds(1);

@@ -1,0 +1,164 @@
+{
+  "Graph": {
+    "__version": 7,
+    "__guid": "5264c0da-0c2d-487a-bc7a-dbc8703c2501",
+    "UserData": {
+      "Title": "Spawn Decal",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom",
+      "ReferencedComponentTypes": []
+    },
+    "Parameters": {
+      "Inputs": [
+        {
+          "Name": "_in1",
+          "Type": "Sandbox.System/Vector3",
+          "Display": {
+            "Title": "TraceNormal",
+            "Description": "Hit Pos",
+            "Hidden": false
+          },
+          "UsedBy": [
+            "_signal"
+          ]
+        },
+        {
+          "Name": "_in2",
+          "Type": "Sandbox.System/Vector3",
+          "Display": {
+            "Title": "HitPos",
+            "Hidden": false
+          },
+          "UsedBy": [
+            "_signal"
+          ]
+        }
+      ],
+      "DefaultSignals": true
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-592,-96"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "scene.clone",
+        "UserData": {
+          "Position": "224,-160"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "op.add",
+        "UserData": {
+          "Position": "-64,-32"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "-224,48"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "rotation.lookat",
+        "UserData": {
+          "Position": "-0,64"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "op.multiply",
+        "UserData": {
+          "Position": "-192,160"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "position"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "rotation"
+      },
+      {
+        "Value": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal.prefab"
+        },
+        "DstId": 1,
+        "DstName": "target"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in2",
+        "DstId": 2,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in1",
+        "DstId": 3,
+        "DstName": "a"
+      },
+      {
+        "Value": {
+          "$type": "Simple",
+          "Type": "Sandbox.System/Vector3",
+          "Value": "2,2,2"
+        },
+        "DstId": 3,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "forward"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in1",
+        "DstId": 5,
+        "DstName": "a"
+      },
+      {
+        "Value": {
+          "$type": "Simple",
+          "Type": "Sandbox.System/Vector3",
+          "Value": "-1,-1,-1"
+        },
+        "DstId": 5,
+        "DstName": "b"
+      }
+    ]
+  },
+  "__version": 0,
+  "__references": []
+}

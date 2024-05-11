@@ -41,6 +41,15 @@ Hud
 			}
 		}
 	}
+	.crosshair {
+		position: absolute;
+		border-radius: 50%;
+		background-color: white;
+		opacity: 0.3;
+		transition: transform 0.05s ease-in-out;
+		width: 4px;
+		height: 4px;
+	}
 	.hints
 	{
 		position: absolute;

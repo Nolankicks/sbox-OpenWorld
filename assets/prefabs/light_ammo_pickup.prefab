@@ -1,20 +1,22 @@
 {
   "RootObject": {
-    "__guid": "3aa45889-94e9-4d8f-b61e-c98fc2346d07",
+    "__guid": "442864ff-50ac-493e-aa21-cf319fd476d9",
+    "Flags": 0,
     "Name": "light_ammo_pickup",
     "Tags": "ignore",
     "Enabled": true,
     "NetworkMode": 1,
+    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Kicks.PopupUi",
-        "__guid": "317d4abd-931e-4392-a7e2-096746a623b5",
+        "__guid": "a43b6c34-4226-4267-a816-cbd4ad5113f9",
         "Description": "Ammo for the SMG and Pistol",
         "Icon": "models/light_ammo/source/9mmprojectfinal.vmdl.vtex",
         "Name": "Light Ammo",
         "PickUpAction": {
-          "__version": 6,
-          "__guid": "68dbb49e-948f-40f7-938c-a408a73cfb71",
+          "__version": 7,
+          "__guid": "95d71d66-750e-435c-b97a-9300b93786cf",
           "UserData": {
             "Title": "Pick Up Action",
             "ReferencedComponentTypes": []
@@ -29,8 +31,8 @@
               "Id": 2,
               "Type": "call",
               "Properties": {
-                "_name": "AddAmmo",
-                "_isStatic": false
+                "_isStatic": false,
+                "_name": "AddAmmo"
               },
               "UserData": {
                 "Position": "608,-0"
@@ -40,9 +42,9 @@
               "Id": 3,
               "Type": "call",
               "Properties": {
-                "_name": "Destroy",
+                "_type": "Sandbox.Game/Sandbox.GameObject",
                 "_isStatic": false,
-                "_type": "Sandbox.Game/Sandbox.GameObject"
+                "_name": "Destroy"
               },
               "UserData": {
                 "Position": "928,160"
@@ -111,7 +113,7 @@
       },
       {
         "__type": "Sandbox.ModelRenderer",
-        "__guid": "a2a1c139-98d4-47b7-bbb4-be914ad28b1b",
+        "__guid": "7ea2b3c8-bc43-4ebe-ba09-d1624375a813",
         "BodyGroups": 18446744073709551615,
         "Model": "models/light_ammo/source/9mmprojectfinal.vmdl",
         "RenderType": "On",
@@ -119,14 +121,14 @@
       },
       {
         "__type": "Sandbox.ModelCollider",
-        "__guid": "9cb6746a-4244-45aa-8599-f649ecdd7e6a",
+        "__guid": "b5d36d0f-0b24-41ba-935f-ebea69339476",
         "IsTrigger": false,
         "Model": "models/light_ammo/source/9mmprojectfinal.vmdl",
         "Static": false
       },
       {
         "__type": "Sandbox.Rigidbody",
-        "__guid": "0b997ed1-cdf9-4ccf-b80f-3949304384af",
+        "__guid": "6b8ce0ec-0075-4a35-9bba-effc12d2c582",
         "AngularDamping": 0,
         "Gravity": true,
         "LinearDamping": 0,

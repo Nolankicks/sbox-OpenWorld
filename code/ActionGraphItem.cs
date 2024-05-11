@@ -1,5 +1,9 @@
+using System.Diagnostics;
 using Kicks;
 using Sandbox;
+using Sandbox.Network;
+using Sandbox.UI;
+using Sandbox.Utility;
 [Icon("directions_walk")]
 public sealed class ActionGraphItem : Component
 {
@@ -27,50 +31,128 @@ public sealed class ActionGraphItem : Component
 		if (IsProxy) return;
 		if (InInventory)
 		{
+				Use();
 			Object.Enabled = true;
 			DropppedItem.Enabled = false;
-			Use();
+			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
+			if (popupUi is not null)
+			{
+				popupUi.ShowPopUp = false;
+			}
 		}
 		else
 		{
 			Object.Enabled = false;
 			DropppedItem.Enabled = true;
+			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
+			if (popupUi is not null)
+			{
+				popupUi.ShowPopUp = true;
+			}
 		}
 	}
 
-	public void DropItem()
+	public void DropItem(Inventory inventory)
 	{
 		var allObjects = GameObject.GetAllObjects(false);
+		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
+		GameObject.Parent = null;
+		inventory.RemoveItem(GameObject, false);
+		InInventory = false;
+		//Idk if I need to refresh this shit but I will anyway 🤓☝️
+		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 40;
+		Network.Refresh();
+		if (GameNetworkSystem.IsActive)
+		{
 		foreach(var gb in allObjects)
 		{
 			gb.Network.DropOwnership();
 		}
-		GameObject.Parent = null;
-		InInventory = false;
-		Inventory.RemoveItem(GameObject, false);
-		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 200).WithoutTags("player").Run();
-		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 20;
-		Network.Refresh();
+		}
 	}
-	public void PickUp()
+	public void PickUp(Inventory inventory)
 	{
 		var allObjects = GameObject.GetAllObjects(false);
+		if (GameNetworkSystem.IsActive)
+		{
 		foreach(var gb in allObjects)
 		{
 			gb.Network.TakeOwnership();
 		}
+		}
+		
 		GameObject.Parent = PlayerController.GameObject;
 		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
-		Inventory.AddItem(GameObject, Inventory.GetNextSlot(), false);
 		InInventory = true;
+		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
 		Network.Refresh();
+
 	}
 	public void Use()
 	{
-		if (Input.Pressed("attack1"))
+		OnUse?.Invoke(PlayerController, Inventory, AmmoContainer);
+	}
+	[ActionGraphNode("ActionGraphTrace")]
+	public bool ActionGraphTrace(int Damage, float Spread, int TraceLength, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal)
+	{
+		var ray = Game.ActiveScene.Camera.ScreenNormalToRay(0.5f);
+		ray.Forward += Vector3.Random * Spread;
+		var tr = Scene.Trace.Ray(ray, TraceLength).WithoutTags(Steam.SteamId.ToString()).Run();
+		if (tr.Hit)
 		{
-			OnUse?.Invoke(PlayerController, Inventory, AmmoContainer);
+			tr.GameObject.Components.TryGet<EnemyHealthComponent>(out var dummy, FindMode.EverythingInSelfAndParent);
+			tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+			var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
+			hitPos = tr.HitPosition;
+			gameObject = tr.GameObject;
+			traceNormal = tr.Normal;
+			if (dummy is not null)
+			{
+				dummy.Hurt(Damage, GameObject.Parent.Id);
+			}
+			else if (player is not null)
+			{
+				player.TakeDamage(Damage, false);
+			}
+			if (damageTaker is not null)
+			{
+				damageTaker.TakeDamage(Damage, GameObject.Parent.Id);
+			}
+
+			if (tr.Surface is null)
+			{
+				Log.Info("Surface is null");
+			}
+			else
+			{
+				var surfaceSound = tr.Surface.PlayCollisionSound(tr.HitPosition);
+				if (surfaceSound is null)
+				{
+					Log.Info("surfaceSound is null");
+				}
+				else
+				{
+					surfaceSound.Volume = 1;
+				}
+			}
+			if (tr.Body is not null)
+			{
+				tr.Body.ApplyImpulseAt(tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp(0, 200));
+			}
+			var damage = new DamageInfo(Damage, GameObject, GameObject, tr.Hitbox);
+			damage.Position = tr.HitPosition;
+			damage.Shape = tr.Shape;
+			foreach (var damageAble in tr.GameObject.Components.GetAll<IDamageable>())
+			{
+				damageAble.OnDamage(damage);
+			}
 		}
+		else
+		{
+			gameObject = null;
+			hitPos = Vector3.Zero;
+			traceNormal = Vector3.Zero;
+		}
+		return tr.Hit;
 	}
-	}
+}

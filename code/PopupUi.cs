@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Sandbox;
 namespace Kicks;
-
+[Title("Action Graph Popup")]
 public sealed class PopupUi : Component
 {
 	[Property] public string Name { get; set; }
