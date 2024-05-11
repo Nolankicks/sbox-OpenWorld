@@ -1,6 +1,7 @@
 using System;
 using Sandbox;
 using Sandbox.Citizen;
+using Sandbox.Network;
 using Sandbox.UI;
 using Sandbox.Utility;
 namespace Kicks;
@@ -176,7 +177,43 @@ public sealed class Weapon : Component
 		}
 	}
 
+	public void DropItem(Inventory inventory)
+	{
+		var allObjects = GameObject.GetAllObjects(false);
+		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
+		GameObject.Parent = null;
+		inventory.RemoveItem(GameObject, false);
+		IsWeapon = false;
+		//Idk if I need to refresh this shit but I will anyway 🤓☝️
+		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 40;
+		Network.Refresh();
+		if (GameNetworkSystem.IsActive)
+		{
+		foreach(var gb in allObjects)
+		{
+			gb.Network.DropOwnership();
+		}
+		}
+	}
 
+	public void PickUp(Inventory inventory)
+	{
+		var allObjects = GameObject.GetAllObjects(false);
+		if (GameNetworkSystem.IsActive)
+		{
+		foreach(var gb in allObjects)
+		{
+			gb.Network.TakeOwnership();
+		}
+		}
+		
+		GameObject.Parent = PlayerController.GameObject;
+		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
+		IsWeapon = true;
+		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
+		Network.Refresh();
+
+	}
 	void UpdateWorldModelShadowType()
 	{
 		if (WorldModelInstance is null) return;

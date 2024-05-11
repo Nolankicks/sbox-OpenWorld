@@ -43,7 +43,7 @@ public sealed class ActionGraphItem : Component
 		var allObjects = GameObject.GetAllObjects(false);
 		foreach(var gb in allObjects)
 		{
-			gb.Network.TakeOwnership();
+			gb.Network.DropOwnership();
 		}
 		GameObject.Parent = null;
 		InInventory = false;

@@ -1,0 +1,69 @@
+PauseMenu
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.7);
+	flex-direction: column;
+	pointer-events: all;
+	transition: opacity 0.2s ease;
+	z-index: 10000000;
+
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	.header
+	{
+		color: white;
+		position: absolute;
+		font-size: 100px;
+		font-family: poppins;
+		font-weight: bolder;
+		top: 100px;
+	}
+
+	.button
+	{
+		width: 300px;
+		height: 100px;
+		align-items: center;
+		justify-content: center;
+		background-color: gray;
+		border-radius: 12px;
+		font-weight: bold;
+		font-family: poppins;
+		transition: all 0.1s ease;
+		
+		&:hover
+		{
+			transform: scale(1.1);
+			sound-in: ui.button.over;
+		}
+
+		&:active
+		{
+			transform: scale(0.9);
+			sound-in: ui.button.press;
+		}
+	}
+
+	.buttonholder
+	{
+		width: 500px;
+		height: 100%;
+		flex-direction: column;
+		gap: 32px;
+		align-items: center;
+		justify-content: center;
+		font-size: 42px;
+	}
+}

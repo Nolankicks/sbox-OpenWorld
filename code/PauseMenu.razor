@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root style="opacity: @(ShowUi ? 1 : 0);">
+	<div class="header">PAUSED</div>
+	<div class="buttonholder">
+		<div class="button">RESUME</div>
+		<div class="button" style="font-size: 32px;" onclick=@(() => Game.ActiveScene.LoadFromFile("scenes/menuscene.scene"))>RETURN TO MENU</div>
+		</div>
+		<div class="button" style="position: absolute; bottom: 32px; left: 32px; font-size: 64px;" onclick=@( () => Game.Close())>QUIT</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	[Property] private bool ShowUi { get; set; } = false;
+
+	protected override void OnUpdate()
+	{
+		if (IsProxy) return;
+		if (Input.EscapePressed)
+		{
+			ShowUi = !ShowUi;
+		}
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( ShowUi );
+}

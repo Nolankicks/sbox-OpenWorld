@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": true,
+    "ProjectConfig": {
+      "Title": "Shelf",
+      "Type": "model",
+      "Org": "nolankicks",
+      "Ident": "shelf",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "Metadata": {
+        "SingleAssetSource": "models/shelf.vmdl"
+      }
+    }
+  }
+}

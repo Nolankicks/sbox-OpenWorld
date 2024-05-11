@@ -87,15 +87,8 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	{
 		if (Networking.IsHost)
 		{
-			_ = Test();
+			TaskBuildWorld();
 		}
-	}
-	public async Task Test()
-	{
-		await World.AddAsync(new BoxSdf3D(Vector3.Zero, new Vector3(WorldSize, WorldSize, WorldHeight)), Grass);
-		await OnWorldSpawned?.Invoke(this);
-		await Task.Delay(1000);
-		GameNetworkSystem.CreateLobby();
 	}
 	public async void TaskBuildWorld()
 	{
@@ -110,6 +103,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		await OnWorldSpawned?.Invoke(this);
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
+		Log.Info("World Built");
 	}
 public async Task CreateWorld(Sdf3DWorld world, int seed)
 {

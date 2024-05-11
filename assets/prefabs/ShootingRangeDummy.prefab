@@ -1,0 +1,362 @@
+{
+  "RootObject": {
+    "__guid": "e8dfa98d-839b-4c8e-8ed4-67f9491a176b",
+    "Flags": 0,
+    "Name": "shootingrangedummy",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SkinnedModelRenderer",
+        "__guid": "46a6d63f-de7f-4fc7-a1bb-185ec01bbe58",
+        "BodyGroups": 21,
+        "BoneMergeTarget": {
+          "_type": "component",
+          "component_id": "f8681281-04e5-4b74-8037-98949b2e8b97",
+          "go": "be63dae3-0bcf-4497-a1dc-40c5d22a7d4d",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "CreateBoneObjects": false,
+        "Model": "models/humans/heads/frank/frank.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Kicks.EnemyHealthComponent",
+        "__guid": "330b7f79-396e-4aaf-af61-15ab9cc8ce45",
+        "health": 100,
+        "OnDeath": {
+          "__version": 7,
+          "__guid": "24185723-f496-423c-8380-6e4434a81d13",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": [
+              "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 14,
+              "Type": "input",
+              "UserData": {
+                "Position": "336,32"
+              }
+            },
+            {
+              "Id": 15,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "192,256"
+              }
+            },
+            {
+              "Id": 16,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Position": "464,160"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameTransform",
+                "_name": "Rotation"
+              },
+              "UserData": {
+                "Position": "496,256"
+              }
+            },
+            {
+              "Id": 18,
+              "Type": "time.delay",
+              "UserData": {
+                "Position": "1120,32"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "336,416"
+              }
+            },
+            {
+              "Id": 21,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "1376,32"
+              }
+            },
+            {
+              "Id": 22,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Destroy",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "1904,16"
+              }
+            },
+            {
+              "Id": 26,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.Game/Sandbox.Component",
+                "_name": "Destroy",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "640,32"
+              }
+            },
+            {
+              "Id": 32,
+              "Type": "call",
+              "Properties": {
+                "_type": "package.nolankicks.dead4left2/Inventory",
+                "_name": "ActionGraphNetworkSpawn",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "1616,-80"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 14,
+              "SrcName": "_target",
+              "DstId": 15,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 16,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 15,
+              "SrcName": "_result",
+              "DstId": 17,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 26,
+              "SrcName": "_signal",
+              "DstId": 18,
+              "DstName": "_signal"
+            },
+            {
+              "Value": 1,
+              "DstId": 18,
+              "DstName": "seconds"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_target",
+              "DstId": 19,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 18,
+              "SrcName": "_signal",
+              "DstId": 21,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 16,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 21,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/shootingrangedummy.prefab"
+              },
+              "DstId": 21,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 32,
+              "SrcName": "_signal",
+              "DstId": 22,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_target",
+              "DstId": 22,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "_signal",
+              "DstId": 26,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "_result",
+              "DstId": 26,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_signal",
+              "DstId": 32,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 14,
+              "SrcName": "inventory",
+              "DstId": 32,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 21,
+              "SrcName": "_result",
+              "DstId": 32,
+              "DstName": "gameObject"
+            }
+          ],
+          "Defaults": {
+            "$28._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/shootingrangedummy.prefab"
+            }
+          }
+        }
+      },
+      {
+        "__type": "Sandbox.CapsuleCollider",
+        "__guid": "d4641dad-927c-487e-9259-4071edae7d90",
+        "End": "0,0,54.2002",
+        "IsTrigger": false,
+        "Radius": 25,
+        "Start": "0,0,0",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "be63dae3-0bcf-4497-a1dc-40c5d22a7d4d",
+        "Flags": 0,
+        "Name": "body",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "f8681281-04e5-4b74-8037-98949b2e8b97",
+            "BodyGroups": 2193,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "skin1",
+            "Model": "models/humans/male.vmdl",
+            "OnComponentStart": {
+              "__version": 7,
+              "__guid": "bfa5b026-b9a4-4094-97dd-c98579a783af",
+              "UserData": {
+                "Title": "On Component Start",
+                "ReferencedComponentTypes": [
+                  "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                ]
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "scene.get",
+                  "Properties": {
+                    "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  },
+                  "UserData": {
+                    "Position": "-64,160"
+                  }
+                },
+                {
+                  "Id": 2,
+                  "Type": "call",
+                  "Properties": {
+                    "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                    "_name": "Set",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "304,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 1,
+                  "DstName": "_this"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 2,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 2,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": "b_long_idle",
+                  "DstId": 2,
+                  "DstName": "v"
+                },
+                {
+                  "Value": true,
+                  "DstId": 2,
+                  "DstName": "value"
+                }
+              ]
+            },
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

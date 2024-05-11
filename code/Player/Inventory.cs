@@ -237,22 +237,7 @@ public sealed class Inventory : Component
 			tr.GameObject.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
 			if (item is not null && icon is not null)
 			{
-				//Add Ownership, yay
-				item.GameObject.Network.TakeOwnership();
-				item.GameObject.Network.TakeOwnership();
-				item.ViewModelCamera.Network.TakeOwnership();
-				item.ViewModelGun.GameObject.Network.TakeOwnership();
-				item.Arms.Network.TakeOwnership();
-				item.ViewModelHolder.Network.TakeOwnership();
-				item.GameObject.Transform.Rotation = Rotation.Identity;
-				var slot = Items.FindIndex(x => x is null);
-				AddItem(item.GameObject, slot, false);
-				AddTexture(icon.Icon, slot);
-				item.GameObject.Parent = GameObject;
-				item.IsWeapon = true;
-				item.GameObject.Transform.Position = Transform.Position;
-				//Idk if I need to refresh this shit but I will anyway 🤓☝️
-				Network.Refresh();
+				item.PickUp(this);
 			}
 			else if (shotgun is not null && icon is not null)
 			{
@@ -290,21 +275,7 @@ public sealed class Inventory : Component
 		item.Components.TryGet<ActionGraphItem>(out var graphItem, FindMode.EverythingInSelfAndParent);
 		if (weapon is not null && icon is not null)
 		{
-		//God I hate this, i'm too dumb for the foreach shit
-		weapon.GameObject.Parent = null;
-		weapon.IsWeapon = false;
-		weapon.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
-		weapon.GameObject.Network.DropOwnership();
-		weapon.GameObject.Network.DropOwnership();
-		weapon.ViewModelCamera.Network.DropOwnership();
-		weapon.ViewModelGun.GameObject.Network.DropOwnership();
-		weapon.Arms.Network.DropOwnership();
-		weapon.ViewModelHolder.Network.DropOwnership();
-
-		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		Network.Refresh();
-
+			weapon.DropItem(this);
 		}
 		else if (shotgun is not null && icon is not null)
 		{
@@ -371,11 +342,9 @@ public sealed class Inventory : Component
 
 }
 
+	public void ActionGraphNetworkSpawn( GameObject gameObject )
+	{
+		gameObject.NetworkSpawn(null);
+	}
 
-	/*
-  
-    else
-    {
-        Log.Error("Weapon not found");
-    }*/
 }

@@ -28,6 +28,7 @@ else
 	protected override void OnUpdate()
 	{
 		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		if (IsProxy) return;
 		ShowUi = Input.Down("score");
 	}
 

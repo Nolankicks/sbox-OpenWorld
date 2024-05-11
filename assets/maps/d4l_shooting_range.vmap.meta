@@ -1,0 +1,26 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "d4l_shooting_range",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "d4l_shooting_range",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.wood_trim_polished_blend_01#43518",
+        "facepunch.metal_trim_01#43480",
+        "nolankicks.donut#45408",
+        "nolankicks.shrine#45407",
+        "facepunch.glass_a#19946"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/d4l_shooting_range.vmap"
+      }
+    }
+  }
+}

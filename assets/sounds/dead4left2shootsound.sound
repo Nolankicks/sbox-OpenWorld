@@ -2,7 +2,7 @@
   "UI": false,
   "Volume": "1.00,1.00,0",
   "Pitch": "1.00,1.00,0",
-  "Decibels": 70,
+  "Decibels": 100,
   "SelectionMode": "Random",
   "Sounds": [
     "sounds/toolgun/toolgun-attack-002.vsnd",
@@ -10,12 +10,10 @@
     "sounds/toolgun/toolgun-attack-003.vsnd"
   ],
   "Occlusion": true,
-  "Reflections": true,
   "AirAbsorption": true,
   "Transmission": true,
   "OcclusionRadius": 64,
   "DistanceAttenuation": true,
-  "ResourceVersion": 0,
   "__version": 0,
   "__references": [
     "mdlresrc.toolgunshoot"

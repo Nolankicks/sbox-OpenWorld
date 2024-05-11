@@ -4,7 +4,7 @@ public sealed class Interactor : Component
 {
 	PhysicsBody grabbedBody;
 	Transform grabbedOffset;
-	GameObject PhysicsGameObject;
+	[Property] GameObject PhysicsGameObject;
 	public bool IsGrabbing => grabbedBody is not null;
 	public PlayerController PlayerController;
 
@@ -14,6 +14,7 @@ public sealed class Interactor : Component
 	}
 	protected override void OnUpdate()
 	{
+		if (IsProxy) return;
 		PlayerController.IsGrabbing = IsGrabbing;
 		Transform aimTransform = Scene.Camera.Transform.World;
 		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
@@ -46,10 +47,10 @@ public sealed class Interactor : Component
 		}
 		else
 		{
+			if (grabbedBody is null) return;
 			PhysicsGameObject.Network.DropOwnership();
 			grabbedBody = null;
 			PhysicsGameObject = null;
 		}
 	}
-
 }
