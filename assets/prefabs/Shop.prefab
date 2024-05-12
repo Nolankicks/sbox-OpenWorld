@@ -3,6 +3,7 @@
     "__guid": "78396649-9686-43e6-b5c8-66376323b3f8",
     "Flags": 0,
     "Name": "shop",
+    "Position": "0,0,4",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkInterpolation": true,

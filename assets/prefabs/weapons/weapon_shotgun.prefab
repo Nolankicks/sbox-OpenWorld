@@ -46,89 +46,89 @@
           ],
           "Nodes": [
             {
-              "Id": 306,
+              "Id": 507,
               "Type": "input",
               "UserData": {
-                "Position": "-1136,576"
+                "Position": "-304,1008"
               }
             },
             {
-              "Id": 307,
+              "Id": 508,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "400,688"
+                "Position": "1232,1120"
               }
             },
             {
-              "Id": 308,
+              "Id": 509,
               "Type": "forrange",
               "UserData": {
-                "Position": "1024,544"
+                "Position": "1856,976"
               }
             },
             {
-              "Id": 309,
+              "Id": 510,
               "Type": "if",
               "UserData": {
-                "Position": "736,560"
+                "Position": "1568,992"
               }
             },
             {
-              "Id": 310,
+              "Id": 511,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "1744,496"
+                "Position": "2576,928"
               }
             },
             {
-              "Id": 311,
+              "Id": 512,
               "Type": "var",
               "Properties": {
                 "_var": "Action Graph Item"
               },
               "UserData": {
-                "Position": "-208,576"
+                "Position": "624,1008"
               }
             },
             {
-              "Id": 312,
+              "Id": 513,
               "Type": "graph",
               "Properties": {
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "2464,656"
+                "Position": "3296,1088"
               }
             },
             {
-              "Id": 313,
+              "Id": 514,
               "Type": "if",
               "UserData": {
-                "Position": "2224,528"
+                "Position": "3056,960"
               }
             },
             {
-              "Id": 315,
+              "Id": 515,
               "Type": "scene.get",
               "Properties": {
                 "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "-704,816"
+                "Position": "128,1248"
               }
             },
             {
-              "Id": 316,
+              "Id": 516,
               "Type": "var",
               "Properties": {
                 "_var": "Gun"
               },
               "UserData": {
-                "Position": "-416,576"
+                "Position": "416,1008"
               }
             },
             {
-              "Id": 317,
+              "Id": 517,
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
@@ -136,42 +136,42 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "2192,352"
+                "Position": "3024,784"
               }
             },
             {
-              "Id": 318,
+              "Id": 518,
               "Type": "var",
               "Properties": {
                 "_var": "Ammo"
               },
               "UserData": {
-                "Position": "-896,576"
+                "Position": "-64,1008"
               }
             },
             {
-              "Id": 319,
+              "Id": 519,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "-192,176"
+                "Position": "640,608"
               }
             },
             {
-              "Id": 320,
+              "Id": 520,
               "Type": "if",
               "UserData": {
-                "Position": "64,176"
+                "Position": "896,608"
               }
             },
             {
-              "Id": 321,
+              "Id": 521,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "320,128"
+                "Position": "1152,560"
               }
             },
             {
-              "Id": 322,
+              "Id": 522,
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
@@ -179,87 +179,75 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "704,128"
+                "Position": "1536,560"
               }
             },
             {
-              "Id": 323,
+              "Id": 523,
               "Type": "property",
               "Properties": {
-                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
-                "_name": "Ammo"
+                "_name": "Ammo",
+                "_type": "package.nolankicks.dead4left2/ActionGraphItem"
               },
               "UserData": {
-                "Position": "1120,272"
+                "Position": "1952,704"
               }
             },
             {
-              "Id": 324,
+              "Id": 524,
               "Type": "if",
               "UserData": {
-                "Position": "1936,336"
+                "Position": "2656,704"
               }
             },
             {
-              "Id": 325,
+              "Id": 525,
               "Type": "op.greaterthan",
               "UserData": {
-                "Position": "1504,256"
+                "Position": "2336,688"
               }
             },
             {
-              "Id": 326,
+              "Id": 526,
               "Type": "if",
               "UserData": {
-                "Position": "1408,672"
+                "Position": "2240,1104"
               }
             },
             {
-              "Id": 327,
+              "Id": 527,
               "Type": "op.equal",
               "UserData": {
-                "Position": "1200,848"
+                "Position": "2032,1280"
               }
             },
             {
-              "Id": 328,
+              "Id": 528,
               "Type": "time.delay",
               "UserData": {
-                "Position": "1952,960"
+                "Position": "2784,1392"
               }
             },
             {
-              "Id": 329,
+              "Id": 529,
               "Type": "op.and",
               "UserData": {
-                "Position": "592,704"
+                "Position": "1424,1136"
               }
             },
             {
-              "Id": 330,
+              "Id": 530,
               "Type": "property",
               "Properties": {
                 "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "272,800"
+                "Position": "1104,1232"
               }
             },
             {
-              "Id": 331,
-              "Type": "property",
-              "Properties": {
-                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
-                "_kind": "Set",
-                "_name": "Able"
-              },
-              "UserData": {
-                "Position": "1648,880"
-              }
-            },
-            {
-              "Id": 332,
+              "Id": 531,
               "Type": "property",
               "Properties": {
                 "_type": "package.nolankicks.dead4left2/ActionGraphItem",
@@ -267,11 +255,23 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "2160,1008"
+                "Position": "2480,1312"
               }
             },
             {
-              "Id": 363,
+              "Id": 532,
+              "Type": "property",
+              "Properties": {
+                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
+                "_kind": "Set",
+                "_name": "Able"
+              },
+              "UserData": {
+                "Position": "2992,1440"
+              }
+            },
+            {
+              "Id": 564,
               "Type": "scene.ref",
               "Properties": {
                 "gameobject": {
@@ -280,357 +280,357 @@
                 }
               },
               "UserData": {
-                "Position": "-928,816"
+                "Position": "-96,1248"
               }
             }
           ],
           "Links": [
             {
               "Value": "attack1",
-              "DstId": 307,
+              "DstId": 508,
               "DstName": "action"
             },
             {
-              "SrcId": 309,
+              "SrcId": 510,
               "SrcName": "true",
-              "DstId": 308,
+              "DstId": 509,
               "DstName": "_signal"
             },
             {
               "Value": 5,
-              "DstId": 308,
+              "DstId": 509,
               "DstName": "count"
             },
             {
-              "SrcId": 311,
+              "SrcId": 512,
               "SrcName": "_signal",
-              "DstId": 309,
+              "DstId": 510,
               "DstName": "_signal"
             },
             {
-              "SrcId": 329,
+              "SrcId": 529,
               "SrcName": "_result",
-              "DstId": 309,
+              "DstId": 510,
               "DstName": "condition"
             },
             {
               "Value": 10,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "Damage"
             },
             {
               "Value": 1,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "FireRate"
             },
             {
               "Value": 1,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "Recoil"
             },
             {
               "Value": false,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "RefreshTimeSince"
             },
             {
               "Value": 0.05,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "Spread"
             },
             {
               "Value": 1000,
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "TraceLength"
             },
             {
-              "SrcId": 326,
+              "SrcId": 526,
               "SrcName": "false",
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "_signal"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 310,
+              "DstId": 511,
               "DstName": "_target"
             },
             {
-              "SrcId": 316,
+              "SrcId": 516,
               "SrcName": "_signal",
-              "DstId": 311,
+              "DstId": 512,
               "DstName": "_signal"
             },
             {
-              "SrcId": 306,
+              "SrcId": 507,
               "SrcName": "actionGraphItem",
-              "DstId": 311,
+              "DstId": 512,
               "DstName": "_value"
             },
             {
-              "SrcId": 310,
+              "SrcId": 511,
               "SrcName": "traceNormal",
-              "DstId": 312,
+              "DstId": 513,
               "DstName": "_in1"
             },
             {
-              "SrcId": 310,
+              "SrcId": 511,
               "SrcName": "hitPos",
-              "DstId": 312,
+              "DstId": 513,
               "DstName": "_in2"
             },
             {
-              "SrcId": 313,
+              "SrcId": 514,
               "SrcName": "true",
-              "DstId": 312,
+              "DstId": 513,
               "DstName": "_signal"
             },
             {
-              "SrcId": 306,
+              "SrcId": 507,
               "SrcName": "_target",
-              "DstId": 312,
+              "DstId": 513,
               "DstName": "_target"
             },
             {
-              "SrcId": 310,
+              "SrcId": 511,
               "SrcName": "_signal",
-              "DstId": 313,
+              "DstId": 514,
               "DstName": "_signal"
             },
             {
-              "SrcId": 310,
+              "SrcId": 511,
               "SrcName": "_result",
-              "DstId": 313,
+              "DstId": 514,
               "DstName": "condition"
             },
             {
-              "SrcId": 363,
+              "SrcId": 564,
               "SrcName": "_result",
-              "DstId": 315,
+              "DstId": 515,
               "DstName": "_this"
             },
             {
-              "SrcId": 318,
+              "SrcId": 518,
               "SrcName": "_signal",
-              "DstId": 316,
+              "DstId": 516,
               "DstName": "_signal"
             },
             {
-              "SrcId": 315,
+              "SrcId": 515,
               "SrcName": "_result",
-              "DstId": 316,
+              "DstId": 516,
               "DstName": "_value"
             },
             {
-              "SrcId": 324,
+              "SrcId": 524,
               "SrcName": "true",
-              "DstId": 317,
+              "DstId": 517,
               "DstName": "_signal"
             },
             {
               "VarName": "Gun",
-              "DstId": 317,
+              "DstId": 517,
               "DstName": "_target"
             },
             {
               "Value": "b_attack",
-              "DstId": 317,
+              "DstId": 517,
               "DstName": "v"
             },
             {
               "Value": true,
-              "DstId": 317,
+              "DstId": 517,
               "DstName": "value"
             },
             {
-              "SrcId": 306,
+              "SrcId": 507,
               "SrcName": "_signal",
-              "DstId": 318,
+              "DstId": 518,
               "DstName": "_signal"
             },
             {
-              "SrcId": 306,
+              "SrcId": 507,
               "SrcName": "ammoContainer",
-              "DstId": 318,
+              "DstId": 518,
               "DstName": "_value"
             },
             {
               "Value": "reload",
-              "DstId": 319,
+              "DstId": 519,
               "DstName": "action"
             },
             {
-              "SrcId": 311,
+              "SrcId": 512,
               "SrcName": "_signal",
-              "DstId": 320,
+              "DstId": 520,
               "DstName": "_signal"
             },
             {
-              "SrcId": 319,
+              "SrcId": 519,
               "SrcName": "_result",
-              "DstId": 320,
+              "DstId": 520,
               "DstName": "condition"
             },
             {
               "Value": 12,
-              "DstId": 321,
+              "DstId": 521,
               "DstName": "StartingAmmo"
             },
             {
-              "SrcId": 320,
+              "SrcId": 520,
               "SrcName": "true",
-              "DstId": 321,
+              "DstId": 521,
               "DstName": "_signal"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 321,
+              "DstId": 521,
               "DstName": "_target"
             },
             {
               "VarName": "Ammo",
-              "DstId": 321,
+              "DstId": 521,
               "DstName": "ammoContainer"
             },
             {
               "Value": "ShotgunShells",
-              "DstId": 321,
+              "DstId": 521,
               "DstName": "ammoType"
             },
             {
-              "SrcId": 321,
+              "SrcId": 521,
               "SrcName": "_signal",
-              "DstId": 322,
+              "DstId": 522,
               "DstName": "_signal"
             },
             {
               "VarName": "Gun",
-              "DstId": 322,
+              "DstId": 522,
               "DstName": "_target"
             },
             {
               "Value": "b_reload",
-              "DstId": 322,
+              "DstId": 522,
               "DstName": "v"
             },
             {
               "Value": true,
-              "DstId": 322,
+              "DstId": 522,
               "DstName": "value"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 323,
+              "DstId": 523,
               "DstName": "_target"
             },
             {
-              "SrcId": 326,
-              "SrcName": "_signal",
-              "DstId": 324,
+              "SrcId": 526,
+              "SrcName": "true",
+              "DstId": 524,
               "DstName": "_signal"
             },
             {
-              "SrcId": 325,
+              "SrcId": 525,
               "SrcName": "_result",
-              "DstId": 324,
+              "DstId": 524,
               "DstName": "condition"
             },
             {
-              "Value": 0,
-              "DstId": 325,
+              "SrcId": 523,
+              "SrcName": "_result",
+              "DstId": 525,
               "DstName": "a"
             },
             {
-              "SrcId": 323,
-              "SrcName": "_result",
-              "DstId": 325,
+              "Value": 0,
+              "DstId": 525,
               "DstName": "b"
             },
             {
-              "SrcId": 308,
+              "SrcId": 509,
               "SrcName": "body",
-              "DstId": 326,
+              "DstId": 526,
               "DstName": "_signal"
             },
             {
-              "SrcId": 327,
+              "SrcId": 527,
               "SrcName": "_result",
-              "DstId": 326,
+              "DstId": 526,
               "DstName": "condition"
             },
             {
-              "SrcId": 308,
+              "SrcId": 509,
               "SrcName": "body.value",
-              "DstId": 327,
+              "DstId": 527,
               "DstName": "a"
             },
             {
               "Value": 4,
-              "DstId": 327,
+              "DstId": 527,
               "DstName": "b"
             },
             {
-              "SrcId": 331,
+              "SrcId": 531,
               "SrcName": "_signal",
-              "DstId": 328,
+              "DstId": 528,
               "DstName": "_signal"
             },
             {
               "Value": 1.5,
-              "DstId": 328,
+              "DstId": 528,
               "DstName": "seconds"
             },
             {
-              "SrcId": 307,
+              "SrcId": 508,
               "SrcName": "_result",
-              "DstId": 329,
+              "DstId": 529,
               "DstName": "a"
             },
             {
-              "SrcId": 330,
+              "SrcId": 530,
               "SrcName": "_result",
-              "DstId": 329,
+              "DstId": 529,
               "DstName": "b"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 330,
+              "DstId": 530,
               "DstName": "_target"
             },
             {
-              "SrcId": 326,
+              "SrcId": 526,
               "SrcName": "true",
-              "DstId": 331,
+              "DstId": 531,
               "DstName": "_signal"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 331,
+              "DstId": 531,
               "DstName": "_target"
             },
             {
               "Value": false,
-              "DstId": 331,
+              "DstId": 531,
               "DstName": "_value"
             },
             {
-              "SrcId": 328,
+              "SrcId": 528,
               "SrcName": "_signal",
-              "DstId": 332,
+              "DstId": 532,
               "DstName": "_signal"
             },
             {
               "VarName": "Action Graph Item",
-              "DstId": 332,
+              "DstId": 532,
               "DstName": "_target"
             },
             {
               "Value": true,
-              "DstId": 332,
+              "DstId": 532,
               "DstName": "_value"
             }
           ],
           "Defaults": {
-            "$363.gameobject": {
+            "$564.gameobject": {
               "_type": "gameobject",
               "go": "c49164dc-4f42-41df-b26c-b7c652dbdfe4"
             }

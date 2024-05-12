@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "e8dfa98d-839b-4c8e-8ed4-67f9491a176b",
+    "__guid": "08eb373e-7e19-4694-88c2-d7bb8564814e",
     "Flags": 0,
     "Name": "shootingrangedummy",
     "Enabled": true,
@@ -9,11 +9,11 @@
     "Components": [
       {
         "__type": "Kicks.EnemyHealthComponent",
-        "__guid": "330b7f79-396e-4aaf-af61-15ab9cc8ce45",
+        "__guid": "c6d91e07-653a-41e4-83a5-9ecee2d5fe5c",
         "health": 100,
         "OnDeath": {
           "__version": 7,
-          "__guid": "24185723-f496-423c-8380-6e4434a81d13",
+          "__guid": "a5a91541-f876-4b49-ad2e-cc621c8a9a52",
           "UserData": {
             "Title": "On Death",
             "ReferencedComponentTypes": [
@@ -118,7 +118,7 @@
               "Properties": {
                 "gameobject": {
                   "_type": "gameobject",
-                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517"
+                  "go": "f2dec132-ff32-4092-b111-bbaddd814063"
                 }
               },
               "UserData": {
@@ -244,7 +244,7 @@
           "Defaults": {
             "$36.gameobject": {
               "_type": "gameobject",
-              "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517"
+              "go": "f2dec132-ff32-4092-b111-bbaddd814063"
             },
             "$39._value": {
               "_type": "gameobject",
@@ -255,7 +255,7 @@
       },
       {
         "__type": "Sandbox.CapsuleCollider",
-        "__guid": "d4641dad-927c-487e-9259-4071edae7d90",
+        "__guid": "486faa6a-18ee-45b9-b481-885fce64dea7",
         "End": "0,0,54.2002",
         "IsTrigger": false,
         "Radius": 25,
@@ -265,7 +265,7 @@
     ],
     "Children": [
       {
-        "__guid": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
+        "__guid": "f2dec132-ff32-4092-b111-bbaddd814063",
         "Flags": 0,
         "Name": "body",
         "Enabled": true,
@@ -274,8 +274,8 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
-            "BodyGroups": 65,
+            "__guid": "3f264f67-7be1-43a9-83ea-93555c5f1977",
+            "BodyGroups": 0,
             "CreateBoneObjects": false,
             "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
@@ -284,107 +284,25 @@
         ],
         "Children": [
           {
-            "__guid": "ca06c10d-e3c7-4d14-b43f-9dd2f80e2d54",
+            "__guid": "0628734b-e056-40d1-8505-936f4ceb47b9",
             "Flags": 0,
-            "Name": "pants",
+            "Name": "mascot",
             "Enabled": true,
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "fbfd09d5-c501-493d-9ac3-4ad7a17bbb7c",
+                "__guid": "f2ed95e9-e678-4ae0-9bf6-5eeb779119fa",
                 "BodyGroups": 18446744073709551615,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
-                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
+                  "component_id": "3f264f67-7be1-43a9-83ea-93555c5f1977",
+                  "go": "f2dec132-ff32-4092-b111-bbaddd814063",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,
-                "Model": "models/citizen_clothes/trousers/trackiebottoms/models/trackie_bottoms_black.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
-          },
-          {
-            "__guid": "65c58776-1d1c-4456-913c-bc420d4ae511",
-            "Flags": 0,
-            "Name": "shirt",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "1a29a82e-5935-46c7-a15a-78db35ef2b97",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
-                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen_clothes/jacket/longsleeve/models/longsleeve_red.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
-          },
-          {
-            "__guid": "28bcfd73-f2d0-47f3-8a7d-10d3abcce134",
-            "Flags": 0,
-            "Name": "hair",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "RandomModel",
-                "__guid": "b1944780-516e-4f58-bbe4-943c123305e1",
-                "RandomModels": [
-                  "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
-                  "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
-                  "models/citizen_clothes/hat/baseball_cap/model/baseball_cap_black.vmdl",
-                  "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
-                  "models/citizen_clothes/hat/fedora/models/fedora.vmdl",
-                  "models/citizen_clothes/hair/hair_fade/models/hair_fade.vmdl",
-                  "models/citizen_clothes/hair/goatee/models/goatee.vmdl"
-                ]
-              },
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "e23ee1c9-fbcd-4f67-99aa-db204a955a6a",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
-                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
-                "RenderType": "On",
-                "Tint": "0.15294,0.1098,0.1098,1"
-              }
-            ]
-          },
-          {
-            "__guid": "2fcb4685-d8fa-4c51-9f73-51c8f475ba3c",
-            "Flags": 0,
-            "Name": "shoes",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "11813738-b591-4d3c-904a-e0afecc1a53d",
-                "BodyGroups": 18446744073709551615,
-                "CreateBoneObjects": false,
-                "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
+                "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
                 "RenderType": "On",
                 "Tint": "1,1,1,1"
               }

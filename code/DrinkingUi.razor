@@ -1,0 +1,25 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div style="font-size: 45px; font-family: poppins; position: absolute; bottom: 32px; left: 32px;">Sips left: @SipsLeft</div>
+</root>
+
+@code
+{
+
+	[Property, TextArea] public string MyStringValue { get; set; } = "Hello World!";
+	[Property] public int SipsLeft { get; set; } = 5;
+	[Property] public bool DelaySip { get; set; } = false;
+
+	public void SubtractSip()
+	{
+		SipsLeft--;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( SipsLeft );
+}
