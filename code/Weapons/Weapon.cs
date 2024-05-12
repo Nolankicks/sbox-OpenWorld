@@ -185,7 +185,8 @@ public sealed class Weapon : Component
 		inventory.RemoveItem(GameObject, false);
 		IsWeapon = false;
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 40;
+		DroppedItem.Transform.LocalPosition = Vector3.Zero;
+		GameObject.Transform.Position = tr.EndPosition;
 		Network.Refresh();
 		if (GameNetworkSystem.IsActive)
 		{
@@ -272,7 +273,7 @@ public sealed class Weapon : Component
 					damageTaker.TakeDamage(Damage, GameObject.Parent.Id);
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
-				
+				decal.NetworkSpawn(null);
 		if (tr.Surface is null)
 		{
     			Log.Info("Surface is null");
@@ -310,7 +311,6 @@ public sealed class Weapon : Component
 			}
 			if (FireSound is not null)
 			{
-			FireSound.Volume = 0.1f;
 			Sound.Play(FireSound, tr.StartPosition);
 			}
 			if (MuzzleFlash is not null)

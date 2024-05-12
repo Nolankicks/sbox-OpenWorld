@@ -114,7 +114,7 @@
                 "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "-592,816"
+                "Position": "-704,816"
               }
             },
             {
@@ -136,7 +136,7 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "2000,304"
+                "Position": "2192,352"
               }
             },
             {
@@ -197,7 +197,7 @@
               "Id": 324,
               "Type": "if",
               "UserData": {
-                "Position": "1824,256"
+                "Position": "1936,336"
               }
             },
             {
@@ -211,7 +211,7 @@
               "Id": 326,
               "Type": "if",
               "UserData": {
-                "Position": "1456,768"
+                "Position": "1408,672"
               }
             },
             {
@@ -280,7 +280,7 @@
                 }
               },
               "UserData": {
-                "Position": "-816,816"
+                "Position": "-928,816"
               }
             }
           ],
@@ -523,7 +523,7 @@
               "DstName": "_target"
             },
             {
-              "SrcId": 310,
+              "SrcId": 326,
               "SrcName": "_signal",
               "DstId": 324,
               "DstName": "_signal"
@@ -575,7 +575,7 @@
               "DstName": "_signal"
             },
             {
-              "Value": 3,
+              "Value": 1.5,
               "DstId": 328,
               "DstName": "seconds"
             },

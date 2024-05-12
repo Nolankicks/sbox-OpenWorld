@@ -37,13 +37,18 @@
       ],
       "DefaultSignals": true
     },
-    "Variables": [],
+    "Variables": [
+      {
+        "Name": "inv",
+        "Type": "package.nolankicks.dead4left2/Inventory"
+      }
+    ],
     "Nodes": [
       {
         "Id": 0,
         "Type": "input",
         "UserData": {
-          "Position": "-592,-96"
+          "Position": "-736,-96"
         }
       },
       {

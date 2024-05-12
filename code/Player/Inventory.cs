@@ -54,6 +54,7 @@ public sealed class Inventory : Component
 		{
 		if (item is null) return;
 		var itemClone = item.Clone(Vector3.Up * 70);
+		itemClone.NetworkSpawn();
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;
 		itemClone.Components.TryGet<Weapon>( out var weapon );

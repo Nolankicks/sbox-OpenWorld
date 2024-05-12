@@ -539,9 +539,9 @@
                   "Id": 3,
                   "Type": "call",
                   "Properties": {
+                    "_isStatic": false,
                     "_name": "AddItem",
-                    "_type": "package.nolankicks.dead4left2/Inventory",
-                    "_isStatic": false
+                    "_type": "package.nolankicks.dead4left2/Inventory"
                   },
                   "UserData": {
                     "Position": "560,0"
@@ -551,9 +551,9 @@
                   "Id": 5,
                   "Type": "call",
                   "Properties": {
+                    "_isStatic": false,
                     "_name": "GetNextSlot",
-                    "_type": "package.nolankicks.dead4left2/Inventory",
-                    "_isStatic": false
+                    "_type": "package.nolankicks.dead4left2/Inventory"
                   },
                   "UserData": {
                     "Position": "224,-48"

@@ -34,7 +34,8 @@ public sealed class ActionGraphItem : Component
 	}
 	protected override void OnUpdate()
 	{	
-
+		if (!IsProxy)
+		{
 		if (InInventory)
 		{
 			Use();
@@ -69,9 +70,20 @@ public sealed class ActionGraphItem : Component
 			}
 		}
 
-		if (IsProxy)
+		}
+		else
 		{
-			Object.Enabled = false;
+			if (InInventory)
+			{
+				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				{
+					gb.Enabled = false;
+				}
+			}
+			foreach (var gb in Object.GetAllObjects(false))
+			{
+				gb.Enabled = false;
+			}
 		}
 	}
 
@@ -83,7 +95,8 @@ public sealed class ActionGraphItem : Component
 		inventory.RemoveItem(GameObject, false);
 		InInventory = false;
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 40;
+		DropppedItem.Transform.LocalPosition = Vector3.Zero;
+		GameObject.Transform.Position = tr.EndPosition;
 		Network.Refresh();
 		if (GameNetworkSystem.IsActive)
 		{

@@ -1,4 +1,5 @@
 using Sandbox;
+using Sandbox.Network;
 namespace Kicks;
 public sealed class Interactor : Component
 {
@@ -26,8 +27,8 @@ public sealed class Interactor : Component
 				grabbedBody = tr.Body;
 				grabbedOffset = aimTransform.ToLocal( tr.Body.Transform );
 				PhysicsGameObject = tr.GameObject;
-				PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-				PhysicsGameObject.Network.TakeOwnership();
+						PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+						PhysicsGameObject.Network.TakeOwnership();
 			}
 			else
 			{
@@ -39,17 +40,29 @@ public sealed class Interactor : Component
 		if (Input.Down("flashlight") && grabbedBody is not null && PhysicsGameObject is not null)
 		{
 			if (grabbedBody is null) return;
-				PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-				PhysicsGameObject.Network.TakeOwnership();
+			if (GameNetworkSystem.IsActive)
+			{
+						PhysicsGameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+						PhysicsGameObject.Network.TakeOwnership();
+			}
 				var targetTx = aimTransform.ToWorld( grabbedOffset );
 				grabbedBody.SmoothMove( targetTx, Time.Delta * 50, Time.Delta );
-
 				return;
 		}
 		else
 		{
 			if (grabbedBody is null) return;
-			PhysicsGameObject.Network.DropOwnership();
+			if (GameNetworkSystem.IsActive)
+			{
+				foreach (var gb in PhysicsGameObject.GetAllObjects(false))
+				{
+					if (gb is not null)
+					{
+						gb.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+						gb.Network.DropOwnership();
+					}
+				}
+			}
 			grabbedBody = null;
 			PhysicsGameObject = null;
 		}
