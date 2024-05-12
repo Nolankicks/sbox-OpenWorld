@@ -1,0 +1,439 @@
+{
+  "RootObject": {
+    "__guid": "a9554930-5691-4f9d-8c09-76da7b47be32",
+    "Flags": 0,
+    "Name": "ActionGraphMakarov",
+    "Position": "-509.914,-464.2958,29.39445",
+    "Rotation": "0.6087614,0,0,0.7933534",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "ActionGraphItem",
+        "__guid": "a7859533-2704-41dd-8f19-27405accd4a1",
+        "Ammo": 30,
+        "DropppedItem": {
+          "_type": "gameobject",
+          "go": "3fa80113-d6e7-4f64-8865-0b74400bd4f8"
+        },
+        "InInventory": false,
+        "MaxAmmo": 0,
+        "Object": {
+          "_type": "gameobject",
+          "go": "bd52e085-78f7-4f4c-b227-00dd661888c1"
+        },
+        "OnUse": {
+          "__version": 7,
+          "__guid": "e15c69a5-c2bf-43a7-90b3-93d82235e236",
+          "UserData": {
+            "Title": "On Use",
+            "ReferencedComponentTypes": [
+              "package.nolankicks.dead4left2/ActionGraphItem"
+            ]
+          },
+          "Variables": [
+            {
+              "Name": "Item",
+              "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "input.pressed",
+              "UserData": {
+                "Position": "272,112"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "if",
+              "UserData": {
+                "Position": "480,-0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "package.nolankicks.dead4left2/ActionGraphItem"
+              },
+              "UserData": {
+                "Position": "-96,176"
+              }
+            },
+            {
+              "Id": 5,
+              "Type": "var",
+              "Properties": {
+                "_var": "Item"
+              },
+              "UserData": {
+                "Position": "224,0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "ActionGraphTrace",
+              "UserData": {
+                "Position": "752,0"
+              }
+            },
+            {
+              "Id": 17,
+              "Type": "input.pressed",
+              "UserData": {
+                "Position": "64,-176"
+              }
+            },
+            {
+              "Id": 19,
+              "Type": "if",
+              "UserData": {
+                "Position": "272,-224"
+              }
+            },
+            {
+              "Id": 20,
+              "Type": "ActionGraphReload",
+              "UserData": {
+                "Position": "528,-224"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "Value": "attack1",
+              "DstId": 1,
+              "DstName": "action"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 4,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 5,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 5,
+              "DstName": "_value"
+            },
+            {
+              "Value": 20,
+              "DstId": 6,
+              "DstName": "Damage"
+            },
+            {
+              "Value": 0,
+              "DstId": 6,
+              "DstName": "FireRate"
+            },
+            {
+              "Value": 0,
+              "DstId": 6,
+              "DstName": "Recoil"
+            },
+            {
+              "Value": 0,
+              "DstId": 6,
+              "DstName": "Spread"
+            },
+            {
+              "Value": 1000,
+              "DstId": 6,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "true",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "VarName": "Item",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": "reload",
+              "DstId": 17,
+              "DstName": "action"
+            },
+            {
+              "SrcId": 5,
+              "SrcName": "_signal",
+              "DstId": 19,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 17,
+              "SrcName": "_result",
+              "DstId": 19,
+              "DstName": "condition"
+            },
+            {
+              "Value": 30,
+              "DstId": 20,
+              "DstName": "StartingAmmo"
+            },
+            {
+              "SrcId": 19,
+              "SrcName": "true",
+              "DstId": 20,
+              "DstName": "_signal"
+            },
+            {
+              "VarName": "Item",
+              "DstId": 20,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 20,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 20,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "UsesAmmo": true
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "ac09a2b8-535e-43ef-869a-80eafa7a3483",
+        "Icon": "textures/otherpistol.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "3fa80113-d6e7-4f64-8865-0b74400bd4f8",
+        "Flags": 0,
+        "Name": "DroppedItem",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "2155c2f7-69a0-42b5-a4ae-834f7392aacc",
+            "Description": "Makarov",
+            "Icon": "textures/otherpistol.vtex",
+            "Name": "Makarov",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "a1fd3e59-1abc-4414-8b84-37a8ba52c364",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "T": "package.nolankicks.dead4left2/ActionGraphItem",
+                    "_name": "TryGet",
+                    "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "-16,224"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "224,-0"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "call",
+                  "Properties": {
+                    "_name": "PickUp",
+                    "_type": "package.nolankicks.dead4left2/ActionGraphItem",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "512,80"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": "EnabledInSelf, InParent",
+                  "DstId": 1,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 3,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "true",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "component",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "Inventory",
+                  "DstId": 4,
+                  "DstName": "inventory"
+                }
+              ]
+            },
+            "selectedInput": "E",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          },
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "0b0782d9-4414-4f63-91d9-eb76537de8e1",
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/weapons/makarov/w_makarov.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.ModelCollider",
+            "__guid": "963bb464-9180-44ec-b910-8b26090cc497",
+            "IsTrigger": false,
+            "Model": "models/weapons/makarov/w_makarov.vmdl",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "0470c6e7-e37f-410a-aea6-c30d277c58a1",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          }
+        ]
+      },
+      {
+        "__guid": "bd52e085-78f7-4f4c-b227-00dd661888c1",
+        "Flags": 0,
+        "Name": "Object",
+        "Position": "0,0,0",
+        "Enabled": true,
+        "NetworkMode": 1,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "ca80f25d-f8e5-4b62-acb6-3c3fe8afa982",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 80,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "39deaa00-5dd3-4059-a813-ac36ae1640f0",
+            "Flags": 0,
+            "Name": "gun",
+            "Position": "10.43469,-5.928116,-6.669808",
+            "Tags": "viewmodel",
+            "Enabled": true,
+            "NetworkMode": 1,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "ab0e6841-d556-48b9-abc2-46e3e6fd737a",
+                "BodyGroups": 18446744073709551615,
+                "Model": "models/weapons/makarov/w_makarov.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "fpopium.w_makarov"
+  ]
+}

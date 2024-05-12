@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualBasic;
 using Sandbox.Network;
 using Sandbox.Sdf.Noise;
+using Kicks;
 
 [Title("SDF Manager")]
 [Icon("dashboard")]
@@ -164,6 +165,11 @@ public void OnActive( Connection channel )
 
 		// Spawn this object and make the client the owner
 		var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
+		player.Components.TryGet<PlayerController>( out var playerVar );
+		if (playerVar is not null)
+		{
+			playerVar.eyeAngles = startLocation.Rotation.Angles();
+		}
 		player.NetworkSpawn( channel );
 	}
 

@@ -16,7 +16,17 @@
         "facepunch.metal_trim_01#43480",
         "nolankicks.donut#45408",
         "nolankicks.shrine#45407",
-        "facepunch.glass_a#19946"
+        "facepunch.glass_a#19946",
+        "facepunch.sconce_wall_light#42946",
+        "facepunch.ceiling_light#29026",
+        "facepunch.v_m4a1#55898",
+        "facepunch.floor_tile_blend_02#28795",
+        "facepunch.stone_brick_tile_01#47062",
+        "facepunch.plaster_hs_02#28800",
+        "facepunch.ceiling_plaster_01#33577",
+        "facepunch.metal_bare_a_hs#28944",
+        "facepunch.stickers_1#33877",
+        "facepunch.roof_tile_a#18739"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/d4l_shooting_range.vmap"

@@ -1,6 +1,7 @@
 {
   "RootObject": {
     "__guid": "78396649-9686-43e6-b5c8-66376323b3f8",
+    "Flags": 0,
     "Name": "shop",
     "Enabled": true,
     "NetworkMode": 2,
@@ -70,8 +71,8 @@
               "Id": 4,
               "Type": "property",
               "Properties": {
-                "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                "_name": "Sitting"
+                "_name": "Sitting",
+                "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "512,208"
@@ -622,6 +623,7 @@
     "Children": [
       {
         "__guid": "c0544999-423b-4b44-acd4-6296f9c1931f",
+        "Flags": 0,
         "Name": "clothes",
         "Enabled": true,
         "NetworkMode": 2,
@@ -629,6 +631,7 @@
         "Children": [
           {
             "__guid": "6fb1ea38-0235-4950-ba29-9cb6f5edf82f",
+            "Flags": 0,
             "Name": "shirt",
             "Enabled": true,
             "NetworkMode": 2,
@@ -653,6 +656,7 @@
           },
           {
             "__guid": "5a058bc1-dddb-4761-a15c-60bdf16b217b",
+            "Flags": 0,
             "Name": "jacket",
             "Enabled": true,
             "NetworkMode": 2,
@@ -677,6 +681,7 @@
           },
           {
             "__guid": "c47bcc1e-70f6-4295-b163-dbe03d917140",
+            "Flags": 0,
             "Name": "shoes",
             "Enabled": true,
             "NetworkMode": 2,
@@ -701,6 +706,7 @@
           },
           {
             "__guid": "0e904d55-693f-4fa7-9dfb-979837800458",
+            "Flags": 0,
             "Name": "pants",
             "Enabled": true,
             "NetworkMode": 2,
@@ -725,6 +731,7 @@
           },
           {
             "__guid": "1ee4d4e4-58ea-4f38-b459-87d6407bb0eb",
+            "Flags": 0,
             "Name": "hair",
             "Enabled": true,
             "NetworkMode": 2,
@@ -749,6 +756,7 @@
           },
           {
             "__guid": "d9762455-f24a-4512-823c-80a347cb43b0",
+            "Flags": 0,
             "Name": "brused face",
             "Enabled": true,
             "NetworkMode": 2,
@@ -773,6 +781,7 @@
           },
           {
             "__guid": "0414dfef-7f6b-4027-a2f4-f0110daf0c42",
+            "Flags": 0,
             "Name": "gloves",
             "Enabled": true,
             "NetworkMode": 2,
@@ -799,6 +808,7 @@
       },
       {
         "__guid": "4f7852fc-9bf4-4c77-a8d9-49d1747d996a",
+        "Flags": 0,
         "Name": "eye",
         "Position": "0,0,64",
         "Enabled": true,
@@ -807,8 +817,9 @@
       },
       {
         "__guid": "9a3a0000-d9b1-41cd-af70-f690f6b727bb",
+        "Flags": 0,
         "Name": "office_chair",
-        "Position": "-1363.309,1166.085,-0.5477676",
+        "Position": "-6.5025,-0.3580322,-4.655434",
         "Rotation": "0,0,0.7071069,-0.7071066",
         "Enabled": true,
         "NetworkMode": 2,
@@ -828,8 +839,9 @@
       },
       {
         "__guid": "dbfb35db-9483-4b58-8325-eb310800e0c4",
+        "Flags": 0,
         "Name": "office_desk",
-        "Position": "-1326.304,1166.801,0.7630997",
+        "Position": "30.5025,0.3580322,-3.344566",
         "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true,
         "NetworkMode": 2,

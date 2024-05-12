@@ -29,7 +29,7 @@
       "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "NetworkManager",
+          "__type": "Kicks.NetworkManager",
           "__guid": "01c33a3d-17c2-4db3-af50-7348c491a525",
           "PlayerPrefab": {
             "_type": "gameobject",
@@ -288,6 +288,7 @@
           "Coins": 50,
           "CrouchSpeed": 50,
           "eyeAngles": "0,0,0",
+          "FindSpawnPoint": false,
           "Health": 100,
           "Hold": {
             "_type": "gameobject",
@@ -2006,7 +2007,7 @@
   },
   "Title": "deathmatch",
   "Description": "",
-  "LastSaved": "2024-05-10T16:40:00.7654978-04:00",
+  "LastSaved": "2024-05-11T20:58:12.7987577-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

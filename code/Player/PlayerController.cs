@@ -28,6 +28,7 @@ public sealed class PlayerController : Component
 	[Property] public SceneFile SceneFile { get; set; }
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
+	[Property] public bool FindSpawnPoint { get; set; } = false;
 	
 	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
@@ -41,6 +42,12 @@ public sealed class PlayerController : Component
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
 		OnJump += PlayJumpSound;
+		if (FindSpawnPoint)
+		{
+			var spawnPoint = Game.Random.FromList(Scene.GetAllComponents<SpawnPoint>().ToList());
+			Transform.World = spawnPoint.Transform.World;
+			eyeAngles = spawnPoint.Transform.Rotation.Angles();
+		}
 	}
 	void PlayJumpSound()
 	{

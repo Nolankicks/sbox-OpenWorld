@@ -1,6 +1,7 @@
 {
   "RootObject": {
     "__guid": "b9fedc06-2719-41cb-a20b-6693adbe7776",
+    "Flags": 0,
     "Name": "weapon_smg",
     "Tags": "weapon",
     "Enabled": true,
@@ -85,6 +86,7 @@
     "Children": [
       {
         "__guid": "71a04138-ce13-4e6a-9a42-af2e81213624",
+        "Flags": 0,
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -112,6 +114,7 @@
         "Children": [
           {
             "__guid": "c9a8c461-eea9-47d5-979a-ed1c17af1135",
+            "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
@@ -119,6 +122,7 @@
             "Children": [
               {
                 "__guid": "3a3d5af4-ee60-41c9-bf53-0d7a532090c1",
+                "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -143,6 +147,7 @@
               },
               {
                 "__guid": "ad235e8e-6f83-4ce5-a537-0409783eb721",
+                "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -165,6 +170,7 @@
       },
       {
         "__guid": "3f70c51d-8392-404a-8867-3c882c366f60",
+        "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
         "NetworkMode": 1,

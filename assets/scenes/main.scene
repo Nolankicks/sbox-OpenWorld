@@ -62,7 +62,8 @@
             "_type": "gameobject",
             "go": "ff33cd12-d7ca-4d15-b5ad-13fb4b8c06cc"
           },
-          "eyeAngles": "0,180,0",
+          "eyeAngles": "0,0,0",
+          "FindSpawnPoint": false,
           "Health": 100,
           "Hold": {
             "_type": "gameobject",
@@ -1571,8 +1572,8 @@
       "NetworkInterpolation": true,
       "Components": [
         {
-          "__type": "NetworkManager",
-          "__guid": "897ed189-6dde-4913-b70c-59c40b501b13",
+          "__type": "Kicks.NetworkManager",
+          "__guid": "952f1309-b186-45c2-b2ed-4e2c45b8fa1b",
           "PlayerPrefab": {
             "_type": "gameobject",
             "go": "8b0b6af8-b333-43ce-bcb4-b42ef9a1f1d3"
@@ -1592,6 +1593,11 @@
       "NetworkInterpolation": true,
       "Components": [
         {
+          "__type": "Water",
+          "__guid": "f0755879-9ae2-4d55-86e6-4e10d37cee7a",
+          "rigidbodies": []
+        },
+        {
           "__type": "Sandbox.HullCollider",
           "__guid": "44a0dc55-9042-4daa-b01b-dcc7de290c45",
           "BoxSize": "951.1975,698.0979,478.8002",
@@ -1603,11 +1609,6 @@
           "Slices": 16,
           "Static": false,
           "Type": "Box"
-        },
-        {
-          "__type": "Water",
-          "__guid": "f0755879-9ae2-4d55-86e6-4e10d37cee7a",
-          "rigidbodies": []
         }
       ]
     },
@@ -1618,7 +1619,6 @@
       "Position": "52,-1320,4",
       "Rotation": "0,0,0.7933533,0.6087614",
       "Tags": "dummy",
-      "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
@@ -1779,7 +1779,6 @@
       "Name": "zombie (1)",
       "Position": "-108,-1316,4.000008",
       "Tags": "dummy",
-      "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
@@ -1940,7 +1939,6 @@
       "Name": "zombie (2)",
       "Position": "-196,-1312,4",
       "Tags": "dummy",
-      "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "Components": [
@@ -2257,80 +2255,11 @@
       ]
     },
     {
-      "__guid": "f2fa9f2c-50e6-49b2-bf5b-59cf90a3a859",
-      "Flags": 0,
-      "Name": "light_ammo_pickup",
-      "Position": "-588,-616,2.999992",
-      "Rotation": "0,0,0.258819,0.9659258",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
-      "__guid": "b23d12d4-fec2-4fac-9a55-55cc55359402",
-      "Flags": 0,
-      "Name": "light_ammo_pickup (1)",
-      "Position": "-604,-620,3",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
-      "__guid": "0a7124ce-a050-4628-a29e-2d3d7476bf82",
-      "Flags": 0,
-      "Name": "light_ammo_pickup (2)",
-      "Position": "-620,-608,2.999992",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
-      "__guid": "ab51e347-b1c3-41f7-9b85-cd0a9c7051ce",
-      "Flags": 0,
-      "Name": "light_ammo_pickup (3)",
-      "Position": "-616,-616,8.40926",
-      "Rotation": "-0.006081805,0.01346985,0.4114498,0.9113126",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
-      "__guid": "343011c5-da48-48d5-803c-fb4e63865462",
-      "Flags": 0,
-      "Name": "light_ammo_pickup (4)",
-      "Position": "-604,-624,8.455957",
-      "Rotation": "-0.006081805,0.01346985,0.4114498,0.9113126",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
-      "__guid": "442864ff-50ac-493e-aa21-cf319fd476d9",
-      "Flags": 0,
-      "Name": "light_ammo_pickup (5)",
-      "Position": "-600,-608,2.999992",
-      "Rotation": "0,0,0.258819,0.9659258",
-      "Tags": "ignore",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/light_ammo_pickup.prefab"
-    },
-    {
       "__guid": "0b6603a2-3c7a-4fee-a5fd-7c2abc033946",
       "Flags": 0,
-      "Name": "ActionGraphWeapon",
-      "Position": "-316.5556,-174.0164,112.1739",
+      "Name": "ActionGraphM4A4",
+      "Position": "-274.2918,-459.0223,28.94195",
+      "Rotation": "0.6087614,0,0,0.7933534",
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
@@ -2338,11 +2267,13 @@
         {
           "__type": "ActionGraphItem",
           "__guid": "a42f3f49-6069-419c-9c21-c3cdf862d031",
+          "Ammo": 30,
           "DropppedItem": {
             "_type": "gameobject",
             "go": "cd2ec397-0fbe-4993-aa0e-a3aaadd63b1e"
           },
           "InInventory": false,
+          "MaxAmmo": 30,
           "Object": {
             "_type": "gameobject",
             "go": "5421fb5b-bc35-4e13-9557-dde0e47489e4"
@@ -2360,177 +2291,404 @@
               {
                 "Name": "Action Graph Item",
                 "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+              },
+              {
+                "Name": "Ammo",
+                "Type": "package.nolankicks.dead4left2/Kicks.AmmoContainer"
+              },
+              {
+                "Name": "inv",
+                "Type": "package.nolankicks.dead4left2/Inventory"
               }
             ],
             "Nodes": [
               {
-                "Id": 0,
-                "Type": "input"
+                "Id": 341,
+                "Type": "input",
+                "UserData": {
+                  "Position": "608,224"
+                }
               },
               {
-                "Id": 2,
+                "Id": 342,
                 "Type": "scene.get",
                 "Properties": {
                   "T": "package.nolankicks.dead4left2/ActionGraphItem"
                 },
                 "UserData": {
-                  "Position": "-48,176"
+                  "Position": "1056,400"
                 }
               },
               {
-                "Id": 7,
+                "Id": 343,
                 "Type": "var",
                 "Properties": {
                   "_var": "Action Graph Item"
                 },
                 "UserData": {
-                  "Position": "224,-0"
+                  "Position": "1328,224"
                 }
               },
               {
-                "Id": 9,
-                "Type": "input.pressed",
-                "UserData": {
-                  "Position": "288,80"
-                }
-              },
-              {
-                "Id": 11,
+                "Id": 344,
                 "Type": "if",
                 "UserData": {
-                  "Position": "464,-0"
+                  "Position": "1568,224"
                 }
               },
               {
-                "Id": 161,
+                "Id": 345,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1040,0"
+                  "Position": "2144,224"
                 }
               },
               {
-                "Id": 173,
+                "Id": 346,
                 "Type": "graph",
                 "Properties": {
                   "graph": "actions/spawndecal.action"
                 },
                 "UserData": {
-                  "Position": "1296,80"
+                  "Position": "2400,304"
                 }
               },
               {
-                "Id": 175,
+                "Id": 347,
                 "Type": "ActionGraphTrace",
                 "UserData": {
-                  "Position": "704,-0"
+                  "Position": "1808,224"
+                }
+              },
+              {
+                "Id": 348,
+                "Type": "sound.playat",
+                "UserData": {
+                  "Position": "2928,304"
+                }
+              },
+              {
+                "Id": 349,
+                "Type": "input.pressed",
+                "UserData": {
+                  "Position": "1248,64"
+                }
+              },
+              {
+                "Id": 350,
+                "Type": "if",
+                "UserData": {
+                  "Position": "1616,64"
+                }
+              },
+              {
+                "Id": 351,
+                "Type": "ActionGraphReload",
+                "UserData": {
+                  "Position": "1920,48"
+                }
+              },
+              {
+                "Id": 352,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Ammo"
+                },
+                "UserData": {
+                  "Position": "1040,224"
+                }
+              },
+              {
+                "Id": 353,
+                "Type": "var",
+                "Properties": {
+                  "_var": "inv"
+                },
+                "UserData": {
+                  "Position": "800,224"
+                }
+              },
+              {
+                "Id": 354,
+                "Type": "input.down",
+                "UserData": {
+                  "Position": "1344,320"
+                }
+              },
+              {
+                "Id": 355,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Parent"
+                },
+                "UserData": {
+                  "Position": "1984,480"
+                }
+              },
+              {
+                "Id": 356,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_name": "Transform"
+                },
+                "UserData": {
+                  "Position": "2224,480"
+                }
+              },
+              {
+                "Id": 357,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Sandbox.Game/Sandbox.GameTransform",
+                  "_name": "Position"
+                },
+                "UserData": {
+                  "Position": "2528,496"
+                }
+              },
+              {
+                "Id": 358,
+                "Type": "op.add",
+                "UserData": {
+                  "Position": "2800,480"
                 }
               }
             ],
             "Links": [
               {
-                "SrcId": 0,
+                "SrcId": 341,
                 "SrcName": "_target",
-                "DstId": 2,
+                "DstId": 342,
                 "DstName": "_this"
               },
               {
-                "SrcId": 0,
+                "SrcId": 352,
                 "SrcName": "_signal",
-                "DstId": 7,
+                "DstId": 343,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 2,
+                "SrcId": 342,
                 "SrcName": "_result",
-                "DstId": 7,
+                "DstId": 343,
                 "DstName": "_value"
               },
               {
-                "Value": "attack1",
-                "DstId": 9,
-                "DstName": "action"
-              },
-              {
-                "SrcId": 7,
+                "SrcId": 343,
                 "SrcName": "_signal",
-                "DstId": 11,
+                "DstId": 344,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 9,
+                "SrcId": 354,
                 "SrcName": "_result",
-                "DstId": 11,
+                "DstId": 344,
                 "DstName": "condition"
               },
               {
-                "SrcId": 175,
+                "SrcId": 347,
                 "SrcName": "_signal",
-                "DstId": 161,
+                "DstId": 345,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 175,
+                "SrcId": 347,
                 "SrcName": "_result",
-                "DstId": 161,
+                "DstId": 345,
                 "DstName": "condition"
               },
               {
-                "SrcId": 175,
+                "SrcId": 347,
                 "SrcName": "traceNormal",
-                "DstId": 173,
+                "DstId": 346,
                 "DstName": "_in1"
               },
               {
-                "SrcId": 175,
+                "SrcId": 347,
                 "SrcName": "hitPos",
-                "DstId": 173,
+                "DstId": 346,
                 "DstName": "_in2"
               },
               {
-                "SrcId": 161,
+                "SrcId": 345,
                 "SrcName": "true",
-                "DstId": 173,
+                "DstId": 346,
                 "DstName": "_signal"
               },
               {
-                "SrcId": 0,
+                "SrcId": 341,
                 "SrcName": "_target",
-                "DstId": 173,
+                "DstId": 346,
                 "DstName": "_target"
               },
               {
-                "Value": 50,
-                "DstId": 175,
+                "Value": 75,
+                "DstId": 347,
                 "DstName": "Damage"
               },
               {
-                "Value": 0,
-                "DstId": 175,
+                "Value": 0.1,
+                "DstId": 347,
+                "DstName": "FireRate"
+              },
+              {
+                "Value": 0.5,
+                "DstId": 347,
+                "DstName": "Recoil"
+              },
+              {
+                "Value": 0.03,
+                "DstId": 347,
                 "DstName": "Spread"
               },
               {
                 "Value": 5000,
-                "DstId": 175,
+                "DstId": 347,
                 "DstName": "TraceLength"
               },
               {
-                "SrcId": 11,
+                "SrcId": 344,
                 "SrcName": "true",
-                "DstId": 175,
+                "DstId": 347,
                 "DstName": "_signal"
               },
               {
                 "VarName": "Action Graph Item",
-                "DstId": 175,
+                "DstId": 347,
                 "DstName": "_target"
+              },
+              {
+                "SrcId": 346,
+                "SrcName": "_signal",
+                "DstId": 348,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 358,
+                "SrcName": "_result",
+                "DstId": 348,
+                "DstName": "position"
+              },
+              {
+                "Value": "sounds/dead4left2shootsound.sound",
+                "DstId": 348,
+                "DstName": "soundEvent"
+              },
+              {
+                "Value": "reload",
+                "DstId": 349,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 343,
+                "SrcName": "_signal",
+                "DstId": 350,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 349,
+                "SrcName": "_result",
+                "DstId": 350,
+                "DstName": "condition"
+              },
+              {
+                "Value": 30,
+                "DstId": 351,
+                "DstName": "StartingAmmo"
+              },
+              {
+                "SrcId": 350,
+                "SrcName": "true",
+                "DstId": 351,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Action Graph Item",
+                "DstId": 351,
+                "DstName": "_target"
+              },
+              {
+                "VarName": "Ammo",
+                "DstId": 351,
+                "DstName": "ammoContainer"
+              },
+              {
+                "Value": "HeavyAmmo",
+                "DstId": 351,
+                "DstName": "ammoType"
+              },
+              {
+                "SrcId": 353,
+                "SrcName": "_signal",
+                "DstId": 352,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "ammoContainer",
+                "DstId": 352,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "_signal",
+                "DstId": 353,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "inventory",
+                "DstId": 353,
+                "DstName": "_value"
+              },
+              {
+                "Value": "attack1",
+                "DstId": 354,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "_target",
+                "DstId": 355,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 355,
+                "SrcName": "_result",
+                "DstId": 356,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 356,
+                "SrcName": "_result",
+                "DstId": 357,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 357,
+                "SrcName": "_result",
+                "DstId": 358,
+                "DstName": "a"
+              },
+              {
+                "Value": {
+                  "$type": "Simple",
+                  "Type": "Sandbox.System/Vector3",
+                  "Value": "0,0,64"
+                },
+                "DstId": 358,
+                "DstName": "b"
               }
             ]
-          }
+          },
+          "UsesAmmo": true
         },
         {
           "__type": "IconComponent",
           "__guid": "bbd481be-59c3-4234-991f-4274f0b76f03",
-          "Icon": "textures/player_spritesheet_1.vtex"
+          "Icon": "textures/m4.vtex"
         }
       ],
       "Children": [
@@ -2546,9 +2704,9 @@
             {
               "__type": "Kicks.PopupUi",
               "__guid": "c19b7078-f73c-43cf-973f-f260011cfbab",
-              "Description": "Double Barrel",
-              "Icon": "textures/player_spritesheet_1.vtex",
-              "Name": "Double Barrel",
+              "Description": "M4A4",
+              "Icon": "textures/m4.vtex",
+              "Name": "M4A4",
               "PickUpAction": {
                 "__version": 7,
                 "__guid": "bfa3e395-b45e-4d8c-9875-1854b5ef3d8b",
@@ -2575,10 +2733,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
+                      "T": "package.nolankicks.dead4left2/ActionGraphItem",
                       "_isStatic": false,
                       "_type": "Sandbox.Game/Sandbox.IComponentLister",
-                      "_name": "TryGet",
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                      "_name": "TryGet"
                     },
                     "UserData": {
                       "Position": "176,240"
@@ -2700,14 +2858,6 @@
               "ShowPopUp": true
             },
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "b4e4b1e9-59d2-4971-b28b-d86bd62a2fd3",
-              "BodyGroups": 171,
-              "Model": "models/weapons/sbox_assault_m4a1/w_m4a1.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
               "__guid": "7df82389-af38-4d25-8ab7-19d5cb5dd1c9",
               "Center": "3.799999,0,5.199997",
@@ -2726,6 +2876,15 @@
               "MotionEnabled": true,
               "RigidbodyFlags": 0,
               "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "009c6315-09a5-478c-8719-9c43b05bc06c",
+              "BodyGroups": 23699,
+              "CreateBoneObjects": false,
+              "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
             }
           ]
         },
@@ -2745,7 +2904,7 @@
               "BackgroundColor": "0.33333,0.46275,0.52157,1",
               "ClearFlags": "Depth, Stencil",
               "FieldOfView": 80,
-              "IsMainCamera": true,
+              "IsMainCamera": false,
               "Orthographic": false,
               "OrthographicHeight": 1204,
               "Priority": 1,
@@ -2770,7 +2929,7 @@
                 {
                   "__type": "Sandbox.ModelRenderer",
                   "__guid": "c684fa8d-dff8-4924-bc30-10a397dd9133",
-                  "BodyGroups": 5203,
+                  "BodyGroups": 23699,
                   "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
                   "RenderType": "On",
                   "Tint": "1,1,1,1"
@@ -2780,6 +2939,534 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "a9554930-5691-4f9d-8c09-76da7b47be32",
+      "Flags": 0,
+      "Name": "ActionGraphMakarov",
+      "Position": "-509.914,-464.2958,29.39445",
+      "Rotation": "0.6087614,0,0,0.7933534",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "ActionGraphItem",
+          "__guid": "f32a38cf-7dcc-4838-b9e8-11127a2a7e42",
+          "Ammo": 30,
+          "DropppedItem": {
+            "_type": "gameobject",
+            "go": "df375a3f-0ce8-45de-839a-51086f978c36"
+          },
+          "InInventory": false,
+          "MaxAmmo": 0,
+          "Object": {
+            "_type": "gameobject",
+            "go": "a9b06f64-b542-4c29-82f9-872cd3f85901"
+          },
+          "OnUse": {
+            "__version": 7,
+            "__guid": "8c00d8fc-9b9d-4f31-a54b-8df3c78d45dc",
+            "UserData": {
+              "Title": "On Use",
+              "ReferencedComponentTypes": [
+                "package.nolankicks.dead4left2/ActionGraphItem"
+              ]
+            },
+            "Variables": [
+              {
+                "Name": "Item",
+                "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+              }
+            ],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "input.pressed",
+                "UserData": {
+                  "Position": "272,112"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "if",
+                "UserData": {
+                  "Position": "480,-0"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                },
+                "UserData": {
+                  "Position": "-96,176"
+                }
+              },
+              {
+                "Id": 5,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Item"
+                },
+                "UserData": {
+                  "Position": "224,0"
+                }
+              },
+              {
+                "Id": 6,
+                "Type": "ActionGraphTrace",
+                "UserData": {
+                  "Position": "752,0"
+                }
+              },
+              {
+                "Id": 17,
+                "Type": "input.pressed",
+                "UserData": {
+                  "Position": "64,-176"
+                }
+              },
+              {
+                "Id": 19,
+                "Type": "if",
+                "UserData": {
+                  "Position": "272,-224"
+                }
+              },
+              {
+                "Id": 20,
+                "Type": "ActionGraphReload",
+                "UserData": {
+                  "Position": "528,-224"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Value": "attack1",
+                "DstId": 1,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 4,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 5,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 5,
+                "DstName": "_value"
+              },
+              {
+                "Value": 20,
+                "DstId": 6,
+                "DstName": "Damage"
+              },
+              {
+                "Value": 0,
+                "DstId": 6,
+                "DstName": "FireRate"
+              },
+              {
+                "Value": 0,
+                "DstId": 6,
+                "DstName": "Recoil"
+              },
+              {
+                "Value": 0,
+                "DstId": 6,
+                "DstName": "Spread"
+              },
+              {
+                "Value": 1000,
+                "DstId": 6,
+                "DstName": "TraceLength"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "true",
+                "DstId": 6,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Item",
+                "DstId": 6,
+                "DstName": "_target"
+              },
+              {
+                "Value": "reload",
+                "DstId": 17,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 5,
+                "SrcName": "_signal",
+                "DstId": 19,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 19,
+                "DstName": "condition"
+              },
+              {
+                "Value": 30,
+                "DstId": 20,
+                "DstName": "StartingAmmo"
+              },
+              {
+                "SrcId": 19,
+                "SrcName": "true",
+                "DstId": 20,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Item",
+                "DstId": 20,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "ammoContainer",
+                "DstId": 20,
+                "DstName": "ammoContainer"
+              },
+              {
+                "Value": "LightAmmo",
+                "DstId": 20,
+                "DstName": "ammoType"
+              }
+            ]
+          },
+          "UsesAmmo": true
+        },
+        {
+          "__type": "IconComponent",
+          "__guid": "4090b407-9608-49af-9e80-142a49bb5698",
+          "Icon": "textures/otherpistol.vtex"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "df375a3f-0ce8-45de-839a-51086f978c36",
+          "Flags": 0,
+          "Name": "DroppedItem",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Kicks.PopupUi",
+              "__guid": "cf0465e5-2f89-42e1-a682-212473bedee4",
+              "Description": "Makarov",
+              "Icon": "textures/otherpistol.vtex",
+              "Name": "Makarov",
+              "PickUpAction": {
+                "__version": 7,
+                "__guid": "755418f3-ca12-43ab-85f6-6150aaf276c0",
+                "UserData": {
+                  "Title": "Pick Up Action",
+                  "ReferencedComponentTypes": []
+                },
+                "Variables": [],
+                "Nodes": [
+                  {
+                    "Id": 0,
+                    "Type": "input"
+                  },
+                  {
+                    "Id": 1,
+                    "Type": "call",
+                    "Properties": {
+                      "T": "package.nolankicks.dead4left2/ActionGraphItem",
+                      "_isStatic": false,
+                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                      "_name": "TryGet"
+                    },
+                    "UserData": {
+                      "Position": "-16,224"
+                    }
+                  },
+                  {
+                    "Id": 3,
+                    "Type": "if",
+                    "UserData": {
+                      "Position": "224,-0"
+                    }
+                  },
+                  {
+                    "Id": 4,
+                    "Type": "call",
+                    "Properties": {
+                      "_isStatic": false,
+                      "_type": "package.nolankicks.dead4left2/ActionGraphItem",
+                      "_name": "PickUp"
+                    },
+                    "UserData": {
+                      "Position": "512,80"
+                    }
+                  }
+                ],
+                "Links": [
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_target",
+                    "DstId": 1,
+                    "DstName": "_target"
+                  },
+                  {
+                    "Value": "EnabledInSelf, InParent",
+                    "DstId": 1,
+                    "DstName": "search"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "_signal",
+                    "DstId": 3,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "_result",
+                    "DstId": 3,
+                    "DstName": "condition"
+                  },
+                  {
+                    "SrcId": 3,
+                    "SrcName": "true",
+                    "DstId": 4,
+                    "DstName": "_signal"
+                  },
+                  {
+                    "SrcId": 1,
+                    "SrcName": "component",
+                    "DstId": 4,
+                    "DstName": "_target"
+                  },
+                  {
+                    "SrcId": 0,
+                    "SrcName": "Inventory",
+                    "DstId": 4,
+                    "DstName": "inventory"
+                  }
+                ]
+              },
+              "selectedInput": "E",
+              "ShopItems": {
+                "ItemNames": [],
+                "ShopActions": [],
+                "ItemTextures": [],
+                "ItemPrices": []
+              },
+              "ShowPopUp": true
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "48aebbd9-ce90-4bf7-8803-a69816647a1d",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/weapons/makarov/w_makarov.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "ba699c8d-6be3-44ab-b8df-3c8239517fe4",
+              "IsTrigger": false,
+              "Model": "models/weapons/makarov/w_makarov.vmdl",
+              "Static": false
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "7d0ecff3-656b-46da-8275-8f4bfada7f79",
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {},
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            }
+          ]
+        },
+        {
+          "__guid": "a9b06f64-b542-4c29-82f9-872cd3f85901",
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "NetworkMode": 1,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.CameraComponent",
+              "__guid": "a0f9fd98-9eb6-421a-9a22-715f95502424",
+              "BackgroundColor": "0.33333,0.46275,0.52157,1",
+              "ClearFlags": "Depth, Stencil",
+              "FieldOfView": 80,
+              "IsMainCamera": false,
+              "Orthographic": false,
+              "OrthographicHeight": 1204,
+              "Priority": 1,
+              "RenderExcludeTags": "",
+              "RenderTags": "viewmodel",
+              "TargetEye": "None",
+              "Viewport": "0,0,1,1",
+              "ZFar": 10000,
+              "ZNear": 0.1
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "e191de2d-93f6-4c56-8208-39aa66b94c60",
+              "Flags": 0,
+              "Name": "gun",
+              "Position": "10.43469,-5.928116,-6.669808",
+              "Tags": "viewmodel",
+              "Enabled": true,
+              "NetworkMode": 1,
+              "NetworkInterpolation": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "5ede9cb1-751d-4c8f-94da-44be7a0931da",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/weapons/makarov/w_makarov.vmdl",
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "32ee46d1-c6f3-41b7-a11c-1ae0375223a6",
+      "Flags": 0,
+      "Name": "Text",
+      "Position": "-424.1352,372.5168,84.38223",
+      "Rotation": "0,0,0.7071067,0.7071068",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "4050784a-07da-456d-a715-33020f4ca37e",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 32,
+          "Scale": 1,
+          "Text": "Component weapons"
+        }
+      ]
+    },
+    {
+      "__guid": "e1647bb2-96ee-4dce-b839-c662e331d750",
+      "Flags": 0,
+      "Name": "Text (1)",
+      "Position": "-401.2575,-540.4892,84.38223",
+      "Rotation": "0,0,0.7071068,-0.7071067",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.TextRenderer",
+          "__guid": "8637bccc-8032-4583-99bc-cdce0cc2bf8a",
+          "Color": "1,1,1,1",
+          "FontFamily": "Poppins",
+          "FontSize": 32,
+          "Scale": 1,
+          "Text": "Action Graph weapons"
+        }
+      ]
+    },
+    {
+      "__guid": "de180055-e629-4f32-b897-2465033dca91",
+      "Flags": 0,
+      "Name": "heavy_ammo_pickup",
+      "Position": "-590.5663,-616.6895,0.8116745",
+      "Rotation": "-0.6123723,-0.3535534,0.3535534,0.6123725",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/heavy_ammo_pickup.prefab"
+    },
+    {
+      "__guid": "cba3cbb0-1956-4130-99e8-ea95ab75c3ce",
+      "Flags": 0,
+      "Name": "heavy_ammo_pickup (1)",
+      "Position": "-584,-616,0.8116748",
+      "Rotation": "-0.6532815,-0.270598,0.2705981,0.6532816",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/heavy_ammo_pickup.prefab"
+    },
+    {
+      "__guid": "4710ab9c-1e06-45c3-ae54-d2e789e27483",
+      "Flags": 0,
+      "Name": "heavy_ammo_pickup (2)",
+      "Position": "-600,-612,0.8116739",
+      "Rotation": "-0.5609854,-0.4304593,0.4304593,0.5609856",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/heavy_ammo_pickup.prefab"
+    },
+    {
+      "__guid": "f7a0ec32-c30e-4edb-88f9-80eb0243adc3",
+      "Flags": 0,
+      "Name": "citizen",
+      "Position": "648,248,7.008903",
+      "Rotation": "0,0,-1,-0.0000004788214",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/shop.prefab"
+    },
+    {
+      "__guid": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41",
+      "Flags": 0,
+      "Name": "weapon_shotgun",
+      "Position": "-220,-156,28",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/weapons/weapon_shotgun.prefab"
     }
   ],
   "SceneProperties": {
@@ -2805,12 +3492,12 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-11T14:34:33.5452228-04:00",
+  "LastSaved": "2024-05-11T22:26:55.3826933-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.v_m4a1",
-    "facepunch.w_m4a1",
+    "fpopium.w_makarov",
     "nolankicks.idel-terry"
   ]
 }

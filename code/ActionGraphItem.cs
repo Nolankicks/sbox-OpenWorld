@@ -8,13 +8,19 @@ using Sandbox.Utility;
 public sealed class ActionGraphItem : Component
 {
 	[Property] public GameObject DropppedItem { get; set; }
-	[Property] public bool InInventory { get; set; }
+	public bool Able { get; set; } = true;
+	[Property, Sync] public bool InInventory { get; set; }
 	[Property] public GameObject Object { get; set; }
-	public delegate void OnUseDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
+	public delegate void OnUseDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer, ActionGraphItem actionGraphItem);
 	[Property] public OnUseDel OnUse { get; set; }
 	public Inventory Inventory { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
 	public PlayerController PlayerController { get; set; }
+	[Property] public bool UsesAmmo { get; set; }
+	[Property, ShowIf("UsesAmmo", true), Sync] public int Ammo { get; set; }
+	[Property, ShowIf("UsesAmmo", true), Sync] public int MaxAmmo { get; set; }
+	public int ShotsFired { get; set; }
+
 	protected override void OnStart()
 	{
 		var allObjects = GameObject.GetAllObjects(false);
@@ -27,13 +33,19 @@ public sealed class ActionGraphItem : Component
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
 	}
 	protected override void OnUpdate()
-	{
-		if (IsProxy) return;
+	{	
+
 		if (InInventory)
 		{
-				Use();
-			Object.Enabled = true;
-			DropppedItem.Enabled = false;
+			Use();
+			foreach (var gb in Object.GetAllObjects(false))
+			{
+				gb.Enabled = true;
+			}
+			foreach (var gb in DropppedItem.GetAllObjects(false))
+			{
+				gb.Enabled = false;
+			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
 			if (popupUi is not null)
 			{
@@ -42,13 +54,24 @@ public sealed class ActionGraphItem : Component
 		}
 		else
 		{
-			Object.Enabled = false;
-			DropppedItem.Enabled = true;
+			foreach (var gb in Object.GetAllObjects(false))
+			{
+				gb.Enabled = false;
+			}
+			foreach (var gb in DropppedItem.GetAllObjects(false))
+			{
+				gb.Enabled = true;
+			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
 			if (popupUi is not null)
 			{
 				popupUi.ShowPopUp = true;
 			}
+		}
+
+		if (IsProxy)
+		{
+			Object.Enabled = false;
 		}
 	}
 
@@ -90,16 +113,31 @@ public sealed class ActionGraphItem : Component
 	}
 	public void Use()
 	{
-		OnUse?.Invoke(PlayerController, Inventory, AmmoContainer);
+		OnUse?.Invoke(PlayerController, Inventory, AmmoContainer, this);
 	}
-	[ActionGraphNode("ActionGraphTrace")]
-	public bool ActionGraphTrace(int Damage, float Spread, int TraceLength, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal)
+	public float GetRandomFloat()
 	{
+		return Random.Shared.Float(-1, 1);
+	}
+	public TimeSince timeSinceFire = 1000;
+	[ActionGraphNode("ActionGraphTrace")]
+	public bool ActionGraphTrace(int Damage, float Spread, int TraceLength, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
+	{
+		if (Ammo > 0 && !IsProxy && timeSinceFire >= FireRate)
+		{
+		AbleToFire = true;
+		if (RefreshTimeSince)
+		{
+			timeSinceFire = 0;
+		}
 		var ray = Game.ActiveScene.Camera.ScreenNormalToRay(0.5f);
 		ray.Forward += Vector3.Random * Spread;
 		var tr = Scene.Trace.Ray(ray, TraceLength).WithoutTags(Steam.SteamId.ToString()).Run();
+		PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
 		if (tr.Hit)
 		{
+			Ammo--;
+			ShotsFired++;
 			tr.GameObject.Components.TryGet<EnemyHealthComponent>(out var dummy, FindMode.EverythingInSelfAndParent);
 			tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 			var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
@@ -154,5 +192,42 @@ public sealed class ActionGraphItem : Component
 			traceNormal = Vector3.Zero;
 		}
 		return tr.Hit;
+		}
+		else
+		{
+			Log.Info("No Ammo");
+			gameObject = null;
+			hitPos = Vector3.Zero;
+			traceNormal = Vector3.Zero;
+			AbleToFire = false;
+			return false;
+		}
+		
+	}
+	[ActionGraphNode("ActionGraphReload")]
+	public void ActionGraphReload(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int StartingAmmo)
+	{
+		if (!UsesAmmo) return;
+		var selectedAmmo = ammoContainer.GetAmmo(ammoType);
+		if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selectedAmmo > 0 && UsesAmmo)
+			{
+				var ammoToSet = selectedAmmo - ShotsFired;
+				if (ammoToSet > selectedAmmo)
+				{
+					Ammo = selectedAmmo;
+					AmmoContainer.SetAmmo(ammoType, 0);
+				}
+				else
+				{
+					AmmoContainer.SetAmmo(ammoType, ammoToSet);
+					Ammo = StartingAmmo;
+				}
+				ShotsFired = 0;
+			}
+	}
+	[ActionGraphNode("TimeSince0")]
+	public TimeSince TimeSince0()
+	{
+		return 0;
 	}
 }

@@ -1,0 +1,154 @@
+{
+  "RootObject": {
+    "__guid": "de180055-e629-4f32-b897-2465033dca91",
+    "Flags": 0,
+    "Name": "heavy_ammo_pickup",
+    "Position": "-590.5663,-616.6895,0.8116745",
+    "Rotation": "-0.6830126,-0.1830127,0.1830127,0.6830127",
+    "Tags": "ignore",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "eb420c2f-e11e-4870-af2e-e40bf17d08b8",
+        "Description": "Ammo for the SMG and Pistol",
+        "Icon": "models/light_ammo/source/9mmprojectfinal.vmdl.vtex",
+        "Name": "Light Ammo",
+        "PickUpAction": {
+          "__version": 7,
+          "__guid": "6de641e6-ee6d-4690-852c-1df9b8a26965",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_name": "Destroy"
+              },
+              "UserData": {
+                "Position": "928,160"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 2,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 2,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": {
+                "$type": "Simple",
+                "Type": {
+                  "$type": "Nested",
+                  "DeclaringType": "package.nolankicks.dead4left2/Kicks.AmmoContainer",
+                  "Name": "AmmoTypes"
+                },
+                "Value": "HeavyAmmo"
+              },
+              "DstId": 2,
+              "DstName": "ammoType"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 3,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "selectedInput": "E",
+        "ShopItems": {
+          "ItemNames": [],
+          "ShopActions": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      },
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "60dc8f42-7d77-4ac1-b769-668a1de268c8",
+        "BodyGroups": 1,
+        "Model": "models/weapons/sbox_assault_m4a1/v_m4a1_magazine.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "9cc09ca6-7347-4709-a903-66432dc6b224",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "9738e6a2-b252-441e-bc44-3eebc41b5110",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "3.699926,1.199643,8.900126",
+        "Static": false
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": [
+    "facepunch.v_m4a1_magazine"
+  ]
+}

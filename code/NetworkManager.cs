@@ -1,6 +1,7 @@
 using Sandbox.Network;
 using System;
 using System.Threading.Tasks;
+namespace Kicks;
 public sealed class NetworkManager : Component, Component.INetworkListener
 {
 	/// <summary>
@@ -42,6 +43,11 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 
 		// Spawn this object and make the client the owner
 		var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
+		player.Components.TryGet<PlayerController>( out var playerVar );
+		if (playerVar is not null)
+		{
+			playerVar.eyeAngles = startLocation.Rotation.Angles();
+		}
 		player.NetworkSpawn( channel );
 	}
 

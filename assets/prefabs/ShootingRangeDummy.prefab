@@ -8,21 +8,6 @@
     "NetworkInterpolation": true,
     "Components": [
       {
-        "__type": "Sandbox.SkinnedModelRenderer",
-        "__guid": "46a6d63f-de7f-4fc7-a1bb-185ec01bbe58",
-        "BodyGroups": 21,
-        "BoneMergeTarget": {
-          "_type": "component",
-          "component_id": "f8681281-04e5-4b74-8037-98949b2e8b97",
-          "go": "be63dae3-0bcf-4497-a1dc-40c5d22a7d4d",
-          "component_type": "SkinnedModelRenderer"
-        },
-        "CreateBoneObjects": false,
-        "Model": "models/humans/heads/frank/frank.vmdl",
-        "RenderType": "On",
-        "Tint": "1,1,1,1"
-      },
-      {
         "__type": "Kicks.EnemyHealthComponent",
         "__guid": "330b7f79-396e-4aaf-af61-15ab9cc8ce45",
         "health": 100,
@@ -85,16 +70,6 @@
               }
             },
             {
-              "Id": 19,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
-              },
-              "UserData": {
-                "Position": "336,416"
-              }
-            },
-            {
               "Id": 21,
               "Type": "scene.clone",
               "UserData": {
@@ -136,6 +111,29 @@
               "UserData": {
                 "Position": "1616,-80"
               }
+            },
+            {
+              "Id": 36,
+              "Type": "scene.ref",
+              "Properties": {
+                "gameobject": {
+                  "_type": "gameobject",
+                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517"
+                }
+              },
+              "UserData": {
+                "Position": "192,416"
+              }
+            },
+            {
+              "Id": 37,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "432,352"
+              }
             }
           ],
           "Links": [
@@ -167,12 +165,6 @@
               "Value": 1,
               "DstId": 18,
               "DstName": "seconds"
-            },
-            {
-              "SrcId": 14,
-              "SrcName": "_target",
-              "DstId": 19,
-              "DstName": "_this"
             },
             {
               "SrcId": 18,
@@ -219,7 +211,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 19,
+              "SrcId": 37,
               "SrcName": "_result",
               "DstId": 26,
               "DstName": "_target"
@@ -241,10 +233,20 @@
               "SrcName": "_result",
               "DstId": 32,
               "DstName": "gameObject"
+            },
+            {
+              "SrcId": 36,
+              "SrcName": "_result",
+              "DstId": 37,
+              "DstName": "_this"
             }
           ],
           "Defaults": {
-            "$28._value": {
+            "$36.gameobject": {
+              "_type": "gameobject",
+              "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517"
+            },
+            "$39._value": {
               "_type": "gameobject",
               "prefab": "prefabs/shootingrangedummy.prefab"
             }
@@ -263,7 +265,7 @@
     ],
     "Children": [
       {
-        "__guid": "be63dae3-0bcf-4497-a1dc-40c5d22a7d4d",
+        "__guid": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
         "Flags": 0,
         "Name": "body",
         "Enabled": true,
@@ -272,82 +274,121 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "f8681281-04e5-4b74-8037-98949b2e8b97",
-            "BodyGroups": 2193,
+            "__guid": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
+            "BodyGroups": 65,
             "CreateBoneObjects": false,
-            "MaterialGroup": "skin1",
-            "Model": "models/humans/male.vmdl",
-            "OnComponentStart": {
-              "__version": 7,
-              "__guid": "bfa5b026-b9a4-4094-97dd-c98579a783af",
-              "UserData": {
-                "Title": "On Component Start",
-                "ReferencedComponentTypes": [
-                  "Sandbox.Game/Sandbox.SkinnedModelRenderer"
-                ]
-              },
-              "Variables": [],
-              "Nodes": [
-                {
-                  "Id": 0,
-                  "Type": "input"
-                },
-                {
-                  "Id": 1,
-                  "Type": "scene.get",
-                  "Properties": {
-                    "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
-                  },
-                  "UserData": {
-                    "Position": "-64,160"
-                  }
-                },
-                {
-                  "Id": 2,
-                  "Type": "call",
-                  "Properties": {
-                    "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                    "_name": "Set",
-                    "_isStatic": false
-                  },
-                  "UserData": {
-                    "Position": "304,0"
-                  }
-                }
-              ],
-              "Links": [
-                {
-                  "SrcId": 0,
-                  "SrcName": "_target",
-                  "DstId": 1,
-                  "DstName": "_this"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 2,
-                  "DstName": "_signal"
-                },
-                {
-                  "SrcId": 1,
-                  "SrcName": "_result",
-                  "DstId": 2,
-                  "DstName": "_target"
-                },
-                {
-                  "Value": "b_long_idle",
-                  "DstId": 2,
-                  "DstName": "v"
-                },
-                {
-                  "Value": true,
-                  "DstId": 2,
-                  "DstName": "value"
-                }
-              ]
-            },
+            "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "ca06c10d-e3c7-4d14-b43f-9dd2f80e2d54",
+            "Flags": 0,
+            "Name": "pants",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "fbfd09d5-c501-493d-9ac3-4ad7a17bbb7c",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
+                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen_clothes/trousers/trackiebottoms/models/trackie_bottoms_black.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "65c58776-1d1c-4456-913c-bc420d4ae511",
+            "Flags": 0,
+            "Name": "shirt",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "1a29a82e-5935-46c7-a15a-78db35ef2b97",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
+                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen_clothes/jacket/longsleeve/models/longsleeve_red.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "28bcfd73-f2d0-47f3-8a7d-10d3abcce134",
+            "Flags": 0,
+            "Name": "hair",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "RandomModel",
+                "__guid": "b1944780-516e-4f58-bbe4-943c123305e1",
+                "RandomModels": [
+                  "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
+                  "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
+                  "models/citizen_clothes/hat/baseball_cap/model/baseball_cap_black.vmdl",
+                  "models/citizen_clothes/hair/hair_mullet/models/hair_mullet.vmdl",
+                  "models/citizen_clothes/hat/fedora/models/fedora.vmdl",
+                  "models/citizen_clothes/hair/hair_fade/models/hair_fade.vmdl",
+                  "models/citizen_clothes/hair/goatee/models/goatee.vmdl"
+                ]
+              },
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "e23ee1c9-fbcd-4f67-99aa-db204a955a6a",
+                "BodyGroups": 18446744073709551615,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "3dab7c4c-ae12-405c-9329-e419bb700cb0",
+                  "go": "24d6df0d-3811-494d-bb30-9c3d13b4d517",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/citizen_clothes/hair/hair_shortscruffy/models/hair_shortscruffy.vmdl",
+                "RenderType": "On",
+                "Tint": "0.15294,0.1098,0.1098,1"
+              }
+            ]
+          },
+          {
+            "__guid": "2fcb4685-d8fa-4c51-9f73-51c8f475ba3c",
+            "Flags": 0,
+            "Name": "shoes",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "11813738-b591-4d3c-904a-e0afecc1a53d",
+                "BodyGroups": 18446744073709551615,
+                "CreateBoneObjects": false,
+                "Model": "models/citizen_clothes/shoes/sneakers/models/sneakers.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
           }
         ]
       }

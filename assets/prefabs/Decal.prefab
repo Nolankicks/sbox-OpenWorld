@@ -1,20 +1,22 @@
 {
   "RootObject": {
-    "__guid": "2776607a-7ef4-4439-9903-685e45a01f62",
+    "__guid": "1ed9f12e-d2b3-4b3c-a4f4-26636931915f",
+    "Flags": 0,
     "Name": "decal",
     "Enabled": true,
-    "NetworkMode": 2,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
     "Components": [
       {
-        "__type": "DecalRenderer",
-        "__guid": "ac7bca48-ee4d-4c72-b4bf-14fcd18bcaef",
+        "__type": "Sandbox.DecalRenderer",
+        "__guid": "a7725e99-a27e-4427-b54b-1243a0f5c010",
         "CutoffAngle": 60,
         "CutoffAngleSoftness": 5,
         "Material": "materials/decals/bullethole.vmat",
         "Mod2XBlending": false,
         "OnComponentStart": {
-          "__version": 5,
-          "__guid": "a9ffe2d6-e593-4bf0-86c6-07b78a24e82a",
+          "__version": 7,
+          "__guid": "47a5d4d6-4cdc-4fbb-9130-534a36e6cad3",
           "UserData": {
             "Title": "On Component Start",
             "ReferencedComponentTypes": []
