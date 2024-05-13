@@ -91,7 +91,7 @@
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "2816,-256"
+                  "Position": "2832,-256"
                 }
               },
               {
@@ -103,7 +103,7 @@
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "3168,-256"
+                  "Position": "3184,-256"
                 }
               },
               {
@@ -115,7 +115,7 @@
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "3520,-256"
+                  "Position": "3536,-256"
                 }
               },
               {
@@ -127,14 +127,14 @@
                   "_type": "package.nolankicks.dead4left2/Sdftest"
                 },
                 "UserData": {
-                  "Position": "3872,-256"
+                  "Position": "3888,-256"
                 }
               },
               {
                 "Id": 114,
                 "Type": "comment",
                 "UserData": {
-                  "Position": "2688,-288",
+                  "Position": "2704,-288",
                   "Size": "1440,256",
                   "Title": "Grass Biome",
                   "Layer": 4
@@ -1263,9 +1263,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "WaterBool",
-                  "_type": "package.nolankicks.dead4left2/Sdftest"
+                  "_type": "package.nolankicks.dead4left2/Sdftest",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "464,144"
@@ -1713,9 +1713,9 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
                   "_name": "Wood",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "592,80"
@@ -1896,9 +1896,9 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "880,-32"
@@ -2215,6 +2215,7 @@
             "go": "be31747b-8a85-4d37-a892-f08d5571e973"
           },
           "eyeAngles": "0,0,0",
+          "FindSpawnPoint": false,
           "Health": 100,
           "Hold": {
             "_type": "gameobject",
@@ -2274,9 +2275,9 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "AddItem",
-                  "_type": "package.nolankicks.dead4left2/Inventory"
+                  "_type": "package.nolankicks.dead4left2/Inventory",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "496,96"
@@ -3872,7 +3873,7 @@
   },
   "Title": "sdf_staging",
   "Description": "",
-  "LastSaved": "2024-05-10T21:00:30.6491225-04:00",
+  "LastSaved": "2024-05-12T21:22:29.4296957-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

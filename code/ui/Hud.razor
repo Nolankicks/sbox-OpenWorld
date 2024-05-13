@@ -41,6 +41,22 @@
 			var shotgun = Inventory.Items[Inventory.ActiveSlot].Components.Get<Shotgun>();
 			<div>@shotgun.Ammo / @AmmoContainer.ShotgunShells</div>
 		}
+		else if (Inventory.Items[Inventory.ActiveSlot].Components.Get<ActionGraphItem>() is not null && Inventory.Items[Inventory.ActiveSlot].Components.Get<ActionGraphItem>().UsesAmmo)
+			{
+				var item = Inventory.Items[Inventory.ActiveSlot].Components.Get<ActionGraphItem>();
+				@if (item.AmmoType == AmmoContainer.AmmoTypes.LightAmmo)
+				{
+					<div>@item.Ammo / @AmmoContainer.LightAmmo</div>
+				}
+				else if (item.AmmoType == AmmoContainer.AmmoTypes.HeavyAmmo)
+				{
+					<div>@item.Ammo / @AmmoContainer.HeavyAmmo</div>
+				}
+				else if (item.AmmoType == AmmoContainer.AmmoTypes.ShotgunShells)
+				{
+					<div>@item.Ammo / @AmmoContainer.ShotgunShells</div>
+				}
+			}
 		}
 	</div>
 </root>
@@ -52,12 +68,14 @@
 	public PlayerController Player;
 	public AmmoContainer AmmoContainer;
 	public Inventory Inventory;
+	public ActionGraphItem ActionGraphItem;
 	[Property] public float opacity { get; set; } = 1;
 	protected override void OnStart()
 	{
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
 		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
+		ActionGraphItem = Scene.GetAllComponents<ActionGraphItem>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	protected override void OnUpdate()

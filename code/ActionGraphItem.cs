@@ -19,6 +19,7 @@ public sealed class ActionGraphItem : Component
 	[Property] public bool UsesAmmo { get; set; }
 	[Property, ShowIf("UsesAmmo", true), Sync] public int Ammo { get; set; }
 	[Property, ShowIf("UsesAmmo", true), Sync] public int MaxAmmo { get; set; }
+	[Property] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	public int ShotsFired { get; set; }
 
 	protected override void OnStart()
