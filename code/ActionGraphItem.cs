@@ -140,8 +140,8 @@ public sealed class ActionGraphItem : Component
 		return Random.Shared.Float(-1, 1);
 	}
 	public TimeSince timeSinceFire = 1000;
-	[ActionGraphNode("ActionGraphTrace")]
-	public bool ActionGraphTrace(int Damage, float Spread, int TraceLength, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
+	[ActionGraphNode("ActionGraphTrace"), Impure]
+	public void ActionGraphTrace(int Damage, float Spread, int TraceLength, out bool TraceHit, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
 	{
 		if (Ammo > 0 && !IsProxy && timeSinceFire >= FireRate)
 		{
@@ -156,6 +156,7 @@ public sealed class ActionGraphItem : Component
 		PlayerController.eyeAngles += new Angles(-Recoil, GetRandomFloat(), 0);
 		if (tr.Hit)
 		{
+			TraceHit = true;
 			Ammo--;
 			ShotsFired++;
 			tr.GameObject.Components.TryGet<EnemyHealthComponent>(out var dummy, FindMode.EverythingInSelfAndParent);
@@ -207,20 +208,20 @@ public sealed class ActionGraphItem : Component
 		}
 		else
 		{
+			TraceHit = false;
 			gameObject = null;
 			hitPos = Vector3.Zero;
 			traceNormal = Vector3.Zero;
 		}
-		return tr.Hit;
 		}
 		else
 		{
+			TraceHit = false;
 			Log.Info("No Ammo");
 			gameObject = null;
 			hitPos = Vector3.Zero;
 			traceNormal = Vector3.Zero;
 			AbleToFire = false;
-			return false;
 		}
 		
 	}

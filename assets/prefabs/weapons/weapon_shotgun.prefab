@@ -11,6 +11,7 @@
         "__type": "ActionGraphItem",
         "__guid": "47038c6c-ef4c-494b-9d86-27907478c474",
         "Ammo": 12,
+        "AmmoType": "LightAmmo",
         "DropppedItem": {
           "_type": "gameobject",
           "go": "dd07bd96-e3b7-4fdf-b7c8-7f1bd5be2270"
@@ -49,35 +50,35 @@
               "Id": 507,
               "Type": "input",
               "UserData": {
-                "Position": "-304,1008"
+                "Position": "-2752,512"
               }
             },
             {
               "Id": 508,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "1232,1120"
+                "Position": "-1216,624"
               }
             },
             {
               "Id": 509,
               "Type": "forrange",
               "UserData": {
-                "Position": "1856,976"
+                "Position": "-592,480"
               }
             },
             {
               "Id": 510,
               "Type": "if",
               "UserData": {
-                "Position": "1568,992"
+                "Position": "-880,496"
               }
             },
             {
               "Id": 511,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "2576,928"
+                "Position": "128,432"
               }
             },
             {
@@ -87,7 +88,7 @@
                 "_var": "Action Graph Item"
               },
               "UserData": {
-                "Position": "624,1008"
+                "Position": "-1824,512"
               }
             },
             {
@@ -97,14 +98,14 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "3296,1088"
+                "Position": "848,592"
               }
             },
             {
               "Id": 514,
               "Type": "if",
               "UserData": {
-                "Position": "3056,960"
+                "Position": "608,464"
               }
             },
             {
@@ -114,7 +115,7 @@
                 "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "128,1248"
+                "Position": "-2320,752"
               }
             },
             {
@@ -124,7 +125,7 @@
                 "_var": "Gun"
               },
               "UserData": {
-                "Position": "416,1008"
+                "Position": "-2032,512"
               }
             },
             {
@@ -136,7 +137,7 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "3024,784"
+                "Position": "576,288"
               }
             },
             {
@@ -146,28 +147,28 @@
                 "_var": "Ammo"
               },
               "UserData": {
-                "Position": "-64,1008"
+                "Position": "-2512,512"
               }
             },
             {
               "Id": 519,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "640,608"
+                "Position": "-1808,112"
               }
             },
             {
               "Id": 520,
               "Type": "if",
               "UserData": {
-                "Position": "896,608"
+                "Position": "-1552,112"
               }
             },
             {
               "Id": 521,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "1152,560"
+                "Position": "-1296,64"
               }
             },
             {
@@ -179,7 +180,7 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "1536,560"
+                "Position": "-912,64"
               }
             },
             {
@@ -190,49 +191,49 @@
                 "_type": "package.nolankicks.dead4left2/ActionGraphItem"
               },
               "UserData": {
-                "Position": "1952,704"
+                "Position": "-496,208"
               }
             },
             {
               "Id": 524,
               "Type": "if",
               "UserData": {
-                "Position": "2656,704"
+                "Position": "208,208"
               }
             },
             {
               "Id": 525,
               "Type": "op.greaterthan",
               "UserData": {
-                "Position": "2336,688"
+                "Position": "-112,192"
               }
             },
             {
               "Id": 526,
               "Type": "if",
               "UserData": {
-                "Position": "2240,1104"
+                "Position": "-208,608"
               }
             },
             {
               "Id": 527,
               "Type": "op.equal",
               "UserData": {
-                "Position": "2032,1280"
+                "Position": "-416,784"
               }
             },
             {
               "Id": 528,
               "Type": "time.delay",
               "UserData": {
-                "Position": "2784,1392"
+                "Position": "336,896"
               }
             },
             {
               "Id": 529,
               "Type": "op.and",
               "UserData": {
-                "Position": "1424,1136"
+                "Position": "-1024,640"
               }
             },
             {
@@ -243,7 +244,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "1104,1232"
+                "Position": "-1344,736"
               }
             },
             {
@@ -255,7 +256,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "2480,1312"
+                "Position": "32,816"
               }
             },
             {
@@ -267,7 +268,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "2992,1440"
+                "Position": "544,944"
               }
             },
             {
@@ -280,7 +281,7 @@
                 }
               },
               "UserData": {
-                "Position": "-96,1248"
+                "Position": "-2544,752"
               }
             }
           ],
@@ -398,7 +399,7 @@
             },
             {
               "SrcId": 511,
-              "SrcName": "_result",
+              "SrcName": "TraceHit",
               "DstId": 514,
               "DstName": "condition"
             },
