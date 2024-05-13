@@ -80,6 +80,13 @@ public sealed class ActionGraphItem : Component
 					gb.Enabled = false;
 				}
 			}
+			else
+			{
+				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				{
+					gb.Enabled = true;
+				}
+			}
 			foreach (var gb in Object.GetAllObjects(false))
 			{
 				gb.Enabled = false;
@@ -93,11 +100,10 @@ public sealed class ActionGraphItem : Component
 		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
 		GameObject.Parent = null;
 		inventory.RemoveItem(GameObject, false);
-		InInventory = false;
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		DropppedItem.Transform.LocalPosition = Vector3.Zero;
-		GameObject.Transform.Position = tr.EndPosition;
-		Network.Refresh();
+		Object.Transform.LocalPosition = Vector3.Zero;
+		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 15;
+		InInventory = false;
 		if (GameNetworkSystem.IsActive)
 		{
 		foreach(var gb in allObjects)
