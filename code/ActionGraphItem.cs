@@ -140,7 +140,7 @@ public sealed class ActionGraphItem : Component
 		return Random.Shared.Float(-1, 1);
 	}
 	public TimeSince timeSinceFire = 1000;
-	[ActionGraphNode("ActionGraphTrace"), Impure]
+	[ActionGraphNode("ActionGraphTrace"), Impure, Icon("sports_handball")]
 	public void ActionGraphTrace(int Damage, float Spread, int TraceLength, out bool TraceHit, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
 	{
 		if (Ammo > 0 && !IsProxy && timeSinceFire >= FireRate)
@@ -225,7 +225,7 @@ public sealed class ActionGraphItem : Component
 		}
 		
 	}
-	[ActionGraphNode("ActionGraphReload")]
+	[ActionGraphNode("ActionGraphReload"), Icon("replay")]
 	public void ActionGraphReload(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int StartingAmmo)
 	{
 		if (!UsesAmmo) return;
@@ -245,10 +245,5 @@ public sealed class ActionGraphItem : Component
 				}
 				ShotsFired = 0;
 			}
-	}
-	[ActionGraphNode("TimeSince0")]
-	public TimeSince TimeSince0()
-	{
-		return 0;
 	}
 }

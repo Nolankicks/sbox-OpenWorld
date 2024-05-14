@@ -304,10 +304,10 @@ public sealed class Inventory : Component
 		}
 	}
 	}
-	void PopupUi(PopupUi popupUi, Inputs inputAction)
+	void PopupUi(PopupUi popupUi, string inputAction)
 	{
 		if (popupUi is null) return;
-		if (Input.Pressed(InputHandler.GetInputString(inputAction)))
+		if (Input.Pressed(inputAction))
 		{
 			popupUi.PickUpAction?.Invoke(PlayerController, this, AmmoContainer, inputHint);
 		}

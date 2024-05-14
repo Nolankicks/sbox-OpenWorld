@@ -1,5 +1,5 @@
 {
-  "__guid": "af6d67e8-3c76-4775-81b9-43428798c83e",
+  "__guid": "f73d0b45-7337-4e31-a76c-ffd142c002ff",
   "GameObjects": [
     {
       "__guid": "5e0a6348-f66e-4902-8bd0-231cfa85e35c",
@@ -12,7 +12,7 @@
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
-          "__guid": "eb4cd64b-db67-4431-a10a-3ad11f687483",
+          "__guid": "292897ef-0bcc-4162-88b8-2e3abdb0d242",
           "MapName": "nolankicks.d4l_shooting_range",
           "UseMapFromLaunch": false
         }
@@ -88,7 +88,7 @@
             "Variables": [
               {
                 "Name": "Inventory",
-                "Type": "package.nolankicks.dead4left2/Inventory"
+                "Type": "Inventory"
               }
             ],
             "Nodes": [
@@ -103,7 +103,7 @@
                 "Id": 1,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Inventory"
+                  "T": "Inventory"
                 },
                 "UserData": {
                   "Position": "-416,208"
@@ -123,9 +123,9 @@
                 "Id": 8,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_name": "AddItem"
+                  "_name": "AddItem",
+                  "_type": "Inventory"
                 },
                 "UserData": {
                   "Position": "912,96"
@@ -135,9 +135,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_name": "AddItem"
+                  "_name": "AddItem",
+                  "_type": "Inventory"
                 },
                 "UserData": {
                   "Position": "1632,96"
@@ -147,9 +147,9 @@
                 "Id": 38,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_name": "AddItem"
+                  "_name": "AddItem",
+                  "_type": "Inventory"
                 },
                 "UserData": {
                   "Position": "1296,96"
@@ -2620,21 +2620,26 @@
             "UserData": {
               "Title": "On Use",
               "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/ActionGraphItem"
+                "package.nolankicks.dead4left2/ActionGraphItem",
+                "package.nolankicks.dead4left2/ActionGraphDelay"
               ]
             },
             "Variables": [
               {
                 "Name": "Action Graph Item",
-                "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+                "Type": "ActionGraphItem"
               },
               {
                 "Name": "Ammo",
-                "Type": "package.nolankicks.dead4left2/Kicks.AmmoContainer"
+                "Type": "Kicks.AmmoContainer"
+              },
+              {
+                "Name": "Delay",
+                "Type": "ActionGraphDelay"
               },
               {
                 "Name": "inv",
-                "Type": "package.nolankicks.dead4left2/Inventory"
+                "Type": "Inventory"
               }
             ],
             "Nodes": [
@@ -2642,17 +2647,17 @@
                 "Id": 341,
                 "Type": "input",
                 "UserData": {
-                  "Position": "608,224"
+                  "Position": "-1792,144"
                 }
               },
               {
                 "Id": 342,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                  "T": "ActionGraphItem"
                 },
                 "UserData": {
-                  "Position": "1056,400"
+                  "Position": "-1168,304"
                 }
               },
               {
@@ -2662,21 +2667,21 @@
                   "_var": "Action Graph Item"
                 },
                 "UserData": {
-                  "Position": "1328,224"
+                  "Position": "-880,144"
                 }
               },
               {
                 "Id": 344,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1568,224"
+                  "Position": "-128,144"
                 }
               },
               {
                 "Id": 345,
                 "Type": "if",
                 "UserData": {
-                  "Position": "2144,224"
+                  "Position": "448,144"
                 }
               },
               {
@@ -2686,42 +2691,42 @@
                   "graph": "actions/spawndecal.action"
                 },
                 "UserData": {
-                  "Position": "2400,304"
+                  "Position": "704,224"
                 }
               },
               {
                 "Id": 347,
                 "Type": "ActionGraphTrace",
                 "UserData": {
-                  "Position": "1808,224"
+                  "Position": "112,144"
                 }
               },
               {
                 "Id": 348,
                 "Type": "sound.playat",
                 "UserData": {
-                  "Position": "2928,304"
+                  "Position": "1232,224"
                 }
               },
               {
                 "Id": 349,
                 "Type": "input.pressed",
                 "UserData": {
-                  "Position": "1248,64"
+                  "Position": "-448,-16"
                 }
               },
               {
                 "Id": 350,
                 "Type": "if",
                 "UserData": {
-                  "Position": "1616,64"
+                  "Position": "-80,-16"
                 }
               },
               {
                 "Id": 351,
                 "Type": "ActionGraphReload",
                 "UserData": {
-                  "Position": "1920,48"
+                  "Position": "224,-32"
                 }
               },
               {
@@ -2731,7 +2736,7 @@
                   "_var": "Ammo"
                 },
                 "UserData": {
-                  "Position": "1040,224"
+                  "Position": "-1088,144"
                 }
               },
               {
@@ -2741,54 +2746,111 @@
                   "_var": "inv"
                 },
                 "UserData": {
-                  "Position": "800,224"
+                  "Position": "-1296,144"
                 }
               },
               {
                 "Id": 354,
                 "Type": "input.down",
                 "UserData": {
-                  "Position": "1344,320"
+                  "Position": "-352,240"
                 }
               },
               {
                 "Id": 355,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Parent"
+                  "_name": "Parent",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
-                  "Position": "1984,480"
+                  "Position": "288,400"
                 }
               },
               {
                 "Id": 356,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
-                  "Position": "2224,480"
+                  "Position": "528,400"
                 }
               },
               {
                 "Id": 357,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
-                  "Position": "2528,496"
+                  "Position": "832,416"
                 }
               },
               {
                 "Id": 358,
                 "Type": "op.add",
                 "UserData": {
-                  "Position": "2800,480"
+                  "Position": "1104,400"
+                }
+              },
+              {
+                "Id": 373,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "ActionGraphDelay"
+                },
+                "UserData": {
+                  "Position": "-1840,368"
+                }
+              },
+              {
+                "Id": 374,
+                "Type": "var",
+                "Properties": {
+                  "_var": "Delay"
+                },
+                "UserData": {
+                  "Position": "-1552,144"
+                }
+              },
+              {
+                "Id": 375,
+                "Type": "if",
+                "UserData": {
+                  "Position": "-576,144"
+                }
+              },
+              {
+                "Id": 377,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Delay",
+                  "_type": "ActionGraphDelay"
+                },
+                "UserData": {
+                  "Position": "-752,320"
+                }
+              },
+              {
+                "Id": 379,
+                "Type": "op.not",
+                "UserData": {
+                  "Position": "-720,240"
+                }
+              },
+              {
+                "Id": 380,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "SetDelay",
+                  "_type": "ActionGraphDelay"
+                },
+                "UserData": {
+                  "Position": "608,-32"
                 }
               }
             ],
@@ -2812,8 +2874,8 @@
                 "DstName": "_value"
               },
               {
-                "SrcId": 343,
-                "SrcName": "_signal",
+                "SrcId": 375,
+                "SrcName": "true",
                 "DstId": 344,
                 "DstName": "_signal"
               },
@@ -2831,7 +2893,7 @@
               },
               {
                 "SrcId": 347,
-                "SrcName": "_result",
+                "SrcName": "TraceHit",
                 "DstId": 345,
                 "DstName": "condition"
               },
@@ -2918,8 +2980,8 @@
                 "DstName": "action"
               },
               {
-                "SrcId": 343,
-                "SrcName": "_signal",
+                "SrcId": 375,
+                "SrcName": "true",
                 "DstId": 350,
                 "DstName": "_signal"
               },
@@ -2968,7 +3030,7 @@
                 "DstName": "_value"
               },
               {
-                "SrcId": 341,
+                "SrcId": 374,
                 "SrcName": "_signal",
                 "DstId": 353,
                 "DstName": "_signal"
@@ -3011,11 +3073,68 @@
               {
                 "Value": {
                   "$type": "Simple",
-                  "Type": "Sandbox.System/Vector3",
+                  "Type": "Vector3",
                   "Value": "0,0,64"
                 },
                 "DstId": 358,
                 "DstName": "b"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "_target",
+                "DstId": 373,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 341,
+                "SrcName": "_signal",
+                "DstId": 374,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 373,
+                "SrcName": "_result",
+                "DstId": 374,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 343,
+                "SrcName": "_signal",
+                "DstId": 375,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 379,
+                "SrcName": "_result",
+                "DstId": 375,
+                "DstName": "condition"
+              },
+              {
+                "VarName": "Delay",
+                "DstId": 377,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 377,
+                "SrcName": "_result",
+                "DstId": 379,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 351,
+                "SrcName": "_signal",
+                "DstId": 380,
+                "DstName": "_signal"
+              },
+              {
+                "VarName": "Delay",
+                "DstId": 380,
+                "DstName": "_target"
+              },
+              {
+                "Value": 3,
+                "DstId": 380,
+                "DstName": "delay"
               }
             ]
           },
@@ -3025,6 +3144,11 @@
           "__type": "IconComponent",
           "__guid": "bbd481be-59c3-4234-991f-4274f0b76f03",
           "Icon": "textures/m4.vtex"
+        },
+        {
+          "__type": "ActionGraphDelay",
+          "__guid": "d2047997-2c02-4c6f-aa2d-66ed59e3c270",
+          "Delay": false
         }
       ],
       "Children": [
@@ -3053,11 +3177,11 @@
                 "Variables": [
                   {
                     "Name": "Action Graph Item",
-                    "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+                    "Type": "ActionGraphItem"
                   },
                   {
                     "Name": "Inv",
-                    "Type": "package.nolankicks.dead4left2/Inventory"
+                    "Type": "Inventory"
                   }
                 ],
                 "Nodes": [
@@ -3069,10 +3193,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
+                      "T": "ActionGraphItem",
                       "_name": "TryGet",
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                      "_type": "Sandbox.IComponentLister"
                     },
                     "UserData": {
                       "Position": "176,240"
@@ -3099,9 +3223,9 @@
                     "Id": 7,
                     "Type": "call",
                     "Properties": {
-                      "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                       "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_type": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "1024,0"
@@ -3184,7 +3308,7 @@
                   }
                 ]
               },
-              "selectedInput": "E",
+              "selectedInput": "use",
               "ShopItems": {
                 "ItemNames": [],
                 "ShopActions": [],
@@ -3313,7 +3437,7 @@
             "Variables": [
               {
                 "Name": "Item",
-                "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+                "Type": "ActionGraphItem"
               }
             ],
             "Nodes": [
@@ -3339,7 +3463,7 @@
                 "Id": 4,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                  "T": "ActionGraphItem"
                 },
                 "UserData": {
                   "Position": "-96,176"
@@ -3543,10 +3667,10 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_type": "Sandbox.Game/Sandbox.IComponentLister",
                       "_isStatic": false,
+                      "T": "ActionGraphItem",
                       "_name": "TryGet",
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                      "_type": "Sandbox.IComponentLister"
                     },
                     "UserData": {
                       "Position": "-16,224"
@@ -3563,9 +3687,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                       "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_type": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "512,80"
@@ -3616,7 +3740,7 @@
                   }
                 ]
               },
-              "selectedInput": "E",
+              "selectedInput": "use",
               "ShopItems": {
                 "ItemNames": [],
                 "ShopActions": [],
@@ -3763,209 +3887,6 @@
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "__Prefab": "prefabs/weapons/weapon_shotgun.prefab"
-    },
-    {
-      "__guid": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-      "Flags": 0,
-      "Name": "Ragdoll",
-      "Position": "-444,-372,8",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "411c1a86-1d2d-4091-88a9-137b7146b260",
-          "BodyGroups": 17,
-          "CreateBoneObjects": false,
-          "MaterialGroup": "default",
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        },
-        {
-          "__type": "Sandbox.ModelPhysics",
-          "__guid": "13aaba86-375b-4e0a-8ce7-26980c66ec9f",
-          "Locking": {},
-          "Model": "models/citizen/citizen.vmdl",
-          "Renderer": {
-            "_type": "component",
-            "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-            "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "RigidbodyFlags": 0
-        }
-      ],
-      "Children": [
-        {
-          "__guid": "a25268b1-d69f-4538-9ec5-db8e059c53ee",
-          "Flags": 0,
-          "Name": "clothes",
-          "Position": "0,0,0",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Children": [
-            {
-              "__guid": "60fab7c1-0cee-4071-8ebf-5512db2f4371",
-              "Flags": 0,
-              "Name": "shirt",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "c0c69bc3-b7e5-41d9-b5bd-affb40046ac2",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/jumper/loose_jumper/models/loose_jumper_goalie.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "__guid": "6d04ed06-fbeb-4616-9fd4-1168b7150fcd",
-              "Flags": 0,
-              "Name": "gloves",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "7e82d7bd-c5b7-48a7-b521-31539eb7261c",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/gloves/goalie_gloves/models/goalie_gloves.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "__guid": "d11ad8e0-bd41-4ee4-91fa-130b35f1894f",
-              "Flags": 0,
-              "Name": "shorts",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "a4cc06d1-55be-42f8-afed-ef3424cee009",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/shorts/football_shorts/models/football_shorts.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "__guid": "3acaf441-4821-4c16-8ee2-bc1ea786fda1",
-              "Flags": 0,
-              "Name": "shoes",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "fe4fe759-5cfa-4d6e-b918-733e0c3e361c",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/shoes/football_shoes/models/football_shoes.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "__guid": "f5967095-807a-4097-a50c-7581f41f93d1",
-              "Flags": 0,
-              "Name": "beanie",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "2c964d11-be7f-4d1d-be24-64f01fe2f5a8",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
-                  "RenderType": "On",
-                  "Tint": "1,1,1,1"
-                }
-              ]
-            },
-            {
-              "__guid": "0066ec9e-7b62-401c-a287-c8bba268bf94",
-              "Flags": 0,
-              "Name": "beard",
-              "Position": "0,0,0",
-              "Enabled": true,
-              "NetworkMode": 2,
-              "NetworkInterpolation": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.SkinnedModelRenderer",
-                  "__guid": "cee60dea-203a-4485-b872-4441ef1d1ddc",
-                  "BodyGroups": 18446744073709551615,
-                  "BoneMergeTarget": {
-                    "_type": "component",
-                    "component_id": "411c1a86-1d2d-4091-88a9-137b7146b260",
-                    "go": "6d278c47-1cc8-44fd-9bf6-bdeeab503f1b",
-                    "component_type": "SkinnedModelRenderer"
-                  },
-                  "CreateBoneObjects": false,
-                  "Model": "models/citizen_clothes/hair/decorated_beard/models/decorated_beard.vmdl",
-                  "RenderType": "On",
-                  "Tint": "0.15349,0.10994,0.10994,1"
-                }
-              ]
-            }
-          ]
-        }
-      ]
     },
     {
       "__guid": "b57acac8-7810-4f6a-ab6a-327302a84a7c",
@@ -6141,23 +6062,23 @@
             "Variables": [
               {
                 "Name": "can sip",
-                "Type": "System.Private.CoreLib/System.Boolean"
+                "Type": "System.Boolean"
               },
               {
                 "Name": "delay",
-                "Type": "package.nolankicks.dead4left2/ActionGraphDelay"
+                "Type": "ActionGraphDelay"
               },
               {
                 "Name": "drinking ui",
-                "Type": "package.nolankicks.dead4left2/DrinkingUi"
+                "Type": "DrinkingUi"
               },
               {
                 "Name": "inv",
-                "Type": "package.nolankicks.dead4left2/Inventory"
+                "Type": "Inventory"
               },
               {
                 "Name": "player",
-                "Type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                "Type": "Kicks.PlayerController"
               }
             ],
             "Nodes": [
@@ -6199,9 +6120,9 @@
                 "Id": 98,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/DrinkingUi",
                   "_isStatic": false,
-                  "_name": "SubtractSip"
+                  "_name": "SubtractSip",
+                  "_type": "DrinkingUi"
                 },
                 "UserData": {
                   "Position": "-608,-416"
@@ -6218,8 +6139,8 @@
                 "Id": 100,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Parent"
+                  "_name": "Parent",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-240,-112"
@@ -6229,8 +6150,8 @@
                 "Id": 101,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-272,-176"
@@ -6247,8 +6168,8 @@
                 "Id": 104,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/DrinkingUi",
-                  "_name": "SipsLeft"
+                  "_name": "SipsLeft",
+                  "_type": "DrinkingUi"
                 },
                 "UserData": {
                   "Position": "-1536,-304"
@@ -6268,9 +6189,9 @@
                 "Id": 107,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_isStatic": false,
-                  "_name": "Heal"
+                  "_name": "Heal",
+                  "_type": "Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "16,-416"
@@ -6290,8 +6211,8 @@
                 "Id": 109,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-272,-240"
@@ -6301,7 +6222,7 @@
                 "Id": 142,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/DrinkingUi"
+                  "T": "DrinkingUi"
                 },
                 "UserData": {
                   "Position": "-1776,-320"
@@ -6321,7 +6242,7 @@
                 "Id": 170,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/ActionGraphDelay"
+                  "T": "ActionGraphDelay"
                 },
                 "UserData": {
                   "Position": "-2240,-272"
@@ -6341,8 +6262,8 @@
                 "Id": 173,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/ActionGraphDelay",
-                  "_name": "Delay"
+                  "_name": "Delay",
+                  "_type": "ActionGraphDelay"
                 },
                 "UserData": {
                   "Position": "-976,-96"
@@ -6366,9 +6287,9 @@
                 "Id": 179,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/ActionGraphDelay",
                   "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_type": "ActionGraphDelay"
                 },
                 "UserData": {
                   "Position": "464,-432"
@@ -6402,9 +6323,9 @@
                 "Id": 201,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_name": "RemoveItem"
+                  "_name": "RemoveItem",
+                  "_type": "Inventory"
                 },
                 "UserData": {
                   "Position": "464,-352"
@@ -6478,7 +6399,7 @@
               {
                 "Value": {
                   "$type": "Simple",
-                  "Type": "Sandbox.System/Vector3",
+                  "Type": "Vector3",
                   "Value": "0,0,64"
                 },
                 "DstId": 102,
@@ -6738,7 +6659,7 @@
                     "Id": 3,
                     "Type": "scene.get",
                     "Properties": {
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                      "T": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "160,160"
@@ -6748,9 +6669,9 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                       "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_type": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "448,16"
@@ -6790,7 +6711,6 @@
                   }
                 }
               },
-              "selectedInput": "E",
               "ShopItems": {
                 "ItemNames": [],
                 "ShopActions": [],
@@ -7697,11 +7617,11 @@
             "Variables": [
               {
                 "Name": "inv",
-                "Type": "package.nolankicks.dead4left2/Inventory"
+                "Type": "Inventory"
               },
               {
                 "Name": "player",
-                "Type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                "Type": "Kicks.PlayerController"
               }
             ],
             "Nodes": [
@@ -7747,9 +7667,9 @@
                 "Id": 15,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
                   "_isStatic": false,
-                  "_name": "Heal"
+                  "_name": "Heal",
+                  "_type": "Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "800,0"
@@ -7759,9 +7679,9 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Inventory",
                   "_isStatic": false,
-                  "_name": "RemoveItem"
+                  "_name": "RemoveItem",
+                  "_type": "Inventory"
                 },
                 "UserData": {
                   "Position": "1008,-0"
@@ -7908,7 +7828,7 @@
                     "Id": 6,
                     "Type": "scene.get",
                     "Properties": {
-                      "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                      "T": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "-64,208"
@@ -7918,9 +7838,9 @@
                     "Id": 7,
                     "Type": "call",
                     "Properties": {
-                      "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                       "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_type": "ActionGraphItem"
                     },
                     "UserData": {
                       "Position": "208,0"
@@ -7960,7 +7880,6 @@
                   }
                 }
               },
-              "selectedInput": "E",
               "ShopItems": {
                 "ItemNames": [],
                 "ShopActions": [],
@@ -8832,6 +8751,155 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "136f7c98-0454-48a3-a6a4-7a81eb59cccd",
+      "Flags": 0,
+      "Name": "plastic_bucket_a",
+      "Position": "-616,424,-0.00001525879",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "5cedf6a9-4d46-4977-bea8-e21ea63fc0c9",
+          "BodyGroups": 18446744073709551615,
+          "Health": 300,
+          "IsStatic": false,
+          "Model": "models/sbox_props/plastic_bucket_a/plastic_bucket_a.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "4f7d1d96-6a3c-46c5-b8e0-d8306d3c8e81",
+          "Description": "Bucket",
+          "Icon": "logo.vtex",
+          "Name": "Bucket",
+          "PickUpAction": {
+            "__version": 7,
+            "__guid": "72d6b403-54e5-4cb9-92d3-5f5356b1fab8",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "sound.playat",
+                "UserData": {
+                  "Position": "624,-0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_name": "AddAmmo",
+                  "_type": "Inventory"
+                },
+                "UserData": {
+                  "Position": "224,0"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
+                },
+                "UserData": {
+                  "Position": "64,256"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property",
+                "Properties": {
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
+                },
+                "UserData": {
+                  "Position": "256,224"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 2,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "position"
+              },
+              {
+                "Value": "sounds/kenney/ui/ui.button.press.sound",
+                "DstId": 1,
+                "DstName": "soundEvent"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 2,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 2,
+                "DstName": "_target"
+              },
+              {
+                "Value": 30,
+                "DstId": 2,
+                "DstName": "ammo"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "ammoContainer",
+                "DstId": 2,
+                "DstName": "ammoContainer"
+              },
+              {
+                "Value": "LightAmmo",
+                "DstId": 2,
+                "DstName": "ammoType"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_target",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              }
+            ]
+          },
+          "selectedInput": "use",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -8857,15 +8925,17 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-13T11:27:35.5942884-04:00",
+  "LastSaved": "2024-05-14T12:47:51.5354198-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [
     "facepunch.can_long",
+    "facepunch.plasticbucketa1",
     "facepunch.soda_can",
     "facepunch.v_m4a1",
     "fpopium.w_makarov",
     "nolankicks.idel-terry",
+    "sbux.logo",
     "wujekfoliarz.axe"
   ]
 }

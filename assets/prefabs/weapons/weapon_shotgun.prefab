@@ -34,15 +34,15 @@
           "Variables": [
             {
               "Name": "Action Graph Item",
-              "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+              "Type": "ActionGraphItem"
             },
             {
               "Name": "Ammo",
-              "Type": "package.nolankicks.dead4left2/Kicks.AmmoContainer"
+              "Type": "Kicks.AmmoContainer"
             },
             {
               "Name": "Gun",
-              "Type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+              "Type": "Sandbox.SkinnedModelRenderer"
             }
           ],
           "Nodes": [
@@ -50,35 +50,35 @@
               "Id": 507,
               "Type": "input",
               "UserData": {
-                "Position": "-2752,512"
+                "Position": "-2592,592"
               }
             },
             {
               "Id": 508,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "-1216,624"
+                "Position": "-1056,704"
               }
             },
             {
               "Id": 509,
               "Type": "forrange",
               "UserData": {
-                "Position": "-592,480"
+                "Position": "-432,560"
               }
             },
             {
               "Id": 510,
               "Type": "if",
               "UserData": {
-                "Position": "-880,496"
+                "Position": "-720,576"
               }
             },
             {
               "Id": 511,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "128,432"
+                "Position": "288,512"
               }
             },
             {
@@ -88,7 +88,7 @@
                 "_var": "Action Graph Item"
               },
               "UserData": {
-                "Position": "-1824,512"
+                "Position": "-1664,592"
               }
             },
             {
@@ -98,14 +98,14 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "848,592"
+                "Position": "1008,672"
               }
             },
             {
               "Id": 514,
               "Type": "if",
               "UserData": {
-                "Position": "608,464"
+                "Position": "768,544"
               }
             },
             {
@@ -115,7 +115,7 @@
                 "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "-2320,752"
+                "Position": "-2160,832"
               }
             },
             {
@@ -125,7 +125,7 @@
                 "_var": "Gun"
               },
               "UserData": {
-                "Position": "-2032,512"
+                "Position": "-1872,592"
               }
             },
             {
@@ -137,7 +137,7 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "576,288"
+                "Position": "736,368"
               }
             },
             {
@@ -147,28 +147,28 @@
                 "_var": "Ammo"
               },
               "UserData": {
-                "Position": "-2512,512"
+                "Position": "-2352,592"
               }
             },
             {
               "Id": 519,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "-1808,112"
+                "Position": "-1648,192"
               }
             },
             {
               "Id": 520,
               "Type": "if",
               "UserData": {
-                "Position": "-1552,112"
+                "Position": "-1392,192"
               }
             },
             {
               "Id": 521,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "-1296,64"
+                "Position": "-1136,144"
               }
             },
             {
@@ -180,60 +180,60 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "-912,64"
+                "Position": "-752,144"
               }
             },
             {
               "Id": 523,
               "Type": "property",
               "Properties": {
-                "_name": "Ammo",
-                "_type": "package.nolankicks.dead4left2/ActionGraphItem"
+                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
+                "_name": "Ammo"
               },
               "UserData": {
-                "Position": "-496,208"
+                "Position": "-336,288"
               }
             },
             {
               "Id": 524,
               "Type": "if",
               "UserData": {
-                "Position": "208,208"
+                "Position": "368,288"
               }
             },
             {
               "Id": 525,
               "Type": "op.greaterthan",
               "UserData": {
-                "Position": "-112,192"
+                "Position": "48,272"
               }
             },
             {
               "Id": 526,
               "Type": "if",
               "UserData": {
-                "Position": "-208,608"
+                "Position": "-48,688"
               }
             },
             {
               "Id": 527,
               "Type": "op.equal",
               "UserData": {
-                "Position": "-416,784"
+                "Position": "-256,864"
               }
             },
             {
               "Id": 528,
               "Type": "time.delay",
               "UserData": {
-                "Position": "336,896"
+                "Position": "496,976"
               }
             },
             {
               "Id": 529,
               "Type": "op.and",
               "UserData": {
-                "Position": "-1024,640"
+                "Position": "-864,720"
               }
             },
             {
@@ -244,31 +244,31 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "-1344,736"
+                "Position": "-1184,816"
               }
             },
             {
               "Id": 531,
               "Type": "property",
               "Properties": {
-                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                 "_kind": "Set",
+                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "32,816"
+                "Position": "192,896"
               }
             },
             {
               "Id": 532,
               "Type": "property",
               "Properties": {
-                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                 "_kind": "Set",
+                "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "544,944"
+                "Position": "704,1024"
               }
             },
             {
@@ -281,7 +281,7 @@
                 }
               },
               "UserData": {
-                "Position": "-2544,752"
+                "Position": "-2384,832"
               }
             }
           ],
@@ -862,7 +862,7 @@
                 }
               ]
             },
-            "selectedInput": "E",
+            "selectedInput": "use",
             "ShopItems": {
               "ItemNames": [],
               "ShopActions": [],

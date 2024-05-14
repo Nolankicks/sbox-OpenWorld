@@ -26,7 +26,11 @@
         "facepunch.ceiling_plaster_01#33577",
         "facepunch.metal_bare_a_hs#28944",
         "facepunch.stickers_1#33877",
-        "facepunch.roof_tile_a#18739"
+        "facepunch.roof_tile_a#18739",
+        "facepunch.decal_scratches_b#47676",
+        "facepunch.tree_oak_big_b#33691",
+        "facepunch.metal_galvanized#18748",
+        "facepunch.concrete_wall_bare_02#47059"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/d4l_shooting_range.vmap"

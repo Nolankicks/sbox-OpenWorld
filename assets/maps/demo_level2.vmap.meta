@@ -56,7 +56,9 @@
         "facepunch.pavement_tile_01#28798",
         "facepunch.water_drum_01#47586",
         "facepunch.plastic_crate_04#47052",
-        "sandcastle.sbox_cd#55767"
+        "sandcastle.sbox_cd#55767",
+        "sandcastle.sbox_cd#55827",
+        "facepunch.v_m4a1#55898"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level2.vmap"

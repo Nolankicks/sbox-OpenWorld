@@ -3,17 +3,15 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Sandbox;
 namespace Kicks;
-[Title("Action Graph Popup")]
+[Title("Action Graph Popup"), Icon("check")]
 public sealed class PopupUi : Component
 {
 	[Property] public string Name { get; set; }
 	[Property] public string Description { get; set; }
 	public InputHint inputHint { get; set; }
 	public delegate void PickUpActionDelegate( PlayerController PlayerController, Inventory Inventory, AmmoContainer ammoContainer, InputHint inputHint );
-	public delegate void ShopActionDelegate( PlayerController PlayerController, Inventory Inventory, ShopUi shopUi, ShopItems shopItems, int index);
 	[Property] public PickUpActionDelegate PickUpAction { get; set; }
-	[Property] public ShopActionDelegate ShopAction { get; set; }
-	[Property] public Inputs selectedInput { get; set; }
+	[Property, InputAction] public string selectedInput { get; set; } = "use";
 	public PlayerController playerController { get; set; }
 	public Inventory Inventory { get; set; }
 	[Property] public Texture Icon { get; set; }
@@ -24,7 +22,7 @@ public sealed class PopupUi : Component
 	{
 			playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
 			inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault(x => !x.IsProxy);
-			Glyph = Input.GetGlyph(InputHandler.GetInputString(selectedInput), InputGlyphSize.Large, false);
+			Glyph = Input.GetGlyph(selectedInput, InputGlyphSize.Large, false);
 			Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 			if (PickUpAction is null) return;
 	}
