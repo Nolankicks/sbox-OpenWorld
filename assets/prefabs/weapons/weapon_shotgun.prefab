@@ -28,7 +28,8 @@
           "UserData": {
             "Title": "On Use",
             "ReferencedComponentTypes": [
-              "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+              "Sandbox.SkinnedModelRenderer",
+              "ActionGraphDelay"
             ]
           },
           "Variables": [
@@ -50,35 +51,35 @@
               "Id": 507,
               "Type": "input",
               "UserData": {
-                "Position": "-2592,592"
+                "Position": "-1936,1552"
               }
             },
             {
               "Id": 508,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "-1056,704"
+                "Position": "-400,1664"
               }
             },
             {
               "Id": 509,
               "Type": "forrange",
               "UserData": {
-                "Position": "-432,560"
+                "Position": "224,1520"
               }
             },
             {
               "Id": 510,
               "Type": "if",
               "UserData": {
-                "Position": "-720,576"
+                "Position": "-64,1536"
               }
             },
             {
               "Id": 511,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "288,512"
+                "Position": "944,1472"
               }
             },
             {
@@ -88,7 +89,7 @@
                 "_var": "Action Graph Item"
               },
               "UserData": {
-                "Position": "-1664,592"
+                "Position": "-1008,1552"
               }
             },
             {
@@ -98,14 +99,14 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "1008,672"
+                "Position": "1664,1632"
               }
             },
             {
               "Id": 514,
               "Type": "if",
               "UserData": {
-                "Position": "768,544"
+                "Position": "1424,1504"
               }
             },
             {
@@ -115,7 +116,7 @@
                 "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "-2160,832"
+                "Position": "-1504,1792"
               }
             },
             {
@@ -125,7 +126,7 @@
                 "_var": "Gun"
               },
               "UserData": {
-                "Position": "-1872,592"
+                "Position": "-1216,1552"
               }
             },
             {
@@ -137,7 +138,7 @@
                 "_name": "Set"
               },
               "UserData": {
-                "Position": "736,368"
+                "Position": "1392,1328"
               }
             },
             {
@@ -147,40 +148,40 @@
                 "_var": "Ammo"
               },
               "UserData": {
-                "Position": "-2352,592"
+                "Position": "-1696,1552"
               }
             },
             {
               "Id": 519,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "-1648,192"
+                "Position": "-1056,1152"
               }
             },
             {
               "Id": 520,
               "Type": "if",
               "UserData": {
-                "Position": "-1392,192"
+                "Position": "-736,1152"
               }
             },
             {
               "Id": 521,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "-1136,144"
+                "Position": "-480,1104"
               }
             },
             {
               "Id": 522,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
-                "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                "_name": "Set"
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false
               },
               "UserData": {
-                "Position": "-752,144"
+                "Position": "-96,1104"
               }
             },
             {
@@ -191,49 +192,49 @@
                 "_name": "Ammo"
               },
               "UserData": {
-                "Position": "-336,288"
+                "Position": "320,1248"
               }
             },
             {
               "Id": 524,
               "Type": "if",
               "UserData": {
-                "Position": "368,288"
+                "Position": "1024,1248"
               }
             },
             {
               "Id": 525,
               "Type": "op.greaterthan",
               "UserData": {
-                "Position": "48,272"
+                "Position": "704,1232"
               }
             },
             {
               "Id": 526,
               "Type": "if",
               "UserData": {
-                "Position": "-48,688"
+                "Position": "608,1648"
               }
             },
             {
               "Id": 527,
               "Type": "op.equal",
               "UserData": {
-                "Position": "-256,864"
+                "Position": "400,1824"
               }
             },
             {
               "Id": 528,
               "Type": "time.delay",
               "UserData": {
-                "Position": "496,976"
+                "Position": "1152,1936"
               }
             },
             {
               "Id": 529,
               "Type": "op.and",
               "UserData": {
-                "Position": "-864,720"
+                "Position": "-208,1680"
               }
             },
             {
@@ -244,7 +245,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "-1184,816"
+                "Position": "-528,1776"
               }
             },
             {
@@ -256,7 +257,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "192,896"
+                "Position": "848,1856"
               }
             },
             {
@@ -268,7 +269,7 @@
                 "_name": "Able"
               },
               "UserData": {
-                "Position": "704,1024"
+                "Position": "1360,1984"
               }
             },
             {
@@ -281,7 +282,54 @@
                 }
               },
               "UserData": {
-                "Position": "-2384,832"
+                "Position": "-1728,1792"
+              }
+            },
+            {
+              "Id": 594,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "-1648,1264"
+              }
+            },
+            {
+              "Id": 654,
+              "Type": "property",
+              "Properties": {
+                "_name": "Delay",
+                "_type": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "-1408,1248"
+              }
+            },
+            {
+              "Id": 655,
+              "Type": "op.and",
+              "UserData": {
+                "Position": "-928,1248"
+              }
+            },
+            {
+              "Id": 656,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "-1056,1248"
+              }
+            },
+            {
+              "Id": 657,
+              "Type": "call",
+              "Properties": {
+                "_name": "SetDelay",
+                "_type": "ActionGraphDelay",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "96,1104"
               }
             }
           ],
@@ -466,7 +514,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 519,
+              "SrcId": 655,
               "SrcName": "_result",
               "DstId": 520,
               "DstName": "condition"
@@ -628,6 +676,53 @@
               "Value": true,
               "DstId": 532,
               "DstName": "_value"
+            },
+            {
+              "SrcId": 507,
+              "SrcName": "_target",
+              "DstId": 594,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 594,
+              "SrcName": "_result",
+              "DstId": 654,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 519,
+              "SrcName": "_result",
+              "DstId": 655,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 656,
+              "SrcName": "_result",
+              "DstId": 655,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 654,
+              "SrcName": "_result",
+              "DstId": 656,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 522,
+              "SrcName": "_signal",
+              "DstId": 657,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 594,
+              "SrcName": "_result",
+              "DstId": 657,
+              "DstName": "_target"
+            },
+            {
+              "Value": 3,
+              "DstId": 657,
+              "DstName": "delay"
             }
           ],
           "Defaults": {
@@ -643,6 +738,11 @@
         "__type": "IconComponent",
         "__guid": "46f284d6-801f-4b36-8c57-9d0b04c1cad2",
         "Icon": "shotgun.vtex"
+      },
+      {
+        "__type": "ActionGraphDelay",
+        "__guid": "55f46cb5-8d3b-4f58-89c5-bb285b845969",
+        "Delay": false
       }
     ],
     "Children": [

@@ -150,16 +150,18 @@ public async Task SubtractSphere(Sdf3DWorld world, Vector3 pos, float radius, Sd
 	var sphere = new SphereSdf3D(Vector3.Zero, radius).Transform(pos);
 	await world.SubtractAsync(sphere, volume);
 }
-public void OnActive( Connection channel )
+	public void OnActive( Connection channel )
+	{
+		OnPlayerSpawn(channel);
+	}
+
+	public void OnPlayerSpawn(Connection channel)
 	{
 		Log.Info( $"Player '{channel.DisplayName}' has joined the game" );
 
 		if ( PlayerPrefab is null )
 			return;
 
-		//
-		// Find a spawn location for this player
-		//
 		var spawns = Scene.GetAllComponents<SpawnPoint>().ToList();
 		var startLocation = Game.Random.FromList( spawns ).Transform.World.WithScale( 1 );
 

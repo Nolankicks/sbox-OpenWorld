@@ -1,7 +1,7 @@
 using System;
 using Sandbox;
 using Sandbox.Utility;
-[Icon("waves")]
+[Icon("waves"), Category("Post Processing")]
 public sealed class Postprocess : PostProcess, Component.ExecuteInEditor
 {
 	[Property] public Shader PostprocessShader { get; set; }

@@ -275,38 +275,11 @@
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "3f264f67-7be1-43a9-83ea-93555c5f1977",
-            "BodyGroups": 0,
+            "BodyGroups": 341,
             "CreateBoneObjects": false,
             "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
             "Tint": "1,1,1,1"
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "0628734b-e056-40d1-8505-936f4ceb47b9",
-            "Flags": 0,
-            "Name": "mascot",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "f2ed95e9-e678-4ae0-9bf6-5eeb779119fa",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "3f264f67-7be1-43a9-83ea-93555c5f1977",
-                  "go": "f2dec132-ff32-4092-b111-bbaddd814063",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen/skin/mascot/models/mascot_01.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1"
-              }
-            ]
           }
         ]
       }

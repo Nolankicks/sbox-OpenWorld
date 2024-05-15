@@ -26,27 +26,6 @@ public sealed class PopupUi : Component
 			Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 			if (PickUpAction is null) return;
 	}
-
-	[ActionGraphNode("AddItem"), Pure]
-	[Title( "Add Item" ), Group( "PopupUi" ), Icon( "exposure_plus_1" )]
-	public void AddItem(GameObject gameObject)
-	{
-		Inventory inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
-		var slot = inventory.Items.FindIndex(x => x is null);
-		if (slot == -1) return;
-		inventory.AddItem(gameObject, slot);
-	}
-	[ActionGraphNode("RemoveItem"), Pure]
-	public void RemoveItem(GameObject gameObject)
-	{
-		Inventory inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
-		inventory.RemoveItem(gameObject);
-	}
-	[ActionGraphNode("GetInventory"), Pure]
-	public Inventory GetInventory()
-	{
-		return Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
-	}
 	[ActionGraphNode("GetNextSlot"), Pure]
 	public int GetNextSlot()
 	{

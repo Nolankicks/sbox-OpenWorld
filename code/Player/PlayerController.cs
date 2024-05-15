@@ -31,7 +31,6 @@ public sealed class PlayerController : Component
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	[Property] public bool FindSpawnPoint { get; set; } = false;
-	
 	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;

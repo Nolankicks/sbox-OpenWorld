@@ -82,7 +82,7 @@ public sealed class Dummy : Component, Component.ITriggerListener
 	
 void Attack()
 	{
-		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 300).WithoutTags("dummy").Run();
+		var tr = Scene.Trace.Ray(new Ray(body.Transform.Position + Vector3.Up * 32, body.Transform.Rotation.Forward), 150).WithoutTags("dummy").Run();
 		if (!tr.Hit) return;
 		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 		if (tr.Hit && player is not null)
