@@ -31,7 +31,15 @@
         "facepunch.tree_oak_big_b#33691",
         "facepunch.metal_galvanized#18748",
         "facepunch.concrete_wall_bare_02#47059",
-        "facepunch.industrial_light#27423"
+        "facepunch.industrial_light#27423",
+        "facepunch.studio_light_projector#29115",
+        "facepunch.pipe_a_corner_32#33818",
+        "facepunch.pipe_a_32#33813",
+        "facepunch.pipe_a_corner_64#33819",
+        "facepunch.pipe_a_128#33816",
+        "facepunch.pipe_a_64#33815",
+        "facepunch.industrial_strip_light#27425",
+        "facepunch.wooden_crate#29138"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/d4l_shooting_range.vmap"

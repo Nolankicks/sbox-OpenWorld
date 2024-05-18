@@ -42,9 +42,6 @@
       "kickscomponents/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/kickscomponents.dll": {}
         },
@@ -55,9 +52,6 @@
       "libsdf/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/libsdf.dll": {}
         },
@@ -68,9 +62,6 @@
       "opiumpostprocess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/opiumpostprocess.dll": {}
         },
@@ -81,9 +72,6 @@
       "shatterglass/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/shatterglass.dll": {}
         },

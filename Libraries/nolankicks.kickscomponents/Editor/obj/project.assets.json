@@ -12,22 +12,9 @@
           "bin/placeholder/Base Editor Library.dll": {}
         }
       },
-      "Base Library/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Base Library.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Base Library.dll": {}
-        }
-      },
       "kickscomponents/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
-        "dependencies": {
-          "Base Library": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/kickscomponents.dll": {}
         },
@@ -42,11 +29,6 @@
       "type": "project",
       "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
       "msbuildProject": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
-    },
-    "Base Library/1.0.0": {
-      "type": "project",
-      "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj",
-      "msbuildProject": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj"
     },
     "kickscomponents/1.0.0": {
       "type": "project",

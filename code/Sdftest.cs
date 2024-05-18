@@ -84,13 +84,14 @@ public sealed class Sdftest : Component, Component.INetworkListener
 				return false;
 		}
 	}
-	protected override void OnStart()
+	protected override void OnAwake()
 	{
 		if (Networking.IsHost)
 		{
 			TaskBuildWorld();
 		}
 	}
+
 	public async void TaskBuildWorld()
 	{
 		Log.Info("Building World");

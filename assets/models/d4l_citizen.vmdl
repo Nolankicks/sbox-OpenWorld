@@ -24,14 +24,6 @@
 					{
 						_class = "AnimFile"
 						name = "thumbsup"
-						children = 
-						[
-							{
-								_class = "AnimSubtract"
-								anim_name = "IdlePose_Default"
-								frame = 0
-							},
-						]
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -58,7 +50,7 @@
 		]
 		model_archetype = ""
 		primary_associated_entity = ""
-		anim_graph_name = ""
+		anim_graph_name = "animgraphs/d4l_citizen.vanmgrph"
 		base_model_name = "models/citizen/citizen.vmdl"
 	}
 }
