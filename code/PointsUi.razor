@@ -1,0 +1,23 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<div class="title" style="position: absolute; top: 32px; left: 32px;">Points: @Points</div>
+</root>
+
+@code
+{
+
+	[Property] public int Points { get; set; } = 0;
+
+	public void AddPoints(int points)
+	{
+		Points += points;
+	}
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Points );
+}

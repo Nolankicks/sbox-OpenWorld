@@ -80,7 +80,7 @@
                 "$type": "Simple",
                 "Type": {
                   "$type": "Nested",
-                  "DeclaringType": "package.nolankicks.dead4left2/Kicks.AmmoContainer",
+                  "DeclaringType": "Kicks.AmmoContainer",
                   "Name": "AmmoTypes"
                 },
                 "Value": "LightAmmo"
@@ -102,7 +102,7 @@
             }
           ]
         },
-        "selectedInput": "E",
+        "selectedInput": "use",
         "ShopItems": {
           "ItemNames": [],
           "ShopActions": [],

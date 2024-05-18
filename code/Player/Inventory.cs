@@ -31,21 +31,7 @@ public sealed class Inventory : Component
 		if (IsProxy) return;
 		Log.Info(Items.Count);
 		AddItem(Gun, 0);
-		_ = SpawnItems();
 	}
-
-	public async Task SpawnItems()
-	{
-		if (IsProxy) return;
-		await Task.DelaySeconds(3);
-		foreach (var item in ItemsToSpawnWith)
-		{
-			var slot = Items.FindIndex(x => x is null);
-			AddItem(item, slot);
-			await Task.DelaySeconds(0.1f);
-		}
-	}
-
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{
 		if (IsProxy) return;
@@ -58,14 +44,14 @@ public sealed class Inventory : Component
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;
 		itemClone.Components.TryGet<Weapon>( out var weapon );
-		itemClone.Components.TryGet<Shotgun>( out var shotgun );
+		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
 		if (weapon is not null)
 		{
 			weapon.IsWeapon = true;
 		}
 		else if (shotgun is not null)
 		{
-			shotgun.IsWeapon = true;
+			shotgun.InInventory = true;
 		}
 		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
 		}

@@ -42,10 +42,12 @@ public sealed class ActionGraphItem : Component
 			Use();
 			foreach (var gb in Object.GetAllObjects(false))
 			{
+				if (gb is null) return;
 				gb.Enabled = true;
 			}
 			foreach (var gb in DropppedItem.GetAllObjects(false))
 			{
+				if (gb is null) return;
 				gb.Enabled = false;
 			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
@@ -124,7 +126,7 @@ public sealed class ActionGraphItem : Component
 		}
 		}
 		
-		GameObject.Parent = PlayerController.GameObject;
+		GameObject.Parent = Inventory.GameObject;
 		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
 		InInventory = true;
 		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);

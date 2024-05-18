@@ -94,19 +94,10 @@ public sealed class Weapon : Component
 		{
 			Fire();
 		}
-		if (Input.Down("attack2"))
-		{
-			IsAiming = true;
-		}
-		else
-		{
-			IsAiming = false;
-		}
-
+		
+		IsAiming = Input.Down("attack2");
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
 		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
-
-		
 		UpdateWorldModelShadowType();
 		if (PlayerController.IsFirstPerson)
 		{

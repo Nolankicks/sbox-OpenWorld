@@ -14,21 +14,10 @@ public sealed class ProcGenZombieSpawner : Component
 		while (true)
 		{
 			Log.Info("Spawn");
-			_ = GetNewPos();
-			await Task.DelaySeconds(1);
+			var transform = Scene.NavMesh.GetRandomPoint().GetValueOrDefault();
 			var zombie = Zombie.Clone(transform);
+			zombie.NetworkSpawn(null);
 			await Task.DelaySeconds(5);
 		}
-	}
-	async Task GetNewPos()
-	{
-		transform = await GetPos();
-	}
-
-	public async Task<Vector3> GetPos()
-	{
-		await Task.DelaySeconds(1);
-		var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
-		return Game.Random.FromList(spawnPoints).Transform.Position;
 	}
 }

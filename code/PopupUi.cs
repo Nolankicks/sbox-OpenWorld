@@ -32,4 +32,8 @@ public sealed class PopupUi : Component
 		Inventory inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 		return inventory.Items.FindIndex(x => x is null);
 	}
+	protected override void OnDestroy()
+	{
+		ShowPopUp = false;
+	}
 }

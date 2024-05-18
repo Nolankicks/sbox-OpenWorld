@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 namespace Kicks;
-[Icon("person")]
+[Icon("person"), Description("Gives access to NPC actions.")]
 public sealed class NPC : Component
 {
 	public delegate void NPCActionDelegate();
@@ -54,48 +54,6 @@ public sealed class NPC : Component
 			Result = true;
 		}
 	}
-	//This is so messy, I wish I could clean it up
-	[Title("Wander"), Description("No need to do anything else, this will make the NPC wander around the scene.")]
-	public async Task WanderBundle(NavMeshAgent navMeshAgent, GameObject body, float Distance, int Avoidance = 150)
-	{
-		while (true)
-		{
-		try
-		{
-		var players = Scene.GetAllComponents<PlayerController>().ToList();
-		var closestPlayers = players.OrderBy(x => Vector3.DistanceBetween(x.Transform.Position, Transform.Position)).ToList();
-		if (closestPlayers.Count == 0)
-		{
-			return;
-		}
-		var Target = closestPlayers.FirstOrDefault().GameObject;
-		if (Vector3.DistanceBetween(Target.Transform.Position, Transform.Position) > Distance && !Wandering)
-		{
-			Wandering = true;
-			_ = Wander(navMeshAgent, body);
-		}
-		else
-		{
-			CtsWander?.Cancel();
-			Wandering = false;
-			if (Vector3.DistanceBetween(Target.Transform.Position, Transform.Position) < Avoidance)
-			{
-				navMeshAgent.Stop();
-			}
-			else
-			{
-				navMeshAgent.MoveTo(Target.Transform.Position);
-			}
-		}
-		await Task.Delay(1000);
-		}
-		catch (TaskCanceledException)
-		{
-			return;
-		}
-		}
-		
-	}
 
 	private PlayerController NonActionGraphFindPlayer()
 	{
@@ -135,7 +93,7 @@ public sealed class NPC : Component
         Vector3 directionToTarget = (Target.Transform.Position - Transform.Position).Normal;
 		var ray = new Ray(Transform.Position + Vector3.Up * 55, directionToTarget);
 		ray.Forward += Vector3.Random * spread;
-        var tr = Scene.Trace.Ray(ray, TraceLength).Run();
+        var tr = Scene.Trace.Ray(ray, TraceLength).WithoutTags("dummy").Run();
         if (tr.Hit)
         {
             tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);

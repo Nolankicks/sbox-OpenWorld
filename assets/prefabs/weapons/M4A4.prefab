@@ -1,49 +1,48 @@
 {
   "RootObject": {
-    "__guid": "0b6603a2-3c7a-4fee-a5fd-7c2abc033946",
+    "__guid": "be215c6c-f3d1-4d51-91ee-676e75588cb6",
     "Flags": 0,
-    "Name": "ActionGraphM4A4",
-    "Position": "-274.2918,-459.0223,28.94195",
-    "Rotation": "0.6087614,0,0,0.7933534",
+    "Name": "m4a4",
     "Enabled": true,
     "NetworkMode": 1,
     "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "ActionGraphItem",
-        "__guid": "a42f3f49-6069-419c-9c21-c3cdf862d031",
+        "__guid": "705bdcde-3f2d-45e5-a6db-95d6aca7856e",
         "Ammo": 30,
+        "AmmoType": "LightAmmo",
         "DropppedItem": {
           "_type": "gameobject",
-          "go": "cd2ec397-0fbe-4993-aa0e-a3aaadd63b1e"
+          "go": "5c0e7853-1ea0-4158-b202-f9d6b131da95"
         },
         "InInventory": false,
         "MaxAmmo": 30,
         "Object": {
           "_type": "gameobject",
-          "go": "5421fb5b-bc35-4e13-9557-dde0e47489e4"
+          "go": "37e7b2f2-def6-40dd-b393-0090b02c955a"
         },
         "OnUse": {
           "__version": 7,
-          "__guid": "1cbd3dde-1f9e-4bcd-a740-28a9effb80e2",
+          "__guid": "4dc94b3c-fb3a-4f47-a974-db5210dc026b",
           "UserData": {
             "Title": "On Use",
             "ReferencedComponentTypes": [
-              "package.nolankicks.dead4left2/ActionGraphItem"
+              "ActionGraphItem"
             ]
           },
           "Variables": [
             {
               "Name": "Action Graph Item",
-              "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+              "Type": "ActionGraphItem"
             },
             {
               "Name": "Ammo",
-              "Type": "package.nolankicks.dead4left2/Kicks.AmmoContainer"
+              "Type": "Kicks.AmmoContainer"
             },
             {
               "Name": "inv",
-              "Type": "package.nolankicks.dead4left2/Inventory"
+              "Type": "Inventory"
             }
           ],
           "Nodes": [
@@ -58,7 +57,7 @@
               "Id": 2,
               "Type": "scene.get",
               "Properties": {
-                "T": "package.nolankicks.dead4left2/ActionGraphItem"
+                "T": "ActionGraphItem"
               },
               "UserData": {
                 "Position": "-48,176"
@@ -200,7 +199,7 @@
             },
             {
               "SrcId": 175,
-              "SrcName": "_result",
+              "SrcName": "TraceHit",
               "DstId": 161,
               "DstName": "condition"
             },
@@ -359,29 +358,28 @@
       },
       {
         "__type": "IconComponent",
-        "__guid": "bbd481be-59c3-4234-991f-4274f0b76f03",
+        "__guid": "4ad20275-dae7-4f16-a656-9c87747f6e34",
         "Icon": "textures/m4.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "cd2ec397-0fbe-4993-aa0e-a3aaadd63b1e",
+        "__guid": "5c0e7853-1ea0-4158-b202-f9d6b131da95",
         "Flags": 0,
         "Name": "Dropped Item",
-        "Position": "0,0,0",
         "Enabled": true,
         "NetworkMode": 1,
         "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Kicks.PopupUi",
-            "__guid": "c19b7078-f73c-43cf-973f-f260011cfbab",
+            "__guid": "1577f377-93ab-45d7-9f30-8f4cb67f5227",
             "Description": "M4A4",
             "Icon": "textures/m4.vtex",
             "Name": "M4A4",
             "PickUpAction": {
               "__version": 7,
-              "__guid": "bfa3e395-b45e-4d8c-9875-1854b5ef3d8b",
+              "__guid": "c8cdeda2-33e9-44c5-a067-a628c8b5d364",
               "UserData": {
                 "Title": "Pick Up Action",
                 "ReferencedComponentTypes": []
@@ -389,11 +387,11 @@
               "Variables": [
                 {
                   "Name": "Action Graph Item",
-                  "Type": "package.nolankicks.dead4left2/ActionGraphItem"
+                  "Type": "ActionGraphItem"
                 },
                 {
                   "Name": "Inv",
-                  "Type": "package.nolankicks.dead4left2/Inventory"
+                  "Type": "Inventory"
                 }
               ],
               "Nodes": [
@@ -405,9 +403,9 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
-                    "T": "package.nolankicks.dead4left2/ActionGraphItem",
                     "_name": "TryGet",
-                    "_type": "Sandbox.Game/Sandbox.IComponentLister",
+                    "T": "ActionGraphItem",
+                    "_type": "Sandbox.IComponentLister",
                     "_isStatic": false
                   },
                   "UserData": {
@@ -435,8 +433,8 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
-                    "_type": "package.nolankicks.dead4left2/ActionGraphItem",
                     "_name": "PickUp",
+                    "_type": "ActionGraphItem",
                     "_isStatic": false
                   },
                   "UserData": {
@@ -520,7 +518,7 @@
                 }
               ]
             },
-            "selectedInput": "E",
+            "selectedInput": "use",
             "ShopItems": {
               "ItemNames": [],
               "ShopActions": [],
@@ -531,7 +529,7 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "7df82389-af38-4d25-8ab7-19d5cb5dd1c9",
+            "__guid": "eff0921d-f267-446b-8c29-086dfc276692",
             "Center": "3.799999,0,5.199997",
             "IsTrigger": false,
             "Scale": "31.50007,3.499955,11.09995",
@@ -539,7 +537,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "8a55e172-6228-4d89-bb8e-bc70645c07e8",
+            "__guid": "fa30449e-855e-4a66-a7a9-ba93b5edaf9f",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -551,7 +549,7 @@
           },
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "009c6315-09a5-478c-8719-9c43b05bc06c",
+            "__guid": "12a2aa05-4129-40b7-b91e-68a78131ee6d",
             "BodyGroups": 5267,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
@@ -561,10 +559,9 @@
         ]
       },
       {
-        "__guid": "5421fb5b-bc35-4e13-9557-dde0e47489e4",
+        "__guid": "37e7b2f2-def6-40dd-b393-0090b02c955a",
         "Flags": 0,
         "Name": "Object",
-        "Position": "0,0,0",
         "Tags": "viewmodel",
         "Enabled": true,
         "NetworkMode": 1,
@@ -572,7 +569,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "2b6be095-65dc-43d0-ad4a-4f6680e31f73",
+            "__guid": "f5594997-a311-4f51-a9f0-25978877eaff",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 80,
@@ -590,7 +587,7 @@
         ],
         "Children": [
           {
-            "__guid": "c8195056-ab95-4777-aa76-90966e6e3a77",
+            "__guid": "7713ac20-4fa9-40fa-8789-9a4884152dab",
             "Flags": 0,
             "Name": "gun",
             "Position": "20.5556,-9.983597,-12.1739",
@@ -600,7 +597,7 @@
             "Components": [
               {
                 "__type": "Sandbox.ModelRenderer",
-                "__guid": "c684fa8d-dff8-4924-bc30-10a397dd9133",
+                "__guid": "32819520-605d-4d02-82c4-f4a8e05aeb84",
                 "BodyGroups": 5267,
                 "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
                 "RenderType": "On",

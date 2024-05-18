@@ -1,11 +1,13 @@
 using Sandbox;
 namespace Kicks;
+[Icon("favorite")]
 public sealed class EnemyHealthComponent : Component
 {
     [Property, Sync] public int health { get; set; } = 100;
     private bool isDead = false; // Add this line
     public delegate void OnHurtDelgate(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
     public delegate void OnDeathDelegate(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
+    [Property] public bool CanBeKilled { get; set; } = true;
     [Property] public OnHurtDelgate OnHurt { get; set; }
     [Property] public OnDeathDelegate OnDeath { get; set; }
     protected override void OnUpdate()
@@ -16,7 +18,7 @@ public sealed class EnemyHealthComponent : Component
     [Broadcast]
     public void Hurt(int damage, Guid player)
     {
-        if (IsProxy || isDead) return; // Check the isDead flag here
+        if (IsProxy || isDead || !CanBeKilled) return; // Check the isDead flag here
         health -= damage;
         var attacker = Scene.Directory.FindByGuid(player);
         attacker.Components.TryGet<PlayerController>( out var playerController, FindMode.EverythingInSelfAndParent );

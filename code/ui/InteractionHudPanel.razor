@@ -4,7 +4,7 @@
 @namespace Kicks
 @attribute [StyleSheet]
 <root>
-	@if (ShowUi)
+	@if (ShowUi && Item is not null || Shotgun is not null || PopupUi is not null)
 	{
 	@if (Item is not null && Icon is not null)
 	{
@@ -101,6 +101,7 @@
     var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
     if (tr.Hit)
     {
+		if (tr.GameObject is null) return;
         tr.GameObject.Parent.Components.TryGet<Weapon>(out var item, FindMode.EverythingInSelfAndParent);
 		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon, FindMode.EverythingInSelfAndParent);
 		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
