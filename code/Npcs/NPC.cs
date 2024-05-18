@@ -60,6 +60,8 @@ public sealed class NPC : Component
 	{
 		while (true)
 		{
+		try
+		{
 		var players = Scene.GetAllComponents<PlayerController>().ToList();
 		var closestPlayers = players.OrderBy(x => Vector3.DistanceBetween(x.Transform.Position, Transform.Position)).ToList();
 		if (closestPlayers.Count == 0)
@@ -67,7 +69,7 @@ public sealed class NPC : Component
 			return;
 		}
 		var Target = closestPlayers.FirstOrDefault().GameObject;
-		if (Vector3.DistanceBetween(Target.Transform.Position, Transform.Position) > Distance)
+		if (Vector3.DistanceBetween(Target.Transform.Position, Transform.Position) > Distance && !Wandering)
 		{
 			Wandering = true;
 			_ = Wander(navMeshAgent, body);
@@ -86,6 +88,11 @@ public sealed class NPC : Component
 			}
 		}
 		await Task.Delay(1000);
+		}
+		catch (TaskCanceledException)
+		{
+			return;
+		}
 		}
 		
 	}
@@ -145,24 +152,27 @@ public sealed class NPC : Component
 	CancellationTokenSource CtsWander = new();
 	public async Task Wander(NavMeshAgent navMeshAgent, GameObject body)
 {
+    while (true)
+    {
         if (navMeshAgent is null) return;
+		body.Transform.Rotation = Angles.Random.WithRoll(0).WithPitch(0);
         var tr = Scene.Trace.Ray(Transform.Position, Transform.Position + Transform.Rotation.Forward * 500).WithoutTags("enemy").Run();
         var targetPos = tr.HitPosition;
-        while (Vector3.DistanceBetween(targetPos, Transform.Position) > 100)
+        while (Vector3.DistanceBetween(targetPos, Transform.Position) > 300)
         {
             if (navMeshAgent is not null)
             {
                 navMeshAgent.MoveTo(targetPos);
             }
-			if (CtsWander.Token.IsCancellationRequested)
-			{
-				return;
-			}
-			await Task.Delay(1);
+            if (CtsWander.Token.IsCancellationRequested)
+            {
+                return;
+            }
+            await Task.Delay(1);
         }
 
-		await Task.DelaySeconds(5, CtsWander.Token);
-		_ = Wander(navMeshAgent, body);
+        await Task.DelaySeconds(5, CtsWander.Token);
+    }
 }
 
 	protected override void OnFixedUpdate()
