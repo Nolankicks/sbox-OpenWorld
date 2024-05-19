@@ -51,26 +51,34 @@ public sealed class Inventory : Component
 		{
 		if (item is null) return;
 		var itemClone = item.Clone(Vector3.Up * 70);
-		itemClone.NetworkSpawn();
+		itemClone.NetworkSpawn(null);
 		Items[Slot] = itemClone;
-		itemClone.Parent = GameObject;
 		itemClone.Components.TryGet<Weapon>( out var weapon );
 		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
 		if (weapon is not null)
 		{
-			weapon.IsWeapon = true;
+			weapon.PickUp(this);
 		}
 		else if (shotgun is not null)
 		{
-			shotgun.InInventory = true;
+			shotgun.PickUp(this);
 		}
-		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
+		else
+		{
+			itemClone.Parent = GameObject;
+			itemClone.Components.TryGet<IconComponent>(out var icon);
+			if (icon is not null)
+			{
+				//AddTexture(icon.Icon, Slot);
+			}
+		}
 		}
 		else
 		{
 			Items[Slot] = item;
 			item.Parent = GameObject;
-			AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
+			item.Transform.LocalPosition = new Vector3(0, 0, 70);
+			//AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
 		}
 	}
 
@@ -110,6 +118,7 @@ public sealed class Inventory : Component
 	public void AddTexture(Texture texture, int Slot)
 	{
 		if (IsProxy) return;
+		Log.Info("Adding Texture");
 		ItemTextures[Slot] = texture;
 	}
 	public void RemoveItem(GameObject item, bool Destroy = true)

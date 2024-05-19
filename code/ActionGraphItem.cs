@@ -35,50 +35,68 @@ public sealed class ActionGraphItem : Component
 	}
 	protected override void OnUpdate()
 	{	
-		if (InInventory)
+	if (!IsProxy)
 		{
-			if (!IsProxy)
+			if (InInventory)
 			{
-				Use();
-				if (Object is not null)
+					Use();
+					foreach (var gb in Object.GetAllObjects(false))
+					{
+						if (gb is null) return;
+						gb.Enabled = true;
+					}
+				if (DropppedItem is not null)
 				{
-					Object.Enabled = true;
+					foreach (var gb in DropppedItem.GetAllObjects(false))
+					{
+						if (gb is null) return;
+						gb.Enabled = false;
+					}
 				}
 			}
-			else
-			{
-				if (Object is not null)
-				{
-					Object.Enabled = false;
-				}
-			}
-			if (DropppedItem is not null)
-			{
-				DropppedItem.Enabled = false;
-			}
-			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
-			if (popupUi is not null)
-			{
-				popupUi.ShowPopUp = false;
-			}
-		}
 		else
 		{
 			if (Object is not null)
 			{
-				Object.Enabled = false;
+				foreach (var gb in Object.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = false;
+				}
 			}
 			if (DropppedItem is not null)
 			{
-				DropppedItem.Enabled = true;
+				foreach (var gb in DropppedItem.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = true;
+				}
 			}
-			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
-			if (popupUi is not null)
-			{
-				popupUi.ShowPopUp = true;
-			}
+		
 		}
-
+	
+		}
+		else
+		{
+				if (Object is not null)
+				{
+					foreach (var gb in Object.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = false;
+				}
+				}
+				if (!InInventory)
+				{
+					if (DropppedItem is not null)
+					{
+					foreach (var gb in DropppedItem.GetAllObjects(false))
+					{
+						gb.Enabled = true;
+					}
+					}
+				}
+	}
 		}
 		
 
@@ -110,13 +128,8 @@ public sealed class ActionGraphItem : Component
 			gb.Network.TakeOwnership();
 		}
 		}
-		
-		GameObject.Parent = Inventory.GameObject;
-		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
 		InInventory = true;
 		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
-		Network.Refresh();
-
 	}
 	public void Use()
 	{

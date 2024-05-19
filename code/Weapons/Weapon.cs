@@ -1,4 +1,5 @@
 using System;
+using Microsoft.VisualBasic;
 using Sandbox;
 using Sandbox.Citizen;
 using Sandbox.Network;
@@ -78,39 +79,68 @@ public sealed class Weapon : Component
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
-		if (IsWeapon)
+		if (!IsProxy)
 		{
-			if (!IsProxy)
+			if (IsWeapon)
 			{
 				Actions();
-				if (ViewModelCamera is not null)
+					foreach (var gb in ViewModelCamera.GetAllObjects(false))
+					{
+						if (gb is null) return;
+						gb.Enabled = true;
+					}
+				if (DroppedItem is not null)
 				{
-					ViewModelCamera.Enabled = true;
+					foreach (var gb in DroppedItem.GetAllObjects(false))
+					{
+						if (gb is null) return;
+						gb.Enabled = false;
+					}
 				}
 			}
-			else
-			{
-				if (ViewModelCamera is not null)
-				{
-					ViewModelCamera.Enabled = false;
-				}
-			}
-			if (DroppedItem is not null)
-			{
-				DroppedItem.Enabled = false;
-			}
-		}
 		else
 		{
 			if (ViewModelCamera is not null)
 			{
-				ViewModelCamera.Enabled = false;
+				foreach (var gb in ViewModelCamera.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = false;
+				}
 			}
 			if (DroppedItem is not null)
 			{
-				DroppedItem.Enabled = true;
+				foreach (var gb in DroppedItem.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = true;
+				}
 			}
+		
 		}
+	
+		}
+		else
+		{
+				if (ViewModelCamera is not null)
+				{
+					foreach (var gb in ViewModelCamera.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = false;
+				}
+				}
+				if (!IsWeapon)
+				{
+					if (DroppedItem is not null)
+					{
+					foreach (var gb in DroppedItem.GetAllObjects(false))
+					{
+						gb.Enabled = true;
+					}
+					}
+				}
+	}
 	}
 	void Actions()
 	{
@@ -214,12 +244,8 @@ public sealed class Weapon : Component
 			gb.Network.TakeOwnership();
 		}
 		}
-		
-		GameObject.Parent = PlayerController.GameObject;
-		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
 		IsWeapon = true;
 		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
-		Network.Refresh();
 
 	}
 	void UpdateWorldModelShadowType()
