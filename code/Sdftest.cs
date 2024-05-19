@@ -103,6 +103,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		await CreateWorld(World, Random.Shared.Int(0, 10000));
 		WaterTrigger.Transform.Position = new Vector3(WorldSize / 2, WorldSize / 2, 0);
 		await OnWorldSpawned?.Invoke(this);
+		Scene.NavMesh.SetDirty();
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
 		GameNetworkSystem.CreateLobby();
 		Log.Info("World Built");

@@ -53,6 +53,7 @@ public partial class SdfWorld<TWorld, TChunk, TResource, TChunkKey, TArray, TSdf
 	}
 
 	private TimeSince _notifiedMissingModifications = float.PositiveInfinity;
+
 	[Broadcast]
 	private void Rpc_SendModifications( byte[] bytes )
 	{

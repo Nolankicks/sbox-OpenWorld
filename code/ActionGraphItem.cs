@@ -35,20 +35,26 @@ public sealed class ActionGraphItem : Component
 	}
 	protected override void OnUpdate()
 	{	
-		if (!IsProxy)
-		{
 		if (InInventory)
 		{
-			Use();
-			foreach (var gb in Object.GetAllObjects(false))
+			if (!IsProxy)
 			{
-				if (gb is null) return;
-				gb.Enabled = true;
+				Use();
+				if (Object is not null)
+				{
+					Object.Enabled = true;
+				}
 			}
-			foreach (var gb in DropppedItem.GetAllObjects(false))
+			else
 			{
-				if (gb is null) return;
-				gb.Enabled = false;
+				if (Object is not null)
+				{
+					Object.Enabled = false;
+				}
+			}
+			if (DropppedItem is not null)
+			{
+				DropppedItem.Enabled = false;
 			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
 			if (popupUi is not null)
@@ -58,15 +64,13 @@ public sealed class ActionGraphItem : Component
 		}
 		else
 		{
-			foreach (var gb in Object.GetAllObjects(false))
+			if (Object is not null)
 			{
-				if (gb is null) return;
-				gb.Enabled = false;
+				Object.Enabled = false;
 			}
-			foreach (var gb in DropppedItem.GetAllObjects(false))
+			if (DropppedItem is not null)
 			{
-				if (gb is null) return;
-				gb.Enabled = true;
+				DropppedItem.Enabled = true;
 			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
 			if (popupUi is not null)
@@ -76,41 +80,7 @@ public sealed class ActionGraphItem : Component
 		}
 
 		}
-		else
-		{
-			if (InInventory)
-			{
-				if (DropppedItem is not null)
-				{
-				foreach ( var gb in DropppedItem?.GetAllObjects(false))
-				{
-					if (gb is null) return;
-					gb.Enabled = false;
-				}
-				}
-			}
-			else
-			{
-				if (DropppedItem is not null)
-				{
-					foreach ( var gb in DropppedItem?.GetAllObjects(false))
-				{
-					if (gb is null) return;
-					gb.Enabled = true;
-				}
-				}
-				
-			}
-			if (Object != null)
-{
-   			foreach (var gb in Object.GetAllObjects(false))
-    		{
-        	if (gb is null) return;
-        	gb.Enabled = false;
-    		}
-}
-		}
-	}
+		
 
 	public void DropItem(Inventory inventory)
 	{

@@ -1,0 +1,135 @@
+{
+  "__guid": "56602ea1-cccb-4ab9-9c9b-3624b1ce2c2d",
+  "GameObjects": [
+    {
+      "__guid": "2c8d05a3-33f2-44c8-850a-70eae8f84a1f",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "25e4e08c-5571-4092-9025-cde6bf16ef22",
+          "MapName": "eagleone.killhouse_chimona",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "ee125f09-934d-4827-a4fd-1db14db2f2eb",
+      "Flags": 0,
+      "Name": "Network",
+      "Position": "0.0153656,184.3966,149.9445",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Kicks.NetworkManager",
+          "__guid": "65562aa5-bced-4f80-ab74-9ca980c5301c",
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/startingplayer.prefab"
+          },
+          "StartServer": true
+        }
+      ]
+    },
+    {
+      "__guid": "46a52a8f-1d77-4f2a-9ba1-d09f972c4d1c",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "4.583572,-239.1707,159.9305",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "c29a21e7-47e7-4506-93d8-b0e681ba056d",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "8954cb74-fae8-49b3-86d3-868c5991ce82",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "4.583572,-239.1707,159.9305",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "988254b3-0ce7-4304-93dc-f7f508b5db9b",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Kicks.Hud",
+          "__guid": "cb4fabc9-87b1-4e6d-b14e-58090ceed0ee",
+          "opacity": 1
+        },
+        {
+          "__type": "Kicks.TabUi",
+          "__guid": "841f5afb-e607-44c3-b126-fc16e8d16746"
+        },
+        {
+          "__type": "InputHint",
+          "__guid": "9a4ffe16-7088-448b-9c77-31a35cc1d104"
+        },
+        {
+          "__type": "PauseMenu",
+          "__guid": "328446d0-7362-4f21-b636-17fc9cb1ff1a",
+          "ShowUi": false
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "test",
+  "Description": "",
+  "LastSaved": "2024-05-19T17:32:20.2523594-04:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}

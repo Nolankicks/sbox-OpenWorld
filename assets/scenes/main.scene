@@ -77,187 +77,6 @@
             "component_type": "Interactor"
           },
           "Metal": 0,
-          "OnComponentStart": {
-            "__version": 7,
-            "__guid": "3e77f1bb-90fc-4344-bd0a-18255c25e77b",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/Inventory"
-              ]
-            },
-            "Variables": [
-              {
-                "Name": "Inventory",
-                "Type": "Inventory"
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input",
-                "UserData": {
-                  "Position": "-416,96"
-                }
-              },
-              {
-                "Id": 1,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "Inventory"
-                },
-                "UserData": {
-                  "Position": "-416,208"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "var",
-                "Properties": {
-                  "_var": "Inventory"
-                },
-                "UserData": {
-                  "Position": "-176,96"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "call",
-                "Properties": {
-                  "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "912,96"
-                }
-              },
-              {
-                "Id": 15,
-                "Type": "call",
-                "Properties": {
-                  "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "1632,96"
-                }
-              },
-              {
-                "Id": 38,
-                "Type": "call",
-                "Properties": {
-                  "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "1296,96"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_this"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "_value"
-              },
-              {
-                "Value": 1,
-                "DstId": 8,
-                "DstName": "Slot"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_pistol.prefab"
-                },
-                "DstId": 8,
-                "DstName": "item"
-              },
-              {
-                "Value": 3,
-                "DstId": 15,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 38,
-                "SrcName": "_signal",
-                "DstId": 15,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 15,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_fists.prefab"
-                },
-                "DstId": 15,
-                "DstName": "item"
-              },
-              {
-                "Value": 2,
-                "DstId": 38,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_signal",
-                "DstId": 38,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 38,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_crowbar.prefab"
-                },
-                "DstId": 38,
-                "DstName": "item"
-              }
-            ],
-            "Defaults": {
-              "$41._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_pistol.prefab"
-              },
-              "$44._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_fists.prefab"
-              },
-              "$47._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_crowbar.prefab"
-              }
-            }
-          },
           "RunSpeed": 300,
           "ShowShopUi": false,
           "Stone": 0,
@@ -270,7 +89,16 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
-          "ItemsToSpawnWith": [],
+          "ItemsToSpawnWith": [
+            {
+              "_type": "gameobject",
+              "go": "985ed93f-df40-4d06-86a1-82fa97d7d11a"
+            },
+            {
+              "_type": "gameobject",
+              "go": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41"
+            }
+          ],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -2828,8 +2656,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "608,-32"
@@ -3177,8 +3005,8 @@
                     "Properties": {
                       "_type": "Sandbox.IComponentLister",
                       "T": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "TryGet"
+                      "_name": "TryGet",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "176,240"
@@ -3651,8 +3479,8 @@
                     "Properties": {
                       "_type": "Sandbox.IComponentLister",
                       "T": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "TryGet"
+                      "_name": "TryGet",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "-16,224"
@@ -3670,8 +3498,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "512,80"
@@ -6103,8 +5931,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "DrinkingUi",
-                  "_isStatic": false,
-                  "_name": "SubtractSip"
+                  "_name": "SubtractSip",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "-608,-416"
@@ -6172,8 +6000,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.PlayerController",
-                  "_isStatic": false,
-                  "_name": "Heal"
+                  "_name": "Heal",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "16,-416"
@@ -6270,8 +6098,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "464,-432"
@@ -6306,8 +6134,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "RemoveItem"
+                  "_name": "RemoveItem",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "464,-352"
@@ -6652,8 +6480,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "448,16"
@@ -7651,8 +7479,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.PlayerController",
-                  "_isStatic": false,
-                  "_name": "Heal"
+                  "_name": "Heal",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "800,0"
@@ -7663,8 +7491,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "RemoveItem"
+                  "_name": "RemoveItem",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "1008,-0"
@@ -7822,8 +7650,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "208,0"
@@ -8784,8 +8612,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "AddAmmo"
+                  "_name": "AddAmmo",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "224,0"
@@ -8993,8 +8821,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.Prop",
-                  "_isStatic": false,
-                  "_name": "Kill"
+                  "_name": "Kill",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "592,48"
@@ -9224,8 +9052,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "SetNPCAnims"
+                  "_name": "SetNPCAnims",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3632,592"
@@ -9256,8 +9084,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "NPCAttack"
+                  "_name": "NPCAttack",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4480,592"
@@ -9268,8 +9096,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4752,592"
@@ -9329,8 +9157,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false,
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "5088,592"
@@ -9982,8 +9810,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "SetNPCAnims"
+                  "_name": "SetNPCAnims",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3632,592"
@@ -10014,8 +9842,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "NPCAttack"
+                  "_name": "NPCAttack",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4480,592"
@@ -10026,8 +9854,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4752,592"
@@ -10087,8 +9915,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false,
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "5088,592"
@@ -11837,8 +11665,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "SetNPCAnims"
+                  "_name": "SetNPCAnims",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3632,592"
@@ -11869,8 +11697,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "NPCAttack"
+                  "_name": "NPCAttack",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4640,656",
@@ -11926,8 +11754,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "4944,528"
@@ -11949,8 +11777,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false,
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "5248,528"
@@ -12000,8 +11828,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "5184,736"
@@ -13719,8 +13547,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "SetNPCAnims"
+                  "_name": "SetNPCAnims",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "528,272"
@@ -13875,8 +13703,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "NPCAttack"
+                  "_name": "NPCAttack",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2800,80"
@@ -13898,8 +13726,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.SkinnedModelRenderer",
-                  "_isStatic": false,
-                  "_name": "Set"
+                  "_name": "Set",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3152,80"
@@ -14511,8 +14339,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "SetNPCAnims"
+                  "_name": "SetNPCAnims",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "528,272"
@@ -14612,8 +14440,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Kicks.NPC",
-                  "_isStatic": false,
-                  "_name": "NPCAttack"
+                  "_name": "NPCAttack",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2048,128"
@@ -14635,8 +14463,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "2496,128"
@@ -15999,8 +15827,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Sandbox.GameObject",
-                  "_isStatic": false,
-                  "_name": "Destroy"
+                  "_name": "Destroy",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "176,0"
@@ -16325,8 +16153,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "Inventory",
-                  "_isStatic": false,
-                  "_name": "AddItem"
+                  "_name": "AddItem",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "320,0"
@@ -16361,7 +16189,7 @@
               }
             ],
             "Defaults": {
-              "$4._value": {
+              "$3._value": {
                 "_type": "gameobject",
                 "go": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41"
               }
@@ -16402,7 +16230,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-19T10:14:01.2189689-04:00",
+  "LastSaved": "2024-05-19T17:24:41.4053353-04:00",
   "ResourceVersion": 1,
   "__version": 1,
   "__references": [

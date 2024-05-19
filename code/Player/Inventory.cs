@@ -31,6 +31,17 @@ public sealed class Inventory : Component
 		if (IsProxy) return;
 		Log.Info(Items.Count);
 		AddItem(Gun, 0);
+		_ = AddStartingItems();
+	}
+
+	public async Task AddStartingItems()
+	{
+		if (IsProxy) return;
+		await Task.DelaySeconds(2);
+		for (int i = 0; i < ItemsToSpawnWith.Count; i++)
+		{
+			AddItem(ItemsToSpawnWith[i], i);
+		}
 	}
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{

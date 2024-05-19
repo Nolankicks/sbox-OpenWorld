@@ -65,11 +65,11 @@ public sealed class Weapon : Component
 	[Property] public OnFireDel OnFire { get; set; }
 	protected override void OnStart()
 	{
-		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		Arms.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		foreach (var gb in GameObject.GetAllObjects(false))
+		{
+			if (gb is null) return;
+			gb.Network.SetOwnerTransfer(OwnerTransfer.Takeover);
+		}
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 		StartingAmmo = Ammo;
@@ -78,18 +78,42 @@ public sealed class Weapon : Component
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
-		if (IsProxy)
-		{
-			if (ViewModelCamera is null) return;
-			ViewModelCamera.Enabled = false;
-		}
 		if (IsWeapon)
 		{
-		DroppedItem.Enabled = false;
-		if ( IsProxy ) return;
-		ViewModelCamera.Enabled = true;
-		Arms.Enabled = true;
-		ViewModelGun.GameObject.Enabled = true;
+			if (!IsProxy)
+			{
+				Actions();
+				if (ViewModelCamera is not null)
+				{
+					ViewModelCamera.Enabled = true;
+				}
+			}
+			else
+			{
+				if (ViewModelCamera is not null)
+				{
+					ViewModelCamera.Enabled = false;
+				}
+			}
+			if (DroppedItem is not null)
+			{
+				DroppedItem.Enabled = false;
+			}
+		}
+		else
+		{
+			if (ViewModelCamera is not null)
+			{
+				ViewModelCamera.Enabled = false;
+			}
+			if (DroppedItem is not null)
+			{
+				DroppedItem.Enabled = true;
+			}
+		}
+	}
+	void Actions()
+	{
 		ViewModelGun.Set("b_twohanded", true);
 		if (Input.Down("attack1") && TimeSinceReload > 2.5)
 		{
@@ -159,16 +183,7 @@ public sealed class Weapon : Component
 		{
 			ViewModelCamera.Enabled = false;
 		}
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
-			ViewModelGun.GameObject.Enabled = false;
-			Arms.Enabled = false;
-			DroppedItem.Enabled = true;
-		}
 	}
-
 	public void DropItem(Inventory inventory)
 	{
 		var allObjects = GameObject.GetAllObjects(false);
