@@ -80,6 +80,7 @@ public sealed class Weapon : Component
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
 		if (IsProxy)
 		{
+			if (ViewModelCamera is null) return;
 			ViewModelCamera.Enabled = false;
 		}
 		if (IsWeapon)

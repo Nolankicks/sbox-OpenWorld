@@ -60,10 +60,12 @@ public sealed class ActionGraphItem : Component
 		{
 			foreach (var gb in Object.GetAllObjects(false))
 			{
+				if (gb is null) return;
 				gb.Enabled = false;
 			}
 			foreach (var gb in DropppedItem.GetAllObjects(false))
 			{
+				if (gb is null) return;
 				gb.Enabled = true;
 			}
 			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
@@ -78,22 +80,35 @@ public sealed class ActionGraphItem : Component
 		{
 			if (InInventory)
 			{
-				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				if (DropppedItem is not null)
 				{
+				foreach ( var gb in DropppedItem?.GetAllObjects(false))
+				{
+					if (gb is null) return;
 					gb.Enabled = false;
+				}
 				}
 			}
 			else
 			{
-				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				if (DropppedItem is not null)
 				{
+					foreach ( var gb in DropppedItem?.GetAllObjects(false))
+				{
+					if (gb is null) return;
 					gb.Enabled = true;
 				}
+				}
+				
 			}
-			foreach (var gb in Object.GetAllObjects(false))
-			{
-				gb.Enabled = false;
-			}
+			if (Object != null)
+{
+   			foreach (var gb in Object.GetAllObjects(false))
+    		{
+        	if (gb is null) return;
+        	gb.Enabled = false;
+    		}
+}
 		}
 	}
 
