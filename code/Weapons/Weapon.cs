@@ -8,6 +8,7 @@ using Sandbox.Utility;
 namespace Kicks;
 public sealed class Weapon : Component
 {
+	[Property, Sync] public bool AbleToDrop { get; set; } = true;
 	[Property] public string ShootBool { get; set; } = "b_attack";
 	[Property] public string ReloadBool { get; set; } = "b_reload";
 	[Property, Category("Weapon Properties")] public int Damage { get; set; }
@@ -195,6 +196,7 @@ public sealed class Weapon : Component
 	}
 	public void DropItem(Inventory inventory)
 	{
+		if (!AbleToDrop) return;
 		var allObjects = GameObject.GetAllObjects(false);
 		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
 		GameObject.Parent = null;

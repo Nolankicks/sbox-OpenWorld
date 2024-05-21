@@ -18,6 +18,7 @@ public sealed class ActionGraphItem : Component
 	public PlayerController PlayerController { get; set; }
 	[Property] public bool UsesAmmo { get; set; }
 	[Property, ShowIf("UsesAmmo", true), Sync] public int Ammo { get; set; }
+	[Property, Sync] public bool AbleToDrop { get; set; } = true;
 	[Property, ShowIf("UsesAmmo", true), Sync] public int MaxAmmo { get; set; }
 	[Property] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	public int ShotsFired { get; set; }
@@ -102,6 +103,7 @@ public sealed class ActionGraphItem : Component
 
 	public void DropItem(Inventory inventory)
 	{
+		if (!AbleToDrop) return;
 		var allObjects = GameObject.GetAllObjects(false);
 		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
 		GameObject.Parent = null;
