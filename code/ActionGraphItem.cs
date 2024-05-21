@@ -7,6 +7,7 @@ using Sandbox.Utility;
 [Icon("directions_walk")]
 public sealed class ActionGraphItem : Component
 {
+	[Property, Sync] public bool AbleToDrop { get; set; } = true;
 	[Property] public GameObject DropppedItem { get; set; }
 	public bool Able { get; set; } = true;
 	[Property, Sync] public bool InInventory { get; set; }
@@ -99,6 +100,7 @@ public sealed class ActionGraphItem : Component
 
 	public void DropItem(Inventory inventory)
 	{
+		if (!AbleToDrop) return;
 		var allObjects = GameObject.GetAllObjects(false);
 		var tr = Scene.Trace.Ray(Scene.Camera.ScreenNormalToRay(0.5f), 50).WithoutTags("player").Run();
 		GameObject.Parent = null;
