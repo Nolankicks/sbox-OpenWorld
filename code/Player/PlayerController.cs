@@ -50,6 +50,13 @@ public sealed class PlayerController : Component
 			eyeAngles = spawnPoint.Transform.Rotation.Angles();
 		}
 	}
+	protected override void OnUpdate()
+	{
+		if (Input.EscapePressed)
+		{
+			Input.EscapePressed = false;
+		}
+	}
 	void PlayJumpSound()
 	{
 		var tr = Scene.Trace.Ray(Transform.Position + Vector3.Up * 20, Transform.Position + Vector3.Up * -20).Run();
