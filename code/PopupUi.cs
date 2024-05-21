@@ -15,7 +15,7 @@ public sealed class PopupUi : Component
 	public PlayerController playerController { get; set; }
 	public Inventory Inventory { get; set; }
 	[Property] public Texture Icon { get; set; }
-	[Property, Sync] public bool ShowPopUp { get; set; } = true;
+	[Property] public bool ShowPopUp { get; set; } = true;
 	[Property, Category("Structs")] public ShopItems ShopItems { get; set; }
 	public Texture Glyph { get; set; }
 	protected override void OnUpdate()

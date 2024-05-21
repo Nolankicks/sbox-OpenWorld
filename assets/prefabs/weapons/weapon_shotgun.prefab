@@ -262,13 +262,8 @@
               "Type": "call",
               "Properties": {
                 "_type": "ActionGraphDelay",
-<<<<<<< HEAD
-                "_isStatic": false,
-                "_name": "SetDelay"
-=======
                 "_name": "SetDelay",
                 "_isStatic": false
->>>>>>> parent of fb3ce9e (Changes)
               },
               "UserData": {
                 "Position": "96,1104"
@@ -345,13 +340,8 @@
               "Type": "call",
               "Properties": {
                 "_type": "ActionGraphDelay",
-<<<<<<< HEAD
-                "_isStatic": false,
-                "_name": "SetDelay"
-=======
                 "_name": "SetDelay",
                 "_isStatic": false
->>>>>>> parent of fb3ce9e (Changes)
               },
               "UserData": {
                 "Position": "1648,1328"
