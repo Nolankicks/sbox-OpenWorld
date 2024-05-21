@@ -34,15 +34,24 @@ public sealed class PlayerController : Component
 	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;
+	protected override void OnEnabled()
+	{
+		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
+		OnJump += PlayJumpSound;
+	}
 
+	protected override void OnDisabled()
+	{
+		AnimationHelper.Target.OnFootstepEvent -= OnFootStep;
+		OnJump -= PlayJumpSound;
+	}
 	protected override void OnStart()
 	{
 		var steamId = Steam.SteamId.ToString();
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
-		AnimationHelper.Target.OnFootstepEvent += OnFootStep;
-		OnJump += PlayJumpSound;
+		
 		if (FindSpawnPoint)
 		{
 			var spawnPoint = Game.Random.FromList(Scene.GetAllComponents<SpawnPoint>().ToList());
@@ -67,6 +76,10 @@ public sealed class PlayerController : Component
 		e.roll = 0.0f;
 		eyeAngles = e;
 	}
+	protected override void OnUpdate()
+	{
+
+	}
 	protected override void OnFixedUpdate()
 	{
 		UpdateAnimation();
@@ -78,6 +91,11 @@ public sealed class PlayerController : Component
 			CamPos();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
+	}
+
+	public void AddCoins(int amount)
+	{
+		Coins += amount;
 	}
 	float MoveSpeed
 	{

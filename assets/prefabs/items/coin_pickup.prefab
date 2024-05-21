@@ -1,9 +1,11 @@
 {
   "RootObject": {
     "__guid": "2e6f0342-0098-4fb8-8f32-153d86d86b3d",
+    "Flags": 0,
     "Name": "coin_pickup",
     "Enabled": true,
     "NetworkMode": 2,
+    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Sandbox.Rigidbody",
@@ -24,7 +26,7 @@
         "Icon": "textures/kickscoin.vtex",
         "Name": "Coin",
         "PickUpAction": {
-          "__version": 6,
+          "__version": 7,
           "__guid": "e209352f-32ad-4a54-8fe1-404c38c398eb",
           "UserData": {
             "Title": "Pick Up Action",
@@ -58,7 +60,7 @@
               "Id": 4,
               "Type": "property",
               "Properties": {
-                "_type": "package.nolankicks.open_world_game/Kicks.PlayerController",
+                "_type": "Kicks.PlayerController",
                 "_name": "Coins"
               },
               "UserData": {
@@ -70,7 +72,7 @@
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
-                "_type": "Sandbox.Game/Sandbox.GameObject",
+                "_type": "Sandbox.GameObject",
                 "_name": "Destroy"
               },
               "UserData": {
@@ -128,7 +130,7 @@
             }
           ]
         },
-        "selectedInput": "E",
+        "selectedInput": "use",
         "ShopItems": {
           "ItemNames": [],
           "ShopActions": [],
@@ -141,10 +143,12 @@
     "Children": [
       {
         "__guid": "ce657089-3be7-4b05-8d23-cc772b2a9763",
+        "Flags": 0,
         "Name": "collider",
         "Position": "0,-0.3465881,1.241535",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.HullCollider",
@@ -163,11 +167,13 @@
       },
       {
         "__guid": "f4222e98-e5b8-46aa-a151-9d214b96cded",
+        "Flags": 0,
         "Name": "render",
         "Rotation": "0,0.7071068,0,0.7071068",
         "Scale": "0.1,0.1,0.1",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
@@ -181,12 +187,14 @@
       },
       {
         "__guid": "a429ae2d-5132-42c5-9343-97d0a8a400b4",
+        "Flags": 0,
         "Name": "render",
         "Position": "0,0,0.5980034",
         "Rotation": "0,0.7071068,0,0.7071068",
         "Scale": "0.1,0.1,0.1",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
@@ -200,12 +208,14 @@
       },
       {
         "__guid": "849451cc-e781-4775-9c0c-2249f7d8fb70",
+        "Flags": 0,
         "Name": "render",
         "Position": "0,0,1.199472",
         "Rotation": "0,0.7071068,0,0.7071068",
         "Scale": "0.1,0.1,0.1",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
@@ -219,12 +229,14 @@
       },
       {
         "__guid": "1d3fa479-f6b7-47b3-862b-8a1b1b35a892",
+        "Flags": 0,
         "Name": "render",
         "Position": "0,0,1.782148",
         "Rotation": "0,0.7071068,0,0.7071068",
         "Scale": "0.1,0.1,0.1",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
@@ -238,12 +250,14 @@
       },
       {
         "__guid": "5c5a8791-b1c3-4d81-868e-60357e8ee072",
+        "Flags": 0,
         "Name": "render",
         "Position": "0,0,2.388885",
         "Rotation": "0,0.7071068,0,0.7071068",
         "Scale": "0.1,0.1,0.1",
         "Enabled": true,
         "NetworkMode": 2,
+        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
@@ -261,8 +275,8 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "nolankicks.kickscoin"
-  ]
+  ],
+  "__version": 1
 }

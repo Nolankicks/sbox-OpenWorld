@@ -5,10 +5,11 @@
 <root style="opacity: @(ShowUi ? 1 : 0);">
 	<div class="header">PAUSED</div>
 	<div class="buttonholder">
-		<div class="button">RESUME</div>
+		<div class="button" onclick=@(() => ShowUi = !ShowUi)>RESUME</div>
 		<div class="button" style="font-size: 32px;" onclick=@(() => Game.ActiveScene.LoadFromFile("scenes/menuscene.scene"))>RETURN TO MENU</div>
 		</div>
 		<div class="button" style="position: absolute; bottom: 32px; left: 32px; font-size: 64px;" onclick=@( () => Game.Close())>QUIT</div>
+		<div class="button" style="position: absolute; bottom: 32px; right: 32px; font-size: 52px;" onclick=@(() => Game.Overlay.ShowBinds())>SETTINGS</div>
 </root>
 
 @code
@@ -21,6 +22,7 @@
 		if (IsProxy) return;
 		if (Input.EscapePressed)
 		{
+			Input.EscapePressed = false;
 			ShowUi = !ShowUi;
 		}
 	}

@@ -127,6 +127,7 @@
           },
           "EyesWeight": 1,
           "HeadWeight": 1,
+          "Height": 1,
           "LookAt": {
             "_type": "gameobject",
             "go": "407c992f-3fc4-4ec6-8e1f-2f616e36472b"
@@ -151,7 +152,7 @@
                 "Id": 1,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "T": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "-16,224"
@@ -161,8 +162,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "IsSitting"
+                  "_name": "IsSitting",
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -172,8 +173,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "Sitting"
+                  "_name": "Sitting",
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -264,7 +265,7 @@
                 "Id": 1,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "T": "Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "-48,176"
@@ -274,9 +275,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
+                  "_isStatic": false,
                   "_name": "Set",
-                  "_isStatic": false
+                  "_type": "Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -368,7 +369,7 @@
                 "Id": 2,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                  "T": "Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "464,176"
@@ -398,7 +399,7 @@
                 "Id": 5,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                  "T": "Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "-208,336"
@@ -582,8 +583,8 @@
                     "Id": 1,
                     "Type": "call",
                     "Properties": {
-                      "_name": "AddItem",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "AddItem"
                     },
                     "UserData": {
                       "Position": "672,112"
@@ -593,8 +594,8 @@
                     "Id": 4,
                     "Type": "call",
                     "Properties": {
-                      "_name": "GetNextSlot",
-                      "_isStatic": false
+                      "_isStatic": false,
+                      "_name": "GetNextSlot"
                     },
                     "UserData": {
                       "Position": "224,128"
@@ -897,7 +898,6 @@
         {
           "__type": "PauseMenu",
           "__guid": "a222a2ed-b5f8-4813-afcd-5ff589e1f978",
-          "MyStringValue": "Hello World!",
           "ShowUi": false
         }
       ]
@@ -957,10 +957,6 @@
             "go": "d7808a0e-2607-4be6-9d81-d2238f22d508"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "f4427900-ae6e-4fa5-ba4d-8a03424f9f8e",
@@ -977,7 +973,7 @@
           "health": 100,
           "OnDeath": {
             "__version": 7,
-            "__guid": "a8866053-624e-46fc-82ea-d35424bdf186",
+            "__guid": "94c16091-0dfd-4b96-8b41-34478a9581d3",
             "UserData": {
               "Title": "On Death",
               "ReferencedComponentTypes": []
@@ -990,52 +986,14 @@
               },
               {
                 "Id": 1,
-                "Type": "graph",
+                "Type": "call",
                 "Properties": {
-                  "graph": "actions/drop coin action.action"
+                  "_isStatic": false,
+                  "_name": "AddCoins",
+                  "_type": "Kicks.PlayerController"
                 },
                 "UserData": {
-                  "Position": "224,-0"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "544,-0"
-                }
-              },
-              {
-                "Id": 7,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "0,128"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
-                },
-                "UserData": {
-                  "Position": "224,224"
-                }
-              },
-              {
-                "Id": 9,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "208,96"
+                  "Position": "192,-0"
                 }
               }
             ],
@@ -1048,61 +1006,16 @@
               },
               {
                 "SrcId": 0,
-                "SrcName": "_target",
+                "SrcName": "playerController",
                 "DstId": 1,
                 "DstName": "_target"
               },
               {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 9,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "rotation"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/zombiegibs.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 7,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 7,
-                "SrcName": "_result",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 7,
-                "SrcName": "_result",
-                "DstId": 9,
-                "DstName": "_target"
+                "Value": 10,
+                "DstId": 1,
+                "DstName": "amount"
               }
-            ],
-            "Defaults": {
-              "$10._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         }
       ],
@@ -1136,6 +1049,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -1249,10 +1163,6 @@
             "go": "721eb08b-2369-41bd-a877-2e3b9ffc6c2f"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
@@ -1290,16 +1200,6 @@
                 "UserData": {
                   "Position": "224,0"
                 }
-              },
-              {
-                "Id": 7,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "496,0"
-                }
               }
             ],
             "Links": [
@@ -1313,18 +1213,6 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 7,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 7,
                 "DstName": "_target"
               }
             ]
@@ -1361,6 +1249,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -1474,10 +1363,6 @@
             "go": "fbdab401-eb21-4709-aba5-d5915ae300fd"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
@@ -1515,46 +1400,6 @@
                 "UserData": {
                   "Position": "192,0"
                 }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "512,0"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-32,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
-                },
-                "UserData": {
-                  "Position": "192,224"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "176,96"
-                }
               }
             ],
             "Links": [
@@ -1569,58 +1414,8 @@
                 "SrcName": "_target",
                 "DstId": 1,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "rotation"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/zombiegibs.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
               }
-            ],
-            "Defaults": {
-              "$6._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         }
       ],
@@ -1654,6 +1449,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -1767,10 +1563,6 @@
             "go": "ea6617dc-4261-4e85-9f73-4205b72ec865"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
@@ -1808,46 +1600,6 @@
                 "UserData": {
                   "Position": "192,0"
                 }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "512,0"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-32,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
-                },
-                "UserData": {
-                  "Position": "192,224"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "176,96"
-                }
               }
             ],
             "Links": [
@@ -1862,58 +1614,8 @@
                 "SrcName": "_target",
                 "DstId": 1,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "rotation"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/zombiegibs.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
               }
-            ],
-            "Defaults": {
-              "$6._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         }
       ],
@@ -1947,6 +1649,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -2060,10 +1763,6 @@
             "go": "f07763c8-91fb-49f8-b00d-986c12139ae4"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
@@ -2101,46 +1800,6 @@
                 "UserData": {
                   "Position": "208,0"
                 }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "528,0"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-16,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
-                },
-                "UserData": {
-                  "Position": "208,224"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "192,96"
-                }
               }
             ],
             "Links": [
@@ -2155,58 +1814,8 @@
                 "SrcName": "_target",
                 "DstId": 1,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "rotation"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/zombiegibs.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
               }
-            ],
-            "Defaults": {
-              "$6._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         }
       ],
@@ -2240,6 +1849,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -2353,10 +1963,6 @@
             "go": "98a4d122-d0bb-4cf7-8569-8d91aaea3984"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "navMeshAgent": {
             "_type": "component",
@@ -2394,46 +2000,6 @@
                 "UserData": {
                   "Position": "208,0"
                 }
-              },
-              {
-                "Id": 2,
-                "Type": "scene.clone",
-                "UserData": {
-                  "Position": "528,0"
-                }
-              },
-              {
-                "Id": 3,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
-                },
-                "UserData": {
-                  "Position": "-16,128"
-                }
-              },
-              {
-                "Id": 4,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "LocalPosition"
-                },
-                "UserData": {
-                  "Position": "208,224"
-                }
-              },
-              {
-                "Id": 5,
-                "Type": "property",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Rotation"
-                },
-                "UserData": {
-                  "Position": "192,96"
-                }
               }
             ],
             "Links": [
@@ -2448,58 +2014,8 @@
                 "SrcName": "_target",
                 "DstId": 1,
                 "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 4,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "position"
-              },
-              {
-                "SrcId": 5,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "rotation"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/zombiegibs.prefab"
-                },
-                "DstId": 2,
-                "DstName": "target"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 4,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_result",
-                "DstId": 5,
-                "DstName": "_target"
               }
-            ],
-            "Defaults": {
-              "$6._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         }
       ],
@@ -2533,6 +2049,7 @@
               },
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": true,
               "Target": {
                 "_type": "component",
@@ -2599,29 +2116,6 @@
           "Enabled": true,
           "NetworkMode": 2,
           "NetworkInterpolation": true
-        }
-      ]
-    },
-    {
-      "__guid": "58f6f99f-dc36-4720-9a82-1c93458f178d",
-      "Flags": 0,
-      "Name": "Cubemap Fog",
-      "Position": "928.4135,352,463.713",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CubemapFog",
-          "__guid": "276bab31-4a6b-4771-982a-a70ef7bda464",
-          "Blur": 0,
-          "EndDistance": 1024,
-          "FalloffExponent": 2,
-          "HeightExponent": 2,
-          "HeightStart": 2000,
-          "HeightWidth": 0,
-          "Sky": "materials/skybox/skybox_dark_01.vmat",
-          "StartDistance": 0
         }
       ]
     },
@@ -2738,7 +2232,7 @@
                 "Id": 2,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/GateInteraction"
+                  "T": "GateInteraction"
                 },
                 "UserData": {
                   "Position": "208,-512"
@@ -2748,8 +2242,8 @@
                 "Id": 3,
                 "Type": "call",
                 "Properties": {
-                  "_name": "OpenGate",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "OpenGate"
                 },
                 "UserData": {
                   "Position": "-880,-64"
@@ -2769,9 +2263,9 @@
                 "Id": 5,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.CharacterController",
+                  "_isStatic": false,
                   "_name": "MoveTo",
-                  "_isStatic": false
+                  "_type": "Sandbox.CharacterController"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2794,8 +2288,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_name": "Transform"
+                  "_name": "Transform",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-928,544"
@@ -2805,8 +2299,8 @@
                 "Id": 8,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "-688,544"
@@ -2840,8 +2334,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_name": "TransformCamera",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "TransformCamera"
                 },
                 "UserData": {
                   "Position": "832,0"
@@ -2851,8 +2345,8 @@
                 "Id": 13,
                 "Type": "call",
                 "Properties": {
-                  "_name": "CloseGate",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "CloseGate"
                 },
                 "UserData": {
                   "Position": "1600,48"
@@ -2869,8 +2363,8 @@
                 "Id": 15,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.Component",
-                  "_name": "GameObject"
+                  "_name": "GameObject",
+                  "_type": "Sandbox.Component"
                 },
                 "UserData": {
                   "Position": "1616,128"
@@ -2906,9 +2400,9 @@
                 "Id": 18,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "SetParent",
-                  "_isStatic": false
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "2368,128"
@@ -2918,8 +2412,8 @@
                 "Id": 20,
                 "Type": "call",
                 "Properties": {
-                  "_name": "StartHint",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_name": "StartHint"
                 },
                 "UserData": {
                   "Position": "2880,432"
@@ -2929,7 +2423,7 @@
                 "Id": 21,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/BoatController"
+                  "T": "BoatController"
                 },
                 "UserData": {
                   "Position": "2064,512"
@@ -3365,6 +2859,7 @@
               "BodyWeight": 1,
               "EyesWeight": 1,
               "HeadWeight": 1,
+              "Height": 1,
               "LookAtEnabled": false,
               "Target": {
                 "_type": "component",
@@ -4495,7 +3990,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/plastic_crate/plastic_crate_01.vmdl"
+          "Model": "models/props/plastic_crate/plastic_crate_01.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -4514,7 +4010,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_long.vmdl"
+          "Model": "models/props/packaged_food/can_long.vmdl",
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "Kicks.PopupUi",
@@ -4539,9 +4036,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -4551,9 +4048,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_isStatic": false
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4592,7 +4089,7 @@
               }
             ]
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -4618,7 +4115,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_long.vmdl"
+          "Model": "models/props/packaged_food/can_long.vmdl",
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "Kicks.PopupUi",
@@ -4643,9 +4141,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
+                  "_isStatic": false,
                   "_name": "Heal",
-                  "_isStatic": false
+                  "_type": "Kicks.PlayerController"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -4655,9 +4153,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
+                  "_isStatic": false,
                   "_name": "Destroy",
-                  "_isStatic": false
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4696,7 +4194,7 @@
               }
             ]
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -4722,7 +4220,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -4741,7 +4240,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -4760,7 +4260,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     }
@@ -4788,17 +4289,17 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-05-18T16:46:26.4296727-04:00",
+  "LastSaved": "2024-05-21T17:20:15.236178-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.can_long",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
     "facepunch.plastic_crate_01",
-    "facepunch.soda_can",
     "luke.office_desk",
+    "nolankicks.2d_game_test",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630"
-  ]
+  ],
+  "__version": 1
 }

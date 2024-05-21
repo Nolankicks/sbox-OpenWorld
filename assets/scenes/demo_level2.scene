@@ -65,7 +65,8 @@
           "Height": 64,
           "IgnoreLayers": "boat",
           "Radius": 16,
-          "StepHeight": 18
+          "StepHeight": 18,
+          "UseCollisionRules": false
         }
       ],
       "Children": [
@@ -89,7 +90,8 @@
               "Height": 64,
               "IgnoreLayers": "player,ignore",
               "Radius": 16,
-              "StepHeight": 18
+              "StepHeight": 18,
+              "UseCollisionRules": false
             },
             {
               "__type": "Kicks.PlayerController",
@@ -114,6 +116,7 @@
                 "go": "47e7ac56-8952-42ef-840b-2ff60b7414cd"
               },
               "eyeAngles": "0,0,0",
+              "FindSpawnPoint": false,
               "Health": 100,
               "Hold": {
                 "_type": "gameobject",
@@ -613,7 +616,7 @@
                                                 },
                                                 {
                                                   "__guid": "565e1c23-4040-4020-ab70-23cbc10d5d0d",
-                                                  "Flags": 4,
+                                                  "Flags": 0,
                                                   "Name": "hand_R_to_L_ikrule",
                                                   "Position": "-28.15186,11.30968,27.26414",
                                                   "Rotation": "-0.2772722,-0.690174,-0.00000002229325,0.6684158",
@@ -899,7 +902,7 @@
                                                 },
                                                 {
                                                   "__guid": "23d02b5b-c5f0-473b-b359-8efec893e2f0",
-                                                  "Flags": 4,
+                                                  "Flags": 0,
                                                   "Name": "hand_L_to_R_ikrule",
                                                   "Position": "-28.15179,11.30985,-27.26431",
                                                   "Rotation": "0.2772729,0.6901739,0.0000003121058,0.6684159",
@@ -1188,7 +1191,7 @@
                 },
                 {
                   "__guid": "2c2c3fc1-b079-4adc-8165-ecf1d7fb4787",
-                  "Flags": 4,
+                  "Flags": 0,
                   "Name": "root_IK",
                   "Position": "1.266575,0.0000071965,0",
                   "Enabled": true,
@@ -1197,7 +1200,7 @@
                   "Children": [
                     {
                       "__guid": "98018c06-624b-4c19-b3b6-ea336c8cf5eb",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "hand_R_IK_target",
                       "Position": "0.6939846,-20.39473,39.24799",
                       "Rotation": "0.2871271,0.2142481,-0.5281312,0.7698917",
@@ -1207,7 +1210,7 @@
                     },
                     {
                       "__guid": "e0b2a0ac-c9bd-4379-b11f-366310011c14",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "hand_L_IK_target",
                       "Position": "0.6941432,20.3947,39.24792",
                       "Rotation": "0.769893,0.5281297,-0.2142482,0.2871265",
@@ -1217,7 +1220,7 @@
                     },
                     {
                       "__guid": "490c71b8-c6ad-4f17-88ce-f13adada7f26",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "aim_matrix_02a",
                       "Position": "4.638952,0.000006725058,9.842499",
                       "Enabled": true,
@@ -1226,7 +1229,7 @@
                       "Children": [
                         {
                           "__guid": "c3ab4d1c-15f4-4334-8a22-7ab18dcf9e72",
-                          "Flags": 4,
+                          "Flags": 0,
                           "Name": "aim_matrix_02b",
                           "Position": "3.937001,-0.000001421902,0.0000006556511",
                           "Enabled": true,
@@ -1237,7 +1240,7 @@
                     },
                     {
                       "__guid": "f3be1931-1c9f-4dd7-b380-ee5e329c3698",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "aim_matrix_01",
                       "Position": "4.63892,0.000001875889,11.811",
                       "Enabled": true,
@@ -1246,7 +1249,7 @@
                     },
                     {
                       "__guid": "e5ba02da-8289-4f36-872c-8478fa0e97da",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "foot_R_IK_target",
                       "Position": "-0.8840668,-4.427395,3.807913",
                       "Rotation": "0.6508946,0.2762884,-0.2762875,0.6508964",
@@ -1256,7 +1259,7 @@
                     },
                     {
                       "__guid": "e461611b-de35-43c5-ba2f-4896d723a763",
-                      "Flags": 4,
+                      "Flags": 0,
                       "Name": "foot_L_IK_target",
                       "Position": "-0.884093,4.427404,3.807924",
                       "Rotation": "0.650896,0.276287,-0.2762894,0.6508948",
@@ -1387,8 +1390,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Parent"
                 },
                 "UserData": {
                   "Position": "352,64"
@@ -1412,8 +1415,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "Parent",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Parent"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1423,8 +1426,8 @@
                 "Id": 10,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "448,752"
@@ -1434,8 +1437,8 @@
                 "Id": 14,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "1184,304"
@@ -1445,8 +1448,8 @@
                 "Id": 15,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-112,448"
@@ -1456,8 +1459,8 @@
                 "Id": 16,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "448,656"
@@ -1494,8 +1497,8 @@
                 "Id": 22,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "688,256"
@@ -1505,8 +1508,8 @@
                 "Id": 23,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "80,224"
@@ -1516,8 +1519,8 @@
                 "Id": 24,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "336,224"
@@ -1528,8 +1531,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "Rotation",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Rotation"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -1552,8 +1555,8 @@
                 "Id": 31,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "496,-48"
@@ -1563,8 +1566,8 @@
                 "Id": 32,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "752,-48"
@@ -1587,7 +1590,7 @@
                 "Id": 38,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/BoatController"
+                  "T": "BoatController"
                 },
                 "UserData": {
                   "Position": "336,160"
@@ -1597,8 +1600,8 @@
                 "Id": 57,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsUsing",
-                  "_type": "package.nolankicks.dead4left2/BoatController"
+                  "_type": "BoatController",
+                  "_name": "IsUsing"
                 },
                 "UserData": {
                   "Position": "656,96"
@@ -1623,8 +1626,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "2048,224"
@@ -1635,8 +1638,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "AbleToMove",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "Kicks.PlayerController",
+                  "_name": "AbleToMove"
                 },
                 "UserData": {
                   "Position": "2560,112"
@@ -1647,8 +1650,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "eyeAngles",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController"
+                  "_type": "Kicks.PlayerController",
+                  "_name": "eyeAngles"
                 },
                 "UserData": {
                   "Position": "2288,48"
@@ -1924,7 +1927,7 @@
               }
             }
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -1980,7 +1983,6 @@
         {
           "__type": "PauseMenu",
           "__guid": "dbe7e5e6-fe25-46e9-af8a-75eae08901c3",
-          "MyStringValue": "Hello World!",
           "ShowUi": false
         }
       ]
@@ -2128,10 +2130,6 @@
             "go": "40caa094-42ff-491f-8e2c-49bd56daa95a"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "d86880f2-da70-48f6-bf6e-98de23adad4e",
@@ -2144,46 +2142,8 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "59927185-bed3-49d9-834a-f9a52e97da47",
-          "health": 100,
-          "OnDeath": {
-            "__version": 7,
-            "__guid": "f069444e-76df-4a00-a471-d28fcc20bdd4",
-            "UserData": {
-              "Title": "On Death",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "288,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_target"
-              }
-            ]
-          }
+          "CanBeKilled": true,
+          "health": 100
         }
       ],
       "Children": [
@@ -2357,8 +2317,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2415,7 +2375,7 @@
               }
             ]
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -2629,8 +2589,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2687,7 +2647,7 @@
               }
             ]
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -2951,8 +2911,8 @@
                 "Id": 5,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-96,96"
@@ -2962,8 +2922,8 @@
                 "Id": 6,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "144,64"
@@ -3075,8 +3035,8 @@
                 "Id": 3,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-96,64"
@@ -3086,8 +3046,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "128,80"
@@ -3127,13 +3087,7 @@
                 "DstId": 4,
                 "DstName": "_target"
               }
-            ],
-            "Defaults": {
-              "$5._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/coin_pickup.prefab"
-              }
-            }
+            ]
           }
         }
       ]
@@ -3210,8 +3164,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -3268,7 +3222,7 @@
               }
             ]
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -3479,6 +3433,7 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "a52dab7a-136c-4563-be3f-86612f6d8ee9",
+          "CanBeKilled": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -4085,7 +4040,7 @@
                                         },
                                         {
                                           "__guid": "ef632038-5315-4c78-9667-3f67cfe15c42",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_R_to_L_ikrule",
                                           "Position": "-28.15186,11.30968,27.26414",
                                           "Rotation": "-0.2772722,-0.690174,-0.00000002229325,0.6684158",
@@ -4393,7 +4348,7 @@
                                         },
                                         {
                                           "__guid": "7d596ac2-fd02-477f-b084-e45d85bc3043",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_L_to_R_ikrule",
                                           "Position": "-28.15179,11.30985,-27.26431",
                                           "Rotation": "0.2772729,0.6901739,0.0000003121058,0.6684159",
@@ -4682,7 +4637,7 @@
         },
         {
           "__guid": "76a41e84-402c-4d8f-8ece-bad587606794",
-          "Flags": 4,
+          "Flags": 0,
           "Name": "root_IK",
           "Position": "1.266601,-0.000000226486,0",
           "Enabled": true,
@@ -4691,7 +4646,7 @@
           "Children": [
             {
               "__guid": "1faf357e-42d4-47d8-9cb8-e5cffe555b52",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_R_IK_target",
               "Position": "0.6939846,-20.39473,39.24799",
               "Rotation": "0.2871271,0.2142481,-0.5281312,0.7698917",
@@ -4701,7 +4656,7 @@
             },
             {
               "__guid": "f27fc664-97ab-4b6a-a49e-4ac37cca01b2",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_L_IK_target",
               "Position": "0.6941039,20.39465,39.24792",
               "Rotation": "0.7698929,0.5281297,-0.2142481,0.2871265",
@@ -4711,7 +4666,7 @@
             },
             {
               "__guid": "e109d643-750c-44e8-863e-b4b1a99448ed",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_02a",
               "Position": "4.638916,-0.000002488508,9.842499",
               "Enabled": true,
@@ -4720,7 +4675,7 @@
               "Children": [
                 {
                   "__guid": "a5c3a1dd-09fd-46ae-a62a-e5f7047f8877",
-                  "Flags": 4,
+                  "Flags": 0,
                   "Name": "aim_matrix_02b",
                   "Position": "3.937011,-0.000001407985,0.0000004771402",
                   "Enabled": true,
@@ -4731,7 +4686,7 @@
             },
             {
               "__guid": "1653fe18-7fdd-4319-ac44-1f572ca76a98",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_01",
               "Position": "4.638916,-0.000002488508,11.811",
               "Enabled": true,
@@ -4740,7 +4695,7 @@
             },
             {
               "__guid": "a7927bfe-e797-4890-b6bc-7b922c10846c",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_R_IK_target",
               "Position": "-0.8840668,-4.427395,3.807913",
               "Rotation": "0.6508946,0.2762884,-0.2762875,0.6508964",
@@ -4750,7 +4705,7 @@
             },
             {
               "__guid": "e7cc43a8-6dce-4617-bf12-53f3691b957a",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_L_IK_target",
               "Position": "-0.884093,4.427404,3.807924",
               "Rotation": "0.650896,0.276287,-0.2762894,0.6508948",
@@ -4831,6 +4786,7 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "010b2c77-9530-43c7-8c7e-9655bf7a904b",
+          "CanBeKilled": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -4854,16 +4810,6 @@
                 "UserData": {
                   "Position": "224,-0"
                 }
-              },
-              {
-                "Id": 2,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "512,-0"
-                }
               }
             ],
             "Links": [
@@ -4877,18 +4823,6 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 2,
                 "DstName": "_target"
               }
             ]
@@ -5459,7 +5393,7 @@
                                         },
                                         {
                                           "__guid": "337e7f60-4910-4a91-99eb-0637190924de",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_R_to_L_ikrule",
                                           "Position": "-28.15186,11.30968,27.26414",
                                           "Rotation": "-0.2772722,-0.690174,-0.00000002229325,0.6684158",
@@ -5767,7 +5701,7 @@
                                         },
                                         {
                                           "__guid": "553fdce0-22a8-4ba5-afa8-9be52a3a18b6",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_L_to_R_ikrule",
                                           "Position": "-28.15179,11.30985,-27.26431",
                                           "Rotation": "0.2772729,0.6901739,0.0000003121058,0.6684159",
@@ -6056,7 +5990,7 @@
         },
         {
           "__guid": "e5c1cbb4-1401-4b72-b2bd-60aa11de09bc",
-          "Flags": 4,
+          "Flags": 0,
           "Name": "root_IK",
           "Position": "1.266575,0.0000071965,0",
           "Enabled": true,
@@ -6065,7 +5999,7 @@
           "Children": [
             {
               "__guid": "61f63db3-1db6-4f26-b88a-00c3a07c3ad2",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_R_IK_target",
               "Position": "0.6940005,-20.39473,39.24805",
               "Rotation": "0.2871271,0.2142481,-0.5281312,0.7698917",
@@ -6075,7 +6009,7 @@
             },
             {
               "__guid": "0219fd5c-bb4e-48b2-8b9f-d9f9e6cddbfc",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_L_IK_target",
               "Position": "0.6941153,20.3947,39.24792",
               "Rotation": "0.7698929,0.5281296,-0.2142482,0.2871265",
@@ -6085,7 +6019,7 @@
             },
             {
               "__guid": "ce63ca6f-cffc-43d9-93f5-ed1b0236e338",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_02a",
               "Position": "4.638925,-0.0000008343595,9.8425",
               "Enabled": true,
@@ -6094,7 +6028,7 @@
               "Children": [
                 {
                   "__guid": "56d20bd2-973c-4e81-9471-b2d0667e41c2",
-                  "Flags": 4,
+                  "Flags": 0,
                   "Name": "aim_matrix_02b",
                   "Position": "3.937046,0.00009679794,0.0000004771296",
                   "Enabled": true,
@@ -6105,7 +6039,7 @@
             },
             {
               "__guid": "a105268f-5cbb-46b9-b6c4-51aaea31715b",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_01",
               "Position": "4.638925,-0.0000008343595,11.811",
               "Enabled": true,
@@ -6114,7 +6048,7 @@
             },
             {
               "__guid": "ca8838ab-fc7c-47f5-8ee1-9e2d78defc83",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_R_IK_target",
               "Position": "-0.8840668,-4.427395,3.807913",
               "Rotation": "0.6508946,0.2762884,-0.2762875,0.6508964",
@@ -6124,7 +6058,7 @@
             },
             {
               "__guid": "b8fa677e-8c3e-4de3-8cf3-01732a8048f9",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_L_IK_target",
               "Position": "-0.8841458,4.427398,3.807984",
               "Rotation": "0.650896,0.276287,-0.2762894,0.6508949",
@@ -6180,6 +6114,7 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "203661dd-f82d-4f2e-ba12-fef0d9c0b266",
+          "CanBeKilled": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -6203,16 +6138,6 @@
                 "UserData": {
                   "Position": "208,0"
                 }
-              },
-              {
-                "Id": 4,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "544,0"
-                }
               }
             ],
             "Links": [
@@ -6226,18 +6151,6 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 3,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 3,
-                "SrcName": "_signal",
-                "DstId": 4,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 4,
                 "DstName": "_target"
               }
             ]
@@ -6833,7 +6746,7 @@
                                         },
                                         {
                                           "__guid": "89898165-5095-4f35-86cf-def0f65ebe54",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_R_to_L_ikrule",
                                           "Position": "-28.15186,11.30968,27.26414",
                                           "Rotation": "-0.2772722,-0.690174,-0.00000002229325,0.6684158",
@@ -7141,7 +7054,7 @@
                                         },
                                         {
                                           "__guid": "4ff0126b-152d-43f2-a85c-3aa11df3a89e",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_L_to_R_ikrule",
                                           "Position": "-28.15179,11.30985,-27.26431",
                                           "Rotation": "0.2772729,0.6901739,0.0000003121058,0.6684159",
@@ -7430,7 +7343,7 @@
         },
         {
           "__guid": "1ec235c6-20cb-4523-ae1c-f1077c904657",
-          "Flags": 4,
+          "Flags": 0,
           "Name": "root_IK",
           "Position": "1.266521,0.00001305342,0",
           "Enabled": true,
@@ -7439,7 +7352,7 @@
           "Children": [
             {
               "__guid": "b135ab81-dc8b-4b8f-aa91-9719da183645",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_R_IK_target",
               "Position": "0.6939846,-20.39473,39.24799",
               "Rotation": "0.2871271,0.2142481,-0.5281312,0.7698917",
@@ -7449,7 +7362,7 @@
             },
             {
               "__guid": "9ece3b37-cf7e-4bd0-98b4-e466a87202b9",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_L_IK_target",
               "Position": "0.694153,20.39462,39.24792",
               "Rotation": "0.7698929,0.5281297,-0.2142481,0.2871265",
@@ -7459,7 +7372,7 @@
             },
             {
               "__guid": "4a9014d7-9c5d-4144-8aca-1dbb03cb1854",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_02a",
               "Position": "4.638925,-0.0000008343595,9.8425",
               "Enabled": true,
@@ -7468,7 +7381,7 @@
               "Children": [
                 {
                   "__guid": "9ce7adcc-b68e-4b61-beaf-a78a0473a702",
-                  "Flags": 4,
+                  "Flags": 0,
                   "Name": "aim_matrix_02b",
                   "Position": "3.936908,0.0000989437,0.0000004771123",
                   "Enabled": true,
@@ -7479,7 +7392,7 @@
             },
             {
               "__guid": "b3aff1ad-da5d-46cc-8862-bdd7682f5435",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_01",
               "Position": "4.638925,-0.0000008343595,11.811",
               "Enabled": true,
@@ -7488,7 +7401,7 @@
             },
             {
               "__guid": "98a09b7b-b2dd-4cc4-9165-733088f8cbbd",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_R_IK_target",
               "Position": "-0.884091,-4.427396,3.807861",
               "Rotation": "0.6508946,0.2762884,-0.2762875,0.6508964",
@@ -7498,7 +7411,7 @@
             },
             {
               "__guid": "54535a77-78a9-4460-8271-39a5a7234228",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_L_IK_target",
               "Position": "-0.884093,4.427404,3.807924",
               "Rotation": "0.650896,0.276287,-0.2762894,0.6508948",
@@ -7554,6 +7467,7 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "febdf1fa-406e-4098-9b01-a83a18915815",
+          "CanBeKilled": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -7577,16 +7491,6 @@
                 "UserData": {
                   "Position": "192,-0"
                 }
-              },
-              {
-                "Id": 3,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "560,-0"
-                }
               }
             ],
             "Links": [
@@ -7600,18 +7504,6 @@
                 "SrcId": 0,
                 "SrcName": "_target",
                 "DstId": 2,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 3,
                 "DstName": "_target"
               }
             ]
@@ -8207,7 +8099,7 @@
                                         },
                                         {
                                           "__guid": "c7ef6d3d-1407-482c-b79b-743831afdf0c",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_R_to_L_ikrule",
                                           "Position": "-28.15186,11.30968,27.26414",
                                           "Rotation": "-0.2772722,-0.690174,-0.00000002229325,0.6684158",
@@ -8515,7 +8407,7 @@
                                         },
                                         {
                                           "__guid": "f663252e-1a70-45c4-b1f3-6af8cd9f4a34",
-                                          "Flags": 4,
+                                          "Flags": 0,
                                           "Name": "hand_L_to_R_ikrule",
                                           "Position": "-28.15179,11.30985,-27.26431",
                                           "Rotation": "0.2772729,0.6901739,0.0000003121058,0.6684159",
@@ -8804,7 +8696,7 @@
         },
         {
           "__guid": "992f04b7-807e-4dde-bd17-57a91aef3d81",
-          "Flags": 4,
+          "Flags": 0,
           "Name": "root_IK",
           "Position": "1.266521,0.00001305342,0",
           "Enabled": true,
@@ -8813,7 +8705,7 @@
           "Children": [
             {
               "__guid": "0d42f37b-4adc-47cf-b27a-b84ec08dcbad",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_R_IK_target",
               "Position": "0.6939846,-20.39473,39.24799",
               "Rotation": "0.2871271,0.2142481,-0.5281312,0.7698917",
@@ -8823,7 +8715,7 @@
             },
             {
               "__guid": "2f2c5311-53db-4a9c-858d-229dbcaaff2f",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "hand_L_IK_target",
               "Position": "0.694153,20.39462,39.24792",
               "Rotation": "0.7698929,0.5281297,-0.2142481,0.2871265",
@@ -8833,7 +8725,7 @@
             },
             {
               "__guid": "a6174019-5803-49b5-a4c1-bb49c0c298a7",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_02a",
               "Position": "4.638925,-0.0000008343595,9.8425",
               "Enabled": true,
@@ -8842,7 +8734,7 @@
               "Children": [
                 {
                   "__guid": "99f97cd5-3f36-4577-bafe-595cc2716ff2",
-                  "Flags": 4,
+                  "Flags": 0,
                   "Name": "aim_matrix_02b",
                   "Position": "3.936908,0.0000989437,0.0000004771123",
                   "Enabled": true,
@@ -8853,7 +8745,7 @@
             },
             {
               "__guid": "e9d85615-4323-4146-9791-07e8454ccec0",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "aim_matrix_01",
               "Position": "4.638925,-0.0000008343595,11.811",
               "Enabled": true,
@@ -8862,7 +8754,7 @@
             },
             {
               "__guid": "29bfd36f-5f93-41ec-a800-a83c5c8865c0",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_R_IK_target",
               "Position": "-0.884091,-4.427396,3.807861",
               "Rotation": "0.6508946,0.2762884,-0.2762875,0.6508964",
@@ -8872,7 +8764,7 @@
             },
             {
               "__guid": "8d32ac6e-7acd-42b1-a751-023c616827b6",
-              "Flags": 4,
+              "Flags": 0,
               "Name": "foot_L_IK_target",
               "Position": "-0.884093,4.427404,3.807924",
               "Rotation": "0.650896,0.276287,-0.2762894,0.6508948",
@@ -8928,10 +8820,6 @@
             "go": "4542259d-357f-4331-bec9-eec9182ce4f3"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "37f54481-9d0d-4f7c-95ce-d70447aab3a8",
@@ -8944,46 +8832,8 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "d4439e89-7d7a-44ca-991a-bfe7b8da0e7c",
-          "health": 100,
-          "OnDeath": {
-            "__version": 7,
-            "__guid": "4ec2071b-e782-4039-b76e-92260cf2aa13",
-            "UserData": {
-              "Title": "On Death",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "304,-0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_target"
-              }
-            ]
-          }
+          "CanBeKilled": true,
+          "health": 100
         }
       ],
       "Children": [
@@ -9129,10 +8979,6 @@
             "go": "7f0c8b36-10d1-4604-b7c8-2c670e9a0833"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "a5f496d8-4ae7-4fe6-ac94-5c6ca06ff03e",
@@ -9145,46 +8991,8 @@
         {
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "c266128c-afb1-4cab-bb89-93d5adae7258",
-          "health": 100,
-          "OnDeath": {
-            "__version": 7,
-            "__guid": "2ea4ef25-874d-47ef-a60d-0e29ea6c8052",
-            "UserData": {
-              "Title": "On Death",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "graph",
-                "Properties": {
-                  "graph": "actions/spawn zombie gibs.action"
-                },
-                "UserData": {
-                  "Position": "240,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_target"
-              }
-            ]
-          }
+          "CanBeKilled": true,
+          "health": 100
         }
       ],
       "Children": [
@@ -9342,7 +9150,7 @@
                 "Id": 3,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Kicks.Hud"
+                  "T": "Kicks.Hud"
                 },
                 "UserData": {
                   "Position": "256,256"
@@ -9352,9 +9160,9 @@
                 "Id": 6,
                 "Type": "call",
                 "Properties": {
-                  "_name": "DisableAllWeapons",
-                  "_type": "package.nolankicks.dead4left2/Inventory",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Inventory",
+                  "_name": "DisableAllWeapons"
                 },
                 "UserData": {
                   "Position": "288,80"
@@ -9379,8 +9187,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "opacity",
-                  "_type": "package.nolankicks.dead4left2/Kicks.Hud"
+                  "_type": "Kicks.Hud",
+                  "_name": "opacity"
                 },
                 "UserData": {
                   "Position": "880,208"
@@ -9390,7 +9198,7 @@
                 "Id": 20,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/FadeOutUi"
+                  "T": "FadeOutUi"
                 },
                 "UserData": {
                   "Position": "976,384"
@@ -9401,8 +9209,8 @@
                 "Type": "property",
                 "Properties": {
                   "_kind": "Set",
-                  "_name": "StartFade",
-                  "_type": "package.nolankicks.dead4left2/FadeOutUi"
+                  "_type": "FadeOutUi",
+                  "_name": "StartFade"
                 },
                 "UserData": {
                   "Position": "1424,448"
@@ -9432,7 +9240,7 @@
                 "Id": 27,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/GameManager"
+                  "T": "GameManager"
                 },
                 "UserData": {
                   "Position": "1760,688"
@@ -9442,9 +9250,9 @@
                 "Id": 28,
                 "Type": "call",
                 "Properties": {
-                  "_name": "ChangeScene",
-                  "_type": "package.nolankicks.dead4left2/GameManager",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "GameManager",
+                  "_name": "ChangeScene"
                 },
                 "UserData": {
                   "Position": "2064,592"
@@ -9583,7 +9391,7 @@
               }
             }
           },
-          "selectedInput": "E",
+          "selectedInput": "use",
           "ShopItems": {
             "ItemNames": [],
             "ShopActions": [],
@@ -10072,9 +9880,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Kicks.PlayerController",
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -10084,9 +9892,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -10176,9 +9984,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Heal",
-                  "_type": "package.nolankicks.dead4left2/Kicks.PlayerController",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Kicks.PlayerController",
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -10188,9 +9996,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_name": "Destroy",
-                  "_type": "Sandbox.Game/Sandbox.GameObject",
-                  "_isStatic": false
+                  "_isStatic": false,
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -10562,9 +10370,8 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-05-10T17:00:17.8147765-04:00",
+  "LastSaved": "2024-05-21T13:36:32.4344093-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.aircon_unit_large_128x64_a",
     "facepunch.beer_keg_a1",
@@ -10597,5 +10404,6 @@
     "nolankicks.idel-terry",
     "nolankicks.kickscoin",
     "tesssssssssst.untitled_13102630"
-  ]
+  ],
+  "__version": 1
 }

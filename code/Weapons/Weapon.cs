@@ -74,6 +74,7 @@ public sealed class Weapon : Component
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 		StartingAmmo = Ammo;
+
 	}
 	protected override void OnUpdate()
 	{
@@ -168,7 +169,13 @@ public sealed class Weapon : Component
 			DroppedItem.Enabled = true;
 		}
 	}
-
+	protected override void OnDisabled()
+	{
+		if (!IsProxy)
+		{
+			ViewModelGun.Set("b_grounded", false);
+		}
+	}
 	public void DropItem(Inventory inventory)
 	{
 		if (!AbleToDrop) return;

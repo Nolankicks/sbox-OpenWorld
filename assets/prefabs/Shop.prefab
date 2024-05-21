@@ -3,7 +3,6 @@
     "__guid": "78396649-9686-43e6-b5c8-66376323b3f8",
     "Flags": 0,
     "Name": "shop",
-    "Position": "0,0,4",
     "Enabled": true,
     "NetworkMode": 2,
     "NetworkInterpolation": true,
@@ -72,8 +71,8 @@
               "Id": 4,
               "Type": "property",
               "Properties": {
-                "_name": "Sitting",
-                "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Sitting"
               },
               "UserData": {
                 "Position": "512,208"
@@ -459,7 +458,7 @@
             }
           ]
         },
-        "selectedInput": "E",
+        "selectedInput": "use",
         "ShopItems": {
           "ItemNames": [
             "Light Ammo",
@@ -872,10 +871,10 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.office_chair",
     "luke.office_desk",
     "vidya.particle-ghost"
-  ]
+  ],
+  "__version": 1
 }

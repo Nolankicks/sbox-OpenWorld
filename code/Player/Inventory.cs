@@ -30,7 +30,10 @@ public sealed class Inventory : Component
 		ItemTextures = new List<Texture>(new Texture[9]);
 		if (IsProxy) return;
 		Log.Info(Items.Count);
-		AddItem(Gun, 0);
+		for (int i = 0; i < ItemsToSpawnWith.Count; i++)
+		{
+			AddItem(ItemsToSpawnWith[i], i);
+		}
 	}
 	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{

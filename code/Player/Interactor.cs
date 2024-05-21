@@ -1,6 +1,7 @@
 using Sandbox;
 using Sandbox.Network;
 namespace Kicks;
+[Icon("handshake")]
 public sealed class Interactor : Component
 {
 	PhysicsBody grabbedBody;
