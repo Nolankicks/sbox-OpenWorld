@@ -54,7 +54,7 @@ public sealed class Inventory : Component
 		var itemClone = item.Clone(Vector3.Up * 70);
 		itemClone.NetworkSpawn();
 		Items[Slot] = itemClone;
-		itemClone.Components.TryGet<Weapon>( out var weapon );
+		/*itemClone.Components.TryGet<Weapon>( out var weapon );
 		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
 		itemClone.Parent = GameObject;
 		
@@ -77,7 +77,7 @@ public sealed class Inventory : Component
 			{
 				AddTexture(icon.Icon, Slot);
 			}
-		}
+		}*/
 		}
 		}
 		else

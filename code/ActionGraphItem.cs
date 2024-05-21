@@ -35,7 +35,7 @@ public sealed class ActionGraphItem : Component
 	}
 	protected override void OnUpdate()
 	{	
-		if (!IsProxy)
+		/*if (!IsProxy)
 		{
 			if (InInventory)
 			{
@@ -96,7 +96,7 @@ public sealed class ActionGraphItem : Component
 					}
 					}
 				}
-	}
+	}*/
 	}
 		
 

@@ -79,7 +79,7 @@ public sealed class Weapon : Component
 	{
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
-		if (!IsProxy)
+		/*if (!IsProxy)
 		{
 			if (IsWeapon)
 			{
@@ -127,7 +127,7 @@ public sealed class Weapon : Component
 		{
 		DroppedItem.Enabled = true;
 		}
-		}
+		}*/
 	}
 	void Actions()
 	{
