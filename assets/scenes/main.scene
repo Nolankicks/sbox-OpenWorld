@@ -13,7 +13,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "292897ef-0bcc-4162-88b8-2e3abdb0d242",
-          "MapName": "maps/d4l_shooting_range.vmap",
+          "MapName": "nolankicks.d4l_shooting_range",
           "UseMapFromLaunch": false
         }
       ],
@@ -1535,7 +1535,6 @@
         {
           "__type": "PauseMenu",
           "__guid": "695781bd-9cc2-4b29-844c-eba81776c1b5",
-          "MyStringValue": "Hello World!",
           "ShowUi": false
         },
         {
@@ -1662,10 +1661,6 @@
             "go": "81317929-5d32-4e05-8a57-ca76ea2e7760"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "20ba15ae-9b73-41fb-9d4e-1dac559665de",
@@ -1825,10 +1820,6 @@
             "go": "6fa568df-2069-4bba-b201-9c312bfc8ba5"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "aa543117-9e01-4ab7-86ae-e0cbf6882469",
@@ -1988,10 +1979,6 @@
             "go": "6db66d05-2204-422d-bb62-7584b0f1378f"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "822f5211-d2a9-4b00-b2da-31ccdec67f13",
@@ -2151,10 +2138,6 @@
             "go": "f93e6648-d012-41f8-b8b3-df9b4b6c5e48"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "e53d3df8-876c-4bfc-96b0-b6a427550cdb",
@@ -2314,10 +2297,6 @@
             "go": "555b4bb4-9bd1-4edb-83dd-1abb4abf1bac"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "d515bb09-e267-434c-ad81-5b899b39818c",
@@ -2477,10 +2456,6 @@
             "go": "8e4f86ae-8149-4e15-ac13-f9d32206f4ac"
           },
           "ChangeScene": true,
-          "GibGameObject": {
-            "_type": "gameobject",
-            "prefab": "prefabs/zombiegibs.prefab"
-          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "52c1295b-45cd-45a9-9fef-df2db300755f",
@@ -2609,6 +2584,7 @@
         {
           "__type": "ActionGraphItem",
           "__guid": "a42f3f49-6069-419c-9c21-c3cdf862d031",
+          "AbleToDrop": true,
           "Ammo": 30,
           "AmmoType": "LightAmmo",
           "DropppedItem": {
@@ -3230,8 +3206,8 @@
                     "Id": 7,
                     "Type": "call",
                     "Properties": {
-                      "_isStatic": false,
                       "_name": "PickUp",
+                      "_isStatic": false,
                       "_type": "ActionGraphItem"
                     },
                     "UserData": {
@@ -3420,6 +3396,7 @@
         {
           "__type": "ActionGraphItem",
           "__guid": "f32a38cf-7dcc-4838-b9e8-11127a2a7e42",
+          "AbleToDrop": true,
           "Ammo": 30,
           "AmmoType": "LightAmmo",
           "DropppedItem": {
@@ -6044,6 +6021,7 @@
         {
           "__type": "ActionGraphItem",
           "__guid": "e4b65bb0-eb54-4e2e-b298-39ae968c1009",
+          "AbleToDrop": true,
           "Ammo": 0,
           "AmmoType": "LightAmmo",
           "DropppedItem": {
@@ -7603,6 +7581,7 @@
         {
           "__type": "ActionGraphItem",
           "__guid": "e9c56ecf-651b-4eac-abb1-a76c91ea0221",
+          "AbleToDrop": true,
           "Ammo": 0,
           "AmmoType": "LightAmmo",
           "DropppedItem": {
@@ -9810,13 +9789,7 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ],
-            "Defaults": {
-              "$5._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         },
         {
@@ -10574,13 +10547,7 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ],
-            "Defaults": {
-              "$5._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         },
         {
@@ -12526,13 +12493,7 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ],
-            "Defaults": {
-              "$5._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/zombiegibs.prefab"
-              }
-            }
+            ]
           }
         },
         {
@@ -13952,8 +13913,8 @@
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_name": "SetDelay",
+                  "_isStatic": false,
                   "_type": "ActionGraphDelay"
                 },
                 "UserData": {
@@ -16328,6 +16289,192 @@
           ]
         }
       ]
+    },
+    {
+      "__guid": "35d5506b-36ce-4373-86d3-1cc9ed426b2a",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-187.3916,-283.1089,169.1555",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "3a34e636-c378-4029-a0ef-fa0c9becc2a6",
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "Model": "models/rust_props/wooden_crates/wooden_crate_a.vmdl"
+        },
+        {
+          "__type": "Kicks.PopupUi",
+          "__guid": "edd628bb-2c6d-43d1-9271-fae7ee501efa",
+          "Name": "Pickup",
+          "PickUpAction": {
+            "__version": 7,
+            "__guid": "f097daa3-64a1-4880-b068-030333f3d420",
+            "UserData": {
+              "Title": "Pick Up Action",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "-480,0"
+                }
+              },
+              {
+                "Id": 1,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "Inventory"
+                },
+                "UserData": {
+                  "Position": "0,0"
+                }
+              },
+              {
+                "Id": 22,
+                "Type": "call",
+                "Properties": {
+                  "_name": "GetNextSlot",
+                  "_isStatic": false,
+                  "_type": "Inventory"
+                },
+                "UserData": {
+                  "Position": "-256,0"
+                }
+              },
+              {
+                "Id": 23,
+                "Type": "call",
+                "Properties": {
+                  "_name": "GetNextSlot",
+                  "_isStatic": false,
+                  "_type": "Inventory"
+                },
+                "UserData": {
+                  "Position": "240,0"
+                }
+              },
+              {
+                "Id": 24,
+                "Type": "call",
+                "Properties": {
+                  "_name": "AddItem",
+                  "_isStatic": false,
+                  "_type": "Inventory"
+                },
+                "UserData": {
+                  "Position": "528,-0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 22,
+                "SrcName": "_result",
+                "DstId": 1,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 22,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 1,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/weapon_smg.prefab"
+                },
+                "DstId": 1,
+                "DstName": "item"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 22,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 22,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 23,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 23,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 23,
+                "SrcName": "_result",
+                "DstId": 24,
+                "DstName": "Slot"
+              },
+              {
+                "SrcId": 23,
+                "SrcName": "_signal",
+                "DstId": 24,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 24,
+                "DstName": "_target"
+              },
+              {
+                "Value": {
+                  "_type": "gameobject",
+                  "prefab": "prefabs/weapons/m4a4.prefab"
+                },
+                "DstId": 24,
+                "DstName": "item"
+              }
+            ],
+            "Defaults": {
+              "$3._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
+              },
+              "$27._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/m4a4.prefab"
+              }
+            }
+          },
+          "selectedInput": "use",
+          "ShopItems": {
+            "ItemNames": [],
+            "ShopActions": [],
+            "ItemTextures": [],
+            "ItemPrices": []
+          },
+          "ShowPopUp": true
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -16353,22 +16500,22 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-18T16:09:12.6848056-04:00",
+  "LastSaved": "2024-05-21T12:52:34.4753302-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.can_long",
     "facepunch.explosion003",
     "facepunch.metal_fences_gate_left",
     "facepunch.plasticbucketa1",
-    "facepunch.soda_can",
     "facepunch.v_m4a1",
     "facepunch.w_spaghellim4",
-    "facepunch.w_usp",
     "facepunch.wooden_crate",
     "fpopium.w_makarov",
+    "nolankicks.2d_game_test",
     "nolankicks.idel-terry",
+    "rust.wooden_crate_a",
     "sbux.logo",
     "wujekfoliarz.axe"
-  ]
+  ],
+  "__version": 1
 }

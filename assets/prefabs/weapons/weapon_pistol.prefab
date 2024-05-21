@@ -1,6 +1,7 @@
 {
   "RootObject": {
     "__guid": "01422078-8869-4ea5-ba1e-fa5e05e8bc56",
+    "Flags": 0,
     "Name": "weapon_pistol",
     "Enabled": true,
     "NetworkMode": 1,
@@ -9,6 +10,7 @@
       {
         "__type": "Kicks.Weapon",
         "__guid": "67fe870a-067c-4424-a2b3-211e984a0d97",
+        "AbleToDrop": true,
         "Ammo": 12,
         "AmmoType": "LightAmmo",
         "Arms": {
@@ -84,10 +86,11 @@
     "Children": [
       {
         "__guid": "67462e3c-7a38-4997-9fab-657721aeccf0",
+        "Flags": 0,
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -111,16 +114,18 @@
         "Children": [
           {
             "__guid": "018bd555-ec96-4998-a28c-fa030c247621",
+            "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
-            "NetworkMode": 1,
+            "NetworkMode": 2,
             "NetworkInterpolation": true,
             "Children": [
               {
                 "__guid": "93a16984-a98a-41b2-9d60-e4971c7f7364",
+                "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
-                "NetworkMode": 1,
+                "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -136,9 +141,10 @@
               },
               {
                 "__guid": "b4bdc06c-5c23-425a-b641-9f7c521ad670",
+                "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
-                "NetworkMode": 1,
+                "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -164,9 +170,10 @@
       },
       {
         "__guid": "74f3b91e-adc0-4623-8a4c-12b2b788ff40",
+        "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -206,10 +213,8 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
-    "facepunch.v_usp",
-    "facepunch.w_usp",
     "nolankicks.2d_game_test"
-  ]
+  ],
+  "__version": 1
 }

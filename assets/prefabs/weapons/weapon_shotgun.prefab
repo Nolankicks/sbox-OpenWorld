@@ -10,13 +10,14 @@
       {
         "__type": "ActionGraphItem",
         "__guid": "0198ca98-7564-40a5-9b58-34457d54f73f",
+        "AbleToDrop": true,
         "Ammo": 12,
         "AmmoType": "LightAmmo",
         "DropppedItem": {
           "_type": "gameobject",
           "go": "17db5cd1-1a97-42f0-b686-ebba5c7da371"
         },
-        "InInventory": true,
+        "InInventory": false,
         "MaxAmmo": 12,
         "Object": {
           "_type": "gameobject",
@@ -261,9 +262,9 @@
               "Id": 657,
               "Type": "call",
               "Properties": {
-                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
-                "_isStatic": false
+                "_isStatic": false,
+                "_type": "ActionGraphDelay"
               },
               "UserData": {
                 "Position": "96,1104"
@@ -339,9 +340,9 @@
               "Id": 771,
               "Type": "call",
               "Properties": {
-                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
-                "_isStatic": false
+                "_isStatic": false,
+                "_type": "ActionGraphDelay"
               },
               "UserData": {
                 "Position": "1648,1328"
@@ -767,7 +768,7 @@
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -794,7 +795,7 @@
             "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
-            "NetworkMode": 1,
+            "NetworkMode": 2,
             "NetworkInterpolation": true,
             "Children": [
               {
@@ -802,7 +803,7 @@
                 "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
-                "NetworkMode": 1,
+                "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -821,7 +822,7 @@
                 "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
-                "NetworkMode": 1,
+                "NetworkMode": 2,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -850,7 +851,7 @@
         "Flags": 0,
         "Name": "PickUpObject",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -994,9 +995,9 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.v_spaghellim4",
     "facepunch.w_spaghellim4"
-  ]
+  ],
+  "__version": 1
 }

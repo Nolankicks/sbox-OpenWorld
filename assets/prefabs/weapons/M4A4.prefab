@@ -10,6 +10,7 @@
       {
         "__type": "ActionGraphItem",
         "__guid": "705bdcde-3f2d-45e5-a6db-95d6aca7856e",
+        "AbleToDrop": true,
         "Ammo": 30,
         "AmmoType": "LightAmmo",
         "DropppedItem": {
@@ -368,7 +369,7 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -434,8 +435,8 @@
                   "Type": "call",
                   "Properties": {
                     "_name": "PickUp",
-                    "_type": "ActionGraphItem",
-                    "_isStatic": false
+                    "_isStatic": false,
+                    "_type": "ActionGraphItem"
                   },
                   "UserData": {
                     "Position": "1024,0"
@@ -564,7 +565,7 @@
         "Name": "Object",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -592,7 +593,7 @@
             "Name": "gun",
             "Position": "20.5556,-9.983597,-12.1739",
             "Enabled": true,
-            "NetworkMode": 1,
+            "NetworkMode": 2,
             "NetworkInterpolation": true,
             "Components": [
               {
@@ -613,8 +614,8 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.v_m4a1"
-  ]
+  ],
+  "__version": 1
 }
