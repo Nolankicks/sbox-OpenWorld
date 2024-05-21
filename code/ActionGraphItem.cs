@@ -38,68 +38,65 @@ public sealed class ActionGraphItem : Component
 	{	
 		if (!IsProxy)
 		{
-			if (InInventory)
+		if (InInventory)
+		{
+			Use();
+			foreach (var gb in Object.GetAllObjects(false))
 			{
-					Use();
-					foreach (var gb in Object.GetAllObjects(false))
-					{
-						if (gb is null) return;
-						gb.Enabled = true;
-					}
-				if (DropppedItem is not null)
-				{
-					foreach (var gb in DropppedItem.GetAllObjects(false))
-					{
-						if (gb is null) return;
-						gb.Enabled = false;
-					}
-				}
+				if (gb is null) return;
+				gb.Enabled = true;
 			}
+			foreach (var gb in DropppedItem.GetAllObjects(false))
+			{
+				if (gb is null) return;
+				gb.Enabled = false;
+			}
+			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
+			if (popupUi is not null)
+			{
+				popupUi.ShowPopUp = false;
+			}
+		}
 		else
 		{
-			if (Object is not null)
+			foreach (var gb in Object.GetAllObjects(false))
 			{
-				foreach (var gb in Object.GetAllObjects(false))
+				gb.Enabled = false;
+			}
+			foreach (var gb in DropppedItem.GetAllObjects(false))
+			{
+				gb.Enabled = true;
+			}
+			Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndDescendants);
+			if (popupUi is not null)
+			{
+				popupUi.ShowPopUp = true;
+			}
+		}
+
+		}
+		else
+		{
+			if (InInventory)
+			{
+				foreach ( var gb in DropppedItem.GetAllObjects(false))
 				{
-					if (gb is null) return;
 					gb.Enabled = false;
 				}
 			}
-			if (DropppedItem is not null)
+			else
 			{
-				foreach (var gb in DropppedItem.GetAllObjects(false))
+				foreach ( var gb in DropppedItem.GetAllObjects(false))
 				{
-					if (gb is null) return;
 					gb.Enabled = true;
 				}
 			}
-		
+			foreach (var gb in Object.GetAllObjects(false))
+			{
+				gb.Enabled = false;
+			}
 		}
-	
-		}
-		else
-		{
-				if (Object is not null)
-				{
-					foreach (var gb in Object.GetAllObjects(false))
-				{
-					if (gb is null) return;
-					gb.Enabled = false;
-				}
-				}
-				if (!InInventory)
-				{
-					if (DropppedItem is not null)
-					{
-					foreach (var gb in DropppedItem.GetAllObjects(false))
-					{
-						gb.Enabled = true;
-					}
-					}
-				}
 	}
-	}
-		
 
 	public void DropItem(Inventory inventory)
 	{
@@ -130,8 +127,13 @@ public sealed class ActionGraphItem : Component
 			gb.Network.TakeOwnership();
 		}
 		}
+		
+		GameObject.Parent = Inventory.GameObject;
+		GameObject.Transform.LocalPosition = new Vector3(0, 0, 70);
 		InInventory = true;
 		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
+		Network.Refresh();
+
 	}
 	public void Use()
 	{
