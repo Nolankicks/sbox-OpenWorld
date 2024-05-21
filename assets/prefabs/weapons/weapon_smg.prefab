@@ -90,7 +90,7 @@
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -117,7 +117,7 @@
             "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
-            "NetworkMode": 2,
+            "NetworkMode": 1,
             "NetworkInterpolation": true,
             "Children": [
               {
@@ -125,7 +125,7 @@
                 "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
-                "NetworkMode": 2,
+                "NetworkMode": 1,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -150,7 +150,7 @@
                 "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
-                "NetworkMode": 2,
+                "NetworkMode": 1,
                 "NetworkInterpolation": true,
                 "Components": [
                   {
@@ -173,7 +173,7 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 2,
+        "NetworkMode": 1,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -322,6 +322,7 @@
   "ResourceVersion": 1,
   "__references": [
     "facepunch.v_mp5",
+    "facepunch.w_mp5",
     "nolankicks.2d_game_test"
   ],
   "__version": 1
