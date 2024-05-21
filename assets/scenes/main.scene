@@ -1354,6 +1354,7 @@
         {
           "__type": "PauseMenu",
           "__guid": "695781bd-9cc2-4b29-844c-eba81776c1b5",
+          "MyStringValue": "Hello World!",
           "ShowUi": false
         },
         {
@@ -1482,6 +1483,10 @@
             "go": "81317929-5d32-4e05-8a57-ca76ea2e7760"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "20ba15ae-9b73-41fb-9d4e-1dac559665de",
@@ -1641,6 +1646,10 @@
             "go": "6fa568df-2069-4bba-b201-9c312bfc8ba5"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "aa543117-9e01-4ab7-86ae-e0cbf6882469",
@@ -1800,6 +1809,10 @@
             "go": "6db66d05-2204-422d-bb62-7584b0f1378f"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "822f5211-d2a9-4b00-b2da-31ccdec67f13",
@@ -1959,6 +1972,10 @@
             "go": "f93e6648-d012-41f8-b8b3-df9b4b6c5e48"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "e53d3df8-876c-4bfc-96b0-b6a427550cdb",
@@ -2118,6 +2135,10 @@
             "go": "555b4bb4-9bd1-4edb-83dd-1abb4abf1bac"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "d515bb09-e267-434c-ad81-5b899b39818c",
@@ -2277,6 +2298,10 @@
             "go": "8e4f86ae-8149-4e15-ac13-f9d32206f4ac"
           },
           "ChangeScene": true,
+          "GibGameObject": {
+            "_type": "gameobject",
+            "prefab": "prefabs/zombiegibs.prefab"
+          },
           "navMeshAgent": {
             "_type": "component",
             "component_id": "52c1295b-45cd-45a9-9fef-df2db300755f",
@@ -9606,7 +9631,13 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ]
+            ],
+            "Defaults": {
+              "$5._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
           }
         },
         {
@@ -10364,7 +10395,13 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ]
+            ],
+            "Defaults": {
+              "$5._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
           }
         },
         {
@@ -12310,7 +12347,13 @@
                 "DstId": 4,
                 "DstName": "target"
               }
-            ]
+            ],
+            "Defaults": {
+              "$5._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              }
+            }
           }
         },
         {
@@ -16106,6 +16149,7 @@
           ]
         }
       ]
+<<<<<<< HEAD
     },
     {
       "__guid": "e1ec7cd6-dfe8-4b0f-8021-e46b8a711d44",
@@ -16223,6 +16267,8 @@
           "ShowPopUp": true
         }
       ]
+=======
+>>>>>>> parent of fb3ce9e (Changes)
     }
   ],
   "SceneProperties": {
@@ -16248,22 +16294,30 @@
   },
   "Title": "main",
   "Description": "",
+<<<<<<< HEAD
   "LastSaved": "2024-05-20T19:46:45.6207089-04:00",
+=======
+  "LastSaved": "2024-05-18T16:09:12.6848056-04:00",
+>>>>>>> parent of fb3ce9e (Changes)
   "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "facepunch.can_long",
     "facepunch.explosion003",
     "facepunch.metal_fences_gate_left",
     "facepunch.plasticbucketa1",
+<<<<<<< HEAD
     "facepunch.tv",
+=======
+    "facepunch.soda_can",
+>>>>>>> parent of fb3ce9e (Changes)
     "facepunch.v_m4a1",
     "facepunch.w_spaghellim4",
+    "facepunch.w_usp",
     "facepunch.wooden_crate",
     "fpopium.w_makarov",
-    "nolankicks.2d_game_test",
     "nolankicks.idel-terry",
     "sbux.logo",
     "wujekfoliarz.axe"
-  ],
-  "__version": 1
+  ]
 }

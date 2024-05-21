@@ -16,7 +16,7 @@
           "_type": "gameobject",
           "go": "17db5cd1-1a97-42f0-b686-ebba5c7da371"
         },
-        "InInventory": false,
+        "InInventory": true,
         "MaxAmmo": 12,
         "Object": {
           "_type": "gameobject",
@@ -262,8 +262,13 @@
               "Type": "call",
               "Properties": {
                 "_type": "ActionGraphDelay",
+<<<<<<< HEAD
                 "_isStatic": false,
                 "_name": "SetDelay"
+=======
+                "_name": "SetDelay",
+                "_isStatic": false
+>>>>>>> parent of fb3ce9e (Changes)
               },
               "UserData": {
                 "Position": "96,1104"
@@ -340,8 +345,13 @@
               "Type": "call",
               "Properties": {
                 "_type": "ActionGraphDelay",
+<<<<<<< HEAD
                 "_isStatic": false,
                 "_name": "SetDelay"
+=======
+                "_name": "SetDelay",
+                "_isStatic": false
+>>>>>>> parent of fb3ce9e (Changes)
               },
               "UserData": {
                 "Position": "1648,1328"

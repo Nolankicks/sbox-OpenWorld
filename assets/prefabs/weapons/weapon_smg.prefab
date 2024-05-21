@@ -320,10 +320,10 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
+  "__version": 1,
   "__references": [
     "facepunch.v_mp5",
     "facepunch.w_mp5",
     "nolankicks.2d_game_test"
-  ],
-  "__version": 1
+  ]
 }
