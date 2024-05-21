@@ -31,22 +31,10 @@ public sealed class Inventory : Component
 		if (IsProxy) return;
 		Log.Info(Items.Count);
 		AddItem(Gun, 0);
-		_ = AddStartingItems();
 	}
-
-	public async Task AddStartingItems()
+	public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{
 		if (IsProxy) return;
-		await Task.DelaySeconds(2);
-		for (int i = 0; i < ItemsToSpawnWith.Count; i++)
-		{
-			AddItem(ItemsToSpawnWith[i], i);
-		}
-	}
-		public void AddItem(GameObject item, int Slot, bool Spawn = true)
-	{
-		if (!IsProxy)
-		{
 		if (Slot > Items.Count) return;
 		if (Spawn)
 		{
@@ -54,41 +42,26 @@ public sealed class Inventory : Component
 		var itemClone = item.Clone(Vector3.Up * 70);
 		itemClone.NetworkSpawn();
 		Items[Slot] = itemClone;
+		itemClone.Parent = GameObject;
 		itemClone.Components.TryGet<Weapon>( out var weapon );
 		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
-		itemClone.Parent = GameObject;
-		
 		if (weapon is not null)
 		{
 			weapon.IsWeapon = true;
-			AddTexture(weapon.Components.Get<IconComponent>().Icon, Slot);
-			weapon.Network.Refresh();
 		}
 		else if (shotgun is not null)
 		{
 			shotgun.InInventory = true;
-			AddTexture(shotgun.Components.Get<IconComponent>().Icon, Slot);
-			weapon.Network.Refresh();
 		}
-		else
-		{
-			itemClone.Components.TryGet<IconComponent>(out var icon);
-			if (icon is not null)
-			{
-				AddTexture(icon.Icon, Slot);
-			}
-		}
-		}
+		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
 		}
 		else
 		{
 			Items[Slot] = item;
 			item.Parent = GameObject;
-			item.Transform.LocalPosition = new Vector3(0, 0, 70);
 			AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
 		}
-		}
-
+	}
 
 	public void DisableAllWeapons()
 	{
@@ -251,7 +224,7 @@ public sealed class Inventory : Component
 			tr.GameObject.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
 			if (item is not null && icon is not null)
 			{
-				
+				item.PickUp(this);
 			}
 			else if (shotgun is not null && icon is not null)
 			{

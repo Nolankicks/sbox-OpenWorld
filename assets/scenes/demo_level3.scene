@@ -1,0 +1,77 @@
+{
+  "__guid": "19b30692-220a-4901-8e9d-4283fd6b3ce0",
+  "GameObjects": [
+    {
+      "__guid": "cf27fc86-e722-4b96-809a-9b54bef6ea30",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "b0546ba4-8e0d-4812-9cf2-4ed538c1ae76",
+          "MapName": "maps/demo_level3.vmap",
+          "UseMapFromLaunch": false
+        }
+      ]
+    },
+    {
+      "__guid": "0577f323-27e3-4e27-95e1-b4a935a9afa3",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "149.995,149.995,-212.125",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "49c3f539-8024-4b0e-957f-5e3ef9b492d3",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "viewmodel",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "demo_level3",
+  "Description": "",
+  "LastSaved": "2024-05-18T16:49:58.8696716-04:00",
+  "ResourceVersion": 1,
+  "__version": 1,
+  "__references": []
+}
