@@ -86,7 +86,6 @@ public sealed class Weapon : Component
 				Actions();
 					foreach (var gb in ViewModelCamera.GetAllObjects(false))
 					{
-						if (gb is null) return;
 						gb.Enabled = true;
 					}
 				if (DroppedItem is not null)
@@ -108,39 +107,27 @@ public sealed class Weapon : Component
 					gb.Enabled = false;
 				}
 			}
-			if (DroppedItem is not null)
-			{
-				foreach (var gb in DroppedItem.GetAllObjects(false))
+			foreach (var gb in DroppedItem?.GetAllObjects(false))
 				{
-					if (gb is null) return;
 					gb.Enabled = true;
-				}
 			}
 		
 		}
-	
 		}
 		else
 		{
-				if (ViewModelCamera is not null)
-				{
-					foreach (var gb in ViewModelCamera.GetAllObjects(false))
-				{
-					if (gb is null) return;
-					gb.Enabled = false;
-				}
-				}
-				if (!IsWeapon)
-				{
-					if (DroppedItem is not null)
-					{
-					foreach (var gb in DroppedItem.GetAllObjects(false))
-					{
-						gb.Enabled = true;
-					}
-					}
-				}
-	}
+			if (ViewModelCamera.Active)
+			{
+				ViewModelCamera.Enabled = false;
+			}
+		}
+		if (!IsWeapon)
+		{
+		if (DroppedItem is not null)
+		{
+		DroppedItem.Enabled = true;
+		}
+		}
 	}
 	void Actions()
 	{
@@ -154,8 +141,6 @@ public sealed class Weapon : Component
 		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
 		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
 		UpdateWorldModelShadowType();
-		if (PlayerController.IsFirstPerson)
-		{
 			var selelctedAmmo = AmmoContainer.GetAmmo(AmmoType);
 			if (Input.Pressed("reload") && MaxAmmo != 0 && ShotsFired != 0 && !IsProxy && selelctedAmmo > 0 && UsesAmmo)
 			{
@@ -207,12 +192,6 @@ public sealed class Weapon : Component
 			}
 			ViewModelGun.Set("aim_yaw", PlayerController.eyeAngles.yaw);
 			ViewModelGun.Set("aim_pitch", PlayerController.eyeAngles.pitch);
-			
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
-		}
 	}
 	public void DropItem(Inventory inventory)
 	{
@@ -224,7 +203,11 @@ public sealed class Weapon : Component
 		//Idk if I need to refresh this shit but I will anyway 🤓☝️
 		DroppedItem.Transform.LocalPosition = Vector3.Zero;
 		GameObject.Transform.Position = tr.EndPosition;
-		Network.Refresh();
+		GameObject.Components.TryGet<PopupUi>(out var popUp, FindMode.EnabledInSelfAndChildren);
+		if (popUp is not null)
+		{
+			popUp.ShowPopUp = false;
+		}
 		if (GameNetworkSystem.IsActive)
 		{
 		foreach(var gb in allObjects)
@@ -245,6 +228,11 @@ public sealed class Weapon : Component
 		}
 		}
 		IsWeapon = true;
+		GameObject.Components.TryGet<PopupUi>(out var popUp, FindMode.EnabledInSelfAndChildren);
+		if (popUp is not null)
+		{
+			popUp.ShowPopUp = false;
+		}
 		inventory.AddItem(GameObject, inventory.GetNextSlot(), false);
 
 	}

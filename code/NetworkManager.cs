@@ -8,6 +8,8 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	/// Create a server (if we're not joining one)
 	/// </summary>
 	[Property] public bool StartServer { get; set; } = true;
+	[Property] public bool ManualSpawns { get; set; } = false;
+	[Property, ShowIf("ManualSpawns", true)] public List<SpawnPoint> SpawnPoints { get; set; } = new();
 
 	/// <summary>
 	/// The prefab to spawn for the player to control.
@@ -39,6 +41,28 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		//
 		// Find a spawn location for this player
 		//
+		if ( ManualSpawns)
+		{
+			if (SpawnPoints.Count == 0)
+			{
+				Log.Error( "No spawn points available" );
+				return;
+			}
+			else
+			{
+				var selectedPoint = Game.Random.FromList( SpawnPoints );
+				var spawn = selectedPoint.Transform.World.WithScale( 1 );
+				var player = PlayerPrefab.Clone( spawn, name: $"Player - {channel.DisplayName}" );
+				player.Components.TryGet<PlayerController>( out var playerVar );
+				if (playerVar is not null)
+				{
+					playerVar.eyeAngles = spawn.Rotation.Angles();
+				}
+				player.NetworkSpawn( channel );
+			}
+		}
+		else
+		{
 		var startLocation = FindSpawnLocation().WithScale( 1 );
 
 		// Spawn this object and make the client the owner
@@ -49,6 +73,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 			playerVar.eyeAngles = startLocation.Rotation.Angles();
 		}
 		player.NetworkSpawn( channel );
+		}
 	}
 
 	/// <summary>

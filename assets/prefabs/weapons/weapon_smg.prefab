@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "b9fedc06-2719-41cb-a20b-6693adbe7776",
+    "__guid": "14129fcf-55eb-4ab4-bc34-8d04f405e67d",
     "Flags": 0,
     "Name": "weapon_smg",
     "Tags": "weapon",
@@ -10,17 +10,17 @@
     "Components": [
       {
         "__type": "Kicks.Weapon",
-        "__guid": "56b66734-de06-469b-8863-bdd50a9e38f2",
+        "__guid": "902ff92e-7e42-430e-aa0e-0a3df466d298",
         "Ammo": 30,
         "AmmoType": "LightAmmo",
         "Arms": {
           "_type": "gameobject",
-          "go": "3a3d5af4-ee60-41c9-bf53-0d7a532090c1"
+          "go": "6f01c4ac-613c-422b-892c-6cbd1a560f80"
         },
         "armsRenderer": {
           "_type": "component",
-          "component_id": "2882ad9e-7582-4e64-96a5-615cf358c842",
-          "go": "3a3d5af4-ee60-41c9-bf53-0d7a532090c1",
+          "component_id": "c9d41a56-6d1d-4312-9ce4-916555d1dbab",
+          "go": "6f01c4ac-613c-422b-892c-6cbd1a560f80",
           "component_type": "SkinnedModelRenderer"
         },
         "BloodParticle": {
@@ -35,7 +35,7 @@
         "Description": "A swift SMG",
         "DroppedItem": {
           "_type": "gameobject",
-          "go": "3f70c51d-8392-404a-8867-3c882c366f60"
+          "go": "eca0d6cc-42cb-4b83-bf4c-5e89fa1e01c7"
         },
         "FireRate": 0.1,
         "FireSound": "sounds/shootsound.sound",
@@ -62,30 +62,30 @@
         "UsesAmmo": true,
         "ViewModelCamera": {
           "_type": "gameobject",
-          "go": "71a04138-ce13-4e6a-9a42-af2e81213624"
+          "go": "2d5a0c07-0ed6-4311-adcf-653e9ba4402f"
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "9b8adc94-ae9f-4152-85d9-bd09cf185eb1",
-          "go": "ad235e8e-6f83-4ce5-a537-0409783eb721",
+          "component_id": "c9ceb642-b304-4d36-97ca-5d632e13ae02",
+          "go": "62bb7dda-7cf1-40a4-b13d-82c668eca7a7",
           "component_type": "SkinnedModelRenderer"
         },
         "ViewModelHolder": {
           "_type": "gameobject",
-          "go": "c9a8c461-eea9-47d5-979a-ed1c17af1135"
+          "go": "dc492fb1-b660-4736-9410-db6ab4e639a3"
         },
         "WeaponIndent": "weapon_smg",
         "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
       },
       {
         "__type": "IconComponent",
-        "__guid": "22c02098-6b4b-49b7-aefc-6120fdadca6e",
+        "__guid": "61c6a3de-b870-4cce-b303-b06c1d782d42",
         "Icon": "mp5.vtex"
       }
     ],
     "Children": [
       {
-        "__guid": "71a04138-ce13-4e6a-9a42-af2e81213624",
+        "__guid": "2d5a0c07-0ed6-4311-adcf-653e9ba4402f",
         "Flags": 0,
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
@@ -95,7 +95,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "d0e221a0-e1d9-4618-8a20-41d37999f141",
+            "__guid": "bd8a4105-66d4-412d-9aed-3a13a1904b72",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -113,7 +113,7 @@
         ],
         "Children": [
           {
-            "__guid": "c9a8c461-eea9-47d5-979a-ed1c17af1135",
+            "__guid": "dc492fb1-b660-4736-9410-db6ab4e639a3",
             "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
@@ -121,7 +121,7 @@
             "NetworkInterpolation": true,
             "Children": [
               {
-                "__guid": "3a3d5af4-ee60-41c9-bf53-0d7a532090c1",
+                "__guid": "6f01c4ac-613c-422b-892c-6cbd1a560f80",
                 "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
@@ -130,12 +130,12 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "2882ad9e-7582-4e64-96a5-615cf358c842",
+                    "__guid": "c9d41a56-6d1d-4312-9ce4-916555d1dbab",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "9b8adc94-ae9f-4152-85d9-bd09cf185eb1",
-                      "go": "ad235e8e-6f83-4ce5-a537-0409783eb721",
+                      "component_id": "c9ceb642-b304-4d36-97ca-5d632e13ae02",
+                      "go": "62bb7dda-7cf1-40a4-b13d-82c668eca7a7",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -146,7 +146,7 @@
                 ]
               },
               {
-                "__guid": "ad235e8e-6f83-4ce5-a537-0409783eb721",
+                "__guid": "62bb7dda-7cf1-40a4-b13d-82c668eca7a7",
                 "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
@@ -155,7 +155,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "9b8adc94-ae9f-4152-85d9-bd09cf185eb1",
+                    "__guid": "c9ceb642-b304-4d36-97ca-5d632e13ae02",
                     "BodyGroups": 27,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
@@ -169,7 +169,7 @@
         ]
       },
       {
-        "__guid": "3f70c51d-8392-404a-8867-3c882c366f60",
+        "__guid": "eca0d6cc-42cb-4b83-bf4c-5e89fa1e01c7",
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
@@ -178,7 +178,7 @@
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "b0734da7-0617-47e7-bccb-0e9742113ad5",
+            "__guid": "472c6019-09e9-4f77-9996-acb74875659a",
             "BodyGroups": 3,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
@@ -187,7 +187,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "229a8f49-13a5-4373-89e9-49b2c082b4af",
+            "__guid": "19c3ea64-45c6-4266-97a8-c88f188cf81c",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -199,11 +199,118 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "ebf287af-b401-442b-b7e4-32b24c7fbac9",
+            "__guid": "435a769f-c53c-46cc-b324-397122961be4",
             "Center": "0,0,5.499997",
             "IsTrigger": false,
             "Scale": "24.20012,3.800029,10.99995",
             "Static": false
+          },
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "399602d8-0286-4264-9919-4f8f0a78c605",
+            "Icon": "mp5.vtex",
+            "Name": "MP5",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "4e7c19b1-9fbf-4096-8e95-bd255054173c",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "T": "Kicks.Weapon",
+                    "_name": "TryGet",
+                    "_type": "Sandbox.IComponentLister"
+                  },
+                  "UserData": {
+                    "Position": "-0,176",
+                    "Labels": {
+                      "component": "weapon"
+                    }
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "352,0"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "call",
+                  "Properties": {
+                    "_isStatic": false,
+                    "_name": "PickUp",
+                    "_type": "Kicks.Weapon"
+                  },
+                  "UserData": {
+                    "Position": "592,-0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": "EnabledInSelf, InParent",
+                  "DstId": 1,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 3,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "true",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "component",
+                  "DstId": 4,
+                  "DstName": "_target"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "Inventory",
+                  "DstId": 4,
+                  "DstName": "inventory"
+                }
+              ]
+            },
+            "selectedInput": "use",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
           }
         ]
       }
@@ -213,10 +320,10 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.v_mp5",
     "facepunch.w_mp5",
     "nolankicks.2d_game_test"
-  ]
+  ],
+  "__version": 1
 }

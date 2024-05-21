@@ -13,7 +13,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "292897ef-0bcc-4162-88b8-2e3abdb0d242",
-          "MapName": "maps/d4l_shooting_range.vmap",
+          "MapName": "nolankicks.d4l_shooting_range",
           "UseMapFromLaunch": false
         }
       ],
@@ -89,16 +89,7 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
-          "ItemsToSpawnWith": [
-            {
-              "_type": "gameobject",
-              "go": "985ed93f-df40-4d06-86a1-82fa97d7d11a"
-            },
-            {
-              "_type": "gameobject",
-              "go": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41"
-            }
-          ],
+          "ItemsToSpawnWith": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -1407,10 +1398,12 @@
         {
           "__type": "Kicks.NetworkManager",
           "__guid": "952f1309-b186-45c2-b2ed-4e2c45b8fa1b",
+          "ManualSpawns": false,
           "PlayerPrefab": {
             "_type": "gameobject",
             "go": "8b0b6af8-b333-43ce-bcb4-b42ef9a1f1d3"
           },
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -3004,8 +2997,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "Sandbox.IComponentLister",
-                      "T": "ActionGraphItem",
                       "_name": "TryGet",
+                      "T": "ActionGraphItem",
                       "_isStatic": false
                     },
                     "UserData": {
@@ -3034,8 +3027,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "ActionGraphItem",
-                      "_isStatic": false,
-                      "_name": "PickUp"
+                      "_name": "PickUp",
+                      "_isStatic": false
                     },
                     "UserData": {
                       "Position": "1024,0"
@@ -3478,8 +3471,8 @@
                     "Type": "call",
                     "Properties": {
                       "_type": "Sandbox.IComponentLister",
-                      "T": "ActionGraphItem",
                       "_name": "TryGet",
+                      "T": "ActionGraphItem",
                       "_isStatic": false
                     },
                     "UserData": {
@@ -9134,8 +9127,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "HoldType",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "HoldType"
                 },
                 "UserData": {
                   "Position": "2736,384"
@@ -9169,8 +9162,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "LookAt",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "LookAt"
                 },
                 "UserData": {
                   "Position": "4096,416"
@@ -9892,8 +9885,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "HoldType",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "HoldType"
                 },
                 "UserData": {
                   "Position": "2736,384"
@@ -9927,8 +9920,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "LookAt",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "LookAt"
                 },
                 "UserData": {
                   "Position": "4096,416"
@@ -11730,8 +11723,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "HoldType",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "HoldType"
                 },
                 "UserData": {
                   "Position": "2736,384"
@@ -11742,8 +11735,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "LookAt",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "LookAt"
                 },
                 "UserData": {
                   "Position": "4096,416"
@@ -13602,8 +13595,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "SpecialMove",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "SpecialMove"
                 },
                 "UserData": {
                   "Position": "1104,208"
@@ -13621,8 +13614,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "SpecialMove",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "SpecialMove"
                 },
                 "UserData": {
                   "Position": "1616,464"
@@ -13633,8 +13626,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "SpecialMove",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "SpecialMove"
                 },
                 "UserData": {
                   "Position": "1648,320"
@@ -13645,8 +13638,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "HoldType",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "HoldType"
                 },
                 "UserData": {
                   "Position": "2048,320"
@@ -13657,8 +13650,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "HoldType",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "HoldType"
                 },
                 "UserData": {
                   "Position": "2000,464"
@@ -13738,8 +13731,8 @@
                 "Type": "call",
                 "Properties": {
                   "_type": "ActionGraphDelay",
-                  "_isStatic": false,
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3520,80"
@@ -14394,8 +14387,8 @@
                 "Type": "property",
                 "Properties": {
                   "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                  "_name": "SpecialMove",
-                  "_kind": "Set"
+                  "_kind": "Set",
+                  "_name": "SpecialMove"
                 },
                 "UserData": {
                   "Position": "1104,208"
@@ -16157,18 +16150,31 @@
                   "_isStatic": false
                 },
                 "UserData": {
-                  "Position": "320,0"
+                  "Position": "624,0"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Inventory",
+                  "_name": "GetNextSlot",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "240,0"
                 }
               }
             ],
             "Links": [
               {
-                "Value": 0,
+                "SrcId": 4,
+                "SrcName": "_result",
                 "DstId": 1,
                 "DstName": "Slot"
               },
               {
-                "SrcId": 0,
+                "SrcId": 4,
                 "SrcName": "_signal",
                 "DstId": 1,
                 "DstName": "_signal"
@@ -16182,16 +16188,28 @@
               {
                 "Value": {
                   "_type": "gameobject",
-                  "go": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41"
+                  "prefab": "prefabs/weapons/weapon_smg.prefab"
                 },
                 "DstId": 1,
                 "DstName": "item"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "Inventory",
+                "DstId": 4,
+                "DstName": "_target"
               }
             ],
             "Defaults": {
-              "$3._value": {
+              "$6._value": {
                 "_type": "gameobject",
-                "go": "bdfdc811-2d79-4004-aa8d-c9aabeb61b41"
+                "prefab": "prefabs/weapons/weapon_smg.prefab"
               }
             }
           },
@@ -16230,23 +16248,22 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-19T17:24:41.4053353-04:00",
+  "LastSaved": "2024-05-20T19:46:45.6207089-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.can_long",
     "facepunch.explosion003",
     "facepunch.metal_fences_gate_left",
     "facepunch.plasticbucketa1",
-    "facepunch.soda_can",
     "facepunch.tv",
     "facepunch.v_m4a1",
     "facepunch.w_spaghellim4",
-    "facepunch.w_usp",
     "facepunch.wooden_crate",
     "fpopium.w_makarov",
+    "nolankicks.2d_game_test",
     "nolankicks.idel-terry",
     "sbux.logo",
     "wujekfoliarz.axe"
-  ]
+  ],
+  "__version": 1
 }

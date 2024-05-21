@@ -4,27 +4,9 @@
 @namespace Kicks
 @attribute [StyleSheet]
 <root>
-	@if (ShowUi && Item is not null || Shotgun is not null || PopupUi is not null)
+	@if (ShowUi && PopupUi is not null)
 	{
-	@if (Item is not null && Icon is not null)
-	{
-		<div class="interactioncard">
-			<img class="icon" texture=@Icon.Icon.ResourcePath>
-			<div class="name">@Item.Name</div>
-			<div class="description">@Item.Description</div>
-			<img class="glyph" src=@Interact.ResourcePath>
-		</div>
-	}
-	else if (Shotgun is not null && Icon is not null)
-	{
-		<div class="interactioncard">
-			<img class="icon" texture=@Icon.Icon.ResourcePath>
-			<div class="name">@Shotgun.Name</div>
-			<div class="description">@Shotgun.Description</div>
-			<img class="glyph" src=@Interact.ResourcePath>
-		</div>
-	}
-	else if (PopupUi is not null)
+	 @if (PopupUi is not null)
 	{
 		@if (PopupUi.ShowPopUp)
 		{
@@ -44,7 +26,6 @@
 
 @code
 {
-	public Weapon Item { get; set; }
 	public Shotgun Shotgun { get; set; }
 	public IconComponent Icon { get; set; }
 	public bool ShowUi { get; set; } = false;
@@ -53,27 +34,7 @@
 	public override void Tick()
 	{
 		GetItem();
-		if (Item is not null)
-		{
-		ShowUi = true;
-		var pos = Scene.Camera.PointToScreenPixels( Item.DroppedItem.Transform.Position );
-		pos *= ScaleFromScreen;
-		Style.Position = PositionMode.Absolute;
-		Style.Left = Length.Pixels( pos.x );
-        Style.Top = Length.Pixels( pos.y );
-		StateHasChanged();
-		}
-		else if (Shotgun is not null)
-		{
-			ShowUi = true;
-			var pos = Scene.Camera.PointToScreenPixels( Shotgun.pickUpObject.Transform.Position );
-			pos *= ScaleFromScreen;
-			Style.Position = PositionMode.Absolute;
-			Style.Left = Length.Pixels( pos.x );
-			Style.Top = Length.Pixels( pos.y );
-			StateHasChanged();
-		}
-		else if (PopupUi is not null)
+		if (PopupUi is not null)
 		{
 			ShowUi = true;
 			var pos = Scene.Camera.PointToScreenPixels( PopupUi.GameObject.Transform.Position );
@@ -86,8 +47,6 @@
 		}
 		else
 		{
-			Item = null;
-			Shotgun = null;
 			Icon = null;
 			PopupUi = null;
 			ShowUi = false;
@@ -102,27 +61,11 @@
     if (tr.Hit)
     {
 		if (tr.GameObject is null) return;
-        tr.GameObject.Parent.Components.TryGet<Weapon>(out var item, FindMode.EverythingInSelfAndParent);
 		tr.GameObject.Parent.Components.TryGet<IconComponent>(out var icon, FindMode.EverythingInSelfAndParent);
-		tr.GameObject.Parent.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
 		tr.GameObject.Components.TryGet<PopupUi>(out var popupUi, FindMode.EverythingInSelfAndParent);
-        if (item is not null && icon is not null)
-        {
-            Item = item;
-			Icon = icon;
-        }
-		else if (shotgun is not null && icon is not null)
-		{
-			Shotgun = shotgun;
-			Icon = icon;
-		}
-		else if (popupUi is not null)
+		if (popupUi is not null)
 		{
 			PopupUi = popupUi;
-		}
-		else if (item is not null)
-		{
-			Log.Info("Item is not null but icon is null");
 		}
 		else if (icon is not null)
 		{
@@ -130,14 +73,13 @@
 		}
         else
         {
-            Item = null;
 			Icon = null;
 			PopupUi = null;
         }
     }
     else
     {
-        Item = null;
+       
     }
 }
 }

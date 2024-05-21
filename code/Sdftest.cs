@@ -16,6 +16,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	[Property] public Sdf3DWorld World { get; set; }
 	[Property] public Sdf3DWorld WaterWorld { get; set; }
 	[Property, Category("World Properties")] public int WorldHeight { get; set; } = 3000;
+	[Property, Sync] public bool StartServer { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Grass { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Sand { get; set; }
 	[Property, Category("Volumes")] public Sdf3DVolume Water { get; set; }
@@ -105,7 +106,23 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		await OnWorldSpawned?.Invoke(this);
 		Scene.NavMesh.SetDirty();
 		if (Scene.GetAllComponents<SpawnPoint>().ToList().Count == 0) return;
-		GameNetworkSystem.CreateLobby();
+		if (StartServer)
+		{
+			GameNetworkSystem.CreateLobby();
+		}
+		else
+		{
+			if (PlayerPrefab is not null)
+			{
+				var spawn = Game.Random.FromList(Scene.GetAllComponents<SpawnPoint>().ToList());
+				var player = PlayerPrefab.Clone(spawn.Transform.World);
+				player.Components.TryGet<PlayerController>(out var playerController);
+				if (playerController is not null)
+				{
+					playerController.eyeAngles = spawn.Transform.Rotation.Angles();
+				}
+			}
+		}
 		Log.Info("World Built");
 	}
 public async Task CreateWorld(Sdf3DWorld world, int seed)
@@ -126,7 +143,7 @@ public async Task CreateWorld(Sdf3DWorld world, int seed)
         }
     }
 
-    if (WaterBool())
+    if (WaterBool() && WaterWorld != null)
     {
         var waterSDF = new BoxSdf3D(Vector3.Zero, new Vector3(WorldSize, WorldSize, 2500));
         await WaterWorld.AddAsync(waterSDF, Water);

@@ -43,34 +43,41 @@ public sealed class Inventory : Component
 			AddItem(ItemsToSpawnWith[i], i);
 		}
 	}
-	public void AddItem(GameObject item, int Slot, bool Spawn = true)
+		public void AddItem(GameObject item, int Slot, bool Spawn = true)
 	{
-		if (IsProxy) return;
+		if (!IsProxy)
+		{
 		if (Slot > Items.Count) return;
 		if (Spawn)
 		{
 		if (item is null) return;
 		var itemClone = item.Clone(Vector3.Up * 70);
-		itemClone.NetworkSpawn(null);
+		itemClone.NetworkSpawn();
 		Items[Slot] = itemClone;
 		itemClone.Components.TryGet<Weapon>( out var weapon );
 		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
+		itemClone.Parent = GameObject;
+		
 		if (weapon is not null)
 		{
-			weapon.PickUp(this);
+			weapon.IsWeapon = true;
+			AddTexture(weapon.Components.Get<IconComponent>().Icon, Slot);
+			weapon.Network.Refresh();
 		}
 		else if (shotgun is not null)
 		{
-			shotgun.PickUp(this);
+			shotgun.InInventory = true;
+			AddTexture(shotgun.Components.Get<IconComponent>().Icon, Slot);
+			weapon.Network.Refresh();
 		}
 		else
 		{
-			itemClone.Parent = GameObject;
 			itemClone.Components.TryGet<IconComponent>(out var icon);
 			if (icon is not null)
 			{
-				//AddTexture(icon.Icon, Slot);
+				AddTexture(icon.Icon, Slot);
 			}
+		}
 		}
 		}
 		else
@@ -78,9 +85,10 @@ public sealed class Inventory : Component
 			Items[Slot] = item;
 			item.Parent = GameObject;
 			item.Transform.LocalPosition = new Vector3(0, 0, 70);
-			//AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
+			AddTexture(item.Components.Get<IconComponent>().Icon, Slot);
 		}
-	}
+		}
+
 
 	public void DisableAllWeapons()
 	{
@@ -118,7 +126,6 @@ public sealed class Inventory : Component
 	public void AddTexture(Texture texture, int Slot)
 	{
 		if (IsProxy) return;
-		Log.Info("Adding Texture");
 		ItemTextures[Slot] = texture;
 	}
 	public void RemoveItem(GameObject item, bool Destroy = true)
@@ -244,7 +251,7 @@ public sealed class Inventory : Component
 			tr.GameObject.Components.TryGet<Shotgun>(out var shotgun, FindMode.EverythingInSelfAndParent);
 			if (item is not null && icon is not null)
 			{
-				item.PickUp(this);
+				
 			}
 			else if (shotgun is not null && icon is not null)
 			{

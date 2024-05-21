@@ -2,10 +2,27 @@
   "__guid": "56602ea1-cccb-4ab9-9c9b-3624b1ce2c2d",
   "GameObjects": [
     {
+      "__guid": "3cd71548-c21e-4179-91d5-d833c5839972",
+      "Flags": 0,
+      "Name": "Map",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "1caaae1d-4008-4625-8c27-0a10ddaa4e10",
+          "MapName": "baks.office",
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "ee125f09-934d-4827-a4fd-1db14db2f2eb",
       "Flags": 0,
       "Name": "Network",
-      "Position": "0.0153656,184.3966,149.9445",
+      "Position": "2390.862,-792.7415,149.9445",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -13,10 +30,12 @@
         {
           "__type": "Kicks.NetworkManager",
           "__guid": "65562aa5-bced-4f80-ab74-9ca980c5301c",
+          "ManualSpawns": true,
           "PlayerPrefab": {
             "_type": "gameobject",
             "go": "7870ad53-fe56-4c13-a052-c8fef065e4a0"
           },
+          "SpawnPoints": [],
           "StartServer": true
         }
       ]
@@ -25,7 +44,7 @@
       "__guid": "46a52a8f-1d77-4f2a-9ba1-d09f972c4d1c",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "4.583572,-239.1707,159.9305",
+      "Position": "2395.43,-1216.309,159.9305",
       "Tags": "maincamera",
       "Enabled": true,
       "NetworkMode": 2,
@@ -54,7 +73,7 @@
       "__guid": "8954cb74-fae8-49b3-86d3-868c5991ce82",
       "Flags": 0,
       "Name": "Screen",
-      "Position": "4.583572,-239.1707,159.9305",
+      "Position": "2395.43,-1216.309,159.9305",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -91,7 +110,7 @@
       "__guid": "7870ad53-fe56-4c13-a052-c8fef065e4a0",
       "Flags": 0,
       "Name": "startingplayer",
-      "Position": "-2054.912,825.4645,6.999984",
+      "Position": "335.9343,-151.6736,6.999984",
       "Rotation": "0,-0.00000004809302,0.9999999,-0.0000001442791",
       "Tags": "player",
       "NetworkMode": 2,
@@ -1292,251 +1311,18 @@
       ]
     },
     {
-      "__guid": "343f8af1-49ba-46fb-8156-5fddda4dcae5",
-      "Flags": 0,
-      "Name": "Sun",
-      "Position": "-2605.365,880.4104,64.78558",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "b93691b8-b283-4121-b93b-ce616a13724a",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0.05882,0.07451,0.08235,1"
-        }
-      ]
-    },
-    {
-      "__guid": "5b5145a5-634a-45b8-8ed9-a65a801e0d6e",
+      "__guid": "31475fcd-6ab9-429a-919b-7d9faa646ff4",
       "Flags": 0,
       "Name": "Spawn",
-      "Position": "-2622.261,960,20.09772",
+      "Position": "-608,89.07187,512",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.SpawnPoint",
-          "__guid": "6e18a61a-7d3b-4f88-b6da-91cec3d47683",
+          "__guid": "95112984-3048-48c9-8f0b-5b554ae42498",
           "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "1c384257-e092-4181-bd5b-3d4aac30caa8",
-      "Flags": 0,
-      "Name": "Spawn (1)",
-      "Position": "-2622.261,800,20.09772",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "8435a86e-0362-4ef7-97f1-7010633728c5",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "0e486aeb-9f83-4247-a254-a288094695c7",
-      "Flags": 0,
-      "Name": "Box",
-      "Position": "-2480,896,0.0006416593",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.MeshComponent",
-          "__guid": "700901d3-73c1-4fe7-a729-01f30530a5d5",
-          "Collision": "Mesh",
-          "Color": "1,1,1,1",
-          "HideInGame": false,
-          "IsTrigger": false,
-          "Mesh": {
-            "Topology": "H4sIAAAAAAAACk2MAQoAIAgDrSz7/4drBwoOjmKbczO7Ygg0hYuTHuB1hXgS/so\u002Bqi4vOdnOrb6NT15bJXy63JDz/\u002Bg6SXigAAAA",
-            "Positions": [
-              "-304,-224,0",
-              "304,-224,0",
-              "304,224,0",
-              "-304,224,0"
-            ],
-            "TextureCoord": [
-              "2.375,1.75",
-              "0,0",
-              "2.375,-1.75",
-              "0,0",
-              "-2.375,-1.75",
-              "0,0",
-              "-2.375,1.75",
-              "0,0"
-            ],
-            "TextureUAxis": [
-              "1,0,0"
-            ],
-            "TextureVAxis": [
-              "0,-1,0"
-            ],
-            "TextureScale": [
-              "0.25,0.25"
-            ],
-            "TextureOffset": [
-              "192,0"
-            ],
-            "MaterialIndex": [
-              0
-            ],
-            "EdgeFlags": [
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0,
-              0
-            ],
-            "Materials": [
-              "materials/dev/reflectivity_30.vmat"
-            ]
-          },
-          "SmoothingAngle": 40,
-          "Static": true
-        }
-      ]
-    },
-    {
-      "__guid": "4e5849b8-70e0-48d2-b65a-2956249347d8",
-      "Flags": 0,
-      "Name": "weapon_smg",
-      "Position": "-2442.051,880.2771,28.00065",
-      "Tags": "weapon",
-      "Enabled": true,
-      "NetworkMode": 1,
-      "NetworkInterpolation": true,
-      "__Prefab": "prefabs/weapons/weapon_smg.prefab"
-    },
-    {
-      "__guid": "fd046088-9391-4ddc-8ba0-c9225c5a3dae",
-      "Flags": 0,
-      "Name": "add item",
-      "Position": "-2496.045,947.5875,13.31455",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.Prop",
-          "__guid": "56cd4b16-7f93-4797-b974-fc5182f1d5f2",
-          "BodyGroups": 18446744073709551615,
-          "Health": 50,
-          "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
-        },
-        {
-          "__type": "Kicks.PopupUi",
-          "__guid": "8dee94a7-77a2-4c40-80d8-18acbbb76ca0",
-          "Name": "Item",
-          "PickUpAction": {
-            "__version": 7,
-            "__guid": "9205eb29-5b67-40fb-97c2-14820183b49f",
-            "UserData": {
-              "Title": "Pick Up Action",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input"
-              },
-              {
-                "Id": 1,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "AddItem",
-                  "_type": "Inventory"
-                },
-                "UserData": {
-                  "Position": "592,0"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_name": "GetNextSlot",
-                  "_type": "Inventory"
-                },
-                "UserData": {
-                  "Position": "240,0"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 2,
-                "SrcName": "_result",
-                "DstId": 1,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 2,
-                "SrcName": "_signal",
-                "DstId": 1,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "Inventory",
-                "DstId": 1,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_smg.prefab"
-                },
-                "DstId": 1,
-                "DstName": "item"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "Inventory",
-                "DstId": 2,
-                "DstName": "_target"
-              }
-            ],
-            "Defaults": {
-              "$6._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_smg.prefab"
-              }
-            }
-          },
-          "selectedInput": "use",
-          "ShopItems": {
-            "ItemNames": [],
-            "ShopActions": [],
-            "ItemTextures": [],
-            "ItemPrices": []
-          },
-          "ShowPopUp": true
         }
       ]
     }
@@ -1550,7 +1336,7 @@
     "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
-      "Enabled": false,
+      "Enabled": true,
       "IncludeStaticBodies": true,
       "IncludeKeyframedBodies": true,
       "EditorAutoUpdate": true,
@@ -1564,12 +1350,11 @@
   },
   "Title": "test",
   "Description": "",
-  "LastSaved": "2024-05-19T18:51:48.7260059-04:00",
+  "LastSaved": "2024-05-20T19:40:17.2039659-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
-    "facepunch.wooden_crate",
     "nolankicks.2d_game_test",
     "nolankicks.idel-terry"
-  ]
+  ],
+  "__version": 1
 }
