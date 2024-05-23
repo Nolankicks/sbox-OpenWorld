@@ -12,17 +12,14 @@
       "Resources": null,
       "PackageReferences": [],
       "EditorReferences": [
-        "nolankicks.2d_game_test#46693",
-        "facepunch.glass_a#19946",
-        "facepunch.sandbox#38284",
         "facepunch.pendant_light#42627",
-        "facepunch.beer_cask#28811",
-        "facepunch.beer_keg_a1#28826",
-        "facepunch.beer_keg_a2#28829",
         "facepunch.soda_can#33662",
-        "facepunch.electrical_tape#33717",
+        "facepunch.rubbish_cup#33654",
+        "facepunch.beer_keg_a2#28829",
+        "facepunch.beer_cask#28811",
         "facepunch.burger_box#35828",
-        "facepunch.rubbish_cup#33654"
+        "facepunch.beer_keg_a1#28826",
+        "facepunch.industrial_strip_light#27425"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3.vmap"

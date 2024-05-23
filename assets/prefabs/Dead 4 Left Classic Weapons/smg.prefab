@@ -1,0 +1,223 @@
+{
+  "RootObject": {
+    "__guid": "e0a1b1c5-35db-4915-856a-9738f2ca2164",
+    "Flags": 0,
+    "Name": "smg",
+    "Tags": "weapon",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Kicks.Weapon",
+        "__guid": "a1716060-5fcc-406b-8cb7-928a1b8b4cf8",
+        "AbleToDrop": false,
+        "Ammo": 30,
+        "AmmoType": "LightAmmo",
+        "Arms": {
+          "_type": "gameobject",
+          "go": "51d2c35d-538a-4ec6-8bf4-cfa7377a0e11"
+        },
+        "armsRenderer": {
+          "_type": "component",
+          "component_id": "f1e620eb-7c52-42a1-9b47-088c22b0a4cf",
+          "go": "51d2c35d-538a-4ec6-8bf4-cfa7377a0e11",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "BloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "Damage": 30,
+        "Decal": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal.prefab"
+        },
+        "Description": "A swift SMG",
+        "DroppedItem": {
+          "_type": "gameobject",
+          "go": "b3b86997-253b-4294-9d52-3d640bb12632"
+        },
+        "FireRate": 0.1,
+        "FireSound": "sounds/shootsound.sound",
+        "HoldType": "Rifle",
+        "ImpactParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
+        "IsWeapon": false,
+        "MaxAmmo": 120,
+        "MuzzleFlash": {
+          "_type": "gameobject",
+          "prefab": "prefabs/weapons/muzzleflash.prefab"
+        },
+        "Name": "MP5",
+        "Recoil": 0.5,
+        "ReloadBool": "b_reload",
+        "ReloadTime": 1,
+        "ShootBool": "b_attack",
+        "Spread": 0.03,
+        "StartingAmmo": 0,
+        "TestStruct": {},
+        "TraceLength": 5000,
+        "UsesAmmo": true,
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "9e202271-5395-41bd-84dd-72d71e2d7623"
+        },
+        "ViewModelGun": {
+          "_type": "component",
+          "component_id": "080404f8-e41b-40a5-96e5-b64adba9ebc8",
+          "go": "ffc2edd9-590d-46e9-b87e-209057429f6b",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "6a3f3f79-8403-46c6-b3af-6d916a8e31a2"
+        },
+        "WeaponIndent": "weapon_smg",
+        "WorldModel": "models/weapons/sbox_smg_mp5/w_mp5.vmdl"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "f4168382-38de-4a15-b9f1-8f42fee30549",
+        "Icon": "mp5.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "9e202271-5395-41bd-84dd-72d71e2d7623",
+        "Flags": 0,
+        "Name": "ViewModelCamera",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "0544a158-947a-4ce1-9542-9c143e321e5b",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 90,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "6a3f3f79-8403-46c6-b3af-6d916a8e31a2",
+            "Flags": 0,
+            "Name": "ViewModel",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Children": [
+              {
+                "__guid": "51d2c35d-538a-4ec6-8bf4-cfa7377a0e11",
+                "Flags": 0,
+                "Name": "arms",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "f1e620eb-7c52-42a1-9b47-088c22b0a4cf",
+                    "BodyGroups": 21,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "080404f8-e41b-40a5-96e5-b64adba9ebc8",
+                      "go": "ffc2edd9-590d-46e9-b87e-209057429f6b",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateBoneObjects": false,
+                    "Model": "models/first_person/first_person_arms.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "ffc2edd9-590d-46e9-b87e-209057429f6b",
+                "Flags": 0,
+                "Name": "gun",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "080404f8-e41b-40a5-96e5-b64adba9ebc8",
+                    "BodyGroups": 27,
+                    "CreateBoneObjects": false,
+                    "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "b3b86997-253b-4294-9d52-3d640bb12632",
+        "Flags": 0,
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "257cc783-c3eb-4855-a386-a27129035e3e",
+            "BodyGroups": 3,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_smg_mp5/w_mp5.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "2b4868c3-b9c0-4986-9e36-fbb9872d2cee",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "4b616b1d-01dc-4b8c-8068-e219e72fb3f9",
+            "Center": "0,0,5.499997",
+            "IsTrigger": false,
+            "Scale": "24.20012,3.800029,10.99995",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [
+    "facepunch.v_mp5",
+    "facepunch.w_mp5",
+    "nolankicks.2d_game_test"
+  ],
+  "__version": 1
+}

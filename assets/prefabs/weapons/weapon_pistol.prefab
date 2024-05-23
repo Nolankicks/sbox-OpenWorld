@@ -133,7 +133,7 @@
                     "__guid": "e832b448-e6c8-4e42-b028-507f2123ccc3",
                     "BodyGroups": 20805,
                     "CreateBoneObjects": false,
-                    "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
+                    "Model": "models/dev/error.vmdl",
                     "RenderType": "On",
                     "Tint": "1,1,1,1"
                   }
@@ -214,6 +214,7 @@
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__references": [
+    "facepunch.w_usp",
     "nolankicks.2d_game_test"
   ],
   "__version": 1

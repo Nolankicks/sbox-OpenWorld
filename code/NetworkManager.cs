@@ -59,7 +59,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		var spawns = Scene.GetAllComponents<SpawnPoint>().ToList();
 		if ( spawns.Count == 0 )
 		{
-			return Transform.World;
+			return new Transform(new Vector3(0, 0, 0));
 		}
 		else
 		{

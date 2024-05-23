@@ -1,23 +1,28 @@
 @using Sandbox;
 @using Sandbox.UI;
+@using Sandbox.Utility;
+@using System.Threading.Tasks
 @inherits PanelComponent
+@namespace Kicks
 
 <root>
-	<div class="title" style="position: absolute; top: 32px; left: 32px;">Points: @Points</div>
+		@if (Points is not null)
+		{
+			<div class="points">Points: @Points.Points</div>
+		}
 </root>
 
 @code
 {
+	public PointsComponent Points;
 
-	[Property] public int Points { get; set; } = 0;
-
-	public void AddPoints(int points)
+	protected override void OnUpdate()
 	{
-		Points += points;
+		Points = Scene.GetAllComponents<PointsComponent>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( Points );
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
 }

@@ -27,8 +27,8 @@
   "libraries": {
     "Base Editor Library/1.0.0": {
       "type": "project",
-      "path": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj",
-      "msbuildProject": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+      "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
+      "msbuildProject": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
     },
     "kickscomponents/1.0.0": {
       "type": "project",
@@ -75,11 +75,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
             "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\nolankicks.kickscomponents\\Code\\kickscomponents.csproj": {
               "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\nolankicks.kickscomponents\\Code\\kickscomponents.csproj"
-            },
-            "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
-              "projectPath": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
             }
           }
         }

@@ -10,12 +10,12 @@
 	<div class="levelselect">
 		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The Escape</div>
 		<div class="level" onclick=@( () => OpenScene(GameScenes[1]))>Warehouse</div>
-		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Deathmatch</div>
 		<div class="level" onclick=@( () => ShowBiomeSelect = !ShowBiomeSelect)>Proc Gen</div>
+		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Dead 4 Left Classic</div>
 	</div>
 	<div class="lobbies @(ShowLobby ? "" : "hide")">
 		<div class="header">Lobbies</div>
-		<div class="createlobby" onclick=@( () => OpenScene(GameScenes[2]))>Create Lobby</div>
+		<div class="createlobby" onclick=@( () => ShowMapList = !ShowMapList)>Create Lobby</div>
 		@foreach (var lobby in Lobbies)
 		{
 			<div class="lobby" onclick=@(() => JoinLobby(lobby))>
@@ -45,16 +45,21 @@
 				<div class="name">Tundra</div>
 			</div>
 		</div>
+		<div class="mapholder @(ShowMapList ? "" : "hide")">
+		<PackageList ShowFilters="@true" Query="type:map sort:trending" OnSelected="@OnPackageSelected" Take=@(50)></PackageList>
+		</div>
 </root>
 
 @code
 {
 
 	[Property] public List<SceneFile> GameScenes { get; set; } = new();
+	[Property] public bool ShowMapList { get; set; } = false;
 	private List<LobbyInformation> Lobbies { get; set; } = new();
 	[Property] public bool ShowLobby { get; set; } = false;
 	[Property] public bool ShowBiomeSelect { get; set; } = false;
 	[Property] public List<Texture> BiomeTextures { get; set; }
+	[Property] public SceneFile ClassicScene { get; set; }
 	void JoinLobby(LobbyInformation lobby)
 	{
 		GameNetworkSystem.Connect(lobby.LobbyId);
@@ -62,6 +67,11 @@
 	protected override void OnStart()
 	{
 		_ = GetLobbies();
+	}
+	void OnPackageSelected(Package package)
+	{
+		LaunchArguments.Map = package.FullIdent;
+		Game.ActiveScene.Load(ClassicScene);
 	}
 	void OpenScene(SceneFile scene)
 	{

@@ -3,6 +3,7 @@
   "GameObjects": [
     {
       "__guid": "8b532a66-9227-48fa-ad95-97c5deed0867",
+      "Flags": 0,
       "Name": "Camera",
       "Position": "-809.6183,916.8099,134.123",
       "Rotation": "0.00000001490116,0,0.9659259,0.2588192",
@@ -32,6 +33,7 @@
     },
     {
       "__guid": "110c7acd-665b-42a4-b987-d02629a0cc28",
+      "Flags": 0,
       "Name": "wooden_crate (2)",
       "Position": "-1132.845,952.3218,32.21825",
       "Rotation": "-0.0000009560963,0.0000005357383,0.3826814,0.9238805",
@@ -71,7 +73,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,64"
@@ -82,7 +84,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "128,80"
@@ -129,12 +131,14 @@
                 "prefab": "prefabs/coin_pickup.prefab"
               }
             }
-          }
+          },
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "b2d13b78-c667-4b4c-929e-a7758601e40c",
+      "Flags": 0,
       "Name": "wooden_crate (1)",
       "Position": "-1142.918,960.0281,0.1245651",
       "Rotation": "0.0000001002229,0.0000003399829,0.3274687,0.9448621",
@@ -148,12 +152,14 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "a66755c5-a4d3-4c65-a23d-fa56b071ff25",
+      "Flags": 0,
       "Name": "wooden_crate",
       "Position": "-1123.967,930.0514,0.124609",
       "Rotation": "-0.000001567212,-0.000000003318455,0.2588193,0.9659258",
@@ -193,7 +199,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Transform",
-                  "_type": "Sandbox.Game/Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "-96,96"
@@ -204,7 +210,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Position",
-                  "_type": "Sandbox.Game/Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "144,64"
@@ -251,12 +257,14 @@
                 "prefab": "prefabs/light_ammo_pickup.prefab"
               }
             }
-          }
+          },
+          "Tint": "1,1,1,1"
         }
       ]
     },
     {
       "__guid": "3e7d81eb-d86f-4ce9-8a80-718be3dfb5de",
+      "Flags": 0,
       "Name": "citizen",
       "Position": "-1359.45,1171.112,8.992767",
       "Rotation": "0,0,0.0000002841142,-1",
@@ -311,7 +319,7 @@
                 "Id": 1,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "T": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "-240,144"
@@ -322,7 +330,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "IsSitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "144,80"
@@ -333,7 +341,7 @@
                 "Type": "property",
                 "Properties": {
                   "_name": "Sitting",
-                  "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -424,7 +432,7 @@
                 "Id": 1,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "T": "Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "-48,176"
@@ -436,7 +444,7 @@
                 "Properties": {
                   "_isStatic": false,
                   "_name": "Set",
-                  "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                  "_type": "Sandbox.SkinnedModelRenderer"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -528,7 +536,7 @@
                 "Id": 2,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                  "T": "Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "464,176"
@@ -558,7 +566,7 @@
                 "Id": 5,
                 "Type": "scene.get",
                 "Properties": {
-                  "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                  "T": "Kicks.PopupUi"
                 },
                 "UserData": {
                   "Position": "-208,336"
@@ -744,7 +752,7 @@
                     "Properties": {
                       "_isStatic": false,
                       "_name": "AddAmmo",
-                      "_type": "package.nolankicks.dead4left2/Inventory"
+                      "_type": "Inventory"
                     },
                     "UserData": {
                       "Position": "448,0"
@@ -796,6 +804,7 @@
       "Children": [
         {
           "__guid": "de87b562-a473-463c-a210-d884e3821327",
+          "Flags": 0,
           "Name": "clothes",
           "Position": "0,0,0",
           "Enabled": true,
@@ -804,6 +813,7 @@
           "Children": [
             {
               "__guid": "541c2034-6b53-473b-a20f-a865aa2a8b9c",
+              "Flags": 0,
               "Name": "shirt",
               "Position": "0,0,0",
               "Enabled": true,
@@ -829,6 +839,7 @@
             },
             {
               "__guid": "2b688248-9a2f-460b-9b5b-9bf2de25e684",
+              "Flags": 0,
               "Name": "jacket",
               "Position": "0,0,0",
               "Enabled": true,
@@ -854,6 +865,7 @@
             },
             {
               "__guid": "870d4e2b-ce96-4bc5-b79b-9810f24cdc48",
+              "Flags": 0,
               "Name": "shoes",
               "Position": "0,0,0",
               "Enabled": true,
@@ -879,6 +891,7 @@
             },
             {
               "__guid": "ab9acb47-0d44-4560-bccb-b1e9927921ca",
+              "Flags": 0,
               "Name": "pants",
               "Position": "0,0,0",
               "Enabled": true,
@@ -904,6 +917,7 @@
             },
             {
               "__guid": "c5234a09-aae8-40c9-99a2-143f1cfd23ba",
+              "Flags": 0,
               "Name": "hair",
               "Position": "0,0,0",
               "Enabled": true,
@@ -929,6 +943,7 @@
             },
             {
               "__guid": "aacb330d-9c28-40d3-a3c2-fd22e2882af2",
+              "Flags": 0,
               "Name": "brused face",
               "Position": "0,0,0",
               "Enabled": true,
@@ -954,6 +969,7 @@
             },
             {
               "__guid": "89b03fb5-bd9a-4ca9-971b-c28fb4308146",
+              "Flags": 0,
               "Name": "gloves",
               "Position": "0,0,0",
               "Enabled": true,
@@ -981,6 +997,7 @@
         },
         {
           "__guid": "e1515aa7-f571-40ee-a9ce-3bb0c19508e3",
+          "Flags": 0,
           "Name": "eye",
           "Position": "0,0,64",
           "Enabled": true,
@@ -991,6 +1008,7 @@
     },
     {
       "__guid": "58b3f3f9-e15e-4f9f-8834-8c92748a34ed",
+      "Flags": 0,
       "Name": "ik right",
       "Position": "-1326.121,1157.74,32.54777",
       "Rotation": "0.0002359778,0.0540783,0.004357146,-0.9985271",
@@ -1000,6 +1018,7 @@
     },
     {
       "__guid": "de5353fa-64d2-42aa-9cb4-24ff433a082f",
+      "Flags": 0,
       "Name": "ik left",
       "Position": "-1324.691,1185.45,31.33177",
       "Rotation": "0.9969346,-0.001284376,0.05423834,-0.05637368",
@@ -1009,6 +1028,7 @@
     },
     {
       "__guid": "cc04284e-e2cc-453c-b7dd-59bc2453870e",
+      "Flags": 0,
       "Name": "office_desk",
       "Position": "-1326.304,1170.396,0.7630997",
       "Rotation": "0,0,1,0.0000001947072",
@@ -1036,6 +1056,7 @@
     },
     {
       "__guid": "c32b6f98-106a-4476-bd68-048ebd0c745c",
+      "Flags": 0,
       "Name": "office_chair",
       "Position": "-1363.309,1169.68,-0.5477676",
       "Rotation": "0,0,0.7071069,-0.7071066",
@@ -1057,6 +1078,7 @@
     },
     {
       "__guid": "77f26a68-f552-469e-8685-f8f8285a9806",
+      "Flags": 0,
       "Name": "Screen",
       "Position": "-607.7793,149.995,-65.28207",
       "Enabled": true,
@@ -1080,6 +1102,7 @@
             "textures/sand.vtex",
             "textures/snow.vtex"
           ],
+          "ClassicScene": "scenes/dead_4_left_classic.scene",
           "GameScenes": [
             "scenes/demo_level1.scene",
             "scenes/demo_level2.scene",
@@ -1087,12 +1110,14 @@
             "scenes/sdf_staging.scene"
           ],
           "ShowBiomeSelect": false,
-          "ShowLobby": false
+          "ShowLobby": false,
+          "ShowMapList": false
         }
       ]
     },
     {
       "__guid": "560f078a-f251-4ef3-98ef-a54c4a803bf3",
+      "Flags": 0,
       "Name": "Map",
       "Position": "149.995,149.995,191.4693",
       "Enabled": true,
@@ -1132,13 +1157,13 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-05-05T16:26:59.5704078-04:00",
+  "LastSaved": "2024-05-22T12:48:48.1229014-04:00",
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.office_chair",
     "facepunch.wooden_crate",
     "luke.office_desk",
     "vidya.particle-ghost"
-  ]
+  ],
+  "__version": 1
 }

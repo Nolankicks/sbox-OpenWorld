@@ -21,6 +21,31 @@ MenuUi
 		left: 32px;
 	}
 
+	.mapholder
+	{
+		transition: opacity 0.1s ease;
+		&.hide
+		{
+			opacity: 0;
+		}
+	}
+	PackageList
+	{
+		transition: opacity 0.1s ease;
+		align-items: center;
+		color: white;
+		backdrop-filter: blur(64px);
+		width: 1400px;
+		height: 1000px;
+		padding: 12px;
+		border-radius: 16px;
+		&.hide
+		{
+			opacity: 0;
+		}
+	}
+
+
 	.levelselect
 	{
 		position: absolute;

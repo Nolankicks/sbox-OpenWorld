@@ -30,7 +30,8 @@
           "kickscomponents": "1.0.0",
           "libsdf": "1.0.0",
           "opiumpostprocess": "1.0.0",
-          "shatterglass": "1.0.0"
+          "shatterglass": "1.0.0",
+          "stuffthatisntbuiltin": "1.0.0"
         },
         "compile": {
           "bin/placeholder/dead4left2.dll": {}
@@ -78,19 +79,29 @@
         "runtime": {
           "bin/placeholder/shatterglass.dll": {}
         }
+      },
+      "stuffthatisntbuiltin/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/stuffthatisntbuiltin.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/stuffthatisntbuiltin.dll": {}
+        }
       }
     }
   },
   "libraries": {
     "Base Editor Library/1.0.0": {
       "type": "project",
-      "path": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj",
-      "msbuildProject": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
+      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj"
     },
     "Base Library/1.0.0": {
       "type": "project",
-      "path": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj",
-      "msbuildProject": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\base\\Code\\Base Library.csproj"
+      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj",
+      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/base/Code/Base Library.csproj"
     },
     "dead4left2/1.0.0": {
       "type": "project",
@@ -116,6 +127,11 @@
       "type": "project",
       "path": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj",
       "msbuildProject": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj"
+    },
+    "stuffthatisntbuiltin/1.0.0": {
+      "type": "project",
+      "path": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj",
+      "msbuildProject": "../Libraries/katewoz.stuffthatisntbuiltin/Code/stuffthatisntbuiltin.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -157,11 +173,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
             "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj": {
               "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj"
-            },
-            "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
-              "projectPath": "D:\\SteamLibrary\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
             }
           }
         }

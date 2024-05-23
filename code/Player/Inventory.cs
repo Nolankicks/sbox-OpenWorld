@@ -95,6 +95,7 @@ public sealed class Inventory : Component
 			}
 		}
 	}
+	[ActionGraphNode("GetNextSlot"), Pure]
 	public int GetNextSlot()
 	{
 		return Items.FindIndex(x => x is null);

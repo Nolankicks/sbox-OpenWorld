@@ -1,0 +1,621 @@
+{
+  "RootObject": {
+    "__guid": "be215c6c-f3d1-4d51-91ee-676e75588cb6",
+    "Flags": 0,
+    "Name": "m4a4",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "ActionGraphItem",
+        "__guid": "4e24a9ea-5d1a-4f48-81cf-3a77077b4fcc",
+        "AbleToDrop": false,
+        "Ammo": 30,
+        "AmmoType": "LightAmmo",
+        "DropppedItem": {
+          "_type": "gameobject",
+          "go": "4b8300f3-9fd0-451c-97b8-08b4355261c2"
+        },
+        "InInventory": false,
+        "MaxAmmo": 30,
+        "Object": {
+          "_type": "gameobject",
+          "go": "2d7b5101-8c57-4fcd-bc54-63f714953ef5"
+        },
+        "OnUse": {
+          "__version": 7,
+          "__guid": "94c2f536-7ee9-430b-8473-0e6b7854588d",
+          "UserData": {
+            "Title": "On Use",
+            "ReferencedComponentTypes": [
+              "ActionGraphItem"
+            ]
+          },
+          "Variables": [
+            {
+              "Name": "Action Graph Item",
+              "Type": "ActionGraphItem"
+            },
+            {
+              "Name": "Ammo",
+              "Type": "Kicks.AmmoContainer"
+            },
+            {
+              "Name": "inv",
+              "Type": "Inventory"
+            }
+          ],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input",
+              "UserData": {
+                "Position": "-496,-0"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphItem"
+              },
+              "UserData": {
+                "Position": "-48,176"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "var",
+              "Properties": {
+                "_var": "Action Graph Item"
+              },
+              "UserData": {
+                "Position": "224,-0"
+              }
+            },
+            {
+              "Id": 11,
+              "Type": "if",
+              "UserData": {
+                "Position": "464,-0"
+              }
+            },
+            {
+              "Id": 161,
+              "Type": "if",
+              "UserData": {
+                "Position": "1040,0"
+              }
+            },
+            {
+              "Id": 173,
+              "Type": "graph",
+              "Properties": {
+                "graph": "actions/spawndecal.action"
+              },
+              "UserData": {
+                "Position": "1296,80"
+              }
+            },
+            {
+              "Id": 175,
+              "Type": "ActionGraphTrace",
+              "UserData": {
+                "Position": "704,-0"
+              }
+            },
+            {
+              "Id": 193,
+              "Type": "sound.playat",
+              "UserData": {
+                "Position": "1712,80"
+              }
+            },
+            {
+              "Id": 198,
+              "Type": "input.pressed",
+              "UserData": {
+                "Position": "144,-160"
+              }
+            },
+            {
+              "Id": 200,
+              "Type": "if",
+              "UserData": {
+                "Position": "512,-160"
+              }
+            },
+            {
+              "Id": 201,
+              "Type": "ActionGraphReload",
+              "UserData": {
+                "Position": "816,-176"
+              }
+            },
+            {
+              "Id": 206,
+              "Type": "var",
+              "Properties": {
+                "_var": "Ammo"
+              },
+              "UserData": {
+                "Position": "-64,0"
+              }
+            },
+            {
+              "Id": 299,
+              "Type": "var",
+              "Properties": {
+                "_var": "inv"
+              },
+              "UserData": {
+                "Position": "-304,0"
+              }
+            },
+            {
+              "Id": 325,
+              "Type": "input.down",
+              "UserData": {
+                "Position": "240,96"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 2,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 206,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 7,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_signal",
+              "DstId": 11,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 325,
+              "SrcName": "_result",
+              "DstId": 11,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "_signal",
+              "DstId": 161,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "TraceHit",
+              "DstId": 161,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "traceNormal",
+              "DstId": 173,
+              "DstName": "_in1"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "hitPos",
+              "DstId": 173,
+              "DstName": "_in2"
+            },
+            {
+              "SrcId": 161,
+              "SrcName": "true",
+              "DstId": 173,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 173,
+              "DstName": "_target"
+            },
+            {
+              "Value": 75,
+              "DstId": 175,
+              "DstName": "Damage"
+            },
+            {
+              "Value": 0.2,
+              "DstId": 175,
+              "DstName": "FireRate"
+            },
+            {
+              "Value": 0.2,
+              "DstId": 175,
+              "DstName": "Recoil"
+            },
+            {
+              "Value": 0.02,
+              "DstId": 175,
+              "DstName": "Spread"
+            },
+            {
+              "Value": 5000,
+              "DstId": 175,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 11,
+              "SrcName": "true",
+              "DstId": 175,
+              "DstName": "_signal"
+            },
+            {
+              "VarName": "Action Graph Item",
+              "DstId": 175,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 173,
+              "SrcName": "_signal",
+              "DstId": 193,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "hitPos",
+              "DstId": 193,
+              "DstName": "position"
+            },
+            {
+              "Value": "sounds/dead4left2shootsound.sound",
+              "DstId": 193,
+              "DstName": "soundEvent"
+            },
+            {
+              "Value": "reload",
+              "DstId": 198,
+              "DstName": "action"
+            },
+            {
+              "SrcId": 7,
+              "SrcName": "_signal",
+              "DstId": 200,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 198,
+              "SrcName": "_result",
+              "DstId": 200,
+              "DstName": "condition"
+            },
+            {
+              "Value": 30,
+              "DstId": 201,
+              "DstName": "StartingAmmo"
+            },
+            {
+              "SrcId": 200,
+              "SrcName": "true",
+              "DstId": 201,
+              "DstName": "_signal"
+            },
+            {
+              "VarName": "Action Graph Item",
+              "DstId": 201,
+              "DstName": "_target"
+            },
+            {
+              "VarName": "Ammo",
+              "DstId": 201,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "HeavyAmmo",
+              "DstId": 201,
+              "DstName": "ammoType"
+            },
+            {
+              "SrcId": 299,
+              "SrcName": "_signal",
+              "DstId": 206,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 206,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 299,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 299,
+              "DstName": "_value"
+            },
+            {
+              "Value": "attack1",
+              "DstId": 325,
+              "DstName": "action"
+            }
+          ]
+        },
+        "UsesAmmo": true
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "05c1f8f6-58b9-4d6d-8183-c62eb7e2651e",
+        "Icon": "textures/m4.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "4b8300f3-9fd0-451c-97b8-08b4355261c2",
+        "Flags": 0,
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Kicks.PopupUi",
+            "__guid": "ec1f48ec-d990-4049-8c31-ac146c78b3e4",
+            "Description": "M4A4",
+            "Icon": "textures/m4.vtex",
+            "Name": "M4A4",
+            "PickUpAction": {
+              "__version": 7,
+              "__guid": "d0b2e63b-a8a5-47c4-802b-b61da8668173",
+              "UserData": {
+                "Title": "Pick Up Action",
+                "ReferencedComponentTypes": []
+              },
+              "Variables": [
+                {
+                  "Name": "Action Graph Item",
+                  "Type": "ActionGraphItem"
+                },
+                {
+                  "Name": "Inv",
+                  "Type": "Inventory"
+                }
+              ],
+              "Nodes": [
+                {
+                  "Id": 0,
+                  "Type": "input"
+                },
+                {
+                  "Id": 1,
+                  "Type": "call",
+                  "Properties": {
+                    "_name": "TryGet",
+                    "T": "ActionGraphItem",
+                    "_type": "Sandbox.IComponentLister",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "176,240"
+                  }
+                },
+                {
+                  "Id": 3,
+                  "Type": "if",
+                  "UserData": {
+                    "Position": "448,0"
+                  }
+                },
+                {
+                  "Id": 4,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "Action Graph Item"
+                  },
+                  "UserData": {
+                    "Position": "704,0"
+                  }
+                },
+                {
+                  "Id": 7,
+                  "Type": "call",
+                  "Properties": {
+                    "_type": "ActionGraphItem",
+                    "_name": "PickUp",
+                    "_isStatic": false
+                  },
+                  "UserData": {
+                    "Position": "1024,0"
+                  }
+                },
+                {
+                  "Id": 8,
+                  "Type": "var",
+                  "Properties": {
+                    "_var": "Inv"
+                  },
+                  "UserData": {
+                    "Position": "208,0"
+                  }
+                }
+              ],
+              "Links": [
+                {
+                  "SrcId": 0,
+                  "SrcName": "_target",
+                  "DstId": 1,
+                  "DstName": "_target"
+                },
+                {
+                  "Value": "EnabledInSelf, InParent",
+                  "DstId": 1,
+                  "DstName": "search"
+                },
+                {
+                  "SrcId": 8,
+                  "SrcName": "_signal",
+                  "DstId": 3,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "_result",
+                  "DstId": 3,
+                  "DstName": "condition"
+                },
+                {
+                  "SrcId": 3,
+                  "SrcName": "true",
+                  "DstId": 4,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 1,
+                  "SrcName": "component",
+                  "DstId": 4,
+                  "DstName": "_value"
+                },
+                {
+                  "SrcId": 4,
+                  "SrcName": "_signal",
+                  "DstId": 7,
+                  "DstName": "_signal"
+                },
+                {
+                  "VarName": "Action Graph Item",
+                  "DstId": 7,
+                  "DstName": "_target"
+                },
+                {
+                  "VarName": "Inv",
+                  "DstId": 7,
+                  "DstName": "inventory"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "_signal",
+                  "DstId": 8,
+                  "DstName": "_signal"
+                },
+                {
+                  "SrcId": 0,
+                  "SrcName": "Inventory",
+                  "DstId": 8,
+                  "DstName": "_value"
+                }
+              ]
+            },
+            "selectedInput": "use",
+            "ShopItems": {
+              "ItemNames": [],
+              "ShopActions": [],
+              "ItemTextures": [],
+              "ItemPrices": []
+            },
+            "ShowPopUp": true
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "e52a66de-5be0-4a65-82bf-a05b8bf742ef",
+            "Center": "3.799999,0,5.199997",
+            "IsTrigger": false,
+            "Scale": "31.50007,3.499955,11.09995",
+            "Static": false
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "100b788c-21c6-4c71-9c17-7a6dfe5c8a75",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "86663ce8-2e3b-4392-8658-fe3b48dd9a1b",
+            "BodyGroups": 5267,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          }
+        ]
+      },
+      {
+        "__guid": "2d7b5101-8c57-4fcd-bc54-63f714953ef5",
+        "Flags": 0,
+        "Name": "Object",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "8aa6e7b1-567d-4c6b-92aa-4d80d3755057",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 80,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "d28ea15f-ad00-4ed4-a17a-6b1b9a161896",
+            "Flags": 0,
+            "Name": "gun",
+            "Position": "20.5556,-9.983597,-12.1739",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.ModelRenderer",
+                "__guid": "b0461977-0c8c-4280-9ab9-7e3e85caec38",
+                "BodyGroups": 5267,
+                "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [
+    "facepunch.v_m4a1"
+  ],
+  "__version": 1
+}

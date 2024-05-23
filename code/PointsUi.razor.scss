@@ -10,10 +10,16 @@ PointsUi
 	font-weight: bold;
 	border-radius: 20px;
 
-	.title
+	.points
 	{
-		font-size: 32px;
-		font-family: Poppins;
-		color: black;
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		font-size: 40px;
+		border-radius: 12px;
+		color: white;
+		font-family: poppins;
+		backdrop-filter: blur(64px);
+		padding: 8px;
 	}
 }

@@ -13,6 +13,8 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
+	public delegate void OnDeathDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
+	[Property] public OnDeathDel OnDeath { get; set; }
 	[Property, Sync] public int Wood { get; set; }
 	[Property, Sync] public int Stone { get; set; }
 	[Property, Sync] public int Metal { get; set; }
@@ -332,6 +334,9 @@ public sealed class PlayerController : Component
 	}
 	void Kill(bool Respawn = false)
 	{
+		if (!IsProxy)
+		{
+		OnDeath?.Invoke(this, Inventory, AmmoContainer);
 		if (Respawn)
 		{
 			var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
@@ -343,6 +348,7 @@ public sealed class PlayerController : Component
 		else
 		{
 			Game.ActiveScene.Load(SceneFile);
+		}
 		}
 	}
 }

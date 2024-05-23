@@ -1,0 +1,219 @@
+{
+  "RootObject": {
+    "__guid": "b14bfaf5-5785-43bd-b689-91daacbcede6",
+    "Flags": 0,
+    "Name": "crowbar",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Kicks.Weapon",
+        "__guid": "8dca37aa-8c7f-4454-891e-64397db5774e",
+        "AbleToDrop": true,
+        "Ammo": 12,
+        "AmmoType": "NoAmmo",
+        "Arms": {
+          "_type": "gameobject",
+          "go": "449ae95c-515c-4405-8e12-abb0e3bcfb39"
+        },
+        "armsRenderer": {
+          "_type": "component",
+          "component_id": "e343a54b-a329-49e4-a454-1ccfceee8142",
+          "go": "449ae95c-515c-4405-8e12-abb0e3bcfb39",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "BloodParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/bloodparticle.prefab"
+        },
+        "Damage": 30,
+        "Decal": {
+          "_type": "gameobject",
+          "prefab": "prefabs/decal.prefab"
+        },
+        "Description": "A powerful pistol",
+        "DroppedItem": {
+          "_type": "gameobject",
+          "go": "2b2bd47c-31ed-4a7a-89f2-c7cfa64a7dbe"
+        },
+        "FireRate": 0.6,
+        "FireSound": "sounds/shootsound.sound",
+        "HoldType": "Pistol",
+        "ImpactParticle": {
+          "_type": "gameobject",
+          "prefab": "prefabs/impact.prefab"
+        },
+        "IsWeapon": false,
+        "MaxAmmo": 120,
+        "Name": "Crowbar",
+        "Recoil": 0,
+        "ReloadBool": "b_reload",
+        "ReloadTime": 0,
+        "ShootBool": "b_attack",
+        "Spread": 0.03,
+        "StartingAmmo": 0,
+        "TestStruct": {},
+        "TraceLength": 100,
+        "UsesAmmo": false,
+        "ViewModelCamera": {
+          "_type": "gameobject",
+          "go": "95c94e9e-1cd5-49ab-8f90-049d260e9861"
+        },
+        "ViewModelGun": {
+          "_type": "component",
+          "component_id": "e6d4adbe-4c73-47fa-89d9-003704e35ca8",
+          "go": "62879acb-2214-447a-a9a2-3b30b058d9f1",
+          "component_type": "SkinnedModelRenderer"
+        },
+        "ViewModelHolder": {
+          "_type": "gameobject",
+          "go": "375bffd3-83da-42c4-8984-9e095ce35458"
+        },
+        "WeaponIndent": "weapon_crowbar",
+        "WorldModel": "models/weapons/sbox_pistol_usp/w_usp.vmdl"
+      },
+      {
+        "__type": "IconComponent",
+        "__guid": "aab2c377-9221-4bbd-be9c-f56803990e5b",
+        "Icon": "textures/crowbar.vtex"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "95c94e9e-1cd5-49ab-8f90-049d260e9861",
+        "Flags": 0,
+        "Name": "ViewModelCamera",
+        "Tags": "viewmodel",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.CameraComponent",
+            "__guid": "5a2f454a-eb2b-45c8-bedb-e58d4a2e3820",
+            "BackgroundColor": "0.33333,0.46275,0.52157,1",
+            "ClearFlags": "Depth, Stencil",
+            "FieldOfView": 90,
+            "IsMainCamera": false,
+            "Orthographic": false,
+            "OrthographicHeight": 1204,
+            "Priority": 1,
+            "RenderExcludeTags": "",
+            "RenderTags": "viewmodel,light",
+            "TargetEye": "None",
+            "Viewport": "0,0,1,1",
+            "ZFar": 10000,
+            "ZNear": 0.1
+          }
+        ],
+        "Children": [
+          {
+            "__guid": "375bffd3-83da-42c4-8984-9e095ce35458",
+            "Flags": 0,
+            "Name": "ViewModel",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Children": [
+              {
+                "__guid": "62879acb-2214-447a-a9a2-3b30b058d9f1",
+                "Flags": 0,
+                "Name": "gun",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "e6d4adbe-4c73-47fa-89d9-003704e35ca8",
+                    "BodyGroups": 18446744073709551615,
+                    "CreateBoneObjects": false,
+                    "Model": "models/weapons/sbox_melee_crowbar/v_crowbar.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              },
+              {
+                "__guid": "449ae95c-515c-4405-8e12-abb0e3bcfb39",
+                "Flags": 0,
+                "Name": "arms",
+                "Enabled": true,
+                "NetworkMode": 2,
+                "NetworkInterpolation": true,
+                "Components": [
+                  {
+                    "__type": "Sandbox.SkinnedModelRenderer",
+                    "__guid": "e343a54b-a329-49e4-a454-1ccfceee8142",
+                    "BodyGroups": 21,
+                    "BoneMergeTarget": {
+                      "_type": "component",
+                      "component_id": "e6d4adbe-4c73-47fa-89d9-003704e35ca8",
+                      "go": "62879acb-2214-447a-a9a2-3b30b058d9f1",
+                      "component_type": "SkinnedModelRenderer"
+                    },
+                    "CreateBoneObjects": false,
+                    "Model": "models/first_person/first_person_arms.vmdl",
+                    "RenderType": "On",
+                    "Tint": "1,1,1,1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "__guid": "2b2bd47c-31ed-4a7a-89f2-c7cfa64a7dbe",
+        "Flags": 0,
+        "Name": "Dropped Item",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "1c8fac29-6ef5-4945-b073-7b00d23136f9",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "Model": "models/weapons/sbox_melee_crowbar/w_crowbar.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1"
+          },
+          {
+            "__type": "Sandbox.Rigidbody",
+            "__guid": "61bdabe3-2af0-44e8-957a-fe8630776d08",
+            "AngularDamping": 0,
+            "Gravity": true,
+            "LinearDamping": 0,
+            "Locking": {},
+            "MassOverride": 0,
+            "MotionEnabled": true,
+            "RigidbodyFlags": 0,
+            "StartAsleep": false
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "3a85915f-1bdf-4a8b-ad6d-2f827bc55ead",
+            "Center": "0.9000002,0,11.69998",
+            "IsTrigger": false,
+            "Scale": "10.19996,2.200034,31.40023",
+            "Static": false
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [
+    "facepunch.v_crowbar",
+    "facepunch.w_crowbar",
+    "facepunch.w_usp",
+    "nolankicks.2d_game_test"
+  ],
+  "__version": 1
+}
