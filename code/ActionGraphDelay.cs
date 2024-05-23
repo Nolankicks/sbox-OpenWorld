@@ -15,8 +15,16 @@ public sealed class ActionGraphDelay : Component
 
 	async Task DelayAction(float delay)
 	{
+		try
+		{
 		Delay = true;
 		await Task.DelaySeconds(delay);
 		Delay = false;
+		}
+		catch (TaskCanceledException)
+		{
+			return;
+		}
+
 	}
 }

@@ -12,8 +12,10 @@ public sealed class ActionGraphItem : Component
 	public bool Able { get; set; } = true;
 	[Property, Sync] public bool InInventory { get; set; }
 	[Property] public GameObject Object { get; set; }
-	public delegate void OnUseDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer, ActionGraphItem actionGraphItem);
-	[Property] public OnUseDel OnUse { get; set; }
+	public delegate void ActionDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer, ActionGraphItem actionGraphItem);
+	[Property, Description("Called when the item is in the inventory")] public ActionDel OnUse { get; set; }
+	[Property] public ActionDel OnPickUp { get; set; }
+	[Property] public ActionDel OnDrop { get; set; }
 	public Inventory Inventory { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
 	public PlayerController PlayerController { get; set; }
@@ -41,12 +43,12 @@ public sealed class ActionGraphItem : Component
 		if (InInventory)
 		{
 			Use();
-			foreach (var gb in Object.GetAllObjects(false))
+			foreach (var gb in Object?.GetAllObjects(false))
 			{
 				if (gb is null) return;
 				gb.Enabled = true;
 			}
-			foreach (var gb in DropppedItem.GetAllObjects(false))
+			foreach (var gb in DropppedItem?.GetAllObjects(false))
 			{
 				if (gb is null) return;
 				gb.Enabled = false;
@@ -59,11 +61,11 @@ public sealed class ActionGraphItem : Component
 		}
 		else
 		{
-			foreach (var gb in Object.GetAllObjects(false))
+			foreach (var gb in Object?.GetAllObjects(false))
 			{
 				gb.Enabled = false;
 			}
-			foreach (var gb in DropppedItem.GetAllObjects(false))
+			foreach (var gb in DropppedItem?.GetAllObjects(false))
 			{
 				gb.Enabled = true;
 			}
@@ -79,19 +81,19 @@ public sealed class ActionGraphItem : Component
 		{
 			if (InInventory)
 			{
-				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				foreach ( var gb in DropppedItem?.GetAllObjects(false))
 				{
 					gb.Enabled = false;
 				}
 			}
 			else
 			{
-				foreach ( var gb in DropppedItem.GetAllObjects(false))
+				foreach ( var gb in DropppedItem?.GetAllObjects(false))
 				{
 					gb.Enabled = true;
 				}
 			}
-			foreach (var gb in Object.GetAllObjects(false))
+			foreach (var gb in Object?.GetAllObjects(false))
 			{
 				gb.Enabled = false;
 			}
@@ -109,6 +111,7 @@ public sealed class ActionGraphItem : Component
 		Object.Transform.LocalPosition = Vector3.Zero;
 		GameObject.Transform.Position = tr.EndPosition + Vector3.Up * 15;
 		InInventory = false;
+		OnDrop?.Invoke(PlayerController, inventory, AmmoContainer, this);
 		if (GameNetworkSystem.IsActive)
 		{
 		foreach(var gb in allObjects)
@@ -126,6 +129,7 @@ public sealed class ActionGraphItem : Component
 		{
 			gb.Network.TakeOwnership();
 		}
+		OnPickUp?.Invoke(PlayerController, inventory, AmmoContainer, this);
 		}
 		
 		GameObject.Parent = Inventory.GameObject;

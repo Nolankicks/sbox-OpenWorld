@@ -84,20 +84,56 @@ public sealed class Weapon : Component
 		{
 			if (IsWeapon)
 			{
-				DroppedItem.Enabled = false;
+				Actions();
+				foreach (var gb in ViewModelCamera?.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = true;
+				}
+				foreach (var gb in DroppedItem?.GetAllObjects(false))
+				{
+					if (gb is null) return;
+					gb.Enabled = false;
+				}
 			}
 			else
 			{
-				DroppedItem.Enabled = true;
+				foreach (var gb in ViewModelCamera?.GetAllObjects(false))
+				{
+					gb.Enabled = false;
+				}
+				foreach (var gb in DroppedItem?.GetAllObjects(false))
+				{
+					gb.Enabled = true;
+				}
 			}
 		}
-		if (IsProxy)
+		else
 		{
-			ViewModelCamera.Enabled = false;
+			if (IsWeapon)
+			{
+				foreach (var gb in DroppedItem?.GetAllObjects(false))
+				{
+					gb.Enabled = false;
+				}
+			}
+			else
+			{
+				foreach (var gb in DroppedItem?.GetAllObjects(false))
+				{
+					gb.Enabled = true;
+				}
+			}
+			foreach (var gb in ViewModelCamera?.GetAllObjects(false))
+			{
+				if (gb is null) return;
+				gb.Enabled = false;
+			}
 		}
-		if (IsWeapon)
-		{
-		if ( IsProxy ) return;
+	}
+
+	void Actions()
+	{
 		ViewModelCamera.Enabled = true;
 		Arms.Enabled = true;
 		ViewModelGun.GameObject.Enabled = true;
@@ -165,18 +201,6 @@ public sealed class Weapon : Component
 			ViewModelGun.Set("aim_yaw", PlayerController.eyeAngles.yaw);
 			ViewModelGun.Set("aim_pitch", PlayerController.eyeAngles.pitch);
 			
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
-		}
-		}
-		else
-		{
-			ViewModelCamera.Enabled = false;
-			ViewModelGun.GameObject.Enabled = false;
-			Arms.Enabled = false;
-			DroppedItem.Enabled = true;
 		}
 	}
 	protected override void OnDisabled()

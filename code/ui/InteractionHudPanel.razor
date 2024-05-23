@@ -99,6 +99,7 @@
 {
     var ray = Scene.Camera.ScreenNormalToRay(0.5f);
     var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
+	if (!tr.Hit) return;
     if (tr.Hit)
     {
 		if (tr.GameObject is null) return;

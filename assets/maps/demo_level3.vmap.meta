@@ -19,7 +19,9 @@
         "facepunch.beer_cask#28811",
         "facepunch.burger_box#35828",
         "facepunch.beer_keg_a1#28826",
-        "facepunch.industrial_strip_light#27425"
+        "facepunch.industrial_strip_light#27425",
+        "titanovsky.flashlight#54429",
+        "facepunch.lantern#44606"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3.vmap"
