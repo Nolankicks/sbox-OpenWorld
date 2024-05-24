@@ -1,6 +1,7 @@
 {
   "RootObject": {
     "__guid": "e92db3ec-7602-430d-bd47-31a77cb1c0ef",
+    "Flags": 0,
     "Name": "weapon_crowbar",
     "Enabled": true,
     "NetworkMode": 1,
@@ -9,6 +10,7 @@
       {
         "__type": "Kicks.Weapon",
         "__guid": "aaca953c-5517-4e15-906c-a640519e200a",
+        "AbleToDrop": true,
         "Ammo": 12,
         "AmmoType": "NoAmmo",
         "Arms": {
@@ -80,6 +82,7 @@
     "Children": [
       {
         "__guid": "4d7e973f-ff2e-4f9f-9eab-df453d7745fa",
+        "Flags": 0,
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
         "Enabled": true,
@@ -107,6 +110,7 @@
         "Children": [
           {
             "__guid": "f5d45a56-e7eb-438f-a57f-5f63d730dc13",
+            "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
             "NetworkMode": 1,
@@ -114,6 +118,7 @@
             "Children": [
               {
                 "__guid": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
+                "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -132,6 +137,7 @@
               },
               {
                 "__guid": "bc7fb431-de40-4cae-990c-7a7ecbf6769e",
+                "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
                 "NetworkMode": 1,
@@ -160,6 +166,7 @@
       },
       {
         "__guid": "25f87a92-ec49-4f52-b6f2-29a3f676d22f",
+        "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
         "NetworkMode": 1,
@@ -202,11 +209,11 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
   "__references": [
     "facepunch.v_crowbar",
     "facepunch.w_crowbar",
     "facepunch.w_usp",
     "nolankicks.2d_game_test"
-  ]
+  ],
+  "__version": 1
 }

@@ -8,23 +8,15 @@ public sealed class ActionGraphDelay : Component
 
 	}
 
-	public void SetDelay(float delay)
+	public async void SetDelay(float delay)
 	{
-		_ = DelayAction(delay);
+		await DelayAction(delay);
 	}
 
 	async Task DelayAction(float delay)
 	{
-		try
-		{
 		Delay = true;
-		await Task.DelaySeconds(delay);
+		await GameTask.DelaySeconds(delay);
 		Delay = false;
 		}
-		catch (TaskCanceledException)
-		{
-			return;
-		}
-
-	}
 }

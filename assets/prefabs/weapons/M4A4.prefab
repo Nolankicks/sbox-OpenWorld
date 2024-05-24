@@ -29,7 +29,8 @@
           "UserData": {
             "Title": "On Use",
             "ReferencedComponentTypes": [
-              "ActionGraphItem"
+              "ActionGraphItem",
+              "Sandbox.SkinnedModelRenderer"
             ]
           },
           "Variables": [
@@ -51,7 +52,10 @@
               "Id": 0,
               "Type": "input",
               "UserData": {
-                "Position": "-496,-0"
+                "Position": "-832,16",
+                "Labels": {
+                  "actionGraphItem": "item"
+                }
               }
             },
             {
@@ -85,7 +89,7 @@
               "Id": 161,
               "Type": "if",
               "UserData": {
-                "Position": "1040,0"
+                "Position": "1456,-0"
               }
             },
             {
@@ -95,7 +99,7 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "1296,80"
+                "Position": "1776,80"
               }
             },
             {
@@ -109,7 +113,7 @@
               "Id": 193,
               "Type": "sound.playat",
               "UserData": {
-                "Position": "1712,80"
+                "Position": "2144,80"
               }
             },
             {
@@ -159,6 +163,82 @@
               "UserData": {
                 "Position": "240,96"
               }
+            },
+            {
+              "Id": 340,
+              "Type": "scene.ref",
+              "Properties": {
+                "gameobject": {
+                  "_type": "gameobject",
+                  "go": "7713ac20-4fa9-40fa-8789-9a4884152dab"
+                }
+              },
+              "UserData": {
+                "Position": "720,432"
+              }
+            },
+            {
+              "Id": 341,
+              "Type": "scene.get",
+              "ParentId": 340,
+              "Properties": {
+                "T": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "gun"
+                }
+              }
+            },
+            {
+              "Id": 342,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "2384,80"
+              }
+            },
+            {
+              "Id": 353,
+              "Type": "if",
+              "UserData": {
+                "Position": "1040,0"
+              }
+            },
+            {
+              "Id": 354,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1296,208"
+              }
+            },
+            {
+              "Id": 372,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer"
+              },
+              "UserData": {
+                "Position": "1264,-176"
+              }
+            },
+            {
+              "Id": 391,
+              "Type": "Set ironsights",
+              "UserData": {
+                "Position": "-416,-240"
+              }
             }
           ],
           "Links": [
@@ -193,8 +273,8 @@
               "DstName": "condition"
             },
             {
-              "SrcId": 175,
-              "SrcName": "_signal",
+              "SrcId": 353,
+              "SrcName": "true",
               "DstId": 161,
               "DstName": "_signal"
             },
@@ -352,8 +432,110 @@
               "Value": "attack1",
               "DstId": 325,
               "DstName": "action"
+            },
+            {
+              "SrcId": 340,
+              "SrcName": "_result",
+              "DstId": 341,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 193,
+              "SrcName": "_signal",
+              "DstId": 342,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_result",
+              "DstId": 342,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 342,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 342,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "_signal",
+              "DstId": 353,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 175,
+              "SrcName": "AbleToFire",
+              "DstId": 353,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 353,
+              "SrcName": "false",
+              "DstId": 354,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_result",
+              "DstId": 354,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack_dry",
+              "DstId": 354,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 354,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 201,
+              "SrcName": "_signal",
+              "DstId": 372,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_result",
+              "DstId": 372,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_reload",
+              "DstId": 372,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 372,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_result",
+              "DstId": 391,
+              "DstName": "Gun"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "actionGraphItem",
+              "DstId": 391,
+              "DstName": "_target"
             }
-          ]
+          ],
+          "Defaults": {
+            "$340.gameobject": {
+              "_type": "gameobject",
+              "go": "7713ac20-4fa9-40fa-8789-9a4884152dab"
+            }
+          }
         },
         "UsesAmmo": true
       },
@@ -404,10 +586,10 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
+                    "_isStatic": false,
                     "_name": "TryGet",
                     "T": "ActionGraphItem",
-                    "_type": "Sandbox.IComponentLister",
-                    "_isStatic": false
+                    "_type": "Sandbox.IComponentLister"
                   },
                   "UserData": {
                     "Position": "176,240"
@@ -434,8 +616,8 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
-                    "_name": "PickUp",
                     "_isStatic": false,
+                    "_name": "PickUp",
                     "_type": "ActionGraphItem"
                   },
                   "UserData": {
@@ -591,16 +773,42 @@
             "__guid": "7713ac20-4fa9-40fa-8789-9a4884152dab",
             "Flags": 0,
             "Name": "gun",
-            "Position": "20.5556,-9.983597,-12.1739",
             "Enabled": true,
             "NetworkMode": 2,
             "NetworkInterpolation": true,
             "Components": [
               {
-                "__type": "Sandbox.ModelRenderer",
-                "__guid": "32819520-605d-4d02-82c4-f4a8e05aeb84",
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "863ced62-3282-47d7-922f-3874114bac75",
                 "BodyGroups": 5267,
+                "CreateBoneObjects": false,
                 "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1"
+              }
+            ]
+          },
+          {
+            "__guid": "74ac9c2a-54a4-4880-a612-f46bc7e1fb1d",
+            "Flags": 0,
+            "Name": "arms",
+            "Tags": "skybox",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
+              {
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "e57090e2-d2e8-4197-9863-8b470f363084",
+                "BodyGroups": 21,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "863ced62-3282-47d7-922f-3874114bac75",
+                  "go": "7713ac20-4fa9-40fa-8789-9a4884152dab",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/first_person/first_person_arms.vmdl",
                 "RenderType": "On",
                 "Tint": "1,1,1,1"
               }

@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root style="opacity: @(Chest.IsOpen ? 1 : 0)">
+	<div class="content">
+		@foreach (var item in Chest.ChestItems)
+		{
+			<div class="item" onclick=@(() => Chest.TakeItem(item))>
+				@if (item.Components.TryGet<IconComponent>(out var icon, FindMode.EverythingInSelfAndParent))
+				{
+					<img class="icon" src=@(icon.Icon.ResourcePath)>
+				}
+			</div>
+		}
+	</div>
+</root>
+
+@code
+{
+
+	[Property] public Chest Chest { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

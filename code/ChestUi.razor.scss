@@ -1,0 +1,42 @@
+ChestUi
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	pointer-events: all;
+	background-color: rgba(black, 0.9);
+
+	.content
+	{
+		position: absolute;
+		width: 1000px;
+		height: 600px;
+		background-color: gray;
+		padding: 32px;
+
+		>.item
+		{
+			width: 100px;
+			height: 100px;
+			background-color: white;
+			border-radius: 10px;
+			pointer-events: all;
+			transition: all 0.1s ease;
+			&:hover
+			{
+				transform: scale(1.1);
+				sound-in: ui.button.over;
+			}
+			&:active
+			{
+				transform: scale(0.9);
+				sound-in: ui.button.press;
+			}
+		}
+	}
+}

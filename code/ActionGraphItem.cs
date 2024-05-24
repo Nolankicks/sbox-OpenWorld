@@ -254,4 +254,26 @@ public sealed class ActionGraphItem : Component
 				ShotsFired = 0;
 			}
 	}
+
+	[ActionGraphNode("SpawnMuzzleFlash")]
+	public void SpawnMuzzleFlash(SkinnedModelRenderer Gun, GameObject MuzzleFlash)
+	{
+		if (MuzzleFlash is not null)
+			{
+			var muzzle = Gun.GetAttachment("muzzle");
+			if (muzzle is not null)
+			{
+			var MuzzleFlashInstance = MuzzleFlash.Clone(muzzle.Value.Position, muzzle.Value.Rotation);
+			MuzzleFlashInstance.Tags.Add("viewmodel");
+			}
+			}
+	}
+
+	[ActionGraphNode("Set ironsights")]
+	public void SetIronSights(SkinnedModelRenderer Gun)
+	{
+		var IsAiming = Input.Down("attack2");
+		Gun.Set( "ironsights", IsAiming ? 2 : 0 );
+		Gun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
+	}
 }

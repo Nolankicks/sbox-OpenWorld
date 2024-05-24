@@ -1,0 +1,24 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root style="opacity: @(Spawner.IsSpawning ? 1 : 0)">
+	<div class="wave">Wave: @Spawner.CurrentWaveIndex / @Waves</div>
+	@if (Spawner.CoolDown)
+	{
+		<div class="cooldown">Next wave in: @((int)(Spawner.NextWave + 0.5f))</div>
+	}
+	<div class="zombiesleft">@Spawner.CurrentWave.Count zombies left</div>
+</root>
+
+@code
+{
+
+	[Property] public WaveSpawner Spawner { get; set; }
+	[Property] public int Waves { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( Time.Now );
+}

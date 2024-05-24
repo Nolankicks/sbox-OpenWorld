@@ -1,0 +1,49 @@
+WaveUi
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	border-radius: 20px;
+
+	.title
+	{
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+
+	.wave
+	{
+		position: absolute;
+		top: 32px;
+		left: 32px;
+		font-family: poppins;
+		font-size: 32px;
+		color: white;
+	}
+
+	.zombiesleft
+	{
+		position: absolute;
+		top: 32px;
+		right: 32px;
+		font-family: poppins;
+		font-size: 32px;
+		color: white;
+	}
+
+	.cooldown
+	{
+		position: absolute;
+		top: 52px;
+		right: 32px;
+		font-family: poppins;
+		font-size: 42px;
+		color: white;
+	}
+}

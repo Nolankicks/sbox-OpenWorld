@@ -126,10 +126,10 @@ public sealed class NPC : Component
             {
                 return;
             }
-            await Task.Delay(1);
+            await GameTask.Delay(1);
         }
 
-        await Task.DelaySeconds(5, CtsWander.Token);
+        await GameTask.DelaySeconds(5, CtsWander.Token);
     }
 }
 
