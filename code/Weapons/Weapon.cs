@@ -308,22 +308,7 @@ public sealed class Weapon : Component
 				}
 				var decal = Decal.Clone(new Transform(tr.HitPosition + tr.Normal * 2.0f, Rotation.LookAt( -tr.Normal, Vector3.Random )));
 				decal.NetworkSpawn(null);
-		if (tr.Surface is null)
-		{
-    			Log.Info("Surface is null");
-		}
-		else
-		{
-    	var surfaceSound = tr.Surface.PlayCollisionSound(tr.HitPosition);
-  		if (surfaceSound is null)
-  		{
-       		 Log.Info("surfaceSound is null");
-   		}
-   		 else
-   		{
-       		surfaceSound.Volume = 1;
-    	}
-}
+	
 		if ( tr.Body is not null )
 		{
 			tr.Body.ApplyImpulseAt( tr.HitPosition, tr.Direction * 200.0f * tr.Body.Mass.Clamp( 0, 200 ) );

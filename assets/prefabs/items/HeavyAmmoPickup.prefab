@@ -1,0 +1,144 @@
+{
+  "RootObject": {
+    "__guid": "61813b6f-179d-43b9-a553-ed3c886ad20e",
+    "Flags": 0,
+    "Name": "heavyammopickup",
+    "Scale": "3,3,3",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "1ec7e4eb-03cc-40b8-a782-20d8ef94bcd7",
+        "BodyGroups": 1,
+        "Model": "models/weapons/sbox_assault_m4a1/v_m4a1_magazine.vmdl",
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "9a17c842-da1a-450a-ac0b-74829bf2ce4d",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "4.400008,1.800026,7.799995",
+        "Static": false
+      },
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "3349ba16-80fc-4724-ba0a-965efa695784",
+        "Name": "Heavy Ammo",
+        "PickUpAction": {
+          "__version": 7,
+          "__guid": "4649dff3-477b-4a89-8c91-a7b21bce6583",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_name": "AddAmmo",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "288,-0"
+              }
+            },
+            {
+              "Id": 7,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Destroy",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "560,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 2,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 2,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 2,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "HeavyAmmo",
+              "DstId": 2,
+              "DstName": "ammoType"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_signal",
+              "DstId": 7,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 7,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "selectedInput": "use",
+        "ShopItems": {
+          "ItemNames": [],
+          "ShopActions": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "fd32f184-0e3e-447d-9e6d-c06c4dbab25c",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      }
+    ],
+    "Children": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [
+    "facepunch.v_m4a1_magazine"
+  ],
+  "__version": 1
+}

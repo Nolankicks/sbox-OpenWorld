@@ -1,0 +1,152 @@
+{
+  "Graph": {
+    "__version": 7,
+    "__guid": "4eb90035-1476-4899-b69b-08fdf4e1fcc2",
+    "UserData": {
+      "Title": "Reload Logic",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom"
+    },
+    "Parameters": {
+      "Inputs": [
+        {
+          "Name": "_in1",
+          "Type": "System.Boolean",
+          "Display": {
+            "Title": "Input 1",
+            "Hidden": false
+          }
+        },
+        {
+          "Name": "_in2",
+          "Type": "System.Int32",
+          "Display": {
+            "Title": "Input 2",
+            "Hidden": false
+          }
+        },
+        {
+          "Name": "_in3",
+          "Type": "System.Int32",
+          "Display": {
+            "Title": "Input 3",
+            "Hidden": false
+          }
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "_out1",
+          "Type": "System.Boolean",
+          "Display": {
+            "Title": "Output 1",
+            "Hidden": false
+          }
+        }
+      ]
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-468,0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "output",
+        "UserData": {
+          "Position": "468,0"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "op.notequal",
+        "UserData": {
+          "Position": "-56,-64"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "input.pressed",
+        "UserData": {
+          "Position": "-168,64"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "op.and",
+        "UserData": {
+          "Position": "168,0"
+        }
+      },
+      {
+        "Id": 5,
+        "Type": "op.and",
+        "UserData": {
+          "Position": "40,48"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "_out1"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in2",
+        "DstId": 2,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in3",
+        "DstId": 2,
+        "DstName": "b"
+      },
+      {
+        "Value": "reload",
+        "DstId": 3,
+        "DstName": "action"
+      },
+      {
+        "SrcId": 5,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 4,
+        "DstName": "b"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 5,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in1",
+        "DstId": 5,
+        "DstName": "b"
+      }
+    ]
+  },
+  "__references": [],
+  "__version": 0
+}

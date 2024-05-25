@@ -149,9 +149,9 @@ public sealed class ActionGraphItem : Component
 	}
 	public TimeSince timeSinceFire = 1000;
 	[ActionGraphNode("ActionGraphTrace"), Impure, Icon("sports_handball")]
-	public void ActionGraphTrace(int Damage, float Spread, int TraceLength, out bool TraceHit, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
+	public void ActionGraphTrace(int Damage, float Spread, int TraceLength, out bool TraceHit, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, out Vector3 traceStartPos, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
 	{
-		if (Ammo > 0 && !IsProxy && timeSinceFire >= FireRate)
+		if ((Ammo > 0 || !UsesAmmo) && !IsProxy && timeSinceFire >= FireRate)
 		{
 		AbleToFire = true;
 		if (RefreshTimeSince)
@@ -170,6 +170,7 @@ public sealed class ActionGraphItem : Component
 			tr.GameObject.Components.TryGet<EnemyHealthComponent>(out var dummy, FindMode.EverythingInSelfAndParent);
 			tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 			var damageTaker = tr.GameObject.Components.Get<DamageTaker>(FindMode.EverythingInSelfAndParent);
+			traceStartPos = tr.StartPosition;
 			hitPos = tr.HitPosition;
 			gameObject = tr.GameObject;
 			traceNormal = tr.Normal;
@@ -220,6 +221,7 @@ public sealed class ActionGraphItem : Component
 			gameObject = null;
 			hitPos = Vector3.Zero;
 			traceNormal = Vector3.Zero;
+			traceStartPos = Vector3.Zero;
 		}
 		}
 		else
@@ -230,6 +232,7 @@ public sealed class ActionGraphItem : Component
 			hitPos = Vector3.Zero;
 			traceNormal = Vector3.Zero;
 			AbleToFire = false;
+			traceStartPos = Vector3.Zero;
 		}
 		
 	}
@@ -275,5 +278,14 @@ public sealed class ActionGraphItem : Component
 		var IsAiming = Input.Down("attack2");
 		Gun.Set( "ironsights", IsAiming ? 2 : 0 );
 		Gun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
+	}
+
+	[ActionGraphNode("Play Sound")]
+	public void PlaySound(SoundEvent FireSound, Vector3 startPos)
+	{
+		if (FireSound is not null)
+		{
+		Sound.Play(FireSound, startPos);
+		}
 	}
 }

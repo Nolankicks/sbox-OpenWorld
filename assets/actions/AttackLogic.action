@@ -1,0 +1,111 @@
+{
+  "Graph": {
+    "__version": 7,
+    "__guid": "086b4224-ccb4-49c1-80e8-3d31c1107606",
+    "UserData": {
+      "Title": "Attack Logic",
+      "Description": "No description provided.",
+      "Icon": "account_tree",
+      "Category": "Custom"
+    },
+    "Parameters": {
+      "Inputs": [
+        {
+          "Name": "_in1",
+          "Type": "System.Boolean",
+          "Display": {
+            "Title": "Input 1",
+            "Hidden": false
+          }
+        }
+      ],
+      "Outputs": [
+        {
+          "Name": "_out1",
+          "Type": "System.Boolean",
+          "Display": {
+            "Title": "Output 1",
+            "Hidden": false
+          }
+        }
+      ]
+    },
+    "Variables": [],
+    "Nodes": [
+      {
+        "Id": 0,
+        "Type": "input",
+        "UserData": {
+          "Position": "-492,0"
+        }
+      },
+      {
+        "Id": 1,
+        "Type": "output",
+        "UserData": {
+          "Position": "492,0"
+        }
+      },
+      {
+        "Id": 2,
+        "Type": "op.and",
+        "UserData": {
+          "Position": "192,32"
+        }
+      },
+      {
+        "Id": 3,
+        "Type": "input.down",
+        "UserData": {
+          "Position": "-192,32"
+        }
+      },
+      {
+        "Id": 4,
+        "Type": "op.not",
+        "UserData": {
+          "Position": "0,-32"
+        }
+      }
+    ],
+    "Links": [
+      {
+        "SrcId": 2,
+        "SrcName": "_result",
+        "DstId": 1,
+        "DstName": "_out1"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_signal",
+        "DstId": 1,
+        "DstName": "_signal"
+      },
+      {
+        "SrcId": 4,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "a"
+      },
+      {
+        "SrcId": 3,
+        "SrcName": "_result",
+        "DstId": 2,
+        "DstName": "b"
+      },
+      {
+        "Value": "attack1",
+        "DstId": 3,
+        "DstName": "action"
+      },
+      {
+        "SrcId": 0,
+        "SrcName": "_in1",
+        "DstId": 4,
+        "DstName": "a"
+      }
+    ]
+  },
+  "__references": [],
+  "__version": 0
+}

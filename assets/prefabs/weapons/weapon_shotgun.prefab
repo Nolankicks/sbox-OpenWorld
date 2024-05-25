@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "3ce17a3b-143a-420b-a716-d1eb3874164a",
+    "__guid": "66219d4c-7a47-4c5c-95fb-f0536d826909",
     "Flags": 0,
     "Name": "weapon_shotgun",
     "Enabled": true,
@@ -9,23 +9,23 @@
     "Components": [
       {
         "__type": "ActionGraphItem",
-        "__guid": "0198ca98-7564-40a5-9b58-34457d54f73f",
+        "__guid": "a45c3dbb-b2c8-449e-8166-4313adaf3354",
         "AbleToDrop": true,
         "Ammo": 12,
         "AmmoType": "LightAmmo",
         "DropppedItem": {
           "_type": "gameobject",
-          "go": "17db5cd1-1a97-42f0-b686-ebba5c7da371"
+          "go": "46a5fccd-1d6e-41db-8c02-bf95ddac38cb"
         },
         "InInventory": false,
         "MaxAmmo": 12,
         "Object": {
           "_type": "gameobject",
-          "go": "b1a09c11-a268-42d4-832c-12eb0449dd87"
+          "go": "27fddfd4-17f9-414c-8399-6cb78c338c76"
         },
         "OnUse": {
           "__version": 7,
-          "__guid": "52ed9f74-88cc-4b7c-bac5-979949e151e3",
+          "__guid": "5f40c25c-2887-48ee-9711-e8f9e930689b",
           "UserData": {
             "Title": "On Use",
             "ReferencedComponentTypes": [
@@ -216,7 +216,7 @@
               "Properties": {
                 "gameobject": {
                   "_type": "gameobject",
-                  "go": "8c2d468e-94f1-433a-8dbf-a4cf9e19163d"
+                  "go": "e15ed6db-f325-4cf1-8dfe-1b76ae82a1d2"
                 }
               },
               "UserData": {
@@ -262,9 +262,9 @@
               "Id": 657,
               "Type": "call",
               "Properties": {
+                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
-                "_isStatic": false,
-                "_type": "ActionGraphDelay"
+                "_isStatic": false
               },
               "UserData": {
                 "Position": "96,1104"
@@ -340,9 +340,9 @@
               "Id": 771,
               "Type": "call",
               "Properties": {
+                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
-                "_isStatic": false,
-                "_type": "ActionGraphDelay"
+                "_isStatic": false
               },
               "UserData": {
                 "Position": "1648,1328"
@@ -386,7 +386,7 @@
               "DstName": "Damage"
             },
             {
-              "Value": 1,
+              "Value": 0.7,
               "DstId": 511,
               "DstName": "FireRate"
             },
@@ -744,7 +744,7 @@
           "Defaults": {
             "$564.gameobject": {
               "_type": "gameobject",
-              "go": "8c2d468e-94f1-433a-8dbf-a4cf9e19163d"
+              "go": "e15ed6db-f325-4cf1-8dfe-1b76ae82a1d2"
             }
           }
         },
@@ -752,18 +752,18 @@
       },
       {
         "__type": "IconComponent",
-        "__guid": "501235b7-4b61-415b-a8ca-4e728f1e6781",
+        "__guid": "e6498989-d7de-49f6-9c66-8118cf5f315d",
         "Icon": "shotgun.vtex"
       },
       {
         "__type": "ActionGraphDelay",
-        "__guid": "f5508c4c-c7ae-4c09-a058-dbf6fda0fa84",
+        "__guid": "6b3d08b1-01f1-450d-b6f1-788ee5736040",
         "Delay": false
       }
     ],
     "Children": [
       {
-        "__guid": "b1a09c11-a268-42d4-832c-12eb0449dd87",
+        "__guid": "27fddfd4-17f9-414c-8399-6cb78c338c76",
         "Flags": 0,
         "Name": "ViewModelCamera",
         "Tags": "viewmodel",
@@ -773,7 +773,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "38dfa764-d73e-466d-8e6f-fe20adac3337",
+            "__guid": "a9da5d93-bffc-4503-b0d7-7228a46da20d",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 90,
@@ -791,7 +791,7 @@
         ],
         "Children": [
           {
-            "__guid": "144e6f34-45b9-4bc0-aa34-12983c3d7a6d",
+            "__guid": "fabb06f6-4b6c-45ed-a0ec-54dfd9b0cfde",
             "Flags": 0,
             "Name": "ViewModel",
             "Enabled": true,
@@ -799,7 +799,7 @@
             "NetworkInterpolation": true,
             "Children": [
               {
-                "__guid": "8c2d468e-94f1-433a-8dbf-a4cf9e19163d",
+                "__guid": "e15ed6db-f325-4cf1-8dfe-1b76ae82a1d2",
                 "Flags": 0,
                 "Name": "gun",
                 "Enabled": true,
@@ -808,7 +808,7 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "989a6741-70a1-41f8-ae1e-80876a959d94",
+                    "__guid": "dc6f1e59-c6f5-45d2-948b-f2e8f0ef064b",
                     "BodyGroups": 7,
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
@@ -818,7 +818,7 @@
                 ]
               },
               {
-                "__guid": "27cbdbf4-095f-4c79-bb7e-5276c5ca7f27",
+                "__guid": "3836ac3a-1976-466d-af34-045bd79478b0",
                 "Flags": 0,
                 "Name": "arms",
                 "Enabled": true,
@@ -827,12 +827,12 @@
                 "Components": [
                   {
                     "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "8ed63805-d485-4a65-bf81-f9364c1d4a9d",
+                    "__guid": "726e4485-9000-449e-aaae-b03dac1c7af3",
                     "BodyGroups": 21,
                     "BoneMergeTarget": {
                       "_type": "component",
-                      "component_id": "989a6741-70a1-41f8-ae1e-80876a959d94",
-                      "go": "8c2d468e-94f1-433a-8dbf-a4cf9e19163d",
+                      "component_id": "dc6f1e59-c6f5-45d2-948b-f2e8f0ef064b",
+                      "go": "e15ed6db-f325-4cf1-8dfe-1b76ae82a1d2",
                       "component_type": "SkinnedModelRenderer"
                     },
                     "CreateBoneObjects": false,
@@ -847,7 +847,7 @@
         ]
       },
       {
-        "__guid": "17db5cd1-1a97-42f0-b686-ebba5c7da371",
+        "__guid": "46a5fccd-1d6e-41db-8c02-bf95ddac38cb",
         "Flags": 0,
         "Name": "PickUpObject",
         "Enabled": true,
@@ -856,7 +856,7 @@
         "Components": [
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "d8faec2e-fd67-411a-94e0-b575b798efe3",
+            "__guid": "2102d1b0-0f93-4a40-968d-ec7591a17335",
             "Center": "0,0,4.399999",
             "IsTrigger": false,
             "Scale": "46.60007,3.89999,7.500059",
@@ -864,7 +864,7 @@
           },
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "9e74173a-9f57-407b-92ae-a646605b9711",
+            "__guid": "806843ed-370d-43da-bb3b-e59005ee8e8e",
             "BodyGroups": 7,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_shotgun_spaghellim4/w_spaghellim4.vmdl",
@@ -873,7 +873,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "8f7b4288-350b-4b80-a5e0-c97b85d1d251",
+            "__guid": "24ece37d-4aa0-4999-9899-6d15f7d19326",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -885,12 +885,12 @@
           },
           {
             "__type": "Kicks.PopupUi",
-            "__guid": "42e052da-ee99-460f-bfa6-db69220ab094",
+            "__guid": "24382bfa-b200-4cef-bd92-6eea7f2483ba",
             "Description": "Shotgun",
             "Name": "Shotgun",
             "PickUpAction": {
               "__version": 7,
-              "__guid": "27deaf90-d6a3-4938-8dc5-a43cec1fd716",
+              "__guid": "d1b81eaf-e833-4b3e-815c-90e323204eb4",
               "UserData": {
                 "Title": "Pick Up Action",
                 "ReferencedComponentTypes": []

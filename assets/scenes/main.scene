@@ -77,187 +77,6 @@
             "component_type": "Interactor"
           },
           "Metal": 0,
-          "OnComponentStart": {
-            "__version": 7,
-            "__guid": "3e77f1bb-90fc-4344-bd0a-18255c25e77b",
-            "UserData": {
-              "Title": "On Component Start",
-              "ReferencedComponentTypes": [
-                "package.nolankicks.dead4left2/Inventory"
-              ]
-            },
-            "Variables": [
-              {
-                "Name": "Inventory",
-                "Type": "Inventory"
-              }
-            ],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input",
-                "UserData": {
-                  "Position": "-416,96"
-                }
-              },
-              {
-                "Id": 1,
-                "Type": "scene.get",
-                "Properties": {
-                  "T": "Inventory"
-                },
-                "UserData": {
-                  "Position": "-416,208"
-                }
-              },
-              {
-                "Id": 2,
-                "Type": "var",
-                "Properties": {
-                  "_var": "Inventory"
-                },
-                "UserData": {
-                  "Position": "-176,96"
-                }
-              },
-              {
-                "Id": 8,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_type": "Inventory",
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "912,96"
-                }
-              },
-              {
-                "Id": 15,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_type": "Inventory",
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "1632,96"
-                }
-              },
-              {
-                "Id": 38,
-                "Type": "call",
-                "Properties": {
-                  "_isStatic": false,
-                  "_type": "Inventory",
-                  "_name": "AddItem"
-                },
-                "UserData": {
-                  "Position": "1296,96"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "SrcId": 0,
-                "SrcName": "_target",
-                "DstId": 1,
-                "DstName": "_this"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 2,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_result",
-                "DstId": 2,
-                "DstName": "_value"
-              },
-              {
-                "Value": 1,
-                "DstId": 8,
-                "DstName": "Slot"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 8,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_pistol.prefab"
-                },
-                "DstId": 8,
-                "DstName": "item"
-              },
-              {
-                "Value": 3,
-                "DstId": 15,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 38,
-                "SrcName": "_signal",
-                "DstId": 15,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 15,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_fists.prefab"
-                },
-                "DstId": 15,
-                "DstName": "item"
-              },
-              {
-                "Value": 2,
-                "DstId": 38,
-                "DstName": "Slot"
-              },
-              {
-                "SrcId": 8,
-                "SrcName": "_signal",
-                "DstId": 38,
-                "DstName": "_signal"
-              },
-              {
-                "VarName": "Inventory",
-                "DstId": 38,
-                "DstName": "_target"
-              },
-              {
-                "Value": {
-                  "_type": "gameobject",
-                  "prefab": "prefabs/weapons/weapon_crowbar.prefab"
-                },
-                "DstId": 38,
-                "DstName": "item"
-              }
-            ],
-            "Defaults": {
-              "$41._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_pistol.prefab"
-              },
-              "$44._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_fists.prefab"
-              },
-              "$47._value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/weapons/weapon_crowbar.prefab"
-              }
-            }
-          },
           "RunSpeed": 300,
           "ShowShopUi": false,
           "Stone": 0,
@@ -270,16 +89,7 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
-          "ItemsToSpawnWith": [
-            {
-              "_type": "gameobject",
-              "go": "907a6802-51a0-4453-a782-7e659dbdab0c"
-            },
-            {
-              "_type": "gameobject",
-              "go": "907a6802-51a0-4453-a782-7e659dbdab0c"
-            }
-          ],
+          "ItemsToSpawnWith": [],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -13348,9 +13158,9 @@
                 "Id": 64,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "ActionGraphDelay",
-                  "_name": "SetDelay"
+                  "_name": "SetDelay",
+                  "_isStatic": false
                 },
                 "UserData": {
                   "Position": "3520,80"
@@ -15885,6 +15695,348 @@
             "_type": "gameobject",
             "go": "e7bb44a8-6f61-42db-9683-d68feac893d0"
           },
+          "OnUse": {
+            "__version": 7,
+            "__guid": "5f7fa830-d3d0-42b7-904d-2510db56c0ad",
+            "UserData": {
+              "Title": "On Use",
+              "ReferencedComponentTypes": [
+                "Sandbox.SkinnedModelRenderer"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Labels": {
+                    "actionGraphItem": "item",
+                    "playerController": "player"
+                  }
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "if",
+                "UserData": {
+                  "Position": "224,-0"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "ActionGraphTrace",
+                "UserData": {
+                  "Position": "528,-0"
+                }
+              },
+              {
+                "Id": 14,
+                "Type": "if",
+                "UserData": {
+                  "Position": "896,-0"
+                }
+              },
+              {
+                "Id": 16,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "82806ab6-6ce4-44ff-b489-76577d623d8c"
+                  }
+                },
+                "UserData": {
+                  "Position": "832,304"
+                }
+              },
+              {
+                "Id": 37,
+                "Type": "if",
+                "UserData": {
+                  "Position": "416,-208"
+                }
+              },
+              {
+                "Id": 38,
+                "Type": "input.pressed",
+                "UserData": {
+                  "Position": "208,-208"
+                }
+              },
+              {
+                "Id": 55,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Kicks.PlayerController",
+                  "_name": "CharacterController"
+                },
+                "UserData": {
+                  "Position": "-128,-464"
+                }
+              },
+              {
+                "Id": 56,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Sandbox.CharacterController",
+                  "_name": "Velocity"
+                },
+                "UserData": {
+                  "Position": "208,-496"
+                }
+              },
+              {
+                "Id": 57,
+                "Type": "property",
+                "Properties": {
+                  "_type": "Vector3",
+                  "_name": "Length"
+                },
+                "UserData": {
+                  "Position": "528,-480"
+                }
+              },
+              {
+                "Id": 73,
+                "Type": "input.down",
+                "UserData": {
+                  "Position": "-32,208"
+                }
+              },
+              {
+                "Id": 75,
+                "Type": "scene.get",
+                "ParentId": 16,
+                "Properties": {
+                  "T": "Sandbox.SkinnedModelRenderer"
+                },
+                "UserData": {
+                  "Labels": {
+                    "_result": "renderer"
+                  }
+                }
+              },
+              {
+                "Id": 76,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.SkinnedModelRenderer",
+                  "_name": "Set",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "1152,0"
+                }
+              },
+              {
+                "Id": 80,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.SkinnedModelRenderer",
+                  "_name": "Set",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "672,-192"
+                }
+              },
+              {
+                "Id": 92,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.SkinnedModelRenderer",
+                  "_name": "Set",
+                  "_isStatic": false
+                },
+                "UserData": {
+                  "Position": "816,-448"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 73,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "condition"
+              },
+              {
+                "Value": 10,
+                "DstId": 4,
+                "DstName": "Damage"
+              },
+              {
+                "Value": 1,
+                "DstId": 4,
+                "DstName": "FireRate"
+              },
+              {
+                "Value": 0,
+                "DstId": 4,
+                "DstName": "Recoil"
+              },
+              {
+                "Value": 0,
+                "DstId": 4,
+                "DstName": "Spread"
+              },
+              {
+                "Value": 300,
+                "DstId": 4,
+                "DstName": "TraceLength"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "true",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "actionGraphItem",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "_signal",
+                "DstId": 14,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 4,
+                "SrcName": "AbleToFire",
+                "DstId": 14,
+                "DstName": "condition"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_signal",
+                "DstId": 37,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 38,
+                "SrcName": "_result",
+                "DstId": 37,
+                "DstName": "condition"
+              },
+              {
+                "Value": "Jump",
+                "DstId": 38,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "playerController",
+                "DstId": 55,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 55,
+                "SrcName": "_result",
+                "DstId": 56,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 56,
+                "SrcName": "_result",
+                "DstId": 57,
+                "DstName": "_target"
+              },
+              {
+                "Value": "attack1",
+                "DstId": 73,
+                "DstName": "action"
+              },
+              {
+                "SrcId": 16,
+                "SrcName": "_result",
+                "DstId": 75,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 14,
+                "SrcName": "true",
+                "DstId": 76,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 76,
+                "DstName": "_target"
+              },
+              {
+                "Value": "b_attack",
+                "DstId": 76,
+                "DstName": "v"
+              },
+              {
+                "Value": true,
+                "DstId": 76,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 37,
+                "SrcName": "true",
+                "DstId": 80,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 80,
+                "DstName": "_target"
+              },
+              {
+                "Value": "b_jump",
+                "DstId": 80,
+                "DstName": "v"
+              },
+              {
+                "Value": true,
+                "DstId": 80,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 37,
+                "SrcName": "_signal",
+                "DstId": 92,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 75,
+                "SrcName": "_result",
+                "DstId": 92,
+                "DstName": "_target"
+              },
+              {
+                "Value": "move_groundspeed",
+                "DstId": 92,
+                "DstName": "v"
+              },
+              {
+                "SrcId": 57,
+                "SrcName": "_result",
+                "DstId": 92,
+                "DstName": "value"
+              }
+            ],
+            "Defaults": {
+              "$16.gameobject": {
+                "_type": "gameobject",
+                "go": "82806ab6-6ce4-44ff-b489-76577d623d8c"
+              }
+            }
+          },
           "UsesAmmo": false
         },
         {
@@ -16072,6 +16224,7 @@
               "Flags": 0,
               "Name": "arms",
               "Position": "0,0,0",
+              "Tags": "viewmodel",
               "Enabled": true,
               "NetworkMode": 2,
               "NetworkInterpolation": true,
@@ -16097,7 +16250,7 @@
               "__guid": "82806ab6-6ce4-44ff-b489-76577d623d8c",
               "Flags": 0,
               "Name": "knife",
-              "Position": "0,0,0",
+              "Position": "8,0,0",
               "Tags": "viewmodel",
               "Enabled": true,
               "NetworkMode": 2,
@@ -16142,7 +16295,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-24T15:20:07.7291747-04:00",
+  "LastSaved": "2024-05-24T21:25:07.1419959-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.can_long",
