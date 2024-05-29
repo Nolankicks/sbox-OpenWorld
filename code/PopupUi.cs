@@ -36,4 +36,9 @@ public sealed class PopupUi : Component
 	{
 		ShowPopUp = false;
 	}
+
+	public void UnParent(GameObject gameObject)
+	{
+		gameObject.Parent = null;
+	}
 }

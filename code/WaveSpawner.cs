@@ -1,7 +1,7 @@
 using Kicks;
 using Sandbox;
 
-public sealed class WaveSpawner : Component
+public sealed class WaveSpawner : Component, Component.ITriggerListener
 {
 	[Property] public GameObject ZombiePrefab { get; set; }
 	[Property] public bool CoolDown { get; set; } = false;
@@ -11,17 +11,26 @@ public sealed class WaveSpawner : Component
 	[Property] public GameObject WaveTrigger { get; set; }
 	[Property] public bool IsSpawning { get; set; } = false;
 	[Property] public List<GameObject> WaveSpawnLocations { get; set; }
+	public bool Started { get; set; } = false;
+	[Property] public Action WaveAction { get; set; }
+	[Property] public string SpawnLocationString { get; set; } = "zombiespawn";
 	protected override void OnStart()
 	{
-		var spawns = Scene.GetAllComponents<SpawnPoint>().Where(x => x.Tags.Has("zombiespawn")).ToList();
+		var spawns = Scene.GetAllComponents<SpawnPoint>().Where(x => x.Tags.Has(SpawnLocationString)).ToList();
 		foreach (var spawn in spawns)
 		{
 			WaveSpawnLocations.Add(spawn.GameObject);
 		}
 	}
 
-	public async Task StartWave(int NumberOfZombies)
+	public async Task StartWave(int NumberOfZombies, bool IsFinalWave = false, bool IsFirstWave = false)
 	{
+		Log.Info("Wave");
+		if (IsFirstWave)
+		{
+			Log.Info("First Wave");
+			IsSpawning = true;
+		}
 		for (int i = 0; i < NumberOfZombies; i++)
 		{
 			var spawnLocation = Game.Random.FromList(WaveSpawnLocations);
@@ -35,12 +44,27 @@ public sealed class WaveSpawner : Component
 		}
 		CurrentWaveIndex++;
 		CurrentWave.Clear();
+		if (IsFinalWave)
+		{
+			Log.Info("Final Wave");
+			IsSpawning = false;
+		}
 		
 	}
-
-	public async Task AwaitPlayer()
+	void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
+	{
+		if (other.GameObject.Parent.Tags.Has("player") && !Started)
+		{
+			Log.Info("WaveAction");
+			WaveAction?.Invoke();
+		}
+	}
+	void ITriggerListener.OnTriggerExit(Sandbox.Collider other)
 	{
 
+	}
+	public async Task AwaitPlayer()
+	{
 		var player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		while (Vector3.DistanceBetween(player.Transform.Position, WaveTrigger.Transform.Position) > 150)
 		{

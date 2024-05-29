@@ -13,7 +13,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "8dc94fac-baa2-4c76-9a34-8ad912c3a1d2",
-          "MapName": "nolankicks.demo_level2",
+          "MapName": "maps/demo_level2.vmap",
           "UseMapFromLaunch": false
         }
       ],
@@ -1414,9 +1414,9 @@
                 "Id": 9,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
+                  "_name": "Parent",
                   "_type": "Sandbox.GameObject",
-                  "_name": "Parent"
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1008,256"
@@ -1437,8 +1437,8 @@
                 "Id": 14,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "1184,304"
@@ -1497,8 +1497,8 @@
                 "Id": 22,
                 "Type": "property",
                 "Properties": {
-                  "_type": "Sandbox.GameTransform",
-                  "_name": "Position"
+                  "_name": "Position",
+                  "_type": "Sandbox.GameTransform"
                 },
                 "UserData": {
                   "Position": "688,256"
@@ -1530,9 +1530,9 @@
                 "Id": 26,
                 "Type": "property",
                 "Properties": {
-                  "_kind": "Set",
+                  "_name": "Rotation",
                   "_type": "Sandbox.GameTransform",
-                  "_name": "Rotation"
+                  "_kind": "Set"
                 },
                 "UserData": {
                   "Position": "1488,352"
@@ -2317,8 +2317,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_name": "Destroy",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2589,8 +2589,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_name": "Destroy",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -2970,7 +2970,8 @@
                 "prefab": "prefabs/light_ammo_pickup.prefab"
               }
             }
-          }
+          },
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -2990,7 +2991,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -3087,8 +3089,15 @@
                 "DstId": 4,
                 "DstName": "_target"
               }
-            ]
-          }
+            ],
+            "Defaults": {
+              "$5._value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/coin_pickup.prefab"
+              }
+            }
+          },
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -3164,8 +3173,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_type": "Sandbox.GameObject",
-                  "_name": "Destroy"
+                  "_name": "Destroy",
+                  "_type": "Sandbox.GameObject"
                 },
                 "UserData": {
                   "Position": "1024,128"
@@ -9433,7 +9442,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9453,7 +9463,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9472,7 +9483,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9491,7 +9503,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 50,
           "IsStatic": false,
-          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl"
+          "Model": "models/sbox_props/wooden_crate/wooden_crate.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9511,7 +9524,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/plastic_crate/plastic_crate_01.vmdl"
+          "Model": "models/props/plastic_crate/plastic_crate_01.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9531,7 +9545,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/plastic_crate/plastic_crate_04.vmdl"
+          "Model": "models/props/plastic_crate/plastic_crate_04.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9550,7 +9565,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9569,7 +9585,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can_gib.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9588,7 +9605,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/beer_keg/beer_keg_a1.vmdl"
+          "Model": "models/props/beer_keg/beer_keg_a1.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9607,7 +9625,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/spraycans/oilbody.vmdl"
+          "Model": "models/props/spraycans/oilbody.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9626,7 +9645,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_standard.vmdl"
+          "Model": "models/props/packaged_food/can_standard.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9645,7 +9665,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_long.vmdl"
+          "Model": "models/props/packaged_food/can_long.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9664,7 +9685,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/spraycans/bugbody.vmdl"
+          "Model": "models/props/spraycans/bugbody.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9704,7 +9726,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/sbox_props/saw_blade/saw_blade_a.vmdl"
+          "Model": "models/sbox_props/saw_blade/saw_blade_a.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9723,7 +9746,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packing_tape/packing_tape.vmdl"
+          "Model": "models/props/packing_tape/packing_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9742,7 +9766,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packing_tape/packing_tape.vmdl"
+          "Model": "models/props/packing_tape/packing_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9789,7 +9814,8 @@
           "Health": 200,
           "IsStatic": false,
           "MaterialGroup": "default",
-          "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl"
+          "Model": "models/sbox_props/wheely_bin/wheely_bin.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9836,7 +9862,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl"
+          "Model": "models/props/trim_sheets/crate/wooden_crate/wooden_crate_02.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -9855,7 +9882,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_long.vmdl"
+          "Model": "models/props/packaged_food/can_long.vmdl",
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "Kicks.PopupUi",
@@ -9959,7 +9987,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/packaged_food/can_small.vmdl"
+          "Model": "models/props/packaged_food/can_small.vmdl",
+          "Tint": "1,1,1,1"
         },
         {
           "__type": "Kicks.PopupUi",
@@ -10064,7 +10093,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 20,
           "IsStatic": false,
-          "Model": "models/props/wet_floor_sign/wet_floor_sign.vmdl"
+          "Model": "models/props/wet_floor_sign/wet_floor_sign.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10083,7 +10113,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 300,
           "IsStatic": false,
-          "Model": "models/sbox_props/plastic_bucket_a/plastic_bucket_a.vmdl"
+          "Model": "models/sbox_props/plastic_bucket_a/plastic_bucket_a.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10102,7 +10133,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10121,7 +10153,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10141,7 +10174,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10161,7 +10195,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10180,7 +10215,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/electrical_tape/electrical_tape.vmdl"
+          "Model": "models/props/electrical_tape/electrical_tape.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10201,7 +10237,8 @@
           "Health": 25,
           "IsStatic": false,
           "MaterialGroup": "default",
-          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl"
+          "Model": "models/props/trim_sheets/storage/storage_plastic_box_01.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10220,7 +10257,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/spraycans/bugbody.vmdl"
+          "Model": "models/props/spraycans/bugbody.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10265,7 +10303,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/spraycans/oilbody.vmdl"
+          "Model": "models/props/spraycans/oilbody.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10284,7 +10323,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 0,
           "IsStatic": false,
-          "Model": "models/props/spraycans/paintbody.vmdl"
+          "Model": "models/props/spraycans/paintbody.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10303,7 +10343,8 @@
           "BodyGroups": 18446744073709551615,
           "Health": 10,
           "IsStatic": false,
-          "Model": "models/sbox_props/cola_can/cola_can.vmdl"
+          "Model": "models/sbox_props/cola_can/cola_can.vmdl",
+          "Tint": "1,1,1,1"
         }
       ]
     },
@@ -10370,7 +10411,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-05-21T13:36:32.4344093-04:00",
+  "LastSaved": "2024-05-27T20:46:16.7648178-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.aircon_unit_large_128x64_a",

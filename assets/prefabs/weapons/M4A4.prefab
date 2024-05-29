@@ -1,6 +1,6 @@
 {
   "RootObject": {
-    "__guid": "71e86998-9580-4954-8ac3-551675ed11ab",
+    "__guid": "1c4a76be-5e92-43ad-bc54-432092f95498",
     "Flags": 0,
     "Name": "m4a4",
     "Enabled": true,
@@ -9,23 +9,23 @@
     "Components": [
       {
         "__type": "ActionGraphItem",
-        "__guid": "ee1e930a-e8a0-4bea-b9e6-0134bbc5a932",
+        "__guid": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
         "AbleToDrop": true,
         "Ammo": 30,
         "AmmoType": "HeavyAmmo",
         "DropppedItem": {
           "_type": "gameobject",
-          "go": "ed10ce0c-4210-4870-a32a-2af6f7973c09"
+          "go": "8c756462-9c1d-4ed9-9734-54c9a1b60b04"
         },
         "InInventory": false,
-        "MaxAmmo": 30,
+        "MaxAmmo": 45,
         "Object": {
           "_type": "gameobject",
-          "go": "2ffd3742-099f-48a9-8c27-e123c0ec6905"
+          "go": "ba0d5f5f-0d25-4582-aa6e-87c469dedef7"
         },
         "OnUse": {
           "__version": 7,
-          "__guid": "9620048c-5396-461c-b560-2022e854f8eb",
+          "__guid": "46f3e34d-9bbd-4b4e-97b8-3d31c231597d",
           "UserData": {
             "Title": "On Use",
             "ReferencedComponentTypes": [
@@ -107,7 +107,7 @@
               "Properties": {
                 "gameobject": {
                   "_type": "gameobject",
-                  "go": "66d69313-866c-4a5a-917c-971b9dc807d3"
+                  "go": "b58c81f8-085e-42c5-b20e-400945aec469"
                 }
               },
               "UserData": {
@@ -138,9 +138,9 @@
               "Id": 420,
               "Type": "call",
               "Properties": {
+                "_isStatic": false,
                 "_type": "ActionGraphDelay",
-                "_name": "SetDelay",
-                "_isStatic": false
+                "_name": "SetDelay"
               },
               "UserData": {
                 "Position": "1488,-176"
@@ -260,9 +260,9 @@
               "Id": 764,
               "Type": "call",
               "Properties": {
-                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
                 "_name": "Set",
-                "_isStatic": false
+                "_type": "Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
                 "Position": "2448,80"
@@ -283,6 +283,13 @@
               "Type": "Play Sound",
               "UserData": {
                 "Position": "2048,80"
+              }
+            },
+            {
+              "Id": 803,
+              "Type": "SpawnMuzzleFlash",
+              "UserData": {
+                "Position": "2768,80"
               }
             }
           ],
@@ -389,7 +396,7 @@
               "DstName": "delay"
             },
             {
-              "Value": 75,
+              "Value": 50,
               "DstId": 447,
               "DstName": "Damage"
             },
@@ -608,12 +615,42 @@
               "SrcName": "traceStartPos",
               "DstId": 788,
               "DstName": "startPos"
+            },
+            {
+              "SrcId": 755,
+              "SrcName": "_result",
+              "DstId": 803,
+              "DstName": "Gun"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/weapons/muzzleflash.prefab"
+              },
+              "DstId": 803,
+              "DstName": "MuzzleFlash"
+            },
+            {
+              "SrcId": 764,
+              "SrcName": "_signal",
+              "DstId": 803,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "actionGraphItem",
+              "DstId": 803,
+              "DstName": "_target"
             }
           ],
           "Defaults": {
             "$340.gameobject": {
               "_type": "gameobject",
-              "go": "66d69313-866c-4a5a-917c-971b9dc807d3"
+              "go": "b58c81f8-085e-42c5-b20e-400945aec469"
+            },
+            "$818._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapons/muzzleflash.prefab"
             }
           }
         },
@@ -621,18 +658,18 @@
       },
       {
         "__type": "IconComponent",
-        "__guid": "4ffb7f90-0117-4b3a-a668-4c379ffcba97",
+        "__guid": "41f17fb9-9404-4cea-8513-5f8947cbaf57",
         "Icon": "textures/m4.vtex"
       },
       {
         "__type": "ActionGraphDelay",
-        "__guid": "44207fed-3e30-4faa-a64c-b83badb9882d",
+        "__guid": "73a3a2d0-e562-443c-a9fa-218cb145f92b",
         "Delay": false
       }
     ],
     "Children": [
       {
-        "__guid": "ed10ce0c-4210-4870-a32a-2af6f7973c09",
+        "__guid": "8c756462-9c1d-4ed9-9734-54c9a1b60b04",
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
@@ -641,13 +678,13 @@
         "Components": [
           {
             "__type": "Kicks.PopupUi",
-            "__guid": "92432ef7-c797-4644-b72e-f51c0f77a415",
+            "__guid": "734be26c-ac00-4239-9c00-4acf31b28ccd",
             "Description": "M4A4",
             "Icon": "textures/m4.vtex",
             "Name": "M4A4",
             "PickUpAction": {
               "__version": 7,
-              "__guid": "e70fc1e9-86da-4438-9e7a-77feb5c72315",
+              "__guid": "801b6403-27b0-4b59-a193-67b3cc31bd7c",
               "UserData": {
                 "Title": "Pick Up Action",
                 "ReferencedComponentTypes": []
@@ -701,9 +738,9 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
+                    "_isStatic": false,
                     "_type": "ActionGraphItem",
-                    "_name": "PickUp",
-                    "_isStatic": false
+                    "_name": "PickUp"
                   },
                   "UserData": {
                     "Position": "1024,0"
@@ -797,7 +834,7 @@
           },
           {
             "__type": "Sandbox.BoxCollider",
-            "__guid": "d3cce092-ddad-449d-b348-5a7184cd136d",
+            "__guid": "ab0404ab-c285-4f83-98b0-feff62d570b4",
             "Center": "3.799999,0,5.199997",
             "IsTrigger": false,
             "Scale": "31.50007,3.499955,11.09995",
@@ -805,7 +842,7 @@
           },
           {
             "__type": "Sandbox.Rigidbody",
-            "__guid": "d0ed8e5f-e0d2-4a4b-a518-8aeeb4204426",
+            "__guid": "2a342d98-0a46-42e2-8f02-f085c5e8c8b2",
             "AngularDamping": 0,
             "Gravity": true,
             "LinearDamping": 0,
@@ -817,7 +854,7 @@
           },
           {
             "__type": "Sandbox.SkinnedModelRenderer",
-            "__guid": "01aefcd7-08f5-4ba1-8ae9-ea5b60be8517",
+            "__guid": "b9f698a2-3d2a-4a5f-a0b9-910f6b1347aa",
             "BodyGroups": 5203,
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
@@ -827,7 +864,7 @@
         ]
       },
       {
-        "__guid": "2ffd3742-099f-48a9-8c27-e123c0ec6905",
+        "__guid": "ba0d5f5f-0d25-4582-aa6e-87c469dedef7",
         "Flags": 0,
         "Name": "Object",
         "Tags": "viewmodel",
@@ -837,7 +874,7 @@
         "Components": [
           {
             "__type": "Sandbox.CameraComponent",
-            "__guid": "19f9cd55-cfbb-4bf3-af8d-4303a84126d3",
+            "__guid": "9024677c-48da-486a-a56f-ff7880174b42",
             "BackgroundColor": "0.33333,0.46275,0.52157,1",
             "ClearFlags": "Depth, Stencil",
             "FieldOfView": 80,
@@ -855,7 +892,7 @@
         ],
         "Children": [
           {
-            "__guid": "66d69313-866c-4a5a-917c-971b9dc807d3",
+            "__guid": "b58c81f8-085e-42c5-b20e-400945aec469",
             "Flags": 0,
             "Name": "gun",
             "Enabled": true,
@@ -864,7 +901,7 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "777cfed6-72ef-4cfc-8454-14962956471d",
+                "__guid": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
                 "BodyGroups": 5203,
                 "CreateBoneObjects": false,
                 "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
@@ -874,7 +911,7 @@
             ]
           },
           {
-            "__guid": "def74e08-eb39-43d5-af3a-f27bdcf28c1a",
+            "__guid": "7c94b5ed-f78c-4e71-bb49-cc7aed6fe63d",
             "Flags": 0,
             "Name": "arms",
             "Tags": "skybox",
@@ -884,12 +921,12 @@
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "e90c2592-f2d5-4254-9178-68a73c6bd782",
+                "__guid": "507ab6e8-1231-4909-b7be-d949c4811a3e",
                 "BodyGroups": 21,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "777cfed6-72ef-4cfc-8454-14962956471d",
-                  "go": "66d69313-866c-4a5a-917c-971b9dc807d3",
+                  "component_id": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
+                  "go": "b58c81f8-085e-42c5-b20e-400945aec469",
                   "component_type": "SkinnedModelRenderer"
                 },
                 "CreateBoneObjects": false,

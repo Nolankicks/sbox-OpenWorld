@@ -287,5 +287,5 @@ public sealed class ActionGraphItem : Component
 		{
 		Sound.Play(FireSound, startPos);
 		}
-	}
+	}  
 }
