@@ -51,7 +51,7 @@
               "Id": 0,
               "Type": "input",
               "UserData": {
-                "Position": "-496,-0"
+                "Position": "-2016,64"
               }
             },
             {
@@ -61,7 +61,7 @@
                 "T": "ActionGraphItem"
               },
               "UserData": {
-                "Position": "-48,176"
+                "Position": "-1568,240"
               }
             },
             {
@@ -71,21 +71,21 @@
                 "_var": "Action Graph Item"
               },
               "UserData": {
-                "Position": "224,-0"
+                "Position": "-1296,64"
               }
             },
             {
               "Id": 11,
               "Type": "if",
               "UserData": {
-                "Position": "464,-0"
+                "Position": "-1056,64"
               }
             },
             {
               "Id": 161,
               "Type": "if",
               "UserData": {
-                "Position": "1040,0"
+                "Position": "-480,64"
               }
             },
             {
@@ -95,42 +95,42 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "1296,80"
+                "Position": "-224,144"
               }
             },
             {
               "Id": 175,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "704,-0"
+                "Position": "-816,64"
               }
             },
             {
               "Id": 193,
               "Type": "sound.playat",
               "UserData": {
-                "Position": "1712,80"
+                "Position": "192,144"
               }
             },
             {
               "Id": 198,
               "Type": "input.pressed",
               "UserData": {
-                "Position": "144,-160"
+                "Position": "-1376,-96"
               }
             },
             {
               "Id": 200,
               "Type": "if",
               "UserData": {
-                "Position": "512,-160"
+                "Position": "-1008,-96"
               }
             },
             {
               "Id": 201,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "816,-176"
+                "Position": "-704,-112"
               }
             },
             {
@@ -140,7 +140,7 @@
                 "_var": "Ammo"
               },
               "UserData": {
-                "Position": "-64,0"
+                "Position": "-1584,64"
               }
             },
             {
@@ -150,14 +150,42 @@
                 "_var": "inv"
               },
               "UserData": {
-                "Position": "-304,0"
+                "Position": "-1824,64"
               }
             },
             {
               "Id": 325,
               "Type": "input.down",
               "UserData": {
-                "Position": "240,96"
+                "Position": "-1472,336"
+              }
+            },
+            {
+              "Id": 339,
+              "Type": "op.and",
+              "UserData": {
+                "Position": "-1184,304"
+              }
+            },
+            {
+              "Id": 340,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphItem"
+              },
+              "UserData": {
+                "Position": "-1664,464"
+              }
+            },
+            {
+              "Id": 341,
+              "Type": "property",
+              "Properties": {
+                "_type": "ActionGraphItem",
+                "_name": "AbleToFire"
+              },
+              "UserData": {
+                "Position": "-1424,464"
               }
             }
           ],
@@ -187,7 +215,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 325,
+              "SrcId": 339,
               "SrcName": "_result",
               "DstId": 11,
               "DstName": "condition"
@@ -352,6 +380,30 @@
               "Value": "attack1",
               "DstId": 325,
               "DstName": "action"
+            },
+            {
+              "SrcId": 325,
+              "SrcName": "_result",
+              "DstId": 339,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 341,
+              "SrcName": "_result",
+              "DstId": 339,
+              "DstName": "b"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 340,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 340,
+              "SrcName": "_result",
+              "DstId": 341,
+              "DstName": "_target"
             }
           ]
         },
@@ -404,10 +456,10 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
-                    "_name": "TryGet",
-                    "T": "ActionGraphItem",
                     "_type": "Sandbox.IComponentLister",
-                    "_isStatic": false
+                    "_isStatic": false,
+                    "_name": "TryGet",
+                    "T": "ActionGraphItem"
                   },
                   "UserData": {
                     "Position": "176,240"
@@ -435,8 +487,8 @@
                   "Type": "call",
                   "Properties": {
                     "_type": "ActionGraphItem",
-                    "_name": "PickUp",
-                    "_isStatic": false
+                    "_isStatic": false,
+                    "_name": "PickUp"
                   },
                   "UserData": {
                     "Position": "1024,0"

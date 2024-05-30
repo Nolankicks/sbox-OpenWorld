@@ -8,8 +8,10 @@ public sealed class Car : Component
 	public Vector3 WishVelocity { get; set; }
 	[Property] public float MoveSpeed { get; set; } = 1000;
 	public PlayerController CurrentDriver { get; set; }
+	[Property] public Rigidbody Rigidbody { get; set; }
 	protected override void OnUpdate()
 	{
+		Rigidbody.Enabled = !IsDriving;
 		if (IsDriving)
 		{
 			Drive();

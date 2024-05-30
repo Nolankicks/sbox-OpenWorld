@@ -49,7 +49,7 @@
               "Id": 0,
               "Type": "input",
               "UserData": {
-                "Position": "-96,0",
+                "Position": "-352,-160",
                 "Labels": {
                   "actionGraphItem": "item",
                   "inventory": "inv",
@@ -138,9 +138,9 @@
               "Id": 420,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
+                "_name": "SetDelay",
                 "_type": "ActionGraphDelay",
-                "_name": "SetDelay"
+                "_isStatic": false
               },
               "UserData": {
                 "Position": "1488,-176"
@@ -158,8 +158,8 @@
               "Type": "property",
               "ParentId": 416,
               "Properties": {
-                "_type": "ActionGraphDelay",
-                "_name": "Delay"
+                "_name": "Delay",
+                "_type": "ActionGraphDelay"
               },
               "UserData": {
                 "Labels": {
@@ -236,8 +236,8 @@
               "Id": 756,
               "Type": "call",
               "Properties": {
-                "_type": "Sandbox.SkinnedModelRenderer",
                 "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer",
                 "_isStatic": false
               },
               "UserData": {
@@ -248,8 +248,8 @@
               "Id": 760,
               "Type": "call",
               "Properties": {
-                "_type": "Sandbox.SkinnedModelRenderer",
                 "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer",
                 "_isStatic": false
               },
               "UserData": {
@@ -260,9 +260,9 @@
               "Id": 764,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_name": "Set",
-                "_type": "Sandbox.SkinnedModelRenderer"
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false
               },
               "UserData": {
                 "Position": "2448,80"
@@ -708,10 +708,10 @@
                   "Id": 1,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_name": "TryGet",
-                    "T": "ActionGraphItem",
-                    "_type": "Sandbox.IComponentLister"
+                    "_type": "Sandbox.IComponentLister",
+                    "_isStatic": false,
+                    "T": "ActionGraphItem"
                   },
                   "UserData": {
                     "Position": "176,240"
@@ -738,9 +738,9 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
+                    "_name": "PickUp",
                     "_type": "ActionGraphItem",
-                    "_name": "PickUp"
+                    "_isStatic": false
                   },
                   "UserData": {
                     "Position": "1024,0"

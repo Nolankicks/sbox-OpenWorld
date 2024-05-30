@@ -21,6 +21,7 @@ public sealed class ActionGraphItem : Component
 	public PlayerController PlayerController { get; set; }
 	[Property] public bool UsesAmmo { get; set; }
 	[Property, ShowIf("UsesAmmo", true), Sync] public int Ammo { get; set; }
+	public bool AbleToFire { get; set; }
 	[Property, ShowIf("UsesAmmo", true), Sync] public int MaxAmmo { get; set; }
 	[Property] public AmmoContainer.AmmoTypes AmmoType { get; set; }
 	public int ShotsFired { get; set; }
@@ -35,6 +36,16 @@ public sealed class ActionGraphItem : Component
 		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
+	}
+	[ActionGraphNode("SetAdsAnims")]
+	public static void SetAdsAnims(SkinnedModelRenderer ViewModelGun, CameraComponent camera, bool IsAiming)
+	{
+		if (IsAiming)
+		{
+			Log.Info("Aiming");
+		}
+		ViewModelGun.Set( "ironsights", IsAiming ? 2 : 0 );
+		ViewModelGun.Set( "ironsights_fire_scale", IsAiming ? 0.2f : 0f );
 	}
 	protected override void OnUpdate()
 	{	
@@ -99,7 +110,7 @@ public sealed class ActionGraphItem : Component
 			}
 		}
 	}
-
+	
 	public void DropItem(Inventory inventory)
 	{
 		if (!AbleToDrop) return;
@@ -148,6 +159,14 @@ public sealed class ActionGraphItem : Component
 		return Random.Shared.Float(-1, 1);
 	}
 	public TimeSince timeSinceFire = 1000;
+
+	public async Task AwaitFire(float Time)
+	{
+		AbleToFire = false;
+		await GameTask.DelaySeconds(Time);
+		AbleToFire = true;
+	}
+
 	[ActionGraphNode("ActionGraphTrace"), Impure, Icon("sports_handball")]
 	public void ActionGraphTrace(int Damage, float Spread, int TraceLength, out bool TraceHit, out GameObject gameObject, out Vector3 hitPos, out Vector3 traceNormal, out Vector3 traceStartPos, float Recoil, float FireRate, out bool AbleToFire, bool RefreshTimeSince = true)
 	{
@@ -236,6 +255,7 @@ public sealed class ActionGraphItem : Component
 		}
 		
 	}
+
 	[ActionGraphNode("ActionGraphReload"), Icon("replay")]
 	public void ActionGraphReload(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int StartingAmmo)
 	{

@@ -90,7 +90,12 @@
           "Items": [],
           "ItemTextures": [],
           "AllWeaponsEnabled": true,
-          "ItemsToSpawnWith": [],
+          "ItemsToSpawnWith": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/weapons/m4a4.prefab"
+            }
+          ],
           "StartingItems": [],
           "TestTexture": "textures/player_spritesheet_1.vtex"
         },
@@ -16407,7 +16412,13 @@
             "component_type": "CharacterController"
           },
           "IsDriving": false,
-          "MoveSpeed": 1000
+          "MoveSpeed": 1000,
+          "Rigidbody": {
+            "_type": "component",
+            "component_id": "511da614-5738-47ce-981e-81b2feeaa50c",
+            "go": "e9f01542-63d0-4a91-bd17-a99b43acc1dd",
+            "component_type": "Rigidbody"
+          }
         },
         {
           "__type": "Sandbox.CharacterController",
@@ -16506,6 +16517,22 @@
             "ItemPrices": []
           },
           "ShowPopUp": true
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "511da614-5738-47ce-981e-81b2feeaa50c",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {
+            "Pitch": true,
+            "Yaw": true,
+            "Roll": true
+          },
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
         }
       ],
       "Children": [
@@ -16553,7 +16580,7 @@
   },
   "Title": "main",
   "Description": "",
-  "LastSaved": "2024-05-30T08:54:43.3377497-04:00",
+  "LastSaved": "2024-05-30T13:27:09.4348193-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.can_long",
