@@ -33,6 +33,7 @@ public sealed class PlayerController : Component
 	[Property] public PopupUi PopupUi { get; set; }
 	[Property] public int Coins { get; set; }
 	[Property] public bool FindSpawnPoint { get; set; } = false;
+	[Property] public bool MoveCamera { get; set; } = true;
 	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;
@@ -87,11 +88,15 @@ public sealed class PlayerController : Component
 		UpdateAnimation();
 		if (!IsProxy && AbleToMove)
 		{
-			MouseInput();
+			
 			Movement();
 			Crouch();
-			CamPos();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
+		}
+		if (!IsProxy && MoveCamera)
+		{
+			MouseInput();
+			CamPos();
 		}
 	}
 
