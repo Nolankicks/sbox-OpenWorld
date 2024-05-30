@@ -22,24 +22,31 @@ public sealed class Car : Component
 
 	public void EnterCar(PlayerController playerController)
 	{
+		GameObject.Network.SetOwnerTransfer(OwnerTransfer.Takeover);
+		GameObject.Network.TakeOwnership();
 		playerController.AbleToMove = false;
 		playerController.GameObject.Transform.LocalPosition = Vector3.Zero;
-		playerController.GameObject.Transform.Rotation = GameObject.Transform.Rotation;
+		GameObject.Transform.Rotation = new Angles(0, playerController.GameObject.Transform.Rotation.Yaw(), 0).ToRotation();
 		playerController.GameObject.Parent = GameObject;
 		CurrentDriver = playerController;
 		IsDriving = true;
 	}
 	public void LeaveCar(PlayerController playerController)
 	{
-		playerController.CharacterController.Enabled = true;
+		playerController.AbleToMove = true;
 		playerController.GameObject.Transform.Position = GameObject.Transform.Position + new Vector3(0, 0, 1);
 		playerController.GameObject.Transform.Rotation = GameObject.Transform.Rotation;
 		CurrentDriver = null;
 		IsDriving = false;
+		GameObject.Network.DropOwnership();
 	}
 
 	public void Drive()
 	{
+		if (Input.Pressed("use"))
+		{
+			LeaveCar(CurrentDriver);
+		}
 		var cc = CharacterController;
 		WishVelocity = Input.AnalogMove.Normal.WithY(0);
 		var halfGrav = Scene.PhysicsWorld.Gravity / 2;
