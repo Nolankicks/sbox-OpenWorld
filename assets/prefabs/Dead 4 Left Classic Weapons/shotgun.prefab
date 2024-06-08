@@ -262,8 +262,8 @@
               "Id": 657,
               "Type": "call",
               "Properties": {
-                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
+                "_type": "ActionGraphDelay",
                 "_isStatic": false
               },
               "UserData": {
@@ -340,8 +340,8 @@
               "Id": 771,
               "Type": "call",
               "Properties": {
-                "_type": "ActionGraphDelay",
                 "_name": "SetDelay",
+                "_type": "ActionGraphDelay",
                 "_isStatic": false
               },
               "UserData": {
@@ -353,6 +353,51 @@
               "Type": "sound.playat",
               "UserData": {
                 "Position": "2000,1312"
+              }
+            },
+            {
+              "Id": 798,
+              "Type": "call",
+              "Properties": {
+                "_name": "Set",
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false
+              },
+              "UserData": {
+                "Position": "-1888,1264"
+              }
+            },
+            {
+              "Id": 816,
+              "Type": "property",
+              "Properties": {
+                "_name": "CharacterController",
+                "_type": "Kicks.PlayerController"
+              },
+              "UserData": {
+                "Position": "-1840,1472"
+              }
+            },
+            {
+              "Id": 817,
+              "Type": "property",
+              "Properties": {
+                "_name": "Velocity",
+                "_type": "Sandbox.CharacterController"
+              },
+              "UserData": {
+                "Position": "-1536,1392"
+              }
+            },
+            {
+              "Id": 819,
+              "Type": "property",
+              "Properties": {
+                "_name": "Length",
+                "_type": "Vector3"
+              },
+              "UserData": {
+                "Position": "-1296,1408"
               }
             }
           ],
@@ -739,6 +784,41 @@
               "Value": "sounds/dead4left2shootsound.sound",
               "DstId": 772,
               "DstName": "soundEvent"
+            },
+            {
+              "SrcId": 515,
+              "SrcName": "_result",
+              "DstId": 798,
+              "DstName": "_target"
+            },
+            {
+              "Value": "move_groundspeed",
+              "DstId": 798,
+              "DstName": "v"
+            },
+            {
+              "SrcId": 819,
+              "SrcName": "_result",
+              "DstId": 798,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 507,
+              "SrcName": "playerController",
+              "DstId": 816,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 816,
+              "SrcName": "_result",
+              "DstId": 817,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 817,
+              "SrcName": "_result",
+              "DstId": 819,
+              "DstName": "_target"
             }
           ],
           "Defaults": {
@@ -813,7 +893,8 @@
                     "CreateBoneObjects": false,
                     "Model": "models/weapons/sbox_shotgun_spaghellim4/v_spaghellim4.vmdl",
                     "RenderType": "On",
-                    "Tint": "1,1,1,1"
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
                   }
                 ]
               },
@@ -838,7 +919,8 @@
                     "CreateBoneObjects": false,
                     "Model": "models/first_person/first_person_arms.vmdl",
                     "RenderType": "On",
-                    "Tint": "1,1,1,1"
+                    "Tint": "1,1,1,1",
+                    "UseAnimGraph": true
                   }
                 ]
               }
@@ -869,7 +951,8 @@
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_shotgun_spaghellim4/w_spaghellim4.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           },
           {
             "__type": "Sandbox.Rigidbody",

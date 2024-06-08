@@ -1,0 +1,22 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "fog_test",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "fog_test",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "sandcastle.sbox_cd#55827"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/fog_test.vmap"
+      }
+    }
+  }
+}
