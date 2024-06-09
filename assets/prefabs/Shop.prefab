@@ -15,7 +15,8 @@
         "MaterialGroup": "default",
         "Model": "models/citizen/citizen.vmdl",
         "RenderType": "On",
-        "Tint": "1,1,1,1"
+        "Tint": "1,1,1,1",
+        "UseAnimGraph": true
       },
       {
         "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -540,8 +541,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_name": "AddItem",
-                    "_type": "package.nolankicks.dead4left2/Inventory"
+                    "_type": "Inventory",
+                    "_name": "AddItem"
                   },
                   "UserData": {
                     "Position": "560,0"
@@ -552,11 +553,11 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_name": "GetNextSlot",
-                    "_type": "package.nolankicks.dead4left2/Inventory"
+                    "_type": "Inventory",
+                    "_name": "GetNextSlot"
                   },
                   "UserData": {
-                    "Position": "224,-48"
+                    "Position": "240,112"
                   }
                 }
               ],
@@ -568,7 +569,7 @@
                   "DstName": "Slot"
                 },
                 {
-                  "SrcId": 5,
+                  "SrcId": 0,
                   "SrcName": "_signal",
                   "DstId": 3,
                   "DstName": "_signal"
@@ -586,12 +587,6 @@
                   },
                   "DstId": 3,
                   "DstName": "item"
-                },
-                {
-                  "SrcId": 0,
-                  "SrcName": "_signal",
-                  "DstId": 5,
-                  "DstName": "_signal"
                 },
                 {
                   "SrcId": 0,
@@ -650,7 +645,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/shirt/loose_shirt/models/loose_shirts.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -675,7 +671,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/jacket/biker_jacket/models/biker_jacket.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -700,7 +697,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/shoes/trainers/trainers.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -725,7 +723,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/trousers/jeans/models/jeans_black.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -750,7 +749,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/hair/hair_scruffy_shaved_sides/models/scruffy_shaved_sides.vmdl",
                 "RenderType": "On",
-                "Tint": "0.15349,0.10994,0.10994,1"
+                "Tint": "0.15349,0.10994,0.10994,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -775,7 +775,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/makeup/bruised_face/models/bruised_face.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -800,7 +801,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/gloves/tactical_gloves/models/tactical_gloves.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           }
@@ -833,7 +835,8 @@
             "MaterialGroup": "default",
             "Model": "models/sbox_props/office_chair/office_chair.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           }
         ]
       },

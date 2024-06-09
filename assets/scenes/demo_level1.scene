@@ -93,7 +93,8 @@
           "MaterialGroup": "default",
           "Model": "models/sbox_props/office_chair/office_chair.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
         }
       ]
     },
@@ -115,7 +116,8 @@
           "MaterialGroup": "default",
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
         },
         {
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -173,8 +175,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "736,288"
@@ -610,7 +612,7 @@
                     "DstName": "Slot"
                   },
                   {
-                    "SrcId": 4,
+                    "SrcId": 0,
                     "SrcName": "_signal",
                     "DstId": 1,
                     "DstName": "_signal"
@@ -632,12 +634,6 @@
                     },
                     "DstId": 1,
                     "DstName": "item"
-                  },
-                  {
-                    "SrcId": 0,
-                    "SrcName": "_signal",
-                    "DstId": 4,
-                    "DstName": "_signal"
                   },
                   {
                     "SrcId": 0,
@@ -696,7 +692,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/shirt/polo_shirt/models/polo_shirt.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -722,7 +719,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/jacket/smart_jacket/models/smart_jacket.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -748,7 +746,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/shoes/smartshoes/smartshoes.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -774,7 +773,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/trousers/cargopants/models/brown_cargo_pants.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -800,7 +800,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/hat/beanie/models/beanie.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -826,7 +827,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/makeup/traditional_face_tattoos/models/traditional_face_tattoos.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1037,7 +1039,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -1082,7 +1085,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1237,7 +1241,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -1282,7 +1287,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1437,7 +1443,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -1482,7 +1489,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1637,7 +1645,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -1682,7 +1691,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1837,7 +1847,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -1882,7 +1893,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -2037,7 +2049,8 @@
               "MaterialGroup": "default",
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -2082,7 +2095,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -2264,8 +2278,8 @@
                 "Type": "call",
                 "Properties": {
                   "_isStatic": false,
-                  "_name": "MoveTo",
-                  "_type": "Sandbox.CharacterController"
+                  "_type": "Sandbox.CharacterController",
+                  "_name": "MoveTo"
                 },
                 "UserData": {
                   "Position": "-272,-112"
@@ -2802,6 +2816,7 @@
             "component_type": "Interactor"
           },
           "Metal": 0,
+          "MoveCamera": true,
           "RunSpeed": 300,
           "SceneFile": "scenes/demo_level1.scene",
           "ShowShopUi": false,
@@ -2851,7 +2866,8 @@
               "CreateBoneObjects": true,
               "Model": "models/citizen/citizen.vmdl",
               "RenderType": "On",
-              "Tint": "1,1,1,1"
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             },
             {
               "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -2892,7 +2908,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/full_outfit/space_suit_outfit/models/space_suit_outfit.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -4289,15 +4306,15 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-05-21T17:20:15.236178-04:00",
+  "LastSaved": "2024-06-09T12:53:12.5101146-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.can_long",
     "facepunch.fence_panel_gate",
     "facepunch.office_chair",
     "facepunch.plastic_crate_01",
+    "facepunch.soda_can",
     "luke.office_desk",
-    "nolankicks.2d_game_test",
     "nolankicks.idel-terry",
     "tesssssssssst.untitled_13102630"
   ],
