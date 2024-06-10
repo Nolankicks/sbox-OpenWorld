@@ -11,7 +11,23 @@
       "Schema": 0,
       "Resources": null,
       "PackageReferences": [],
-      "EditorReferences": [],
+      "EditorReferences": [
+        "facepunch.crate_dev_large#57597",
+        "facepunch.studio_light_projector#29115",
+        "facepunch.plastic_crate_01#47048",
+        "facepunch.wooden_crate#29138",
+        "saandy.caged_light03#35998",
+        "fnafhw.witheredfreddy#26208",
+        "facepunch.industrial_light#27423",
+        "facepunch.metal_fence_panel#33557",
+        "facepunch.car_dev#58005",
+        "facepunch.crate_stack_01#57600",
+        "saandy.caged_light01_wall#35996",
+        "saandy.ceiling_light_tile_01_64a#38912",
+        "saandy.ceiling_light_tile_01_32b#38910",
+        "facepunch.crate_dev_medium#57599",
+        "tiowevolve.dev_red_05#53021"
+      ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3_2.vmap"
       }

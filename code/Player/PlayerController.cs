@@ -50,6 +50,7 @@ public sealed class PlayerController : Component
 	}
 	protected override void OnStart()
 	{
+		eyeAngles = Transform.Rotation.Angles();
 		var steamId = Steam.SteamId.ToString();
 		GameObject.Tags.Add(steamId);
 		CharacterController.IgnoreLayers.Add(steamId);
@@ -81,7 +82,11 @@ public sealed class PlayerController : Component
 	}
 	protected override void OnUpdate()
 	{
-
+		if (!IsProxy && MoveCamera)
+		{
+			MouseInput();
+			CamPos();
+		}
 	}
 	protected override void OnFixedUpdate()
 	{
@@ -93,11 +98,7 @@ public sealed class PlayerController : Component
 			Crouch();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
 		}
-		if (!IsProxy && MoveCamera)
-		{
-			MouseInput();
-			CamPos();
-		}
+
 	}
 
 	public void AddCoins(int amount)
