@@ -42,7 +42,7 @@ public sealed class Inventory : Component
 		if (Spawn)
 		{
 		if (item is null) return;
-		var itemClone = item.Clone(Vector3.Up * 70);
+		var itemClone = item.Clone(Vector3.Up * 64);
 		itemClone.NetworkSpawn();
 		Items[Slot] = itemClone;
 		itemClone.Parent = GameObject;

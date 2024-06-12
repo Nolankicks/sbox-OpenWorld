@@ -8,11 +8,11 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 	[Property] public int NumberOfWaves { get; set; }
 	[Property] public List<GameObject> CurrentWave { get; set; } = new();
 	[Property] public int CurrentWaveIndex { get; set; } = 0;
-	[Property] public GameObject WaveTrigger { get; set; }
 	[Property] public bool IsSpawning { get; set; } = false;
-	[Property] public List<GameObject> WaveSpawnLocations { get; set; }
+	public List<GameObject> WaveSpawnLocations { get; set; } = new();
 	public bool Started { get; set; } = false;
-	[Property] public Action WaveAction { get; set; }
+	public delegate void WaveActionDel(WaveSpawner waveSpawner);
+	[Property] public WaveActionDel WaveAction { get; set; }
 	[Property] public string SpawnLocationString { get; set; } = "zombiespawn";
 	protected override void OnStart()
 	{
@@ -30,6 +30,10 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 		{
 			Log.Info("First Wave");
 			IsSpawning = true;
+			if (Components.TryGet<Collider>(out var collider, FindMode.EnabledInSelfAndChildren))
+			{
+				collider.Destroy();
+			}
 		}
 		for (int i = 0; i < NumberOfZombies; i++)
 		{
@@ -56,22 +60,22 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 		if (other.GameObject.Parent.Tags.Has("player") && !Started)
 		{
 			Log.Info("WaveAction");
-			WaveAction?.Invoke();
+			var waveUi = Scene.GetAllComponents<WaveUi>().FirstOrDefault();
+			if (waveUi is not null)
+			{
+				waveUi.Spawner = this;
+				WaveAction?.Invoke(this);
+			}
+			else
+			{
+				Log.Error("WaveUi not found");
+			}
 		}
 	}
 	void ITriggerListener.OnTriggerExit(Sandbox.Collider other)
 	{
 
 	}
-	public async Task AwaitPlayer()
-	{
-		var player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
-		while (Vector3.DistanceBetween(player.Transform.Position, WaveTrigger.Transform.Position) > 150)
-		{
-			await GameTask.DelaySeconds(1);
-		}
-		IsSpawning = true;
-		}
 		
 	public TimeUntil NextWave = 0;
 	public async Task WaveCoolDown(int Seconds)
@@ -89,4 +93,22 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 			CurrentWave.Remove(Zombie);
 		}
 	}
+
+	[ActionGraphNode("ActiveScene"), Pure]
+	public static Scene ActiveScene()
+	{
+		return Game.ActiveScene;
+	}
+
+[ActionGraphNode("Get Components First or Default")]
+public static T GetAllComponentsFirstOrDefault<T>()
+{
+    return Game.ActiveScene.GetAllComponents<T>().FirstOrDefault();
+}
+
+[ActionGraphNode("Get Current Wave"), Pure]
+public static WaveSpawner GetCurrentWave()
+{
+	return Game.ActiveScene.GetAllComponents<WaveSpawner>().FirstOrDefault( x => x.IsSpawning );
+}
 }

@@ -2,7 +2,7 @@
   "RootObject": {
     "__guid": "08dfec04-2392-4a04-917a-f10d0fb3b988",
     "Flags": 0,
-    "Name": "actiongraphzombie",
+    "Name": "actiongraphenemy",
     "Tags": "dummy",
     "Enabled": true,
     "NetworkMode": 1,
@@ -23,7 +23,12 @@
               "ActionGraphDelay"
             ]
           },
-          "Variables": [],
+          "Variables": [
+            {
+              "Name": "test",
+              "Type": "System.Int32"
+            }
+          ],
           "Nodes": [
             {
               "Id": 101,
@@ -771,7 +776,7 @@
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "e3748a62-f1be-4de5-8e2b-5e72356e6851",
-            "BodyGroups": 0,
+            "BodyGroups": 341,
             "CreateBoneObjects": false,
             "MaterialGroup": "default",
             "Model": "models/citizen/citizen.vmdl",
@@ -801,42 +806,6 @@
             "Radius": 25,
             "Start": "0,0,26.95818",
             "Static": false
-          }
-        ],
-        "Children": [
-          {
-            "__guid": "a1fafcb3-2279-414d-8232-be4d8e4bf34b",
-            "Flags": 0,
-            "Name": "Zombie",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "e80256f1-44d1-4cc1-9d37-eaada2b2d25d",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "e3748a62-f1be-4de5-8e2b-5e72356e6851",
-                  "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78",
-                  "component_type": "SkinnedModelRenderer"
-                },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1",
-                "UseAnimGraph": true
-              },
-              {
-                "__type": "RandomModel",
-                "__guid": "39f2d24e-6b38-46a6-9524-8660452667f7",
-                "RandomModels": [
-                  "models/citizen/heads/head_zombie_01/models/head_zombie_01.vmdl",
-                  "models/citizen/heads/head_zombie_02/models/head_zombie_02.vmdl"
-                ]
-              }
-            ]
           }
         ]
       }
@@ -869,6 +838,16 @@
           {
             "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
             "Property": "OnAttack"
+          }
+        ]
+      },
+      {
+        "Id": "Model",
+        "Title": "Model",
+        "Targets": [
+          {
+            "Id": "e3748a62-f1be-4de5-8e2b-5e72356e6851",
+            "Property": "Model"
           }
         ]
       }

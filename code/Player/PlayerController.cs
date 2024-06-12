@@ -34,6 +34,7 @@ public sealed class PlayerController : Component
 	[Property] public int Coins { get; set; }
 	[Property] public bool FindSpawnPoint { get; set; } = false;
 	[Property] public bool MoveCamera { get; set; } = true;
+	public CameraComponent Camera { get; set; }
 	public AmmoContainer AmmoContainer;
 	public Item CurrentItem;
 	public Inventory Inventory;
@@ -50,6 +51,7 @@ public sealed class PlayerController : Component
 	}
 	protected override void OnStart()
 	{
+		Camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault(x => x.IsMainCamera);
 		eyeAngles = Transform.Rotation.Angles();
 		var steamId = Steam.SteamId.ToString();
 		GameObject.Tags.Add(steamId);

@@ -1,0 +1,199 @@
+{
+  "RootObject": {
+    "__guid": "f8351c63-5399-4555-84eb-03c5e4aba7f1",
+    "Flags": 0,
+    "Name": "ammopickup",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkInterpolation": true,
+    "Components": [
+      {
+        "__type": "Kicks.PopupUi",
+        "__guid": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+        "Name": "",
+        "PickUpAction": {
+          "__version": 7,
+          "__guid": "b5b988fd-ba21-44ad-ad2b-910aacb78d65",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_name": "AddAmmo",
+                "_isStatic": false,
+                "_type": "Inventory"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "selectedInput": "use",
+        "ShopItems": {
+          "ItemNames": [],
+          "ShopActions": [],
+          "ItemTextures": [],
+          "ItemPrices": []
+        },
+        "ShowPopUp": true
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "5ac9ce90-6467-47d0-b427-bb9ff45b3c88",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "50,50,50",
+        "Static": false
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "d13d6fa9-ffa5-4640-8fe9-6754297e6b7e",
+        "Flags": 0,
+        "Name": "Model",
+        "Enabled": true,
+        "NetworkMode": 2,
+        "NetworkInterpolation": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "f893070c-2329-456b-b8de-c655177d78f1",
+            "BodyGroups": 18446744073709551615,
+            "CreateBoneObjects": false,
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          }
+        ]
+      }
+    ],
+    "__variables": [
+      {
+        "Id": "Popup Name",
+        "Title": "Popup Name",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "Name"
+          }
+        ]
+      },
+      {
+        "Id": "Popup Description",
+        "Title": "Popup Description",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "Description"
+          }
+        ]
+      },
+      {
+        "Id": "Input",
+        "Title": "Input",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "selectedInput"
+          }
+        ]
+      },
+      {
+        "Id": "Icon",
+        "Title": "Icon",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "Icon"
+          }
+        ]
+      },
+      {
+        "Id": "ShowPopup",
+        "Title": "Show Popup",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "ShowPopUp"
+          }
+        ]
+      },
+      {
+        "Id": "Ammo Action",
+        "Title": "Ammo Action",
+        "Targets": [
+          {
+            "Id": "27b7c68c-3f0a-49c6-b81e-a9a293f5eb9d",
+            "Property": "PickUpAction"
+          }
+        ]
+      },
+      {
+        "Id": "Model",
+        "Title": "Model",
+        "Targets": [
+          {
+            "Id": "f893070c-2329-456b-b8de-c655177d78f1",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "Box Size",
+        "Title": "Box Size",
+        "Targets": [
+          {
+            "Id": "5ac9ce90-6467-47d0-b427-bb9ff45b3c88",
+            "Property": "Scale"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

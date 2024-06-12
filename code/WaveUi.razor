@@ -1,7 +1,8 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
-
+@if (Spawner is not null)
+{
 <root style="opacity: @(Spawner.IsSpawning ? 1 : 0)">
 	<div class="wave">Wave: @Spawner.CurrentWaveIndex / @Waves</div>
 	@if (Spawner.CoolDown)
@@ -10,6 +11,7 @@
 	}
 	<div class="zombiesleft">@Spawner.CurrentWave.Count zombies left</div>
 </root>
+}
 
 @code
 {

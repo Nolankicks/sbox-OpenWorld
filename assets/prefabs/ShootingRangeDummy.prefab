@@ -10,6 +10,7 @@
       {
         "__type": "Kicks.EnemyHealthComponent",
         "__guid": "c6d91e07-653a-41e4-83a5-9ecee2d5fe5c",
+        "CanBeKilled": true,
         "health": 100,
         "OnDeath": {
           "__version": 7,
@@ -279,7 +280,20 @@
             "CreateBoneObjects": false,
             "Model": "models/citizen/citizen.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          }
+        ]
+      }
+    ],
+    "__variables": [
+      {
+        "Id": "Model",
+        "Title": "Model",
+        "Targets": [
+          {
+            "Id": "3f264f67-7be1-43a9-83ea-93555c5f1977",
+            "Property": "Model"
           }
         ]
       }
@@ -289,6 +303,6 @@
   "MenuPath": null,
   "MenuIcon": null,
   "ResourceVersion": 1,
-  "__version": 1,
-  "__references": []
+  "__references": [],
+  "__version": 1
 }

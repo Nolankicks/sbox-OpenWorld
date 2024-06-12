@@ -3,6 +3,8 @@ using Sandbox.Citizen;
 using System;
 using System.IO.Compression;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 namespace Kicks;
@@ -136,5 +138,11 @@ public sealed class NPC : Component
 	protected override void OnFixedUpdate()
 	{
 		npcAction?.Invoke();
+	}
+
+	[ActionGraphNode("Clone GameObject This Pos and Rot"), Impure]
+	public static void CloneGameObjectThisPosAndRot(GameObject gameObject, out GameObject clone)
+	{
+		clone = gameObject.Clone(gameObject.Transform.Position, gameObject.Transform.Rotation);
 	}
 }

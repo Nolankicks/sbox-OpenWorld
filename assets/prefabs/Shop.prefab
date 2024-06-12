@@ -72,8 +72,8 @@
               "Id": 4,
               "Type": "property",
               "Properties": {
-                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                "_name": "Sitting"
+                "_name": "Sitting",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "512,208"
@@ -865,6 +865,88 @@
             "IsTrigger": false,
             "Model": "models/items/office_set/office_desk.vmdl",
             "Static": false
+          }
+        ]
+      }
+    ],
+    "__variables": [
+      {
+        "Id": "Shop Items",
+        "Title": "Shop Items",
+        "Targets": [
+          {
+            "Id": "b33ab145-70c3-4f6c-9bbd-04ac408e2faf",
+            "Property": "ShopItems"
+          }
+        ]
+      },
+      {
+        "Id": "Shirt",
+        "Title": "Shirt",
+        "Targets": [
+          {
+            "Id": "26f6f66f-9ba1-4772-b6a9-36213ffbc13b",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "jacket",
+        "Title": "jacket",
+        "Targets": [
+          {
+            "Id": "d0bd1817-4510-4425-8183-70391ad9945b",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "shoes",
+        "Title": "shoes",
+        "Targets": [
+          {
+            "Id": "b8cd1d4b-d805-493b-8581-c6f925f89e8f",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "pants",
+        "Title": "pants",
+        "Targets": [
+          {
+            "Id": "7a9f2edc-0ed1-4da2-a662-eb51f9b35966",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "hair",
+        "Title": "hair",
+        "Targets": [
+          {
+            "Id": "edb4fdd2-f244-4f1e-9c86-282729a87e88",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "face",
+        "Title": "face",
+        "Targets": [
+          {
+            "Id": "cb243ca3-c4de-4469-a3fa-2580d3c5abc9",
+            "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "gloves",
+        "Title": "gloves",
+        "Targets": [
+          {
+            "Id": "24eff948-1bb3-4d1d-a63d-8cc6c32de368",
+            "Property": "Model"
           }
         ]
       }
