@@ -35,7 +35,14 @@
         "facepunch.swat_dev#58061",
         "facepunch.shipping_container_closed_dev#58321",
         "facepunch.forklift_down_dev#58129",
-        "facepunch.lantern#44606"
+        "facepunch.lantern#44606",
+        "facepunch.large_open_window_frame_dev#57822",
+        "facepunch.glass_a#19946",
+        "facepunch.watertote_dev#58317",
+        "facepunch.railing_crn_dev_16#57658",
+        "facepunch.ladder#57613",
+        "facepunch.truck_dev#58359",
+        "facepunch.truck_cargo2_dev#58372"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3_2.vmap"

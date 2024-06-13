@@ -19,7 +19,6 @@
             "ReferencedComponentTypes": [
               "Sandbox.NavMeshAgent",
               "Kicks.NPC",
-              "Sandbox.Citizen.CitizenAnimationHelper",
               "ActionGraphDelay"
             ]
           },
@@ -84,8 +83,8 @@
               "Type": "property",
               "ParentId": 104,
               "Properties": {
-                "_name": "GameObject",
-                "_type": "Sandbox.Component"
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
               },
               "UserData": {
                 "Labels": {
@@ -101,32 +100,6 @@
               }
             },
             {
-              "Id": 109,
-              "Type": "scene.ref",
-              "Properties": {
-                "gameobject": {
-                  "_type": "gameobject",
-                  "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
-                }
-              },
-              "UserData": {
-                "Position": "2448,880"
-              }
-            },
-            {
-              "Id": 110,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Citizen.CitizenAnimationHelper"
-              },
-              "UserData": {
-                "Position": "2640,880",
-                "Labels": {
-                  "_result": "anim helper"
-                }
-              }
-            },
-            {
               "Id": 111,
               "Type": "Get Synced Velocity",
               "UserData": {
@@ -137,9 +110,9 @@
               "Id": 112,
               "Type": "call",
               "Properties": {
-                "_name": "SetNPCAnims",
+                "_isStatic": false,
                 "_type": "Kicks.NPC",
-                "_isStatic": false
+                "_name": "SetNPCAnims"
               },
               "UserData": {
                 "Position": "3632,592"
@@ -170,8 +143,8 @@
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
-                "_name": "NPCAttack",
-                "_type": "Kicks.NPC"
+                "_type": "Kicks.NPC",
+                "_name": "NPCAttack"
               },
               "UserData": {
                 "Position": "4448,592"
@@ -181,9 +154,9 @@
               "Id": 116,
               "Type": "call",
               "Properties": {
-                "_name": "SetDelay",
+                "_isStatic": false,
                 "_type": "ActionGraphDelay",
-                "_isStatic": false
+                "_name": "SetDelay"
               },
               "UserData": {
                 "Position": "4752,592"
@@ -194,8 +167,8 @@
               "Type": "property",
               "ParentId": 114,
               "Properties": {
-                "_name": "Delay",
-                "_type": "ActionGraphDelay"
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
               }
             },
             {
@@ -219,20 +192,20 @@
               "Id": 125,
               "Type": "property",
               "Properties": {
-                "_name": "HoldType",
                 "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType",
                 "_kind": "Set"
               },
               "UserData": {
-                "Position": "2736,384"
+                "Position": "2720,384"
               }
             },
             {
               "Id": 127,
               "Type": "property",
               "Properties": {
-                "_name": "Target",
-                "_type": "Sandbox.Citizen.CitizenAnimationHelper"
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
               },
               "UserData": {
                 "Position": "4768,736"
@@ -243,8 +216,8 @@
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
-                "_name": "Set",
-                "_type": "Sandbox.SkinnedModelRenderer"
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_name": "Set"
               },
               "UserData": {
                 "Position": "5088,592"
@@ -254,12 +227,56 @@
               "Id": 143,
               "Type": "property",
               "Properties": {
-                "_name": "LookAt",
                 "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt",
                 "_kind": "Set"
               },
               "UserData": {
                 "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.IComponentLister",
+                "_name": "Get",
+                "T": "Sandbox.Citizen.CitizenAnimationHelper"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
               }
             }
           ],
@@ -348,12 +365,6 @@
               "DstName": "condition"
             },
             {
-              "SrcId": 109,
-              "SrcName": "_result",
-              "DstId": 110,
-              "DstName": "_this"
-            },
-            {
               "SrcId": 108,
               "SrcName": "true",
               "DstId": 111,
@@ -396,7 +407,7 @@
               "DstName": "_target"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 112,
               "DstName": "citizenAnimationHelper"
@@ -482,10 +493,8 @@
               "DstName": "a"
             },
             {
-              "Value": {
-                "_type": "gameobject",
-                "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
-              },
+              "SrcId": 167,
+              "SrcName": "_result",
               "DstId": 119,
               "DstName": "Body"
             },
@@ -514,7 +523,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 125,
               "DstName": "_target"
@@ -525,7 +534,7 @@
               "DstName": "_value"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 127,
               "DstName": "_target"
@@ -559,7 +568,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_target"
@@ -569,18 +578,31 @@
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_value"
-            }
-          ],
-          "Defaults": {
-            "$109.gameobject": {
-              "_type": "gameobject",
-              "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
             },
-            "$149._value": {
-              "_type": "gameobject",
-              "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
             }
-          }
+          ]
         }
       },
       {
@@ -598,6 +620,7 @@
         "__type": "Kicks.EnemyHealthComponent",
         "__guid": "47f24295-9a32-45ce-b521-1e3cb3f5c257",
         "CanBeKilled": true,
+        "CanDie": true,
         "health": 100,
         "OnDeath": {
           "__version": 7,
@@ -616,8 +639,8 @@
               "Id": 1,
               "Type": "property",
               "Properties": {
-                "_name": "Transform",
-                "_type": "Sandbox.GameObject"
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
               },
               "UserData": {
                 "Position": "0,208"
@@ -628,8 +651,8 @@
               "Type": "property",
               "ParentId": 1,
               "Properties": {
-                "_name": "Position",
-                "_type": "Sandbox.GameTransform"
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
               },
               "UserData": {
                 "Labels": {
@@ -642,8 +665,8 @@
               "Type": "property",
               "ParentId": 1,
               "Properties": {
-                "_name": "LocalRotation",
-                "_type": "Sandbox.GameTransform"
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
               },
               "UserData": {
                 "Labels": {
@@ -757,6 +780,15 @@
         "__type": "ActionGraphDelay",
         "__guid": "f3c01e67-03b7-4cec-ad7f-26f591b48f38",
         "Delay": false
+      },
+      {
+        "__type": "Sandbox.CapsuleCollider",
+        "__guid": "95d9a98a-0cf5-431a-aa3e-b813fffc6740",
+        "End": "0,0,10",
+        "IsTrigger": false,
+        "Radius": 5,
+        "Start": "0,0,0",
+        "Static": false
       }
     ],
     "Children": [
@@ -869,6 +901,66 @@
           {
             "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
             "Property": "OnAttack"
+          }
+        ]
+      },
+      {
+        "Id": "OnDestroy",
+        "Title": "OnDestroy",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentDestroy"
+          }
+        ]
+      },
+      {
+        "Id": "OnUpdate",
+        "Title": "OnUpdate",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentUpdate"
+          }
+        ]
+      },
+      {
+        "Id": "OnStart",
+        "Title": "OnStart",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentStart"
+          }
+        ]
+      },
+      {
+        "Id": "OnDisabled",
+        "Title": "OnDisabled",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentDisabled"
+          }
+        ]
+      },
+      {
+        "Id": "OnFixedUpdate",
+        "Title": "OnFixedUpdate",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentFixedUpdate"
+          }
+        ]
+      },
+      {
+        "Id": "OnEnabled",
+        "Title": "OnEnabled",
+        "Targets": [
+          {
+            "Id": "8640adfb-92d4-4321-ae8c-7fe42d110810",
+            "Property": "OnComponentEnabled"
           }
         ]
       }

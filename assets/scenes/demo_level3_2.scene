@@ -2667,8 +2667,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_type": "DoorComponent",
                   "_isStatic": false,
+                  "_type": "DoorComponent",
                   "_name": "LerpDoor"
                 },
                 "UserData": {
@@ -2751,8 +2751,8 @@
                 "Id": 9,
                 "Type": "call",
                 "Properties": {
-                  "_type": "WaveSpawner",
                   "_isStatic": false,
+                  "_type": "WaveSpawner",
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -2763,8 +2763,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_type": "WaveSpawner",
                   "_isStatic": false,
+                  "_type": "WaveSpawner",
                   "_name": "WaveCoolDown"
                 },
                 "UserData": {
@@ -2775,8 +2775,8 @@
                 "Id": 14,
                 "Type": "call",
                 "Properties": {
-                  "_type": "WaveSpawner",
                   "_isStatic": false,
+                  "_type": "WaveSpawner",
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -2809,6 +2809,34 @@
                 "Type": "StartLerp",
                 "UserData": {
                   "Position": "48,0"
+                }
+              },
+              {
+                "Id": 39,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "7b0eca0c-6c40-4036-b4b1-5fa789289ffc"
+                  }
+                },
+                "UserData": {
+                  "Position": "1280,208"
+                }
+              },
+              {
+                "Id": 40,
+                "Type": "scene.get",
+                "ParentId": 39,
+                "Properties": {
+                  "T": "Easer"
+                }
+              },
+              {
+                "Id": 41,
+                "Type": "StartLerp",
+                "UserData": {
+                  "Position": "1600,0"
                 }
               }
             ],
@@ -2903,13 +2931,46 @@
                 "DstName": "_target"
               },
               {
-                "Value": "BounceIn",
+                "Value": "EaseOut",
                 "DstId": 24,
                 "DstName": "easingEnum"
               },
               {
-                "Value": 3,
+                "Value": 1.5,
                 "DstId": 24,
+                "DstName": "seconds"
+              },
+              {
+                "SrcId": 39,
+                "SrcName": "_result",
+                "DstId": 40,
+                "DstName": "_this"
+              },
+              {
+                "Value": "220,-720,160",
+                "DstId": 41,
+                "DstName": "To"
+              },
+              {
+                "SrcId": 14,
+                "SrcName": "_signal",
+                "DstId": 41,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 40,
+                "SrcName": "_result",
+                "DstId": 41,
+                "DstName": "_target"
+              },
+              {
+                "Value": "EaseOut",
+                "DstId": 41,
+                "DstName": "easingEnum"
+              },
+              {
+                "Value": 1.5,
+                "DstId": 41,
                 "DstName": "seconds"
               }
             ],
@@ -2917,12 +2978,16 @@
               "$22.gameobject": {
                 "_type": "gameobject",
                 "go": "f497989a-9a8f-4d3f-9fe8-8b186c7a0190"
+              },
+              "$39.gameobject": {
+                "_type": "gameobject",
+                "go": "7b0eca0c-6c40-4036-b4b1-5fa789289ffc"
               }
             }
           },
           "ZombiePrefab": {
             "_type": "gameobject",
-            "prefab": "prefabs/actiongraphzombie.prefab"
+            "go": "74329d83-3599-49e0-b1c8-fc74166ec916"
           }
         },
         {
@@ -2938,505 +3003,12 @@
     {
       "__guid": "bd7bcc34-5f57-4c6d-893a-989a8bda8220",
       "Flags": 0,
-      "Name": "ZombieSpawns",
+      "Name": "ZombieSpawn",
       "Position": "134.9503,-88.40833,333.4581",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
       "Children": [
-        {
-          "__guid": "067c431b-ba12-4ef7-81cf-f11a0f43b477",
-          "Flags": 0,
-          "Name": "Spawn (36)",
-          "Position": "141.0497,196.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "451215cb-5ad7-4238-b500-2b6908053168",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "d6ed0e6c-ed82-4645-8d3c-4afd3cf35a68",
-          "Flags": 0,
-          "Name": "Spawn (32)",
-          "Position": "181.0497,196.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "28e51f93-cc2a-4b8b-b83d-b92c87b206ef",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "1319368d-9908-4450-ac30-e07d0406db9d",
-          "Flags": 0,
-          "Name": "Spawn (28)",
-          "Position": "217.0497,196.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "154ac0e0-c5a9-4b56-a4cd-24eeed94fc2b",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "28a48d03-a2eb-4639-8296-61becf4e2037",
-          "Flags": 0,
-          "Name": "Spawn (53)",
-          "Position": "293.0497,196.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "5864404e-0466-4b55-8460-b8f3bd177680",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "56c7a392-5b7c-4b0c-9bbd-47e9a608f5b7",
-          "Flags": 0,
-          "Name": "Spawn",
-          "Position": "248.6599,196.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "39edc8ae-4a5f-4a90-a9c0-16917b3ef3ce",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "7b7eb841-5074-446f-b9e1-7e9cce11603e",
-          "Flags": 0,
-          "Name": "Spawn (1)",
-          "Position": "248.6599,140.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "6c7ebc69-3985-4336-9db3-34b91e5f06e9",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "ecbc7758-a588-47fe-8ac1-40e0d2bb08e8",
-          "Flags": 0,
-          "Name": "Spawn (52)",
-          "Position": "287.0497,140.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "d8e1b9ab-432a-4fa7-b4bd-353e51aa2a99",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "5e886dda-f5eb-47fb-bbe0-889a780118cf",
-          "Flags": 0,
-          "Name": "Spawn (29)",
-          "Position": "217.0497,140.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "046c469e-deb5-41db-bfb2-0aa49c4d4482",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "b1b3c4e2-c74c-48d6-aeca-a39d069f63ec",
-          "Flags": 0,
-          "Name": "Spawn (33)",
-          "Position": "181.0497,140.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "a33f6bfb-a0ab-4267-a4c4-c7acc214c998",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "0e3eee6d-f962-4584-838f-77903e3c7705",
-          "Flags": 0,
-          "Name": "Spawn (37)",
-          "Position": "141.0497,140.4083,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "fad03e5d-47de-46c0-8af9-57d3362086ca",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "203ad27c-f1b6-4e3a-8815-587075494069",
-          "Flags": 0,
-          "Name": "Spawn (2)",
-          "Position": "248.6599,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "6768f310-7a5c-4981-b65e-185e0527e39e",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "84673de2-72a3-46bb-93a1-f1d039bb2674",
-          "Flags": 0,
-          "Name": "Spawn (50)",
-          "Position": "291.0497,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "cd2966fc-721f-4929-ab85-03dc09c5585d",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "e00b630f-1a82-4310-b942-3da21aaf47cb",
-          "Flags": 0,
-          "Name": "Spawn (51)",
-          "Position": "333.0497,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "c31cece9-44db-42e6-a5b5-a5ed6626b366",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "1ac2572a-dae4-4d50-a0ab-2e2bee3f8bb5",
-          "Flags": 0,
-          "Name": "Spawn (30)",
-          "Position": "217.0497,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "63134393-de58-42a3-b954-4138c5562703",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "cacccd99-ccff-4174-bd4d-cc90b7d738db",
-          "Flags": 0,
-          "Name": "Spawn (34)",
-          "Position": "181.0497,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "41e3760d-4cf8-4548-ab99-325d6461d09a",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "d794232c-808f-40ac-b17b-158d1287d99e",
-          "Flags": 0,
-          "Name": "Spawn (38)",
-          "Position": "141.0497,82.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "0f0d08c4-aa87-4965-a542-f2fec06b6597",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "28e9fa5f-4811-4715-af73-e015dfe98a47",
-          "Flags": 0,
-          "Name": "Spawn (3)",
-          "Position": "248.6599,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "edaa1bd6-04fe-46ba-952c-9c2f7bcf5e94",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "83d35f27-851b-44fc-a0cb-544b390f9f54",
-          "Flags": 0,
-          "Name": "Spawn (44)",
-          "Position": "287.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "becd11e1-cbad-4c65-906e-0db46a0ed6ac",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "24cb0af2-0369-4cf1-ba79-e18a4ee161c6",
-          "Flags": 0,
-          "Name": "Spawn (49)",
-          "Position": "331.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "70d2de3c-d837-4286-bdaa-110de6d00cce",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "580cfe56-8156-460b-9ce6-68d67ff7846d",
-          "Flags": 0,
-          "Name": "Spawn (54)",
-          "Position": "373.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "d097af79-caaf-44f4-918c-9ae7a1e85ce3",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "14c66bf6-5b75-4bfe-92bb-2af5eda0fd5c",
-          "Flags": 0,
-          "Name": "Spawn (31)",
-          "Position": "217.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "ce4c281a-c0cf-49df-92a6-95222f79771c",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "a7d1bc4e-edfc-4537-b5ed-86ad5f84e6f9",
-          "Flags": 0,
-          "Name": "Spawn (35)",
-          "Position": "181.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "27e4bc05-94ea-47ab-850a-84b48b79eb99",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "f6d90d1d-c3ec-4084-b03b-92e8c5ba81cb",
-          "Flags": 0,
-          "Name": "Spawn (39)",
-          "Position": "141.0497,20.40833,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "11b929c9-7422-4552-9164-f0635ad4fb2b",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "f9b62529-9b7e-4a29-9839-9e3d5e103e96",
-          "Flags": 0,
-          "Name": "Spawn (4)",
-          "Position": "248.6599,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "a5de13b6-7edb-4f97-bc5b-3e2e5beb2b1f",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "1ba1de2b-8740-42e2-bf24-949c3c665836",
-          "Flags": 0,
-          "Name": "Spawn (43)",
-          "Position": "287.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "5137b3d4-da7f-44e5-bc88-2d6a8304feef",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "4c13e650-7d6a-4e34-9f2f-84f76ce5cc78",
-          "Flags": 0,
-          "Name": "Spawn (48)",
-          "Position": "331.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "e6936873-46c9-441a-986d-4e6eef158562",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "4a07c83a-6b05-4fd0-b8fa-ec598a429906",
-          "Flags": 0,
-          "Name": "Spawn (55)",
-          "Position": "373.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "8078a5b3-00b9-4cd9-a29d-302b42d0fb06",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "3583ee8c-023f-46db-8044-2a37526db68d",
-          "Flags": 0,
-          "Name": "Spawn (59)",
-          "Position": "403.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "dffa4354-9c4e-4741-9eb3-31c1f5c8e292",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "5252f623-c34d-4edb-92f0-76cde0217d90",
-          "Flags": 0,
-          "Name": "Spawn (59)",
-          "Position": "433.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "1f1d3a8a-56db-4818-a50e-0527014f52d1",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
         {
           "__guid": "81f3be10-6d60-4cde-8f66-66afc95e04d4",
           "Flags": 0,
@@ -3518,91 +3090,6 @@
             {
               "__type": "Sandbox.SpawnPoint",
               "__guid": "4a5ddfcf-0ffc-4ea8-bb77-b4cdbd47e99c",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "4bd0d7ea-0bdd-40c5-a9e3-d115a9738a39",
-          "Flags": 0,
-          "Name": "Spawn (8)",
-          "Position": "213.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "1c7db7e1-f8bb-42b9-8882-cd7a1f304ff4",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "23fa4cd8-3c7a-478c-a99a-8c329face7f9",
-          "Flags": 0,
-          "Name": "Spawn (13)",
-          "Position": "179.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "fcfdaffd-4b30-48fb-bfed-e02d34ef999b",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "f1d82e42-7c08-4c2a-876c-8026da436383",
-          "Flags": 0,
-          "Name": "Spawn (17)",
-          "Position": "139.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "7cebd1f9-0f50-404b-82ca-474fc4ffa428",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "c77df1d1-3b56-43ef-9a2f-ddf5ab2bf449",
-          "Flags": 0,
-          "Name": "Spawn (21)",
-          "Position": "103.0497,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "0bf3e318-7209-44ad-b803-eb1cc422425f",
-              "Color": "0.8902,0.31765,0.05098,1"
-            }
-          ]
-        },
-        {
-          "__guid": "2395f945-6aad-4a28-a1ac-a07d42c00bba",
-          "Flags": 0,
-          "Name": "Spawn (25)",
-          "Position": "73.04968,-37.59167,-333.4581",
-          "Tags": "zombiespawn",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "Components": [
-            {
-              "__type": "Sandbox.SpawnPoint",
-              "__guid": "5321de06-ff4c-4ca4-abd5-d5d0a43892e3",
               "Color": "0.8902,0.31765,0.05098,1"
             }
           ]
@@ -5745,72 +5232,72 @@
           "Mesh": {
             "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
             "Positions": [
-              "-12,-32,47.99993",
-              "12,-32,47.99993",
-              "12,32,47.99993",
-              "-12,32,47.99993",
+              "-12.00003,-31.99999,52.00026",
+              "11.99997,-31.99999,52.00029",
+              "11.99997,32.00001,52.00029",
+              "-12.00003,32.00001,52.00026",
               "-12,32,-55.99999",
-              "12,32,-55.99999",
-              "12,-32,-55.99999",
+              "12,32,-55.99995",
+              "12,-32,-55.99995",
               "-12,-32,-55.99999"
             ],
             "TextureCoord": [
-              "5.375,1",
-              "4.625,-2.499998",
-              "5.375,-1",
-              "-1,-2.499998",
-              "4.625,-1",
-              "-4.375,-2.499998",
-              "4.625,1",
-              "-1,-2.499998",
-              "5.375,-1",
-              "-3.625,0.7499996",
-              "5.375,1",
-              "1,0.7499996",
-              "4.625,1",
-              "5.375,0.7499996",
-              "4.625,-1",
-              "1,0.7499996",
-              "1,-2.499998",
-              "4.625,0.7499996",
-              "-1,0.7499996",
-              "-3.625,-2.499998",
-              "-1,0.7499996",
-              "5.375,-2.499998",
-              "1,-2.499998",
-              "-4.375,0.7499996"
+              "5.249999,0.9999998",
+              "4.499999,-6.625008",
+              "5.249999,-1",
+              "-0.9999998,-6.625009",
+              "4.499999,-1",
+              "-5.249999,-6.625009",
+              "4.499999,0.9999998",
+              "-1,-6.625008",
+              "5.25,-1",
+              "-4.5,-3.25",
+              "5.25,1",
+              "1,-3.250001",
+              "4.5,1",
+              "5.25,-3.250001",
+              "4.5,-1",
+              "1,-3.25",
+              "0.9999998,-6.625008",
+              "4.5,-3.25",
+              "-1,-3.25",
+              "-4.499999,-6.625008",
+              "-1,-3.250001",
+              "5.249999,-6.625009",
+              "1,-6.625009",
+              "-5.25,-3.250001"
             ],
             "TextureUAxis": [
-              "1,0,0",
-              "1,0,-0",
-              "0,-1,0",
-              "0,1,0",
-              "-1,0,0",
-              "1,-0,0"
+              "1,0,0.000001271566",
+              "1,-0,0.000001271566",
+              "-0.00000000000002994208,-1,0.0000001059636",
+              "0.00000000000002994208,1,-0.0000001059636",
+              "-1,0.0000000000001347397,-0.00000000000000000001427749",
+              "1,-0.000000000000112283,0.000000000000000000009914928"
             ],
             "TextureVAxis": [
               "0,-1,0",
               "0,-1,0",
-              "0,0,-1",
-              "-0,0,-1",
-              "0,0,-1",
-              "-0,0,-1"
+              "0.0000002825695,0,-1",
+              "0.0000002825695,0,-1",
+              "0.0000000000001796528,-0.0000001059636,-1",
+              "0.0000000000001796528,-0.00000008830298,-1"
             ],
             "TextureScale": [
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
               "0.25,0.25",
-              "0.25,0.25",
-              "0.25,0.25"
+              "0.25,0.2499999",
+              "0.25,0.2499999"
             ],
             "TextureOffset": [
-              "16,0",
-              "16,0",
-              "0,0.00001525879",
-              "0,0",
-              "112,0.00001525879",
-              "16,0"
+              "127.9988,0.00002288818",
+              "127.9995,0",
+              "128,128",
+              "0.00006103516,127.9999",
+              "0,0.0001525879",
+              "0,0.0001831055"
             ],
             "MaterialIndex": [
               0,
@@ -5851,7 +5338,7 @@
             ]
           },
           "SmoothingAngle": 40,
-          "Static": false
+          "Static": true
         },
         {
           "__type": "Easer",
@@ -5860,26 +5347,986 @@
       ]
     },
     {
-      "__guid": "31ccb088-be58-44ca-82f3-d9d97b611d52",
+      "__guid": "ca419911-4e76-452d-8c9c-8837e231cc93",
+      "Flags": 0,
+      "Name": "ammopickup",
+      "Position": "488,31.99997,-0.00002193451",
+      "Rotation": "-0.6830126,-0.1830127,0.1830127,0.6830127",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "cd47e8cc-1c1a-4886-9162-984b989e425d",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_smg_mp5/v_mp5_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "c214a47e-9763-420e-9174-ebd77847a4d3",
+      "Flags": 0,
+      "Name": "ammopickup (1)",
+      "Position": "504,16,-0.00002110108",
+      "Rotation": "-0.7071067,-0.00000001490116,0,0.7071068",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "c689b69f-3e0d-47b9-bfa0-2bf8ebd0e568",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_smg_mp5/v_mp5_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "79fd225e-e3d9-491f-9b25-56cf147ebde8",
+      "Flags": 0,
+      "Name": "ammopickup (2)",
+      "Position": "520,0,-0.00003076543",
+      "Rotation": "-0.7071067,-0.00000001490116,0,0.7071068",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "7ba26cf4-f768-4043-b4a7-331c55f23711",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_smg_mp5/v_mp5_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "29d8e54d-b3a9-44c3-9f9b-8ba8a5d8c397",
+      "Flags": 0,
+      "Name": "ammopickup (3)",
+      "Position": "568,-248,-0.00005202044",
+      "Rotation": "-0.7071067,-0.00000001490116,0,0.7071068",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "9f1885d5-bc6d-429d-a77c-323f41a88325",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "HeavyAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_assault_m4a1/v_m4a1_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "95917dc2-c087-40af-81b5-ddaa10a3f2d4",
+      "Flags": 0,
+      "Name": "ammopickup (4)",
+      "Position": "568,-232,-0.00005001684",
+      "Rotation": "-0.6830126,-0.1830127,0.1830127,0.6830127",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "29fd6493-6266-4b97-ba6d-6c2080ad370d",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "HeavyAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_assault_m4a1/v_m4a1_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "10efc660-63a2-4ec7-b1be-de6cd2552c5a",
+      "Flags": 0,
+      "Name": "ammopickup (5)",
+      "Position": "576,-272,-0.00004679872",
+      "Rotation": "-0.6830126,-0.1830127,0.1830127,0.6830127",
+      "Scale": "2,2,2",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/ammopickup.prefab",
+      "__PrefabVariables": {
+        "Popup Name": "",
+        "Popup Description": null,
+        "Input": "use",
+        "Icon": null,
+        "ShowPopup": true,
+        "Ammo Action": {
+          "__version": 7,
+          "__guid": "39035919-a16e-478a-b52d-39ed5d936ead",
+          "UserData": {
+            "Title": "Pick Up Action",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Inventory",
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "256,-0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "Inventory",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": 30,
+              "DstId": 1,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 1,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "HeavyAmmo",
+              "DstId": 1,
+              "DstName": "ammoType"
+            }
+          ]
+        },
+        "Model": "models/weapons/sbox_assault_m4a1/v_m4a1_magazine.vmdl",
+        "Box Size": "3.999999,2.09999,8.199984"
+      }
+    },
+    {
+      "__guid": "60d6e1ba-48af-4007-ac62-fa39ee176580",
+      "Flags": 0,
+      "Name": "Wave (1)",
+      "Position": "1791.999,-848,504",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "WaveSpawner",
+          "__guid": "616f1fdd-7c5f-487f-8b2c-f9571c9ad36e",
+          "CoolDown": false,
+          "CurrentWave": [],
+          "CurrentWaveIndex": 0,
+          "IsSpawning": false,
+          "NumberOfWaves": 3,
+          "SpawnLocationString": "zombiespawn1",
+          "WaveAction": {
+            "__version": 7,
+            "__guid": "1be1d265-6774-48fc-adf1-5c78e0db7831",
+            "UserData": {
+              "Title": "Wave Action",
+              "ReferencedComponentTypes": [
+                "Easer"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 46,
+                "Type": "input",
+                "UserData": {
+                  "Labels": {
+                    "waveSpawner": "WaveSpawner"
+                  },
+                  "Position": "-768,16"
+                }
+              },
+              {
+                "Id": 47,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "WaveSpawner",
+                  "_name": "StartWave"
+                },
+                "UserData": {
+                  "Position": "-416,16"
+                }
+              },
+              {
+                "Id": 48,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "WaveSpawner",
+                  "_name": "WaveCoolDown"
+                },
+                "UserData": {
+                  "Position": "-48,16"
+                }
+              },
+              {
+                "Id": 49,
+                "Type": "call",
+                "Properties": {
+                  "_isStatic": false,
+                  "_type": "WaveSpawner",
+                  "_name": "StartWave"
+                },
+                "UserData": {
+                  "Position": "384,16"
+                }
+              },
+              {
+                "Id": 69,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "39ced088-8513-4a9c-8412-84a53ee03c60"
+                  }
+                },
+                "UserData": {
+                  "Position": "480,240"
+                }
+              },
+              {
+                "Id": 70,
+                "Type": "scene.get",
+                "ParentId": 69,
+                "Properties": {
+                  "T": "Easer"
+                }
+              },
+              {
+                "Id": 71,
+                "Type": "StartLerp",
+                "UserData": {
+                  "Position": "816,16"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Value": true,
+                "DstId": 47,
+                "DstName": "IsFirstWave"
+              },
+              {
+                "Value": 5,
+                "DstId": 47,
+                "DstName": "NumberOfZombies"
+              },
+              {
+                "SrcId": 46,
+                "SrcName": "_signal",
+                "DstId": 47,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 46,
+                "SrcName": "waveSpawner",
+                "DstId": 47,
+                "DstName": "_target"
+              },
+              {
+                "Value": 5,
+                "DstId": 48,
+                "DstName": "Seconds"
+              },
+              {
+                "SrcId": 47,
+                "SrcName": "_signal",
+                "DstId": 48,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 46,
+                "SrcName": "waveSpawner",
+                "DstId": 48,
+                "DstName": "_target"
+              },
+              {
+                "Value": true,
+                "DstId": 49,
+                "DstName": "IsFinalWave"
+              },
+              {
+                "Value": false,
+                "DstId": 49,
+                "DstName": "IsFirstWave"
+              },
+              {
+                "Value": 5,
+                "DstId": 49,
+                "DstName": "NumberOfZombies"
+              },
+              {
+                "SrcId": 48,
+                "SrcName": "_signal",
+                "DstId": 49,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 46,
+                "SrcName": "waveSpawner",
+                "DstId": 49,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 69,
+                "SrcName": "_result",
+                "DstId": 70,
+                "DstName": "_this"
+              },
+              {
+                "Value": "2156,-1260,724",
+                "DstId": 71,
+                "DstName": "To"
+              },
+              {
+                "SrcId": 49,
+                "SrcName": "_signal",
+                "DstId": 71,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 70,
+                "SrcName": "_result",
+                "DstId": 71,
+                "DstName": "_target"
+              },
+              {
+                "Value": "EaseOut",
+                "DstId": 71,
+                "DstName": "easingEnum"
+              },
+              {
+                "Value": 1.5,
+                "DstId": 71,
+                "DstName": "seconds"
+              }
+            ],
+            "Defaults": {
+              "$69.gameobject": {
+                "_type": "gameobject",
+                "go": "39ced088-8513-4a9c-8412-84a53ee03c60"
+              }
+            }
+          },
+          "ZombiePrefab": {
+            "_type": "gameobject",
+            "go": "74329d83-3599-49e0-b1c8-fc74166ec916"
+          }
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "1bd6a9cd-95e0-4aec-9ad4-28bc441f60dd",
+          "Center": "0,0,0",
+          "IsTrigger": true,
+          "Scale": "7.400016,349,125.4",
+          "Static": false
+        }
+      ]
+    },
+    {
+      "__guid": "39ced088-8513-4a9c-8412-84a53ee03c60",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "2156,-1260,540",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "64c17f88-43d2-4b2b-a0ed-4af774fa34dc",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Positions": [
+              "-52,-20,92",
+              "52,-20,92",
+              "51.99976,19.99963,92",
+              "-52.00024,19.99963,92",
+              "-52.00024,19.99963,-92",
+              "51.99976,19.99963,-92",
+              "52,-20,-92",
+              "-52,-20,-92"
+            ],
+            "TextureCoord": [
+              "69,40",
+              "65.75,-19.75",
+              "68.99999,38.75001",
+              "-40,-19.75",
+              "65.74999,38.75001",
+              "-68.99999,-19.75",
+              "65.75,40",
+              "38.75001,-19.75",
+              "68.99999,38.75001",
+              "-65.74999,-14",
+              "69,40",
+              "-38.75001,-14",
+              "65.75,40",
+              "69,-14",
+              "65.74999,38.75001",
+              "40,-14",
+              "40,-19.75",
+              "65.75,-14",
+              "38.75001,-14",
+              "-65.74999,-19.75",
+              "-40,-14",
+              "69,-19.75",
+              "-38.75001,-19.75",
+              "-68.99999,-14"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0.000006103572,-1,0",
+              "-0.000006103572,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "127.9487,0",
+              "0.05371094,0",
+              "0,0",
+              "0,0"
+            ],
+            "MaterialIndex": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat",
+              "materials/dev/dev_measuregeneric01.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        },
+        {
+          "__type": "Easer",
+          "__guid": "b7ee1020-46ec-4e6c-aba0-d4b483c75d39"
+        }
+      ]
+    },
+    {
+      "__guid": "7b0eca0c-6c40-4036-b4b1-5fa789289ffc",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "220,-720,52",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.MeshComponent",
+          "__guid": "dc1d55af-88e6-4c9a-8c34-f778c8907a4a",
+          "Collision": "Mesh",
+          "Color": "1,1,1,1",
+          "HideInGame": false,
+          "IsTrigger": false,
+          "Mesh": {
+            "Topology": "H4sIAAAAAAAACl2Qiw6CUAxDh1flgg/wAfr/X2pP0iWLJA25W9t16xHxFc4C30E4\u002Bt2FWbgKd2Ew4NTvIZxcb9ZH4b5db\u002Bb9z/oUzVh8m7lPc9FOzjRYQ8ZXyXxxXvrw4e72wvtWdoEPdzMXj8We9OHDXcvO7EqdN396eKaeLHjkLciePeYxi4z0mMFtMisablFvRXZ2Tj158KQOF78f9WSROMQBAAA=",
+            "Positions": [
+              "-36,-12,52",
+              "36,-12,52",
+              "36,12,52",
+              "-36,12,52",
+              "-36,12,-52",
+              "36,12,-52",
+              "36,-12,-52",
+              "-36,-12,-52"
+            ],
+            "TextureCoord": [
+              "8,22.875",
+              "5.75,-6.5",
+              "8,22.125",
+              "-22.875,-6.5",
+              "5.75,22.125",
+              "-8,-6.5",
+              "5.75,22.875",
+              "22.125,-6.5",
+              "8,22.125",
+              "-5.75,-3.25",
+              "8,22.875",
+              "-22.125,-3.25",
+              "5.75,22.875",
+              "8,-3.25",
+              "5.75,22.125",
+              "22.875,-3.25",
+              "22.875,-6.5",
+              "5.75,-3.25",
+              "22.125,-3.25",
+              "-5.75,-6.5",
+              "-22.875,-3.25",
+              "8,-6.5",
+              "-22.125,-6.5",
+              "-8,-3.25"
+            ],
+            "TextureUAxis": [
+              "1,0,0",
+              "1,0,-0",
+              "0,-1,0",
+              "0,1,0",
+              "-1,0,0",
+              "1,-0,0"
+            ],
+            "TextureVAxis": [
+              "0,-1,0",
+              "0,-1,0",
+              "0,0,-1",
+              "-0,0,-1",
+              "0,0,-1",
+              "-0,0,-1"
+            ],
+            "TextureScale": [
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25",
+              "0.25,0.25"
+            ],
+            "TextureOffset": [
+              "0,0",
+              "0,0",
+              "0,96",
+              "0,96",
+              "0,96",
+              "0,96"
+            ],
+            "MaterialIndex": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "EdgeFlags": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "Materials": [
+              "materials/dev/reflectivity_30.vmat",
+              "materials/dev/dev_measuregeneric01.vmat"
+            ]
+          },
+          "SmoothingAngle": 40,
+          "Static": true
+        },
+        {
+          "__type": "Easer",
+          "__guid": "b90179cc-dd8e-4f61-abeb-d3442ae4bf5f"
+        }
+      ]
+    },
+    {
+      "__guid": "74329d83-3599-49e0-b1c8-fc74166ec916",
       "Flags": 0,
       "Name": "actiongraphzombie",
-      "Position": "240,-800,452",
-      "Rotation": "0,0,-0.7071067,0.7071069",
+      "Position": "3392,-1348,4.000061",
       "Tags": "dummy",
-      "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
       "__Prefab": "prefabs/actiongraphzombie.prefab",
       "__PrefabVariables": {
         "NPC Action": {
           "__version": 7,
-          "__guid": "80324db2-537a-4a59-9aee-f2888ad2e344",
+          "__guid": "92580e84-5bef-4c69-8b6b-ffe30e7a0d89",
           "UserData": {
             "Title": "NPC Action",
             "ReferencedComponentTypes": [
               "Sandbox.NavMeshAgent",
               "Kicks.NPC",
-              "Sandbox.Citizen.CitizenAnimationHelper",
               "ActionGraphDelay"
             ]
           },
@@ -5961,32 +6408,6 @@
               }
             },
             {
-              "Id": 109,
-              "Type": "scene.ref",
-              "Properties": {
-                "gameobject": {
-                  "_type": "gameobject",
-                  "go": "df0b8e49-91e6-4e36-ad53-39d12ff4ead5"
-                }
-              },
-              "UserData": {
-                "Position": "2448,880"
-              }
-            },
-            {
-              "Id": 110,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Citizen.CitizenAnimationHelper"
-              },
-              "UserData": {
-                "Position": "2640,880",
-                "Labels": {
-                  "_result": "anim helper"
-                }
-              }
-            },
-            {
               "Id": 111,
               "Type": "Get Synced Velocity",
               "UserData": {
@@ -5997,8 +6418,8 @@
               "Id": 112,
               "Type": "call",
               "Properties": {
-                "_type": "Kicks.NPC",
                 "_isStatic": false,
+                "_type": "Kicks.NPC",
                 "_name": "SetNPCAnims"
               },
               "UserData": {
@@ -6029,8 +6450,8 @@
               "Id": 115,
               "Type": "call",
               "Properties": {
-                "_type": "Kicks.NPC",
                 "_isStatic": false,
+                "_type": "Kicks.NPC",
                 "_name": "NPCAttack"
               },
               "UserData": {
@@ -6041,8 +6462,8 @@
               "Id": 116,
               "Type": "call",
               "Properties": {
-                "_type": "ActionGraphDelay",
                 "_isStatic": false,
+                "_type": "ActionGraphDelay",
                 "_name": "SetDelay"
               },
               "UserData": {
@@ -6084,7 +6505,7 @@
                 "_kind": "Set"
               },
               "UserData": {
-                "Position": "2736,384"
+                "Position": "2720,384"
               }
             },
             {
@@ -6102,8 +6523,8 @@
               "Id": 128,
               "Type": "call",
               "Properties": {
-                "_type": "Sandbox.SkinnedModelRenderer",
                 "_isStatic": false,
+                "_type": "Sandbox.SkinnedModelRenderer",
                 "_name": "Set"
               },
               "UserData": {
@@ -6120,6 +6541,50 @@
               },
               "UserData": {
                 "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.IComponentLister",
+                "_name": "Get",
+                "T": "Sandbox.Citizen.CitizenAnimationHelper"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
               }
             }
           ],
@@ -6208,12 +6673,6 @@
               "DstName": "condition"
             },
             {
-              "SrcId": 109,
-              "SrcName": "_result",
-              "DstId": 110,
-              "DstName": "_this"
-            },
-            {
               "SrcId": 108,
               "SrcName": "true",
               "DstId": 111,
@@ -6256,7 +6715,7 @@
               "DstName": "_target"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 112,
               "DstName": "citizenAnimationHelper"
@@ -6342,10 +6801,8 @@
               "DstName": "a"
             },
             {
-              "Value": {
-                "_type": "gameobject",
-                "go": "df0b8e49-91e6-4e36-ad53-39d12ff4ead5"
-              },
+              "SrcId": 167,
+              "SrcName": "_result",
               "DstId": 119,
               "DstName": "Body"
             },
@@ -6374,7 +6831,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 125,
               "DstName": "_target"
@@ -6385,7 +6842,7 @@
               "DstName": "_value"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 127,
               "DstName": "_target"
@@ -6419,7 +6876,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 154,
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_target"
@@ -6429,22 +6886,35 @@
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_value"
-            }
-          ],
-          "Defaults": {
-            "$109.gameobject": {
-              "_type": "gameobject",
-              "go": "df0b8e49-91e6-4e36-ad53-39d12ff4ead5"
             },
-            "$149._value": {
-              "_type": "gameobject",
-              "go": "df0b8e49-91e6-4e36-ad53-39d12ff4ead5"
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
             }
-          }
+          ]
         },
         "On Death": {
           "__version": 7,
-          "__guid": "81e4dc9c-f239-4b4d-976b-01a37d2bd343",
+          "__guid": "7189ded6-8128-4c7e-9489-b82d5a7303f6",
           "UserData": {
             "Title": "On Death",
             "ReferencedComponentTypes": []
@@ -6456,26 +6926,109 @@
               "Type": "input"
             },
             {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
               "Id": 6,
               "Type": "call",
               "Properties": {
-                "_type": "Inventory",
                 "_isStatic": false,
+                "_type": "Inventory",
                 "_name": "AddAmmo"
               },
               "UserData": {
                 "Position": "240,0"
               }
-            },
-            {
-              "Id": 10,
-              "Type": "Clone GameObject This Pos and Rot",
-              "UserData": {
-                "Position": "576,0"
-              }
             }
           ],
           "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
             {
               "SrcId": 0,
               "SrcName": "_signal",
@@ -6503,31 +7056,419 @@
               "Value": "LightAmmo",
               "DstId": 6,
               "DstName": "ammoType"
-            },
-            {
-              "SrcId": 6,
-              "SrcName": "_signal",
-              "DstId": 10,
-              "DstName": "_signal"
-            },
-            {
-              "Value": {
-                "_type": "gameobject",
-                "prefab": "prefabs/gibs/zombiegibs.prefab"
-              },
-              "DstId": 10,
-              "DstName": "gameObject"
             }
           ],
           "Defaults": {
-            "$11._value": {
+            "$7._value": {
               "_type": "gameobject",
-              "prefab": "prefabs/gibs/zombiegibs.prefab"
+              "prefab": "prefabs/zombiegibs.prefab"
             }
           }
         },
-        "On Attack": null
+        "On Attack": null,
+        "OnDestroy": {
+          "__version": 7,
+          "__guid": "01dfe5f3-f809-4466-99c7-b37b5d40ecac",
+          "UserData": {
+            "Title": "OnDestroy",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 2,
+              "Type": "Get Current Wave",
+              "UserData": {
+                "Position": "-0,96"
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "WaveSpawner",
+                "_name": "RemoveZombie"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "input.value",
+              "Properties": {
+                "_name": "_target"
+              },
+              "UserData": {
+                "Position": "32,224"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 4,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "Zombie"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 3,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
       }
+    },
+    {
+      "__guid": "a401e0e3-6053-47cc-9b04-186eb85aee32",
+      "Flags": 0,
+      "Name": "ZombieSpawn1",
+      "Position": "2347.801,-651.9608,584.9608",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true
+    },
+    {
+      "__guid": "bc42db58-02ce-4417-944f-6c5e52e79a43",
+      "Flags": 0,
+      "Name": "Spawn",
+      "Position": "2304,-640.0006,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "ec1f6423-6530-4083-ba11-abb4950b2b98",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "63ab3c61-1ad8-4352-bf77-707a4a2e8f04",
+      "Flags": 0,
+      "Name": "Spawn (9)",
+      "Position": "2176,-640.0006,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "fe6c50f2-4a75-49b2-a0c7-8771ac7c88f1",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "1bd2a4da-fd72-47fd-8640-76c5453de50f",
+      "Flags": 0,
+      "Name": "Spawn (4)",
+      "Position": "2304,-512.0007,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "9a2d62fc-a349-48eb-8a97-9e5ef3679ba0",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4e6c8bb4-ccb1-4ba0-b90c-c77b577c8f1c",
+      "Flags": 0,
+      "Name": "Spawn (6)",
+      "Position": "2176,-512.0007,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "c445068d-1c3f-4b86-9837-fea6e54ffa46",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "82556db0-b1ae-4cda-95c9-8aa059019735",
+      "Flags": 0,
+      "Name": "Spawn (1)",
+      "Position": "2304,-768.0005,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "f019cd97-6dec-43a2-b0fb-7f66bd083421",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "9d50780e-39d8-43ed-8562-1a472a73bfc6",
+      "Flags": 0,
+      "Name": "Spawn (12)",
+      "Position": "2432,-768.0005,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "f1b44865-a40f-46dc-bdc3-e2f344aac0fa",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "0f7c735d-0750-425d-b2cf-4ba3cb7a76dc",
+      "Flags": 0,
+      "Name": "Spawn (17)",
+      "Position": "2432,-896,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "fcfa7136-6f8b-4542-a2d7-78372c505e52",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "43aa38ad-1638-48ce-85db-48fa228414ea",
+      "Flags": 0,
+      "Name": "Spawn (8)",
+      "Position": "2176,-768.0005,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "46d4eb7b-f0fc-4479-87d8-d8a48b2104fd",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "4a96c946-5a5a-4585-9e35-2d1927203854",
+      "Flags": 0,
+      "Name": "Spawn (2)",
+      "Position": "2304,-896.0004,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "e7e5fdff-0489-418d-bb3d-6c3801825dbc",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "df43a67b-9318-4ed2-bd8c-b0fd36e997e8",
+      "Flags": 0,
+      "Name": "Spawn (7)",
+      "Position": "2176,-896.0004,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "5e6f1bbc-349a-4545-a9a7-16bd188613d6",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c75a46c7-31fa-4d79-9999-bbfe6c6d7aea",
+      "Flags": 0,
+      "Name": "Spawn (5)",
+      "Position": "2304,-1024,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "a8f6cb73-b30f-4e88-9093-150b83684bb8",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "174ac75a-1619-42cc-9889-0632ccdd259f",
+      "Flags": 0,
+      "Name": "Spawn (11)",
+      "Position": "2176,-1024,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "d41612f6-540a-4a5e-9806-d36d2eadf132",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "81ab06b5-c31b-47fe-90bf-f278c9489488",
+      "Flags": 0,
+      "Name": "Spawn (13)",
+      "Position": "2048,-1024,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "5ce8cc44-2d67-4881-adfd-84e515d66529",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "ee84d515-7177-4b13-8c96-ebd8f55cfb75",
+      "Flags": 0,
+      "Name": "Spawn (16)",
+      "Position": "1920,-1024,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "2c56b21f-cccb-4804-9eb4-341bc54bd79e",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "f8eccd79-97af-407e-80f3-03a4d039d5b3",
+      "Flags": 0,
+      "Name": "Spawn (14)",
+      "Position": "2048,-1152,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "aaf1e4e2-8bb0-47ee-98be-f2fe5c3bb5a8",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "00c3e8a6-f119-40d9-a959-bfd4cf2a867f",
+      "Flags": 0,
+      "Name": "Spawn (15)",
+      "Position": "2176,-1152,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "eac778ab-0999-4367-a22f-6532b5488492",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c27da572-d209-4ae0-b57c-9bacf60f80a7",
+      "Flags": 0,
+      "Name": "Spawn (3)",
+      "Position": "2304,-896.0004,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "49d02b86-914b-4d02-96c3-488d4335e629",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
+    },
+    {
+      "__guid": "c79338ef-688e-45a9-ad57-d93661cf95e8",
+      "Flags": 0,
+      "Name": "Spawn (10)",
+      "Position": "2176,-896.0004,448",
+      "Rotation": "0,0,0.9999999,0.0000001937151",
+      "Tags": "zombiespawn1",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SpawnPoint",
+          "__guid": "d62eab20-8c01-49cc-a036-783d371bcded",
+          "Color": "0.8902,0.31765,0.05098,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -6553,11 +7494,13 @@
   },
   "Title": "demo_level3_2",
   "Description": "",
-  "LastSaved": "2024-06-12T12:37:17.1034686-04:00",
+  "LastSaved": "2024-06-12T21:55:04.6790331-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.metal_galvanized",
     "facepunch.pendant_light",
+    "facepunch.v_m4a1_magazine",
+    "facepunch.v_mp5_magazine",
     "facepunch.wooden_door_01a",
     "fpopium.textured_ceiling_a",
     "nolankicks.idel-terry"

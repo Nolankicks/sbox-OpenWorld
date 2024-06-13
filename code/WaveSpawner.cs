@@ -23,6 +23,18 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 		}
 	}
 
+	protected override void OnUpdate()
+	{
+		foreach (var zombie in CurrentWave)
+		{
+			if (zombie is null)
+			{
+				CurrentWave.Remove(zombie);
+			}
+		}
+	}
+
+
 	public async Task StartWave(int NumberOfZombies, bool IsFinalWave = false, bool IsFirstWave = false)
 	{
 		Log.Info("Wave");

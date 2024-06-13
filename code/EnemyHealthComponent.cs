@@ -10,6 +10,7 @@ public sealed class EnemyHealthComponent : Component
     [Property] public bool CanBeKilled { get; set; } = true;
     [Property] public OnHurtDelgate OnHurt { get; set; }
     [Property] public OnDeathDelegate OnDeath { get; set; }
+	[Property] public bool CanDie { get; set; } = true;
     protected override void OnUpdate()
     {
 
@@ -37,6 +38,9 @@ public sealed class EnemyHealthComponent : Component
         if (isDead) return; // Check the isDead flag here
         isDead = true; // Set the isDead flag to true
         OnDeath?.Invoke(playerController, inventory, ammoContainer);
-        GameObject.Destroy();
+		if (CanDie)
+		{
+			GameObject.Destroy();
+		}
     }
 }

@@ -71,10 +71,15 @@ public sealed class Weapon : Component
 		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+		if (IsProxy) return;
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
 		StartingAmmo = Ammo;
-
+	}
+	protected override void OnEnabled()
+	{
+		if (IsProxy) return;
+		ViewModelGun.Set("b_deploy", true);
 	}
 	protected override void OnUpdate()
 	{

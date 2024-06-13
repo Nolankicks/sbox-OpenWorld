@@ -23,6 +23,73 @@
           "_type": "gameobject",
           "go": "ba0d5f5f-0d25-4582-aa6e-87c469dedef7"
         },
+        "OnComponentEnabled": {
+          "__version": 7,
+          "__guid": "526a9ba1-a5fd-43d6-9575-f8e4af4124ac",
+          "UserData": {
+            "Title": "On Component Enabled",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "320,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 1,
+              "DstName": "_signal"
+            },
+            {
+              "Value": {
+                "_type": "component",
+                "component_id": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
+                "go": "b58c81f8-085e-42c5-b20e-400945aec469",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_deploy",
+              "DstId": 1,
+              "DstName": "v"
+            },
+            {
+              "Value": {
+                "$type": "Simple",
+                "Type": "System.Single",
+                "Value": 1
+              },
+              "DstId": 1,
+              "DstName": "value"
+            }
+          ],
+          "Defaults": {
+            "$2._value": {
+              "_type": "component",
+              "component_id": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
+              "go": "b58c81f8-085e-42c5-b20e-400945aec469",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        },
         "OnUse": {
           "__version": 7,
           "__guid": "46f3e34d-9bbd-4b4e-97b8-3d31c231597d",
@@ -138,9 +205,9 @@
               "Id": 420,
               "Type": "call",
               "Properties": {
-                "_name": "SetDelay",
+                "_isStatic": false,
                 "_type": "ActionGraphDelay",
-                "_isStatic": false
+                "_name": "SetDelay"
               },
               "UserData": {
                 "Position": "1488,-176"
@@ -738,9 +805,9 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
-                    "_name": "PickUp",
+                    "_isStatic": false,
                     "_type": "ActionGraphItem",
-                    "_isStatic": false
+                    "_name": "PickUp"
                   },
                   "UserData": {
                     "Position": "1024,0"
@@ -859,7 +926,8 @@
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           }
         ]
       },
@@ -906,7 +974,8 @@
                 "CreateBoneObjects": false,
                 "Model": "models/weapons/sbox_assault_m4a1/v_m4a1.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           },
@@ -932,9 +1001,122 @@
                 "CreateBoneObjects": false,
                 "Model": "models/first_person/first_person_arms.vmdl",
                 "RenderType": "On",
-                "Tint": "1,1,1,1"
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
+          }
+        ]
+      }
+    ],
+    "__variables": [
+      {
+        "Id": "OnUse",
+        "Title": "OnUse",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnUse"
+          }
+        ]
+      },
+      {
+        "Id": "OnPickU",
+        "Title": "OnPickUp",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnPickUp"
+          }
+        ]
+      },
+      {
+        "Id": "OnEnabled",
+        "Title": "OnEnabled",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentEnabled"
+          }
+        ]
+      },
+      {
+        "Id": "OnStart",
+        "Title": "OnStart",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentStart"
+          }
+        ]
+      },
+      {
+        "Id": "OnUpdate",
+        "Title": "OnUpdate",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentUpdate"
+          }
+        ]
+      },
+      {
+        "Id": "OnFixedUpdate",
+        "Title": "OnFixedUpdate",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentFixedUpdate"
+          }
+        ]
+      },
+      {
+        "Id": "OnDisabled",
+        "Title": "OnDisabled",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentDisabled"
+          }
+        ]
+      },
+      {
+        "Id": "OnDestroy",
+        "Title": "OnDestroy",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnComponentDestroy"
+          }
+        ]
+      },
+      {
+        "Id": "Icon",
+        "Title": "Icon",
+        "Targets": [
+          {
+            "Id": "41f17fb9-9404-4cea-8513-5f8947cbaf57",
+            "Property": "Icon"
+          }
+        ]
+      },
+      {
+        "Id": "OnDrop",
+        "Title": "OnDrop",
+        "Targets": [
+          {
+            "Id": "16cf267b-74d7-4f8d-acd0-12f4c4f7d437",
+            "Property": "OnDrop"
+          }
+        ]
+      },
+      {
+        "Id": "Model",
+        "Title": "Model",
+        "Targets": [
+          {
+            "Id": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
+            "Property": "Model"
           }
         ]
       }

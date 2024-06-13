@@ -145,4 +145,29 @@ public sealed class NPC : Component
 	{
 		clone = gameObject.Clone(gameObject.Transform.Position, gameObject.Transform.Rotation);
 	}
+
+	public void RagdollDeath(SkinnedModelRenderer Ragdoll)
+	{
+		if (Components.TryGet<NavMeshAgent>(out var agent, FindMode.EverythingInSelfAndAncestors & FindMode.EverythingInSelfAndParent))
+		{
+			agent.Stop();
+			agent.Destroy();
+		}
+		if (Components.TryGet<NPC>(out var npc, FindMode.EverythingInSelfAndAncestors & FindMode.EverythingInSelfAndParent))
+		{
+			npc.Destroy();
+		}
+		if (Components.TryGet<ActionGraphDelay>(out var delay, FindMode.EverythingInSelfAndAncestors & FindMode.EverythingInSelfAndParent))
+		{
+			delay.Destroy();
+		}
+		var ragdollGb = Ragdoll.GameObject;
+		var modelPhys = ragdollGb.Components.Create<ModelPhysics>();
+		modelPhys.Renderer = Ragdoll;
+		modelPhys.Model = Ragdoll.Model;
+		if (Components.TryGet<EnemyHealthComponent>(out var health, FindMode.EverythingInSelfAndAncestors & FindMode.EverythingInSelfAndParent))
+		{
+			health.Destroy();
+		}
+	}
 }

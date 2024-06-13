@@ -84,6 +84,18 @@
         "IsTrigger": false,
         "Scale": "50,50,50",
         "Static": false
+      },
+      {
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "7ffc4583-8620-4965-af61-7b120b5b56ba",
+        "AngularDamping": 0,
+        "Gravity": true,
+        "LinearDamping": 0,
+        "Locking": {},
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
       }
     ],
     "Children": [

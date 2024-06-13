@@ -1,0 +1,25 @@
+{
+  "publish": {
+    "Allowed": true,
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "fog_bug_test",
+      "Type": "map",
+      "Org": "local",
+      "Ident": "fog_bug_test",
+      "Tags": null,
+      "Schema": 0,
+      "Resources": null,
+      "PackageReferences": [],
+      "EditorReferences": [
+        "facepunch.stickers_2#33876",
+        "facepunch.stickers_1#33877",
+        "facepunch.lantern#44606",
+        "facepunch.stickers_3#33875"
+      ],
+      "Metadata": {
+        "SingleAssetSource": "maps/fog_bug_test.vmap"
+      }
+    }
+  }
+}

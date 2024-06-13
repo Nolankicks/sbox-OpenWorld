@@ -19,7 +19,6 @@
             "ReferencedComponentTypes": [
               "Sandbox.NavMeshAgent",
               "Kicks.NPC",
-              "Sandbox.Citizen.CitizenAnimationHelper",
               "ActionGraphDelay"
             ]
           },
@@ -106,32 +105,6 @@
               }
             },
             {
-              "Id": 109,
-              "Type": "scene.ref",
-              "Properties": {
-                "gameobject": {
-                  "_type": "gameobject",
-                  "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
-                }
-              },
-              "UserData": {
-                "Position": "2448,880"
-              }
-            },
-            {
-              "Id": 110,
-              "Type": "scene.get",
-              "Properties": {
-                "T": "Sandbox.Citizen.CitizenAnimationHelper"
-              },
-              "UserData": {
-                "Position": "2640,880",
-                "Labels": {
-                  "_result": "anim helper"
-                }
-              }
-            },
-            {
               "Id": 111,
               "Type": "Get Synced Velocity",
               "UserData": {
@@ -142,9 +115,9 @@
               "Id": 112,
               "Type": "call",
               "Properties": {
+                "_isStatic": false,
                 "_name": "SetNPCAnims",
-                "_type": "Kicks.NPC",
-                "_isStatic": false
+                "_type": "Kicks.NPC"
               },
               "UserData": {
                 "Position": "3632,592"
@@ -186,9 +159,9 @@
               "Id": 116,
               "Type": "call",
               "Properties": {
+                "_isStatic": false,
                 "_name": "SetDelay",
-                "_type": "ActionGraphDelay",
-                "_isStatic": false
+                "_type": "ActionGraphDelay"
               },
               "UserData": {
                 "Position": "4752,592"
@@ -225,8 +198,8 @@
               "Type": "property",
               "Properties": {
                 "_name": "HoldType",
-                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                "_kind": "Set"
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "2736,384"
@@ -260,11 +233,27 @@
               "Type": "property",
               "Properties": {
                 "_name": "LookAt",
-                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                "_kind": "Set"
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 153,
+              "Type": "call",
+              "Properties": {
+                "_isStatic": false,
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Get",
+                "_type": "Sandbox.IComponentLister"
+              },
+              "UserData": {
+                "Position": "2384,896",
+                "Labels": {
+                  "_result": "animhelper"
+                }
               }
             }
           ],
@@ -353,12 +342,6 @@
               "DstName": "condition"
             },
             {
-              "SrcId": 109,
-              "SrcName": "_result",
-              "DstId": 110,
-              "DstName": "_this"
-            },
-            {
               "SrcId": 108,
               "SrcName": "true",
               "DstId": 111,
@@ -401,7 +384,7 @@
               "DstName": "_target"
             },
             {
-              "SrcId": 110,
+              "SrcId": 153,
               "SrcName": "_result",
               "DstId": 112,
               "DstName": "citizenAnimationHelper"
@@ -519,7 +502,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 153,
               "SrcName": "_result",
               "DstId": 125,
               "DstName": "_target"
@@ -530,7 +513,7 @@
               "DstName": "_value"
             },
             {
-              "SrcId": 110,
+              "SrcId": 153,
               "SrcName": "_result",
               "DstId": 127,
               "DstName": "_target"
@@ -564,7 +547,7 @@
               "DstName": "_signal"
             },
             {
-              "SrcId": 110,
+              "SrcId": 153,
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_target"
@@ -574,13 +557,20 @@
               "SrcName": "_result",
               "DstId": 143,
               "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 153,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InParent, InAncestors, InChildren, EnabledInSelfAndDescendants",
+              "DstId": 153,
+              "DstName": "search"
             }
           ],
           "Defaults": {
-            "$109.gameobject": {
-              "_type": "gameobject",
-              "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
-            },
             "$149._value": {
               "_type": "gameobject",
               "go": "361a0249-3f14-4bb2-8a8a-8bb1594b3a78"
@@ -603,6 +593,7 @@
         "__type": "Kicks.EnemyHealthComponent",
         "__guid": "47f24295-9a32-45ce-b521-1e3cb3f5c257",
         "CanBeKilled": true,
+        "CanDie": true,
         "health": 100,
         "OnDeath": {
           "__version": 7,
@@ -668,8 +659,8 @@
               "Type": "call",
               "Properties": {
                 "_isStatic": false,
-                "_type": "Inventory",
-                "_name": "AddAmmo"
+                "_name": "AddAmmo",
+                "_type": "Inventory"
               },
               "UserData": {
                 "Position": "240,0"
@@ -848,6 +839,31 @@
           {
             "Id": "e3748a62-f1be-4de5-8e2b-5e72356e6851",
             "Property": "Model"
+          }
+        ]
+      },
+      {
+        "Id": "Can Be Killed",
+        "Title": "Can Be Killed",
+        "Targets": []
+      },
+      {
+        "Id": "Can Die",
+        "Title": "Can Die",
+        "Targets": [
+          {
+            "Id": "47f24295-9a32-45ce-b521-1e3cb3f5c257",
+            "Property": "CanDie"
+          }
+        ]
+      },
+      {
+        "Id": "Can Be Killed",
+        "Title": "Can Be Killed",
+        "Targets": [
+          {
+            "Id": "47f24295-9a32-45ce-b521-1e3cb3f5c257",
+            "Property": "CanBeKilled"
           }
         ]
       }

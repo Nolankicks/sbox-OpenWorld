@@ -5,6 +5,8 @@ using Sandbox.Utility;
 public sealed class OpiumPostprocess : PostProcess, Component.ExecuteInEditor
 {
 	IDisposable renderHook;
+	[Property] public bool VertexSnapping { get; set; } = true;
+	[Property] public bool UsePostProcess { get; set; } = true;
 
 	protected override void OnEnabled()
 	{
@@ -19,7 +21,13 @@ public sealed class OpiumPostprocess : PostProcess, Component.ExecuteInEditor
 	public void RenderEffect(SceneCamera camera)
 	{
 		if (!camera.EnablePostProcessing) return;
-		Graphics.GrabFrameTexture("ColorBuffer", attributes);
-		Graphics.Blit(Material.FromShader(Cloud.Shader("facepunch.goback_postprocess")), attributes);
+		camera.Attributes.SetCombo("D_VERTEX_SNAP", VertexSnapping ? 1 : 0);
+		Graphics.GrabFrameTexture( "ColorBuffer", attributes );
+        Graphics.GrabDepthTexture( "DepthBuffer", attributes );
+		if (UsePostProcess)
+		{
+			Graphics.Blit(Material.FromShader(Cloud.Shader("facepunch.goback_postprocess")), attributes);
+		}
+
 	}
 }
