@@ -39,12 +39,12 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "viewmodel",
+          "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
-          "ZNear": 0.1
+          "ZNear": 1
         },
         {
           "__type": "Sandbox.AmbientOcclusion",
@@ -4394,7 +4394,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-06-20T10:22:55.6170998-04:00",
+  "LastSaved": "2024-06-20T10:28:17.9233126-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.can_long",

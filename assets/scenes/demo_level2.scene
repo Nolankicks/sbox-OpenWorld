@@ -40,12 +40,12 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "viewmodel",
+          "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
-          "ZNear": 0.1
+          "ZNear": 1
         },
         {
           "__type": "Sandbox.AmbientOcclusion",
@@ -10562,7 +10562,7 @@
   },
   "Title": "demo_level2",
   "Description": "",
-  "LastSaved": "2024-06-20T10:23:01.6340514-04:00",
+  "LastSaved": "2024-06-20T10:28:21.4931598-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.aircon_unit_large_128x64_a",

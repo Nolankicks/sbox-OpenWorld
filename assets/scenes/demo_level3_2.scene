@@ -43,7 +43,7 @@
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
-          "ZNear": 0.1
+          "ZNear": 1
         },
         {
           "__type": "Sandbox.AmbientOcclusion",
@@ -130,10 +130,6 @@
             {
               "_type": "gameobject",
               "prefab": "prefabs/weapons/weapon_smg.prefab"
-            },
-            {
-              "_type": "gameobject",
-              "prefab": "prefabs/weapons/weapon_shotgun.prefab"
             },
             {
               "_type": "gameobject",
@@ -11429,51 +11425,6 @@
       "NetworkInterpolation": true,
       "__Prefab": "prefabs/items/heavyammopickup.prefab",
       "__PrefabVariables": {}
-    },
-    {
-      "__guid": "64acd456-1282-4c9b-85db-eba89391c3d9",
-      "Flags": 0,
-      "Name": "citizen",
-      "Position": "122.1585,-1.831791,0.03531079",
-      "Rotation": "0,0,1,0.0000001947072",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkinnedModelRenderer",
-          "__guid": "a366e7e7-78b8-4403-88f1-336fb952cfae",
-          "BodyGroups": 341,
-          "CreateBoneObjects": false,
-          "Model": "models/citizen/citizen.vmdl",
-          "RenderType": "On",
-          "Tint": "1,1,1,1",
-          "UseAnimGraph": true
-        },
-        {
-          "__type": "RagdollTest",
-          "__guid": "2c9388f2-8ad8-440b-86b3-ad2d9919a25c",
-          "Renderer": {
-            "_type": "component",
-            "component_id": "a366e7e7-78b8-4403-88f1-336fb952cfae",
-            "go": "64acd456-1282-4c9b-85db-eba89391c3d9",
-            "component_type": "SkinnedModelRenderer"
-          },
-          "Target": {
-            "_type": "gameobject",
-            "go": "cdf9533b-89c9-42ce-a578-7f7645d476ac"
-          }
-        }
-      ]
-    },
-    {
-      "__guid": "cdf9533b-89c9-42ce-a578-7f7645d476ac",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-72,-64,31.54623",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true
     }
   ],
   "SceneProperties": {
@@ -11499,7 +11450,7 @@
   },
   "Title": "demo_level3_2",
   "Description": "",
-  "LastSaved": "2024-06-20T10:23:16.7042193-04:00",
+  "LastSaved": "2024-06-20T10:28:52.7547129-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.metal_galvanized",
