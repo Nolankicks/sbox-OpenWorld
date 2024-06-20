@@ -43,7 +43,9 @@
         "facepunch.decal_arrow_a#33769",
         "facepunch.floor_herringbone_old_blend#19466",
         "facepunch.v_m4a1#55898",
-        "nolankicks.2d_game_test#46693"
+        "nolankicks.2d_game_test#46693",
+        "facepunch.floor_steel_diamond_plate_a#18679",
+        "facepunch.v_m4a1#58277"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level1.vmap"

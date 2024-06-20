@@ -28,6 +28,13 @@
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 10
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "0a2f9670-587b-4df0-bd2d-ee9aaf1e4d85",
+          "Intensity": 8,
+          "Quality": "High",
+          "Radius": 32
         }
       ]
     },
@@ -280,7 +287,8 @@
           "MaterialGroup": "default",
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
         },
         {
           "__type": "Sandbox.Citizen.CitizenAnimationHelper",
@@ -340,8 +348,8 @@
                 "Id": 4,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Sitting",
-                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "Sitting"
                 },
                 "UserData": {
                   "Position": "512,208"
@@ -833,7 +841,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/shirt/loose_shirt/models/loose_shirts.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -859,7 +868,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/jacket/biker_jacket/models/biker_jacket.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -885,7 +895,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/shoes/trainers/trainers.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -911,7 +922,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/trousers/jeans/models/jeans_black.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -937,7 +949,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/hair/hair_scruffy_shaved_sides/models/scruffy_shaved_sides.vmdl",
                   "RenderType": "On",
-                  "Tint": "0.15349,0.10994,0.10994,1"
+                  "Tint": "0.15349,0.10994,0.10994,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -963,7 +976,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/makeup/bruised_face/models/bruised_face.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             },
@@ -989,7 +1003,8 @@
                   "CreateBoneObjects": false,
                   "Model": "models/citizen_clothes/gloves/tactical_gloves/models/tactical_gloves.vmdl",
                   "RenderType": "On",
-                  "Tint": "1,1,1,1"
+                  "Tint": "1,1,1,1",
+                  "UseAnimGraph": true
                 }
               ]
             }
@@ -1072,7 +1087,8 @@
           "MaterialGroup": "default",
           "Model": "models/sbox_props/office_chair/office_chair.vmdl",
           "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
         }
       ]
     },
@@ -1157,7 +1173,7 @@
   },
   "Title": "menuscene",
   "Description": "",
-  "LastSaved": "2024-05-22T12:48:48.1229014-04:00",
+  "LastSaved": "2024-06-20T10:22:48.0174986-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.office_chair",

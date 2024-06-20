@@ -19,7 +19,7 @@ public sealed class Inventory : Component
 	public InputHint inputHint { get; set; }
 	[Property, Sync] public bool AllWeaponsEnabled { get; set; } = true;
 	[Property] public List<GameObject> ItemsToSpawnWith { get; set; } = new();
- 	public int ActiveSlot = 0;
+	public int ActiveSlot = 0;
 	public int Slots => 9;
 	protected override void OnStart()
 	{
@@ -41,22 +41,21 @@ public sealed class Inventory : Component
 		if (Slot > Items.Count) return;
 		if (Spawn)
 		{
-		if (item is null) return;
-		var itemClone = item.Clone(Vector3.Up * 64);
-		itemClone.NetworkSpawn();
-		Items[Slot] = itemClone;
-		itemClone.Parent = GameObject;
-		itemClone.Components.TryGet<Weapon>( out var weapon );
-		itemClone.Components.TryGet<ActionGraphItem>( out var shotgun );
-		if (weapon is not null)
-		{
-			weapon.IsWeapon = true;
-		}
-		else if (shotgun is not null)
-		{
-			shotgun.InInventory = true;
-		}
-		AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
+			if (item is null) return;
+			var itemClone = item.Clone();
+			itemClone.NetworkSpawn();
+			Items[Slot] = itemClone;
+			itemClone.Components.TryGet<Weapon>(out var weapon);
+			itemClone.Components.TryGet<ActionGraphItem>(out var shotgun);
+			if (weapon is not null)
+			{
+				weapon.IsWeapon = true;
+			}
+			else if (shotgun is not null)
+			{
+				shotgun.InInventory = true;
+			}
+			AddTexture(itemClone.Components.Get<IconComponent>().Icon, Slot);
 		}
 		else
 		{
@@ -110,47 +109,47 @@ public sealed class Inventory : Component
 		if (IsProxy) return;
 		if (Destroy)
 		{
-		if (item is null) return;
-		var index = Items.FindIndex(x => x == item);
-		Items[index] = null;
-		ItemTextures[index] = null;
-		item.Destroy();		
+			if (item is null) return;
+			var index = Items.FindIndex(x => x == item);
+			Items[index] = null;
+			ItemTextures[index] = null;
+			item.Destroy();
 		}
 		else
-{
-    var index = Items.FindIndex(x => x == item);
-    if (index != -1)
-    {
-        Items[index] = null;
-        ItemTextures[index] = null;
-    }
-}
+		{
+			var index = Items.FindIndex(x => x == item);
+			if (index != -1)
+			{
+				Items[index] = null;
+				ItemTextures[index] = null;
+			}
+		}
 	}
 
 	protected override void OnUpdate()
-{
-	if (IsProxy) return;
-	ChangeItems();
-	ChangeSlots();
-	Pickup();
-	Drop();
-	Trace();
-	foreach (var item in Items)
 	{
-		if (item is not null)
+		if (IsProxy) return;
+		ChangeItems();
+		ChangeSlots();
+		Pickup();
+		Drop();
+		Trace();
+		foreach (var item in Items)
 		{
-			item.Components.TryGet<IconComponent>(out var icon);
-			if (icon is not null)
+			if (item is not null)
 			{
-				ItemTextures[Items.FindIndex(x => x == item)] = icon.Icon;
+				item.Components.TryGet<IconComponent>(out var icon);
+				if (icon is not null)
+				{
+					ItemTextures[Items.FindIndex(x => x == item)] = icon.Icon;
+				}
+			}
+			else
+			{
+				ItemTextures[Items.FindIndex(x => x == item)] = null;
 			}
 		}
-		else
-		{
-			ItemTextures[Items.FindIndex(x => x == item)] = null;
-		}
 	}
-}
 	void ChangeSlots()
 	{
 		if (IsProxy) return;
@@ -194,27 +193,27 @@ public sealed class Inventory : Component
 		{
 			ActiveSlot = 9;
 		}
-		 if (Input.MouseWheel.y != 0)
-    {
-        ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Slots;
-        if (ActiveSlot < 0) ActiveSlot += Slots;
-    }
+		if (Input.MouseWheel.y != 0)
+		{
+			ActiveSlot = (ActiveSlot + Math.Sign(Input.MouseWheel.y)) % Slots;
+			if (ActiveSlot < 0) ActiveSlot += Slots;
+		}
 	}
 	void ChangeItems()
 	{
 		if (AllWeaponsEnabled)
 		{
-		foreach (GameObject weapon in Items)
-		{
-			if (weapon is not null && weapon == Items[ActiveSlot] && !IsProxy)
+			foreach (GameObject weapon in Items)
 			{
-				weapon.Enabled = true;
+				if (weapon is not null && weapon == Items[ActiveSlot] && !IsProxy)
+				{
+					weapon.Enabled = true;
+				}
+				if (weapon is not null && weapon != Items[ActiveSlot] && !IsProxy)
+				{
+					weapon.Enabled = false;
+				}
 			}
-			if (weapon is not null && weapon != Items[ActiveSlot] && !IsProxy)
-			{
-				weapon.Enabled = false;
-			}
-		}
 		}
 	}
 	void Pickup()
@@ -257,42 +256,42 @@ public sealed class Inventory : Component
 		if (ActiveSlot < 0 || ActiveSlot >= Items.Count || Items[ActiveSlot] is null) return;
 		if (Input.Pressed("menu"))
 		{
-		var item = Items[ActiveSlot];
-		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
-		var tr = Scene.Trace.Ray(ray, 50).WithoutTags("player").Run();
-		item.Components.TryGet<Weapon>( out var weapon );
-		item.Components.TryGet<Shotgun>( out var shotgun );
-		item.Components.TryGet<IconComponent>(out var icon);
-		item.Components.TryGet<ActionGraphItem>(out var graphItem, FindMode.EverythingInSelfAndParent);
-		if (weapon is not null && icon is not null)
-		{
-			weapon.DropItem(this);
+			var item = Items[ActiveSlot];
+			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+			var tr = Scene.Trace.Ray(ray, 50).WithoutTags("player").Run();
+			item.Components.TryGet<Weapon>(out var weapon);
+			item.Components.TryGet<Shotgun>(out var shotgun);
+			item.Components.TryGet<IconComponent>(out var icon);
+			item.Components.TryGet<ActionGraphItem>(out var graphItem, FindMode.EverythingInSelfAndParent);
+			if (weapon is not null && icon is not null)
+			{
+				weapon.DropItem(this);
+			}
+			else if (shotgun is not null && icon is not null)
+			{
+				shotgun.GameObject.Parent = null;
+				shotgun.IsWeapon = false;
+				shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
+				RemoveItem(item, false);
+				shotgun.GameObject.Network.DropOwnership();
+				shotgun.GameObject.Network.DropOwnership();
+				shotgun.ViewModelCamera.Network.DropOwnership();
+				shotgun.ViewModelGun.GameObject.Network.DropOwnership();
+				shotgun.arms.GameObject.Network.DropOwnership();
+				shotgun.ViewModelHolder.Network.DropOwnership();
+
+				//Idk if I need to refresh this shit but I will anyway 🤓☝️
+				Network.Refresh();
+			}
+			else if (graphItem is not null)
+			{
+				graphItem.DropItem(this);
+			}
+			else
+			{
+				return;
+			}
 		}
-		else if (shotgun is not null && icon is not null)
-		{
-		shotgun.GameObject.Parent = null;
-		shotgun.IsWeapon = false;
-		shotgun.GameObject.Transform.Position = tr.Hit ? tr.HitPosition : tr.EndPosition;
-		RemoveItem(item, false);
-		shotgun.GameObject.Network.DropOwnership();
-		shotgun.GameObject.Network.DropOwnership();
-		shotgun.ViewModelCamera.Network.DropOwnership();
-		shotgun.ViewModelGun.GameObject.Network.DropOwnership();
-		shotgun.arms.GameObject.Network.DropOwnership();
-		shotgun.ViewModelHolder.Network.DropOwnership();
-	
-		//Idk if I need to refresh this shit but I will anyway 🤓☝️
-		Network.Refresh();
-		}
-		else if (graphItem is not null)
-		{
-			graphItem.DropItem(this);
-		}
-		else
-		{
-			return;
-		}
-	}
 	}
 	void PopupUi(PopupUi popupUi, string inputAction)
 	{
@@ -307,33 +306,33 @@ public sealed class Inventory : Component
 	{
 		try
 		{
-		var ray = Scene.Camera.ScreenNormalToRay(0.5f);
-		var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
-		if (!tr.Hit) return;
-		var popup = tr.GameObject.Components.Get<PopupUi>(FindMode.EverythingInSelfAndParent);
-		if (Items is null) return;
-		if (popup is not null)
-		{
-			PopupUi(popup, popup.selectedInput);
-		}
+			var ray = Scene.Camera.ScreenNormalToRay(0.5f);
+			var tr = Scene.Trace.Ray(ray, 300).WithoutTags("player").Run();
+			if (!tr.Hit) return;
+			var popup = tr.GameObject.Components.Get<PopupUi>(FindMode.EverythingInSelfAndParent);
+			if (Items is null) return;
+			if (popup is not null)
+			{
+				PopupUi(popup, popup.selectedInput);
+			}
 		}
 		catch (System.InvalidOperationException)
 		{
 			return;
 		}
-		
+
 	}
 
 	public void AddAmmo(AmmoContainer.AmmoTypes ammoType, AmmoContainer ammoContainer, int ammo)
-{
-    if (IsProxy) return;
-	var currentAmmo = ammoContainer.GetAmmo(ammoType);
-	var setAmmo = currentAmmo + ammo;
-	ammoContainer.SetAmmo(ammoType, setAmmo);
+	{
+		if (IsProxy) return;
+		var currentAmmo = ammoContainer.GetAmmo(ammoType);
+		var setAmmo = currentAmmo + ammo;
+		ammoContainer.SetAmmo(ammoType, setAmmo);
 
-}
+	}
 
-	public void ActionGraphNetworkSpawn( GameObject gameObject )
+	public void ActionGraphNetworkSpawn(GameObject gameObject)
 	{
 		gameObject.NetworkSpawn(null);
 	}

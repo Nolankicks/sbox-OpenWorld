@@ -56,9 +56,9 @@
         "TestStruct": {},
         "TraceLength": 100,
         "UsesAmmo": false,
-        "ViewModelCamera": {
+        "ViewModel": {
           "_type": "gameobject",
-          "go": "4d7e973f-ff2e-4f9f-9eab-df453d7745fa"
+          "go": "f5d45a56-e7eb-438f-a57f-5f63d730dc13"
         },
         "ViewModelGun": {
           "_type": "component",
@@ -81,84 +81,68 @@
     ],
     "Children": [
       {
-        "__guid": "4d7e973f-ff2e-4f9f-9eab-df453d7745fa",
+        "__guid": "f5d45a56-e7eb-438f-a57f-5f63d730dc13",
         "Flags": 0,
-        "Name": "ViewModelCamera",
-        "Tags": "viewmodel",
+        "Name": "ViewModel",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
-            "__type": "Sandbox.CameraComponent",
-            "__guid": "7518440f-a399-4d31-b045-8d4ded112c5a",
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "Depth, Stencil",
-            "FieldOfView": 90,
-            "IsMainCamera": false,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "viewmodel,light",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 0.1
+            "__type": "ViewModel",
+            "__guid": "a4378dda-7454-4cad-99cc-3c6457cc8d15",
+            "Gun": {
+              "_type": "component",
+              "component_id": "f850dedf-6fdc-443e-94db-632dc116d531",
+              "go": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
+              "component_type": "SkinnedModelRenderer"
+            }
           }
         ],
         "Children": [
           {
-            "__guid": "f5d45a56-e7eb-438f-a57f-5f63d730dc13",
+            "__guid": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
             "Flags": 0,
-            "Name": "ViewModel",
+            "Name": "gun",
             "Enabled": true,
-            "NetworkMode": 1,
+            "NetworkMode": 2,
             "NetworkInterpolation": true,
-            "Children": [
+            "Components": [
               {
-                "__guid": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
-                "Flags": 0,
-                "Name": "gun",
-                "Enabled": true,
-                "NetworkMode": 1,
-                "NetworkInterpolation": true,
-                "Components": [
-                  {
-                    "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "f850dedf-6fdc-443e-94db-632dc116d531",
-                    "BodyGroups": 18446744073709551615,
-                    "CreateBoneObjects": false,
-                    "Model": "models/weapons/sbox_melee_crowbar/v_crowbar.vmdl",
-                    "RenderType": "On",
-                    "Tint": "1,1,1,1"
-                  }
-                ]
-              },
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "f850dedf-6fdc-443e-94db-632dc116d531",
+                "BodyGroups": 18446744073709551615,
+                "CreateBoneObjects": false,
+                "Model": "models/weapons/sbox_melee_crowbar/v_crowbar.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
+              }
+            ]
+          },
+          {
+            "__guid": "bc7fb431-de40-4cae-990c-7a7ecbf6769e",
+            "Flags": 0,
+            "Name": "arms",
+            "Enabled": true,
+            "NetworkMode": 2,
+            "NetworkInterpolation": true,
+            "Components": [
               {
-                "__guid": "bc7fb431-de40-4cae-990c-7a7ecbf6769e",
-                "Flags": 0,
-                "Name": "arms",
-                "Enabled": true,
-                "NetworkMode": 1,
-                "NetworkInterpolation": true,
-                "Components": [
-                  {
-                    "__type": "Sandbox.SkinnedModelRenderer",
-                    "__guid": "15133194-2560-4e01-a93d-7d72d522e7d6",
-                    "BodyGroups": 21,
-                    "BoneMergeTarget": {
-                      "_type": "component",
-                      "component_id": "f850dedf-6fdc-443e-94db-632dc116d531",
-                      "go": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
-                      "component_type": "SkinnedModelRenderer"
-                    },
-                    "CreateBoneObjects": false,
-                    "Model": "models/first_person/first_person_arms.vmdl",
-                    "RenderType": "On",
-                    "Tint": "1,1,1,1"
-                  }
-                ]
+                "__type": "Sandbox.SkinnedModelRenderer",
+                "__guid": "15133194-2560-4e01-a93d-7d72d522e7d6",
+                "BodyGroups": 21,
+                "BoneMergeTarget": {
+                  "_type": "component",
+                  "component_id": "f850dedf-6fdc-443e-94db-632dc116d531",
+                  "go": "f9c6b894-be2c-4948-abfd-1b368ca4f437",
+                  "component_type": "SkinnedModelRenderer"
+                },
+                "CreateBoneObjects": false,
+                "Model": "models/first_person/first_person_arms.vmdl",
+                "RenderType": "On",
+                "Tint": "1,1,1,1",
+                "UseAnimGraph": true
               }
             ]
           }
@@ -169,7 +153,7 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 1,
+        "NetworkMode": 2,
         "NetworkInterpolation": true,
         "Components": [
           {
@@ -179,7 +163,8 @@
             "CreateBoneObjects": false,
             "Model": "models/weapons/sbox_melee_crowbar/w_crowbar.vmdl",
             "RenderType": "On",
-            "Tint": "1,1,1,1"
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
           },
           {
             "__type": "Sandbox.Rigidbody",
@@ -203,7 +188,8 @@
           }
         ]
       }
-    ]
+    ],
+    "__variables": []
   },
   "ShowInMenu": false,
   "MenuPath": null,

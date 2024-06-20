@@ -1,5 +1,5 @@
 {
-  "__guid": "5e173637-f9df-4bb4-891f-a1d40e7b572b",
+  "__guid": "b6cca540-fe39-40df-8c86-33ef9bea6445",
   "GameObjects": [
     {
       "__guid": "362f40d3-b98f-42c3-a8d6-8b2fb04951c5",
@@ -13,7 +13,7 @@
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "3c208445-8c2b-472d-a77f-d5eea2f05af7",
-          "MapName": "nolankicks.demo_level1",
+          "MapName": "maps/demo_level1.vmap",
           "UseMapFromLaunch": false
         }
       ],
@@ -44,7 +44,14 @@
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
-          "ZNear": 10
+          "ZNear": 0.1
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "685283c9-f4d1-40f9-bf63-95c9832aebe9",
+          "Intensity": 8,
+          "Quality": "High",
+          "Radius": 32
         }
       ]
     },
@@ -164,8 +171,8 @@
                 "Id": 2,
                 "Type": "property",
                 "Properties": {
-                  "_name": "IsSitting",
-                  "_type": "Sandbox.Citizen.CitizenAnimationHelper"
+                  "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                  "_name": "IsSitting"
                 },
                 "UserData": {
                   "Position": "368,160"
@@ -277,9 +284,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Sandbox.SkinnedModelRenderer",
                   "_isStatic": false,
-                  "_name": "Set",
-                  "_type": "Sandbox.SkinnedModelRenderer"
+                  "_name": "Set"
                 },
                 "UserData": {
                   "Position": "320,128"
@@ -913,7 +920,8 @@
       "Enabled": true,
       "NetworkMode": 1,
       "NetworkInterpolation": true,
-      "__Prefab": "prefabs/weapons/weapon_pistol.prefab"
+      "__Prefab": "prefabs/weapons/weapon_pistol.prefab",
+      "__PrefabVariables": {}
     },
     {
       "__guid": "33df18c4-2a13-45d0-bab0-82e182b87352",
@@ -972,6 +980,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "a2a948d3-bc5e-4ee4-8857-be3a93e84668",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -990,9 +999,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Kicks.PlayerController",
                   "_isStatic": false,
-                  "_name": "AddCoins",
-                  "_type": "Kicks.PlayerController"
+                  "_name": "AddCoins"
                 },
                 "UserData": {
                   "Position": "192,-0"
@@ -1181,6 +1190,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "d3406ff0-93ab-4921-bca8-2078ccafda83",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -1383,6 +1393,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "b6a40fc8-05a0-46ac-a603-02262909dc2e",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -1585,6 +1596,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "6f19e9c8-635d-4f5e-a2c1-0c9e0c0dddc7",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -1787,6 +1799,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "617081fd-de51-48d6-82c9-77696862367b",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -1989,6 +2002,7 @@
           "__type": "Kicks.EnemyHealthComponent",
           "__guid": "5743b908-7a93-412e-8fe4-046c5004706b",
           "CanBeKilled": true,
+          "CanDie": true,
           "health": 100,
           "OnDeath": {
             "__version": 7,
@@ -2230,7 +2244,8 @@
               "Title": "Pick Up Action",
               "ReferencedComponentTypes": [
                 "GateInteraction",
-                "BoatController"
+                "BoatController",
+                "SceneChanger"
               ]
             },
             "Variables": [],
@@ -2239,7 +2254,7 @@
                 "Id": 1,
                 "Type": "input",
                 "UserData": {
-                  "Position": "-1328,16"
+                  "Position": "-1376,16"
                 }
               },
               {
@@ -2302,8 +2317,8 @@
                 "Id": 7,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Transform",
-                  "_type": "Sandbox.GameObject"
+                  "_type": "Sandbox.GameObject",
+                  "_name": "Transform"
                 },
                 "UserData": {
                   "Position": "-928,544"
@@ -2313,8 +2328,8 @@
                 "Id": 8,
                 "Type": "property",
                 "Properties": {
-                  "_name": "Position",
-                  "_type": "Sandbox.GameTransform"
+                  "_type": "Sandbox.GameTransform",
+                  "_name": "Position"
                 },
                 "UserData": {
                   "Position": "-688,544"
@@ -2377,8 +2392,8 @@
                 "Id": 15,
                 "Type": "property",
                 "Properties": {
-                  "_name": "GameObject",
-                  "_type": "Sandbox.Component"
+                  "_type": "Sandbox.Component",
+                  "_name": "GameObject"
                 },
                 "UserData": {
                   "Position": "1616,128"
@@ -2414,9 +2429,9 @@
                 "Id": 18,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Sandbox.GameObject",
                   "_isStatic": false,
-                  "_name": "SetParent",
-                  "_type": "Sandbox.GameObject"
+                  "_name": "SetParent"
                 },
                 "UserData": {
                   "Position": "2368,128"
@@ -2452,6 +2467,40 @@
                 "UserData": {
                   "Position": "2448,528"
                 }
+              },
+              {
+                "Id": 32,
+                "Type": "call",
+                "Properties": {
+                  "_type": "Sandbox.GameObject",
+                  "_isStatic": false,
+                  "_name": "SetParent"
+                },
+                "UserData": {
+                  "Position": "2624,272"
+                }
+              },
+              {
+                "Id": 43,
+                "Type": "scene.get",
+                "Properties": {
+                  "T": "SceneChanger"
+                },
+                "UserData": {
+                  "Position": "-1376,-112"
+                }
+              },
+              {
+                "Id": 45,
+                "Type": "call",
+                "Properties": {
+                  "_type": "SceneChanger",
+                  "_isStatic": false,
+                  "_name": "ChangeScene"
+                },
+                "UserData": {
+                  "Position": "-1168,16"
+                }
               }
             ],
             "Links": [
@@ -2460,12 +2509,6 @@
                 "SrcName": "_target",
                 "DstId": 2,
                 "DstName": "_this"
-              },
-              {
-                "SrcId": 1,
-                "SrcName": "_signal",
-                "DstId": 3,
-                "DstName": "_signal"
               },
               {
                 "SrcId": 2,
@@ -2601,7 +2644,7 @@
                 "DstName": "_signal"
               },
               {
-                "SrcId": 17,
+                "SrcId": 15,
                 "SrcName": "_result",
                 "DstId": 18,
                 "DstName": "_target"
@@ -2646,7 +2689,7 @@
                 "DstName": "_this"
               },
               {
-                "SrcId": 18,
+                "SrcId": 32,
                 "SrcName": "_signal",
                 "DstId": 22,
                 "DstName": "_signal"
@@ -2661,6 +2704,47 @@
                 "Value": true,
                 "DstId": 22,
                 "DstName": "_value"
+              },
+              {
+                "SrcId": 18,
+                "SrcName": "_signal",
+                "DstId": 32,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 17,
+                "SrcName": "_result",
+                "DstId": 32,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 16,
+                "SrcName": "_result",
+                "DstId": 32,
+                "DstName": "value"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_target",
+                "DstId": 43,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 1,
+                "SrcName": "_signal",
+                "DstId": 45,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 43,
+                "SrcName": "_result",
+                "DstId": 45,
+                "DstName": "_target"
+              },
+              {
+                "Value": "scenes/demo_level2.scene",
+                "DstId": 45,
+                "DstName": "sceneFile"
               }
             ],
             "Defaults": {
@@ -2694,6 +2778,10 @@
           "IsTrigger": false,
           "Scale": "50,50,50",
           "Static": false
+        },
+        {
+          "__type": "SceneChanger",
+          "__guid": "49ca25b9-e43b-4888-9396-addf57cdb859"
         }
       ]
     },
@@ -2762,7 +2850,7 @@
       "__guid": "5fb505d6-1106-4de2-92c4-85b12ea4c120",
       "Flags": 0,
       "Name": "startingplayer",
-      "Position": "-160,-224,6.999705",
+      "Position": "-160,-224,8.004361",
       "Tags": "player",
       "Enabled": true,
       "NetworkMode": 2,
@@ -4053,9 +4141,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Kicks.PlayerController",
                   "_isStatic": false,
-                  "_name": "Heal",
-                  "_type": "Kicks.PlayerController"
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -4065,9 +4153,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Sandbox.GameObject",
                   "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4158,9 +4246,9 @@
                 "Id": 1,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Kicks.PlayerController",
                   "_isStatic": false,
-                  "_name": "Heal",
-                  "_type": "Kicks.PlayerController"
+                  "_name": "Heal"
                 },
                 "UserData": {
                   "Position": "256,0"
@@ -4170,9 +4258,9 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
+                  "_type": "Sandbox.GameObject",
                   "_isStatic": false,
-                  "_name": "Destroy",
-                  "_type": "Sandbox.GameObject"
+                  "_name": "Destroy"
                 },
                 "UserData": {
                   "Position": "496,0"
@@ -4306,7 +4394,7 @@
   },
   "Title": "demo_level",
   "Description": "",
-  "LastSaved": "2024-06-09T12:53:12.5101146-04:00",
+  "LastSaved": "2024-06-20T10:22:55.6170998-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.can_long",

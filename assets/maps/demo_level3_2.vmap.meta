@@ -42,7 +42,9 @@
         "facepunch.railing_crn_dev_16#57658",
         "facepunch.ladder#57613",
         "facepunch.truck_dev#58359",
-        "facepunch.truck_cargo2_dev#58372"
+        "facepunch.truck_cargo2_dev#58372",
+        "facepunch.dufflebag_money#58382",
+        "facepunch.money_stack#58383"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3_2.vmap"

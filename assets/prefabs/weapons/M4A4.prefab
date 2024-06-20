@@ -941,21 +941,14 @@
         "NetworkInterpolation": true,
         "Components": [
           {
-            "__type": "Sandbox.CameraComponent",
-            "__guid": "9024677c-48da-486a-a56f-ff7880174b42",
-            "BackgroundColor": "0.33333,0.46275,0.52157,1",
-            "ClearFlags": "Depth, Stencil",
-            "FieldOfView": 80,
-            "IsMainCamera": false,
-            "Orthographic": false,
-            "OrthographicHeight": 1204,
-            "Priority": 1,
-            "RenderExcludeTags": "",
-            "RenderTags": "viewmodel,light",
-            "TargetEye": "None",
-            "Viewport": "0,0,1,1",
-            "ZFar": 10000,
-            "ZNear": 0.1
+            "__type": "ViewModel",
+            "__guid": "0bbceea9-89cd-420d-9362-1aebc5a52613",
+            "Gun": {
+              "_type": "component",
+              "component_id": "3be81a9b-2e91-417e-a7fd-ee460cf9c1de",
+              "go": "b58c81f8-085e-42c5-b20e-400945aec469",
+              "component_type": "SkinnedModelRenderer"
+            }
           }
         ],
         "Children": [

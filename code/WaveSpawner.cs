@@ -100,6 +100,7 @@ public sealed class WaveSpawner : Component, Component.ITriggerListener
 
 	public void RemoveZombie(GameObject Zombie)
 	{
+		if (CurrentWave is null || CurrentWave.Count == 0) return;
 		if (CurrentWave.Contains(Zombie))
 		{
 			CurrentWave.Remove(Zombie);

@@ -1,5 +1,5 @@
 {
-  "__guid": "59e54545-ccd4-43ad-95d6-771866f5d278",
+  "__guid": "e8b68e04-87c0-4ce5-9470-25ca7d88c743",
   "GameObjects": [
     {
       "__guid": "7b30ec31-8844-4945-a770-bfecd8076c47",
@@ -38,12 +38,19 @@
           "Orthographic": false,
           "OrthographicHeight": 1204,
           "Priority": 1,
-          "RenderExcludeTags": "viewmodel",
+          "RenderExcludeTags": "",
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
           "ZNear": 0.1
+        },
+        {
+          "__type": "Sandbox.AmbientOcclusion",
+          "__guid": "51ca0cc8-c430-456e-af3a-a17fa4844876",
+          "Intensity": 8,
+          "Quality": "High",
+          "Radius": 32
         }
       ]
     },
@@ -2667,8 +2674,8 @@
                 "Id": 2,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "DoorComponent",
+                  "_isStatic": false,
                   "_name": "LerpDoor"
                 },
                 "UserData": {
@@ -2751,8 +2758,8 @@
                 "Id": 9,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -2763,8 +2770,8 @@
                 "Id": 12,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "WaveCoolDown"
                 },
                 "UserData": {
@@ -2775,8 +2782,8 @@
                 "Id": 14,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -5380,8 +5387,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5458,8 +5465,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5536,8 +5543,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5614,8 +5621,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5692,8 +5699,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5770,8 +5777,8 @@
               "Id": 1,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -5857,8 +5864,8 @@
                 "Id": 47,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -5869,8 +5876,8 @@
                 "Id": 48,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "WaveCoolDown"
                 },
                 "UserData": {
@@ -5881,8 +5888,8 @@
                 "Id": 49,
                 "Type": "call",
                 "Properties": {
-                  "_isStatic": false,
                   "_type": "WaveSpawner",
+                  "_isStatic": false,
                   "_name": "StartWave"
                 },
                 "UserData": {
@@ -6418,8 +6425,8 @@
               "Id": 112,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Kicks.NPC",
+                "_isStatic": false,
                 "_name": "SetNPCAnims"
               },
               "UserData": {
@@ -6450,8 +6457,8 @@
               "Id": 115,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Kicks.NPC",
+                "_isStatic": false,
                 "_name": "NPCAttack"
               },
               "UserData": {
@@ -6462,8 +6469,8 @@
               "Id": 116,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "ActionGraphDelay",
+                "_isStatic": false,
                 "_name": "SetDelay"
               },
               "UserData": {
@@ -6500,9 +6507,9 @@
               "Id": 125,
               "Type": "property",
               "Properties": {
+                "_kind": "Set",
                 "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                "_name": "HoldType",
-                "_kind": "Set"
+                "_name": "HoldType"
               },
               "UserData": {
                 "Position": "2720,384"
@@ -6523,8 +6530,8 @@
               "Id": 128,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
                 "_name": "Set"
               },
               "UserData": {
@@ -6535,9 +6542,9 @@
               "Id": 143,
               "Type": "property",
               "Properties": {
+                "_kind": "Set",
                 "_type": "Sandbox.Citizen.CitizenAnimationHelper",
-                "_name": "LookAt",
-                "_kind": "Set"
+                "_name": "LookAt"
               },
               "UserData": {
                 "Position": "4096,416"
@@ -6547,10 +6554,10 @@
               "Id": 154,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
                 "_type": "Sandbox.IComponentLister",
-                "_name": "Get",
-                "T": "Sandbox.Citizen.CitizenAnimationHelper"
+                "_isStatic": false,
+                "_name": "Get"
               },
               "UserData": {
                 "Position": "2208,336",
@@ -6975,8 +6982,8 @@
               "Id": 6,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "Inventory",
+                "_isStatic": false,
                 "_name": "AddAmmo"
               },
               "UserData": {
@@ -7090,8 +7097,8 @@
               "Id": 3,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "WaveSpawner",
+                "_isStatic": false,
                 "_name": "RemoveZombie"
               },
               "UserData": {
@@ -7144,331 +7151,4329 @@
       "Position": "2347.801,-651.9608,584.9608",
       "Enabled": true,
       "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Children": [
+        {
+          "__guid": "bc42db58-02ce-4417-944f-6c5e52e79a43",
+          "Flags": 0,
+          "Name": "Spawn",
+          "Position": "-43.80103,11.96021,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "ec1f6423-6530-4083-ba11-abb4950b2b98",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "63ab3c61-1ad8-4352-bf77-707a4a2e8f04",
+          "Flags": 0,
+          "Name": "Spawn (9)",
+          "Position": "-171.801,11.96021,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "fe6c50f2-4a75-49b2-a0c7-8771ac7c88f1",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "1bd2a4da-fd72-47fd-8640-76c5453de50f",
+          "Flags": 0,
+          "Name": "Spawn (4)",
+          "Position": "-43.80103,139.9601,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "9a2d62fc-a349-48eb-8a97-9e5ef3679ba0",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "4e6c8bb4-ccb1-4ba0-b90c-c77b577c8f1c",
+          "Flags": 0,
+          "Name": "Spawn (6)",
+          "Position": "-171.801,139.9601,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "c445068d-1c3f-4b86-9837-fea6e54ffa46",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "82556db0-b1ae-4cda-95c9-8aa059019735",
+          "Flags": 0,
+          "Name": "Spawn (1)",
+          "Position": "-43.80103,-116.0397,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "f019cd97-6dec-43a2-b0fb-7f66bd083421",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "9d50780e-39d8-43ed-8562-1a472a73bfc6",
+          "Flags": 0,
+          "Name": "Spawn (12)",
+          "Position": "84.19897,-116.0397,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "f1b44865-a40f-46dc-bdc3-e2f344aac0fa",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "0f7c735d-0750-425d-b2cf-4ba3cb7a76dc",
+          "Flags": 0,
+          "Name": "Spawn (17)",
+          "Position": "84.19897,-244.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "fcfa7136-6f8b-4542-a2d7-78372c505e52",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "43aa38ad-1638-48ce-85db-48fa228414ea",
+          "Flags": 0,
+          "Name": "Spawn (8)",
+          "Position": "-171.801,-116.0397,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "46d4eb7b-f0fc-4479-87d8-d8a48b2104fd",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "4a96c946-5a5a-4585-9e35-2d1927203854",
+          "Flags": 0,
+          "Name": "Spawn (2)",
+          "Position": "-43.80103,-244.0396,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "e7e5fdff-0489-418d-bb3d-6c3801825dbc",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "df43a67b-9318-4ed2-bd8c-b0fd36e997e8",
+          "Flags": 0,
+          "Name": "Spawn (7)",
+          "Position": "-171.801,-244.0396,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "5e6f1bbc-349a-4545-a9a7-16bd188613d6",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "c75a46c7-31fa-4d79-9999-bbfe6c6d7aea",
+          "Flags": 0,
+          "Name": "Spawn (5)",
+          "Position": "-43.80103,-372.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "a8f6cb73-b30f-4e88-9093-150b83684bb8",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "174ac75a-1619-42cc-9889-0632ccdd259f",
+          "Flags": 0,
+          "Name": "Spawn (11)",
+          "Position": "-171.801,-372.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "d41612f6-540a-4a5e-9806-d36d2eadf132",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "81ab06b5-c31b-47fe-90bf-f278c9489488",
+          "Flags": 0,
+          "Name": "Spawn (13)",
+          "Position": "-299.801,-372.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "5ce8cc44-2d67-4881-adfd-84e515d66529",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "ee84d515-7177-4b13-8c96-ebd8f55cfb75",
+          "Flags": 0,
+          "Name": "Spawn (16)",
+          "Position": "-427.801,-372.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "2c56b21f-cccb-4804-9eb4-341bc54bd79e",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "f8eccd79-97af-407e-80f3-03a4d039d5b3",
+          "Flags": 0,
+          "Name": "Spawn (14)",
+          "Position": "-299.801,-500.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "aaf1e4e2-8bb0-47ee-98be-f2fe5c3bb5a8",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "00c3e8a6-f119-40d9-a959-bfd4cf2a867f",
+          "Flags": 0,
+          "Name": "Spawn (15)",
+          "Position": "-171.801,-500.0392,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "eac778ab-0999-4367-a22f-6532b5488492",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "c27da572-d209-4ae0-b57c-9bacf60f80a7",
+          "Flags": 0,
+          "Name": "Spawn (3)",
+          "Position": "-43.80103,-244.0396,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "49d02b86-914b-4d02-96c3-488d4335e629",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        },
+        {
+          "__guid": "c79338ef-688e-45a9-ad57-d93661cf95e8",
+          "Flags": 0,
+          "Name": "Spawn (10)",
+          "Position": "-171.801,-244.0396,-136.9608",
+          "Rotation": "0,0,0.9999999,0.0000001937151",
+          "Tags": "zombiespawn1",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SpawnPoint",
+              "__guid": "d62eab20-8c01-49cc-a036-783d371bcded",
+              "Color": "0.8902,0.31765,0.05098,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "af7c3154-9829-4139-b6d1-6deeb064fd1e",
+      "Flags": 0,
+      "Name": "actiongraphzombie (1)",
+      "Position": "271.9999,-543.9999,448",
+      "Rotation": "0,0,-0.7071067,0.7071068",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/actiongraphzombie.prefab",
+      "__PrefabVariables": {
+        "NPC Action": {
+          "__version": 7,
+          "__guid": "c7911bb2-4660-465d-a8c8-8c0c02b812d9",
+          "UserData": {
+            "Title": "NPC Action",
+            "ReferencedComponentTypes": [
+              "Sandbox.NavMeshAgent",
+              "Kicks.NPC",
+              "ActionGraphDelay"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 101,
+              "Type": "input",
+              "UserData": {
+                "Position": "2048,592"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.NavMeshAgent"
+              },
+              "UserData": {
+                "Position": "2064,816",
+                "Labels": {
+                  "_result": "Agent"
+                }
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Kicks.NPC"
+              },
+              "UserData": {
+                "Position": "2064,896",
+                "Labels": {
+                  "_result": "npc"
+                }
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "NPC Attack",
+              "UserData": {
+                "Position": "2240,592"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "if",
+              "UserData": {
+                "Position": "2592,592"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "Move To Target",
+              "UserData": {
+                "Position": "2848,592"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "ParentId": 104,
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Player"
+                }
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "if",
+              "UserData": {
+                "Position": "3088,592"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "Get Synced Velocity",
+              "UserData": {
+                "Position": "3328,592"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "SetNPCAnims"
+              },
+              "UserData": {
+                "Position": "3632,592"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "if",
+              "UserData": {
+                "Position": "4208,592"
+              }
+            },
+            {
+              "Id": 114,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "2480,1072",
+                "Labels": {
+                  "_result": "Delay Component"
+                }
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "NPCAttack"
+              },
+              "UserData": {
+                "Position": "4448,592"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "call",
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_isStatic": false,
+                "_name": "SetDelay"
+              },
+              "UserData": {
+                "Position": "4752,592"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "property",
+              "ParentId": 114,
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "2752,1136",
+                "Labels": {
+                  "_result": "!Delay"
+                }
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "Look At Target",
+              "UserData": {
+                "Position": "3936,592"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType"
+              },
+              "UserData": {
+                "Position": "2720,384"
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "4768,736"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "5088,592"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt"
+              },
+              "UserData": {
+                "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_type": "Sandbox.IComponentLister",
+                "_isStatic": false,
+                "_name": "Get"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 102,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_signal",
+              "DstId": 104,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "FoundPlayer",
+              "DstId": 105,
+              "DstName": "condition"
+            },
+            {
+              "Value": 1000,
+              "DstId": 106,
+              "DstName": "Distance"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "true",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "ClosestPlayer",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "Result",
+              "DstId": 108,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "Velocity",
+              "DstId": 112,
+              "DstName": "Velocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "WishVelocity",
+              "DstId": 112,
+              "DstName": "WishVelocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_signal",
+              "DstId": 112,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "citizenAnimationHelper"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 113,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 118,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 114,
+              "DstName": "_this"
+            },
+            {
+              "Value": true,
+              "DstId": 115,
+              "DstName": "ChangeScene"
+            },
+            {
+              "Value": 25,
+              "DstId": 115,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "Target"
+            },
+            {
+              "Value": 175,
+              "DstId": 115,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "true",
+              "DstId": 115,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "Value": 5,
+              "DstId": 116,
+              "DstName": "delay"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 117,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 118,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 167,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Body"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_signal",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "Value": "Punch",
+              "DstId": 125,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 127,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 127,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 128,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 128,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "On Death": {
+          "__version": 7,
+          "__guid": "e6962af9-be5c-4fed-af1d-4291fbfa769c",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": 10,
+              "DstId": 6,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 6,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 6,
+              "DstName": "ammoType"
+            }
+          ],
+          "Defaults": {
+            "$7._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/zombiegibs.prefab"
+            }
+          }
+        },
+        "On Attack": null,
+        "OnDestroy": null,
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
+      }
+    },
+    {
+      "__guid": "32692984-5d9e-4699-8408-f6f5426dbf5a",
+      "Flags": 0,
+      "Name": "actiongraphzombie (2)",
+      "Position": "488,-496,448",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/actiongraphzombie.prefab",
+      "__PrefabVariables": {
+        "NPC Action": {
+          "__version": 7,
+          "__guid": "595d6fcc-4a12-4685-ab30-7fda78383bf0",
+          "UserData": {
+            "Title": "NPC Action",
+            "ReferencedComponentTypes": [
+              "Sandbox.NavMeshAgent",
+              "Kicks.NPC",
+              "ActionGraphDelay"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 101,
+              "Type": "input",
+              "UserData": {
+                "Position": "2048,592"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.NavMeshAgent"
+              },
+              "UserData": {
+                "Position": "2064,816",
+                "Labels": {
+                  "_result": "Agent"
+                }
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Kicks.NPC"
+              },
+              "UserData": {
+                "Position": "2064,896",
+                "Labels": {
+                  "_result": "npc"
+                }
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "NPC Attack",
+              "UserData": {
+                "Position": "2240,592"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "if",
+              "UserData": {
+                "Position": "2592,592"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "Move To Target",
+              "UserData": {
+                "Position": "2848,592"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "ParentId": 104,
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Player"
+                }
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "if",
+              "UserData": {
+                "Position": "3088,592"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "Get Synced Velocity",
+              "UserData": {
+                "Position": "3328,592"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "SetNPCAnims"
+              },
+              "UserData": {
+                "Position": "3632,592"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "if",
+              "UserData": {
+                "Position": "4208,592"
+              }
+            },
+            {
+              "Id": 114,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "2480,1072",
+                "Labels": {
+                  "_result": "Delay Component"
+                }
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "NPCAttack"
+              },
+              "UserData": {
+                "Position": "4448,592"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "call",
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_isStatic": false,
+                "_name": "SetDelay"
+              },
+              "UserData": {
+                "Position": "4752,592"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "property",
+              "ParentId": 114,
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "2752,1136",
+                "Labels": {
+                  "_result": "!Delay"
+                }
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "Look At Target",
+              "UserData": {
+                "Position": "3936,592"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType"
+              },
+              "UserData": {
+                "Position": "2720,384"
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "4768,736"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "5088,592"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt"
+              },
+              "UserData": {
+                "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_type": "Sandbox.IComponentLister",
+                "_isStatic": false,
+                "_name": "Get"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 102,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_signal",
+              "DstId": 104,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "FoundPlayer",
+              "DstId": 105,
+              "DstName": "condition"
+            },
+            {
+              "Value": 1000,
+              "DstId": 106,
+              "DstName": "Distance"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "true",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "ClosestPlayer",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "Result",
+              "DstId": 108,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "Velocity",
+              "DstId": 112,
+              "DstName": "Velocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "WishVelocity",
+              "DstId": 112,
+              "DstName": "WishVelocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_signal",
+              "DstId": 112,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "citizenAnimationHelper"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 113,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 118,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 114,
+              "DstName": "_this"
+            },
+            {
+              "Value": true,
+              "DstId": 115,
+              "DstName": "ChangeScene"
+            },
+            {
+              "Value": 25,
+              "DstId": 115,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "Target"
+            },
+            {
+              "Value": 175,
+              "DstId": 115,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "true",
+              "DstId": 115,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "Value": 5,
+              "DstId": 116,
+              "DstName": "delay"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 117,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 118,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 167,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Body"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_signal",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "Value": "Punch",
+              "DstId": 125,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 127,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 127,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 128,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 128,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "On Death": {
+          "__version": 7,
+          "__guid": "aafe4dbd-2f12-4835-841c-711d2872e79b",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": 10,
+              "DstId": 6,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 6,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 6,
+              "DstName": "ammoType"
+            }
+          ],
+          "Defaults": {
+            "$7._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/zombiegibs.prefab"
+            }
+          }
+        },
+        "On Attack": null,
+        "OnDestroy": null,
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
+      }
+    },
+    {
+      "__guid": "93cf5439-d0f8-497c-9974-cfed432cbb6a",
+      "Flags": 0,
+      "Name": "actiongraphzombie (3)",
+      "Position": "831.9998,-552.0003,448",
+      "Rotation": "0,0,0.9238795,0.3826836",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/actiongraphzombie.prefab",
+      "__PrefabVariables": {
+        "NPC Action": {
+          "__version": 7,
+          "__guid": "83e96ef9-caa2-4841-9e35-d1d48dd4b763",
+          "UserData": {
+            "Title": "NPC Action",
+            "ReferencedComponentTypes": [
+              "Sandbox.NavMeshAgent",
+              "Kicks.NPC",
+              "ActionGraphDelay"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 101,
+              "Type": "input",
+              "UserData": {
+                "Position": "2048,592"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.NavMeshAgent"
+              },
+              "UserData": {
+                "Position": "2064,816",
+                "Labels": {
+                  "_result": "Agent"
+                }
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Kicks.NPC"
+              },
+              "UserData": {
+                "Position": "2064,896",
+                "Labels": {
+                  "_result": "npc"
+                }
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "NPC Attack",
+              "UserData": {
+                "Position": "2240,592"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "if",
+              "UserData": {
+                "Position": "2592,592"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "Move To Target",
+              "UserData": {
+                "Position": "2848,592"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "ParentId": 104,
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Player"
+                }
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "if",
+              "UserData": {
+                "Position": "3088,592"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "Get Synced Velocity",
+              "UserData": {
+                "Position": "3328,592"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "SetNPCAnims"
+              },
+              "UserData": {
+                "Position": "3632,592"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "if",
+              "UserData": {
+                "Position": "4208,592"
+              }
+            },
+            {
+              "Id": 114,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "2480,1072",
+                "Labels": {
+                  "_result": "Delay Component"
+                }
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "NPCAttack"
+              },
+              "UserData": {
+                "Position": "4448,592"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "call",
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_isStatic": false,
+                "_name": "SetDelay"
+              },
+              "UserData": {
+                "Position": "4752,592"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "property",
+              "ParentId": 114,
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "2752,1136",
+                "Labels": {
+                  "_result": "!Delay"
+                }
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "Look At Target",
+              "UserData": {
+                "Position": "3936,592"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType"
+              },
+              "UserData": {
+                "Position": "2720,384"
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "4768,736"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "5088,592"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt"
+              },
+              "UserData": {
+                "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_type": "Sandbox.IComponentLister",
+                "_isStatic": false,
+                "_name": "Get"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 102,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_signal",
+              "DstId": 104,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "FoundPlayer",
+              "DstId": 105,
+              "DstName": "condition"
+            },
+            {
+              "Value": 1000,
+              "DstId": 106,
+              "DstName": "Distance"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "true",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "ClosestPlayer",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "Result",
+              "DstId": 108,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "Velocity",
+              "DstId": 112,
+              "DstName": "Velocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "WishVelocity",
+              "DstId": 112,
+              "DstName": "WishVelocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_signal",
+              "DstId": 112,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "citizenAnimationHelper"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 113,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 118,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 114,
+              "DstName": "_this"
+            },
+            {
+              "Value": true,
+              "DstId": 115,
+              "DstName": "ChangeScene"
+            },
+            {
+              "Value": 25,
+              "DstId": 115,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "Target"
+            },
+            {
+              "Value": 175,
+              "DstId": 115,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "true",
+              "DstId": 115,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "Value": 5,
+              "DstId": 116,
+              "DstName": "delay"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 117,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 118,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 167,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Body"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_signal",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "Value": "Punch",
+              "DstId": 125,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 127,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 127,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 128,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 128,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "On Death": {
+          "__version": 7,
+          "__guid": "6a0e1260-c707-4a04-9ff8-bf48deeff45f",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": 10,
+              "DstId": 6,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 6,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 6,
+              "DstName": "ammoType"
+            }
+          ],
+          "Defaults": {
+            "$7._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/zombiegibs.prefab"
+            }
+          }
+        },
+        "On Attack": null,
+        "OnDestroy": null,
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
+      }
+    },
+    {
+      "__guid": "f89d9b68-7c21-49b6-bccf-974f7a1dd841",
+      "Flags": 0,
+      "Name": "actiongraphzombie (4)",
+      "Position": "995.6063,-825.9011,448",
+      "Rotation": "0,0,0.9238795,0.3826836",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/actiongraphzombie.prefab",
+      "__PrefabVariables": {
+        "NPC Action": {
+          "__version": 7,
+          "__guid": "db77a1e6-efd0-47e9-979c-24973239ce33",
+          "UserData": {
+            "Title": "NPC Action",
+            "ReferencedComponentTypes": [
+              "Sandbox.NavMeshAgent",
+              "Kicks.NPC",
+              "ActionGraphDelay"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 101,
+              "Type": "input",
+              "UserData": {
+                "Position": "2048,592"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.NavMeshAgent"
+              },
+              "UserData": {
+                "Position": "2064,816",
+                "Labels": {
+                  "_result": "Agent"
+                }
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Kicks.NPC"
+              },
+              "UserData": {
+                "Position": "2064,896",
+                "Labels": {
+                  "_result": "npc"
+                }
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "NPC Attack",
+              "UserData": {
+                "Position": "2240,592"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "if",
+              "UserData": {
+                "Position": "2592,592"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "Move To Target",
+              "UserData": {
+                "Position": "2848,592"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "ParentId": 104,
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Player"
+                }
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "if",
+              "UserData": {
+                "Position": "3088,592"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "Get Synced Velocity",
+              "UserData": {
+                "Position": "3328,592"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "SetNPCAnims"
+              },
+              "UserData": {
+                "Position": "3632,592"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "if",
+              "UserData": {
+                "Position": "4208,592"
+              }
+            },
+            {
+              "Id": 114,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "2480,1072",
+                "Labels": {
+                  "_result": "Delay Component"
+                }
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "NPCAttack"
+              },
+              "UserData": {
+                "Position": "4448,592"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "call",
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_isStatic": false,
+                "_name": "SetDelay"
+              },
+              "UserData": {
+                "Position": "4752,592"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "property",
+              "ParentId": 114,
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "2752,1136",
+                "Labels": {
+                  "_result": "!Delay"
+                }
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "Look At Target",
+              "UserData": {
+                "Position": "3936,592"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType"
+              },
+              "UserData": {
+                "Position": "2720,384"
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "4768,736"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "5088,592"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt"
+              },
+              "UserData": {
+                "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_type": "Sandbox.IComponentLister",
+                "_isStatic": false,
+                "_name": "Get"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 102,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_signal",
+              "DstId": 104,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "FoundPlayer",
+              "DstId": 105,
+              "DstName": "condition"
+            },
+            {
+              "Value": 1000,
+              "DstId": 106,
+              "DstName": "Distance"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "true",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "ClosestPlayer",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "Result",
+              "DstId": 108,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "Velocity",
+              "DstId": 112,
+              "DstName": "Velocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "WishVelocity",
+              "DstId": 112,
+              "DstName": "WishVelocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_signal",
+              "DstId": 112,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "citizenAnimationHelper"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 113,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 118,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 114,
+              "DstName": "_this"
+            },
+            {
+              "Value": true,
+              "DstId": 115,
+              "DstName": "ChangeScene"
+            },
+            {
+              "Value": 25,
+              "DstId": 115,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "Target"
+            },
+            {
+              "Value": 175,
+              "DstId": 115,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "true",
+              "DstId": 115,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "Value": 5,
+              "DstId": 116,
+              "DstName": "delay"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 117,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 118,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 167,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Body"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_signal",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "Value": "Punch",
+              "DstId": 125,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 127,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 127,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 128,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 128,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "On Death": {
+          "__version": 7,
+          "__guid": "9496c979-affb-4849-b028-c3903a158786",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": 10,
+              "DstId": 6,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 6,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 6,
+              "DstName": "ammoType"
+            }
+          ],
+          "Defaults": {
+            "$7._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/zombiegibs.prefab"
+            }
+          }
+        },
+        "On Attack": null,
+        "OnDestroy": null,
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
+      }
+    },
+    {
+      "__guid": "b01371ec-add3-4be8-8276-bdfa05383456",
+      "Flags": 0,
+      "Name": "actiongraphzombie (5)",
+      "Position": "1368.959,-848.5286,448",
+      "Rotation": "0,0,1,0.0000001788139",
+      "Tags": "dummy",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/actiongraphzombie.prefab",
+      "__PrefabVariables": {
+        "NPC Action": {
+          "__version": 7,
+          "__guid": "b4e581ff-ab40-43aa-82bc-2a94f243d90e",
+          "UserData": {
+            "Title": "NPC Action",
+            "ReferencedComponentTypes": [
+              "Sandbox.NavMeshAgent",
+              "Kicks.NPC",
+              "ActionGraphDelay"
+            ]
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 101,
+              "Type": "input",
+              "UserData": {
+                "Position": "2048,592"
+              }
+            },
+            {
+              "Id": 102,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Sandbox.NavMeshAgent"
+              },
+              "UserData": {
+                "Position": "2064,816",
+                "Labels": {
+                  "_result": "Agent"
+                }
+              }
+            },
+            {
+              "Id": 103,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "Kicks.NPC"
+              },
+              "UserData": {
+                "Position": "2064,896",
+                "Labels": {
+                  "_result": "npc"
+                }
+              }
+            },
+            {
+              "Id": 104,
+              "Type": "NPC Attack",
+              "UserData": {
+                "Position": "2240,592"
+              }
+            },
+            {
+              "Id": 105,
+              "Type": "if",
+              "UserData": {
+                "Position": "2592,592"
+              }
+            },
+            {
+              "Id": 106,
+              "Type": "Move To Target",
+              "UserData": {
+                "Position": "2848,592"
+              }
+            },
+            {
+              "Id": 107,
+              "Type": "property",
+              "ParentId": 104,
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Player"
+                }
+              }
+            },
+            {
+              "Id": 108,
+              "Type": "if",
+              "UserData": {
+                "Position": "3088,592"
+              }
+            },
+            {
+              "Id": 111,
+              "Type": "Get Synced Velocity",
+              "UserData": {
+                "Position": "3328,592"
+              }
+            },
+            {
+              "Id": 112,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "SetNPCAnims"
+              },
+              "UserData": {
+                "Position": "3632,592"
+              }
+            },
+            {
+              "Id": 113,
+              "Type": "if",
+              "UserData": {
+                "Position": "4208,592"
+              }
+            },
+            {
+              "Id": 114,
+              "Type": "scene.get",
+              "Properties": {
+                "T": "ActionGraphDelay"
+              },
+              "UserData": {
+                "Position": "2480,1072",
+                "Labels": {
+                  "_result": "Delay Component"
+                }
+              }
+            },
+            {
+              "Id": 115,
+              "Type": "call",
+              "Properties": {
+                "_type": "Kicks.NPC",
+                "_isStatic": false,
+                "_name": "NPCAttack"
+              },
+              "UserData": {
+                "Position": "4448,592"
+              }
+            },
+            {
+              "Id": 116,
+              "Type": "call",
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_isStatic": false,
+                "_name": "SetDelay"
+              },
+              "UserData": {
+                "Position": "4752,592"
+              }
+            },
+            {
+              "Id": 117,
+              "Type": "property",
+              "ParentId": 114,
+              "Properties": {
+                "_type": "ActionGraphDelay",
+                "_name": "Delay"
+              }
+            },
+            {
+              "Id": 118,
+              "Type": "op.not",
+              "UserData": {
+                "Position": "2752,1136",
+                "Labels": {
+                  "_result": "!Delay"
+                }
+              }
+            },
+            {
+              "Id": 119,
+              "Type": "Look At Target",
+              "UserData": {
+                "Position": "3936,592"
+              }
+            },
+            {
+              "Id": 125,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "HoldType"
+              },
+              "UserData": {
+                "Position": "2720,384"
+              }
+            },
+            {
+              "Id": 127,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "4768,736"
+              }
+            },
+            {
+              "Id": 128,
+              "Type": "call",
+              "Properties": {
+                "_type": "Sandbox.SkinnedModelRenderer",
+                "_isStatic": false,
+                "_name": "Set"
+              },
+              "UserData": {
+                "Position": "5088,592"
+              }
+            },
+            {
+              "Id": 143,
+              "Type": "property",
+              "Properties": {
+                "_kind": "Set",
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "LookAt"
+              },
+              "UserData": {
+                "Position": "4096,416"
+              }
+            },
+            {
+              "Id": 154,
+              "Type": "call",
+              "Properties": {
+                "T": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_type": "Sandbox.IComponentLister",
+                "_isStatic": false,
+                "_name": "Get"
+              },
+              "UserData": {
+                "Position": "2208,336",
+                "Labels": {
+                  "_result": "animhelper"
+                }
+              }
+            },
+            {
+              "Id": 156,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper",
+                "_name": "Target"
+              },
+              "UserData": {
+                "Position": "2208,192",
+                "Labels": {
+                  "_result": "model"
+                }
+              }
+            },
+            {
+              "Id": 167,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.Component",
+                "_name": "GameObject"
+              },
+              "UserData": {
+                "Position": "2576,240",
+                "Labels": {
+                  "_result": "bodygb"
+                }
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 102,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 103,
+              "DstName": "_this"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_signal",
+              "DstId": 104,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 104,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "_signal",
+              "DstId": 105,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "FoundPlayer",
+              "DstId": 105,
+              "DstName": "condition"
+            },
+            {
+              "Value": 1000,
+              "DstId": 106,
+              "DstName": "Distance"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "true",
+              "DstId": 106,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 106,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 104,
+              "SrcName": "ClosestPlayer",
+              "DstId": 107,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "_signal",
+              "DstId": 108,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 106,
+              "SrcName": "Result",
+              "DstId": 108,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 108,
+              "SrcName": "true",
+              "DstId": 111,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 102,
+              "SrcName": "_result",
+              "DstId": 111,
+              "DstName": "navMeshAgent"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "Velocity",
+              "DstId": 112,
+              "DstName": "Velocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "WishVelocity",
+              "DstId": 112,
+              "DstName": "WishVelocity"
+            },
+            {
+              "SrcId": 111,
+              "SrcName": "_signal",
+              "DstId": 112,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 112,
+              "DstName": "citizenAnimationHelper"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 113,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 118,
+              "SrcName": "_result",
+              "DstId": 113,
+              "DstName": "condition"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 114,
+              "DstName": "_this"
+            },
+            {
+              "Value": true,
+              "DstId": 115,
+              "DstName": "ChangeScene"
+            },
+            {
+              "Value": 25,
+              "DstId": 115,
+              "DstName": "Damage"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "Target"
+            },
+            {
+              "Value": 175,
+              "DstId": 115,
+              "DstName": "TraceLength"
+            },
+            {
+              "SrcId": 113,
+              "SrcName": "true",
+              "DstId": 115,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 115,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 115,
+              "SrcName": "_signal",
+              "DstId": 116,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 116,
+              "DstName": "_target"
+            },
+            {
+              "Value": 5,
+              "DstId": 116,
+              "DstName": "delay"
+            },
+            {
+              "SrcId": 114,
+              "SrcName": "_result",
+              "DstId": 117,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 117,
+              "SrcName": "_result",
+              "DstId": 118,
+              "DstName": "a"
+            },
+            {
+              "SrcId": 167,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Body"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "Target"
+            },
+            {
+              "SrcId": 112,
+              "SrcName": "_signal",
+              "DstId": 119,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 103,
+              "SrcName": "_result",
+              "DstId": 119,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 105,
+              "SrcName": "_signal",
+              "DstId": 125,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 125,
+              "DstName": "_target"
+            },
+            {
+              "Value": "Punch",
+              "DstId": 125,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 127,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 116,
+              "SrcName": "_signal",
+              "DstId": 128,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 127,
+              "SrcName": "_result",
+              "DstId": 128,
+              "DstName": "_target"
+            },
+            {
+              "Value": "b_attack",
+              "DstId": 128,
+              "DstName": "v"
+            },
+            {
+              "Value": true,
+              "DstId": 128,
+              "DstName": "value"
+            },
+            {
+              "SrcId": 119,
+              "SrcName": "_signal",
+              "DstId": 143,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 107,
+              "SrcName": "_result",
+              "DstId": 143,
+              "DstName": "_value"
+            },
+            {
+              "SrcId": 101,
+              "SrcName": "_target",
+              "DstId": 154,
+              "DstName": "_target"
+            },
+            {
+              "Value": "InAncestors, EnabledInSelfAndChildren",
+              "DstId": 154,
+              "DstName": "search"
+            },
+            {
+              "SrcId": 154,
+              "SrcName": "_result",
+              "DstId": 156,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 156,
+              "SrcName": "_result",
+              "DstId": 167,
+              "DstName": "_target"
+            }
+          ]
+        },
+        "On Death": {
+          "__version": 7,
+          "__guid": "062acd62-5a89-4877-8e25-0dbf76004f62",
+          "UserData": {
+            "Title": "On Death",
+            "ReferencedComponentTypes": []
+          },
+          "Variables": [],
+          "Nodes": [
+            {
+              "Id": 0,
+              "Type": "input"
+            },
+            {
+              "Id": 1,
+              "Type": "property",
+              "Properties": {
+                "_type": "Sandbox.GameObject",
+                "_name": "Transform"
+              },
+              "UserData": {
+                "Position": "0,208"
+              }
+            },
+            {
+              "Id": 2,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "Position"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Pos"
+                }
+              }
+            },
+            {
+              "Id": 3,
+              "Type": "property",
+              "ParentId": 1,
+              "Properties": {
+                "_type": "Sandbox.GameTransform",
+                "_name": "LocalRotation"
+              },
+              "UserData": {
+                "Labels": {
+                  "_result": "Rot"
+                }
+              }
+            },
+            {
+              "Id": 4,
+              "Type": "scene.clone",
+              "UserData": {
+                "Position": "608,-0"
+              }
+            },
+            {
+              "Id": 6,
+              "Type": "call",
+              "Properties": {
+                "_type": "Inventory",
+                "_isStatic": false,
+                "_name": "AddAmmo"
+              },
+              "UserData": {
+                "Position": "240,0"
+              }
+            }
+          ],
+          "Links": [
+            {
+              "SrcId": 0,
+              "SrcName": "_target",
+              "DstId": 1,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 2,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 1,
+              "SrcName": "_result",
+              "DstId": 3,
+              "DstName": "_target"
+            },
+            {
+              "SrcId": 6,
+              "SrcName": "_signal",
+              "DstId": 4,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 2,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "position"
+            },
+            {
+              "SrcId": 3,
+              "SrcName": "_result",
+              "DstId": 4,
+              "DstName": "rotation"
+            },
+            {
+              "Value": {
+                "_type": "gameobject",
+                "prefab": "prefabs/zombiegibs.prefab"
+              },
+              "DstId": 4,
+              "DstName": "target"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "_signal",
+              "DstId": 6,
+              "DstName": "_signal"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "inventory",
+              "DstId": 6,
+              "DstName": "_target"
+            },
+            {
+              "Value": 10,
+              "DstId": 6,
+              "DstName": "ammo"
+            },
+            {
+              "SrcId": 0,
+              "SrcName": "ammoContainer",
+              "DstId": 6,
+              "DstName": "ammoContainer"
+            },
+            {
+              "Value": "LightAmmo",
+              "DstId": 6,
+              "DstName": "ammoType"
+            }
+          ],
+          "Defaults": {
+            "$7._value": {
+              "_type": "gameobject",
+              "prefab": "prefabs/zombiegibs.prefab"
+            }
+          }
+        },
+        "On Attack": null,
+        "OnDestroy": null,
+        "OnUpdate": null,
+        "OnStart": null,
+        "OnDisabled": null,
+        "OnFixedUpdate": null,
+        "OnEnabled": null
+      }
+    },
+    {
+      "__guid": "885c96c2-ca42-40ab-9b1d-d3e181da44a0",
+      "Flags": 0,
+      "Name": "heavyammopickup",
+      "Position": "672,-543.9999,450",
+      "Rotation": "0.7010573,-0.09229594,-0.09229596,0.7010574",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "d1aff341-2db3-4d08-ae12-54d82bda18ba",
+      "Flags": 0,
+      "Name": "heavyammopickup (1)",
+      "Position": "696,-506,450",
+      "Rotation": "0.3535533,0.6123724,0.6123724,0.3535534",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "bb52881c-8677-44d0-95a2-617bbc5a5a2c",
+      "Flags": 0,
+      "Name": "light_ammo_pickup",
+      "Position": "672,-520,451",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/light_ammo_pickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "341824ae-a7b7-4cc4-b0b7-13e5735992a1",
+      "Flags": 0,
+      "Name": "heavyammopickup (2)",
+      "Position": "1706,-760,452",
+      "Rotation": "0.6532815,0.270598,0.2705981,0.6532816",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "f748ea6f-9c09-45d9-8618-aa9b964f49d2",
+      "Flags": 0,
+      "Name": "light_ammo_pickup (1)",
+      "Position": "1716,-788,451",
+      "Rotation": "0,0,0.8660254,0.5000001",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/light_ammo_pickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "46710910-259b-4780-9088-31e0b7afe97e",
+      "Flags": 0,
+      "Name": "heavyammopickup (3)",
+      "Position": "2314,-1648,450",
+      "Rotation": "0.6532815,-0.270598,-0.2705981,0.6532816",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "cb2c100f-b4d3-451d-8664-9aa383188eb6",
+      "Flags": 0,
+      "Name": "light_ammo_pickup (2)",
+      "Position": "2336,-1648,451",
+      "Rotation": "0,0,0.258819,0.9659258",
+      "Tags": "ignore",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/light_ammo_pickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "a721a2ac-b254-4965-8f46-f046ef57998d",
+      "Flags": 0,
+      "Name": "heavyammopickup (4)",
+      "Position": "1682,-2356,450",
+      "Rotation": "0.6123724,-0.3535533,-0.3535534,0.6123725",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "78da6e8f-abb9-4e4f-aa99-8c08617e3e16",
+      "Flags": 0,
+      "Name": "heavyammopickup (5)",
+      "Position": "1704,-2354,450",
+      "Rotation": "0.6830126,0.1830127,0.1830127,0.6830128",
+      "Scale": "3,3,3",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "__Prefab": "prefabs/items/heavyammopickup.prefab",
+      "__PrefabVariables": {}
+    },
+    {
+      "__guid": "64acd456-1282-4c9b-85db-eba89391c3d9",
+      "Flags": 0,
+      "Name": "citizen",
+      "Position": "122.1585,-1.831791,0.03531079",
+      "Rotation": "0,0,1,0.0000001947072",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkinnedModelRenderer",
+          "__guid": "a366e7e7-78b8-4403-88f1-336fb952cfae",
+          "BodyGroups": 341,
+          "CreateBoneObjects": false,
+          "Model": "models/citizen/citizen.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1",
+          "UseAnimGraph": true
+        },
+        {
+          "__type": "RagdollTest",
+          "__guid": "2c9388f2-8ad8-440b-86b3-ad2d9919a25c",
+          "Renderer": {
+            "_type": "component",
+            "component_id": "a366e7e7-78b8-4403-88f1-336fb952cfae",
+            "go": "64acd456-1282-4c9b-85db-eba89391c3d9",
+            "component_type": "SkinnedModelRenderer"
+          },
+          "Target": {
+            "_type": "gameobject",
+            "go": "cdf9533b-89c9-42ce-a578-7f7645d476ac"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "cdf9533b-89c9-42ce-a578-7f7645d476ac",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-72,-64,31.54623",
+      "Enabled": true,
+      "NetworkMode": 2,
       "NetworkInterpolation": true
-    },
-    {
-      "__guid": "bc42db58-02ce-4417-944f-6c5e52e79a43",
-      "Flags": 0,
-      "Name": "Spawn",
-      "Position": "2304,-640.0006,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "ec1f6423-6530-4083-ba11-abb4950b2b98",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "63ab3c61-1ad8-4352-bf77-707a4a2e8f04",
-      "Flags": 0,
-      "Name": "Spawn (9)",
-      "Position": "2176,-640.0006,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "fe6c50f2-4a75-49b2-a0c7-8771ac7c88f1",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "1bd2a4da-fd72-47fd-8640-76c5453de50f",
-      "Flags": 0,
-      "Name": "Spawn (4)",
-      "Position": "2304,-512.0007,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "9a2d62fc-a349-48eb-8a97-9e5ef3679ba0",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "4e6c8bb4-ccb1-4ba0-b90c-c77b577c8f1c",
-      "Flags": 0,
-      "Name": "Spawn (6)",
-      "Position": "2176,-512.0007,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "c445068d-1c3f-4b86-9837-fea6e54ffa46",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "82556db0-b1ae-4cda-95c9-8aa059019735",
-      "Flags": 0,
-      "Name": "Spawn (1)",
-      "Position": "2304,-768.0005,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "f019cd97-6dec-43a2-b0fb-7f66bd083421",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "9d50780e-39d8-43ed-8562-1a472a73bfc6",
-      "Flags": 0,
-      "Name": "Spawn (12)",
-      "Position": "2432,-768.0005,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "f1b44865-a40f-46dc-bdc3-e2f344aac0fa",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "0f7c735d-0750-425d-b2cf-4ba3cb7a76dc",
-      "Flags": 0,
-      "Name": "Spawn (17)",
-      "Position": "2432,-896,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "fcfa7136-6f8b-4542-a2d7-78372c505e52",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "43aa38ad-1638-48ce-85db-48fa228414ea",
-      "Flags": 0,
-      "Name": "Spawn (8)",
-      "Position": "2176,-768.0005,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "46d4eb7b-f0fc-4479-87d8-d8a48b2104fd",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "4a96c946-5a5a-4585-9e35-2d1927203854",
-      "Flags": 0,
-      "Name": "Spawn (2)",
-      "Position": "2304,-896.0004,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "e7e5fdff-0489-418d-bb3d-6c3801825dbc",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "df43a67b-9318-4ed2-bd8c-b0fd36e997e8",
-      "Flags": 0,
-      "Name": "Spawn (7)",
-      "Position": "2176,-896.0004,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "5e6f1bbc-349a-4545-a9a7-16bd188613d6",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "c75a46c7-31fa-4d79-9999-bbfe6c6d7aea",
-      "Flags": 0,
-      "Name": "Spawn (5)",
-      "Position": "2304,-1024,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "a8f6cb73-b30f-4e88-9093-150b83684bb8",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "174ac75a-1619-42cc-9889-0632ccdd259f",
-      "Flags": 0,
-      "Name": "Spawn (11)",
-      "Position": "2176,-1024,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "d41612f6-540a-4a5e-9806-d36d2eadf132",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "81ab06b5-c31b-47fe-90bf-f278c9489488",
-      "Flags": 0,
-      "Name": "Spawn (13)",
-      "Position": "2048,-1024,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "5ce8cc44-2d67-4881-adfd-84e515d66529",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "ee84d515-7177-4b13-8c96-ebd8f55cfb75",
-      "Flags": 0,
-      "Name": "Spawn (16)",
-      "Position": "1920,-1024,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "2c56b21f-cccb-4804-9eb4-341bc54bd79e",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "f8eccd79-97af-407e-80f3-03a4d039d5b3",
-      "Flags": 0,
-      "Name": "Spawn (14)",
-      "Position": "2048,-1152,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "aaf1e4e2-8bb0-47ee-98be-f2fe5c3bb5a8",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "00c3e8a6-f119-40d9-a959-bfd4cf2a867f",
-      "Flags": 0,
-      "Name": "Spawn (15)",
-      "Position": "2176,-1152,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "eac778ab-0999-4367-a22f-6532b5488492",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "c27da572-d209-4ae0-b57c-9bacf60f80a7",
-      "Flags": 0,
-      "Name": "Spawn (3)",
-      "Position": "2304,-896.0004,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "49d02b86-914b-4d02-96c3-488d4335e629",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
-    },
-    {
-      "__guid": "c79338ef-688e-45a9-ad57-d93661cf95e8",
-      "Flags": 0,
-      "Name": "Spawn (10)",
-      "Position": "2176,-896.0004,448",
-      "Rotation": "0,0,0.9999999,0.0000001937151",
-      "Tags": "zombiespawn1",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SpawnPoint",
-          "__guid": "d62eab20-8c01-49cc-a036-783d371bcded",
-          "Color": "0.8902,0.31765,0.05098,1"
-        }
-      ]
     }
   ],
   "SceneProperties": {
@@ -7494,7 +11499,7 @@
   },
   "Title": "demo_level3_2",
   "Description": "",
-  "LastSaved": "2024-06-12T21:55:04.6790331-04:00",
+  "LastSaved": "2024-06-20T10:23:16.7042193-04:00",
   "ResourceVersion": 1,
   "__references": [
     "facepunch.metal_galvanized",
