@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using Sandbox;
 namespace Kicks;
-[Title("Action Graph Popup"), Icon("check")]
+[Title( "Action Graph Popup" ), Icon( "check" )]
 public sealed class PopupUi : Component
 {
 	[Property] public string Name { get; set; }
@@ -16,28 +16,28 @@ public sealed class PopupUi : Component
 	public Inventory Inventory { get; set; }
 	[Property] public Texture Icon { get; set; }
 	[Property] public bool ShowPopUp { get; set; } = true;
-	[Property, Category("Structs")] public ShopItems ShopItems { get; set; }
+	[Property, Category( "Structs" )] public ShopItems ShopItems { get; set; }
 	public Texture Glyph { get; set; }
 	protected override void OnUpdate()
 	{
-			playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
-			inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault(x => !x.IsProxy);
-			Glyph = Input.GetGlyph(selectedInput, InputGlyphSize.Large, false);
-			Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
-			if (PickUpAction is null) return;
+		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault( x => !x.IsProxy );
+		Glyph = Input.GetGlyph( selectedInput, InputGlyphSize.Large, false );
+		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		if ( PickUpAction is null ) return;
 	}
-	[ActionGraphNode("GetNextSlot"), Pure]
+	[ActionGraphNode( "GetNextSlot" ), Pure]
 	public int GetNextSlot()
 	{
-		Inventory inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
-		return inventory.Items.FindIndex(x => x is null);
+		Inventory inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
+		return inventory.Items.FindIndex( x => x is null );
 	}
 	protected override void OnDestroy()
 	{
 		ShowPopUp = false;
 	}
 
-	public void UnParent(GameObject gameObject)
+	public void UnParent( GameObject gameObject )
 	{
 		gameObject.Parent = null;
 	}

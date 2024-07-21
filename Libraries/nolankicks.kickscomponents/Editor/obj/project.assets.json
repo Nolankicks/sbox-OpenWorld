@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "actiongraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/actiongraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/actiongraph.dll": {}
+        }
+      },
       "Base Editor Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -34,10 +47,28 @@
         "runtime": {
           "bin/placeholder/kickscomponents.dll": {}
         }
+      },
+      "shadergraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/shadergraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shadergraph.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "actiongraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj",
+      "msbuildProject": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj"
+    },
     "Base Editor Library/1.0.0": {
       "type": "project",
       "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
@@ -52,12 +83,19 @@
       "type": "project",
       "path": "../Code/kickscomponents.csproj",
       "msbuildProject": "../Code/kickscomponents.csproj"
+    },
+    "shadergraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj",
+      "msbuildProject": "../../../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Base Editor Library >= 1.0.0",
-      "kickscomponents >= 1.0.0"
+      "actiongraph >= 1.0.0",
+      "kickscomponents >= 1.0.0",
+      "shadergraph >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -95,6 +133,12 @@
           "projectReferences": {
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
             },
             "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\nolankicks.kickscomponents\\Code\\kickscomponents.csproj": {
               "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\nolankicks.kickscomponents\\Code\\kickscomponents.csproj"

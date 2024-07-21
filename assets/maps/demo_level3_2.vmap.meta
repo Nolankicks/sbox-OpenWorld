@@ -44,7 +44,16 @@
         "facepunch.truck_dev#58359",
         "facepunch.truck_cargo2_dev#58372",
         "facepunch.dufflebag_money#58382",
-        "facepunch.money_stack#58383"
+        "facepunch.money_stack#58383",
+        "facepunch.tyre_stack_dev#58581",
+        "facepunch.step_ladder_02#47580",
+        "facepunch.weapon_crates#58652",
+        "facepunch.truck_dev#58591",
+        "facepunch.swat_dev#58638",
+        "facepunch.shipping_container_closed_dev#58564",
+        "facepunch.plank_stack_dev#58731",
+        "facepunch.tyre_side_stack_dev#58580",
+        "facepunch.weapon_crate_small_stack2#58705"
       ],
       "Metadata": {
         "SingleAssetSource": "maps/demo_level3_2.vmap"

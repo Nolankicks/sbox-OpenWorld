@@ -102,11 +102,9 @@ public sealed class PlayerController : Component
 		UpdateAnimation();
 		if (!IsProxy && AbleToMove)
 		{
-
 			Movement();
 			Crouch();
 			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
-
 		}
 
 	}

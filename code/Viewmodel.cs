@@ -44,8 +44,8 @@ public sealed class ViewModel : Component
 	Vector3 LocalPos = Vector3.Zero;
 	protected override void OnUpdate()
 	{
-		GameObject.Enabled = !IsProxy;
-		if ( IsProxy ) return;
+		GameObject.Enabled = !GameObject.Parent.IsProxy;
+		if ( GameObject.Parent.IsProxy ) return;
 		if ( Components.TryGet<Weapon>( out var weapon, FindMode.EverythingInSelfAndParent ) )
 		{
 			if ( weapon.IsWeapon )
@@ -78,7 +78,7 @@ public sealed class ViewModel : Component
 
 	protected override void OnEnabled()
 	{
-		if ( IsProxy ) return;
+		if ( GameObject.Parent.IsProxy ) return;
 		Gun.Set( "b_deploy_dry", true );
 	}
 }

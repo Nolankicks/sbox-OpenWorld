@@ -142,7 +142,7 @@
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
                 "__guid": "c2d1e071-033b-4388-bdf1-3c0940e5d361",
-                "BodyGroups": 27,
+                "BodyGroups": 171,
                 "CreateBoneObjects": false,
                 "Model": "models/weapons/sbox_smg_mp5/v_mp5.vmdl",
                 "RenderType": "On",

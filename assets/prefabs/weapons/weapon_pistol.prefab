@@ -5,7 +5,6 @@
     "Name": "weapon_pistol",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Kicks.Weapon",
@@ -66,7 +65,7 @@
         },
         "ViewModelGun": {
           "_type": "component",
-          "component_id": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+          "component_id": "36eea1b3-9841-468e-a1d3-d8ca956f74a7",
           "go": "93a16984-a98a-41b2-9d60-e4971c7f7364",
           "component_type": "SkinnedModelRenderer"
         },
@@ -89,15 +88,13 @@
         "Flags": 0,
         "Name": "ViewModel",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "ViewModel",
             "__guid": "5b7132d7-09c7-4706-9677-ca58f21f4f4b",
             "Gun": {
               "_type": "component",
-              "component_id": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+              "component_id": "36eea1b3-9841-468e-a1d3-d8ca956f74a7",
               "go": "93a16984-a98a-41b2-9d60-e4971c7f7364",
               "component_type": "SkinnedModelRenderer"
             }
@@ -109,15 +106,13 @@
             "Flags": 0,
             "Name": "gun",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "e832b448-e6c8-4e42-b028-507f2123ccc3",
-                "BodyGroups": 20805,
+                "__guid": "36eea1b3-9841-468e-a1d3-d8ca956f74a7",
+                "BodyGroups": 17685,
                 "CreateBoneObjects": false,
-                "Model": "models/dev/error.vmdl",
+                "Model": "models/weapons/sbox_pistol_usp/v_usp.vmdl",
                 "RenderType": "On",
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
@@ -129,8 +124,6 @@
             "Flags": 0,
             "Name": "arms",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -138,7 +131,7 @@
                 "BodyGroups": 21,
                 "BoneMergeTarget": {
                   "_type": "component",
-                  "component_id": "e832b448-e6c8-4e42-b028-507f2123ccc3",
+                  "component_id": "36eea1b3-9841-468e-a1d3-d8ca956f74a7",
                   "go": "93a16984-a98a-41b2-9d60-e4971c7f7364",
                   "component_type": "SkinnedModelRenderer"
                 },
@@ -157,8 +150,6 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
@@ -200,6 +191,8 @@
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__references": [
+    "bolt.prophuntmanager",
+    "facepunch.v_usp",
     "facepunch.w_usp",
     "nolankicks.2d_game_test"
   ],

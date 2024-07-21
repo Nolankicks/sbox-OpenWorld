@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "actiongraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/actiongraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/actiongraph.dll": {}
+        }
+      },
       "Base Editor Library/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -79,6 +92,19 @@
           "bin/placeholder/opiumpostprocess.dll": {}
         }
       },
+      "shadergraph/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base Editor Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/shadergraph.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/shadergraph.dll": {}
+        }
+      },
       "shatterglass/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -108,6 +134,11 @@
     }
   },
   "libraries": {
+    "actiongraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj",
+      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ActionGraph/Code/actiongraph.csproj"
+    },
     "Base Editor Library/1.0.0": {
       "type": "project",
       "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/addons/tools/Code/Base Editor Library.csproj",
@@ -138,6 +169,11 @@
       "path": "../Libraries/nolankicks.opiumpostprocess/Code/opiumpostprocess.csproj",
       "msbuildProject": "../Libraries/nolankicks.opiumpostprocess/Code/opiumpostprocess.csproj"
     },
+    "shadergraph/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj",
+      "msbuildProject": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/editor/ShaderGraph/Code/shadergraph.csproj"
+    },
     "shatterglass/1.0.0": {
       "type": "project",
       "path": "../Libraries/facepunch.shatterglass/Code/shatterglass.csproj",
@@ -152,7 +188,9 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Base Editor Library >= 1.0.0",
-      "dead4left2 >= 1.0.0"
+      "actiongraph >= 1.0.0",
+      "dead4left2 >= 1.0.0",
+      "shadergraph >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -190,6 +228,12 @@
           "projectReferences": {
             "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj": {
               "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\addons\\tools\\Code\\Base Editor Library.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ActionGraph\\Code\\actiongraph.csproj"
+            },
+            "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj": {
+              "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\sbox\\editor\\ShaderGraph\\Code\\shadergraph.csproj"
             },
             "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj": {
               "projectPath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Code\\dead4left2.csproj"
