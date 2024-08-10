@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
+using Sandbox.Sdf;
 
 namespace Sandbox.Polygons;
 
@@ -485,5 +484,65 @@ public partial class PolygonMeshBuilder : Pooled<PolygonMeshBuilder>
 		}
 
 		return this;
+	}
+
+	public void DrawGizmos( float minDist, float maxDist )
+	{
+		foreach ( var index in _activeEdges )
+		{
+			var edge = _allEdges[index];
+			var next = _allEdges[edge.NextEdge];
+
+			var start = edge.Project( minDist );
+			var end = next.Project( minDist );
+
+			Gizmo.Draw.Line( start, end );
+
+			var dist = (Gizmo.LocalCameraTransform.Position - (Vector3)start).Length;
+			var textOffset = dist / 64f;
+			var textPos = start + (end - start).Normal * textOffset - edge.Normal * textOffset;
+
+			Gizmo.Draw.Text( edge.ToString(), new Transform( textPos ) );
+
+			if ( minDist < maxDist )
+			{
+				// Gizmo.Draw.Line( edge.Project( minDist ), edge.Project( Math.Min( edge.MaxDistance, maxDist ) ) );
+			}
+		}
+	}
+
+	public static void RunDebugDump( string dump, float width, bool fromSdf, int maxIterations )
+	{
+		var parsed = Json.Deserialize<DebugDump>( dump );
+
+		if ( fromSdf && parsed.SdfData is not null )
+		{
+			var samples = Convert.FromBase64String( parsed.SdfData.Samples );
+			var data = new Sdf2DArrayData( samples, parsed.SdfData.BaseIndex, parsed.SdfData.Size,
+				parsed.SdfData.RowStride );
+
+			using var writer = Sdf2DMeshWriter.Rent();
+
+			writer.AddEdgeLoops( data, 0f );
+			writer.DrawGizmos();
+
+			return;
+		}
+
+		using var builder = Rent();
+
+		parsed.Init( builder );
+
+		Gizmo.Draw.Color = Color.White;
+		builder.DrawGizmos( 0f, width );
+
+		if ( width <= 0f ) return;
+
+		parsed.Bevel( builder, width );
+
+		Gizmo.Draw.Color = Color.Blue;
+		builder.DrawGizmos( width, width );
+
+		// builder.Fill();
 	}
 }

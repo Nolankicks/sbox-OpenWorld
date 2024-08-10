@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using Sandbox.Diagnostics;
 using Sandbox.Polygons;
 
@@ -410,12 +408,11 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 	public Vector2 DebugOffset { get; set; }
 	public float DebugScale { get; set; } = 1f;
 
-	public void Write( Sdf2DArrayData data, Sdf2DLayer layer, bool renderMesh, bool collisionMesh )
+	public void AddEdgeLoops( Sdf2DArrayData data, float maxSmoothAngle )
 	{
 		SourceEdges.Clear();
 
-		var quality = layer.Quality;
-		var size = quality.ChunkResolution;
+		var size = data.Size;
 
 		// Find edges between solid and empty
 
@@ -432,16 +429,40 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 			}
 		}
 
-		FindEdgeLoops( data, layer.MaxSmoothAngle, 0.25f );
+		FindEdgeLoops( data, maxSmoothAngle, 0.25f );
+	}
 
-		if ( renderMesh )
+	public void Write( Sdf2DArrayData data, Sdf2DLayer layer, bool renderMesh, bool collisionMesh )
+	{
+		var quality = layer.Quality;
+
+		AddEdgeLoops( data, layer.MaxSmoothAngle );
+
+		try
 		{
-			WriteRenderMesh( layer );
+			if ( renderMesh )
+			{
+				WriteRenderMesh( layer );
+			}
+
+			if ( collisionMesh )
+			{
+				WriteCollisionMesh( layer );
+			}
 		}
-
-		if ( collisionMesh )
+		catch (Exception e )
 		{
-			WriteCollisionMesh( layer );
+			var scale = quality.UnitSize;
+			var bevelScale = layer.EdgeRadius / scale;
+
+			Log.Error( $"Internal error in PolygonMeshBuilder!\n\n" +
+				$"Please paste the info below in this thread:\nhttps://github.com/Facepunch/sbox-sdf/issues/17\n\n" +
+				$"{Json.Serialize( new DebugDump( e.ToString(),
+					SerializeEdgeLoops( 0, EdgeLoops.Count ),
+					new SdfDataDump( data ),
+					layer.EdgeStyle,
+					bevelScale,
+					layer.EdgeFaces ) )}" );
 		}
 	}
 
@@ -488,12 +509,9 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 		}
 	}
 
-	private string PrintEdgeLoops( int offset, int count, out Vector2 pos )
+	public string SerializeEdgeLoops( int offset, int count )
 	{
 		var writer = new StringWriter();
-
-		pos = 0f;
-		var vertexCount = 0;
 
 		for ( var i = 0; i < count; ++i )
 		{
@@ -502,19 +520,10 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 			for ( var j = 0; j < edgeLoop.Count; ++j )
 			{
 				var vertex = SourceVertices[edgeLoop.FirstIndex + j];
-				writer.Write( $"({vertex.x:R}, {vertex.y:R})," );
-
-				pos += vertex;
+				writer.Write( $"{vertex.x:R},{vertex.y:R};" );
 			}
 
-			vertexCount += edgeLoop.Count;
-
-			writer.WriteLine();
-		}
-
-		if ( vertexCount > 0 )
-		{
-			pos /= vertexCount;
+			writer.Write( "\n" );
 		}
 
 		return writer.ToString();
@@ -629,5 +638,22 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 		}
 
 		_collisionMeshWriter.Clip( quality );
+	}
+
+	public void DrawGizmos()
+	{
+		foreach ( var edgeLoop in EdgeLoops )
+		{
+			var prev = SourceVertices[edgeLoop.FirstIndex + edgeLoop.Count - 1];
+
+			for ( var i = 0; i < edgeLoop.Count; i++ )
+			{
+				var next = SourceVertices[edgeLoop.FirstIndex + i];
+
+				Gizmo.Draw.Line( prev, next );
+
+				prev = next;
+			}
+		}
 	}
 }
