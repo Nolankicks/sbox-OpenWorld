@@ -46,8 +46,6 @@ public sealed class Shotgun : Component
 		if (PlayerController.IsFirstPerson && !IsWeapon)
 		{
 			ViewModelCamera.Enabled = true;
-	
-		
 		}
 	}
 		protected override void OnUpdate()

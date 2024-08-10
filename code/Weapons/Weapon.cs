@@ -336,7 +336,7 @@ public sealed class Weapon : Component
 			}
 			if ( FireSound is not null )
 			{
-				Sound.Play( FireSound, tr.StartPosition );
+				//Sound.Play( FireSound, tr.StartPosition );
 			}
 			if ( MuzzleFlash is not null )
 			{

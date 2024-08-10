@@ -6,7 +6,6 @@
     "Tags": "weapon",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Kicks.Weapon",
@@ -90,8 +89,6 @@
         "Flags": 0,
         "Name": "ViewModel",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "ViewModel",
@@ -110,8 +107,6 @@
             "Flags": 0,
             "Name": "arms",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -136,8 +131,6 @@
             "Flags": 0,
             "Name": "gun",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -158,8 +151,6 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
@@ -178,8 +169,10 @@
             "Gravity": true,
             "LinearDamping": 0,
             "Locking": {},
+            "MassCenterOverride": "0,0,0",
             "MassOverride": 0,
             "MotionEnabled": true,
+            "OverrideMassCenter": false,
             "RigidbodyFlags": 0,
             "StartAsleep": false
           },
@@ -201,6 +194,7 @@
   "MenuIcon": null,
   "ResourceVersion": 1,
   "__references": [
+    "bolt.prophuntmanager",
     "facepunch.v_mp5",
     "facepunch.w_mp5",
     "nolankicks.2d_game_test"

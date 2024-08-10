@@ -5,7 +5,6 @@
     "Name": "m4a4",
     "Enabled": true,
     "NetworkMode": 1,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "ActionGraphItem",
@@ -116,7 +115,7 @@
               "Id": 0,
               "Type": "input",
               "UserData": {
-                "Position": "-352,-160",
+                "Position": "-2864,-176",
                 "Labels": {
                   "actionGraphItem": "item",
                   "inventory": "inv",
@@ -131,7 +130,7 @@
                 "T": "ActionGraphItem"
               },
               "UserData": {
-                "Position": "-352,-304",
+                "Position": "-2864,-320",
                 "Labels": {
                   "_result": "item"
                 }
@@ -141,14 +140,14 @@
               "Id": 11,
               "Type": "if",
               "UserData": {
-                "Position": "464,-0"
+                "Position": "-2048,-16"
               }
             },
             {
               "Id": 161,
               "Type": "if",
               "UserData": {
-                "Position": "1456,-0"
+                "Position": "-1056,-16"
               }
             },
             {
@@ -158,14 +157,14 @@
                 "graph": "actions/spawndecal.action"
               },
               "UserData": {
-                "Position": "1776,80"
+                "Position": "-736,64"
               }
             },
             {
               "Id": 200,
               "Type": "if",
               "UserData": {
-                "Position": "512,-160"
+                "Position": "-2000,-176"
               }
             },
             {
@@ -178,14 +177,14 @@
                 }
               },
               "UserData": {
-                "Position": "48,384"
+                "Position": "-2464,368"
               }
             },
             {
               "Id": 353,
               "Type": "if",
               "UserData": {
-                "Position": "1136,-32"
+                "Position": "-1376,-48"
               }
             },
             {
@@ -195,7 +194,7 @@
                 "T": "ActionGraphDelay"
               },
               "UserData": {
-                "Position": "-352,-416",
+                "Position": "-2864,-432",
                 "Labels": {
                   "_result": "Delay"
                 }
@@ -205,19 +204,19 @@
               "Id": 420,
               "Type": "call",
               "Properties": {
-                "_isStatic": false,
                 "_type": "ActionGraphDelay",
-                "_name": "SetDelay"
+                "_name": "SetDelay",
+                "_isStatic": false
               },
               "UserData": {
-                "Position": "1488,-176"
+                "Position": "-1024,-192"
               }
             },
             {
               "Id": 447,
               "Type": "ActionGraphTrace",
               "UserData": {
-                "Position": "704,-32"
+                "Position": "-1808,-48"
               }
             },
             {
@@ -266,7 +265,7 @@
               "Id": 715,
               "Type": "ActionGraphReload",
               "UserData": {
-                "Position": "800,-176"
+                "Position": "-1712,-192"
               }
             },
             {
@@ -276,14 +275,14 @@
                 "graph": "actions/reloadlogic.action"
               },
               "UserData": {
-                "Position": "208,-320"
+                "Position": "-2304,-336"
               }
             },
             {
               "Id": 740,
               "Type": "op.not",
               "UserData": {
-                "Position": "32,-512"
+                "Position": "-2480,-528"
               }
             },
             {
@@ -293,7 +292,7 @@
                 "T": "Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
-                "Position": "224,384",
+                "Position": "-2288,368",
                 "Labels": {
                   "_result": "renderer"
                 }
@@ -308,7 +307,7 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "1360,192"
+                "Position": "-1152,176"
               }
             },
             {
@@ -320,19 +319,19 @@
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "1168,-176"
+                "Position": "-1344,-192"
               }
             },
             {
               "Id": 764,
               "Type": "call",
               "Properties": {
-                "_name": "Set",
                 "_type": "Sandbox.SkinnedModelRenderer",
+                "_name": "Set",
                 "_isStatic": false
               },
               "UserData": {
-                "Position": "2448,80"
+                "Position": "-64,64"
               }
             },
             {
@@ -342,21 +341,14 @@
                 "graph": "actions/attacklogic.action"
               },
               "UserData": {
-                "Position": "192,64"
-              }
-            },
-            {
-              "Id": 788,
-              "Type": "Play Sound",
-              "UserData": {
-                "Position": "2048,80"
+                "Position": "-2320,48"
               }
             },
             {
               "Id": 803,
               "Type": "SpawnMuzzleFlash",
               "UserData": {
-                "Position": "2768,80"
+                "Position": "256,64"
               }
             }
           ],
@@ -627,7 +619,7 @@
               "DstName": "value"
             },
             {
-              "SrcId": 788,
+              "SrcId": 173,
               "SrcName": "_signal",
               "DstId": 764,
               "DstName": "_signal"
@@ -659,29 +651,6 @@
               "SrcName": "_target",
               "DstId": 773,
               "DstName": "_target"
-            },
-            {
-              "Value": "sounds/dead4left2shootsound.sound",
-              "DstId": 788,
-              "DstName": "FireSound"
-            },
-            {
-              "SrcId": 173,
-              "SrcName": "_signal",
-              "DstId": 788,
-              "DstName": "_signal"
-            },
-            {
-              "SrcId": 0,
-              "SrcName": "actionGraphItem",
-              "DstId": 788,
-              "DstName": "_target"
-            },
-            {
-              "SrcId": 447,
-              "SrcName": "traceStartPos",
-              "DstId": 788,
-              "DstName": "startPos"
             },
             {
               "SrcId": 755,
@@ -740,8 +709,6 @@
         "Flags": 0,
         "Name": "Dropped Item",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Kicks.PopupUi",
@@ -805,9 +772,9 @@
                   "Id": 7,
                   "Type": "call",
                   "Properties": {
-                    "_isStatic": false,
                     "_type": "ActionGraphItem",
-                    "_name": "PickUp"
+                    "_name": "PickUp",
+                    "_isStatic": false
                   },
                   "UserData": {
                     "Position": "1024,0"
@@ -914,8 +881,10 @@
             "Gravity": true,
             "LinearDamping": 0,
             "Locking": {},
+            "MassCenterOverride": "0,0,0",
             "MassOverride": 0,
             "MotionEnabled": true,
+            "OverrideMassCenter": false,
             "RigidbodyFlags": 0,
             "StartAsleep": false
           },
@@ -937,8 +906,6 @@
         "Name": "Object",
         "Tags": "viewmodel",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "ViewModel",
@@ -957,8 +924,6 @@
             "Flags": 0,
             "Name": "gun",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -978,8 +943,6 @@
             "Name": "arms",
             "Tags": "skybox",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
