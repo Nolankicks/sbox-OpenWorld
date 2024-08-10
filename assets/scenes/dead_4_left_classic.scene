@@ -7,13 +7,14 @@
       "Name": "Map",
       "Position": "149.995,149.995,-212.125",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.MapInstance",
           "__guid": "237430a8-d44b-49e7-af73-fdb5058af5f9",
-          "MapName": "facepunch.square",
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "facepunch.construct23",
+          "NoOrigin": true,
           "UseMapFromLaunch": true
         }
       ],
@@ -26,8 +27,6 @@
       "Position": "149.995,-1137.828,-212.125",
       "Tags": "maincamera",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.CameraComponent",
@@ -44,7 +43,7 @@
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
           "ZFar": 10000,
-          "ZNear": 10
+          "ZNear": 1
         }
       ]
     },
@@ -54,8 +53,6 @@
       "Name": "Network",
       "Position": "666.0186,-1132.896,121.8909",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Kicks.NetworkManager",
@@ -74,8 +71,6 @@
       "Name": "Screen",
       "Position": "217.3899,-1015.917,-0.3712997",
       "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "Sandbox.ScreenPanel",
@@ -116,7 +111,6 @@
       "Position": "610.679,-1005.776,13.0044",
       "Enabled": true,
       "NetworkMode": 1,
-      "NetworkInterpolation": true,
       "Components": [
         {
           "__type": "ProcGenZombieSpawner",
@@ -152,7 +146,6 @@
   },
   "Title": "dead_4_left_classic",
   "Description": "",
-  "LastSaved": "2024-05-22T20:40:43.7260111-04:00",
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1
