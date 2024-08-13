@@ -14,7 +14,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 	/// </summary>
 	[Property] public GameObject PlayerPrefab { get; set; }
 
-	protected override void OnStart()
+	protected override async Task OnLoad()
 	{
 		if ( Scene.IsEditor )
 			return;
@@ -22,6 +22,7 @@ public sealed class NetworkManager : Component, Component.INetworkListener
 		if ( StartServer && !GameNetworkSystem.IsActive )
 		{
 			LoadingScreen.Title = "Creating Lobby";
+			await Task.DelayRealtimeSeconds( 0.1f );
 			GameNetworkSystem.CreateLobby();
 		}
 	}
