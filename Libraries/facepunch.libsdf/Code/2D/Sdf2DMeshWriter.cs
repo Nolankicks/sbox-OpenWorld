@@ -455,7 +455,7 @@ partial class Sdf2DMeshWriter : Pooled<Sdf2DMeshWriter>
 			var scale = quality.UnitSize;
 			var bevelScale = layer.EdgeRadius / scale;
 
-			Log.Error( $"Internal error in PolygonMeshBuilder!\n\n" +
+			Log.Warning( $"Internal error in PolygonMeshBuilder!\n\n" +
 				$"Please paste the info below in this thread:\nhttps://github.com/Facepunch/sbox-sdf/issues/17\n\n" +
 				$"{Json.Serialize( new DebugDump( e.ToString(),
 					SerializeEdgeLoops( 0, EdgeLoops.Count ),
