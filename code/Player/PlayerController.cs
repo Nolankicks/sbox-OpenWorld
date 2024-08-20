@@ -13,7 +13,7 @@ public sealed class PlayerController : Component
 	[Property] public int CrouchSpeed { get; set; } = 50;
 	[Sync] public Vector3 WishVelocity { get; set; }
 	[Property] public CitizenAnimationHelper AnimationHelper { get; set; }
-	public delegate void OnDeathDel(PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer);
+	public delegate void OnDeathDel( PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer );
 	[Property] public OnDeathDel OnDeath { get; set; }
 	[Property, Sync] public int Wood { get; set; }
 	[Property, Sync] public int Stone { get; set; }
@@ -51,44 +51,45 @@ public sealed class PlayerController : Component
 	}
 	protected override void OnStart()
 	{
-		Camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault(x => x.IsMainCamera);
+		Camera = Scene.GetAllComponents<CameraComponent>().FirstOrDefault( x => x.IsMainCamera );
 		eyeAngles = Transform.Rotation.Angles();
 		var steamId = Steam.SteamId.ToString();
-		GameObject.Tags.Add(steamId);
-		CharacterController.IgnoreLayers.Add(steamId);
-		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
+		GameObject.Tags.Add( steamId );
+		CharacterController.IgnoreLayers.Add( steamId );
+		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
 
-		if (FindSpawnPoint)
+		if ( FindSpawnPoint )
 		{
-			var spawnPoint = Game.Random.FromList(Scene.GetAllComponents<SpawnPoint>().ToList());
+			var spawnPoint = Game.Random.FromList( Scene.GetAllComponents<SpawnPoint>().ToList() );
 			Transform.World = spawnPoint.Transform.World;
 			eyeAngles = spawnPoint.Transform.Rotation.Angles();
 		}
 	}
 	void PlayJumpSound()
 	{
-		var tr = Scene.Trace.Ray(Transform.Position + Vector3.Up * 20, Transform.Position + Vector3.Up * -20).Run();
-		if (!tr.Hit) return;
-		if (tr.Surface is null) return;
+		var tr = Scene.Trace.Ray( Transform.Position + Vector3.Up * 20, Transform.Position + Vector3.Up * -20 ).Run();
+		if ( !tr.Hit ) return;
+		if ( tr.Surface is null ) return;
 		var sound = tr.Surface.Sounds.FootLaunch;
-		var soundeevent = Sound.Play(sound);
+		if ( sound is null ) return;
+		var soundeevent = Sound.Play( sound );
 		soundeevent.Volume = 0.5f;
 	}
 	private void MouseInput()
 	{
 		var e = eyeAngles;
 		e += Input.AnalogLook;
-		e.pitch = e.pitch.Clamp(-85, 90);
+		e.pitch = e.pitch.Clamp( -85, 90 );
 		e.roll = 0.0f;
 		eyeAngles = e;
 	}
 	protected override void OnUpdate()
 	{
-		if (!IsProxy && MoveCamera)
+		if ( !IsProxy && MoveCamera )
 		{
 			MouseInput();
 			CamPos();
-			if (!IsProxy)
+			if ( !IsProxy )
 			{
 				var eyePos = Eye.Transform.Position;
 				eyePos = AnimationHelper.Target.Transform.Position + Vector3.Up * (IsCrouching ? 32 : 64);
@@ -100,17 +101,17 @@ public sealed class PlayerController : Component
 	protected override void OnFixedUpdate()
 	{
 		UpdateAnimation();
-		if (!IsProxy && AbleToMove)
+		if ( !IsProxy && AbleToMove )
 		{
 			Movement();
 			Crouch();
-			Transform.Rotation = Rotation.Slerp(Transform.Rotation, new Angles(0, eyeAngles.yaw, 0).ToRotation(), Time.Delta * 5);
+			Transform.Rotation = Rotation.Slerp( Transform.Rotation, new Angles( 0, eyeAngles.yaw, 0 ).ToRotation(), Time.Delta * 5 );
 		}
 
 	}
 
 
-	public void AddCoins(int amount)
+	public void AddCoins( int amount )
 	{
 		Coins += amount;
 	}
@@ -118,11 +119,11 @@ public sealed class PlayerController : Component
 	{
 		get
 		{
-			if (IsCrouching)
+			if ( IsCrouching )
 			{
 				return CrouchSpeed;
 			}
-			if (Input.Down("run"))
+			if ( Input.Down( "run" ) )
 			{
 				return RunSpeed;
 			}
@@ -134,7 +135,7 @@ public sealed class PlayerController : Component
 	}
 	float Friction()
 	{
-		if (CharacterController.IsOnGround)
+		if ( CharacterController.IsOnGround )
 		{
 			return 6.0f;
 		}
@@ -144,15 +145,15 @@ public sealed class PlayerController : Component
 		}
 	}
 	TimeSince timeSinceFootstep;
-	void OnFootStep(SceneModel.FootstepEvent footstepEvent)
+	void OnFootStep( SceneModel.FootstepEvent footstepEvent )
 	{
-		if (timeSinceFootstep > 0.2f) return;
-		var tr = Scene.Trace.Ray(footstepEvent.Transform.Position + Vector3.Up * 20, footstepEvent.Transform.Position + Vector3.Up * -20).Run();
-		if (!tr.Hit) return;
-		if (tr.Surface is null) return;
+		if ( timeSinceFootstep > 0.2f ) return;
+		var tr = Scene.Trace.Ray( footstepEvent.Transform.Position + Vector3.Up * 20, footstepEvent.Transform.Position + Vector3.Up * -20 ).Run();
+		if ( !tr.Hit ) return;
+		if ( tr.Surface is null ) return;
 		timeSinceFootstep = 0;
 		var sound = footstepEvent.FootId == 0 ? tr.Surface.Sounds.FootLeft : tr.Surface.Sounds.FootRight;
-		var soundeevent = Sound.Play(sound);
+		var soundeevent = Sound.Play( sound );
 		soundeevent.Volume = footstepEvent.Volume;
 		timeSinceGround = 0;
 	}
@@ -161,71 +162,71 @@ public sealed class PlayerController : Component
 	void Movement()
 	{
 		var cc = CharacterController;
-		if (cc is null)
+		if ( cc is null )
 		{
 			return;
 		}
 		WishVelocity = Input.AnalogMove.Normal;
 		Vector3 halfGrav = Scene.PhysicsWorld.Gravity * Time.Delta * 0.5f;
-		if (Input.Down("jump") && cc.IsOnGround && timeSinceJump > 0.1f)
+		if ( Input.Down( "jump" ) && cc.IsOnGround && timeSinceJump > 0.1f )
 		{
-			CharacterController.Punch(Vector3.Up * 300);
+			CharacterController.Punch( Vector3.Up * 300 );
 			OnJump?.Invoke();
 			AnimationHelper.TriggerJump();
 			timeSinceJump = 0;
 		}
 
-		if (!WishVelocity.IsNearlyZero())
+		if ( !WishVelocity.IsNearlyZero() )
 		{
-			WishVelocity = new Angles(0, eyeAngles.yaw, 0).ToRotation() * WishVelocity;
-			WishVelocity = WishVelocity.WithZ(0);
-			WishVelocity.ClampLength(1);
+			WishVelocity = new Angles( 0, eyeAngles.yaw, 0 ).ToRotation() * WishVelocity;
+			WishVelocity = WishVelocity.WithZ( 0 );
+			WishVelocity.ClampLength( 1 );
 			WishVelocity *= MoveSpeed;
-			if (!cc.IsOnGround)
+			if ( !cc.IsOnGround )
 			{
-				WishVelocity.ClampLength(50);
+				WishVelocity.ClampLength( 50 );
 			}
 		}
-		cc.ApplyFriction(Friction());
+		cc.ApplyFriction( Friction() );
 
-		if (cc.IsOnGround)
+		if ( cc.IsOnGround )
 		{
-			cc.Accelerate(WishVelocity);
-			cc.Velocity = CharacterController.Velocity.WithZ(0);
+			cc.Accelerate( WishVelocity );
+			cc.Velocity = CharacterController.Velocity.WithZ( 0 );
 		}
 		else
 		{
 			cc.Velocity += halfGrav;
-			cc.Accelerate(WishVelocity);
+			cc.Accelerate( WishVelocity );
 		}
 		CharacterController.Move();
-		if (!cc.IsOnGround)
+		if ( !cc.IsOnGround )
 		{
 			cc.Velocity += halfGrav;
 		}
 		else
 		{
-			cc.Velocity = cc.Velocity.WithZ(0);
+			cc.Velocity = cc.Velocity.WithZ( 0 );
 		}
 	}
 	bool UnCrouch()
 	{
-		if (!IsCrouching)
+		if ( !IsCrouching )
 		{
 			return true;
 		}
-		var tr = CharacterController.TraceDirection(Vector3.Up * 32);
+		var tr = CharacterController.TraceDirection( Vector3.Up * 32 );
 		return !tr.Hit;
 	}
 	void CamPos()
 	{
-		var camera = Scene.GetAllComponents<CameraComponent>().Where(x => x.IsMainCamera).FirstOrDefault();
-		if (camera is null) return;
-		if (IsFirstPerson)
+		var camera = Scene.GetAllComponents<CameraComponent>().Where( x => x.IsMainCamera ).FirstOrDefault();
+		if ( camera is null ) return;
+		if ( IsFirstPerson )
 		{
 			camera.FieldOfView = Preferences.FieldOfView;
 			var targetPosEyePos = IsCrouching ? 32 : 64;
-			var targetPos = Transform.Position + new Vector3(0, 0, targetPosEyePos);
+			var targetPos = Transform.Position + new Vector3( 0, 0, targetPosEyePos );
 			camera.Transform.Position = targetPos;
 			camera.Transform.Rotation = eyeAngles;
 		}
@@ -236,8 +237,8 @@ public sealed class PlayerController : Component
 			camera.Transform.Rotation = lookDir;
 			var center = Transform.Position + Vector3.Up * 64;
 			//Trace to see if the camera is inside a wall
-			var tr = Scene.Trace.Ray(center, center - (eyeAngles.Forward * 300)).WithoutTags("player", "barrier").Run();
-			if (tr.Hit)
+			var tr = Scene.Trace.Ray( center, center - (eyeAngles.Forward * 300) ).WithoutTags( "player", "barrier" ).Run();
+			if ( tr.Hit )
 			{
 				camera.Transform.Position = tr.EndPosition + tr.Normal * 2 + Vector3.Up * 10;
 			}
@@ -249,9 +250,9 @@ public sealed class PlayerController : Component
 	}
 	void Crouch()
 	{
-		if (!Input.Down("duck"))
+		if ( !Input.Down( "duck" ) )
 		{
-			if (!UnCrouch()) return;
+			if ( !UnCrouch() ) return;
 			CharacterController.Height = 64;
 			IsCrouching = false;
 		}
@@ -265,35 +266,35 @@ public sealed class PlayerController : Component
 	{
 		UpdateBodyShit();
 
-		if (IsProxy)
+		if ( IsProxy )
 			return;
 
 
 	}
 	private void UpdateAnimation()
 	{
-		if (AnimationHelper is null) return;
+		if ( AnimationHelper is null ) return;
 
 		var wv = WishVelocity.Length;
 
-		AnimationHelper.WithWishVelocity(WishVelocity);
-		AnimationHelper.WithVelocity(CharacterController.Velocity);
+		AnimationHelper.WithWishVelocity( WishVelocity );
+		AnimationHelper.WithVelocity( CharacterController.Velocity );
 		AnimationHelper.IsGrounded = CharacterController.IsOnGround;
 		AnimationHelper.DuckLevel = IsCrouching ? 1.0f : 0.0f;
 
 		AnimationHelper.MoveStyle = wv < 160f ? CitizenAnimationHelper.MoveStyles.Walk : CitizenAnimationHelper.MoveStyles.Run;
 
 		var lookDir = eyeAngles.ToRotation().Forward * 1024;
-		AnimationHelper.WithLook(lookDir, 1, 0.5f, 0.25f);
+		AnimationHelper.WithLook( lookDir, 1, 0.5f, 0.25f );
 	}
 	public void UpdateBodyShit()
 	{
 		var target = AnimationHelper.Target;
-		var cloths = target.Components.GetAll<ModelRenderer>(FindMode.InChildren);
-		if (IsProxy || !IsFirstPerson)
+		var cloths = target.Components.GetAll<ModelRenderer>( FindMode.InChildren );
+		if ( IsProxy || !IsFirstPerson )
 		{
 			target.RenderType = ModelRenderer.ShadowRenderType.On;
-			foreach (var cloth in cloths)
+			foreach ( var cloth in cloths )
 			{
 				cloth.RenderType = ModelRenderer.ShadowRenderType.On;
 			}
@@ -301,7 +302,7 @@ public sealed class PlayerController : Component
 		else
 		{
 			target.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
-			foreach (var cloth in cloths)
+			foreach ( var cloth in cloths )
 			{
 				cloth.RenderType = ModelRenderer.ShadowRenderType.ShadowsOnly;
 			}
@@ -309,60 +310,68 @@ public sealed class PlayerController : Component
 	}
 
 	[Broadcast]
-	public void TakeDamage(float damage, bool ChangeScene = true)
+	public void TakeDamage( float damage, bool ChangeScene = true )
 	{
-		if (IsProxy) return;
+		if ( IsProxy ) return;
 		Health -= damage;
-		if (Health <= 0)
+		if ( Health <= 0 )
 		{
-			if (ChangeScene)
+			if ( ChangeScene )
 			{
 				Kill();
 			}
 			else
 			{
-				Kill(true);
+				Kill( true );
 			}
 		}
 	}
 
 	[Broadcast]
-	public void Heal(float amount)
+	public void Heal( float amount )
 	{
-		if (IsProxy) return;
-		if (Health < 120)
+		if ( IsProxy ) return;
+		if ( Health < 120 )
 		{
 			Health += amount;
 		}
 	}
 
-	[ActionGraphNode("Take Damage Node"), Pure]
-	public void TakeDamageNode(float damage)
+	[ActionGraphNode( "Take Damage Node" ), Pure]
+	public void TakeDamageNode( float damage )
 	{
-		TakeDamage(damage);
+		TakeDamage( damage );
 	}
 
-	[ActionGraphNode("Heal Node"), Pure]
-	public void HealNode(float amount)
+	[ActionGraphNode( "Heal Node" ), Pure]
+	public void HealNode( float amount )
 	{
-		Heal(amount);
+		Heal( amount );
 	}
-	void Kill(bool Respawn = false)
+	void Kill( bool Respawn = false )
 	{
-		if (!IsProxy)
+		if ( !IsProxy )
 		{
-			OnDeath?.Invoke(this, Inventory, AmmoContainer);
-			if (Respawn)
+			OnDeath?.Invoke( this, Inventory, AmmoContainer );
+			if ( Respawn )
 			{
 				var spawnPoints = Scene.GetAllComponents<SpawnPoint>().ToList();
-				var selectedPoint = Game.Random.FromList(spawnPoints);
-				Transform.World = selectedPoint.Transform.World;
+				if ( spawnPoints.Count != 0 )
+				{
+					var selectedPoint = Game.Random.FromList( spawnPoints );
+					Transform.World = selectedPoint.Transform.World;
+				}
+				else
+				{
+					Transform.Position = Vector3.Zero;
+				}
+
 				Health = 100;
 				AmmoContainer.ResetAmmo();
 			}
 			else
 			{
-				Game.ActiveScene.Load(SceneFile);
+				Game.ActiveScene.Load( SceneFile );
 			}
 		}
 	}
