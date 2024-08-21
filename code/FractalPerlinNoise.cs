@@ -14,6 +14,7 @@ namespace Sandbox.Sdf.Noise
             float frequency = 1;
             float amplitude = amp;
             float maxValue = 0;
+
             for(int i=0;i<Octaves;i++) {
                 var xNoise = (pos.x * 0.125f * frequency) / 10;
                 var yNoise = (pos.y * 0.125f * frequency) / 10;
@@ -30,6 +31,7 @@ namespace Sandbox.Sdf.Noise
             total /= maxValue;
             
             total *= SizeOfArea.z;
+			
             return pos.z - (ChunkPosition.z + total);
         }
     }

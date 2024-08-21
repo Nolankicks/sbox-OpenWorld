@@ -66,11 +66,19 @@ public sealed class Weapon : Component
 	[Property] public OnFireDel OnFire { get; set; }
 	protected override void OnStart()
 	{
+		
 		GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		Arms.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+
+		if ( Arms.IsValid() )
+			Arms.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+
+		if ( ViewModel.IsValid() )
+			ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModel.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+
+		if ( ViewModelHolder.IsValid() )
+			ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
+
 		if ( IsProxy ) return;
 		TimeSinceReload = ReloadTime;
 		TimeSinceFire = FireRate;
@@ -210,7 +218,7 @@ public sealed class Weapon : Component
 	}
 	protected override void OnDisabled()
 	{
-		if ( !IsProxy )
+		if ( !IsProxy && ViewModelGun.IsValid() )
 		{
 			ViewModelGun.Set( "b_grounded", false );
 		}

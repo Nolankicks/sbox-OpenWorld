@@ -53,7 +53,7 @@
 	public override void Tick()
 	{
 		GetItem();
-		if (Item is not null)
+		if (Item.IsValid() && Item.DroppedItem.IsValid())
 		{
 			ShowUi = true;
 			var pos = Scene.Camera.PointToScreenPixels(Item.DroppedItem.Transform.Position);
@@ -63,7 +63,7 @@
 			Style.Top = Length.Pixels(pos.y);
 			StateHasChanged();
 		}
-		else if (Shotgun is not null)
+		else if (Shotgun.IsValid() && Shotgun.pickUpObject.IsValid())
 		{
 			ShowUi = true;
 			var pos = Scene.Camera.PointToScreenPixels(Shotgun.pickUpObject.Transform.Position);
@@ -73,7 +73,7 @@
 			Style.Top = Length.Pixels(pos.y);
 			StateHasChanged();
 		}
-		else if (PopupUi is not null)
+		else if (PopupUi.IsValid())
 		{
 			ShowUi = true;
 			var pos = Scene.Camera.PointToScreenPixels(PopupUi.GameObject.Transform.Position);

@@ -61,11 +61,13 @@ public sealed class Sdftest : Component, Component.INetworkListener
 				return Grass;
 		}
 	}
+
 	[RegisterSdfTypes]
 	public static void RegisterSdfTypes()
 	{
 		ISdf3D.RegisterType( FractalPerlinNoise.ReadRaw );
 	}
+	
 	public bool WaterBool()
 	{
 		switch ( Biome )
@@ -110,12 +112,16 @@ public sealed class Sdftest : Component, Component.INetworkListener
 	}
 	public async Task CreateWorld( Sdf3DWorld world, int seed )
 	{
-		if ( world is null || Water is null ) return;
+		if ( !world.IsValid() || Water is not null ) return;
+
 		await World.ClearAsync();
 		var volume = GetVolume();
+
 		int chunkSize = 1000; // Define the size of each chunk
 		int numChunks = WorldSize / chunkSize; // Calculate the number of chunks
+
 		await world.AddAsync( new BoxSdf3D( Vector3.Zero, chunkSize ), volume );
+
 		for ( int i = 0; i < numChunks; i++ )
 		{
 			for ( int j = 0; j < numChunks; j++ )

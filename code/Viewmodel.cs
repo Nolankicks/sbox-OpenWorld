@@ -78,7 +78,7 @@ public sealed class ViewModel : Component
 
 	protected override void OnEnabled()
 	{
-		if ( GameObject.Parent.IsProxy ) return;
+		if ( GameObject.Parent.IsProxy || !Gun.IsValid() ) return;
 		Gun.Set( "b_deploy_dry", true );
 	}
 }
