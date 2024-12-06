@@ -4,9 +4,9 @@ using Sandbox;
 [Icon("download")]
 public sealed class DamageTaker : Component
 {
-	public delegate void OnTakeDamageVoid(PlayerController PlayerController, Inventory Inventory);
+	public delegate void OnTakeDamageVoid(Kicks.PlayerController PlayerController, Inventory Inventory);
 	[Property] public OnTakeDamageVoid OnTakeDamage  { get; set; }
-	public delegate void OnDeathActionVoid(PlayerController PlayerController, Inventory Inventory);
+	public delegate void OnDeathActionVoid(Kicks.PlayerController PlayerController, Inventory Inventory);
 	[Property] public OnDeathActionVoid OnDeathAction { get; set; }
 	[Property] public int Health { get; set; } = 100;
 	[Property, Sync] public bool CanDie { get; set; } = true;
@@ -21,7 +21,7 @@ public sealed class DamageTaker : Component
 		Health -= damage;
 		var player = Scene.Directory.FindByGuid(guid);
 		if (player is null) return;
-		player.Components.TryGet<PlayerController>(out var playerController, FindMode.EverythingInSelfAndParent);
+		player.Components.TryGet<Kicks.PlayerController>(out var playerController, FindMode.EverythingInSelfAndParent);
 		player.Components.TryGet<Inventory>(out var inventory, FindMode.EverythingInSelfAndParent);
 		if (playerController is null || inventory is null) return;
 		OnTakeDamage?.Invoke(playerController, inventory);
@@ -31,7 +31,7 @@ public sealed class DamageTaker : Component
 		}
 	}
 
-	void OnDeath(PlayerController playerController, Inventory inventory)
+	void OnDeath(Kicks.PlayerController playerController, Inventory inventory)
 	{
 		OnDeathAction?.Invoke(playerController, inventory);
 	}

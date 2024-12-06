@@ -10,14 +10,14 @@ public sealed class Builder : Component
 	[Property] public GameObject Floor { get; set; }
 	public Inventory Inventory { get; set; }
 	[Property] public Angles PlaceRotation { get; set; }
-	public PlayerController playerController { get; set; }
+	public Kicks.PlayerController playerController { get; set; }
 	public int offsetX { get; set; }
 	public int offsetY { get; set; }
 	public int offsetZ { get; set; }
 	public bool WallBool = true;
 	protected override void OnUpdate()
 	{
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		playerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		if (IsProxy) return;
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault(x => !x.IsProxy);
 		if (Input.Pressed("build"))

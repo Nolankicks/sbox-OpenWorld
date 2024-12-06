@@ -65,7 +65,7 @@ void Attack()
 		var tr = Scene.Trace.Ray(new Ray(Transform.Position + Vector3.Up * 55, Transform.Rotation.Forward), 5000).WithoutTags("enemy").Run();
 		if (!tr.Hit) return;
 		Log.Info(tr.GameObject);
-		tr.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+		tr.GameObject.Components.TryGet<Kicks.PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 		if (player is not null)
 		{
 			Log.Info("Hit player");
@@ -77,7 +77,7 @@ void Attack()
 void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 	{
 		Log.Info("Triggered");
-		other.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+		other.GameObject.Components.TryGet<Kicks.PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
 		if (player is not null)
 		{
 			lookAtPlayerCts = new CancellationTokenSource();
@@ -87,7 +87,7 @@ void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 
 void ITriggerListener.OnTriggerExit(Sandbox.Collider other)
 {
-    other.GameObject.Components.TryGet<PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
+    other.GameObject.Components.TryGet<Kicks.PlayerController>(out var player, FindMode.EverythingInSelfAndParent);
     if (player is not null)
     {
         lookAtPlayerCts?.Cancel();

@@ -25,3 +25,5 @@ assets/materials/
 *.*_c
 *.los
 *.vpk
+
+.sbox/*

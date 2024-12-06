@@ -12,13 +12,13 @@ public sealed class ActionGraphItem : Component
 	public bool Able { get; set; } = true;
 	[Property, Sync] public bool InInventory { get; set; }
 	[Property] public GameObject Object { get; set; }
-	public delegate void ActionDel( PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer, ActionGraphItem actionGraphItem );
+	public delegate void ActionDel( Kicks.PlayerController playerController, Inventory inventory, AmmoContainer ammoContainer, ActionGraphItem actionGraphItem );
 	[Property, Description( "Called when the item is in the inventory" )] public ActionDel OnUse { get; set; }
 	[Property] public ActionDel OnPickUp { get; set; }
 	[Property] public ActionDel OnDrop { get; set; }
 	public Inventory Inventory { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
-	public PlayerController PlayerController { get; set; }
+	public Kicks.PlayerController PlayerController { get; set; }
 	[Property] public bool UsesAmmo { get; set; }
 	[Property, ShowIf( "UsesAmmo", true ), Sync] public int Ammo { get; set; }
 	public bool AbleToFire { get; set; }
@@ -33,7 +33,7 @@ public sealed class ActionGraphItem : Component
 		{
 			gb.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		}
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		PlayerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault( x => !x.IsProxy );
 		Inventory = Scene.GetAllComponents<Inventory>().FirstOrDefault( x => !x.IsProxy );
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy );
 	}
@@ -188,7 +188,7 @@ public sealed class ActionGraphItem : Component
 				Ammo--;
 				ShotsFired++;
 				tr.GameObject.Components.TryGet<EnemyHealthComponent>( out var dummy, FindMode.EverythingInSelfAndParent );
-				tr.GameObject.Components.TryGet<PlayerController>( out var player, FindMode.EverythingInSelfAndParent );
+				tr.GameObject.Components.TryGet<Kicks.PlayerController>( out var player, FindMode.EverythingInSelfAndParent );
 				var damageTaker = tr.GameObject.Components.Get<DamageTaker>( FindMode.EverythingInSelfAndParent );
 				traceStartPos = tr.StartPosition;
 				hitPos = tr.HitPosition;

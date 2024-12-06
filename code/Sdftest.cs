@@ -178,7 +178,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 			// Spawn this object and make the client the owner
 			var player = PlayerPrefab.Clone( startLocation, name: $"Player - {channel.DisplayName}" );
 
-			if ( player.Components.TryGet<PlayerController>( out var playerVar ) )
+			if ( player.Components.TryGet<Kicks.PlayerController>( out var playerVar ) )
 			{
 				playerVar.eyeAngles = startLocation.Rotation.Angles();
 			}
@@ -189,7 +189,7 @@ public sealed class Sdftest : Component, Component.INetworkListener
 		{
 			var player = PlayerPrefab.Clone( new Transform( Vector3.Zero, Rotation.Identity ), name: $"Player - {channel.DisplayName}" );
 
-			if ( player.Components.TryGet<PlayerController>( out var playerVar ) )
+			if ( player.Components.TryGet<Kicks.PlayerController>( out var playerVar ) )
 			{
 				playerVar.eyeAngles = Rotation.Identity.Angles();
 			}

@@ -13,7 +13,7 @@ public sealed class Inventory : Component
 	[Property] public List<Texture> ItemTextures;
 	[Property] public List<GameObject> StartingItems { get; set; } = new();
 	[Property] public GameObject Gun { get; set; }
-	public PlayerController PlayerController { get; set; }
+	public Kicks.PlayerController PlayerController { get; set; }
 	[Property] public Texture TestTexture { get; set; }
 	public AmmoContainer AmmoContainer { get; set; }
 	public InputHint inputHint { get; set; }
@@ -23,7 +23,7 @@ public sealed class Inventory : Component
 	public int Slots => 9;
 	protected override void OnStart()
 	{
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault(x => !x.IsProxy);
+		PlayerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault(x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault(x => !x.IsProxy);
 		inputHint = Scene.GetAllComponents<InputHint>().FirstOrDefault(x => !x.IsProxy);
 		Items = new List<GameObject>(new GameObject[9]);

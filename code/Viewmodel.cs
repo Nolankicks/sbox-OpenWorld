@@ -2,7 +2,7 @@ using Sandbox;
 using Kicks;
 public sealed class ViewModel : Component
 {
-	public PlayerController Player { get; set; }
+	public Kicks.PlayerController Player { get; set; }
 	[Property] public SkinnedModelRenderer Gun { get; set; }
 	float lastPitch;
 	float lastYaw;
@@ -11,7 +11,7 @@ public sealed class ViewModel : Component
 	bool UseInteria = false;
 	protected override void OnStart()
 	{
-		Player = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		Player = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	void ApplyInertia()

@@ -3,7 +3,7 @@ using Sandbox;
 [Icon("water_drop")]
 public sealed class Water : Component, Component.ITriggerListener
 {
-   	PlayerController PlayerController;
+   	Kicks.PlayerController PlayerController;
     [Property] List<Rigidbody> rigidbodies = new();
 
     protected override void OnFixedUpdate()
@@ -26,7 +26,7 @@ void ITriggerListener.OnTriggerEnter(Sandbox.Collider other)
 {
 	if (other.GameObject.Tags.Has("watercollider"))
 	{
-	other.Components.TryGet<PlayerController>(out var cc, FindMode.InParent);
+	other.Components.TryGet<Kicks.PlayerController>(out var cc, FindMode.InParent);
     if (cc is not null)
     {
         PlayerController = cc;

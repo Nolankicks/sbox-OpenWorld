@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+ekA84XWUh4KZO3LHpbHHwghogrfSLLnZMEaFrU/YIfh92PZBFsfPxhrcySuvrntTmR6WK3fhl9QrJB3VOxWBA==",
+  "dgSpecHash": "fD7qMANh1uk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\talle\\Documents\\s&box projects\\gitprojects\\sbox-OpenWorld\\Libraries\\nolankicks.opiumpostprocess\\UnitTests\\opiumpostprocess.unittest.csproj",
+  "projectFilePath": "C:\\Users\\talle\\Documents\\GitHub\\sbox-OpenWorld\\Libraries\\nolankicks.opiumpostprocess\\UnitTests\\opiumpostprocess.unittest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talle\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\talle\\.nuget\\packages\\microsoft.codecoverage\\17.7.2\\microsoft.codecoverage.17.7.2.nupkg.sha512",

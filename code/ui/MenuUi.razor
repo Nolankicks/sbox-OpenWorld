@@ -10,8 +10,8 @@
 	<div class="levelselect">
 		<div class="level" onclick=@( () => OpenScene(GameScenes[0]))>The Escape</div>
 		<div class="level" onclick=@( () => OpenScene(GameScenes[1]))>Warehouse</div>
-		<div class="level" onclick=@( () => ShowBiomeSelect = !ShowBiomeSelect)>Proc Gen</div>
-		<div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Dead 4 Left Classic</div>
+		@* <div class="level" onclick=@( () => ShowBiomeSelect = !ShowBiomeSelect)>Proc Gen</div> *@
+		@* <div class="level" onclick=@( () => ShowLobby = !ShowLobby)>Dead 4 Left Classic</div> *@
 	</div>
 	<div class="lobbies @(ShowLobby ? "" : "hide")">
 		<div class="header">Lobbies</div>

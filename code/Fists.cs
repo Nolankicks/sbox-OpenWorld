@@ -5,14 +5,14 @@ public sealed class Fists : Component
 {
 	[Property] public SkinnedModelRenderer fists { get; set; }
 	[Property] public GameObject ViewModelCamera { get; set; }
-	public PlayerController playerController { get; set; }
+	public Kicks.PlayerController playerController { get; set; }
 	[Property] public int Damage { get; set; } = 10;
 
 	protected override void OnStart()
 	{
 		fists.Set("b_attack", false);
 		fists.Set("b_deploy", true);
-		playerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy );
+		playerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault( x => !x.IsProxy );
 	}
 
 	protected override void OnUpdate()

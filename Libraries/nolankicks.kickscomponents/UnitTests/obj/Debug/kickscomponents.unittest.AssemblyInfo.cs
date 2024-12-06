@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kickscomponents.unittest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc29e657636afe744bf3dcfc39773817996cea4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("kickscomponents.unittest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kickscomponents.unittest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

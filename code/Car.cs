@@ -7,7 +7,7 @@ public sealed class Car : Component
 	[Property] public CharacterController CharacterController { get; set; }
 	public Vector3 WishVelocity { get; set; }
 	[Property] public float MoveSpeed { get; set; } = 1000;
-	public PlayerController CurrentDriver { get; set; }
+	public Kicks.PlayerController CurrentDriver { get; set; }
 	[Property] public Rigidbody Rigidbody { get; set; }
 	protected override void OnUpdate()
 	{
@@ -22,7 +22,7 @@ public sealed class Car : Component
 		}
 	}
 
-	public void EnterCar(PlayerController playerController)
+	public void EnterCar(Kicks.PlayerController playerController)
 	{
 		GameObject.Network.SetOwnerTransfer(OwnerTransfer.Takeover);
 		GameObject.Network.TakeOwnership();
@@ -33,7 +33,7 @@ public sealed class Car : Component
 		CurrentDriver = playerController;
 		IsDriving = true;
 	}
-	public void LeaveCar(PlayerController playerController)
+	public void LeaveCar(Kicks.PlayerController playerController)
 	{
 		playerController.AbleToMove = true;
 		playerController.GameObject.Transform.Position = GameObject.Transform.Position + new Vector3(0, 0, 1);

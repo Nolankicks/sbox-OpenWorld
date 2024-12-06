@@ -4,7 +4,7 @@ using Sandbox.UI;
 using Kicks;
 public sealed class Shotgun : Component
 {
-	public PlayerController PlayerController { get; set; }
+	public Kicks.PlayerController PlayerController { get; set; }
 	[Property] public Model WorldModel { get; set; }
 	[Property] public GameObject ItemPrefab { get; set; }
 	[Property] public GameObject Decal { get; set; }
@@ -37,7 +37,7 @@ public sealed class Shotgun : Component
 		ViewModelGun.GameObject.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelCamera.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
 		ViewModelHolder.Network.SetOwnerTransfer( OwnerTransfer.Takeover );
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		PlayerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		Interactor = Scene.GetAllComponents<Interactor>().FirstOrDefault( x => !x.IsProxy);
 		AmmoContainer = Scene.GetAllComponents<AmmoContainer>().FirstOrDefault( x => !x.IsProxy);
 		if (IsProxy) return;
@@ -50,7 +50,7 @@ public sealed class Shotgun : Component
 	}
 		protected override void OnUpdate()
 	{
-		PlayerController = Scene.GetAllComponents<PlayerController>().FirstOrDefault( x => !x.IsProxy);
+		PlayerController = Scene.GetAllComponents<Kicks.PlayerController>().FirstOrDefault( x => !x.IsProxy);
 		if (IsProxy)
 		{
 			ViewModelCamera.Enabled = false;

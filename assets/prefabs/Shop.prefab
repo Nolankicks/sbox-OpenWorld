@@ -4,17 +4,33 @@
     "Flags": 0,
     "Name": "shop",
     "Enabled": true,
-    "NetworkMode": 2,
-    "NetworkInterpolation": true,
     "Components": [
       {
         "__type": "Sandbox.SkinnedModelRenderer",
         "__guid": "cb568165-f54e-4b81-8e39-1cf54b86883b",
-        "BodyGroups": 1,
+        "BodyGroups": 65,
+        "CreateAttachments": false,
         "CreateBoneObjects": false,
         "MaterialGroup": "default",
         "Model": "models/citizen/citizen.vmdl",
+        "Morphs": {},
+        "Parameters": {
+          "bools": {},
+          "ints": {},
+          "floats": {},
+          "vectors": {},
+          "rotations": {}
+        },
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
         "RenderType": "On",
+        "Sequence": {
+          "Name": null
+        },
         "Tint": "1,1,1,1",
         "UseAnimGraph": true
       },
@@ -30,8 +46,9 @@
         "HeadWeight": 1,
         "LookAtEnabled": true,
         "OnComponentStart": {
-          "__version": 7,
+          "__version": 8,
           "__guid": "88e0f4d7-eede-49ff-8167-6d43dbfc9398",
+          "__changeId": 0,
           "UserData": {
             "Title": "On Component Start",
             "ReferencedComponentTypes": [
@@ -51,7 +68,7 @@
               "Id": 1,
               "Type": "scene.get",
               "Properties": {
-                "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                "T": "Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "-240,144"
@@ -62,7 +79,7 @@
               "Type": "property",
               "Properties": {
                 "_name": "IsSitting",
-                "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+                "_type": "Sandbox.Citizen.CitizenAnimationHelper"
               },
               "UserData": {
                 "Position": "144,80"
@@ -100,6 +117,7 @@
               "DstName": "_target"
             },
             {
+              "Id": 7,
               "Value": true,
               "DstId": 2,
               "DstName": "_value"
@@ -117,6 +135,7 @@
               "DstName": "_target"
             },
             {
+              "Id": 8,
               "Value": "Chair",
               "DstId": 4,
               "DstName": "_value"
@@ -135,7 +154,8 @@
         "__guid": "8489a953-e97b-4a16-a41e-4033a9beeed6",
         "IsTrigger": false,
         "Model": "models/citizen/citizen.vmdl",
-        "Static": false
+        "Static": false,
+        "SurfaceVelocity": "0,0,0"
       },
       {
         "__type": "DamageTaker",
@@ -143,8 +163,9 @@
         "CanDie": true,
         "Health": 100,
         "OnTakeDamage": {
-          "__version": 7,
+          "__version": 8,
           "__guid": "534e7515-ce35-4a62-858f-c78c24eda688",
+          "__changeId": 0,
           "UserData": {
             "Title": "On Take Damage",
             "ReferencedComponentTypes": [
@@ -164,7 +185,7 @@
               "Id": 1,
               "Type": "scene.get",
               "Properties": {
-                "T": "Sandbox.Game/Sandbox.SkinnedModelRenderer"
+                "T": "Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
                 "Position": "-48,176"
@@ -174,9 +195,9 @@
               "Id": 2,
               "Type": "call",
               "Properties": {
+                "_isStatic": false,
                 "_name": "Set",
-                "_type": "Sandbox.Game/Sandbox.SkinnedModelRenderer",
-                "_isStatic": false
+                "_type": "Sandbox.SkinnedModelRenderer"
               },
               "UserData": {
                 "Position": "320,128"
@@ -210,11 +231,13 @@
               "DstName": "_target"
             },
             {
+              "Id": 7,
               "Value": "hit",
               "DstId": 2,
               "DstName": "v"
             },
             {
+              "Id": 8,
               "Value": true,
               "DstId": 2,
               "DstName": "value"
@@ -226,6 +249,7 @@
               "DstName": "_signal"
             },
             {
+              "Id": 9,
               "Value": "hit",
               "DstId": 3,
               "DstName": "format"
@@ -240,8 +264,9 @@
         "Icon": "sprites/vidya/particles/ghost.vtex",
         "Name": "Open Shop",
         "PickUpAction": {
-          "__version": 7,
+          "__version": 8,
           "__guid": "aed3930e-f04e-4292-a3fc-b81da289d2bc",
+          "__changeId": 0,
           "UserData": {
             "Title": "Pick Up Action",
             "ReferencedComponentTypes": [
@@ -268,7 +293,7 @@
               "Id": 2,
               "Type": "scene.get",
               "Properties": {
-                "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                "T": "Kicks.PopupUi"
               },
               "UserData": {
                 "Position": "464,176"
@@ -298,7 +323,7 @@
               "Id": 5,
               "Type": "scene.get",
               "Properties": {
-                "T": "package.nolankicks.dead4left2/Kicks.PopupUi"
+                "T": "Kicks.PopupUi"
               },
               "UserData": {
                 "Position": "-208,336"
@@ -359,6 +384,7 @@
               "DstName": "_target"
             },
             {
+              "Id": 14,
               "Value": true,
               "DstId": 1,
               "DstName": "_value"
@@ -382,6 +408,7 @@
               "DstName": "_target"
             },
             {
+              "Id": 15,
               "Value": false,
               "DstId": 3,
               "DstName": "_value"
@@ -423,6 +450,7 @@
               "DstName": "_target"
             },
             {
+              "Id": 16,
               "Value": false,
               "DstId": 6,
               "DstName": "_value"
@@ -467,8 +495,9 @@
           ],
           "ShopActions": [
             {
-              "__version": 7,
+              "__version": 8,
               "__guid": "81800d2e-3e91-4f6e-8fe7-7e4e89d8e34f",
+              "__changeId": 0,
               "UserData": {
                 "Title": null,
                 "ReferencedComponentTypes": []
@@ -483,9 +512,9 @@
                   "Id": 6,
                   "Type": "call",
                   "Properties": {
+                    "_isStatic": false,
                     "_name": "AddAmmo",
-                    "_type": "package.nolankicks.dead4left2/Inventory",
-                    "_isStatic": false
+                    "_type": "Inventory"
                   },
                   "UserData": {
                     "Position": "448,0"
@@ -506,6 +535,7 @@
                   "DstName": "_target"
                 },
                 {
+                  "Id": 9,
                   "Value": 30,
                   "DstId": 6,
                   "DstName": "ammo"
@@ -517,6 +547,7 @@
                   "DstName": "ammoContainer"
                 },
                 {
+                  "Id": 10,
                   "Value": "LightAmmo",
                   "DstId": 6,
                   "DstName": "ammoType"
@@ -524,8 +555,9 @@
               ]
             },
             {
-              "__version": 7,
+              "__version": 8,
               "__guid": "6f5037c7-93e7-4ddc-9438-e7d3b58d60a3",
+              "__changeId": 0,
               "UserData": {
                 "Title": null,
                 "ReferencedComponentTypes": []
@@ -541,8 +573,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "Inventory",
-                    "_name": "AddItem"
+                    "_name": "AddItem",
+                    "_type": "Inventory"
                   },
                   "UserData": {
                     "Position": "560,0"
@@ -553,8 +585,8 @@
                   "Type": "call",
                   "Properties": {
                     "_isStatic": false,
-                    "_type": "Inventory",
-                    "_name": "GetNextSlot"
+                    "_name": "GetNextSlot",
+                    "_type": "Inventory"
                   },
                   "UserData": {
                     "Position": "240,112"
@@ -581,10 +613,8 @@
                   "DstName": "_target"
                 },
                 {
-                  "Value": {
-                    "_type": "gameobject",
-                    "prefab": "prefabs/weapons/weapon_pistol.prefab"
-                  },
+                  "Id": 7,
+                  "Value": null,
                   "DstId": 3,
                   "DstName": "item"
                 },
@@ -596,7 +626,7 @@
                 }
               ],
               "Defaults": {
-                "$6._value": {
+                "$7._value": {
                   "_type": "gameobject",
                   "prefab": "prefabs/weapons/weapon_pistol.prefab"
                 }
@@ -621,16 +651,12 @@
         "Flags": 0,
         "Name": "clothes",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Children": [
           {
             "__guid": "6fb1ea38-0235-4950-ba29-9cb6f5edf82f",
             "Flags": 0,
             "Name": "shirt",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -642,9 +668,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/shirt/loose_shirt/models/loose_shirts.vmdl",
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
               }
@@ -655,8 +699,6 @@
             "Flags": 0,
             "Name": "jacket",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -668,9 +710,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/jacket/biker_jacket/models/biker_jacket.vmdl",
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
               }
@@ -681,8 +741,6 @@
             "Flags": 0,
             "Name": "shoes",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -694,9 +752,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/shoes/trainers/trainers.vmdl",
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
               }
@@ -707,8 +783,6 @@
             "Flags": 0,
             "Name": "pants",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -720,9 +794,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/trousers/jeans/models/jeans_black.vmdl",
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
               }
@@ -733,8 +825,6 @@
             "Flags": 0,
             "Name": "hair",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -746,9 +836,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/hair/hair_scruffy_shaved_sides/models/scruffy_shaved_sides.vmdl",
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
+                },
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "0.15349,0.10994,0.10994,1",
                 "UseAnimGraph": true
               }
@@ -759,8 +867,6 @@
             "Flags": 0,
             "Name": "brused face",
             "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
             "Components": [
               {
                 "__type": "Sandbox.SkinnedModelRenderer",
@@ -772,35 +878,27 @@
                   "go": "78396649-9686-43e6-b5c8-66376323b3f8",
                   "component_type": "SkinnedModelRenderer"
                 },
+                "CreateAttachments": false,
                 "CreateBoneObjects": false,
                 "Model": "models/citizen_clothes/makeup/bruised_face/models/bruised_face.vmdl",
-                "RenderType": "On",
-                "Tint": "1,1,1,1",
-                "UseAnimGraph": true
-              }
-            ]
-          },
-          {
-            "__guid": "0414dfef-7f6b-4027-a2f4-f0110daf0c42",
-            "Flags": 0,
-            "Name": "gloves",
-            "Enabled": true,
-            "NetworkMode": 2,
-            "NetworkInterpolation": true,
-            "Components": [
-              {
-                "__type": "Sandbox.SkinnedModelRenderer",
-                "__guid": "24eff948-1bb3-4d1d-a63d-8cc6c32de368",
-                "BodyGroups": 18446744073709551615,
-                "BoneMergeTarget": {
-                  "_type": "component",
-                  "component_id": "cb568165-f54e-4b81-8e39-1cf54b86883b",
-                  "go": "78396649-9686-43e6-b5c8-66376323b3f8",
-                  "component_type": "SkinnedModelRenderer"
+                "Morphs": {},
+                "Parameters": {
+                  "bools": {},
+                  "ints": {},
+                  "floats": {},
+                  "vectors": {},
+                  "rotations": {}
                 },
-                "CreateBoneObjects": false,
-                "Model": "models/citizen_clothes/gloves/tactical_gloves/models/tactical_gloves.vmdl",
+                "RenderOptions": {
+                  "GameLayer": true,
+                  "OverlayLayer": false,
+                  "BloomLayer": false,
+                  "AfterUILayer": false
+                },
                 "RenderType": "On",
+                "Sequence": {
+                  "Name": null
+                },
                 "Tint": "1,1,1,1",
                 "UseAnimGraph": true
               }
@@ -813,9 +911,7 @@
         "Flags": 0,
         "Name": "eye",
         "Position": "0,0,64",
-        "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true
+        "Enabled": true
       },
       {
         "__guid": "9a3a0000-d9b1-41cd-af70-f690f6b727bb",
@@ -824,17 +920,33 @@
         "Position": "-6.5025,-0.3580322,-4.655434",
         "Rotation": "0,0,0.7071069,-0.7071066",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.SkinnedModelRenderer",
             "__guid": "16bf933f-807d-4f74-83d9-689e5fe3d4d1",
             "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
             "CreateBoneObjects": false,
             "MaterialGroup": "default",
             "Model": "models/sbox_props/office_chair/office_chair.vmdl",
+            "Morphs": {},
+            "Parameters": {
+              "bools": {},
+              "ints": {},
+              "floats": {},
+              "vectors": {},
+              "rotations": {}
+            },
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RenderType": "On",
+            "Sequence": {
+              "Name": null
+            },
             "Tint": "1,1,1,1",
             "UseAnimGraph": true
           }
@@ -847,15 +959,20 @@
         "Position": "30.5025,0.3580322,-3.344566",
         "Rotation": "0,0,1,0.0000001947072",
         "Enabled": true,
-        "NetworkMode": 2,
-        "NetworkInterpolation": true,
         "Components": [
           {
             "__type": "Sandbox.ModelRenderer",
             "__guid": "cf907242-6692-4201-b055-c33f1919c21f",
             "BodyGroups": 18446744073709551615,
+            "CreateAttachments": false,
             "MaterialGroup": "black",
             "Model": "models/items/office_set/office_desk.vmdl",
+            "RenderOptions": {
+              "GameLayer": true,
+              "OverlayLayer": false,
+              "BloomLayer": false,
+              "AfterUILayer": false
+            },
             "RenderType": "On",
             "Tint": "1,1,1,1"
           },
@@ -864,7 +981,8 @@
             "__guid": "392db551-63f9-47e6-b59b-9cd4a42a4c6f",
             "IsTrigger": false,
             "Model": "models/items/office_set/office_desk.vmdl",
-            "Static": false
+            "Static": false,
+            "SurfaceVelocity": "0,0,0"
           }
         ]
       }
@@ -873,6 +991,9 @@
       {
         "Id": "Shop Items",
         "Title": "Shop Items",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "b33ab145-70c3-4f6c-9bbd-04ac408e2faf",
@@ -883,6 +1004,9 @@
       {
         "Id": "Shirt",
         "Title": "Shirt",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "26f6f66f-9ba1-4772-b6a9-36213ffbc13b",
@@ -893,6 +1017,9 @@
       {
         "Id": "jacket",
         "Title": "jacket",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "d0bd1817-4510-4425-8183-70391ad9945b",
@@ -903,6 +1030,9 @@
       {
         "Id": "shoes",
         "Title": "shoes",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "b8cd1d4b-d805-493b-8581-c6f925f89e8f",
@@ -913,6 +1043,9 @@
       {
         "Id": "pants",
         "Title": "pants",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "7a9f2edc-0ed1-4da2-a662-eb51f9b35966",
@@ -923,6 +1056,9 @@
       {
         "Id": "hair",
         "Title": "hair",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "edb4fdd2-f244-4f1e-9c86-282729a87e88",
@@ -933,6 +1069,9 @@
       {
         "Id": "face",
         "Title": "face",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "cb243ca3-c4de-4469-a3fa-2580d3c5abc9",
@@ -943,6 +1082,9 @@
       {
         "Id": "gloves",
         "Title": "gloves",
+        "Description": null,
+        "Group": null,
+        "Order": 0,
         "Targets": [
           {
             "Id": "24eff948-1bb3-4d1d-a63d-8cc6c32de368",
@@ -950,16 +1092,40 @@
           }
         ]
       }
-    ]
+    ],
+    "__properties": {
+      "FixedUpdateFrequency": 50,
+      "MaxFixedUpdates": 5,
+      "NetworkFrequency": 30,
+      "NetworkInterpolation": true,
+      "PhysicsSubSteps": 1,
+      "ThreadedAnimation": true,
+      "TimeScale": 1,
+      "UseFixedUpdate": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": true,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": ""
+      }
+    }
   },
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "facepunch.office_chair",
-    "luke.office_desk",
-    "vidya.particle-ghost"
+    "facepunch.office_chair#33620",
+    "luke.office_desk#22940",
+    "vidya.particle-ghost#48783"
   ],
   "__version": 1
 }
